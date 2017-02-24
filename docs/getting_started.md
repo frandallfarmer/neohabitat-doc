@@ -44,6 +44,8 @@ we've had limited success using Docker on this platform.
 
 First, install the **latest versions** of the following programs:
 
+-   [curl](https://curl.haxx.se/download.html)
+
 -   [Vagrant](https://www.vagrantup.com/downloads.html)
 
 -   [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
