@@ -39,16 +39,10 @@ the following guides:
 
 **Windows**
 
-If you're currently running **Windows 10 Professional/Enterprise/Education**,
-you can use Docker for Windows, which will streamline the setup experience:
+If you're running **Windows**, we recommend using the the **Vagrant setup procedure**, as
+we've had limited success using Docker on this platform.
 
--   [Docker for Windows](https://docs.docker.com/docker-for-windows/)
-
-If so, follow the **Docker variant** of Step 2.
-
-If you're not running one of these Windows versions, you can use the Vagrant
-setup procedure, which will work on all others **(7/8/10 Home)**. Download and
-install the **latest versions** of the following programs:
+First, install the **latest versions** of the following programs:
 
 -   [Vagrant](https://www.vagrantup.com/downloads.html)
 
