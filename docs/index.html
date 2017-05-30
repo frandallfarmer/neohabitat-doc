@@ -25,8 +25,21 @@
 
 
 	<style type="text/css">
+	html {
+    	height: 100%;
+	}
 	body {
 		font-family: 'Press Start 2P', cursive;
+		height: 100%;
+	    margin: 0;
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+	    background: rgb(240,249,255);
+		background: -moz-linear-gradient(top,  rgba(240,249,255,1) 0%, rgba(203,235,255,1) 47%, rgba(161,219,255,1) 100%);
+		background: -webkit-linear-gradient(top,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%);
+		background: linear-gradient(to bottom,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 );
+
 	}
 	h1{
 		margin-bottom: 50px;
@@ -68,28 +81,32 @@
       </div>
 
       <div class="row">
-        <p class="text-center">Have a joy stick?</p>
-        <div class="text-center"><button class="btn btn-primary">Play Now!</button>
-      	</div>
-	  </div>
-	  <div class="row margin-topper">
-        <p class="text-center">Interested in contributing?</p>
-        <div class="text-center">
-        	<button class="btn btn-default">
-        	<a href="https://github.com/frandallfarmer/neohabitat" target="_blank">Learn More</a>
-        </button>
-        </div>
- 	  </div>
+      	<div class="col-md-6">
+	        <p class="text-center">Have a joy stick?</p>
+	        <div class="text-center"><button class="btn btn-primary">Play Now!</button>
+	      	</div>
+		  <div class="row margin-topper">
+	        <p class="text-center">Interested in contributing?</p>
+	        <div class="text-center">
+	        	<button class="btn btn-default">
+	        	<a href="https://github.com/frandallfarmer/neohabitat" target="_blank">Learn More</a>
+	        </button>
+	        </div>
+	 	  </div>
 
-	<div class="row margin-topper">
-        <p class="text-center"> <a href="./Avatar%20Handbook.html">Read the manual</a></p>
+		<div class="row margin-topper">
+	        <p class="text-center"> <a href="./Avatar%20Handbook.html">Read the manual</a></p>
 
- 	</div>
-
+	 	</div>
+	 </div>
+	 <div class="col-md-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/VVpulhO3jyc" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+	</div>
     </div><!-- /.container -->
     <footer class="footer">
       <div class="container">
-        <p class="text-muted margin-topper-sm">Brought to you by <a href="https://themade.org/" target="_blank">The Made</a> - The Museum of Digital Art and Entertainment.</p>
+        <p class="margin-topper-sm">Brought to you by <a href="https://themade.org/" target="_blank">The Made</a> - The Museum of Digital Art and Entertainment.</p>
       </div>
     </footer>
     <!-- Bootstrap core JavaScript
