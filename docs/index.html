@@ -59,6 +59,9 @@
 	  height: 40px;
 	  background-color: #f5f5f5;
 	}
+	.show-when-live{
+		display: none;
+	}
 
 	</style>
 
@@ -67,6 +70,37 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("June 2, 2017 17:00:00").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+
+	  // Get todays date and time
+	  var now = new Date().getTime();
+
+	  // Find the distance between now an the count down date
+	  var distance = countDownDate - now;
+
+	  // Time calculations for days, hours, minutes and seconds
+	  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+	  // Display the result in the element with id="demo"
+	  document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+	  // If the count down is finished, write some text
+	  if (distance < 0) {
+	    clearInterval(x);
+	    document.getElementById("countdown").innerHTML = "We're Live!";
+	    document.getElementById("show-when-live").style.display = "block";
+	    document.getElementById("goes-live").style.display = "none";
+	  }
+	}, 1000);
+</script>
   </head>
 
   <body>
@@ -82,8 +116,12 @@
 
       <div class="row">
       	<div class="col-md-6">
-	        <p class="text-center">Have a joy stick?</p>
-	        <div class="text-center"><button class="btn btn-primary">Play Now!</button>
+      		<p class="text-center margin-topper" id="goes-live">Neohabitat goes live in:</p>
+      		<p class="text-center" id="countdown">___</p>
+      		<div class="show-when-live" id="show-when-live">
+		        <p class="text-center">Have a joy stick?</p>
+		        <div class="text-center"><button class="btn btn-primary">Play Now!</button>
+		      	</div>
 	      	</div>
 		  <div class="row margin-topper">
 	        <p class="text-center">Interested in contributing?</p>
@@ -95,8 +133,7 @@
 	 	  </div>
 
 		<div class="row margin-topper">
-	        <p class="text-center"> <a href="./Avatar%20Handbook.html">Read the manual</a></p>
-
+	        <p class="text-center"> <a href="./Avatar%20Handbook.html">Read the Manual</a></p>
 	 	</div>
 	 </div>
 	 <div class="col-md-6"><iframe width="560" height="315" src="https://www.youtube.com/embed/VVpulhO3jyc" frameborder="0" allowfullscreen></iframe>
