@@ -30,6 +30,10 @@ To expedite the setup procedure, we've created a [Docker
 Compose](https://docs.docker.com/compose/) setup script which will setup these
 services and provide for swift iteration.
 
+**IMPORTANT**
+
+If you are using the launcher from [Neohabitat.zip](https://github.com/frandallfarmer/neohabitat-doc/blob/master/installers/Neohabitat.zip?raw=true) then your port should always be set to 1986. You should only use 5190 if you want to connect to Habitat through the outdated Q-Link method.
+
 Step 1 - Install Docker or Vagrant
 ----------------------------------
 
