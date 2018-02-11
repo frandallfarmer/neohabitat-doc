@@ -217,37 +217,43 @@ vagrant up --provider=virtualbox
 Step 3 - Download and Configure Vice
 ------------------------------------
 
-To test Commodore 64 behavior, you'll need to install a C64 emulator and
-download the necessary client software. We strongly recommend using
-[Vice](http://vice-emu.sourceforge.net/), as it has an active upstream and
-allows you to connect its emulated serial ports to the stdin/stdout of an
-external process.
-
 **Windows**
 
-Download the latest Windows Vice emulator from the above link then make the
-following configuration changes:
+- Download [Neohabitat.zip](https://github.com/frandallfarmer/neohabitat-doc/blob/master/installers/Neohabitat.zip?raw=true)
 
--   Go to **Settings –\> RS232 Settings**:
+- Unzip onto the desktop
+	- (This is not yet an installer. Want to help build one? Join us at http://slack.neohabitat.org)
+	
+- Open the Neohabitat folder
 
--   Set **RS232 Device 1** to the following: **127.0.0.1:5190**
+- Edit the file named **vice.ini**
 
--   Go to **Settings –\> Cart I/O Settings –\> RS232 Userport settings**:
+- Set **RsDevice1** to **"127.0.0.1:1986"**
 
--   Enable **RS232 Userport** and **Userport Device RS232 Device 1**
+- Double-click the **Launch Habitat** icon.
+	- If double clicking on the launcher does not work, try running it as administrator. If you are still encountering issues then scroll down to the "Help!" section of the readme for other alternatives.
 
--   Set **Userport baud rate** to the following: **1200**
+**OS X**
 
-### Controller Configuration
+- Download [Neohabitat.dmg](https://github.com/frandallfarmer/neohabitat-doc/blob/master/installers/Neohabitat.dmg?raw=true) and double-click on the DMG file.
 
-The Habitat client was designed to be controlled by a joystick. Using the
-joystick, you move the cross-hair cursor around the screen to manipulate your
-Avatar’s movements and actions. Since WinVice allows you to map keyboard keys to
-joystick movements to simulate the device, a joystick is not required but it is
-recommended. To configure a controller, follow the directions for the desired
-type below.
+- Drag the **Neohabitat** application to the **Applications** folder.
+
+- **Launch the Neohabitat application** you dragged to **Applications**.
+
+**Please Note**: OS X may inform you that this app comes from an unknown developer upon first launch. If this happens, **open System Preferences** and click **Security & Privacy**. From the following pane, click **Open Anyway** to launch the Neohabitat application.
+
+**Linux and \*BSD**
+
+- Install VICE and `nc` (netcat) via your package manager
+- Extract the Windows release of [Neohabitat.zip](https://github.com/frandallfarmer/neohabitat-doc/blob/master/installers/Neohabitat.zip?raw=true) to get the `.d64` files and `fliplist-C64.vfl`
+- Run the VICE C64 emulator with these options set:  
+  `x64 -rsuser -rsuserdev 0 -rsdev1 '|nc 127.0.0.1 1986' -rsuserbaud 1200 -flipname fliplist-C64.vfl Habitat-Boot.d64`
+
 
 **Keyboard (Joystick Emulation)**
+
+-   If you haven't launched the Neohabitat application in the last step, do it now.  
 
 -   Go to **Settings -\> Joystick Settings -\> (Check) Enable Joy Keys**
 
@@ -274,7 +280,7 @@ and Printers** before Vice will recognize the joystick.
 
 Once your Joystick is plugged in and calibrated:
 
--   Open **WinVice**
+-   Double-click the **Launch Habitat** icon.
 
 -   Go to **Settings -\> Joystick Settings -\> Joystick Settings**
 
@@ -285,206 +291,33 @@ Once your Joystick is plugged in and calibrated:
     **Calibration Wizard** to ensure a profile is created for the joystick.
     After this is done, you may need to exit and re-launch WinVice.
 
-**OS X**
+Congrats! After doing all of this you should now have the bare necessities to run your own local server. 
 
-Newer versions of Vice are not compatible with QuantumLink, so be sure to
-download **version 2.4** of the **Cocoa UI variant**. Once you've done so, open
-the DMG and follow this configuration procedure:
-
--   Drag the x64 application from the Vice D64 to your Applications folder
-
--   Establish a shell alias in your **\~/.bashrc** or **\~/.zshrc** to force the
-    enabling of the RS232 userport:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
-alias c64='/Applications/x64.app/Contents/MacOS/x64 -rsuser -rsuserbaud 1200 -rsuserdev 0'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--   Launch Vice via the above alias then go to **Settings -\> Resource
-    Inspector**
-
--   Under **Peripherals -\> RS232**, set **Device 1** to the following: `|nc
-    127.0.0.1 5190`
-
--   Under **Peripherals -\> RS232**, set **Device 1 Baud Rate** to the
-    following: `1200`
-
--   Save these new settings via **Settings -\> Save current Settings**
-
-Step 4 - Download the C64 Clients
----------------------------------
-
-Client software can be downloaded here:
-
-- [QuantumLink
-  (with Habitat support)](http://cloud.cbm8bit.com/brataccas/QLink-Habitat.d64)
-- [Habitat disk A
-  (a.k.a. side 3)](http://cloud.cbm8bit.com/brataccas/Habitat-A.d64)
-- [Habitat disk B
-  (a.k.a. Imagery)](https://s3.amazonaws.com/ssalevan/neohabitat/Habitat-B.d64)
-
-Major thanks to Gary Lake-Schaal who rebuilt the Habitat client from the
-original 1985 source!
-
-**NOTE:** Make a backup of QuantumLink.d64, as it gets modified with your
-account information and a link to the Club Caribe game disk.
-
-The **Club Caribe client software is identical to the Habitat software**, so
-please note this as we continue.
-
-Step 5 - Connect to QuantumLink Reloaded
-----------------------------------------
-
-Load the QuantumLink D64 image you just downloaded into Unit \#8 of your
-emulated C64. You can do so via **File -\> Attach Disk Image -\> Unit \#8**.
-
-After the QuantumLink disk is loaded, you can start it by running the following
-C64 command:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-LOAD"*",8,1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Eventually, you'll be brought to a screen that asks you to establish your
-initial modem settings. You can use the arrow keys and enter to select each
-configuration field; use the following settings:
-
--   Modem: **Other command driven modems**
-
--   Speed: **1200 Baud**
-
--   Dial: **Automatic**
-
--   Phone: **Tone**
-
--   Number: **+5551212**
-
-After finishing this process, select **SIGN ON TO Q-LINK**. You'll be brought to
-a green-framed screen which states `Type commands to the modem, then press F1
-when connection is made.`:
-
-![QuantumLink Connect Screen](https://s3.amazonaws.com/ssalevan/neohabitat/connect_qlink.png)
-
-Press **F1**, and if all goes well, your client will connect to QuantumLink
-Reloaded and present you with a set of registration prompts. **Enter the
-information prompted** and **remember your username**; you'll need it later.
-
-When this task is complete, you'll be brought to the QuantumLink home screen;
-it'll look something like this:
-
-![QuantumLink Home Screen](http://toastytech.com/guis/c64gquantumlink.gif)
-
-Step 6 - Load MongoDB Models
-----------------------------
-
-Recall the username you entered above then create a file in the **db/** folder
-called **user-.json**. For instance, if your username was **Steve** ('steve' in
-lowercase form), you'd add the following to **db/user-steve.json**:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ json
-{
-  "type": "user",
-  "ref": "user-steve",
-  "name": "Steve",
-  "mods": [
-    {
-      "type": "Avatar",
-      "x": 100,
-      "y": 130,
-      "bodyType": "male",
-      "bankBalance": 2000,
-      "custom": [68, 68],
-      "nitty_bits": 8
-    }
-  ]
-}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Please note that your username within the above "name" field **must also be
-lowercase**.
-
-After you've completed this step, you can load all models into MongoDB by
-running the following commands from your Neohabitat checkout:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
-cd db
-make db
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You're now ready to start Habitat for the first time.
-
-Step 7 - Launch Habitat
------------------------
-
-On the Commodore 64, the function keys were placed prominently to the right of
-the main keyboard and were used heavily by many applications. As a result, much
-of the navigation you'll use within QuantumLink will depend upon the usage of
-function keys. These are the ones you'll use during your QuantumLink experience:
-
--   **F1** - Selects whatever is highlighted
-
--   **F3** - Saves whatever you're looking at to disk (you can likely ignore
-    this one)
-
--   **F5** - Goes back, similar to the back button in a web browser
-
--   **F7** - Brings up a department menu
-
--   **Arrow Keys** - Moves the selector, whether in a menu or on the Home screen
-
-At the QuantumLink home screen, ensure that the selector is placed over the
-**People Connection** department then press **F1**. There will be a short load
-period which will lead you to the People Connection screen:
-
-![QuantumLink People Connection Screen](https://s3.amazonaws.com/ssalevan/neohabitat/people_connection.png)
-
-After reaching it, press **F7** to bring up the department menu. Select **Play
-or observe an online game** with the **arrow keys** and press **F1**:
-
-![QuantumLink People Connection Department Menu](https://s3.amazonaws.com/ssalevan/neohabitat/department_menu.png)
-
-Select **Start a game (pick your partners)** with the and press **F1** again.
-
-Finally, select **Club Caribe** from the list and press **F1** one last time.
-
-**NOTE:** If **Club Caribe** does NOT appear on the game list, you will first
-need to patch the QuantumLink disk image.. - Start VINE booting to the Commodore
-blue screen. - Mount the club-caribe-a.d64 disk image on drive 8 -
-LOAD"ADDCARIBE",8,1 - When prompted, mount your registered QuantumLink.d64 image
-on drive 8 and continue... - It takes quite awhile, but when you are done, you
-can restart the Launch Habitat step.
-
-You'll be asked to insert **Game Disk 3**, which is **Club Caribe Disk A
-(club-caribe-a.d64)**. Attach this disk using the above procedure and hit
-**Enter**. After doing so, you can engage Warp Mode to expedite the load
-process.
-
-Eventually, you'll reach a screen that looks something like this:
-
-![QuantumLink Home Screen](http://vzn.eddcoates.com/clubcaribe/sitepics/ClubCarFront.gif)
-
-You'll be asked to insert the **Imagery Disk**, which is **Club Caribe Disk B
-(club-caribe-b.d64)**. Attach this disk using the above procedure and hit
-**Enter**. You can engage Warp Mode here as well.
-
-If all goes well, you'll be brought to the first Habitat screen:
-
-![Habitat Start Screen](https://s3.amazonaws.com/ssalevan/neohabitat/habitat_start.png)
-
-If so, congratulations, you've just rebuilt Habitat!
-
-Step 8 - Build Neohabitat Locally to Enable IDE Integration
+Step 4 - Building Neohabitat Locally and IDE Integration
 -----------------------------------------------------------
 
-The Neohabitat build scripting will install necessary dependency JARs that are
-not present in Maven Central; to enable IDE support, simply run a local build:
+You have a choice of using Eclipse or IntelliJ for your dev environment. 
+
+**IDEs**
+
+Follow the instructions here:
+
+-   [Eclipse](https://www.eclipse.org/)
+
+-   [IntelliJ](https://www.jetbrains.com/idea/)
+
+
+Maven is used for importing Neohabitat into your IDE and building your code.
+
+You can download it [here](https://maven.apache.org/index.html).
+
+After installing Maven **import** the root pom.xml into Eclipse or IntelliJ to gain full IDE integration.
+
+After making a change, type this line in your neohabitat directory to build your code.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
-./build
+mvn package -e
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-After doing so, you'll be able to import the root pom.xml into Eclipse or
-IntelliJ to gain full IDE integration.
 
 You'll also want to run a local build when you've completed a code change and
 are ready to reload Neohabitat.
