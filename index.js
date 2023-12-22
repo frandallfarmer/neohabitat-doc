@@ -1,3 +1,5 @@
+const LE = true // little-endian
+
 const readBinary = async (url) => {
     const response = await fetch(url)
     if (!response.ok) {
@@ -7,92 +9,6 @@ const readBinary = async (url) => {
     return new DataView(await response.arrayBuffer())
 }
 
-const decodeHowHeld = (byte) => {
-    const heldVal = byte & 0xc0
-    if (heldVal == 0) {
-        return "swing"
-    } else if (heldVal == 0x40) {
-        return "out"
-    } else if (heldVal == 0x80) {
-        return "both"
-    } else {
-        return "at_side"
-    }
-}
-const LE = true // little-endian
-
-const decodeCelType = (byte) => {
-    const typeVal = byte & 0xc0
-    if (typeVal == 0x00) {
-        if ((byte & 0x20) == 0) {
-            return "bitmap"
-        } else {
-            return "text"
-        }
-    } else if (typeVal == 0x40) {
-        return "trap"
-    } else if (typeVal == 0x80) {
-        return "box"
-    } else {
-        return "circle"
-    }
-}
-
-const emptyBitmap = (w, h) => {
-    const bitmap = []
-    for (let y = 0; y < h; y ++) {
-        const scanline = []
-        for (let x = 0; x < w; x ++) {
-            scanline.push(0)
-            scanline.push(0)
-            scanline.push(0)
-            scanline.push(0)
-        }
-        bitmap.push(scanline)
-    }
-    return bitmap
-}
-
-const celDecoder = {}
-celDecoder.bitmap = (data, cel) => {
-    const bitmap = emptyBitmap(cel.width, cel.height)
-    let ibmp = 0
-    const end = cel.width * cel.height
-    const putByte = (byte) => {
-        const x = Math.floor(ibmp / cel.height) * 4
-        const y = (cel.height - (ibmp % cel.height)) - 1
-        bitmap[y][x]     = (byte & 0xc0) >> 6
-        bitmap[y][x + 1] = (byte & 0x3c) >> 4
-        bitmap[y][x + 2] = (byte & 0x0c) >> 2
-        bitmap[y][x + 3] = (byte & 0x03)
-        ibmp ++
-    }
-    let i = 6
-    while (ibmp < end) {
-        const byte = data.getUint8(i)
-        i ++
-        if (byte == 0) {
-            const count = data.getUint8(i)
-            i ++
-            if ((count & 0x80) == 0) {
-                const val = data.getUint8(i)
-                i ++
-                for (let repeat = 0; repeat < count; repeat ++) {
-                    putByte(val)
-                }
-            } else {
-                // transparent run
-                for (let repeat = 0; repeat < (count & 0x7f); repeat ++) {
-                    putByte(0)
-                }
-            }
-        } else {
-            putByte(byte)
-        }
-    }
-    cel.bitmap = bitmap
-}
-
 const makeCanvas = (w, h) => {
     const canvas = document.createElement("canvas")
     canvas.width = w
@@ -100,7 +16,7 @@ const makeCanvas = (w, h) => {
     return canvas    
 }
 
-const drawBitmap = (bitmap) => {
+const canvasFromBitmap = (bitmap) => {
     const h = bitmap.length
     const w = bitmap[0].length * 2
     const canvas = makeCanvas(w, h)
@@ -141,6 +57,128 @@ const drawBitmap = (bitmap) => {
     return canvas
 }
 
+// JS bitmap format: array of scanlines, each scanline being an array of numbers from 0-3
+const emptyBitmap = (w, h, color = 0) => {
+    const bitmap = []
+    for (let y = 0; y < h; y ++) {
+        const scanline = []
+        for (let x = 0; x < w; x ++) {
+            scanline.push(color)
+            scanline.push(color)
+            scanline.push(color)
+            scanline.push(color)
+        }
+        bitmap.push(scanline)
+    }
+    return bitmap
+}
+
+const drawByte = (bitmap, x, y, byte) => {
+    bitmap[y][x]     = (byte & 0xc0) >> 6
+    bitmap[y][x + 1] = (byte & 0x3c) >> 4
+    bitmap[y][x + 2] = (byte & 0x0c) >> 2
+    bitmap[y][x + 3] = (byte & 0x03)
+}
+
+// Prop decoding functions
+const decodeHowHeld = (byte) => {
+    const heldVal = byte & 0xc0
+    if (heldVal == 0) {
+        return "swing"
+    } else if (heldVal == 0x40) {
+        return "out"
+    } else if (heldVal == 0x80) {
+        return "both"
+    } else {
+        return "at_side"
+    }
+}
+
+const decodeCelType = (byte) => {
+    const typeVal = byte & 0xc0
+    if (typeVal == 0x00) {
+        if ((byte & 0x20) == 0) {
+            return "bitmap"
+        } else {
+            return "text"
+        }
+    } else if (typeVal == 0x40) {
+        return "trap"
+    } else if (typeVal == 0x80) {
+        return "box"
+    } else {
+        return "circle"
+    }
+}
+
+const celDecoder = {}
+celDecoder.bitmap = (data, cel) => {
+    // bitmap cells are RLE-encoded vertical strips of bytes. Decoding starts from the bottom-left
+    // and proceeds upwards until the top of the bitmap is hit; then then next vertical strip is decoded.
+    // Each byte describes four 2-bit pixels.
+    const bitmap = emptyBitmap(cel.width, cel.height)
+    let ibmp = 0
+    const end = cel.width * cel.height
+    const putByte = (byte) => {
+        const x = Math.floor(ibmp / cel.height) * 4
+        const y = (cel.height - (ibmp % cel.height)) - 1
+        drawByte(bitmap, x, y, byte)
+        ibmp ++
+    }
+    let i = 6
+    while (ibmp < end) {
+        const byte = data.getUint8(i)
+        i ++
+        if (byte == 0) {
+            // A zero byte denotes the start of a run of identical bytes. The second
+            // byte denotes the number of repetitions.
+            const count = data.getUint8(i)
+            i ++
+            if ((count & 0x80) == 0) {
+                // if the high bit of the count is not set, we read a third byte to
+                // determine the byte to repeat.
+                const val = data.getUint8(i)
+                i ++
+                for (let repeat = 0; repeat < count; repeat ++) {
+                    putByte(val)
+                }
+            } else {
+                // if the high bit of the count is set, the lower 7 bits are used as
+                // the count, and a fully transparent byte is repeated.
+                for (let repeat = 0; repeat < (count & 0x7f); repeat ++) {
+                    putByte(0)
+                }
+            }
+        } else {
+            // non-zero bytes are raw bitmap data
+            putByte(byte)
+        }
+    }
+    cel.bitmap = bitmap
+}
+
+celDecoder.box = (data, cel) => {
+    const bitmap = emptyBitmap(cel.width, cel.height)
+    cel.borderLR = (data.getUint8(0) & 0x20) != 0
+    cel.borderTB = (data.getUint8(0) & 0x10) != 0
+    cel.pattern = data.getUint8(6)
+    for (let y = 0; y < cel.height; y ++) {
+        for (let x = 0; x < cel.width; x ++) {
+            if (cel.borderTB && (y == 0 || y == (cel.height - 1))) {
+                drawByte(bitmap, x * 4, y, 0xaa)
+            } else {
+                drawByte(bitmap, x * 4, y, cel.pattern)
+            }
+        }
+        if (cel.borderLR) {
+            const line = bitmap[y]
+            line[0] = 2
+            line[line.length - 1] = 2
+        }
+    }
+    cel.bitmap = bitmap
+}
+
 const decodeCel = (data, changesColorRam) => {
     const cel = { 
         data: data,
@@ -158,7 +196,7 @@ const decodeCel = (data, changesColorRam) => {
         celDecoder[cel.type](data, cel)
     }
     if (cel.bitmap) {
-        cel.image = drawBitmap(cel.bitmap).toDataURL()
+        cel.canvas = canvasFromBitmap(cel.bitmap)
     }
     return cel
 }
@@ -232,12 +270,15 @@ const decodeProp = (data) => {
     // We could also potentially assume that this structure always follows the header (or the 
     // "container" XY array, if one exists), as that seems to be consistently be the case with all 
     // the props in the Habitat source tree.
-    for (let frameOff = graphicStateOff; ; frameOff ++) {
-        const frame = decodeFrame(data.getUint8(frameOff), stateCount)
-        if (!frame) {
-            break
+    // It's possible for there to be no frames, which is represented by an offset of 0 (no_animation)
+    if (graphicStateOff != 0) {
+        for (let frameOff = graphicStateOff; ; frameOff ++) {
+            const frame = decodeFrame(data.getUint8(frameOff), stateCount)
+            if (!frame) {
+                break
+            }
+            prop.frames.push(frame)
         }
-        prop.frames.push(frame)
     }
     for (let celOffsetOff = celOffsetsOff; allCelsMask != 0; celOffsetOff += 2) {
         const icel = prop.cels.length
@@ -251,9 +292,9 @@ const decodeProp = (data) => {
 const showCels = (prop) => {
     const container = document.getElementById("cels")
     for (const cel of prop.cels) {
-        if (cel.image) {
+        if (cel.canvas) {
             const img = document.createElement("img")
-            img.src = cel.image
+            img.src = cel.canvas.toDataURL()
             img.width = cel.width * 4 * 2 * 3
             img.height = cel.height * 3
             img.style.imageRendering = "pixelated"
