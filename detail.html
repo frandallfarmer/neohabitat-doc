@@ -18,8 +18,13 @@
         </div>
         <div id="errors"></div>
         <script>
+            const propFilter = (key, value) => {
+                if (key != "bitmap" && key != "data" && key != "canvas") {
+                    return value
+                }
+            }
             const dumpProp = (prop, container) => {
-                container.appendChild(textNode(JSON.stringify(prop, null, 2), "pre"))
+                container.appendChild(textNode(JSON.stringify(prop, propFilter, 2), "pre"))
             }
 
             const onload = async () => {
