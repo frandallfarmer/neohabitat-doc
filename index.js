@@ -336,7 +336,9 @@ const showStates = (prop) => {
     const container = document.getElementById("cels")
     for (const celmask of prop.celmasks) {
         const state = compositeCels(celsFromMask(prop, celmask))
-        container.appendChild(imageFromCanvas(state.canvas))
+        const img = imageFromCanvas(state.canvas)
+        img.alt = prop.filename
+        container.appendChild(img)
     }
 }
 
@@ -348,13 +350,43 @@ const showCels = (prop) => {
         }
     }
 }
+
+const decodeBinary = async (filename) => {
+    try {
+        const prop = decodeProp(await readBinary(`props/${filename}`))
+        prop.filename = filename
+        return prop
+    } catch (e) {
+        return { filename: filename, error: e }
+    }
+}
+
+const fetchImages = async () => {
+    const response = await fetch("props/index.json")
+    const filenames = await response.json()
+    return await Promise.all(filenames.map(decodeBinary))
+}
+
+const showError = (e, filename) => {
+    const container = document.getElementById("errors")
+    const errNode = document.createElement("p")
+    console.error(e)
+    errNode.innerHTML = `${filename}<br/>${e.toString()}`
+    container.appendChild(errNode)
+}
+
 const doTheThing = async () => {
-    const prop = decodeProp(await readBinary("picture2.bin"))
-    console.log(prop)
-    showStates(prop)
-    showStates(decodeProp(await readBinary("picture1.bin")))
-    showStates(decodeProp(await readBinary("picture3.bin")))
-    showStates(decodeProp(await readBinary("afro0.bin")))
+    for (const prop of await fetchImages()) {
+        if (prop.error) {
+            showError(prop.error, prop.filename)
+        } else {
+            try {
+                showStates(prop)
+            } catch (e) {
+                showError(e, prop.filename)
+            }
+        }
+    }
 }
 
 doTheThing()
