@@ -307,20 +307,28 @@ const compositeCels = (cels) => {
     let minY = Number.POSITIVE_INFINITY
     let maxX = Number.NEGATIVE_INFINITY
     let maxY = Number.NEGATIVE_INFINITY
+    let xRel = 0
+    let yRel = 0
     for (let cel of cels) {
-        minX = Math.min(minX, cel.xOffset)
-        minY = Math.min(minY, -cel.yOffset)
-        maxX = Math.max(maxX, cel.width + cel.xOffset)
-        maxY = Math.max(maxY, cel.height - cel.yOffset)
-    }    const container = document.getElementById("cels")
+        minX = Math.min(minX, cel.xOffset + xRel)
+        minY = Math.min(minY, -(cel.yOffset + yRel))
+        maxX = Math.max(maxX, cel.width + cel.xOffset + xRel)
+        maxY = Math.max(maxY, cel.height - (cel.yOffset + yRel))
+        xRel += cel.xRel 
+        yRel += cel.yRel
+    }
 
     const w = (maxX - minX) * 8
     const h = maxY - minY
 
     const canvas = makeCanvas(w, h)
     const ctx = canvas.getContext("2d")
+    xRel = 0
+    yRel = 0
     for (let cel of cels) {
-        ctx.drawImage(cel.canvas, (cel.xOffset - minX) * 8, -cel.yOffset - minY)
+        ctx.drawImage(cel.canvas, (cel.xOffset + xRel - minX) * 8, -(cel.yOffset + yRel) - minY)
+        xRel += cel.xRel 
+        yRel += cel.yRel
     }
     return { canvas: canvas, xOffset: minX * 8, yOffset: minY }
 }
