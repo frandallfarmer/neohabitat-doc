@@ -184,7 +184,7 @@ const decodeCel = (data, changesColorRam) => {
         data: data,
         changesColorRam: changesColorRam,
         type: decodeCelType(data.getUint8(0)),
-        wild: (data.getUint8(0) & 0x10) == 0 ? "color" : "pattern",
+        // wild: (data.getUint8(0) & 0x10) == 0 ? "color" : "pattern",
         width: data.getUint8(0) & 0x0f,
         height: data.getUint8(1),
         xOffset: data.getInt8(2),
@@ -289,25 +289,72 @@ const decodeProp = (data) => {
     return prop
 }
 
+const celsFromMask = (prop, celMask) => {
+    const cels = []
+    for (let icel = 0; icel < 8; icel ++) {
+        const celbit = 0x80 >> icel
+        if ((celMask & celbit) != 0) {
+            cels.push(prop.cels[icel])
+        }
+    }
+    return cels
+}
+
+const compositeCels = (cels) => {
+    let minX = Number.POSITIVE_INFINITY
+    let minY = Number.POSITIVE_INFINITY
+    let maxX = Number.NEGATIVE_INFINITY
+    let maxY = Number.NEGATIVE_INFINITY
+    for (let cel of cels) {
+        minX = Math.min(minX, cel.xOffset)
+        minY = Math.min(minY, -cel.yOffset)
+        maxX = Math.max(maxX, cel.width + cel.xOffset)
+        maxY = Math.max(maxY, cel.height - cel.yOffset)
+    }    const container = document.getElementById("cels")
+
+    const w = (maxX - minX) * 8
+    const h = maxY - minY
+
+    const canvas = makeCanvas(w, h)
+    const ctx = canvas.getContext("2d")
+    for (let cel of cels) {
+        ctx.drawImage(cel.canvas, (cel.xOffset - minX) * 8, -cel.yOffset - minY)
+    }
+    return { canvas: canvas, xOffset: minX * 8, yOffset: minY }
+}
+
+const imageFromCanvas = (canvas) => {
+    const img = document.createElement("img")
+    img.src = canvas.toDataURL()
+    img.width = canvas.width * 3
+    img.height = canvas.height * 3
+    img.style.imageRendering = "pixelated"
+    return img
+}
+
+const showStates = (prop) => {
+    const container = document.getElementById("cels")
+    for (const celmask of prop.celmasks) {
+        const state = compositeCels(celsFromMask(prop, celmask))
+        container.appendChild(imageFromCanvas(state.canvas))
+    }
+}
+
 const showCels = (prop) => {
     const container = document.getElementById("cels")
     for (const cel of prop.cels) {
         if (cel.canvas) {
-            const img = document.createElement("img")
-            img.src = cel.canvas.toDataURL()
-            img.width = cel.width * 4 * 2 * 3
-            img.height = cel.height * 3
-            img.style.imageRendering = "pixelated"
-            container.appendChild(img)
+            container.appendChild(imageFromCanvas(cel.canvas))
         }
     }
 }
 const doTheThing = async () => {
-    const prop = decodeProp(await readBinary("picture1.bin"))
+    const prop = decodeProp(await readBinary("picture2.bin"))
     console.log(prop)
-    showCels(prop)
-    showCels(decodeProp(await readBinary("picture2.bin")))
-    showCels(decodeProp(await readBinary("picture3.bin")))
+    showStates(prop)
+    showStates(decodeProp(await readBinary("picture1.bin")))
+    showStates(decodeProp(await readBinary("picture3.bin")))
+    showStates(decodeProp(await readBinary("afro0.bin")))
 }
 
 doTheThing()
