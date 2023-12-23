@@ -332,8 +332,7 @@ const imageFromCanvas = (canvas) => {
     return img
 }
 
-const showStates = (prop) => {
-    const container = document.getElementById("cels")
+const showStates = (prop, container) => {
     for (const celmask of prop.celmasks) {
         const state = compositeCels(celsFromMask(prop, celmask))
         const img = imageFromCanvas(state.canvas)
@@ -342,8 +341,7 @@ const showStates = (prop) => {
     }
 }
 
-const showCels = (prop) => {
-    const container = document.getElementById("cels")
+const showCels = (prop, container) => {
     for (const cel of prop.cels) {
         if (cel.canvas) {
             container.appendChild(imageFromCanvas(cel.canvas))
@@ -353,18 +351,12 @@ const showCels = (prop) => {
 
 const decodeBinary = async (filename) => {
     try {
-        const prop = decodeProp(await readBinary(`props/${filename}`))
+        const prop = decodeProp(await readBinary(filename))
         prop.filename = filename
         return prop
     } catch (e) {
         return { filename: filename, error: e }
     }
-}
-
-const fetchImages = async () => {
-    const response = await fetch("props/index.json")
-    const filenames = await response.json()
-    return await Promise.all(filenames.map(decodeBinary))
 }
 
 const showError = (e, filename) => {
@@ -375,18 +367,31 @@ const showError = (e, filename) => {
     container.appendChild(errNode)
 }
 
-const doTheThing = async () => {
-    for (const prop of await fetchImages()) {
-        if (prop.error) {
-            showError(prop.error, prop.filename)
-        } else {
-            try {
-                showStates(prop)
-            } catch (e) {
-                showError(e, prop.filename)
-            }
+const displayFile = async (filename, container) => {
+    const prop = await decodeBinary(filename)
+    if (prop.error) {
+        showError(prop.error, prop.filename)
+    } else {
+        try {
+            showStates(prop, container)
+        } catch (e) {
+            showError(e, prop.filename)
         }
     }
+}
+
+const displayList = async (indexFile, containerId) => {
+    const response = await fetch(indexFile)
+    const filenames = await response.json()
+    const container = document.getElementById(containerId)
+    for (filename of filenames) {
+        displayFile(filename, container)
+    }
+}
+
+const doTheThing = async () => {
+    await displayList("heads.json", "heads")
+    await displayList("props.json", "props")
 }
 
 doTheThing()

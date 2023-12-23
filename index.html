@@ -4,9 +4,22 @@
         <meta charset="UTF-8"/>
         <title>Inhabitor - The Habitat Inspector</title>
         <script src="index.js"></script>
+        <script>
+            function showErrors() {
+                document.getElementById('errors').style.display = 'block'
+            }
+        </script>
     </head>
     <body>
-        <div id="cels"></div>
-        <div id="errors"></div>
+        <div id="heads">
+            <h1>The Hall Of Heads</h1>
+        </div>
+        <div id="props">
+            <h1>Props</h1>
+        </div>
+        <a href="javascript:showErrors();">
+            Show errors
+        </a>
+        <div id="errors" style="display: none"></div>
     </body>
 </html>
