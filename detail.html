@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Inhabitor - The Habitat Inspector</title>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1 id="filename"></h1>
+        <div id="states">
+            <h2>States</h1>
+        </div>
+        <div id="cels">
+            <h2>Cels</h1>
+        </div>
+        <div id="data">
+            <h2>Data</h1>
+        </div>
+        <div id="errors"></div>
+        <script>
+            const dumpProp = (prop, container) => {
+                container.appendChild(textNode(JSON.stringify(prop, null, 2), "pre"))
+            }
+
+            const onload = async () => {
+                const q = new URLSearchParams(window.location.search)
+                const filename = q.get("f")
+                document.getElementById("filename").innerText = filename
+                try {
+                    const prop = await decodeBinary(filename)
+                    dumpProp(prop, document.getElementById("data"))
+                    showStates(prop, document.getElementById("states"))
+                    showCels(prop, document.getElementById("cels"))
+                } catch (e) {
+                    showError(e, filename)
+                }
+            }
+            onload()
+        </script>
+    </body>
+</html>

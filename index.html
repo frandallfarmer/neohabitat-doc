@@ -8,6 +8,13 @@
             function showErrors() {
                 document.getElementById('errors').style.display = 'block'
             }
+
+            const displayEverything = async () => {
+                await displayList("heads.json", "heads")
+                await displayList("props.json", "props")
+            }
+
+            displayEverything()
         </script>
     </head>
     <body>

@@ -332,12 +332,25 @@ const imageFromCanvas = (canvas) => {
     return img
 }
 
+const textNode = (text, type = "span") => {
+    const node = document.createElement(type)
+    node.innerText = text
+    return node
+}
+
+const linkDetail = (element, filename) => {
+    const detailLink = document.createElement("a")
+    detailLink.href = `detail.html?f=${filename}`
+    detailLink.appendChild(element)
+    return detailLink
+}
+
 const showStates = (prop, container) => {
     for (const celmask of prop.celmasks) {
         const state = compositeCels(celsFromMask(prop, celmask))
         const img = imageFromCanvas(state.canvas)
         img.alt = prop.filename
-        container.appendChild(img)
+        container.appendChild(linkDetail(img, prop.filename))
     }
 }
 
@@ -363,7 +376,8 @@ const showError = (e, filename) => {
     const container = document.getElementById("errors")
     const errNode = document.createElement("p")
     console.error(e)
-    errNode.innerHTML = `${filename}<br/>${e.toString()}`
+    errNode.appendChild(linkDetail(textNode(filename, "b"), filename))
+    errNode.appendChild(textNode(e.toString(), "p"))
     container.appendChild(errNode)
 }
 
@@ -388,10 +402,3 @@ const displayList = async (indexFile, containerId) => {
         displayFile(filename, container)
     }
 }
-
-const doTheThing = async () => {
-    await displayList("heads.json", "heads")
-    await displayList("props.json", "props")
-}
-
-doTheThing()
