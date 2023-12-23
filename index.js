@@ -228,7 +228,7 @@ const decodeWalkto = (byte) => {
 }
 
 const decodeProp = (data) => {
-    let prop = { 
+    const prop = { 
         data: data,
         howHeld: decodeHowHeld(data.getUint8(0)),
         colorBitmask: data.getUint8(1),
@@ -257,14 +257,26 @@ const decodeProp = (data) => {
         allCelsMask != 0xf8 && allCelsMask != 0xfc && allCelsMask != 0xfe && allCelsMask != 0xff) {
         throw new Error("Inconsistent graphic state cel masks - implies unused cel data")
     }
+    let firstCelOff = Number.POSITIVE_INFINITY
+    for (let celOffsetOff = celOffsetsOff; allCelsMask != 0; celOffsetOff += 2) {
+        const icel = prop.cels.length
+        const celbit = 0x80 >> icel
+        const celOff = data.getUint16(celOffsetOff, LE)
+        firstCelOff = Math.min(celOff, firstCelOff)
+        prop.cels.push(decodeCel(new DataView(data.buffer, celOff), (prop.colorBitmask & celbit) != 0))
+        allCelsMask = (allCelsMask << 1) & 0xff
+    }
+
     // The prop structure also does not encode a count for how many frames there are, so we simply
-    // stop parsing once we find one that doesn't make sense. 
-    // We could also potentially assume that this structure always follows the header (or the 
-    // "container" XY array, if one exists), as that seems to be consistently be the case with all 
-    // the props in the Habitat source tree.
+    // stop parsing once we find one that doesn't make sense.
+    // We also use the heuristic that this structure always precedes the first cel, as that seems to be 
+    // consistently be the case with all the props in the Habitat source tree. We'll stop reading
+    // animation data if we cross that boundary. If we encounter a prop that has the animation data
+    // _after_ the cel data, which would be legal but doesn't happen in practice, then we ignore this
+    // heuristic rather than failing to parse any animation data.
     // It's possible for there to be no frames, which is represented by an offset of 0 (no_animation)
     if (graphicStateOff != 0) {
-        for (let frameOff = graphicStateOff; ; frameOff += 2) {
+        for (let frameOff = graphicStateOff; (graphicStateOff > firstCelOff) || (frameOff < firstCelOff); frameOff += 2) {
             // each animation is two bytes: the starting state, and the ending state
             // the first byte can have its high bit set to indicate that the animation should cycle
             const cycle = (data.getUint8(frameOff) & 0x80) != 0
@@ -275,12 +287,6 @@ const decodeProp = (data) => {
             }
             prop.animations.push({ cycle: cycle, startState: startState, endState: endState })
         }
-    }
-    for (let celOffsetOff = celOffsetsOff; allCelsMask != 0; celOffsetOff += 2) {
-        const icel = prop.cels.length
-        const celbit = 0x80 >> icel
-        prop.cels.push(decodeCel(new DataView(data.buffer, data.getUint16(celOffsetOff, LE)), (prop.colorBitmask & celbit) != 0))
-        allCelsMask = (allCelsMask << 1) & 0xff
     }
     return prop
 }
@@ -394,7 +400,7 @@ const displayList = async (indexFile, containerId) => {
     const response = await fetch(indexFile)
     const filenames = await response.json()
     const container = document.getElementById(containerId)
-    for (filename of filenames) {
+    for (const filename of filenames) {
         displayFile(filename, container)
     }
 }
