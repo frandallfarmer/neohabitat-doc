@@ -201,14 +201,6 @@ const decodeCel = (data, changesColorRam) => {
     return cel
 }
 
-const decodeFrame = (byte, stateCount) => {
-    const frameIndex = byte & 0x7f
-    if (frameIndex > stateCount) {
-        return null
-    }
-    return { state: frameIndex, cycle: (byte & 0x80) != 0 }
-}
-
 const decodeSide = (byte) => {
     const side = byte & 0x03
     if (side == 0x00) {
@@ -242,7 +234,7 @@ const decodeProp = (data) => {
         colorBitmask: data.getUint8(1),
         containerXYOff: data.getUint8(3), // TODO: parse this when nonzero
         walkto: { left: decodeWalkto(data.getUint8(4)), right: decodeWalkto(data.getUint8(5)), yoff: data.getInt8(6) },
-        frames: [],
+        animations: [],
         celmasks: [],
         cels: []
     }
@@ -272,12 +264,16 @@ const decodeProp = (data) => {
     // the props in the Habitat source tree.
     // It's possible for there to be no frames, which is represented by an offset of 0 (no_animation)
     if (graphicStateOff != 0) {
-        for (let frameOff = graphicStateOff; ; frameOff ++) {
-            const frame = decodeFrame(data.getUint8(frameOff), stateCount)
-            if (!frame) {
+        for (let frameOff = graphicStateOff; ; frameOff += 2) {
+            // each animation is two bytes: the starting state, and the ending state
+            // the first byte can have its high bit set to indicate that the animation should cycle
+            const cycle = (data.getUint8(frameOff) & 0x80) != 0
+            const startState = data.getUint8(frameOff) & 0x7f
+            const endState = data.getUint8(frameOff + 1)
+            if (startState >= stateCount || endState >= stateCount) {
                 break
             }
-            prop.frames.push(frame)
+            prop.animations.push({ cycle: cycle, startState: startState, endState: endState })
         }
     }
     for (let celOffsetOff = celOffsetsOff; allCelsMask != 0; celOffsetOff += 2) {
