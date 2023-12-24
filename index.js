@@ -228,12 +228,17 @@ celDecoder.trap = (data, cel) => {
     // cycle2: same thing, but for x2a (right edge)
     // at the end, increments y1 and jumps back to the top of draw_line
     cel.width = Math.floor((Math.max(cel.x1a, cel.x1b, cel.x2a, cel.x2b) + 3) / 4)
-    const height = cel.height
-    cel.bitmap = emptyBitmap(cel.width, height)
+    // trap.m:32 - delta_y and vcount are calculated by subtracting y2 - y1.
+    // mix.m:253: y2 is calculated as cel_y + cel_height
+    // mix.m:261: y1 is calculated as cel_y + 1
+    // So for a one-pixel tall trapezoid, deltay is 0, because y1 == y2.
+    // vcount is decremented until it reaches -1, compensating for the off-by-one.
+    const deltay = cel.height - 1
+    cel.bitmap = emptyBitmap(cel.width, cel.height)
     const dxa = Math.abs(cel.x1a - cel.x2a)
     const dxb = Math.abs(cel.x1b - cel.x2b)
-    const countMaxA = Math.max(dxa, height)
-    const countMaxB = Math.max(dxb, height)
+    const countMaxA = Math.max(dxa, deltay)
+    const countMaxB = Math.max(dxb, deltay)
     const inca = cel.x1a < cel.x2a ? 1 : -1
     const incb = cel.x1b < cel.x2b ? 1 : -1
     let x1aLo = Math.floor(countMaxA / 2)
@@ -242,9 +247,9 @@ celDecoder.trap = (data, cel) => {
     let y1bLo = x1bLo
     let xa = cel.x1a
     let xb = cel.x1b
-    for (let y = 0; y < height; y ++) {
+    for (let y = 0; y < cel.height; y ++) {
         let patternByte = cel.pattern
-        if (border && (y == 0 || y == (height - 1))) {
+        if (border && (y == 0 || y == (cel.height - 1))) {
             // top and bottom border line
             patternByte = 0xaa
         }
@@ -270,7 +275,7 @@ celDecoder.trap = (data, cel) => {
                 x1aLo -= countMaxA
                 xa += inca
             }
-            y1aLo += height
+            y1aLo += deltay
         } while (y1aLo < countMaxA)
         y1aLo -= countMaxA
 
@@ -281,7 +286,7 @@ celDecoder.trap = (data, cel) => {
                 x1bLo -= countMaxB
                 xb += incb
             }
-            y1bLo += height
+            y1bLo += deltay
         } while (y1bLo < countMaxA)
         y1bLo -= countMaxA
     }
