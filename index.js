@@ -57,6 +57,15 @@ const canvasFromBitmap = (bitmap) => {
     return canvas
 }
 
+const signedByte = (byte) => {
+    if ((byte & 0x80) != 0) {
+        const complement = (byte ^ 0xff) + 1
+        return -complement
+    } else {
+        return byte
+    }
+}
+
 // JS bitmap format: array of scanlines, each scanline being an array of numbers from 0-3
 const emptyBitmap = (w, h, color = 0) => {
     const bitmap = []
@@ -179,6 +188,105 @@ celDecoder.box = (data, cel) => {
     cel.bitmap = bitmap
 }
 
+celDecoder.trap = (data, cel) => {
+    let border = false
+    // trap.m:21 - high-bit set means "draw a border"
+    // It looks like this was used as a flag and the real height
+    // was ORed with 0x80 - see house2.m, sign2.m
+    // There are also trapezoids that use 0x80 as their height - 
+    // bwall6.m, bwall7.m, bwall9.m, magic_wall.m
+    // This appears to be special-cased to mean "no border" at trap.m:26
+    // mix.m:253 appears to have the logic to calculate y2, extracting
+    // the height by ANDing with 0x7f (when not 0x80)
+    if ((cel.height & 0x80) != 0 && cel.height != 0x80) {
+        border = true
+        cel.height = cel.height & 0x7f
+    }
+    if ((data.getUint8(0) & 0x10) == 0) {
+        // shape_pattern is a repeating 4-pixel colour, same as box
+        cel.pattern = data.getUint8(6)
+    } else {
+        // shape_pattern is 0xff, and the pattern is a bitmap that follows
+        // the trapezoid definition
+        throw Error("TODO: Implement inline trapezoid patterns")
+    }
+    cel.x1a = data.getUint8(7)
+    cel.x1b = data.getUint8(8)
+    cel.x2a = data.getUint8(9)
+    cel.x2b = data.getUint8(10)
+
+    // trapezoid-drawing algorithm:
+    // draw_line: draws a line from x1a,y1 to x1b, y1
+    // handles border drawing (last/first line, edges)
+    // decreases vcount, then jumps to cycle1 if there
+    // are more lines
+    // cycle1: run bresenham, determine if x1a (left edge) needs to be incremented
+    // or decremented (self-modifying code! the instruction in inc_dec1 is
+    // written at trap.m:52)
+    // has logic to jump back to cycle1 if we have a sharp enough angle that
+    // we need to move more than one pixel horizontally
+    // cycle2: same thing, but for x2a (right edge)
+    // at the end, increments y1 and jumps back to the top of draw_line
+    cel.width = Math.floor((Math.max(cel.x1a, cel.x1b, cel.x2a, cel.x2b) + 3) / 4)
+    const height = cel.height
+    cel.bitmap = emptyBitmap(cel.width, height)
+    const dxa = Math.abs(cel.x1a - cel.x2a)
+    const dxb = Math.abs(cel.x1b - cel.x2b)
+    const countMaxA = Math.max(dxa, height)
+    const countMaxB = Math.max(dxb, height)
+    const inca = cel.x1a < cel.x2a ? 1 : -1
+    const incb = cel.x1b < cel.x2b ? 1 : -1
+    let x1aLo = Math.floor(countMaxA / 2)
+    let y1aLo = x1aLo
+    let x1bLo = Math.floor(countMaxB / 2)
+    let y1bLo = x1bLo
+    let xa = cel.x1a
+    let xb = cel.x1b
+    for (let y = 0; y < height; y ++) {
+        let patternByte = cel.pattern
+        if (border && (y == 0 || y == (height - 1))) {
+            // top and bottom border line
+            patternByte = 0xaa
+        }
+        // draw a horizontal  line from xa,y to xb,y
+        const xStart = xa - (xa % 4)
+        const xEnd = (xb + (3 - (xb % 4))) - 3
+        for (let x = xStart + 4; x < xEnd; x += 4) {
+            drawByte(cel.bitmap, x, y, patternByte)
+        }
+        const startBit = ((xa - xStart) * 2)
+        const startByte = border ? (0xff >> (startBit + 2)) & patternByte | (0x80 >> startBit) 
+                                 : (0xff >> startBit) & patternByte
+        drawByte(cel.bitmap, xStart, y, startByte)
+        const endBit = (((xEnd + 3) - xb) * 2)
+        const endByte = border ? (0xff << (endBit + 2)) & patternByte | (2 << endBit)
+                               : (0xff << endBit) & patternByte
+        drawByte(cel.bitmap, xEnd, y, endByte)
+
+        // cycle1: move xa
+        do {
+            x1aLo += dxa
+            if (x1aLo >= countMaxA) {
+                x1aLo -= countMaxA
+                xa += inca
+            }
+            y1aLo += height
+        } while (y1aLo < countMaxA)
+        y1aLo -= countMaxA
+
+        // cycle2: move xb
+        do {
+            x1bLo += dxb
+            if (x1bLo >= countMaxB) {
+                x1bLo -= countMaxB
+                xb += incb
+            }
+            y1bLo += height
+        } while (y1bLo < countMaxA)
+        y1bLo -= countMaxA
+    }
+}
+
 const decodeCel = (data, changesColorRam) => {
     const cel = { 
         data: data,
@@ -211,15 +319,6 @@ const decodeSide = (byte) => {
         return "up"
     } else {
         return "down"
-    }
-}
-
-const signedByte = (byte) => {
-    if ((byte & 0x80) != 0) {
-        const complement = (byte ^ 0xff) + 1
-        return -complement
-    } else {
-        return byte
     }
 }
 
@@ -388,6 +487,9 @@ const showError = (e, filename) => {
     console.error(e)
     errNode.appendChild(linkDetail(textNode(filename, "b"), filename))
     errNode.appendChild(textNode(e.toString(), "p"))
+    if (e.stack) {
+        errNode.appendChild(textNode(e.stack.toString(), "pre"))
+    }
     container.appendChild(errNode)
 }
 

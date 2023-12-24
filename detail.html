@@ -47,8 +47,12 @@
                 try {
                     const prop = await decodeBinary(filename)
                     dumpProp(prop, document.getElementById("data"))
-                    showStates(prop, document.getElementById("states"))
-                    showCels(prop, document.getElementById("cels"))
+                    if (prop.error) {
+                        showError(prop.error, filename)
+                    } else {
+                        showStates(prop, document.getElementById("states"))
+                        showCels(prop, document.getElementById("cels"))
+                    }
                 } catch (e) {
                     showError(e, filename)
                 }
