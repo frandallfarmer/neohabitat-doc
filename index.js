@@ -188,6 +188,20 @@ celDecoder.box = (data, cel) => {
     cel.bitmap = bitmap
 }
 
+const horizontalLine = (bitmap, xa, xb, y, patternByte) => {
+    const xStart = xa - (xa % 4)
+    const xEnd = (xb + (3 - (xb % 4))) - 3
+    for (let x = xStart + 4; x < xEnd; x += 4) {
+        drawByte(bitmap, x, y, patternByte)
+    }
+    const startBit = ((xa - xStart) * 2)
+    const startByte = (0xff >> startBit) & patternByte
+    drawByte(bitmap, xStart, y, startByte)
+    const endBit = (((xEnd + 3) - xb) * 2)
+    const endByte = (0xff << endBit) & patternByte
+    drawByte(bitmap, xEnd, y, endByte)
+}
+
 celDecoder.trap = (data, cel) => {
     let border = false
     // trap.m:21 - high-bit set means "draw a border"
@@ -208,7 +222,22 @@ celDecoder.trap = (data, cel) => {
     } else {
         // shape_pattern is 0xff, and the pattern is a bitmap that follows
         // the trapezoid definition
-        throw Error("TODO: Implement inline trapezoid patterns")
+        // dline.m:103 - first two bytes are bitmasks used for efficiently calculating
+        // offsets into the texture. This means that the dimensions will be a power of 
+        // two, and we can get the width and height simply by adding one to the mask.
+        const texW = data.getUint8(11) + 1
+        const texH = data.getUint8(12) + 1
+        cel.texture = emptyBitmap(texW, texH)
+        let i = 13
+        // dline.m:111 - the y position into the texture is calculated by
+        // ANDing y1 with the height mask; thus, unlike prop bitmaps, we decode
+        // from the top down
+        for (let y = 0; y < texH; y ++) {
+            for (let x = 0; x < texW; x ++) {
+                drawByte(cel.texture, x * 4, y, data.getUint8(i))
+                i ++
+            }
+        }
     }
     cel.x1a = data.getUint8(7)
     cel.x1b = data.getUint8(8)
@@ -248,25 +277,25 @@ celDecoder.trap = (data, cel) => {
     let xa = cel.x1a
     let xb = cel.x1b
     for (let y = 0; y < cel.height; y ++) {
-        let patternByte = cel.pattern
+        const line = cel.bitmap[y]
         if (border && (y == 0 || y == (cel.height - 1))) {
             // top and bottom border line
-            patternByte = 0xaa
+            horizontalLine(cel.bitmap, xa, xb, y, 0xaa, true)
+        } else {
+            if (cel.texture) {
+                const texLine = cel.texture[y % cel.texture.length]
+                for (let x = xa; x <= xb; x ++) {
+                    line[x] = texLine[x % texLine.length]
+                }
+            } else {
+                horizontalLine(cel.bitmap, xa, xb, y, cel.pattern, border)
+            }
         }
-        // draw a horizontal  line from xa,y to xb,y
-        const xStart = xa - (xa % 4)
-        const xEnd = (xb + (3 - (xb % 4))) - 3
-        for (let x = xStart + 4; x < xEnd; x += 4) {
-            drawByte(cel.bitmap, x, y, patternByte)
+        
+        if (border) {
+            line[xa] = 2
+            line[xb] = 2
         }
-        const startBit = ((xa - xStart) * 2)
-        const startByte = border ? (0xff >> (startBit + 2)) & patternByte | (0x80 >> startBit) 
-                                 : (0xff >> startBit) & patternByte
-        drawByte(cel.bitmap, xStart, y, startByte)
-        const endBit = (((xEnd + 3) - xb) * 2)
-        const endByte = border ? (0xff << (endBit + 2)) & patternByte | (2 << endBit)
-                               : (0xff << endBit) & patternByte
-        drawByte(cel.bitmap, xEnd, y, endByte)
 
         // cycle1: move xa
         do {
