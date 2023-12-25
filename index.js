@@ -468,7 +468,7 @@ const compositeCels = (cels) => {
         xRel += cel.xRel 
         yRel += cel.yRel
     }
-    return { canvas: canvas, xOffset: minX * 8, yOffset: minY }
+    return { canvas: canvas, xOffset: minX * 8, yOffset: minY, w: w, h: h }
 }
 
 const imageFromCanvas = (canvas) => {
@@ -491,6 +491,50 @@ const linkDetail = (element, filename) => {
     detailLink.href = `detail.html?f=${filename}`
     detailLink.appendChild(element)
     return detailLink
+}
+
+const createAnimation = (prop, animation) => {
+    const frames = []
+    for (let istate = animation.startState; istate <= animation.endState; istate ++) {
+        frames.push(compositeCels(celsFromMask(prop, prop.celmasks[istate])))
+    }
+    if (frames.length == 1) {
+        return imageFromCanvas(frames[0].canvas)
+    }
+    let minX = Number.POSITIVE_INFINITY
+    let minY = Number.POSITIVE_INFINITY
+    let maxX = Number.NEGATIVE_INFINITY
+    let maxY = Number.NEGATIVE_INFINITY
+    for (const frame of frames) {
+        minX = Math.min(minX, frame.xOffset)
+        minY = Math.min(minY, frame.yOffset)
+        maxX = Math.max(maxX, frame.xOffset + frame.w)
+        maxY = Math.max(maxY, frame.yOffset + frame.h)
+    }
+
+    const w = maxX - minX
+    const h = maxY - minY
+    const canvas = makeCanvas(w, h)
+    canvas.style.imageRendering = "pixelated"
+    canvas.style.width = `${w * 3}px`
+    canvas.style.height = `${h * 3}px`
+    let iframe = 0
+    const ctx = canvas.getContext("2d")
+    const nextFrame = () => {
+        const frame = frames[iframe]
+        ctx.clearRect(0, 0, w, h)
+        ctx.drawImage(frame.canvas, frame.xOffset - minX, frame.yOffset - minY)
+        iframe = (iframe + 1) % frames.length
+    }
+    nextFrame()
+    setInterval(nextFrame, 250)
+    return canvas
+}
+
+const showAnimations = (prop, container) => {
+    for (const animation of prop.animations) {
+        container.appendChild(linkDetail(createAnimation(prop, animation), prop.filename))
+    }
 }
 
 const showStates = (prop, container) => {
@@ -541,7 +585,11 @@ const displayFile = async (filename, container) => {
         showError(prop.error, prop.filename)
     } else {
         try {
-            showStates(prop, container)
+            if (prop.animations.length > 0) {
+                showAnimations(prop, container)
+            } else {
+                showStates(prop, container)
+            }
         } catch (e) {
             container.parentNode.removeChild(container)
             showError(e, prop.filename)

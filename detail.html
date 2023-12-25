@@ -19,6 +19,9 @@
     </head>
     <body>
         <h1 id="filename"></h1>
+        <div id="animations">
+            <h2>Animations</h2>
+        </div>
         <div id="states">
             <h2>States</h1>
         </div>
@@ -50,6 +53,7 @@
                     if (prop.error) {
                         showError(prop.error, filename)
                     } else {
+                        showAnimations(prop, document.getElementById("animations"))
                         showStates(prop, document.getElementById("states"))
                         showCels(prop, document.getElementById("cels"))
                     }
