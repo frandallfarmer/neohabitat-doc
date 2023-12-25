@@ -24,6 +24,8 @@
             const displayEverything = async () => {
                 await displayList("heads.json", "heads")
                 await displayList("props.json", "props")
+                await displayList("misc.json", "misc")
+                await displayList("beta.json", "beta")
             }
 
             displayEverything()
@@ -43,14 +45,24 @@
         <p>
             The images are <code>.bin</code> files that have been pulled from the 
             <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat">
-            Habitat source archive</a> released by the MADE on GitHub. Some of these objects 
-            were never actually included in any released version of Habitat.
+            Habitat source archive</a> released by the MADE on GitHub. Duplicates have been removed.
+            Some of these objects were never actually included in any released version of Habitat.
         </p>
         <div id="heads">
             <h3>The Hall Of Heads</h3>
+            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Heads">aric/mic/Gr/Heads</a></p>
+        </div>
+        <div id="misc">
+            <h3>More Heads</h3>
+            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/sources/c64/Images">sources/c64/Images</a></p>
         </div>
         <div id="props">
             <h3>Props</h3>
+            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Props">aric/mic/Gr/Props</a></p>
+        </div>
+        <div id="beta">
+            <h3>Beta-only</h3>
+            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/habitat/Beta/Images">habitat/Beta/Images</a></p>
         </div>
         <a href="javascript:showErrors();">Show errors</a>
         <div id="errors" style="display: none"></div>

@@ -436,6 +436,9 @@ const celsFromMask = (prop, celMask) => {
 }
 
 const compositeCels = (cels) => {
+    if (cels.length == 0) {
+        return null
+    }
     let minX = Number.POSITIVE_INFINITY
     let minY = Number.POSITIVE_INFINITY
     let maxX = Number.NEGATIVE_INFINITY
@@ -459,7 +462,9 @@ const compositeCels = (cels) => {
     xRel = 0
     yRel = 0
     for (let cel of cels) {
-        ctx.drawImage(cel.canvas, (cel.xOffset + xRel - minX) * 8, -(cel.yOffset + yRel) - minY)
+        if (cel.canvas) {
+            ctx.drawImage(cel.canvas, (cel.xOffset + xRel - minX) * 8, -(cel.yOffset + yRel) - minY)
+        }
         xRel += cel.xRel 
         yRel += cel.yRel
     }
@@ -491,9 +496,11 @@ const linkDetail = (element, filename) => {
 const showStates = (prop, container) => {
     for (const celmask of prop.celmasks) {
         const state = compositeCels(celsFromMask(prop, celmask))
-        const img = imageFromCanvas(state.canvas)
-        img.alt = prop.filename
-        container.appendChild(linkDetail(img, prop.filename))
+        if (state) {
+            const img = imageFromCanvas(state.canvas)
+            img.alt = prop.filename
+            container.appendChild(linkDetail(img, prop.filename))
+        }
     }
 }
 
@@ -530,11 +537,13 @@ const showError = (e, filename) => {
 const displayFile = async (filename, container) => {
     const prop = await decodeBinary(filename)
     if (prop.error) {
+        container.parentNode.removeChild(container)
         showError(prop.error, prop.filename)
     } else {
         try {
             showStates(prop, container)
         } catch (e) {
+            container.parentNode.removeChild(container)
             showError(e, prop.filename)
         }
     }
@@ -545,6 +554,12 @@ const displayList = async (indexFile, containerId) => {
     const filenames = await response.json()
     const container = document.getElementById(containerId)
     for (const filename of filenames) {
-        displayFile(filename, container)
+        const fileContainer = document.createElement("div")
+        fileContainer.style.border = "1px solid black"
+        fileContainer.style.margin = "2px"
+        fileContainer.style.display = "inline-block"
+        fileContainer.appendChild(linkDetail(textNode(filename, "div"), filename))
+        container.appendChild(fileContainer)
+        displayFile(filename, fileContainer)
     }
 }
