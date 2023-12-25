@@ -550,7 +550,7 @@ const displayFile = async (filename, container) => {
 }
 
 const displayList = async (indexFile, containerId) => {
-    const response = await fetch(indexFile)
+    const response = await fetch(indexFile, { cache: "no-cache" })
     const filenames = await response.json()
     const container = document.getElementById(containerId)
     for (const filename of filenames) {
