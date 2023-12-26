@@ -605,9 +605,14 @@ const displayList = async (indexFile, containerId) => {
         const fileContainer = document.createElement("div")
         fileContainer.style.border = "1px solid black"
         fileContainer.style.margin = "2px"
+        fileContainer.style.padding = "2px"
         fileContainer.style.display = "inline-block"
         fileContainer.appendChild(linkDetail(textNode(filename, "div"), filename))
         container.appendChild(fileContainer)
-        displayFile(filename, fileContainer)
+        if (filename != 'heads/fhead.bin') {
+            displayFile(filename, fileContainer)
+        } else {
+            fileContainer.appendChild(textNode("CW: Pixel genitals"))
+        }
     }
 }
