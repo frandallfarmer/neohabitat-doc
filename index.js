@@ -496,7 +496,10 @@ const linkDetail = (element, filename) => {
 const createAnimation = (prop, animation) => {
     const frames = []
     for (let istate = animation.startState; istate <= animation.endState; istate ++) {
-        frames.push(compositeCels(celsFromMask(prop, prop.celmasks[istate])))
+        const frame = compositeCels(celsFromMask(prop, prop.celmasks[istate]))
+        if (frame != null) {
+            frames.push(frame)
+        }
     }
     if (frames.length == 1) {
         return imageFromCanvas(frames[0].canvas)
