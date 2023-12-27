@@ -17,6 +17,9 @@ const makeCanvas = (w, h) => {
 }
 
 const canvasFromBitmap = (bitmap) => {
+    if (bitmap.length == 0 || bitmap[0].length == 0) {
+        return null
+    }
     const h = bitmap.length
     const w = bitmap[0].length * 2
     const canvas = makeCanvas(w, h)
@@ -473,6 +476,44 @@ const decodeProp = (data) => {
     return prop
 }
 
+const decodeLimb = (data, limb) => {
+    limb.frames = []
+    for (let iframe = 0; iframe < data.getUint8(0); iframe ++) {
+        limb.frames.push(data.getUint8(3 + iframe))
+    }
+    const celOffsetsOff = 4 + limb.frames.length
+    // I don't understand this at all, but it seems to be correct?
+    const maxCelIndex = Math.max(...limb.frames) + 1
+    limb.cels = []
+    for (let icel = 0; icel <= maxCelIndex; icel ++) {
+        const celOff = data.getUint16(celOffsetsOff + (icel * 2), LE)
+        limb.cels.push(decodeCel(new DataView(data.buffer, data.byteOffset + celOff)))
+    }
+}
+
+const decodeBody = (data) => {
+    const body = {
+        data: data,
+        headCelNumber: data.getUint8(19),
+        frozenWhenStands: data.getUint8(20),
+        frontFacingLimbOrder: [],
+        backFacingLimbOrder: [],
+        limbs: []
+    }
+    for (let ilimb = 0; ilimb < 6; ilimb ++) {
+        body.frontFacingLimbOrder.push(data.getUint8(27 + ilimb))
+        body.backFacingLimbOrder.push(data.getUint8(33 + ilimb))
+        const limb = {
+            pattern: data.getUint8(21 + ilimb),
+            affectedByHeight: data.getUint8(39 + ilimb)
+        }
+        const limbOff = data.getUint16(7 + (ilimb * 2), LE)
+        decodeLimb(new DataView(data.buffer, limbOff), limb)
+        body.limbs.push(limb)
+    }
+    return body
+}
+
 const celsFromMask = (prop, celMask) => {
     const cels = []
     for (let icel = 0; icel < 8; icel ++) {
@@ -514,7 +555,7 @@ const compositeCels = (cels) => {
         if (cel.canvas) {
             ctx.drawImage(cel.canvas, (cel.xOffset + xRel - minX) * 8, -(cel.yOffset + yRel) - minY)
         }
-        xRel += cel.xRel 
+        xRel += cel.xRel
         yRel += cel.yRel
     }
     return { canvas: canvas, xOffset: minX * 8, yOffset: minY, w: w, h: h }
@@ -535,11 +576,19 @@ const textNode = (text, type = "span") => {
     return node
 }
 
+const wrapLink = (element, href) => {
+    const link = document.createElement("a")
+    link.href = href
+    link.appendChild(element)
+    return link
+}
+
 const linkDetail = (element, filename) => {
-    const detailLink = document.createElement("a")
-    detailLink.href = `detail.html?f=${filename}`
-    detailLink.appendChild(element)
-    return detailLink
+    return wrapLink(element, `detail.html?f=${filename}`)
+}
+
+const linkBody = (element, filename) => {
+    return wrapLink(element, `body.html?f=${filename}`)
 }
 
 const createAnimation = (prop, animation) => {
@@ -608,9 +657,9 @@ const showCels = (prop, container) => {
     }
 }
 
-const decodeBinary = async (filename) => {
+const decodeBinary = async (filename, decoder) => {
     try {
-        const prop = decodeProp(await readBinary(filename))
+        const prop = decoder(await readBinary(filename))
         prop.filename = filename
         return prop
     } catch (e) {
@@ -618,11 +667,11 @@ const decodeBinary = async (filename) => {
     }
 }
 
-const showError = (e, filename) => {
+const showError = (e, filename, link = (x,_) => x) => {
     const container = document.getElementById("errors")
     const errNode = document.createElement("p")
     console.error(e)
-    errNode.appendChild(linkDetail(textNode(filename, "b"), filename))
+    errNode.appendChild(link(textNode(filename, "b"), filename))
     errNode.appendChild(textNode(e.toString(), "p"))
     if (e.stack) {
         errNode.appendChild(textNode(e.stack.toString(), "pre"))
@@ -630,26 +679,22 @@ const showError = (e, filename) => {
     container.appendChild(errNode)
 }
 
-const displayFile = async (filename, container) => {
-    const prop = await decodeBinary(filename)
+const displayFile = async (filename, container, decode, display, link = (x,_) => x) => {
+    const prop = await decodeBinary(filename, decode)
     if (prop.error) {
         container.parentNode.removeChild(container)
-        showError(prop.error, prop.filename)
+        showError(prop.error, prop.filename, link)
     } else {
         try {
-            if (prop.animations.length > 0) {
-                showAnimations(prop, container)
-            } else {
-                showStates(prop, container)
-            }
+            display(prop, container)
         } catch (e) {
             container.parentNode.removeChild(container)
-            showError(e, prop.filename)
+            showError(e, prop.filename, link)
         }
     }
 }
 
-const displayList = async (indexFile, containerId) => {
+const displayList = async (indexFile, containerId, decode, display, link = (x,_) => x) => {
     const response = await fetch(indexFile, { cache: "no-cache" })
     const filenames = await response.json()
     const container = document.getElementById(containerId)
@@ -659,12 +704,32 @@ const displayList = async (indexFile, containerId) => {
         fileContainer.style.margin = "2px"
         fileContainer.style.padding = "2px"
         fileContainer.style.display = "inline-block"
-        fileContainer.appendChild(linkDetail(textNode(filename, "div"), filename))
+        fileContainer.appendChild(link(textNode(filename, "div"), filename))
         container.appendChild(fileContainer)
-        if (filename != 'heads/fhead.bin') {
-            displayFile(filename, fileContainer)
-        } else {
-            fileContainer.appendChild(textNode("CW: Pixel genitals"))
-        }
+        displayFile(filename, fileContainer, decode, display, link)
     }
+}
+
+const displayProp = (prop, container) => {
+    if (prop.filename == 'heads/fhead.bin') {
+        container.appendChild(textNode("CW: Pixel genitals"))
+    } else if (prop.animations.length > 0) {
+        showAnimations(prop, container)
+    } else {
+        showStates(prop, container)
+    }
+}
+
+const displayBody = (body, container) => {
+    for (const limb of body.limbs) {
+        showCels(limb, container)
+    }
+}
+
+const displayPropList = async (indexFile, containerId) => {
+    await displayList(indexFile, containerId, decodeProp, displayProp, linkDetail)
+}
+
+const displayBodyList = async (indexFile, containerId) => {
+    await displayList(indexFile, containerId, decodeBody, displayBody, linkBody)
 }

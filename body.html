@@ -19,12 +19,6 @@
     </head>
     <body>
         <h1 id="filename"></h1>
-        <div id="animations">
-            <h2>Animations</h2>
-        </div>
-        <div id="states">
-            <h2>States</h1>
-        </div>
         <div id="cels">
             <h2>Cels</h1>
         </div>
@@ -48,14 +42,15 @@
                 const filename = q.get("f")
                 document.getElementById("filename").innerText = filename
                 try {
-                    const prop = await decodeBinary(filename, decodeProp)
-                    dumpProp(prop, document.getElementById("data"))
-                    if (prop.error) {
-                        showError(prop.error, filename)
+                    const body = await decodeBinary(filename, decodeBody)
+                    dumpProp(body, document.getElementById("data"))
+                    if (body.error) {
+                        showError(body.error, filename)
                     } else {
-                        showAnimations(prop, document.getElementById("animations"))
-                        showStates(prop, document.getElementById("states"))
-                        showCels(prop, document.getElementById("cels"))
+                        const celContainer = document.getElementById("cels")
+                        for (const limb of body.limbs) {
+                            showCels(limb, celContainer)
+                        }
                     }
                 } catch (e) {
                     showError(e, filename)

@@ -22,10 +22,11 @@
             }
 
             const displayEverything = async () => {
-                await displayList("heads.json", "heads")
-                await displayList("props.json", "props")
-                await displayList("misc.json", "misc")
-                await displayList("beta.json", "beta")
+                await displayPropList("heads.json", "heads")
+                await displayPropList("props.json", "props")
+                await displayPropList("misc.json", "misc")
+                await displayPropList("beta.json", "beta")
+                await displayBodyList("bodies.json", "bodies")
             }
 
             displayEverything()
@@ -48,6 +49,9 @@
             Habitat source archive</a> released by the MADE on GitHub. Duplicates have been removed.
             Some of these objects were never actually included in any released version of Habitat.
         </p>
+        <div id="bodies">
+            <h3>Bodies</h3>
+        </div>
         <div id="heads">
             <h3>The Hall Of Heads</h3>
             <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Heads">aric/mic/Gr/Heads</a></p>
