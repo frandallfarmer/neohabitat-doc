@@ -103,6 +103,20 @@ const decodeHowHeld = (byte) => {
     }
 }
 
+const encodeHowHeld = (howHeld) => {
+    if (howHeld == "swing") {
+        return 0x00
+    } else if (howHeld == "out") {
+        return 0x40
+    } else if (howHeld == "both") {
+        return 0x80
+    } else if (howHeld == "at_side") {
+        return 0xc0
+    } else {
+        throw new Error(`Unknown hold "${howHeld}"`)
+    }
+}
+
 const decodeCelType = (byte) => {
     const typeVal = byte & 0xc0
     if (typeVal == 0x00) {
@@ -120,7 +134,25 @@ const decodeCelType = (byte) => {
     }
 }
 
+const encodeCelType = (type) => {
+    if (type == "bitmap") {
+        return 0x00
+    } else if (type == "text") {
+        return 0x20
+    } else if (type == "trap") {
+        return 0x40
+    } else if (type == "box") {
+        return 0x80
+    } else if (type == "circle") {
+        return 0xc0
+    } else {
+        throw new Error(`Unknown cel type "${type}"`)
+    }
+}
+
 const celDecoder = {}
+const celEncoder = {}
+
 celDecoder.bitmap = (data, cel) => {
     // bitmap cells are RLE-encoded vertical strips of bytes. Decoding starts from the bottom-left
     // and proceeds upwards until the top of the bitmap is hit; then then next vertical strip is decoded.
@@ -355,9 +387,26 @@ const decodeSide = (byte) => {
         return "down"
     }
 }
+const encodeSide = (side) => {
+    if (side == "left") {
+        return 0x00
+    } else if (side == "right") {
+        return 0x01
+    } else if (side == "up") {
+        return 0x02
+    } else if (side == "down") {
+        return 0x03
+    } else {
+        throw new Error(`Unknown side "${side}"`)
+    }
+}
 
 const decodeWalkto = (byte) => {
     return { fromSide: decodeSide(byte), offset: signedByte(byte & 0xfc) }
+}
+
+const encodeWalkto = ({ fromSide, offset }) => {
+    return encodeSide(fromSide) | (offset & 0xfc)
 }
 
 const decodeProp = (data) => {
