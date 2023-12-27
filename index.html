@@ -22,11 +22,11 @@
             }
 
             const displayEverything = async () => {
+                await displayBodyList("bodies.json", "bodies")
                 await displayPropList("heads.json", "heads")
                 await displayPropList("props.json", "props")
                 await displayPropList("misc.json", "misc")
                 await displayPropList("beta.json", "beta")
-                await displayBodyList("bodies.json", "bodies")
             }
 
             displayEverything()
