@@ -477,13 +477,13 @@ const decodeProp = (data) => {
 }
 
 const decodeLimb = (data, limb) => {
+    let frameCount = data.getUint8(0) + 1
     limb.frames = []
-    for (let iframe = 0; iframe < data.getUint8(0); iframe ++) {
-        limb.frames.push(data.getUint8(3 + iframe))
+    for (let iframe = 0; iframe < frameCount; iframe ++) {
+        limb.frames.push(data.getInt8(3 + iframe))
     }
-    const celOffsetsOff = 4 + limb.frames.length
-    // I don't understand this at all, but it seems to be correct?
-    const maxCelIndex = Math.max(...limb.frames) + 1
+    const celOffsetsOff = 3 + frameCount
+    const maxCelIndex = Math.max(...limb.frames)
     limb.cels = []
     for (let icel = 0; icel <= maxCelIndex; icel ++) {
         const celOff = data.getUint16(celOffsetsOff + (icel * 2), LE)
