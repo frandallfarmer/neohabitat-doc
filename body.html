@@ -15,10 +15,13 @@
                 line-height:1.2
             }
         </style>
-        <script src="index.js"></script>
+        <script src="index.js?v=1"></script>
     </head>
     <body>
         <h1 id="filename"></h1>
+        <div id="limbs">
+            <h2>Limbs</h2>
+        </div>
         <div id="cels">
             <h2>Cels</h1>
         </div>
@@ -37,19 +40,28 @@
                 container.appendChild(textNode(JSON.stringify(prop, propFilter, 2), "pre"))
             }
 
+            const limbNames = ["legs", "legs2", "left arm", "torso", "face", "right arm"]
+            const labelLimb = (container, ilimb) => {
+                container.appendChild(textNode(ilimb < limbNames.length ? limbNames[ilimb] : `Limb #${ilimb}??`, "div"))
+            }
             const onload = async () => {
                 const q = new URLSearchParams(window.location.search)
                 const filename = q.get("f")
                 document.getElementById("filename").innerText = filename
                 try {
-                    const body = await decodeBinary(filename, decodeBody)
+                    const body = await decodeBinary(filename, BodyImpl)
                     dumpProp(body, document.getElementById("data"))
                     if (body.error) {
                         showError(body.error, filename)
                     } else {
                         const celContainer = document.getElementById("cels")
-                        for (const limb of body.limbs) {
+                        const limbContainer = document.getElementById("limbs")
+                        for (const [ilimb, limb] of body.limbs.entries()) {
+                            labelLimb(celContainer, ilimb)                            
                             showCels(limb, celContainer)
+
+                            labelLimb(limbContainer, ilimb)
+                            showAnimations(limb, limbContainer, LimbImpl)
                         }
                     }
                 } catch (e) {

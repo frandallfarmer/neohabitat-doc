@@ -42,6 +42,8 @@ cels_affected_by_height:
 ; an index into a table of bitmasks, states are defined as an index into
 ; the table of cels directly. only one cel is visible per-limb at a time.
 
+; 1 - padding to match prop header? always zero.
+; 2 - offset of start_end table
 ; 1-2 - unknown. first byte seems to always be zero. second byte seems
 ;   to be correlated with the number of frames or cels, but isn't a direct
 ;   count of either.
@@ -88,6 +90,14 @@ which suggests these as valid values.
 	define	AV_ACT_sit_front	= 0x80	+ 29
 
 ; choreography tables:
-; an array of arrays of bytes, indicating "states". if the high bit is 
-; set, this signals the end of the inner array.
-; unclear at this time how exactly these values are interpreted.
+; an array of arrays of bytes, indicating "states". Each byte has three 
+; values packed into it: ElllAAAA
+; E (0x80): "end" bit - if this is set, indicates that this is the last 
+; 			byte of the array.
+; l (0x70): "limb" - value from 0-6, indexing the 6 limbs. If limb is 6,
+;           0x10 is added to S and limb is set to 5. Stored in the X
+;           register and passed to `init_avatar_chores` (chore.m:252)
+; A (0x0f): "animation" - index of animation in the limb's start_end table
+
+; I believe all limbs default to animation 0 if no alternative animation is given
+; for a given chore in the choreography table.

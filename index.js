@@ -412,6 +412,32 @@ const encodeWalkto = ({ fromSide, offset }) => {
     return encodeSide(fromSide) | (offset & 0xfc)
 }
 
+const decodeAnimations = (data, startEndTableOff, firstCelOff, stateCount) => {
+    const animations = []
+    // The prop structure also does not encode a count for how many frames there are, so we simply
+    // stop parsing once we find one that doesn't make sense.
+    // We also use the heuristic that this structure always precedes the first cel, as that seems to be 
+    // consistently be the case with all the props in the Habitat source tree. We'll stop reading
+    // animation data if we cross that boundary. If we encounter a prop that has the animation data
+    // _after_ the cel data, which would be legal but doesn't happen in practice, then we ignore this
+    // heuristic rather than failing to parse any animation data.
+    // It's possible for there to be no frames, which is represented by an offset of 0 (no_animation)
+    if (startEndTableOff != 0) {
+        for (let frameOff = startEndTableOff; (startEndTableOff > firstCelOff) || (frameOff < firstCelOff); frameOff += 2) {
+            // each animation is two bytes: the starting state, and the ending state
+            // the first byte can have its high bit set to indicate that the animation should cycle
+            const cycle = (data.getUint8(frameOff) & 0x80) != 0
+            const startState = data.getUint8(frameOff) & 0x7f
+            const endState = data.getUint8(frameOff + 1)
+            if (startState >= stateCount || endState >= stateCount) {
+                break
+            }
+            animations.push({ cycle: cycle, startState: startState, endState: endState })
+        }
+    }
+    return animations
+}
+
 const decodeProp = (data) => {
     const prop = { 
         data: data,
@@ -419,7 +445,6 @@ const decodeProp = (data) => {
         colorBitmask: data.getUint8(1),
         containerXYOff: data.getUint8(3), // TODO: parse this when nonzero
         walkto: { left: decodeWalkto(data.getUint8(4)), right: decodeWalkto(data.getUint8(5)), yoff: data.getInt8(6) },
-        animations: [],
         celmasks: [],
         cels: []
     }
@@ -451,33 +476,11 @@ const decodeProp = (data) => {
         prop.cels.push(decodeCel(new DataView(data.buffer, celOff), (prop.colorBitmask & celbit) != 0))
         allCelsMask = (allCelsMask << 1) & 0xff
     }
-
-    // The prop structure also does not encode a count for how many frames there are, so we simply
-    // stop parsing once we find one that doesn't make sense.
-    // We also use the heuristic that this structure always precedes the first cel, as that seems to be 
-    // consistently be the case with all the props in the Habitat source tree. We'll stop reading
-    // animation data if we cross that boundary. If we encounter a prop that has the animation data
-    // _after_ the cel data, which would be legal but doesn't happen in practice, then we ignore this
-    // heuristic rather than failing to parse any animation data.
-    // It's possible for there to be no frames, which is represented by an offset of 0 (no_animation)
-    if (graphicStateOff != 0) {
-        for (let frameOff = graphicStateOff; (graphicStateOff > firstCelOff) || (frameOff < firstCelOff); frameOff += 2) {
-            // each animation is two bytes: the starting state, and the ending state
-            // the first byte can have its high bit set to indicate that the animation should cycle
-            const cycle = (data.getUint8(frameOff) & 0x80) != 0
-            const startState = data.getUint8(frameOff) & 0x7f
-            const endState = data.getUint8(frameOff + 1)
-            if (startState >= stateCount || endState >= stateCount) {
-                break
-            }
-            prop.animations.push({ cycle: cycle, startState: startState, endState: endState })
-        }
-    }
+    prop.animations = decodeAnimations(data, graphicStateOff, firstCelOff, stateCount)
     return prop
 }
 
 const decodeLimb = (data, limb) => {
-    limb.unknown = [data.getUint8(1), data.getUint8(2)]
     let frameCount = data.getUint8(0) + 1
     limb.frames = []
     for (let iframe = 0; iframe < frameCount; iframe ++) {
@@ -486,11 +489,17 @@ const decodeLimb = (data, limb) => {
     const celOffsetsOff = 3 + frameCount
     const maxCelIndex = Math.max(...limb.frames)
     limb.cels = []
+    let firstCelOff
     for (let icel = 0; icel <= maxCelIndex; icel ++) {
         const celOff = data.getUint16(celOffsetsOff + (icel * 2), LE)
+        if (icel == 0) {
+            firstCelOff = celOff
+        }
         limb.cels.push(decodeCel(new DataView(data.buffer, data.byteOffset + celOff)))
     }
+    limb.animations = decodeAnimations(data, data.getUint8(2), firstCelOff, limb.frames.length)
 }
+
 const choreographyActions = [
     "init", "stand", "walk", "hand_back", "sit_floor", "bend_over", 
     "bend_back", "point", "throw", "get_shot", "jump", "punch", "wave",
@@ -614,23 +623,43 @@ const wrapLink = (element, href) => {
     return link
 }
 
-const linkDetail = (element, filename) => {
-    return wrapLink(element, `detail.html?f=${filename}`)
+const PropImpl = {
+    decode: decodeProp,
+    detailHref: (filename) => `detail.html?f=${filename}`,
+    celsForAnimationState: (prop, istate) => celsFromMask(prop, prop.celmasks[istate]),
 }
 
-const linkBody = (element, filename) => {
-    return wrapLink(element, `body.html?f=${filename}`)
+const BodyImpl = {
+    decode: decodeBody,
+    detailHref: (filename) => `body.html?f=${filename}`
 }
 
-const createAnimation = (prop, animation) => {
+const LimbImpl = {
+    celsForAnimationState: (limb, istate) => {
+        const iframe = limb.frames[istate]
+        if (iframe >= 0) {
+            return [limb.cels[iframe]]
+        } else {
+            return []
+        }
+    }
+}
+
+const linkDetail = (element, filename, impl) => {
+    return impl && impl.detailHref ? wrapLink(element, impl.detailHref(filename)) : element
+}
+
+const createAnimation = (animation, value, impl) => {
     const frames = []
     for (let istate = animation.startState; istate <= animation.endState; istate ++) {
-        const frame = compositeCels(celsFromMask(prop, prop.celmasks[istate]))
+        const frame = compositeCels(impl.celsForAnimationState(value, istate))
         if (frame != null) {
             frames.push(frame)
         }
     }
-    if (frames.length == 1) {
+    if (frames.length == 0) {
+        return textNode("")
+    } else if (frames.length == 1) {
         return imageFromCanvas(frames[0].canvas)
     }
     let minX = Number.POSITIVE_INFINITY
@@ -663,9 +692,9 @@ const createAnimation = (prop, animation) => {
     return canvas
 }
 
-const showAnimations = (prop, container) => {
-    for (const animation of prop.animations) {
-        container.appendChild(linkDetail(createAnimation(prop, animation), prop.filename))
+const showAnimations = (value, container, impl) => {
+    for (const animation of value.animations) {
+        container.appendChild(linkDetail(createAnimation(animation, value, impl), value.filename, impl))
     }
 }
 
@@ -688,9 +717,9 @@ const showCels = (prop, container) => {
     }
 }
 
-const decodeBinary = async (filename, decoder) => {
+const decodeBinary = async (filename, impl) => {
     try {
-        const prop = decoder(await readBinary(filename))
+        const prop = impl.decode(await readBinary(filename))
         prop.filename = filename
         return prop
     } catch (e) {
@@ -698,11 +727,11 @@ const decodeBinary = async (filename, decoder) => {
     }
 }
 
-const showError = (e, filename, link = (x,_) => x) => {
+const showError = (e, filename, impl) => {
     const container = document.getElementById("errors")
     const errNode = document.createElement("p")
     console.error(e)
-    errNode.appendChild(link(textNode(filename, "b"), filename))
+    errNode.appendChild(linkDetail(textNode(filename, "b"), filename, impl))
     errNode.appendChild(textNode(e.toString(), "p"))
     if (e.stack) {
         errNode.appendChild(textNode(e.stack.toString(), "pre"))
@@ -710,22 +739,38 @@ const showError = (e, filename, link = (x,_) => x) => {
     container.appendChild(errNode)
 }
 
-const displayFile = async (filename, container, decode, display, link = (x,_) => x) => {
-    const prop = await decodeBinary(filename, decode)
-    if (prop.error) {
+const displayFile = async (filename, container, impl) => {
+    const value = await decodeBinary(filename, impl)
+    if (value.error) {
         container.parentNode.removeChild(container)
-        showError(prop.error, prop.filename, link)
+        showError(value.error, value.filename, impl)
     } else {
         try {
-            display(prop, container)
+            impl.display(value, container)
         } catch (e) {
             container.parentNode.removeChild(container)
-            showError(e, prop.filename, link)
+            showError(e, value.filename, impl)
         }
     }
 }
 
-const displayList = async (indexFile, containerId, decode, display, link = (x,_) => x) => {
+PropImpl.display = (prop, container) => {
+    if (prop.filename == 'heads/fhead.bin') {
+        container.appendChild(textNode("CW: Pixel genitals"))
+    } else if (prop.animations.length > 0) {
+        showAnimations(prop, container, PropImpl)
+    } else {
+        showStates(prop, container)
+    }
+}
+
+BodyImpl.display = (body, container) => {
+    for (const limb of body.limbs) {
+        showCels(limb, container)
+    }
+}
+
+const displayList = async (indexFile, containerId, impl) => {
     const response = await fetch(indexFile, { cache: "no-cache" })
     const filenames = await response.json()
     const container = document.getElementById(containerId)
@@ -735,32 +780,8 @@ const displayList = async (indexFile, containerId, decode, display, link = (x,_)
         fileContainer.style.margin = "2px"
         fileContainer.style.padding = "2px"
         fileContainer.style.display = "inline-block"
-        fileContainer.appendChild(link(textNode(filename, "div"), filename))
+        fileContainer.appendChild(linkDetail(textNode(filename, "div"), filename, impl))
         container.appendChild(fileContainer)
-        displayFile(filename, fileContainer, decode, display, link)
+        displayFile(filename, fileContainer, impl)
     }
-}
-
-const displayProp = (prop, container) => {
-    if (prop.filename == 'heads/fhead.bin') {
-        container.appendChild(textNode("CW: Pixel genitals"))
-    } else if (prop.animations.length > 0) {
-        showAnimations(prop, container)
-    } else {
-        showStates(prop, container)
-    }
-}
-
-const displayBody = (body, container) => {
-    for (const limb of body.limbs) {
-        showCels(limb, container)
-    }
-}
-
-const displayPropList = async (indexFile, containerId) => {
-    await displayList(indexFile, containerId, decodeProp, displayProp, linkDetail)
-}
-
-const displayBodyList = async (indexFile, containerId) => {
-    await displayList(indexFile, containerId, decodeBody, displayBody, linkBody)
 }

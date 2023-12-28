@@ -15,7 +15,7 @@
                 line-height:1.2
             }
         </style>
-        <script src="index.js"></script>
+        <script src="index.js?v=1"></script>
     </head>
     <body>
         <h1 id="filename"></h1>
@@ -48,12 +48,12 @@
                 const filename = q.get("f")
                 document.getElementById("filename").innerText = filename
                 try {
-                    const prop = await decodeBinary(filename, decodeProp)
+                    const prop = await decodeBinary(filename, PropImpl)
                     dumpProp(prop, document.getElementById("data"))
                     if (prop.error) {
                         showError(prop.error, filename)
                     } else {
-                        showAnimations(prop, document.getElementById("animations"))
+                        showAnimations(prop, document.getElementById("animations"), PropImpl)
                         showStates(prop, document.getElementById("states"))
                         showCels(prop, document.getElementById("cels"))
                     }
