@@ -15,10 +15,13 @@
                 line-height:1.2
             }
         </style>
-        <script src="index.js?v=1"></script>
+        <script src="index.js?v=2"></script>
     </head>
     <body>
         <h1 id="filename"></h1>
+        <div id="actions">
+            <h2>Actions</h2>
+        </div>
         <div id="limbs">
             <h2>Limbs</h2>
         </div>
@@ -62,6 +65,13 @@
 
                             labelLimb(limbContainer, ilimb)
                             showAnimations(limb, limbContainer, LimbImpl)
+                        }
+                        const actionContainer = document.getElementById("actions")
+                        for (const action of choreographyActions) {
+                            if (action == "stand" || body.actions[action] != body.actions["stand"]) {
+                                actionContainer.appendChild(textNode(action, "div"))
+                                actionContainer.appendChild(createAnimation(action, body, BodyImpl))
+                            }
                         }
                     }
                 } catch (e) {

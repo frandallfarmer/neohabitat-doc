@@ -501,7 +501,7 @@ const decodeLimb = (data, limb) => {
 }
 
 const choreographyActions = [
-    "init", "stand", "walk", "hand_back", "sit_floor", "bend_over", 
+    "init", "stand", "walk", "hand_back", "sit_floor", "sit_chair", "bend_over", 
     "bend_back", "point", "throw", "get_shot", "jump", "punch", "wave",
     "frown", "stand_back", "walk_front", "walk_back", "stand_front",
     "unpocket", "gimme", "knife", "arm_get", "hand_out", "operate",
@@ -543,7 +543,13 @@ const decodeBody = (data) => {
             body.choreography.push(choreography)
             for (;; tableIndex ++) {
                 const state = data.getUint8(choreographyTableOff + tableIndex)
-                choreography.push(state & 0x7f)
+                let limb = (state & 0x70) >> 4
+                let animation = state & 0x0f
+                if (limb == 6) {
+                    limb = 5
+                    animation += 0x10
+                }
+                choreography.push({ limb, animation })
                 if ((state & 0x80) != 0) {
                     break
                 }
@@ -629,11 +635,6 @@ const PropImpl = {
     celsForAnimationState: (prop, istate) => celsFromMask(prop, prop.celmasks[istate]),
 }
 
-const BodyImpl = {
-    decode: decodeBody,
-    detailHref: (filename) => `body.html?f=${filename}`
-}
-
 const LimbImpl = {
     celsForAnimationState: (limb, istate) => {
         const iframe = limb.frames[istate]
@@ -645,16 +646,68 @@ const LimbImpl = {
     }
 }
 
+const BodyImpl = {
+    decode: decodeBody,
+    detailHref: (filename) => `body.html?f=${filename}`,
+    generateFrames: (action, body, frames) => {
+        const chore = body.choreography[body.actions[action]]
+        const animations = []
+        const limbOrder = action.includes("_back") ? body.backFacingLimbOrder : body.frontFacingLimbOrder
+        for (const limb of body.limbs) {
+            if (limb.animations.length > 0) {
+                animations.push({ ...limb.animations[0] })
+            } else {
+                animations.push({ startState: 0, endState: 0 })
+            }
+        }
+        for (const override of chore) {
+            const ilimb = override.limb
+            const newAnim = body.limbs[ilimb].animations[override.animation]
+            animations[ilimb].startState = newAnim.startState
+            animations[ilimb].endState = newAnim.endState
+        }
+        while (true) {
+            const cels = []
+            let restartedCount = 0
+            for (const ilimb of limbOrder) {
+                const animation = animations[ilimb]
+                const limb = body.limbs[ilimb]
+                if (animation.current == undefined) {
+                    animation.current = animation.startState
+                } else {
+                    animation.current ++
+                    if (animation.current > animation.endState) {
+                        animation.current = animation.startState
+                        restartedCount ++
+                    }
+                }
+                const istate = limb.frames[animation.current]
+                if (istate >= 0) {
+                    cels.push(limb.cels[istate])
+                }
+            }
+            if (restartedCount == animations.length) {
+                break
+            }
+            frames.push(compositeCels(cels))
+        }
+    }
+}
+
 const linkDetail = (element, filename, impl) => {
     return impl && impl.detailHref ? wrapLink(element, impl.detailHref(filename)) : element
 }
 
 const createAnimation = (animation, value, impl) => {
     const frames = []
-    for (let istate = animation.startState; istate <= animation.endState; istate ++) {
-        const frame = compositeCels(impl.celsForAnimationState(value, istate))
-        if (frame != null) {
-            frames.push(frame)
+    if (impl.generateFrames) {
+        impl.generateFrames(animation, value, frames)
+    } else {
+        for (let istate = animation.startState; istate <= animation.endState; istate ++) {
+            const frame = compositeCels(impl.celsForAnimationState(value, istate))
+            if (frame != null) {
+                frames.push(frame)
+            }
         }
     }
     if (frames.length == 0) {
@@ -765,9 +818,7 @@ PropImpl.display = (prop, container) => {
 }
 
 BodyImpl.display = (body, container) => {
-    for (const limb of body.limbs) {
-        showCels(limb, container)
-    }
+    container.appendChild(linkDetail(createAnimation("walk", body, BodyImpl), body.filename, BodyImpl))
 }
 
 const displayList = async (indexFile, containerId, impl) => {
