@@ -491,6 +491,13 @@ const decodeLimb = (data, limb) => {
         limb.cels.push(decodeCel(new DataView(data.buffer, data.byteOffset + celOff)))
     }
 }
+const choreographyActions = [
+    "init", "stand", "walk", "hand_back", "sit_floor", "bend_over", 
+    "bend_back", "point", "throw", "get_shot", "jump", "punch", "wave",
+    "frown", "stand_back", "walk_front", "walk_back", "stand_front",
+    "unpocket", "gimme", "knife", "arm_get", "hand_out", "operate",
+    "arm_back", "shoot1", "shoot2", "nop", "sit_front"
+]
 
 const decodeBody = (data) => {
     const body = {
@@ -499,7 +506,9 @@ const decodeBody = (data) => {
         frozenWhenStands: data.getUint8(20),
         frontFacingLimbOrder: [],
         backFacingLimbOrder: [],
-        limbs: []
+        limbs: [],
+        choreography: [],
+        actions: {}
     }
     for (let ilimb = 0; ilimb < 6; ilimb ++) {
         body.frontFacingLimbOrder.push(data.getUint8(27 + ilimb))
@@ -511,6 +520,27 @@ const decodeBody = (data) => {
         const limbOff = data.getUint16(7 + (ilimb * 2), LE)
         decodeLimb(new DataView(data.buffer, limbOff), limb)
         body.limbs.push(limb)
+    }
+    const choreographyIndexOff = data.getUint16(0, LE)
+    const choreographyTableOff = data.getUint16(2, LE)
+    const indexToChoreography = new Map()
+    for (const [i, action] of choreographyActions.entries()) {
+        let tableIndex = data.getUint8(choreographyIndexOff + i)
+        let choreographyIndex = indexToChoreography.get(tableIndex)
+        if (choreographyIndex == undefined) {
+            choreographyIndex = body.choreography.length
+            indexToChoreography.set(tableIndex, choreographyIndex)
+            const choreography = []
+            body.choreography.push(choreography)
+            for (;; tableIndex ++) {
+                const state = data.getUint8(choreographyTableOff + tableIndex)
+                choreography.push(state & 0x7f)
+                if ((state & 0x80) != 0) {
+                    break
+                }
+            }
+        }
+        body.actions[action] = choreographyIndex
     }
     return body
 }
