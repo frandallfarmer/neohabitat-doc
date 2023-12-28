@@ -477,6 +477,7 @@ const decodeProp = (data) => {
 }
 
 const decodeLimb = (data, limb) => {
+    limb.unknown = [data.getUint8(1), data.getUint8(2)]
     let frameCount = data.getUint8(0) + 1
     limb.frames = []
     for (let iframe = 0; iframe < frameCount; iframe ++) {
