@@ -571,7 +571,7 @@ const celsFromMask = (prop, celMask) => {
     return cels
 }
 
-const compositeCels = (cels) => {
+const compositeCels = (cels, paintOrder = null) => {
     if (cels.length == 0) {
         return null
     }
@@ -581,13 +581,29 @@ const compositeCels = (cels) => {
     let maxY = Number.NEGATIVE_INFINITY
     let xRel = 0
     let yRel = 0
+    let layers = []
     for (let cel of cels) {
-        minX = Math.min(minX, cel.xOffset + xRel)
-        minY = Math.min(minY, -(cel.yOffset + yRel))
-        maxX = Math.max(maxX, cel.width + cel.xOffset + xRel)
-        maxY = Math.max(maxY, cel.height - (cel.yOffset + yRel))
-        xRel += cel.xRel 
-        yRel += cel.yRel
+        if (cel) {
+            const x = cel.xOffset + xRel
+            const y = -(cel.yOffset + yRel)
+            minX = Math.min(minX, x)
+            minY = Math.min(minY, y)
+            maxX = Math.max(maxX, cel.width + x)
+            maxY = Math.max(maxY, cel.height + y)
+            layers.push({ cel, x, y })
+            xRel += cel.xRel 
+            yRel += cel.yRel
+        } else {
+            layers.push(null)
+        }
+    }
+
+    if (paintOrder) {
+        const reordered = []
+        for (const ilayer of paintOrder) {
+            reordered.push(layers[ilayer])
+        }
+        layers = reordered
     }
 
     const w = (maxX - minX) * 8
@@ -595,14 +611,10 @@ const compositeCels = (cels) => {
 
     const canvas = makeCanvas(w, h)
     const ctx = canvas.getContext("2d")
-    xRel = 0
-    yRel = 0
-    for (let cel of cels) {
-        if (cel.canvas) {
-            ctx.drawImage(cel.canvas, (cel.xOffset + xRel - minX) * 8, -(cel.yOffset + yRel) - minY)
+    for (const layer of layers) {
+        if (layer && layer.cel.canvas) {
+            ctx.drawImage(layer.cel.canvas, (layer.x - minX) * 8, layer.y - minY)
         }
-        xRel += cel.xRel
-        yRel += cel.yRel
     }
     return { canvas: canvas, xOffset: minX * 8, yOffset: minY, w: w, h: h }
 }
@@ -646,13 +658,23 @@ const LimbImpl = {
     }
 }
 
+const actionOrientations = {
+    "stand_back": "back",
+    "walk_front": "front",
+    "walk_back": "back",
+    "stand_front": "front",
+    "sit_front": "front"
+}
 const BodyImpl = {
     decode: decodeBody,
     detailHref: (filename) => `body.html?f=${filename}`,
     generateFrames: (action, body, frames) => {
         const chore = body.choreography[body.actions[action]]
         const animations = []
-        const limbOrder = action.includes("_back") ? body.backFacingLimbOrder : body.frontFacingLimbOrder
+        const orientation = actionOrientations[action] ?? "side"
+        const limbOrder = orientation == "front" ? body.frontFacingLimbOrder :
+                          orientation == "back"  ? body.backFacingLimbOrder : 
+                          null // side animations are always displayed in standard limb order
         for (const limb of body.limbs) {
             if (limb.animations.length > 0) {
                 animations.push({ ...limb.animations[0] })
@@ -669,9 +691,8 @@ const BodyImpl = {
         while (true) {
             const cels = []
             let restartedCount = 0
-            for (const ilimb of limbOrder) {
+            for (const [ilimb, limb] of body.limbs.entries()) {
                 const animation = animations[ilimb]
-                const limb = body.limbs[ilimb]
                 if (animation.current == undefined) {
                     animation.current = animation.startState
                 } else {
@@ -684,12 +705,14 @@ const BodyImpl = {
                 const istate = limb.frames[animation.current]
                 if (istate >= 0) {
                     cels.push(limb.cels[istate])
+                } else {
+                    cels.push(null)
                 }
             }
             if (restartedCount == animations.length) {
                 break
             }
-            frames.push(compositeCels(cels))
+            frames.push(compositeCels(cels, limbOrder))
         }
     }
 }
