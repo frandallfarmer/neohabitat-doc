@@ -16,10 +16,45 @@ const makeCanvas = (w, h) => {
     return canvas    
 }
 
-const canvasFromBitmap = (bitmap) => {
+// C64 RGB values taken from https://www.c64-wiki.com/wiki/Color
+const c64Colors = [
+    0x000000, 0xffffff, 0x880000, 0xaaffee, 0xcc44cc, 0x00cc55, 
+    0x0000aa, 0xeeee77, 0xdd8855, 0x664400, 0xff7777, 0x333333,
+    0x777777, 0xaaff66, 0x0088ff, 0xbbbbbb
+]
+
+// from paint.m:447
+const celPatterns = [
+    [0x00, 0x00, 0x00, 0x00],
+    [0xaa, 0xaa, 0xaa, 0xaa],
+    [0xff, 0xff, 0xff, 0xff],
+    [0xe2, 0xe2, 0xe2, 0xe2],
+    [0x8b, 0xbe, 0x0f, 0xcc],
+    [0xee, 0x00, 0xee, 0x00],
+    [0xf0, 0xf0, 0x0f, 0x0f],
+    [0x22, 0x88, 0x22, 0x88],
+    [0x32, 0x88, 0x23, 0x88],
+    [0x00, 0x28, 0x3b, 0x0c],
+    [0x33, 0xcc, 0x33, 0xcc],
+    [0x08, 0x80, 0x0c, 0x80],
+    [0x3f, 0x3f, 0xf3, 0xf3],
+    [0xaa, 0x3f, 0xaa, 0xf3],
+    [0xaa, 0x00, 0xaa, 0x00],
+    [0x55, 0x55, 0x55, 0x55]
+]
+
+const defaultColors = {
+    wildcard: 6,
+    skin: 10,
+    pattern: 15
+}
+
+const canvasFromBitmap = (bitmap, colors = {}) => {
     if (bitmap.length == 0 || bitmap[0].length == 0) {
         return null
     }
+    const { wildcard, pattern, skin } = { ...defaultColors, ...colors }
+    const patternColors = [6, wildcard, 0, skin]
     const h = bitmap.length
     const w = bitmap[0].length * 2
     const canvas = makeCanvas(w, h)
@@ -40,19 +75,21 @@ const canvasFromBitmap = (bitmap) => {
 
     for (let y = 0; y < bitmap.length; y ++) {
         const line = bitmap[y]
+        const patbyte = celPatterns[pattern][y % 4]
         for (let x = 0; x < line.length; x ++) {
             const pixel = line[x]
+            let color = null
             if (pixel == 0) { // transparent
                 putpixel(x, y, 0, 0, 0, 0)
             } else if (pixel == 1) { // wild
-                // TODO: patterns + colors
-                // for now, always blue
-                putpixel(x, y, 0, 0, 170, 255)
-            } else if (pixel == 2) { // black
-                putpixel(x, y, 0, 0, 0, 255)
-            } else { // skin
-                // TODO: custom skin colors
-                putpixel(x, y, 255, 119, 119, 255)
+                const shift = (x % 4) * 2
+                color = patternColors[(patbyte & (0xc0 >> shift)) >> (6 - shift)]
+            } else {
+                color = patternColors[pixel]
+            }
+            if (color != null) {
+                const rgb = c64Colors[color]
+                putpixel(x, y, (rgb & 0xff0000) >> 16, (rgb & 0xff00) >> 8, rgb & 0xff, 0xff)
             }
         }
     }
@@ -87,7 +124,7 @@ const emptyBitmap = (w, h, color = 0) => {
 
 const drawByte = (bitmap, x, y, byte) => {
     bitmap[y][x]     = (byte & 0xc0) >> 6
-    bitmap[y][x + 1] = (byte & 0x3c) >> 4
+    bitmap[y][x + 1] = (byte & 0x30) >> 4
     bitmap[y][x + 2] = (byte & 0x0c) >> 2
     bitmap[y][x + 3] = (byte & 0x03)
 }
@@ -372,9 +409,6 @@ const decodeCel = (data, changesColorRam) => {
     if (celDecoder[cel.type]) {
         celDecoder[cel.type](data, cel)
     }
-    if (cel.bitmap) {
-        cel.canvas = canvasFromBitmap(cel.bitmap)
-    }
     return cel
 }
 
@@ -571,7 +605,7 @@ const celsFromMask = (prop, celMask) => {
     return cels
 }
 
-const compositeCels = (cels, paintOrder = null) => {
+const compositeCels = (cels, celColors = null, paintOrder = null) => {
     if (cels.length == 0) {
         return null
     }
@@ -582,7 +616,7 @@ const compositeCels = (cels, paintOrder = null) => {
     let xRel = 0
     let yRel = 0
     let layers = []
-    for (let cel of cels) {
+    for (const [icel, cel] of cels.entries()) {
         if (cel) {
             const x = cel.xOffset + xRel
             const y = -(cel.yOffset + yRel)
@@ -590,7 +624,12 @@ const compositeCels = (cels, paintOrder = null) => {
             minY = Math.min(minY, y)
             maxX = Math.max(maxX, cel.width + x)
             maxY = Math.max(maxY, cel.height + y)
-            layers.push({ cel, x, y })
+            if (cel.bitmap) {
+                const colors = Array.isArray(celColors) ? celColors[icel] : (celColors ?? {})
+                layers.push({ canvas: canvasFromBitmap(cel.bitmap, colors), x, y })
+            } else {
+                layers.push(null)
+            }
             xRel += cel.xRel 
             yRel += cel.yRel
         } else {
@@ -612,8 +651,8 @@ const compositeCels = (cels, paintOrder = null) => {
     const canvas = makeCanvas(w, h)
     const ctx = canvas.getContext("2d")
     for (const layer of layers) {
-        if (layer && layer.cel.canvas) {
-            ctx.drawImage(layer.cel.canvas, (layer.x - minX) * 8, layer.y - minY)
+        if (layer && layer.canvas) {
+            ctx.drawImage(layer.canvas, (layer.x - minX) * 8, layer.y - minY)
         }
     }
     return { canvas: canvas, xOffset: minX * 8, yOffset: minY, w: w, h: h }
@@ -627,6 +666,8 @@ const imageFromCanvas = (canvas) => {
     img.style.imageRendering = "pixelated"
     return img
 }
+
+const imageFromBitmap = (bitmap, colors = {}) => imageFromCanvas(canvasFromBitmap(bitmap, colors))
 
 const textNode = (text, type = "span") => {
     const node = document.createElement(type)
@@ -690,6 +731,7 @@ const BodyImpl = {
         }
         while (true) {
             const cels = []
+            const celColors = []
             let restartedCount = 0
             for (const [ilimb, limb] of body.limbs.entries()) {
                 const animation = animations[ilimb]
@@ -708,11 +750,12 @@ const BodyImpl = {
                 } else {
                     cels.push(null)
                 }
+                celColors.push({ pattern: limb.pattern })
             }
             if (restartedCount == animations.length) {
                 break
             }
-            frames.push(compositeCels(cels, limbOrder))
+            frames.push(compositeCels(cels, celColors, limbOrder))
         }
     }
 }
