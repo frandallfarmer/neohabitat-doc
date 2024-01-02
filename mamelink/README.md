@@ -5,7 +5,7 @@ A compatibility shim for Lucasfilm Games' "fastlink", using a MAME plugin to imp
 Run `make`. Assumes a POSIX-like environment. Works On My Machine, totally untested on anything besides Linux.
 
 ## Booting reno
-Run `./start`. Assumes that `mame` is in the current path, with C64 ROMs installed.
+Run `./start`. Assumes that `mame` is in the current path, with C64 ROMs installed. MAME will start, and you will probably need to press a key to start the emulated C64 booting. Once the C64 has completed startup, `reno` will automatically begin uploading, and when it is complete, you will see the command `SYS2122` automatically be entered into the emulator. After a few more seconds, Reno will start.
 
 ## How It Works
 It's a terrible, awful, very bad, no good hack, but it does the trick and should hopefully be portable, even to an enscripten-type browser environment. To send a command to the `mamelink` plugin, the `mamelink.c` library creates a file called `mameplugins/mamelink/linkin` with

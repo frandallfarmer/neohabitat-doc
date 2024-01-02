@@ -39,7 +39,8 @@ local function fastlink(bytein, byteout)
             end
         elseif command == 4 then -- jump
             local address = readword(bytein)
-            cpu.state["PC"].value = address
+            -- cpu.state["PC"].value = address
+            emu.keypost("SYS" .. tostring(address) .. "\n")
         else 
             print("Unknown command: " .. tostring(command))
         end
@@ -47,9 +48,8 @@ local function fastlink(bytein, byteout)
 end
 
 local function is_booted()
-    local cpu = manager.machine.devices[":u7"]
-    local mem = cpu.spaces.program
-    return mem
+    -- wait for machine to be started, and allow 3 seconds for booting before accepting commands
+    return manager.machine.time:as_double() > 3
 end
 
 function exports.startplugin()
@@ -77,14 +77,14 @@ function exports.startplugin()
         io.outfile:write(string.char(byte))
     end
 
-    print(coroutine.resume(link, bytein, byteout))
+    assert(coroutine.resume(link, bytein, byteout))
 
     emu.register_periodic(function()
         if not is_booted() then return end
         linkio.infile = io.open(infilename, "rb")
         if linkio.infile then
             linkio.outfile = io.open(pendingfilename, "wb")
-            print(coroutine.resume(link))
+            assert(coroutine.resume(link))
             linkio.infile:close()
             linkio.infile = nil
             linkio.outfile:close()

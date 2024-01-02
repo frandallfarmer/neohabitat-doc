@@ -59,7 +59,7 @@ void sendAbsoluteSegments() {
         readbytes(count);
         printf("Segment: %4x-%4x\n", start, end);
         down(buf, count, start);
-        if (start == end) {
+        if (start == end && entryPoint == 0) {
             entryPoint = start;
         }
     }
