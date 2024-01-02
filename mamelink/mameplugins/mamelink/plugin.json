@@ -1,0 +1,10 @@
+{
+  "plugin": {
+	"name": "mamelink",
+	"description": "Socket-based recreation of Lucasfilm's Fastlink interface",
+	"version": "0.0.1",
+	"author": "Jeremy Penner",
+	"type": "plugin",
+	"start": "false"
+  }
+}
