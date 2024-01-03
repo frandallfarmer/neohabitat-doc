@@ -77,15 +77,18 @@ static void simple_cmd(char command) {
     send_cmd_and_close(prepare_cmd(command));
 }
 
-void Init(char *initial_link_dir) {
+int Init(char *initial_link_dir) {
     if (initial_link_dir == NULL) {
         initial_link_dir = getenv("MAMELINK");
     }
-    assert(initial_link_dir != NULL);
+    if (initial_link_dir == NULL) {
+        return 0;
+    }
     if (linkdir != NULL) {
         free(linkdir);
     }
     linkdir = strdup(initial_link_dir);
+    return 1;
 }
 
 void Finish() {

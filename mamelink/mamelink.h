@@ -1,4 +1,4 @@
-void Init(char *initial_link_dir);
+int Init(char *initial_link_dir);
 void Finish();
 void down(char *buf, unsigned short bytes, unsigned short c64Addr);
 void up(char *buf, unsigned short bytes, unsigned short c64Addr);
