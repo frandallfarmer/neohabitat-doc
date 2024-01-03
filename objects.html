@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Inhabitor - The Habitat Inspector</title>
+        <style type="text/css">
+            body {
+                margin:40px auto;
+                line-height:1.6;
+                font-size:18px;
+                color:#444;
+                padding:0 10px
+            }
+            h1,h2,h3 {
+                line-height:1.2
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Inhabitor - The Habitat Inspector</h1>
+        <div id="muddle">
+            <h3>Muddle database</h3>
+        </div>
+        <a href="javascript:showErrors();">Show errors</a>
+        <div id="errors" style="display: none"></div>
+
+        <script type="module">
+            import { parse, removeComments } from "./mudparse.js"
+            import { textNode } from "./show.js"
+
+            window.showErrors = () => {
+                document.getElementById('errors').style.display = 'block'
+            }
+            const onload = async () => {
+                const response = await fetch("beta.mud", { cache: "no-cache" })
+                const text = await response.text()
+                const container = document.getElementById("muddle")
+                const mud = parse(text)
+                container.appendChild(textNode(JSON.stringify(mud, null, 2), "pre"))
+            }
+            onload()
+        </script>
+    </body>
+</html>
