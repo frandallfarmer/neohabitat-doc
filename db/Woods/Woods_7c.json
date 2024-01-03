@@ -1,0 +1,321 @@
+[
+  {
+    "ref": "context-Woods_7c", 
+    "capacity": 64,
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_7d", 
+          "context-Woods_7d", 
+          "context-Woods_7b", 
+          "context-Woods_6c"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.6ff3.Woods_7c", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-sky.2602.Woods_7c", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.4833.Woods_7c", 
+    "mods": [
+      {
+        "y": 33, 
+        "x": 88, 
+        "type": "Tree", 
+        "orientation": 236, 
+        "gr_state": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-rock.38bc.Woods_7c", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 8, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.cff4.Woods_7c", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 40, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.4b56.Woods_7c", 
+    "mods": [
+      {
+        "y": 57, 
+        "x": 88, 
+        "type": "Tree", 
+        "orientation": 188, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.aee7.Woods_7c", 
+    "mods": [
+      {
+        "y": 57, 
+        "x": 84, 
+        "type": "Tree", 
+        "orientation": 189, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.01ae.Woods_7c", 
+    "mods": [
+      {
+        "y": 33, 
+        "x": 128, 
+        "type": "Tree", 
+        "orientation": 220, 
+        "gr_state": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.f0d0.Woods_7c", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 44, 
+        "type": "Tree", 
+        "orientation": 172, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.11e3.Woods_7c", 
+    "mods": [
+      {
+        "y": 141, 
+        "x": 20, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.c0c2.Woods_7c", 
+    "mods": [
+      {
+        "y": 71, 
+        "x": 36, 
+        "type": "Tree", 
+        "orientation": 173, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-bush.b60d.Woods_7c", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 44, 
+        "type": "Bush", 
+        "orientation": 40
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-bush.d9f9.Woods_7c", 
+    "mods": [
+      {
+        "y": 136, 
+        "x": 68, 
+        "type": "Bush", 
+        "orientation": 64
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-bush.0ea3.Woods_7c", 
+    "mods": [
+      {
+        "y": 146, 
+        "x": 136, 
+        "type": "Bush", 
+        "orientation": 80
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-plant.327c.Woods_7c", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 32, 
+        "mass": 1, 
+        "y": 148, 
+        "x": 4, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-plant.1beb.Woods_7c", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 32, 
+        "mass": 1, 
+        "y": 145, 
+        "x": 80, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-plant.f5cd.Woods_7c", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 33, 
+        "mass": 1, 
+        "y": 135, 
+        "x": 100, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.6798.Woods_7c", 
+    "mods": [
+      {
+        "y": 65, 
+        "x": 128, 
+        "type": "Tree", 
+        "orientation": 220, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-tree.8fd4.Woods_7c", 
+    "mods": [
+      {
+        "y": 66, 
+        "x": 128, 
+        "type": "Tree", 
+        "orientation": 221, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7c"
+  }, 
+  {
+    "ref": "item-bush.7f5f.Woods_7c", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 104, 
+        "style": 4, 
+        "type": "Bush", 
+        "orientation": 9
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_7c"
+  }
+]

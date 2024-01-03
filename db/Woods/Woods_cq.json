@@ -1,0 +1,310 @@
+[
+  {
+    "ref": "context-Woods_cq", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_cr", 
+          "context-Woods_dq", 
+          "context-Woods_cp", 
+          "context-Woods_bq"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.29ff.Woods_cq", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-sky.b656.Woods_cq", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-tree.53ca.Woods_cq", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 2, 
+        "y": 56, 
+        "x": 92, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.95d9.Woods_cq", 
+    "mods": [
+      {
+        "y": 50, 
+        "x": 24, 
+        "mass": 1, 
+        "type": "Plant", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.5d91.Woods_cq", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "y": 144, 
+        "x": 96, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.7d43.Woods_cq", 
+    "mods": [
+      {
+        "y": 48, 
+        "x": 40, 
+        "mass": 1, 
+        "type": "Plant", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.c1c6.Woods_cq", 
+    "mods": [
+      {
+        "y": 48, 
+        "x": 32, 
+        "mass": 1, 
+        "type": "Plant", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.dd8f.Woods_cq", 
+    "mods": [
+      {
+        "y": 46, 
+        "x": 48, 
+        "mass": 1, 
+        "type": "Plant", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-tree.e906.Woods_cq", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 1, 
+        "y": 40, 
+        "x": 92, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-tree.4aa7.Woods_cq", 
+    "mods": [
+      {
+        "y": 40, 
+        "x": 0, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.edf2.Woods_cq", 
+    "mods": [
+      {
+        "y": 170, 
+        "x": 36, 
+        "mass": 1, 
+        "type": "Plant", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-bush.8dc9.Woods_cq", 
+    "mods": [
+      {
+        "y": 152, 
+        "x": 12, 
+        "type": "Bush", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.f63b.Woods_cq", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "y": 138, 
+        "x": 32, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-bush.1858.Woods_cq", 
+    "mods": [
+      {
+        "y": 142, 
+        "x": 132, 
+        "type": "Bush", 
+        "orientation": 40
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-plant.99b1.Woods_cq", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "y": 128, 
+        "x": 88, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-pond.3743.Woods_cq", 
+    "mods": [
+      {
+        "y": 20, 
+        "x": 24, 
+        "type": "Pond", 
+        "orientation": 0, 
+        "gr_state": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-pond.f1dd.Woods_cq", 
+    "mods": [
+      {
+        "y": 27, 
+        "x": 24, 
+        "type": "Pond", 
+        "orientation": 0, 
+        "gr_state": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-pond.027d.Woods_cq", 
+    "mods": [
+      {
+        "y": 27, 
+        "x": 48, 
+        "type": "Pond", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-Woods_cq"
+  }, 
+  {
+    "ref": "item-pond.44dc.Woods_cq", 
+    "mods": [
+      {
+        "y": 21, 
+        "x": 44, 
+        "type": "Pond", 
+        "orientation": 0, 
+        "gr_state": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-Woods_cq"
+  }
+]

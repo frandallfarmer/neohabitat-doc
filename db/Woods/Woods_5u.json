@@ -1,0 +1,299 @@
+[
+  {
+    "ref": "context-Woods_5u", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-Woods_6u", 
+          "", 
+          "context-Woods_4u"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.7629.Woods_5u", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-wall.72f7.Woods_5u", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Wall", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-trapezoid.36d1.Woods_5u", 
+    "mods": [
+      {
+        "lower_right_x": 103, 
+        "upper_left_x": 0, 
+        "upper_right_x": 103, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "y": 32, 
+        "x": 16, 
+        "height": 212, 
+        "type": "Trapezoid", 
+        "orientation": 252
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-super_trapezoid.931b.Woods_5u", 
+    "mods": [
+      {
+        "pattern_x_size": 1, 
+        "lower_right_x": 114, 
+        "upper_left_x": 254, 
+        "pattern": [
+          149, 
+          149, 
+          149, 
+          149, 
+          149, 
+          149, 
+          106, 
+          106, 
+          89, 
+          89, 
+          89, 
+          89, 
+          89, 
+          89, 
+          166, 
+          166, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0
+        ], 
+        "upper_right_x": 105, 
+        "lower_left_x": 243, 
+        "trapezoid_type": 1, 
+        "y": 104, 
+        "x": 16, 
+        "height": 24, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "orientation": 220
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-window.1ef5.Woods_5u", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 96, 
+        "x": 16, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-window.a004.Woods_5u", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 78, 
+        "x": 96, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-window.78dd.Woods_5u", 
+    "mods": [
+      {
+        "y": 53, 
+        "x": 28, 
+        "style": 3, 
+        "type": "Window", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-bush.3732.Woods_5u", 
+    "mods": [
+      {
+        "y": 151, 
+        "x": 24, 
+        "style": 3, 
+        "type": "Bush", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-bush.9f65.Woods_5u", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 48, 
+        "gr_state": 1, 
+        "y": 32, 
+        "x": 0, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-bush.9b2c.Woods_5u", 
+    "mods": [
+      {
+        "y": 151, 
+        "x": 120, 
+        "style": 4, 
+        "type": "Bush", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-trapezoid.b0c8.Woods_5u", 
+    "mods": [
+      {
+        "lower_right_x": 23, 
+        "upper_left_x": 0, 
+        "upper_right_x": 23, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "y": 32, 
+        "x": 68, 
+        "height": 192, 
+        "type": "Trapezoid", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-Woods_5u"
+  }, 
+  {
+    "ref": "item-sign.56dc.Woods_5u", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          89, 
+          101, 
+          128, 
+          79, 
+          108, 
+          100, 
+          101, 
+          134, 
+          128, 
+          66, 
+          111, 
+          116, 
+          116, 
+          108, 
+          101, 
+          134, 
+          128, 
+          83, 
+          104, 
+          111, 
+          112, 
+          112, 
+          101, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "y": 15, 
+        "x": 156, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-Woods_5u"
+  }
+]

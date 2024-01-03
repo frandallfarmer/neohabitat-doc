@@ -1,0 +1,64 @@
+[ {
+	"type" : "item",
+	"ref" : "item-deviltokens",
+	"name" : "Money!",
+	"in" : "user-devil",
+	"mods" : [ {
+		"type" : "Tokens",
+		"y" : 0,
+		"denom_hi" : 4,
+		"denom_lo" : 0
+	} ]
+}, 
+{
+	"type" : "user",
+	"ref" : "user-devil",
+	"name" : "Devil",
+	"mods" : [ {
+		"type" : "Avatar",
+		"turf": "context-hell_1a",
+		"x" : 0,
+		"y" : 110,
+		"bodyType" : "male",
+		"bankBalance" : 50000,
+		"custom" : [ 0, 0 ],
+		"nitty_bits" : 8
+	} ]
+},  
+{
+	"type" : "item",
+	"ref" : "item-devil.godtool",
+	"name" : "Tool to rule the universe.",
+	"in" : "user-devil",
+	"mods" : [ {
+		"type" : "Knick_knack",
+		"style" : 2,
+		"y" : 1,
+		"orientation" : 8,
+		"magic_type" : 17,
+		"charges" : 255
+	} ]
+}, 
+{
+	"type" : "item",
+	"ref" : "item-devil.paper",
+	"name" : "Pad and mailbox",
+	"in" : "user-devil",
+	"mods" : [ {
+		"type" : "Paper",
+		"orientation" : 16,
+		"y" : 4
+	} ]
+}, 
+{
+	"type" : "item",
+	"ref" : "item-devil.head.json",
+	"name" : "Devil's Head",
+	"in" : "user-devil",
+	"mods" : [ {
+		"type" : "Head",
+		"style" : 97,
+		"orientation" : 0,
+		"y" : 6
+	} ]
+} ]

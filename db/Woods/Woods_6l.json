@@ -1,0 +1,130 @@
+[
+  {
+    "ref": "context-Woods_6l", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Woods Rd", 
+    "mods": [
+      {
+        "town_dir": LEFT,
+        "port_dir": LEFT,
+        "neighbors": [
+          "context-Woods_6m", 
+          "context-Woods_7l", 
+          "context-Woods_6k", 
+          "context-Woods_5l"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.6bd5.Woods_6l", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_6l"
+  }, 
+  {
+    "ref": "item-sky.80ed.Woods_6l", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_6l"
+  }, 
+  {
+    "ref": "item-street.9b91.Woods_6l", 
+    "mods": [
+      {
+        "orientation": 80, 
+        "height": 0, 
+        "width": 0, 
+        "gr_state": 10, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-Woods_6l"
+  }, 
+  {
+    "ref": "item-tree.f3d2.Woods_6l", 
+    "mods": [
+      {
+        "y": 141, 
+        "x": 44, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6l"
+  }, 
+  {
+    "ref": "item-tree.4b07.Woods_6l", 
+    "mods": [
+      {
+        "y": 40, 
+        "x": 52, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6l"
+  }, 
+  {
+    "ref": "item-tree.c90e.Woods_6l", 
+    "mods": [
+      {
+        "y": 42, 
+        "x": 24, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6l"
+  }, 
+  {
+    "ref": "item-tree.a0be.Woods_6l", 
+    "mods": [
+      {
+        "y": 37, 
+        "x": 140, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6l"
+  }
+]

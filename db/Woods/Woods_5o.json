@@ -1,0 +1,231 @@
+[
+  {
+    "ref": "context-Woods_5o", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_5p", 
+          "context-Woods_6o", 
+          "context-Woods_5n", 
+          "context-Woods_5n"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.d06c.Woods_5o", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-sky.7b13.Woods_5o", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-rock.c607.Woods_5o", 
+    "mods": [
+      {
+        "y": 148, 
+        "x": 96, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-rock.15f9.Woods_5o", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 32, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.d0bf.Woods_5o", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 104, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.dd0f.Woods_5o", 
+    "mods": [
+      {
+        "y": 36, 
+        "x": 64, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.7ebb.Woods_5o", 
+    "mods": [
+      {
+        "y": 42, 
+        "x": 32, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 164
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.80ff.Woods_5o", 
+    "mods": [
+      {
+        "y": 133, 
+        "x": 144, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.aa0a.Woods_5o", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 108, 
+        "type": "Tree", 
+        "orientation": 172, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.eb40.Woods_5o", 
+    "mods": [
+      {
+        "y": 31, 
+        "x": 0, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.cd07.Woods_5o", 
+    "mods": [
+      {
+        "y": 71, 
+        "x": 100, 
+        "type": "Tree", 
+        "orientation": 173, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-rock.4492.Woods_5o", 
+    "mods": [
+      {
+        "y": 146, 
+        "x": 100, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.a19f.Woods_5o", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 12, 
+        "style": 7, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }, 
+  {
+    "ref": "item-tree.d802.Woods_5o", 
+    "mods": [
+      {
+        "y": 148, 
+        "x": 64, 
+        "style": 7, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5o"
+  }
+]

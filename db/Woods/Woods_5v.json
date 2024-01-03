@@ -1,0 +1,218 @@
+[
+  {
+    "ref": "context-Woods_5v", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_5w", 
+          "context-Woods_6v", 
+          "context-Woods_5w", 
+          "context-Woods_5w"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-bush.46b3.Woods_5v", 
+    "mods": [
+      {
+        "y": 130, 
+        "x": 8, 
+        "style": 4, 
+        "type": "Bush", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-wall.6115.Woods_5v", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Wall", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-ground.ae16.Woods_5v", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-bush.f4b3.Woods_5v", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 131, 
+        "x": 36, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-tree.3259.Woods_5v", 
+    "mods": [
+      {
+        "y": 34, 
+        "x": 16, 
+        "type": "Tree", 
+        "orientation": 212
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-tree.058e.Woods_5v", 
+    "mods": [
+      {
+        "y": 36, 
+        "x": 60, 
+        "type": "Tree", 
+        "orientation": 228
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-tree.a5ed.Woods_5v", 
+    "mods": [
+      {
+        "y": 68, 
+        "x": 60, 
+        "type": "Tree", 
+        "orientation": 236, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-tree.0d88.Woods_5v", 
+    "mods": [
+      {
+        "y": 66, 
+        "x": 56, 
+        "type": "Tree", 
+        "orientation": 237, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-tree.9fe4.Woods_5v", 
+    "mods": [
+      {
+        "y": 141, 
+        "x": 104, 
+        "style": 10, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-bush.cdae.Woods_5v", 
+    "mods": [
+      {
+        "y": 142, 
+        "x": 108, 
+        "style": 4, 
+        "type": "Bush", 
+        "orientation": 17
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-bush.6f2d.Woods_5v", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 142, 
+        "x": 84, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-sky.7f67.Woods_5v", 
+    "mods": [
+      {
+        "y": 100, 
+        "x": 140, 
+        "style": 11, 
+        "type": "Sky", 
+        "orientation": 140
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_5v"
+  }, 
+  {
+    "ref": "item-tree.5bf8.Woods_5v", 
+    "mods": [
+      {
+        "y": 30, 
+        "x": 112, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5v"
+  }
+]

@@ -1,0 +1,258 @@
+[
+  {
+    "ref": "context-Woods_cp", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_cq", 
+          "context-Woods_dq", 
+          "context-Woods_co", 
+          "context-Woods_bp"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.d18a.Woods_cp", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-sky.57a5.Woods_cp", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-super_trapezoid.6cdc.Woods_cp", 
+    "mods": [
+      {
+        "pattern_x_size": 1, 
+        "lower_right_x": 28, 
+        "upper_left_x": 253, 
+        "pattern": [
+          85, 
+          85, 
+          95, 
+          85, 
+          127, 
+          213, 
+          127, 
+          213, 
+          127, 
+          213, 
+          95, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          213, 
+          87, 
+          245, 
+          95, 
+          245, 
+          95, 
+          245, 
+          95, 
+          213, 
+          87, 
+          85, 
+          85
+        ], 
+        "upper_right_x": 28, 
+        "lower_left_x": 3, 
+        "trapezoid_type": 0, 
+        "y": 73, 
+        "x": 116, 
+        "height": 39, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 15, 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.1df3.Woods_cp", 
+    "mods": [
+      {
+        "y": 36, 
+        "x": 8, 
+        "style": 10, 
+        "type": "Tree", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.f261.Woods_cp", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 120, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.4005.Woods_cp", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 196, 
+        "gr_state": 3, 
+        "y": 86, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.7d61.Woods_cp", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 197, 
+        "gr_state": 3, 
+        "y": 86, 
+        "x": 8, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.cfbd.Woods_cp", 
+    "mods": [
+      {
+        "y": 151, 
+        "x": 96, 
+        "type": "Tree", 
+        "orientation": 64
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.cd79.Woods_cp", 
+    "mods": [
+      {
+        "y": 66, 
+        "x": 124, 
+        "type": "Tree", 
+        "orientation": 196, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.3a94.Woods_cp", 
+    "mods": [
+      {
+        "y": 144, 
+        "x": 32, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.e331.Woods_cp", 
+    "mods": [
+      {
+        "y": 66, 
+        "x": 116, 
+        "type": "Tree", 
+        "orientation": 197, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.6759.Woods_cp", 
+    "mods": [
+      {
+        "y": 131, 
+        "x": 88, 
+        "style": 7, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }, 
+  {
+    "ref": "item-tree.94aa.Woods_cp", 
+    "mods": [
+      {
+        "y": 33, 
+        "x": 60, 
+        "type": "Tree", 
+        "orientation": 80
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cp"
+  }
+]
