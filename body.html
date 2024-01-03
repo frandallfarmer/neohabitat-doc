@@ -15,7 +15,6 @@
                 line-height:1.2
             }
         </style>
-        <script src="index.js?v=4"></script>
     </head>
     <body>
         <h1 id="filename"></h1>
@@ -33,7 +32,10 @@
         </div>
         <div id="errors"></div>
         <a href="index.html">Back</a>
-        <script>
+        <script type="module">
+            import { decodeBody, choreographyActions } from "./codec.js"
+            import { docBuilder, decodeBinary, showAll, actionShower, limbAnimationShower, celShower, textNode } from "./show.js"
+
             const propFilter = (key, value) => {
                 if (key != "bitmap" && key != "data" && key != "canvas") {
                     return value
@@ -51,31 +53,31 @@
                 const q = new URLSearchParams(window.location.search)
                 const filename = q.get("f")
                 document.getElementById("filename").innerText = filename
+                const doc = docBuilder({ errorContainer: document.getElementById("errors") })
                 try {
-                    const body = await decodeBinary(filename, BodyImpl)
+                    const body = await decodeBinary(filename, decodeBody)
                     dumpProp(body, document.getElementById("data"))
                     if (body.error) {
-                        showError(body.error, filename)
+                        doc.showError(body.error, filename)
                     } else {
                         const celContainer = document.getElementById("cels")
                         const limbContainer = document.getElementById("limbs")
                         for (const [ilimb, limb] of body.limbs.entries()) {
-                            labelLimb(celContainer, ilimb)                            
-                            showCels(limb, celContainer)
+                            labelLimb(celContainer, ilimb)
+                            showAll(doc, celContainer, filename, limb.cels, celShower())
 
                             labelLimb(limbContainer, ilimb)
-                            showAnimations(limb, limbContainer, LimbImpl)
+                            showAll(doc, limbContainer, filename, limb.animations, limbAnimationShower(limb))
                         }
                         const actionContainer = document.getElementById("actions")
-                        for (const action of choreographyActions) {
+                        showAll(doc, actionContainer, filename, choreographyActions, (action) => {
                             if (action == "stand" || body.actions[action] != body.actions["stand"]) {
-                                actionContainer.appendChild(textNode(action, "div"))
-                                actionContainer.appendChild(createAnimation(action, body, BodyImpl))
+                                return [textNode(action, "div"), actionShower(body)(action)]
                             }
-                        }
+                        })
                     }
                 } catch (e) {
-                    showError(e, filename)
+                    doc.showError(e, filename)
                 }
             }
             onload()

@@ -15,18 +15,19 @@
                 line-height:1.2
             }
         </style>
-        <script src="index.js?v=4"></script>
-        <script>
-            function showErrors() {
+        <script type="module">
+            import { displayBodies, displayProps } from "./index.js"
+
+            window.showErrors = () => {
                 document.getElementById('errors').style.display = 'block'
             }
 
-            const displayEverything = async () => {
-                await displayList("bodies.json", "bodies", BodyImpl)
-                await displayList("heads.json", "heads", PropImpl)
-                await displayList("props.json", "props", PropImpl)
-                await displayList("misc.json", "misc", PropImpl)
-                await displayList("beta.json", "beta", PropImpl)
+            const displayEverything = () => {
+                displayBodies("bodies.json", "bodies")
+                displayProps("heads.json", "heads")
+                displayProps("props.json", "props")
+                displayProps("misc.json", "misc")
+                displayProps("beta.json", "beta")
             }
 
             displayEverything()

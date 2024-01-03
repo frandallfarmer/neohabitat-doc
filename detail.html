@@ -15,7 +15,6 @@
                 line-height:1.2
             }
         </style>
-        <script src="index.js?v=4"></script>
     </head>
     <body>
         <h1 id="filename"></h1>
@@ -33,7 +32,10 @@
         </div>
         <div id="errors"></div>
         <a href="index.html">Back</a>
-        <script>
+        <script type="module">
+            import { decodeProp } from "./codec.js"
+            import { docBuilder, decodeBinary, showAll, textNode, propAnimationShower, celmaskShower, celShower } from "./show.js"
+
             const propFilter = (key, value) => {
                 if (key != "bitmap" && key != "data" && key != "canvas") {
                     return value
@@ -47,15 +49,16 @@
                 const q = new URLSearchParams(window.location.search)
                 const filename = q.get("f")
                 document.getElementById("filename").innerText = filename
+                const doc = docBuilder({ errorContainer: document.getElementById("errors") })
                 try {
-                    const prop = await decodeBinary(filename, PropImpl)
+                    const prop = await decodeBinary(filename, decodeProp)
                     dumpProp(prop, document.getElementById("data"))
                     if (prop.error) {
-                        showError(prop.error, filename)
+                        doc.showError(prop.error, filename)
                     } else {
-                        showAnimations(prop, document.getElementById("animations"), PropImpl)
-                        showStates(prop, document.getElementById("states"))
-                        showCels(prop, document.getElementById("cels"))
+                        showAll(doc, document.getElementById("animations"), filename, prop.animations, propAnimationShower(prop))
+                        showAll(doc, document.getElementById("states"), filename, prop.celmasks, celmaskShower(prop))
+                        showAll(doc, document.getElementById("cels"), filename, prop.cels, celShower())
                     }
                 } catch (e) {
                     showError(e, filename)
