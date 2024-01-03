@@ -1,3 +1,6 @@
 *.o
-down
+mamelink/down
+mamelink/griddle/fred
+mamelink/griddle/griddle
+y.output
 console_history

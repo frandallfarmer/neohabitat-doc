@@ -1,6 +1,6 @@
 #include "griddleDefs.h"
 
-value *evaluate();
+value *evaluate(expression	*expr);
 
   genericListHead *
 buildGenericList(list, new)
@@ -75,11 +75,11 @@ buildStringList(list, new)
 }
 
   expression *
-buildExpr(type, arg1, arg2, arg3)
-  exprType	type;
-  int		arg1;
-  int		arg2;
-  int		arg3;
+buildExpr(
+  exprType	type,
+  intptr_t	arg1,
+  intptr_t	arg2,
+  intptr_t	arg3)
 {
 	expression	*result;
 
@@ -89,6 +89,26 @@ buildExpr(type, arg1, arg2, arg3)
 	result->part2 = arg2;
 	result->part3 = arg3;
 	return(result);	
+}
+
+expression *
+buildExprI(exprType	type, intptr_t arg1) {
+	return buildExpr(type, arg1, 0, 0);
+}
+
+expression *
+buildExprP(exprType	type, void	*arg1) {
+	return buildExpr(type, (intptr_t)arg1, 0, 0);
+}
+
+expression *
+buildExprIP(exprType	type, intptr_t arg1, void	*arg2) {
+	return buildExpr(type, arg1, (intptr_t)arg2, 0);
+}
+
+expression *
+buildExprPIP(exprType	type, void	*arg1, intptr_t arg2, void *arg3) {
+	return buildExpr(type, (intptr_t)arg1, arg2, (intptr_t)arg3);
 }
 
   property *
@@ -166,8 +186,8 @@ buildField(name, dimension, type, initList)
 }
 
   field *
-invisifyField(aField)
-  field	*aField;
+invisifyField(
+  field	*aField)
 {
 	aField->invisible = TRUE;
 	return(aField);

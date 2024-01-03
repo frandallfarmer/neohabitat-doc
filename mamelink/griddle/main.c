@@ -3,7 +3,7 @@
  */
 
 #include "griddleDefs.h"
-int yydebug;
+extern int yydebug;
 
 #define argcheck(i,m) if (++i >= argc) { error(m); exit(1); }
 #define argfile(fd,m,t)	{						\
@@ -108,11 +108,11 @@ initialize(argc, argv)
 
 	args = argv + 1;
 	if ((defineFileName = getenv("GHUDEFINES")) == NULL)
-		queueInputFile("/u0/habitat/defines.ghu");
+		queueInputFile("defines.ghu");
 	else
 		queueInputFile(defineFileName);
 	if ((classFileName = getenv("CLASSINFO")) == NULL)
-		classFileName = "/u0/habitat/class.dat";
+		classFileName = "class.dat";
 	for (i=1; i<argc; i++) {
 		arg = *args++;
 		if (*arg != '-') {
@@ -315,19 +315,22 @@ openFirstFile(fredMode)
 	return(TRUE);
 }
 
-error(msg, arg1, arg2, arg3)
-  char	*msg;
-  int	arg1, arg2, arg3;
+void error(char	*msg, ...)
 {
 	fprintf(stderr, "error: ");
-	fprintf(stderr, msg, arg1, arg2, arg3);
+	va_list ap;
+	va_start(ap, msg);
+	vfprintf(stderr, msg, ap);
+	va_end(ap);
 }
 
-systemError(msg, arg1, arg2, arg3)
-  char	*msg;
-  int	arg1, arg2, arg3;
+void systemError(char	*msg, ...)
 {
-	error(msg, arg1, arg2, arg3);
+	fprintf(stderr, "error: ");
+	va_list ap;
+	va_start(ap, msg);
+	vfprintf(stderr, msg, ap);
+	va_end(ap);
 	perror("Unix says");
 	exit(1);
 }

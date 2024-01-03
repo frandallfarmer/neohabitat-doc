@@ -43,9 +43,9 @@ readFredStats(argc, argv)
 	char	 temp[256];
 
 	if (argc > 1)
-		sprintf(temp, "%s/u0/habitat/fredStats", argv[1]);
+		sprintf(temp, "%sfredStats", argv[1]);
 	else
-		strcpy(temp, "/u0/habitat/fredStats");
+		strcpy(temp, "fredStats");
 	if ((statFyle = fopen(temp, "r")) != NULL) {
 		for (i=0; i<128; ++i)
 			fredStats[i] = getw(statFyle);

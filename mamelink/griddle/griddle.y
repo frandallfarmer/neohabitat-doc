@@ -1,5 +1,7 @@
 %{
+#define DEFINE_EXTERNS
 #include "griddleDefs.h"
+#define YYSTYPE intptr_t
 %}
 
 %token Name Number String BitString Rawline
@@ -54,11 +56,11 @@ includeStatement:
 defineStatement:
 		DEFINE expr String fieldList ENDDEFINE
 {
-	$$ = executeDefine($2, $3, $4);
+	executeDefine($2, $3, $4);
 }
  |		DEFINE expr String ENDDEFINE
 {
-	$$ = executeDefine($2, $3, NULL);
+	executeDefine($2, $3, NULL);
 }
  ;
 
@@ -87,7 +89,7 @@ field:
 basicField:
 		Name ':' fieldType
 {
-	$$ = buildField($1, buildExpr(NUM_EXPR, 1), $3, NULL);
+	$$ = buildField($1, buildExprI(NUM_EXPR, 1), $3, NULL);
 }
  |		Name '(' expr ')' ':' fieldType
 {
@@ -95,7 +97,7 @@ basicField:
 }
  |		Name ':' fieldType '=' exprList
 {
-	$$ = buildField($1, buildExpr(NUM_EXPR, 1), $3, $5);
+	$$ = buildField($1, buildExprI(NUM_EXPR, 1), $3, $5);
 }
  |		Name '(' expr ')' ':' fieldType '=' exprList
 {
@@ -172,74 +174,74 @@ exprList:
 expr:
 		Name
 {
-	$$ = buildExpr(ID_EXPR, $1);
+	$$ = buildExprP(ID_EXPR, $1);
 }
  |		Number
 {
-	$$ = buildExpr(NUM_EXPR, $1);
+	$$ = buildExprI(NUM_EXPR, $1);
 }
  |		String
 {
-	$$ = buildExpr(STRING_EXPR, $1);
+	$$ = buildExprP(STRING_EXPR, $1);
 }
  |		BitString
 {
-	$$ = buildExpr(BITSTRING_EXPR, $1);
+	$$ = buildExprP(BITSTRING_EXPR, $1);
 }
  |		'(' expr ')'
 {
-	$$ = buildExpr(EXPR_EXPR, $2);
+	$$ = buildExprP(EXPR_EXPR, $2);
 }
  |		SUB expr	%prec UMINUS
 {
-	$$ = buildExpr(UNOP_EXPR, UMINUS, $2);
+	$$ = buildExprIP(UNOP_EXPR, UMINUS, $2);
 }
  |		NOT expr
 {
-	$$ = buildExpr(UNOP_EXPR, NOT, $2);
+	$$ = buildExprIP(UNOP_EXPR, NOT, $2);
 }
  |		A expr
 {
-	$$ = buildExpr(UNOP_EXPR, A, $2);
+	$$ = buildExprIP(UNOP_EXPR, A, $2);
 }
  |		O expr
 {
-	$$ = buildExpr(UNOP_EXPR, O, $2);
+	$$ = buildExprIP(UNOP_EXPR, O, $2);
 }
  |		R expr
 {
-	$$ = buildExpr(UNOP_EXPR, R, $2);
+	$$ = buildExprIP(UNOP_EXPR, R, $2);
 }
  |		expr ADD expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, ADD, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, ADD, $3);
 }
  |		expr SUB expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, SUB, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, SUB, $3);
 }
  |		expr MUL expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, MUL, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, MUL, $3);
 }
  |		expr DIV expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, DIV, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, DIV, $3);
 }
  |		expr MOD expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, MOD, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, MOD, $3);
 }
  |		expr AND expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, AND, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, AND, $3);
 }
  |		expr OR expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, OR, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, OR, $3);
 }
  |		expr XOR expr
 {
-	$$ = buildExpr(BIN_EXPR, $1, XOR, $3);
+	$$ = buildExprPIP(BIN_EXPR, $1, XOR, $3);
 }
  ;

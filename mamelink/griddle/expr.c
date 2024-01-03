@@ -1,13 +1,14 @@
 #include "y.tab.h"
 #include "griddleDefs.h"
 
+value		*buildNumber(int val);
+
   value *
 integerize(val)
   value *val;
 {
 	char	*string;
 	int	 i;
-	value	*buildNumber();
 
 	if (val == NULL) {
 		val = buildNumber(0);

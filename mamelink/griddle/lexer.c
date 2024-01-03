@@ -2,7 +2,7 @@
 #include "y.tab.h"
 
 extern int yylval;
-int yydebug;
+extern int yydebug;
 
 typedef enum {
 	C_SKIP, C_ZERO, C_DIG, C_ALPH, C_QUOTE, C_APOSTROPHE, C_LIT, C_SLASH,
@@ -563,6 +563,7 @@ setKeywordMinlengths()
 	int	 i;
 
 	for (i = 0; keywords[i].string != NULL; ++i) {
+		keywords[i].string = strdup(keywords[i].string);
 		trailer = index(keywords[i].string, '/');
 		if (trailer == NULL) {
 			keywords[i].minlength = strlen(keywords[i].string);

@@ -1,7 +1,7 @@
 .SUFFIXES: .o .c .h .run .y .l
 
 GOBJ = griddle.o gmain.o glexer.o build.o cv.o gexpr.o gexec.o debug.o indir.o
-FOBJ = griddle.o fmain.o flexer.o build.o cv.o fexpr.o fexec.o debug.o fred.o fred2.o fscreen.o sun.o map.o
+FOBJ = ../mamelink.o griddle.o fmain.o flexer.o build.o cv.o fexpr.o fexec.o debug.o fred.o fred2.o fscreen.o # sun.o map.o
 
 .c.o:
 	cc -c -g -DYYDEBUG $*.c
@@ -21,7 +21,7 @@ griddle: $(GOBJ)
 	cc -g $(GOBJ) -o griddle
 
 fred: $(FOBJ)
-	cc -g $(FOBJ) -o fred -lcurses -ltermlib
+	cc -g $(FOBJ) -o fred -lcurses
 
 all: griddle fred
 
@@ -82,3 +82,6 @@ fred.o: fred.c griddleDefs.h prot.h
 fred2.o: fred2.c griddleDefs.h
 
 fscreen.o: fscreen.c griddleDefs.h
+
+clean:
+	rm -f *.o griddle fred

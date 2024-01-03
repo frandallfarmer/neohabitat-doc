@@ -8,27 +8,35 @@ static char unsavedChar;
 extern int yylval;
 
   void
-echoLine(fmt, arg1, arg2, arg3)
-  char	*fmt;
-  int	 arg1;
-  int	 arg2;
-  int	 arg3;
+echoLine(char	*fmt, ...)
 {
+	va_list ap;
+	
 	move(0, 0);
 	refresh();
 	clrtoeol();
-	printw(fmt, arg1, arg2, arg3);
+
+	va_start(ap, fmt);
+	vw_printw(NULL, fmt, ap);
+	va_end(ap);
+
 	refresh();
 }
 
   void
-lineError(fmt, arg1, arg2, arg3)
-  char	*fmt;
-  int	 arg1;
-  int	 arg2;
-  int	 arg3;
+lineError(char	*fmt, ...)
 {
-	echoLine(fmt, arg1, arg2, arg3);
+	va_list ap;
+	
+	move(0, 0);
+	refresh();
+	clrtoeol();
+
+	va_start(ap, fmt);
+	vw_printw(NULL, fmt, ap);
+	va_end(ap);
+
+	refresh();
 	putchar('\7');
 }
 
@@ -43,7 +51,7 @@ mygetch()
 }
 
   void
-ungetch(c)
+ungetchar(c)
   char c;
 {
 	unsavedChar = c;

@@ -150,7 +150,7 @@ readFredStats()
 	FILE	*statFyle;
 	int	 i;
 
-	if ((statFyle = fopen("/u0/habitat/fredStats", "r")) != NULL) {
+	if ((statFyle = fopen("fredStats", "r")) != NULL) {
 		for (i=0; i<128; ++i)
 			fredStats[i] = getw(statFyle);
 		fclose(statFyle);
@@ -167,7 +167,7 @@ writeFredStats()
 	FILE	*statFyle;
 	int	 i;
 
-	if ((statFyle = fopen("/u0/habitat/fredStats", "w")) != NULL) {
+	if ((statFyle = fopen("fredStats", "w")) != NULL) {
 		for (i=0; i<128; ++i)
 			putw(fredStats[i], statFyle);
 		fclose(statFyle);
@@ -270,7 +270,7 @@ revalueField(firstc, buf)
   char	firstc;
   byte *buf;
 {
-	ungetch(firstc);
+	ungetchar(firstc);
 	fredModeLexingOn();
 	fillFieldPrompt(editY, editX, editField, buf, TRUE);
 	fredModeLexingOff();
@@ -512,11 +512,12 @@ generateFredObject(class, twinFlag)
 		editOneObject(noid);
 }
 
+void	displayRegion();
+
   boolean
 createObject()
 {
 	int	class;
-	void	displayRegion();
 
 	class = promptInt("-- class", previousClass);
 	if (class == -1)
@@ -651,7 +652,7 @@ revaluePath(firstc)
 {
 	char	temp[80];
 
-	ungetch(firstc);
+	ungetchar(firstc);
 	mvaddstr(selectedPath + 1, 0, "  ");
 	clrtoeol();
 	refresh();
@@ -724,27 +725,7 @@ quit()
   void
 setupFastlinkPort()
 {
-	char *portstr;
-
-	portstr = getenv("FASTPORT");
-	if (portstr != NULL) {
-		if (strlen(portstr) < 3) {
-			error("FASTPORT env variable must be of form: c;p\n");
-			exit(1);
-		} else {
-			card = portstr[0] - '0';
-			port = portstr[2] - '0';
-		}
-	}
-	if (card < 0 || NCARDS <= card) {
-		error("card number out of range\n");
-		exit(1);
-	}
-	if (port < 0 || 2 < port) {
-		error("port number out of range\n");
-		exit(1);
-	}
-	if (!testMode && !Init(card, port)) {
+	if (!testMode && !Init(NULL)) {
 		error("unable to access device\n");
 		Finish();
 		exit(1);
@@ -770,7 +751,7 @@ doFredStuff()
 	undeleteBuffer = NULL;
 	previousClass = 2;
 
-	strcpy(regionName, "/u0/habitat/empty.raw");
+	strcpy(regionName, "empty.raw");
 	echoLine("Fred version 1.0 (%s) -- type 'h' for help", DATE);
 	while (processCommand())
 		;
@@ -782,7 +763,7 @@ doFredStuff()
 initC64editor()
 {
 /*	system("down -S < /u0/aric/mic/Gr/all.out");*/
-	system("down -S < /u0/habitat/reno.out");
+	system("../down -S < reno.out");
 /*	system("down -S < /u0/chip/reno.out");*/
 	return(TRUE);
 }

@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
 
 #define Case		break; case
 #define Default		break; default
@@ -74,11 +78,12 @@ typedef enum {
 	VAL_REGION, VAL_BITSTRING
 } valueType;
 
+// TODO: Nope, this absolutely does not work
 typedef struct {
 	exprType	type;
-	int		part1;
-	int		part2;
-	int		part3;
+	intptr_t	part1;
+	intptr_t	part2;
+	intptr_t	part3;
 } expression;
 
 typedef struct exprListStruct {
@@ -176,10 +181,14 @@ typedef struct {
 	byte			*prototype;
 } classDescriptor;
 
-#define  HASH_MAX	512
-symbol	*symbolTable[HASH_MAX];
+#ifdef DEFINE_EXTERNS
+#define EXTERN
+#else
+#define EXTERN extern
+#endif
 
-char *malloc();
+#define  HASH_MAX	512
+EXTERN symbol	*symbolTable[HASH_MAX];
 
 #define typeAlloc(t) ((t *)malloc(sizeof(t)))
 #define typeAllocMulti(t,n) ((t *)malloc((n)*sizeof(t)))
@@ -192,50 +201,49 @@ typedef struct fileListStruct {
 	char			*saveName;
 } fileList;
 
-fileList	*inputStack;
-fileList	*bottomOfInputStack;
-FILE		*currentInput;
-int		 currentLineNumber;
-char		*currentFileName;
-int		 globalIdCounter;
-int		 globalIdAdjustment;
-int		 objectBase;
+EXTERN fileList	*inputStack;
+EXTERN fileList	*bottomOfInputStack;
+EXTERN FILE		*currentInput;
+EXTERN int		 currentLineNumber;
+EXTERN char		*currentFileName;
+EXTERN int		 globalIdCounter;
+EXTERN int		 globalIdAdjustment;
+EXTERN int		 objectBase;
 
-FILE		*griFile;
-FILE		*rawFile;
-FILE		*cvFile;
-FILE		*indirFile;
-int		 indirectPass;
-stringList	*cvInput;
-char		*classFileName;
-boolean		 debug;
-boolean		 testMode;
-boolean		 assignRelativeIds;
-int		 useStartCount;
-boolean		 insideDefinition;
-boolean		 announceIncludes;
+EXTERN FILE		*griFile;
+EXTERN FILE		*rawFile;
+EXTERN FILE		*cvFile;
+EXTERN FILE		*indirFile;
+EXTERN int		 indirectPass;
+EXTERN stringList	*cvInput;
+EXTERN char		*classFileName;
+EXTERN boolean		 debug;
+EXTERN boolean		 testMode;
+EXTERN boolean		 assignRelativeIds;
+EXTERN int		 useStartCount;
+EXTERN boolean		 insideDefinition;
+EXTERN boolean		 announceIncludes;
 
 #define MAXCLASS 256
-classDescriptor	*classDefs[MAXCLASS+1];
+EXTERN classDescriptor	*classDefs[MAXCLASS+1];
 
 #define MAXNOID 256
-int		 objectCount;
-int		 rawCount;
-object	        *noidArray[MAXNOID];
-object		*altNoidArray[MAXNOID];
-boolean		 noidAlive[MAXNOID];
-boolean		 fredModeLexing;
-char		*fredLexString;
+EXTERN int		 objectCount;
+EXTERN int		 rawCount;
+EXTERN object	        *noidArray[MAXNOID];
+EXTERN object		*altNoidArray[MAXNOID];
+EXTERN boolean		 noidAlive[MAXNOID];
+EXTERN boolean		 fredModeLexing;
+EXTERN char		*fredLexString;
 
-boolean		 promptDefault;
-char		 pathname[80];
-char		 regionName[80];
-byte		 cv[512];
-int		 cvLength;
-int		 displayNoid;
-object		*undeleteBuffer;
-int		 previousClass;
-
+EXTERN boolean		 promptDefault;
+EXTERN char		 pathname[80];
+EXTERN char		 regionName[80];
+extern byte		 cv[512];
+extern int		 cvLength;
+EXTERN int		 displayNoid;
+EXTERN object		*undeleteBuffer;
+EXTERN int		 previousClass;
 
 /* C64 locations */
 #define KEYBOARD_OVERRIDE (word)0x0010
@@ -289,10 +297,23 @@ typedef struct {
 	int		 region;
 } indirectEntry;
 
-indirectEntry	*indirTable;
-int		 indirCount;
-char		 indirName[80];
-int		 indirArgc;
-char		*indirArgv[50];
-int		 indirRegion;
-boolean		 sortObjects;
+EXTERN indirectEntry	*indirTable;
+EXTERN int		 indirCount;
+EXTERN char		 indirName[80];
+EXTERN int		 indirArgc;
+EXTERN char		*indirArgv[50];
+EXTERN int		 indirRegion;
+EXTERN boolean		 sortObjects;
+
+void executeRawline(object	*obj);
+void executeAssignment(symbol	*name, expression	*expr);
+void executeInclude(char	*filename);
+void executeDefine(expression	*classExpr, char		*name, fieldList	*fields);
+fieldList *buildFieldList(fieldList	*list, field		*new);
+field *invisifyField(field	*aField);
+field *buildField(symbol	*name, expression	*dimension, fieldType	 type, exprList	*initList);
+expression *buildExpr(exprType	type, intptr_t	arg1, intptr_t	arg2, intptr_t	arg3);
+expression *buildExprI(exprType	type, intptr_t arg1);
+expression *buildExprP(exprType	type, void	*arg1);
+expression *buildExprIP(exprType	type, intptr_t arg1, void	*arg2);
+expression *buildExprPIP(exprType	type, void	*arg1, intptr_t arg2, void *arg3);

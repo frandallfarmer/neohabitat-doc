@@ -1,8 +1,8 @@
 #include "griddleDefs.h"
 
   void
-executeInclude(filename)
-  char	*filename;
+executeInclude(
+  char	*filename)
 {
 	fileList	*newFile;
 
@@ -25,13 +25,13 @@ executeInclude(filename)
 	free(filename);
 }
 
-  void
-executeAssignment(name, expr)
-  symbol	*name;
-  expression	*expr;
-{
-	value	*evaluate();
+value	*evaluate(expression	*expr);
 
+  void
+executeAssignment(
+  symbol	*name,
+  expression	*expr)
+{
 	if (name->type != NON_SYM && name->type != VARIABLE_SYM) {
 		error("illegal assignment to '%s'\n", name->name);
 	} else {
@@ -43,29 +43,29 @@ executeAssignment(name, expr)
 }
 
   void
-fillByte(buf, offset, value)
-  byte	*buf;
-  int	 offset;
-  int	 value;
+fillByte(
+  byte	*buf,
+  int	 offset,
+  int	 value)
 {
 	buf[offset] = value & 0xFF;
 }
 
   void
-fillWord(buf, offset, value)
-  byte	*buf;
-  int	 offset;
-  int	 value;
+fillWord(
+  byte	*buf,
+  int	 offset,
+  int	 value)
 {
 	buf[offset    ] = (value >>  8) & 0xFF;
 	buf[offset + 1] =  value        & 0xFF;
 }
 
   void
-fillLong(buf, offset, value)
-  byte	*buf;
-  int	 offset;
-  long	 value;
+fillLong(
+  byte	*buf,
+  int	 offset,
+  long	 value)
 {
 	buf[offset    ] = (value >> 24) & 0xFF;
 	buf[offset + 1] = (value >> 16) & 0xFF;
@@ -73,13 +73,14 @@ fillLong(buf, offset, value)
 	buf[offset + 3] =  value        & 0xFF;
 }
 
+value		*buildNumber(int val);
+
   value *
-nextValue(dataptr)
-  exprList	**dataptr;
+nextValue(
+  exprList	**dataptr)
 {
 	exprList	*data;
 	value		*val;
-	value		*buildNumber();
 
 	if (dataptr == NULL || *dataptr == NULL)
 		return(buildNumber(0));
@@ -90,8 +91,8 @@ nextValue(dataptr)
 }
 
   value *
-nextIntValue(dataptr)
-  exprList	**dataptr;
+nextIntValue(
+  exprList	**dataptr)
 {
 	value		*val;
 
@@ -102,8 +103,8 @@ nextIntValue(dataptr)
 }
 
   char *
-nextStringValue(dataptr)
-  exprList	**dataptr;
+nextStringValue(
+  exprList	**dataptr)
 {
 	value	*val;
 	char	*result;
@@ -120,8 +121,8 @@ nextStringValue(dataptr)
 }
 
   int
-contNum(vtype)
-  valueType	vtype;
+contNum(
+  valueType	vtype)
 {
 	if (vtype == VAL_AVATAR) return (1);
 	else if (vtype == VAL_OBJECT) return (2);
@@ -129,21 +130,21 @@ contNum(vtype)
 }
 
   void
-adjustValue(val)
-  value	*val;
+adjustValue(
+  value	*val)
 {
 	if (indirFile != NULL && val->value < -1000)
 		val->value -= globalIdAdjustment;
 }
 
   void
-fillField(buf, data, aField, nextInt, nextString, nextBit)
-  byte		*buf;
-  exprList	*data;
-  field		*aField;
-  value		*(*nextInt)();
-  char		*(*nextString)();
-  value		*(*nextBit)();
+fillField(
+  byte		*buf,
+  exprList	*data,
+  field		*aField,
+  value		*(*nextInt)(),
+  char		*(*nextString)(),
+  value		*(*nextBit)())
 {
 	int	 i, j;
 	int	 offset, bitOffset;
@@ -287,10 +288,10 @@ fillField(buf, data, aField, nextInt, nextString, nextBit)
 }
 
   void
-fillPrototype(buf, fields, class)
-  byte		*buf;
-  fieldList	*fields;
-  int		 class;
+fillPrototype(
+  byte		*buf,
+  fieldList	*fields,
+  int		 class)
 {
 	while (fields != NULL) {
 		fillField(buf, fields->field->initValues, fields->field,
@@ -300,11 +301,11 @@ fillPrototype(buf, fields, class)
 }
 
   void
-fillProperty(buf, prop, fields, class)
-  byte		*buf;
-  property	*prop;
-  fieldList	*fields;
-  int		 class;
+fillProperty(
+  byte		*buf,
+  property	*prop,
+  fieldList	*fields,
+  int		 class)
 {
 	while (fields != NULL) {
 		if (fields->field->name == prop->fieldName) {
@@ -517,8 +518,8 @@ generateScratchId(class, id, relativeId)
 }
 
   void
-executeRawline(obj)
-  object	*obj;
+executeRawline(
+  object	*obj)
 {
 	if (assignRelativeIds)
 		generateScratchId(obj->class, getLong(obj->stateVector, 0),
