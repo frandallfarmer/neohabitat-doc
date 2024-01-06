@@ -30,16 +30,16 @@ const stringJoinRegex = /(("([^"]|\\")*"\s*\+\s*)+"([^"]|\\")*")/g;
 function templateStringJoins(data) {
     if (data.search(/\+/) != -1) {
         return data.replace(/(\n)/g, '').replace(stringJoinRegex,
-        function(origText, offset, string) {
-            var replacementText = [];
-            var splitText = origText.split('+');
-            for (var textLineId in splitText) {
-            var trimTextLine = splitText[textLineId].trim();
-            var quotesRemoved = trimTextLine.replace(/(^")|("$)/g, '');
-            replacementText.push(quotesRemoved);
+            function(origText, offset, string) {
+                var replacementText = [];
+                var splitText = origText.split('+');
+                for (var textLineId in splitText) {
+                    var trimTextLine = splitText[textLineId].trim();
+                    var quotesRemoved = trimTextLine.replace(/(^")|("$)/g, '');
+                    replacementText.push(quotesRemoved);
+                }
+                return `"${replacementText.join('')}"`
             }
-            return '"{0}"'.format(replacementText.join(''));
-        }
         );
     }
     return data;
@@ -50,12 +50,12 @@ function templateConstantJoins(data) {
         var replacementText = [];
         var splitText = origText.split('+');
         for (var habConstId in splitText) {
-        var trimHabConst = splitText[habConstId].trim();
-        if (trimHabConst in joinReplacements) {
-            replacementText.push(joinReplacements[trimHabConst]);
+            var trimHabConst = splitText[habConstId].trim();
+            if (trimHabConst in joinReplacements) {
+                replacementText.push(joinReplacements[trimHabConst]);
+            }
         }
-        }
-        return '"{0}"'.format(replacementText.join(''));
+        return `"${replacementText.join('')}"`
     });
 }
 
