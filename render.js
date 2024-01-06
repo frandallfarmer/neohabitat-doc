@@ -30,8 +30,13 @@ const makeCanvas = (w, h) => {
     const canvas = document.createElement("canvas")
     canvas.width = w
     canvas.height = h
+    canvas.style.imageRendering = "pixelated"
+    canvas.style.width = `${w * 3}px`
+    canvas.style.height = `${h * 3}px`
     return canvas    
 }
+
+export const canvasForSpace = ({ minX, maxX, minY, maxY }) => makeCanvas((maxX - minX) * 8, maxY - minY)
 
 const defaultColors = {
     wildcard: 6,
@@ -99,28 +104,50 @@ export const celsFromMask = (prop, celMask) => {
     return cels
 }
 
+// canvas coordinate spaces have the top-left corner at 0,0, x increasing to the right, y increasing down.
+// habitat coordinate spaces have the object origin at 0,0, x increasing to the right, y increasing _up_.
+// In addition, 1 unit horizontally in habitat coordinate space corresponds to 8 pixels horizontally in canvas space.
+export const translateSpace = ({ minX, maxX, minY, maxY }, dx, dy) => {
+    return { minX: minX + dx, maxX: maxX + dx, minY: minY + dy, maxY: maxY + dy }
+}
+
+export const compositeSpaces = (spaces) => {
+    return { minX: Math.min(...spaces.map((f) => f ? f.minX : Math.min())),
+             maxX: Math.max(...spaces.map((f) => f ? f.maxX : Math.max())),
+             minY: Math.min(...spaces.map((f) => f ? f.minY : Math.min())),
+             maxY: Math.max(...spaces.map((f) => f ? f.maxY : Math.max())) }
+}
+
+export const topLeftCanvasOffset = (outerSpace, innerSpace) => {
+    return [(innerSpace.minX - outerSpace.minX) * 8, outerSpace.maxY - innerSpace.maxY]
+}
+
+export const drawInSpace = (ctx, canvas, ctxSpace, canvasSpace) => {
+    const [x, y] = topLeftCanvasOffset(ctxSpace, canvasSpace)
+    ctx.drawImage(canvas, x, y)
+}
+
+// Habitat's coordinate space consistently has y=0 for the bottom, and increasing y means going up
 export const frameFromCels = (cels, celColors = null, paintOrder = null) => {
     if (cels.length == 0) {
         return null
     }
-    let minX = Number.POSITIVE_INFINITY
-    let minY = Number.POSITIVE_INFINITY
-    let maxX = Number.NEGATIVE_INFINITY
-    let maxY = Number.NEGATIVE_INFINITY
     let xRel = 0
     let yRel = 0
+    let xOrigin = null
+    let yOrigin = null
     let layers = []
     for (const [icel, cel] of cels.entries()) {
         if (cel) {
+            if (xOrigin == null) {
+                xOrigin = cel.xOffset
+                yOrigin = cel.yOffset - cel.height
+            }
             const x = cel.xOffset + xRel
-            const y = -(cel.yOffset + yRel)
-            minX = Math.min(minX, x)
-            minY = Math.min(minY, y)
-            maxX = Math.max(maxX, cel.width + x)
-            maxY = Math.max(maxY, cel.height + y)
+            const y = cel.yOffset + yRel
             if (cel.bitmap) {
                 const colors = (Array.isArray(celColors) ? celColors[icel] : celColors) ?? {}
-                layers.push({ canvas: canvasFromBitmap(cel.bitmap, colors), x, y })
+                layers.push({ canvas: canvasFromBitmap(cel.bitmap, colors), minX: x, minY: y - cel.height, maxX: x + cel.width, maxY: y })
             } else {
                 layers.push(null)
             }
@@ -139,17 +166,16 @@ export const frameFromCels = (cels, celColors = null, paintOrder = null) => {
         layers = reordered
     }
 
-    const w = (maxX - minX) * 8
-    const h = maxY - minY
+    const space = compositeSpaces(layers)
 
-    const canvas = makeCanvas(w, h)
+    const canvas = canvasForSpace(space)
     const ctx = canvas.getContext("2d")
     for (const layer of layers) {
         if (layer && layer.canvas) {
-            ctx.drawImage(layer.canvas, (layer.x - minX) * 8, layer.y - minY)
+            drawInSpace(ctx, layer.canvas, space, layer)
         }
     }
-    return { canvas: canvas, xOffset: minX * 8, yOffset: minY, w: w, h: h }
+    return {...translateSpace(space, -xOrigin, -yOrigin), canvas: canvas }
 }
 
 const framesFromAnimation = (animation, frameFromState) => {
@@ -252,37 +278,23 @@ export const imageFromCanvas = (canvas) => {
 }
 
 export const animate = (frames) => {
-    if (frames.length == 0) {
-        return textNode("")
-    } else if (frames.length == 1) {
-        return imageFromCanvas(frames[0].canvas)
-    }
-    let minX = Number.POSITIVE_INFINITY
-    let minY = Number.POSITIVE_INFINITY
-    let maxX = Number.NEGATIVE_INFINITY
-    let maxY = Number.NEGATIVE_INFINITY
-    for (const frame of frames) {
-        minX = Math.min(minX, frame.xOffset)
-        minY = Math.min(minY, frame.yOffset)
-        maxX = Math.max(maxX, frame.xOffset + frame.w)
-        maxY = Math.max(maxY, frame.yOffset + frame.h)
-    }
+    const space = compositeSpaces(frames)
 
-    const w = maxX - minX
-    const h = maxY - minY
-    const canvas = makeCanvas(w, h)
-    canvas.style.imageRendering = "pixelated"
-    canvas.style.width = `${w * 3}px`
-    canvas.style.height = `${h * 3}px`
+    if (frames.length == 0) {
+        return { ...space, element: textNode("") }
+    } else if (frames.length == 1) {
+        return { ...space, element: imageFromCanvas(frames[0].canvas) }
+    }
+    const canvas = canvasForSpace(space)
     let iframe = 0
     const ctx = canvas.getContext("2d")
     const nextFrame = () => {
         const frame = frames[iframe]
-        ctx.clearRect(0, 0, w, h)
-        ctx.drawImage(frame.canvas, frame.xOffset - minX, frame.yOffset - minY)
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        drawInSpace(ctx, frame.canvas, space, frame)
         iframe = (iframe + 1) % frames.length
     }
     nextFrame()
     setInterval(nextFrame, 250)
-    return canvas
+    return { ...space, element: canvas }
 }

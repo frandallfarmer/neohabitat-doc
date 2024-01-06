@@ -43,18 +43,18 @@ export const docBuilder = ({ detailHref, errorContainer }) => {
     return { linkDetail, showError }
 }
 
+const showRender = (doc, container, filename, render) => {
+    if (Array.isArray(render)) {
+        render.forEach((r) => showRender(doc, container, filename, r))
+    } else if (render) {
+        container.appendChild(doc.linkDetail(render.element, filename))
+    }
+}
+
 export const showAll = (doc, container, filename, values, f) => {
     for (const value of values) {
         try {
-            let elements = f(value)
-            if (elements && !Array.isArray(elements)) {
-                elements = [elements]
-            }
-            if (elements) {
-                for (const element of elements) {
-                    container.appendChild(doc.linkDetail(element, filename))
-                }
-            }
+            showRender(doc, container, filename, f(value))
         } catch (e) {
             doc.showError(e, filename)
         }
