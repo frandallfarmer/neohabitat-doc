@@ -47,7 +47,7 @@ const showRender = (doc, container, filename, render) => {
     if (Array.isArray(render)) {
         render.forEach((r) => showRender(doc, container, filename, r))
     } else if (render) {
-        container.appendChild(doc.linkDetail(render.element, filename))
+        container.appendChild(doc.linkDetail(render.element ?? render, filename))
     }
 }
 
