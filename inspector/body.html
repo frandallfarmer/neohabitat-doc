@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Inhabitor - The Habitat Inspector</title>
+        <title>Habitat Inspector</title>
         <style type="text/css">
             body {
                 margin:40px auto;
@@ -17,7 +17,7 @@
         </style>
     </head>
     <body>
-        <h1 id="filename"></h1>
+        <h1>Avatar - <span id ="filename"></span></h1>
         <div id="actions">
             <h2>Actions</h2>
         </div>
@@ -31,7 +31,8 @@
             <h2>Data</h1>
         </div>
         <div id="errors"></div>
-        <a href="index.html">Back</a>
+        <a href="index.html">Home</a>
+        
         <script type="module">
             import { decodeBody, choreographyActions } from "./codec.js"
             import { docBuilder, decodeBinary, showAll, actionShower, limbAnimationShower, celShower, textNode } from "./show.js"

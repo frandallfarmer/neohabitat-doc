@@ -82,3 +82,11 @@ export function colorsFromOrientation(orientation) {
         return { pattern: colorVal }
     }
 }
+
+const javaTypeOverrides = {
+    Teleport: "class_teleport_booth"
+}
+
+export const javaTypeToMuddleClass = (type) => {
+    return javaTypeOverrides[type] ?? `class_${type.toLowerCase()}`
+}

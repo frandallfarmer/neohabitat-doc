@@ -14,6 +14,19 @@ export const textNode = (text, type = "span") => {
     node.innerText = text
     return node
 }
+export const append = (element, ...children) => {
+    for (const child of children) {
+        if (typeof child === 'string' || child instanceof String) {
+            element.appendChild(textNode(child))
+        } else {
+            element.appendChild(child)
+        }
+    }
+    return element
+}
+
+export const group = (type, ...elements) =>
+    append(document.createElement(type), ...elements)
 
 export const wrapLink = (element, href) => {
     const link = document.createElement("a")
