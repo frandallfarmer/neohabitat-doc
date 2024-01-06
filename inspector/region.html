@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Inhabitor - The Habitat Inspector</title>
+        <style type="text/css">
+            body {
+                margin:40px auto;
+                line-height:1.6;
+                font-size:18px;
+                color:#444;
+                padding:0 10px
+            }
+            h1,h2,h3 {
+                line-height:1.2
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Inhabitor - The Habitat Inspector</h1>
+        <div id="region" style="position: relative; width: 960px; height: 384px; overflow: hidden;">
+        </div>
+        <div id="debug"></div>
+        <div id="errors"></div>
+
+        <script type="module">
+            import { decodeProp } from "./codec.js"
+            import { parse, removeComments } from "./mudparse.js"
+            import { translateSpace, topLeftCanvasOffset } from "./render.js"
+            import { docBuilder, decodeBinary, showAll, textNode, propAnimationShower, celmaskShower, celShower } from "./show.js"
+            import { parseHabitatObject, colorsFromOrientation } from "./neohabitat.js"
+
+            window.showErrors = () => {
+                document.getElementById('errors').style.display = 'block'
+            }
+            const debug = (msg, element) => {
+                const node = textNode(msg, "p")
+                if (element) {
+                    node.addEventListener("mouseenter", () => { element.style.border = "2px solid red"; element.style.margin = "-2px" })
+                    node.addEventListener("mouseleave", () => { element.style.border = ""; element.style.margin = "" })
+                }
+                document.getElementById("debug").appendChild(node)
+            }
+            const q = new URLSearchParams(window.location.search)
+            const filename = q.get("f") ?? "db/new_Downtown/Downtown_3f.json"
+
+            const onload = async () => {
+                const doc = docBuilder({ errorContainer: document.getElementById("errors")})
+                const mud = parse(await (await fetch("beta.mud", { cache: "no-cache" })).text())
+                const objects = parseHabitatObject(await (await fetch(filename, { cache: "no-cache" })).text())
+                const container = document.getElementById("region")
+                const sortedObjects = objects
+                    .filter((obj) => obj.type == "item" && obj.mods && obj.mods.length > 0)
+                    .toSorted(((a, b) => { 
+                        const ay = a.mods[0].y
+                        const by = b.mods[0].y
+                        const aIsBG = ay < 128
+                        const bIsBG = by < 128
+                        if (aIsBG != bIsBG) {
+                            return aIsBG ? -1 : 1
+                        } else if (aIsBG) {
+                            return ay - by
+                        } else {
+                            return by - ay
+                        }
+                    }))
+
+                for (const obj of sortedObjects) {
+                    if (obj.type != "item" || !obj.mods || obj.mods.length == 0) {
+                        continue
+                    }
+                    const mod = obj.mods[0]
+                    const classname = `class_${mod.type.toLowerCase()}`
+                    const cls = mud.class[classname]
+                    if (!cls) {
+                        doc.showError(`No class named ${classname}`, filename)
+                        continue
+                    }
+                    const style = mod.style ?? 0
+                    if (!cls.image[style]) {
+                        doc.showError(`Invalid style ${mod.style} for ${classname}`, filename)
+                        continue
+                    }
+                    const imageId = cls.image[style].id
+                    const image = mud.image[imageId]
+                    if (!image) {
+                        doc.showError(`${classname} refers to invalid image ${imageId}`, filename)
+                        continue
+                    }
+                    const propFilename = image.filename.replace(/^Images\//, "props/")
+                    const prop = await decodeBinary(propFilename, decodeProp)
+                    if (prop.error) {
+                        doc.showError(prop.error, filename)
+                        continue
+                    }
+                    const colors = colorsFromOrientation(mod.orientation)
+                    const shouldFlip = ((mod.orientation ?? 0) & 0x01) != 0
+                    const middleOrientationBits = (mod.orientation ?? 0) & 0x06
+                    const grState = mod.gr_state ?? 0
+                    const [width, flipOffset] = image.arguments ?? [0,0]
+                    const render = prop.animations.length > 0 ? propAnimationShower(prop, colors)(prop.animations[grState])
+                                                              : celmaskShower(prop, colors)(prop.celmasks[grState])
+                    const element = render.element
+                    const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
+                    const objectSpace = translateSpace(render, mod.x / 4, mod.y % 128)
+                    const [x, y] = topLeftCanvasOffset(regionSpace, objectSpace)
+                    element.style.position = "absolute"
+                    element.style.left = `${x * 3}px`
+                    element.style.top = `${y * 3}px`
+                    debug(`${classname}: ${propFilename} ${shouldFlip} w:${width} fo:${flipOffset} o:${middleOrientationBits} [${render.minX}:${render.maxX},${render.minY}:${render.maxY}] @ ${mod.x/4},${mod.y} > ${x},${y}`, element)
+                    container.appendChild(element)
+                }
+                // container.appendChild(textNode(JSON.stringify(objects, null, 2), "pre"))
+            }
+            onload()
+        </script>
+    </body>
+</html>

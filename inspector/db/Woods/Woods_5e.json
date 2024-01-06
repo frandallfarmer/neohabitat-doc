@@ -1,0 +1,231 @@
+[
+  {
+    "ref": "context-Woods_5e", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_5e", 
+          "context-Woods_6e", 
+          "context-Woods_5d", 
+          "context-Woods_5d"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.5313.Woods_5e", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-sky.c67f.Woods_5e", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-rock.1740.Woods_5e", 
+    "mods": [
+      {
+        "y": 148, 
+        "x": 96, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-rock.edd8.Woods_5e", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 32, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.c584.Woods_5e", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 104, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.747b.Woods_5e", 
+    "mods": [
+      {
+        "y": 36, 
+        "x": 64, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.b384.Woods_5e", 
+    "mods": [
+      {
+        "y": 42, 
+        "x": 32, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 164
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.fbe7.Woods_5e", 
+    "mods": [
+      {
+        "y": 133, 
+        "x": 144, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.c73b.Woods_5e", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 108, 
+        "type": "Tree", 
+        "orientation": 172, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.1c11.Woods_5e", 
+    "mods": [
+      {
+        "y": 31, 
+        "x": 0, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.a825.Woods_5e", 
+    "mods": [
+      {
+        "y": 71, 
+        "x": 100, 
+        "type": "Tree", 
+        "orientation": 173, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-rock.6d23.Woods_5e", 
+    "mods": [
+      {
+        "y": 146, 
+        "x": 100, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.1fcd.Woods_5e", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 12, 
+        "style": 7, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }, 
+  {
+    "ref": "item-tree.cc86.Woods_5e", 
+    "mods": [
+      {
+        "y": 148, 
+        "x": 64, 
+        "style": 7, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5e"
+  }
+]

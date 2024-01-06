@@ -1,0 +1,236 @@
+[
+  {
+    "ref": "context-Woods_7w", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_7t", 
+          "context-Woods_7v", 
+          "context-Woods_7v", 
+          "context-Woods_6w"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.c886.Woods_7w", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-sky.96f8.Woods_7w", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-tree.c8f2.Woods_7w", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 64, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-tree.2569.Woods_7w", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 2, 
+        "y": 53, 
+        "x": 64, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-tree.9c5b.Woods_7w", 
+    "mods": [
+      {
+        "y": 133, 
+        "x": 100, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 164
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-tree.3fca.Woods_7w", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 1, 
+        "y": 39, 
+        "x": 8, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-tree.8625.Woods_7w", 
+    "mods": [
+      {
+        "y": 42, 
+        "x": 24, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-tree.dfde.Woods_7w", 
+    "mods": [
+      {
+        "y": 41, 
+        "x": 132, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-tree.5d4c.Woods_7w", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 2, 
+        "y": 61, 
+        "x": 8, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-bush.4028.Woods_7w", 
+    "mods": [
+      {
+        "y": 148, 
+        "x": 120, 
+        "type": "Bush", 
+        "orientation": 64
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-bush.b4c1.Woods_7w", 
+    "mods": [
+      {
+        "y": 156, 
+        "x": 88, 
+        "type": "Bush", 
+        "orientation": 64
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-bush.a309.Woods_7w", 
+    "mods": [
+      {
+        "y": 145, 
+        "x": 20, 
+        "type": "Bush", 
+        "orientation": 80
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-plant.b9e6.Woods_7w", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 32, 
+        "mass": 1, 
+        "y": 138, 
+        "x": 48, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_7w"
+  }, 
+  {
+    "ref": "item-plant.6d29.Woods_7w", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 33, 
+        "mass": 1, 
+        "y": 130, 
+        "x": 136, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-Woods_7w"
+  }
+]

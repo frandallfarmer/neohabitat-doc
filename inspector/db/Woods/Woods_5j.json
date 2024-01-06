@@ -1,0 +1,288 @@
+[
+  {
+    "ref": "context-Woods_5j", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Woods Rd",  
+    "mods": [
+      {
+        "town_dir": LEFT,
+        "port_dir": LEFT,
+        "type": "Region", 
+        "neighbors": [
+          "context-Woods_5k", 
+          "context-Woods_6j", 
+          "context-Woods_5i", 
+          "context-Woods_4j"
+        ], 
+        "nitty_bits": 3
+      }
+    ]
+  }, 
+  {
+    "ref": "item-grounda5ad.Woods_5j", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-sky5dd5.Woods_5j", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-street72db.Woods_5j", 
+    "mods": [
+      {
+        "orientation": 104, 
+        "type": "Street", 
+        "gr_state": 14, 
+        "y": 12, 
+        "x": 68
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-tree1673.Woods_5j", 
+    "mods": [
+      {
+        "y": 32, 
+        "x": 100, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-treec6cc.Woods_5j", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 32, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-tree12f5.Woods_5j", 
+    "mods": [
+      {
+        "y": 134, 
+        "x": 52, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-treec677.Woods_5j", 
+    "mods": [
+      {
+        "y": 44, 
+        "x": 132, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 228
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-tree7c08.Woods_5j", 
+    "mods": [
+      {
+        "y": 134, 
+        "x": 120, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-tree3744.Woods_5j", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 32, 
+        "type": "Tree", 
+        "orientation": 188, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-tree6159.Woods_5j", 
+    "mods": [
+      {
+        "y": 31, 
+        "x": 0, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 64
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-treecd86.Woods_5j", 
+    "mods": [
+      {
+        "y": 71, 
+        "x": 32, 
+        "type": "Tree", 
+        "orientation": 189, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-rockbd3f.Woods_5j", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 48, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-rockc5d4.Woods_5j", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "y": 158, 
+        "x": 24, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-rock222d.Woods_5j", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 72, 
+        "mass": 1, 
+        "y": 139, 
+        "x": 132, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_5j"
+  }, 
+  {
+    "ref": "item-tree890f.Woods_5j", 
+    "mods": [
+      {
+        "y": 129, 
+        "x": 4, 
+        "style": 11, 
+        "type": "Tree", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_5j"
+  },
+  {
+    "ref": "item-sign1.Woods_5j", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 16, 
+        "ascii": [
+          129,
+          68,
+          69,
+          65,
+          84,
+          72,
+          134,
+          65,
+          87,
+          65,
+          73,
+          84,
+          83,
+          134,
+          32,
+          89,
+          69,
+          33,
+          134,
+          125,
+          125,
+          125,
+          125,
+          125,
+          125
+        ], 
+        "y": 133, 
+        "x": 98, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-Woods_5j"
+  }
+]

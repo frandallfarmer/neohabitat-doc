@@ -1,0 +1,205 @@
+[
+  {
+    "ref": "context-Woods_6b", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Woods Rd", 
+    "mods": [
+      {
+        "town_dir": LEFT,
+		"port_dir": LEFT,
+        "neighbors": [
+          "context-Woods_6c", 
+          "context-Woods_7b", 
+          "context-Woods_6a", 
+          "context-Woods_5b"
+        ],
+        "realm": "Woods", 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.6107.Woods_6b", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-sky.1282.Woods_6b", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-street.3a33.Woods_6b", 
+    "mods": [
+      {
+        "orientation": 80, 
+        "height": 0, 
+        "width": 0, 
+        "gr_state": 6, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-rock.f26c.Woods_6b", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 8, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-tree.8621.Woods_6b", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 104, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-tree.4fd2.Woods_6b", 
+    "mods": [
+      {
+        "y": 36, 
+        "x": 64, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 196
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-tree.25f4.Woods_6b", 
+    "mods": [
+      {
+        "y": 42, 
+        "x": 32, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 164
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-tree.89a8.Woods_6b", 
+    "mods": [
+      {
+        "y": 133, 
+        "x": 144, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-tree.3ba6.Woods_6b", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 108, 
+        "type": "Tree", 
+        "orientation": 172, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-tree.704b.Woods_6b", 
+    "mods": [
+      {
+        "y": 31, 
+        "x": 0, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6b"
+  }, 
+  {
+    "ref": "item-tree.3e6d.Woods_6b", 
+    "mods": [
+      {
+        "y": 71, 
+        "x": 100, 
+        "type": "Tree", 
+        "orientation": 173, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6b"
+  },
+  {
+    "ref": "item-magic_immobile.f0k5.Woods_6b",
+    "mods": [
+      {
+        "type": "Magic_immobile",
+        "y": 163,
+        "x": 28,
+        "style": 11,
+        "orientation": 0,
+        "magic_type": 4,
+        "magic_data": 999860
+      }
+    ],
+    "type": "item",
+    "name": "Choke Machine",
+    "in": "context-Woods_6b"
+  }
+]

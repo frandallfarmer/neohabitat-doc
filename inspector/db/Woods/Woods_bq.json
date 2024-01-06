@@ -1,0 +1,238 @@
+[
+  {
+    "ref": "context-Woods_bq", 
+    "capacity": 64,
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_br", 
+          "context-Woods_cq", 
+          "context-Woods_bp", 
+          "context-Woods_aq"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.bb6e.Woods_bq", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 148
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-sky.44a0.Woods_bq", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 220
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-street.9d24.Woods_bq", 
+    "mods": [
+      {
+        "orientation": 104, 
+        "height": 0, 
+        "width": 0, 
+        "gr_state": 4, 
+        "y": 12, 
+        "x": 104, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-tree.6eca.Woods_bq", 
+    "mods": [
+      {
+        "y": 34, 
+        "x": 132, 
+        "style": 3, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-fountain.fa2a.Woods_bq", 
+    "mods": [
+      {
+        "y": 144, 
+        "x": 40, 
+        "type": "Fountain", 
+        "orientation": 49
+      }
+    ], 
+    "type": "item", 
+    "name": "Fountain", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-bush.f099.Woods_bq", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 9, 
+        "gr_state": 1, 
+        "y": 138, 
+        "x": 8, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-bush.4aeb.Woods_bq", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 138, 
+        "x": 80, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-bush.4b7e.Woods_bq", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 137, 
+        "x": 32, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-bush.b8d5.Woods_bq", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 137, 
+        "x": 56, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-sky.8416.Woods_bq", 
+    "mods": [
+      {
+        "y": 83, 
+        "x": 8, 
+        "style": 11, 
+        "type": "Sky", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-sky.1360.Woods_bq", 
+    "mods": [
+      {
+        "y": 78, 
+        "x": 8, 
+        "style": 11, 
+        "type": "Sky", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-sky.8c95.Woods_bq", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 12, 
+        "style": 11, 
+        "type": "Sky", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-sky.cf54.Woods_bq", 
+    "mods": [
+      {
+        "y": 82, 
+        "x": 40, 
+        "style": 11, 
+        "type": "Sky", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_bq"
+  }, 
+  {
+    "ref": "item-sky.9d6c.Woods_bq", 
+    "mods": [
+      {
+        "y": 85, 
+        "x": 64, 
+        "style": 11, 
+        "type": "Sky", 
+        "orientation": 8
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_bq"
+  }
+]

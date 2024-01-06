@@ -1,0 +1,157 @@
+[
+  {
+    "ref": "context-Woods_7u", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_7v", 
+          "context-Woods_7t", 
+          "context-Woods_7t", 
+          "context-Woods_6u"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.dbca.Woods_7u", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-sky.10d2.Woods_7u", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-rock.e643.Woods_7u", 
+    "mods": [
+      {
+        "y": 138, 
+        "x": 80, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-rock.6a19.Woods_7u", 
+    "mods": [
+      {
+        "y": 40, 
+        "x": 64, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-rock.9316.Woods_7u", 
+    "mods": [
+      {
+        "y": 148, 
+        "x": 136, 
+        "mass": 1, 
+        "type": "Rock", 
+        "orientation": 32
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-fence.1e2e.Woods_7u", 
+    "mods": [
+      {
+        "y": 140, 
+        "x": 88, 
+        "type": "Fence", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-fence.8956.Woods_7u", 
+    "mods": [
+      {
+        "y": 140, 
+        "x": 108, 
+        "type": "Fence", 
+        "orientation": 0, 
+        "gr_state": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-fence.38b5.Woods_7u", 
+    "mods": [
+      {
+        "y": 140, 
+        "x": 132, 
+        "type": "Fence", 
+        "orientation": 0, 
+        "gr_state": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-Woods_7u"
+  }, 
+  {
+    "ref": "item-tree.cddf.Woods_7u", 
+    "mods": [
+      {
+        "y": 147, 
+        "x": 92, 
+        "style": 4, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_7u"
+  }
+]

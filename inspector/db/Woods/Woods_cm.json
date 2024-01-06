@@ -1,0 +1,132 @@
+[
+  {
+    "ref": "context-Woods_cm", 
+    "capacity": 64,  
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_cn", 
+          "", 
+          "", 
+          ""
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.f6ea.Woods_cm", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "style": 1, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_cm"
+  }, 
+  {
+    "ref": "item-wall.d5ea.Woods_cm", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 6, 
+        "type": "Wall", 
+        "orientation": 220
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-Woods_cm"
+  }, 
+  {
+    "ref": "item-window.032f.Woods_cm", 
+    "mods": [
+      {
+        "y": 70, 
+        "x": 16, 
+        "style": 3, 
+        "type": "Window", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-Woods_cm"
+  }, 
+  {
+    "ref": "item-window.0a76.Woods_cm", 
+    "mods": [
+      {
+        "y": 70, 
+        "x": 124, 
+        "style": 3, 
+        "type": "Window", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-Woods_cm"
+  }, 
+  {
+    "ref": "item-door.13b9.Woods_cm", 
+    "mods": [
+      {
+        "orientation": 148, 
+        "key_lo": 0, 
+        "connection": "context-Woods_cm", 
+        "key_hi": 0, 
+        "y": 33, 
+        "x": 64, 
+        "type": "Door", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-Woods_cm"
+  }, 
+  {
+    "ref": "item-tree.9aab.Woods_cm", 
+    "mods": [
+      {
+        "y": 129, 
+        "x": 24, 
+        "style": 3, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cm"
+  }, 
+  {
+    "ref": "item-tree.c0cb.Woods_cm", 
+    "mods": [
+      {
+        "y": 149, 
+        "x": 120, 
+        "style": 3, 
+        "type": "Tree", 
+        "orientation": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_cm"
+  }
+]

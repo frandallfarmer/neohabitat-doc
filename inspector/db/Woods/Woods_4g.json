@@ -1,0 +1,67 @@
+[
+  {
+    "ref": "context-Woods_4g", 
+    "capacity": 64,
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_4h", 
+          "context-Woods_4f", 
+          "context-Woods_4f", 
+          "context-Woods_3f"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.1541.Woods_4g", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_4g"
+  }, 
+  {
+    "ref": "item-sky.11b3.Woods_4g", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_4g"
+  }, 
+  {
+    "ref": "item-bush.cc38.Woods_4g", 
+    "mods": [
+      {
+        "y": 141, 
+        "x": 72, 
+        "type": "Bush", 
+        "orientation": 48
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_4g"
+  }
+]

@@ -1,0 +1,235 @@
+[
+  {
+    "ref": "context-Woods_6r", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Woods Rd", 
+    "mods": [
+      {
+        "town_dir": LEFT,
+        "port_dir": LEFT,
+        "neighbors": [
+          "context-Woods_6s", 
+          "context-Woods_7r", 
+          "context-Woods_6q", 
+          "context-Woods_5r"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.e1d0.Woods_6r", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-sky.9516.Woods_6r", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-street.fc20.Woods_6r", 
+    "mods": [
+      {
+        "orientation": 80, 
+        "height": 0, 
+        "width": 0, 
+        "gr_state": 13, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-bush.0360.Woods_6r", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 35, 
+        "x": 32, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-tree.7c1a.Woods_6r", 
+    "mods": [
+      {
+        "y": 133, 
+        "x": 20, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-tree.13fc.Woods_6r", 
+    "mods": [
+      {
+        "y": 40, 
+        "x": 52, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-tree.0796.Woods_6r", 
+    "mods": [
+      {
+        "y": 42, 
+        "x": 100, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-tree.b013.Woods_6r", 
+    "mods": [
+      {
+        "y": 42, 
+        "x": 120, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-bush.8e9b.Woods_6r", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 152, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-bush.3f0f.Woods_6r", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 32, 
+        "gr_state": 1, 
+        "y": 40, 
+        "x": 72, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-Woods_6r"
+  }, 
+  {
+    "ref": "item-sign.5663.Woods_6r", 
+    "mods": [
+      {
+        "orientation": 0, 
+        "type": "Sign", 
+        "gr_state": 3, 
+        "y": 26, 
+        "x": 4, 
+        "ascii": [
+          133, 
+          131, 
+          72, 
+          32, 
+          32, 
+          65, 
+          32, 
+          32, 
+          66, 
+          32, 
+          32, 
+          73, 
+          32, 
+          32, 
+          84, 
+          32, 
+          32, 
+          65, 
+          32, 
+          32, 
+          84, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ]
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-Woods_6r"
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "ref": "context-Woods_er", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_es", 
+          "context-Woods_fr", 
+          "context-Woods_eq", 
+          "context-Woods_dr"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.4220.Woods_er", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-sky.a2ed.Woods_er", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-street.9cc4.Woods_er", 
+    "mods": [
+      {
+        "orientation": 104, 
+        "height": 0, 
+        "width": 0, 
+        "gr_state": 12, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-sign.6490.Woods_er", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 188, 
+        "ascii": [
+          134, 
+          128, 
+          82, 
+          69, 
+          83, 
+          84, 
+          134, 
+          128, 
+          65, 
+          82, 
+          69, 
+          65, 
+          134, 
+          32, 
+          128, 
+          133, 
+          127, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "y": 32, 
+        "x": 104, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-tree.5b01.Woods_er", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 32, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-tree.ff69.Woods_er", 
+    "mods": [
+      {
+        "y": 134, 
+        "x": 24, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-tree.341f.Woods_er", 
+    "mods": [
+      {
+        "y": 44, 
+        "x": 132, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-tree.73cd.Woods_er", 
+    "mods": [
+      {
+        "y": 133, 
+        "x": 144, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-tree.514b.Woods_er", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 32, 
+        "type": "Tree", 
+        "orientation": 172, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-tree.ec3f.Woods_er", 
+    "mods": [
+      {
+        "y": 31, 
+        "x": 0, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_er"
+  }, 
+  {
+    "ref": "item-tree.4b2f.Woods_er", 
+    "mods": [
+      {
+        "y": 71, 
+        "x": 32, 
+        "type": "Tree", 
+        "orientation": 173, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_er"
+  }
+]

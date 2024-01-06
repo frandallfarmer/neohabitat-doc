@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Inhabitor - The Habitat Inspector</title>
+        <style type="text/css">
+            body {
+                margin:40px auto;
+                line-height:1.6;
+                font-size:18px;
+                color:#444;
+                padding:0 10px
+            }
+            h1,h2,h3 {
+                line-height:1.2
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="filename"></h1>
+        <div id="actions">
+            <h2>Actions</h2>
+        </div>
+        <div id="limbs">
+            <h2>Limbs</h2>
+        </div>
+        <div id="cels">
+            <h2>Cels</h1>
+        </div>
+        <div id="data">
+            <h2>Data</h1>
+        </div>
+        <div id="errors"></div>
+        <a href="index.html">Back</a>
+        <script type="module">
+            import { decodeBody, choreographyActions } from "./codec.js"
+            import { docBuilder, decodeBinary, showAll, actionShower, limbAnimationShower, celShower, textNode } from "./show.js"
+
+            const propFilter = (key, value) => {
+                if (key != "bitmap" && key != "data" && key != "canvas") {
+                    return value
+                }
+            }
+            const dumpProp = (prop, container) => {
+                container.appendChild(textNode(JSON.stringify(prop, propFilter, 2), "pre"))
+            }
+
+            const limbNames = ["legs", "legs2", "left arm", "torso", "face", "right arm"]
+            const labelLimb = (container, ilimb) => {
+                container.appendChild(textNode(ilimb < limbNames.length ? limbNames[ilimb] : `Limb #${ilimb}??`, "div"))
+            }
+            const onload = async () => {
+                const q = new URLSearchParams(window.location.search)
+                const filename = q.get("f")
+                document.getElementById("filename").innerText = filename
+                const doc = docBuilder({ errorContainer: document.getElementById("errors") })
+                try {
+                    const body = await decodeBinary(filename, decodeBody)
+                    dumpProp(body, document.getElementById("data"))
+                    if (body.error) {
+                        doc.showError(body.error, filename)
+                    } else {
+                        const celContainer = document.getElementById("cels")
+                        const limbContainer = document.getElementById("limbs")
+                        for (const [ilimb, limb] of body.limbs.entries()) {
+                            labelLimb(celContainer, ilimb)
+                            showAll(doc, celContainer, filename, limb.cels, celShower())
+
+                            labelLimb(limbContainer, ilimb)
+                            showAll(doc, limbContainer, filename, limb.animations, limbAnimationShower(limb))
+                        }
+                        const actionContainer = document.getElementById("actions")
+                        showAll(doc, actionContainer, filename, choreographyActions, (action) => {
+                            if (action == "stand" || body.actions[action] != body.actions["stand"]) {
+                                return [textNode(action, "div"), actionShower(body)(action)]
+                            }
+                        })
+                    }
+                } catch (e) {
+                    doc.showError(e, filename)
+                }
+            }
+            onload()
+        </script>
+    </body>
+</html>

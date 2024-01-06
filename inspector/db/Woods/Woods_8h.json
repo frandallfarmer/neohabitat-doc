@@ -1,0 +1,203 @@
+[
+  {
+    "ref": "context-Woods_8h", 
+    "capacity": 64,
+    "type": "context", 
+    "name": "The Woods", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-Woods_8h", 
+          "context-Woods_8h", 
+          "context-Woods_8g", 
+          "context-Woods_7h"
+        ],
+        "realm": "Woods",             
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-ground.e2e3.Woods_8h", 
+    "mods": [
+      {
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground", 
+        "orientation": 204
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-sky.f745.Woods_8h", 
+    "mods": [
+      {
+        "y": 0, 
+        "x": 0, 
+        "style": 4, 
+        "type": "Sky", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.9171.Woods_8h", 
+    "mods": [
+      {
+        "y": 36, 
+        "x": 36, 
+        "style": 10, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.7a20.Woods_8h", 
+    "mods": [
+      {
+        "y": 35, 
+        "x": 104, 
+        "type": "Tree", 
+        "orientation": 172
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.149c.Woods_8h", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 188, 
+        "gr_state": 3, 
+        "y": 86, 
+        "x": 24, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.3c0d.Woods_8h", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 189, 
+        "gr_state": 3, 
+        "y": 86, 
+        "x": 32, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.3c90.Woods_8h", 
+    "mods": [
+      {
+        "y": 133, 
+        "x": 144, 
+        "type": "Tree", 
+        "orientation": 16
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.90bf.Woods_8h", 
+    "mods": [
+      {
+        "y": 75, 
+        "x": 108, 
+        "type": "Tree", 
+        "orientation": 172, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.9be5.Woods_8h", 
+    "mods": [
+      {
+        "y": 141, 
+        "x": 4, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.625e.Woods_8h", 
+    "mods": [
+      {
+        "y": 71, 
+        "x": 100, 
+        "type": "Tree", 
+        "orientation": 173, 
+        "gr_state": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.5063.Woods_8h", 
+    "mods": [
+      {
+        "y": 141, 
+        "x": 56, 
+        "style": 1, 
+        "type": "Tree", 
+        "orientation": 188
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }, 
+  {
+    "ref": "item-tree.e560.Woods_8h", 
+    "mods": [
+      {
+        "y": 140, 
+        "x": 88, 
+        "style": 7, 
+        "type": "Tree", 
+        "orientation": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-Woods_8h"
+  }
+]
