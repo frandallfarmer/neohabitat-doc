@@ -84,9 +84,91 @@ export function colorsFromOrientation(orientation) {
 }
 
 const javaTypeOverrides = {
-    Teleport: "class_teleport_booth"
+    Teleport: "class_teleport_booth",
+    "Windup_toy": "class_wind_up_toy"
 }
 
 export const javaTypeToMuddleClass = (type) => {
     return javaTypeOverrides[type] ?? `class_${type.toLowerCase()}`
+}
+
+export const navigate = (start, dest, neighbormap) => {
+    // we don't have any way of estimating distance, so we can't use A*. Dijkstra's algorithm should be fine though.
+    const dist = {}
+    const prev = {}
+    dist[start] = 0
+    const prioqueue = [[0, [start]]]
+    const queued = new Set([start])
+    const indexForPriority = (prio) => {
+        let imin = 0
+        let ilim = prioqueue.length
+        while (imin < ilim) {
+            const i = imin + Math.floor((ilim - imin) / 2)
+            const prioAtI = prioqueue[i][0]
+            if (prioAtI == prio) {
+                return i
+            } else if (prioAtI < prio) {
+                ilim = i
+            } else {
+                imin = i + 1
+            }
+        }
+        return imin
+    }
+
+    const addToQueue = (ref, prio) => {
+        queued.add(ref)
+        const i = indexForPriority(prio)
+        if (i < prioqueue.length && prioqueue[i][0] == prio) {
+            prioqueue[i][1].push(ref)
+        } else {
+            prioqueue.splice(i, 0, [prio, [ref]])
+        }
+    }
+
+    const adjustPriority = (ref, oldprio, newprio) => {
+        if (oldprio !== undefined && queued.has(ref)) {
+            const i = indexForPriority(oldprio)
+            const list = prioqueue[i][1]
+            list.splice(list.indexOf(ref), 1)
+            if (list.length == 0) {
+                prioqueue.splice(i, 1)
+            }
+        }
+        addToQueue(ref, newprio)        
+    }
+    const popFromQueue = () => {
+        const list = prioqueue[0][1]
+        const ref = list.shift()
+        if (list.length == 0) {
+            prioqueue.shift()
+        }
+        queued.delete(ref)
+        return ref
+    }
+    while (prioqueue.length > 0) {
+        const ref = popFromQueue()
+        if (ref == dest) {
+            break
+        }
+        const neighbors = neighbormap[ref]
+        for (const neighbor of neighbors) {
+            if (neighbor !== "") {
+                const newdist = dist[ref] + 1
+                const olddist = dist[neighbor]
+                if (olddist === undefined || newdist < olddist) {
+                    dist[neighbor] = newdist
+                    prev[neighbor] = ref
+                    adjustPriority(neighbor, olddist, newdist)
+                }
+            }
+        }
+    }
+    const path = []
+    let current = dest
+    while (current) {
+        path.unshift(current)
+        current = prev[current]
+    }
+    return path
 }

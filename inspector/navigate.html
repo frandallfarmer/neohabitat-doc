@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Habitat Inspector</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="alpine.min.js"></script>
+        <script type="module">
+            import { navigate } from "./neohabitat.js"
+
+            document.addEventListener('alpine:init', () => {
+                Alpine.data('searchdata', () => ({
+                    async init() {
+                        this.neighbormap = await (await fetch("db/neighbormap.json")).json()
+                        this.contextmap = await (await fetch("db/contextmap.json")).json()
+                    },
+                    neighbormap: {},
+                    contextmap: {},
+                    startFilter: "",
+                    endFilter: "",
+                    start: null,
+                    end: null,
+                    select(key, item) {
+                        const filterKey = `${key}Filter`
+                        if (!item) {
+                            const items = this.search(filterKey)
+                            item = items.length > 0 ? items[0] : null
+                        }
+                        this[key] = item
+                        this[filterKey] = ''
+                    },
+                    search(termKey) {
+                        const term = this[termKey].toLowerCase()
+                        if (term.length < 2) {
+                            return []
+                        }
+                        return Object
+                            .entries(this.contextmap)
+                            .map(([ref, val]) => ({ ref, label: `${val.name} (${ref})`, ...val }))
+                            .filter(({ label }) => label.toLowerCase().includes(term))
+                            .toSorted((l, r) => {
+                                const lindex = l.label.indexOf(term)
+                                const rindex = r.label.indexOf(term)
+                                if (l != r) { return l - r }
+                                return l.label.localeCompare(r.label)
+                            })
+                    },
+                    get directions() {
+                        if (this.start != null && this.end != null) {
+                            const path = navigate(this.start.ref, this.end.ref, this.neighbormap)
+                            const directions = []
+                            for (let ipath = 0; ipath < (path.length - 1); ipath ++) {
+                                const fromref = path[ipath] 
+                                const toref = path[ipath + 1]
+                                const to = this.contextmap[toref]
+                                const [n, e, s, w] = this.neighbormap[fromref]
+                                const dir = n == toref ? "north" :
+                                            e == toref ? "east" :
+                                            s == toref ? "south" :
+                                            w == toref ? "west" : "???"
+                                directions.push({ dir, ...to })
+                            }
+                            return directions
+                        } else {
+                            return []
+                        }
+                    }
+                }))
+            })
+            Alpine.start()
+        </script>
+    </head>
+    <body>
+        <h1>Habitat Pathfinder</h1>
+        <form x-data="searchdata">
+            <label>Starting location:</label> <input type="text" x-model="startFilter" @keyup.enter="select('start')">
+            <template x-if="start">
+                <a x-bind:href="`region.html?f=${start.filename}`" x-text="start.name"></a>
+            </template><br>
+            <ul>
+                <template x-for="item in search('startFilter')" :key="item.ref">
+                    <li><a @click="select('start', item)" x-text="item.label"></a></li>
+                </template>
+            </ul>
+            <label>Ending location:</label> <input type="text" x-model="endFilter" @keyup.enter="select('end')">
+            <template x-if="end">
+                <a x-bind:href="`region.html?f=${end.filename}`" x-text="end.name"></a>
+            </template><br>
+            <ul>
+                <template x-for="item in search('endFilter')" :key="item.ref">
+                    <li><a @click="select('end', item)" x-text="item.label"></a></li>
+                </template>
+            </ul>
+            <template x-if="start && end && directions.length > 0">
+                <ul>
+                    <li>Starting from <a x-bind:href="`region.html?f=${start.filename}`" x-text="start.name"></a></li>
+                    <template x-for="(step, istep) in directions" :key="istep">
+                        <li>Go <span x-text="step.dir"></span> towards <a x-bind:href="`region.html?f=${step.filename}`" x-text="step.name"></a></li>
+                    </template>
+                </ul>    
+            </template>
+            <template x-if="start && end && directions.length == 0">
+                <i>Sorry, there's no way to get to <span x-text="start.name"></span> from <span x-text="end.name"></span>!</i>
+            </template>
+        </form>
+        <hr>
+        <a href="index.html">Home</a>
+    </body>
+</html>
