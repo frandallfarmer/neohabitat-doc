@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import process from 'process'
 import { parseHabitatObject } from "../neohabitat.js"
 
 const buildJsonList = async (directory, jsonList) => {
@@ -32,6 +33,7 @@ const buildContextMap = async (filenames) => {
 
 const saveContextMap = async () => {
     const filenames = []
+    process.chdir(`${import.meta.dirname}/../db`)
     await buildJsonList(".", filenames)
     const contextMap = await buildContextMap(filenames)
     await fs.writeFile("contextmap.json", JSON.stringify(contextMap))
