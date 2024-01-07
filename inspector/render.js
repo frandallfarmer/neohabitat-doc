@@ -128,20 +128,21 @@ export const drawInSpace = (ctx, canvas, ctxSpace, canvasSpace) => {
 }
 
 // Habitat's coordinate space consistently has y=0 for the bottom, and increasing y means going up
-export const frameFromCels = (cels, celColors = null, paintOrder = null) => {
+export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCelOrigin = true) => {
     if (cels.length == 0) {
         return null
     }
     let xRel = 0
     let yRel = 0
-    let xOrigin = null
-    let yOrigin = null
+    let xCorrect = 0
+    let yCorrect = 0
     let layers = []
     for (const [icel, cel] of cels.entries()) {
         if (cel) {
-            if (xOrigin == null) {
-                xOrigin = cel.xOffset
-                yOrigin = cel.yOffset - cel.height
+            if (firstCelOrigin) {
+                xCorrect = cel.xOffset
+                yCorrect = cel.yOffset - cel.height
+                firstCelOrigin = false
             }
             const x = cel.xOffset + xRel
             const y = cel.yOffset + yRel
@@ -175,7 +176,7 @@ export const frameFromCels = (cels, celColors = null, paintOrder = null) => {
             drawInSpace(ctx, layer.canvas, space, layer)
         }
     }
-    return {...translateSpace(space, -xOrigin, -yOrigin), canvas: canvas }
+    return {...translateSpace(space, -xCorrect, -yCorrect), canvas: canvas }
 }
 
 const framesFromAnimation = (animation, frameFromState) => {
@@ -263,7 +264,7 @@ export const framesFromAction = (action, body, limbColors = null) => {
         if (restartedCount == animations.length) {
             break
         }
-        frames.push(frameFromCels(cels, null, limbOrder))
+        frames.push(frameFromCels(cels, null, limbOrder, false))
     }
     return frames
 }

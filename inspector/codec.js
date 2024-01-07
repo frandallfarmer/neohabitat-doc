@@ -177,7 +177,7 @@ const horizontalLine = (bitmap, xa, xb, y, patternByte) => {
 }
 
 celDecoder.trap = (data, cel) => {
-    let border = false
+    cel.border = false
     // trap.m:21 - high-bit set means "draw a border"
     // It looks like this was used as a flag and the real height
     // was ORed with 0x80 - see house2.m, sign2.m
@@ -187,7 +187,7 @@ celDecoder.trap = (data, cel) => {
     // mix.m:253 appears to have the logic to calculate y2, extracting
     // the height by ANDing with 0x7f (when not 0x80)
     if ((cel.height & 0x80) != 0 && cel.height != 0x80) {
-        border = true
+        cel.border = true
         cel.height = cel.height & 0x7f
     }
     if ((data.getUint8(0) & 0x10) == 0) {
@@ -252,7 +252,7 @@ celDecoder.trap = (data, cel) => {
     let xb = cel.x1b
     for (let y = 0; y < cel.height; y ++) {
         const line = cel.bitmap[y]
-        if (border && (y == 0 || y == (cel.height - 1))) {
+        if (cel.border && (y == 0 || y == (cel.height - 1))) {
             // top and bottom border line
             horizontalLine(cel.bitmap, xa, xb, y, 0xaa, true)
         } else {
@@ -262,11 +262,11 @@ celDecoder.trap = (data, cel) => {
                     line[x] = texLine[x % texLine.length]
                 }
             } else {
-                horizontalLine(cel.bitmap, xa, xb, y, cel.pattern, border)
+                horizontalLine(cel.bitmap, xa, xb, y, cel.pattern, cel.border)
             }
         }
         
-        if (border) {
+        if (cel.border) {
             line[xa] = 2
             line[xb] = 2
         }
