@@ -4,7 +4,6 @@
         <meta charset="UTF-8"/>
         <title>Habitat Inspector</title>
         <link rel="stylesheet" href="style.css">
-        <script defer src="alpine.min.js"></script>
         <script type="module">
             import { navigate } from "./neohabitat.js"
 
@@ -30,13 +29,13 @@
                         this[filterKey] = ''
                     },
                     search(termKey) {
-                        const term = this[termKey].toLowerCase()
-                        if (term.length < 2) {
+                        const term = this[termKey].toLowerCase().trim()
+                        if (term.length == 0) {
                             return []
                         }
                         return Object
                             .entries(this.contextmap)
-                            .map(([ref, val]) => ({ ref, label: `${val.name} (${ref})`, ...val }))
+                            .map(([ref, val]) => ({ ref, label: `${val.name} (${val.filename})`, ...val }))
                             .filter(({ label }) => label.toLowerCase().includes(term))
                             .toSorted((l, r) => {
                                 const lindex = l.label.indexOf(term)
@@ -67,8 +66,8 @@
                     }
                 }))
             })
-            Alpine.start()
         </script>
+        <script defer src="alpine.min.js"></script>
     </head>
     <body>
         <h1>Habitat Pathfinder</h1>
@@ -100,7 +99,7 @@
                 </ul>    
             </template>
             <template x-if="start && end && directions.length == 0">
-                <i>Sorry, there's no way to get to <span x-text="start.name"></span> from <span x-text="end.name"></span>!</i>
+                <i>Sorry, there's no way to get to <span x-text="end.name"></span> from <span x-text="start.name"></span>!</i>
             </template>
         </form>
         <hr>
