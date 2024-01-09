@@ -1,0 +1,210 @@
+[
+  {
+    "ref": "context-region_1129", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "62 Mince St", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1131", 
+          "", 
+          "context-region_1128", 
+          "context-region_1130"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_3212", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Building_object_3213", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 141, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Ground_object_3210", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Wall_object_3211", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Mailbox_object_3216", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 157, 
+        "x": 112, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Plant_object_3217", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 42, 
+        "x": 24, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Sign_object_3214", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          54, 
+          50, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 52, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Bush_object_3215", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 55, 
+        "x": 36, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1129"
+  }, 
+  {
+    "ref": "item-Street_object_3218", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 6, 
+        "y": 9, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1129"
+  }
+]

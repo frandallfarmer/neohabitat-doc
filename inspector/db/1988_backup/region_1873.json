@@ -1,0 +1,241 @@
+[
+  {
+    "ref": "context-region_1873", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "329 Outamy Wy", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1875", 
+          "", 
+          "context-region_1871", 
+          "context-region_1874"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Building_object_14678", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "gr_state": 5, 
+        "y": 181, 
+        "x": 40, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Ground_object_14668", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Wall_object_14669", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Building_object_14671", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "gr_state": 1, 
+        "y": 32, 
+        "x": 32, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Wall_object_14670", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Tree_object_14673", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 100, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Bush_object_14672", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 35, 
+        "x": 16, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Sign_object_14675", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          51, 
+          50, 
+          57, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 64, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Mailbox_object_14674", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 12, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Building_object_14677", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "gr_state": 10, 
+        "y": 56, 
+        "x": 28, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1873"
+  }, 
+  {
+    "ref": "item-Street_object_14676", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 6, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1873"
+  }
+]

@@ -1,0 +1,228 @@
+[
+  {
+    "ref": "context-region_1253", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "99 Wacka Rd", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "context-region_1251", 
+          "context-region_1254", 
+          "context-region_1255"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_4343", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Wall_object_4345", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Wall_object_4344", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Plant_object_4347", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 52, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Building_object_4346", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 229, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 72, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Mailbox_object_4349", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 124, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Sign_object_4348", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          57, 
+          57, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 128, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Street_object_4352", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Plant_object_4350", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 136, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1253"
+  }, 
+  {
+    "ref": "item-Plant_object_4351", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 1, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 80, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1253"
+  }
+]

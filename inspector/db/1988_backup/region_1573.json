@@ -1,0 +1,278 @@
+[
+  {
+    "ref": "context-region_1573", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "224 Fast Ln", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1572", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Table_object_10688", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 20, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1573"
+  }, 
+  {
+    "ref": "item-Chest_object_10689", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 116, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1573"
+  }, 
+  {
+    "ref": "item-Head_object_1015173", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 17, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 31, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Chest_object_10689"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004493", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 20, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Chest_object_10689"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1015174", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 30, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_10689"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1005160", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 140, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Chest_object_10689"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004503", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 108, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Chest_object_10689"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006498", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 25, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_10689"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_1004084", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 128, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Chest_object_10689"
+  }, 
+  {
+    "ref": "item-Box_object_1004505", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 152, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_1573"
+  }, 
+  {
+    "ref": "item-Ground_object_10686", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1573"
+  }, 
+  {
+    "ref": "item-Wall_object_10687", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1573"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10692", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 8, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1573"
+  }, 
+  {
+    "ref": "item-Door_object_10691", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 180, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 28, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1573"
+  }, 
+  {
+    "ref": "item-Couch_object_10690", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 56, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1573"
+  }
+]

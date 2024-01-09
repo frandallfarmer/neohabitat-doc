@@ -1,0 +1,225 @@
+[
+  {
+    "ref": "context-region_1704", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "1013 Lori Ln", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1705", 
+          "context-region_1684", 
+          "", 
+          "context-region_1702"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_11899", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Street_object_11908", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 6, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Bush_object_11904", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 46, 
+        "x": 56, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Mailbox_object_11905", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 8, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Bush_object_11906", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 46, 
+        "x": 84, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Bush_object_11907", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 46, 
+        "x": 112, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Wall_object_11900", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Wall_object_11901", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Building_object_11902", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 12, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1704"
+  }, 
+  {
+    "ref": "item-Sign_object_11903", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          49, 
+          48, 
+          49, 
+          51, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 44, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1704"
+  }
+]

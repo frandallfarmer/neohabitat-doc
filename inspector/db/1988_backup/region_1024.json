@@ -1,0 +1,273 @@
+[
+  {
+    "ref": "context-region_1024", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "18 Bleem St", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1023", 
+          "context-region_1025", 
+          "context-region_1026", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_2239", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Wall_object_2238", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Ground_object_2237", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Fence_object_2248", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 132, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Bush_object_2249", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Sign_object_2242", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          49, 
+          56, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 58, 
+        "x": 72, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Mailbox_object_2243", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 32, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Building_object_2240", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 32, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Bush_object_2241", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 108, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Street_object_2246", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Fence_object_2247", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 161, 
+        "x": 108, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Fence_object_2244", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 64, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1024"
+  }, 
+  {
+    "ref": "item-Fence_object_2245", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 33, 
+        "x": 92, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1024"
+  }
+]

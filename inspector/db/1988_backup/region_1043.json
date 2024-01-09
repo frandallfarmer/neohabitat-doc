@@ -1,0 +1,193 @@
+[
+  {
+    "ref": "context-region_1043", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "108 Bleem St", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1041", 
+          "context-region_1044", 
+          "context-region_1045", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Mailbox_object_2419", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 149, 
+        "x": 80, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1043"
+  }, 
+  {
+    "ref": "item-Sign_object_2418", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          128, 
+          49, 
+          48, 
+          56, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1043"
+  }, 
+  {
+    "ref": "item-Wall_object_2415", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1043"
+  }, 
+  {
+    "ref": "item-Ground_object_2413", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1043"
+  }, 
+  {
+    "ref": "item-Bush_object_2417", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 120, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1043"
+  }, 
+  {
+    "ref": "item-Building_object_2416", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 221, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 16, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1043"
+  }, 
+  {
+    "ref": "item-Street_object_2420", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1043"
+  }, 
+  {
+    "ref": "item-Wall_object_2414", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1043"
+  }
+]

@@ -1,0 +1,248 @@
+[
+  {
+    "ref": "context-region_9061", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_9053"
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000502", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 68, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Countertop_object_1728", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 56, 
+        "type": "Countertop", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Countertop", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Window_object_1729", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 112, 
+        "x": 0, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Chair_object_1739", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 25, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 44, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Chair_object_1738", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 0, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Chair_object_1737", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 92, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Chair_object_1736", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 25, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 140, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Ground_object_1727", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Bottle_object_1472", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 160, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Wall_object_1730", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Glue_object_1731", 
+    "mods": [
+      {
+        "y_offset_2": 0, 
+        "y_offset_3": 227, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 239, 
+        "y_offset_5": 0, 
+        "x_offset_2": 20, 
+        "x_offset_5": 0, 
+        "x_offset_4": 4, 
+        "x_offset_6": 0, 
+        "x_offset_1": 248, 
+        "x_offset_3": 5, 
+        "gr_state": 1, 
+        "y": 70, 
+        "x": 44, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Ball_object_1000365", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 72, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "context-region_9061"
+  }, 
+  {
+    "ref": "item-Head_object_1000583", 
+    "mods": [
+      {
+        "style": 45, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 76, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_9061"
+  }
+]

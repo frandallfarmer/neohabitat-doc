@@ -1,0 +1,225 @@
+[
+  {
+    "ref": "context-region_9130", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9131", 
+          "context-region_9142", 
+          "context-region_9129", 
+          "context-region_9119"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_6976", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Ground_object_6977", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Window_object_6981", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 128, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Door_object_6980", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 32, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Sign_object_6983", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 188, 
+        "ascii": [
+          32, 
+          75, 
+          101, 
+          114, 
+          114, 
+          105, 
+          39, 
+          115, 
+          32, 
+          75, 
+          110, 
+          105, 
+          99, 
+          107, 
+          32, 
+          75, 
+          110, 
+          97, 
+          99, 
+          107, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 104, 
+        "x": 56, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Street_object_6982", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Window_object_6978", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 56, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Window_object_6979", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 92, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9130"
+  }, 
+  {
+    "ref": "item-Short_sign_object_6984", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 244, 
+        "ascii": [
+          82, 
+          111, 
+          100, 
+          101, 
+          111, 
+          32, 
+          68, 
+          114, 
+          32, 
+          32
+        ], 
+        "gr_state": 9, 
+        "y": 21, 
+        "x": 124, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9130"
+  }
+]

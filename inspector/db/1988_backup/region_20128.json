@@ -1,0 +1,88 @@
+[
+  {
+    "ref": "context-region_20128", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20128", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Spray_can_object_1003211", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 61, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20128"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1003196", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 114, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20128"
+  }, 
+  {
+    "ref": "item-Head_object_1002718", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 54, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20128"
+  }, 
+  {
+    "ref": "item-Head_object_1003415", 
+    "mods": [
+      {
+        "style": 65, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 18, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20128"
+  }
+]

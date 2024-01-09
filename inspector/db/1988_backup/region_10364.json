@@ -1,0 +1,40 @@
+[
+  {
+    "ref": "context-region_10364", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Haunted Mansion", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_10365", 
+          "", 
+          "context-region_10368"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1001009", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 108, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10364"
+  }
+]

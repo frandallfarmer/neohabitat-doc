@@ -1,0 +1,107 @@
+[
+  {
+    "ref": "context-region_20068", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20068", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_1003123", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 72, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20068"
+  }, 
+  {
+    "ref": "item-Book_object_1003288", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 7, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 52, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20068"
+  }, 
+  {
+    "ref": "item-Book_object_1003175", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 81, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20068"
+  }, 
+  {
+    "ref": "item-Book_object_1003127", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 93, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20068"
+  }, 
+  {
+    "ref": "item-Paper_object_1003169", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20068"
+  }
+]

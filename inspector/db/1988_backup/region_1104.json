@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1104", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Kings Rd", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_1787", 
+          "context-region_1102", 
+          "context-region_1246", 
+          "context-region_1105"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }
+]

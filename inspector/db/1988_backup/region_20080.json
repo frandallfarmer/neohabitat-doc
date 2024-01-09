@@ -1,0 +1,329 @@
+[
+  {
+    "ref": "context-region_20080", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20080", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Box_object_1010682", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 90, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1002637", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 144, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Box_object_1010682"
+  }, 
+  {
+    "ref": "item-Head_object_1002526", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 119, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Key_object_1003073", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Key_object_1003074", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Key_object_1003075", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 0, 
+        "orientation": 8, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Key_object_1003076", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1009381", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 67, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1005050", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 148, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Box_object_1002937", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 38, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20080"
+  }, 
+  {
+    "ref": "item-Book_object_1002964", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 3, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 33, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Box_object_1002937"
+  }, 
+  {
+    "ref": "item-Head_object_1002991", 
+    "mods": [
+      {
+        "style": 38, 
+        "orientation": 80, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 103, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002937"
+  }, 
+  {
+    "ref": "item-Bottle_object_1014517", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 9, 
+        "x": 86, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_1002937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1012370", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 62, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1002937"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1012372", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1002937"
+  }, 
+  {
+    "ref": "item-Sensor_object_1011541", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 20, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "item-Box_object_1002937"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1003401", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 96, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1002937"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1002803", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 74, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Box_object_1002937"
+  }
+]

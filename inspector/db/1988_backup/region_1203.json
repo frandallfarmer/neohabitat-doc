@@ -1,0 +1,226 @@
+[
+  {
+    "ref": "context-region_1203", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "75 This Way", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1204", 
+          "context-region_1205", 
+          "", 
+          "context-region_1201"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_3876", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Wall_object_3877", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 132, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Wall_object_3878", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Building_object_3879", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 205, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 68, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Street_object_3885", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Sign_object_3884", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          55, 
+          53, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Plant_object_3883", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 124, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Mailbox_object_3882", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 112, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Bush_object_3881", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 58, 
+        "x": 8, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1203"
+  }, 
+  {
+    "ref": "item-Tree_object_3880", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 40, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1203"
+  }
+]

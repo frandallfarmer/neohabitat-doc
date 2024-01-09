@@ -1,0 +1,257 @@
+[
+  {
+    "ref": "context-region_1909", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "930 Hyper Dr", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1911", 
+          "", 
+          "context-region_1907", 
+          "context-region_1910"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Building_object_15030", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 165, 
+        "gr_state": 2, 
+        "y": 56, 
+        "x": 52, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Building_object_15027", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 165, 
+        "gr_state": 4, 
+        "y": 62, 
+        "x": 96, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Bush_object_15026", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 177, 
+        "x": 48, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Mailbox_object_15025", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 149, 
+        "x": 12, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Sign_object_15024", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          57, 
+          51, 
+          48, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 57, 
+        "x": 136, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Bush_object_15023", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 112, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Building_object_15022", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 16, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Wall_object_15021", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Wall_object_15020", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Ground_object_15019", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Fence_object_15029", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 132, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1909"
+  }, 
+  {
+    "ref": "item-Street_object_15028", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1909"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "ref": "context-region_1799", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Saint St east", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1819", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_12812", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1799"
+  }, 
+  {
+    "ref": "item-Bush_object_12811", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 48, 
+        "gr_state": 1, 
+        "y": 35, 
+        "x": 16, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1799"
+  }, 
+  {
+    "ref": "item-Teleport_object_12810", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "address": "Pop-Saint St West", 
+        "take": 150, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 104, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1799"
+  }, 
+  {
+    "ref": "item-Wall_object_12808", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1799"
+  }, 
+  {
+    "ref": "item-Wall_object_12809", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1799"
+  }, 
+  {
+    "ref": "item-Ground_object_12807", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1799"
+  }
+]

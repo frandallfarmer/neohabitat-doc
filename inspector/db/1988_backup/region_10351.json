@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10351", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Sheriff's Office", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_10352", 
+          "context-region_1972", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }
+]

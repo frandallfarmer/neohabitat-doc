@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10380", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "THIS could be YOURS!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_10384", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }
+]

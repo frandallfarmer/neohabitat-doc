@@ -1,0 +1,209 @@
+[
+  {
+    "ref": "context-region_1675", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "718 Kludge Ct", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1677", 
+          "", 
+          "context-region_1673", 
+          "context-region_1676"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_11636", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 72, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Sign_object_11637", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          55, 
+          49, 
+          56, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 104, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Bush_object_11634", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 120, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Mailbox_object_11635", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 100, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Building_object_11632", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Tree_object_11633", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Wall_object_11630", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Wall_object_11631", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1675"
+  }, 
+  {
+    "ref": "item-Ground_object_11629", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1675"
+  }
+]

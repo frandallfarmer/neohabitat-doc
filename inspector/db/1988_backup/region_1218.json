@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1218", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "312 Wazoo St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1217", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }
+]

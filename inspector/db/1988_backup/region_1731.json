@@ -1,0 +1,242 @@
+[
+  {
+    "ref": "context-region_1731", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "114 Pam Pl", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1732", 
+          "context-region_1733", 
+          "", 
+          "context-region_1752"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_12176", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Wall_object_12177", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 132, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Street_object_12185", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Sign_object_12184", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          49, 
+          49, 
+          52, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 157, 
+        "x": 52, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Head_object_1734", 
+    "mods": [
+      {
+        "style": 18, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Bush_object_12181", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 58, 
+        "x": 8, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Bush_object_12180", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 36, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Plant_object_12183", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 62, 
+        "x": 124, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Mailbox_object_12182", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 157, 
+        "x": 112, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Wall_object_12178", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1731"
+  }, 
+  {
+    "ref": "item-Building_object_12179", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 221, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1731"
+  }
+]

@@ -1,0 +1,177 @@
+[
+  {
+    "ref": "context-region_1856", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Warp Dr", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1857", 
+          "context-region_1034", 
+          "context-region_1854", 
+          "context-region_1718"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_13337", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1856"
+  }, 
+  {
+    "ref": "item-Ground_object_13336", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1856"
+  }, 
+  {
+    "ref": "item-Sign_object_13339", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          87, 
+          97, 
+          114, 
+          112, 
+          32, 
+          68, 
+          114, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 4, 
+        "y": 30, 
+        "x": 100, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1856"
+  }, 
+  {
+    "ref": "item-Street_object_13338", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1856"
+  }, 
+  {
+    "ref": "item-Tree_object_13340", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 157, 
+        "x": 56, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1856"
+  }, 
+  {
+    "ref": "item-Tree_object_13341", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1856"
+  }, 
+  {
+    "ref": "item-Bush_object_13342", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 31, 
+        "x": 112, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1856"
+  }
+]

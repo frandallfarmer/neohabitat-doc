@@ -1,0 +1,185 @@
+[
+  {
+    "ref": "context-region_8035", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_8036", 
+          "context-region_8058", 
+          "context-region_8034", 
+          "context-region_8020"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_5324", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Sky_object_5325", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Street_object_5326", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 6, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Rock_object_5327", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 24, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Tree_object_5333", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 31, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Rock_object_5332", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 76, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Tree_object_5331", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 128, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Tree_object_5330", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 42, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Tree_object_5328", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 44, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8035"
+  }, 
+  {
+    "ref": "item-Tree_object_5329", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 60, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8035"
+  }
+]

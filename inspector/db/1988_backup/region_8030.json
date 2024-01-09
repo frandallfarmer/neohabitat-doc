@@ -1,0 +1,215 @@
+[
+  {
+    "ref": "context-region_8030", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_8031", 
+          "context-region_8053", 
+          "context-region_8029", 
+          "context-region_8031"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_5280", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 104, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Bush_object_5272", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 8, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Wall_object_5273", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Tree_object_5276", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 34, 
+        "x": 16, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Tree_object_5277", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 60, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Ground_object_5274", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Bush_object_5275", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 131, 
+        "x": 36, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Sky_object_5283", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 100, 
+        "x": 128, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Bush_object_5282", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 142, 
+        "x": 84, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Tree_object_5278", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 3, 
+        "y": 68, 
+        "x": 64, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Tree_object_5279", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 229, 
+        "gr_state": 3, 
+        "y": 66, 
+        "x": 56, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8030"
+  }, 
+  {
+    "ref": "item-Bush_object_5281", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 142, 
+        "x": 108, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8030"
+  }
+]

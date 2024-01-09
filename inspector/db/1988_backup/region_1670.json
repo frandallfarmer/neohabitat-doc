@@ -1,0 +1,226 @@
+[
+  {
+    "ref": "context-region_1670", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "518 Kludge Ct", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1672", 
+          "", 
+          "context-region_1668", 
+          "context-region_1671"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_11588", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 8, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Mailbox_object_11589", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 76, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Ground_object_11583", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Wall_object_11584", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Wall_object_11585", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Building_object_11586", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 36, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Bush_object_11587", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 96, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Plant_object_11592", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 41, 
+        "x": 60, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Sign_object_11591", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          53, 
+          49, 
+          56, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1670"
+  }, 
+  {
+    "ref": "item-Street_object_11590", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 72, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1670"
+  }
+]

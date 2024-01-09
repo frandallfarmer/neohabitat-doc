@@ -1,0 +1,196 @@
+[
+  {
+    "ref": "context-region_1177", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Spiff Ln", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "", 
+          "context-region_1178", 
+          "context-region_1223", 
+          "context-region_1175"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Game_piece_object_7623", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 5, 
+        "y": 21, 
+        "x": 56, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_1177"
+  }, 
+  {
+    "ref": "item-Street_object_3652", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 13, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1177"
+  }, 
+  {
+    "ref": "item-Sign_object_3653", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          83, 
+          112, 
+          105, 
+          102, 
+          102, 
+          32, 
+          76, 
+          110, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 30, 
+        "x": 80, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1177"
+  }, 
+  {
+    "ref": "item-Ground_object_3650", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1177"
+  }, 
+  {
+    "ref": "item-Sky_object_3651", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1177"
+  }, 
+  {
+    "ref": "item-Tree_object_3656", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 35, 
+        "x": 32, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1177"
+  }, 
+  {
+    "ref": "item-Bush_object_3654", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 130, 
+        "x": 40, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1177"
+  }, 
+  {
+    "ref": "item-Teleport_object_3655", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "address": "Pop-Spiff Ln", 
+        "take": 1020, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 112, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1177"
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "ref": "context-region_20074", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20074", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Shovel_object_1012562", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 57, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20074"
+  }, 
+  {
+    "ref": "item-Bag_object_1006270", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 67, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20074"
+  }, 
+  {
+    "ref": "item-Sensor_object_1011615", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 20, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "item-Bag_object_1006270"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1010014", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 72, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "item-Bag_object_1006270"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1006898", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 108, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20074"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1011479", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20074"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1011483", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20074"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1011038", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 116, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20074"
+  }
+]

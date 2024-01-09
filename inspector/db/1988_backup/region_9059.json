@@ -1,0 +1,192 @@
+[
+  {
+    "ref": "context-region_9059", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9058", 
+          "context-region_9048"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Streetlamp_object_1715", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 0, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9059"
+  }, 
+  {
+    "ref": "item-Sign_object_1714", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 8, 
+        "ascii": [
+          84, 
+          104, 
+          105, 
+          115, 
+          32, 
+          115, 
+          112, 
+          97, 
+          99, 
+          101, 
+          134, 
+          131, 
+          32, 
+          70, 
+          111, 
+          114, 
+          32, 
+          82, 
+          101, 
+          110, 
+          116, 
+          134, 
+          132, 
+          40, 
+          67, 
+          105, 
+          116, 
+          121, 
+          32, 
+          72, 
+          97, 
+          108, 
+          108, 
+          41, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 66, 
+        "x": 20, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9059"
+  }, 
+  {
+    "ref": "item-Short_sign_object_1717", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          83, 
+          107, 
+          105, 
+          100, 
+          32, 
+          82, 
+          111, 
+          119, 
+          32, 
+          32
+        ], 
+        "gr_state": 9, 
+        "y": 116, 
+        "x": 4, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9059"
+  }, 
+  {
+    "ref": "item-Teleport_object_1716", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "address": "Pop-Downtown", 
+        "take": 90, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 112, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_9059"
+  }, 
+  {
+    "ref": "item-Ground_object_1713", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9059"
+  }, 
+  {
+    "ref": "item-Wall_object_1712", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9059"
+  }, 
+  {
+    "ref": "item-Street_object_1718", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 7, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9059"
+  }
+]

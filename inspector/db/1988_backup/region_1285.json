@@ -1,0 +1,90 @@
+[
+  {
+    "ref": "context-region_1285", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Off Limits!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1288", 
+          "context-region_1284", 
+          "context-region_1297", 
+          "context-region_1283"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_4631", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1285"
+  }, 
+  {
+    "ref": "item-Ground_object_4630", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1285"
+  }, 
+  {
+    "ref": "item-Sky_object_4633", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1285"
+  }, 
+  {
+    "ref": "item-Teleport_object_4632", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "address": "Pop-Plaza SE", 
+        "take": 150, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 20, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1285"
+  }
+]

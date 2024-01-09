@@ -1,0 +1,164 @@
+[
+  {
+    "ref": "context-region_1741", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Pam Pl", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_1223", 
+          "context-region_1742", 
+          "context-region_1764", 
+          "context-region_1739"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Teleport_object_12275", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "address": "Pop-Pam Pl", 
+        "take": 3510, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 20, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1741"
+  }, 
+  {
+    "ref": "item-Tree_object_12274", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 100, 
+        "x": 124, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1741"
+  }, 
+  {
+    "ref": "item-Sign_object_12273", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          80, 
+          65, 
+          77, 
+          32, 
+          80, 
+          76, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 68, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1741"
+  }, 
+  {
+    "ref": "item-Street_object_12272", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1741"
+  }, 
+  {
+    "ref": "item-Sky_object_12271", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 132, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1741"
+  }, 
+  {
+    "ref": "item-Ground_object_12270", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1741"
+  }
+]

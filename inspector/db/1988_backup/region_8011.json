@@ -1,0 +1,349 @@
+[
+  {
+    "ref": "context-region_8011", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_8012", 
+          "context-region_8032", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Short_sign_object_5044", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 156, 
+        "ascii": [
+          78, 
+          97, 
+          116, 
+          105, 
+          118, 
+          101, 
+          32, 
+          65, 
+          114, 
+          116
+        ], 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 88, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_8011"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_5039", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 146, 
+        "x": 28, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_8011"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_5040", 
+    "mods": [
+      {
+        "display_item": 3, 
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 400
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_5039"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_5041", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Vendo_front_object_5040"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_5043", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Vendo_front_object_5040"
+  }, 
+  {
+    "ref": "item-Ground_object_5023", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8011"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_5031", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 159, 
+        "orientation": 188, 
+        "pattern": [
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          170, 
+          169, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          169, 
+          170, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185
+        ], 
+        "upper_right_x": 159, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 0, 
+        "height": 88, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 15, 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_8011"
+  }, 
+  {
+    "ref": "item-Glue_object_5032", 
+    "mods": [
+      {
+        "y_offset_2": 216, 
+        "y_offset_3": 218, 
+        "style": 0, 
+        "y_offset_1": 216, 
+        "y_offset_6": 218, 
+        "orientation": 0, 
+        "y_offset_4": 218, 
+        "y_offset_5": 220, 
+        "x_offset_2": 254, 
+        "x_offset_5": 16, 
+        "x_offset_4": 3, 
+        "x_offset_6": 248, 
+        "x_offset_1": 22, 
+        "x_offset_3": 10, 
+        "gr_state": 1, 
+        "y": 41, 
+        "x": 32, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_8011"
+  }, 
+  {
+    "ref": "item-Knife_object_5038", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Knife"
+      }
+    ], 
+    "type": "item", 
+    "name": "Knife", 
+    "in": "item-Glue_object_5032"
+  }, 
+  {
+    "ref": "item-Ball_object_5033", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "item-Glue_object_5032"
+  }, 
+  {
+    "ref": "item-Ball_object_5034", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "item-Glue_object_5032"
+  }, 
+  {
+    "ref": "item-Ball_object_5035", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "item-Glue_object_5032"
+  }, 
+  {
+    "ref": "item-Knife_object_5036", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Knife"
+      }
+    ], 
+    "type": "item", 
+    "name": "Knife", 
+    "in": "item-Glue_object_5032"
+  }, 
+  {
+    "ref": "item-Knife_object_5037", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Knife"
+      }
+    ], 
+    "type": "item", 
+    "name": "Knife", 
+    "in": "item-Glue_object_5032"
+  }, 
+  {
+    "ref": "item-Glue_object_5024", 
+    "mods": [
+      {
+        "y_offset_2": 186, 
+        "y_offset_3": 184, 
+        "style": 0, 
+        "y_offset_1": 185, 
+        "y_offset_6": 188, 
+        "orientation": 0, 
+        "y_offset_4": 186, 
+        "y_offset_5": 186, 
+        "x_offset_2": 5, 
+        "x_offset_5": 23, 
+        "x_offset_4": 17, 
+        "x_offset_6": 249, 
+        "x_offset_1": 255, 
+        "x_offset_3": 11, 
+        "gr_state": 1, 
+        "y": 41, 
+        "x": 32, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_8011"
+  }
+]

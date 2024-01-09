@@ -1,0 +1,454 @@
+[
+  {
+    "ref": "context-region_9106", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_9114", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_6668", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9106"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_6669", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 8, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9106"
+  }, 
+  {
+    "ref": "item-Amulet_object_6671", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 5, 
+        "type": "Amulet"
+      }
+    ], 
+    "type": "item", 
+    "name": "Amulet", 
+    "in": "item-Vendo_inside_object_6669"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_6670", 
+    "mods": [
+      {
+        "display_item": 5, 
+        "style": 0, 
+        "orientation": 164, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 184, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 1200
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_6669"
+  }, 
+  {
+    "ref": "item-Gemstone_object_6676", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Gemstone"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gemstone", 
+    "in": "item-Vendo_front_object_6670"
+  }, 
+  {
+    "ref": "item-Gemstone_object_6675", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Gemstone"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gemstone", 
+    "in": "item-Vendo_front_object_6670"
+  }, 
+  {
+    "ref": "item-Ring_object_6674", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Ring"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ring", 
+    "in": "item-Vendo_front_object_6670"
+  }, 
+  {
+    "ref": "item-Escape_device_object_6673", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 10, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "item-Vendo_front_object_6670"
+  }, 
+  {
+    "ref": "item-Gemstone_object_6672", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Gemstone"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gemstone", 
+    "in": "item-Vendo_front_object_6670"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_6677", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 112, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9106"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_15876", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Vendo_inside_object_6677"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_6678", 
+    "mods": [
+      {
+        "display_item": 3, 
+        "style": 0, 
+        "orientation": 188, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 181, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 1800
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_6677"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_15501", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Vendo_front_object_6678"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_6681", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Vendo_front_object_6678"
+  }, 
+  {
+    "ref": "item-Sign_object_6684", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          102, 
+          111, 
+          114, 
+          32, 
+          116, 
+          104, 
+          101, 
+          134, 
+          112, 
+          114, 
+          105, 
+          99, 
+          101, 
+          44, 
+          32, 
+          73, 
+          116, 
+          32, 
+          105, 
+          115, 
+          134, 
+          84, 
+          79, 
+          79, 
+          32, 
+          77, 
+          85, 
+          67, 
+          72, 
+          33, 
+          41, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 70, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9106"
+  }, 
+  {
+    "ref": "item-Sign_object_6685", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          84, 
+          114, 
+          105, 
+          110, 
+          107, 
+          101, 
+          116, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          77, 
+          101, 
+          103, 
+          97, 
+          80, 
+          111, 
+          119, 
+          101, 
+          114, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 107, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9106"
+  }, 
+  {
+    "ref": "item-Sign_object_6682", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          131, 
+          133, 
+          78, 
+          79, 
+          133, 
+          32, 
+          72, 
+          97, 
+          103, 
+          103, 
+          108, 
+          105, 
+          110, 
+          103, 
+          33, 
+          134, 
+          132, 
+          132, 
+          40, 
+          73, 
+          102, 
+          32, 
+          121, 
+          111, 
+          117, 
+          32, 
+          104, 
+          97, 
+          118, 
+          101, 
+          134, 
+          116, 
+          111, 
+          32, 
+          65, 
+          83, 
+          75, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 101, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9106"
+  }, 
+  {
+    "ref": "item-Wall_object_6683", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9106"
+  }
+]

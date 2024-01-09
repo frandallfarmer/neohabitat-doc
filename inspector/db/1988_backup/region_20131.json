@@ -1,0 +1,87 @@
+[
+  {
+    "ref": "context-region_20131", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20131", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Paper_object_1017254", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 51, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20131"
+  }, 
+  {
+    "ref": "item-Paper_object_1016508", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 49, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20131"
+  }, 
+  {
+    "ref": "item-Paper_object_1017008", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 72, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20131"
+  }, 
+  {
+    "ref": "item-Paper_object_1016110", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 44, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20131"
+  }
+]

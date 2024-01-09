@@ -1,0 +1,145 @@
+[
+  {
+    "ref": "context-region_9180", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_9118", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sex_changer_object_6831", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 146, 
+        "x": 80, 
+        "type": "Sex_changer"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sex_changer", 
+    "in": "context-region_9180"
+  }, 
+  {
+    "ref": "item-Sign_object_6830", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 244, 
+        "ascii": [
+          32, 
+          32, 
+          90, 
+          101, 
+          101, 
+          134, 
+          128, 
+          133, 
+          78, 
+          101, 
+          119, 
+          134, 
+          133, 
+          32, 
+          128, 
+          76, 
+          111, 
+          111, 
+          107, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 71, 
+        "x": 20, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9180"
+  }, 
+  {
+    "ref": "item-Wall_object_6827", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9180"
+  }, 
+  {
+    "ref": "item-Ground_object_6828", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9180"
+  }, 
+  {
+    "ref": "item-Sex_changer_object_6829", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 124, 
+        "type": "Sex_changer"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sex_changer", 
+    "in": "context-region_9180"
+  }
+]

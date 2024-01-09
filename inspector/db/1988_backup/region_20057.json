@@ -1,0 +1,41 @@
+[
+  {
+    "ref": "context-region_20057", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20057", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tokens_object_1009830", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "denom_hi": 48, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "denom_lo": 117, 
+        "type": "Tokens"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tokens", 
+    "in": "context-region_20057"
+  }
+]

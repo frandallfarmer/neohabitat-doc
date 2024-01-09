@@ -1,0 +1,241 @@
+[
+  {
+    "ref": "context-region_1867", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Warp Dr south", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1846", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Plant_object_13454", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 58, 
+        "x": 112, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Plant_object_13455", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 42, 
+        "x": 76, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Plant_object_13456", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 39, 
+        "x": 104, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Plant_object_13448", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 64, 
+        "x": 100, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Plant_object_13450", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 42, 
+        "x": 132, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Plant_object_13451", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 64, 
+        "x": 124, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Street_object_13452", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 4, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Plant_object_13453", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 58, 
+        "x": 92, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Bush_object_13449", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 55, 
+        "x": 52, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Ground_object_13444", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Wall_object_13445", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Teleport_object_13447", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "Pop-Warp Dr South", 
+        "take": 140, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 28, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1867"
+  }, 
+  {
+    "ref": "item-Wall_object_13446", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1867"
+  }
+]

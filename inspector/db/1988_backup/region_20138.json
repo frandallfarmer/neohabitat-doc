@@ -1,0 +1,135 @@
+[
+  {
+    "ref": "context-region_20138", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20138", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007188", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 143, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20138"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007167", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 139, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20138"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007165", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20138"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007186", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20138"
+  }, 
+  {
+    "ref": "item-Changomatic_object_1005032", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 128, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "context-region_20138"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007166", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20138"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1013103", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 73, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 89, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20138"
+  }
+]

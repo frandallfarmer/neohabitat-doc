@@ -1,0 +1,90 @@
+[
+  {
+    "ref": "context-region_20059", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20059", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sensor_object_1009379", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 39, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "context-region_20059"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1002592", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "charge": 8, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 54, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_20059"
+  }, 
+  {
+    "ref": "item-Key_object_1011552", 
+    "mods": [
+      {
+        "key_number_lo": 6, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 165, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 22, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20059"
+  }, 
+  {
+    "ref": "item-Head_object_1011043", 
+    "mods": [
+      {
+        "style": 89, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 31, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20059"
+  }
+]

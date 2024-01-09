@@ -1,0 +1,213 @@
+[
+  {
+    "ref": "context-region_9047", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9046", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_1588", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 0, 
+        "orientation": 220, 
+        "pattern": [
+          170, 
+          170, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          170, 
+          170, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 160, 
+        "height": 127, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 15, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_9047"
+  }, 
+  {
+    "ref": "item-Sign_object_1589", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          133, 
+          32, 
+          65, 
+          108, 
+          108, 
+          32, 
+          102, 
+          111, 
+          114, 
+          109, 
+          115, 
+          32, 
+          77, 
+          85, 
+          83, 
+          84, 
+          134, 
+          98, 
+          101, 
+          32, 
+          105, 
+          110, 
+          32, 
+          116, 
+          114, 
+          105, 
+          112, 
+          108, 
+          105, 
+          99, 
+          97, 
+          116, 
+          101, 
+          46, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 126, 
+        "x": 12, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9047"
+  }, 
+  {
+    "ref": "item-Sign_object_1590", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          80, 
+          114, 
+          111, 
+          112, 
+          101, 
+          114, 
+          116, 
+          121, 
+          32, 
+          32, 
+          32, 
+          32, 
+          76, 
+          105, 
+          99, 
+          101, 
+          110, 
+          115, 
+          101, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          67, 
+          111, 
+          109, 
+          112, 
+          108, 
+          97, 
+          105, 
+          110, 
+          116, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 8, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9047"
+  }, 
+  {
+    "ref": "item-Ground_object_1587", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9047"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10170", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "", 
+          "context-region_10174", 
+          "", 
+          "context-region_10166"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

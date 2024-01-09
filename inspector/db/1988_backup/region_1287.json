@@ -1,0 +1,87 @@
+[
+  {
+    "ref": "context-region_1287", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Off Limits!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1290", 
+          "context-region_1288", 
+          "context-region_1283", 
+          "context-region_1286"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_4639", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1287"
+  }, 
+  {
+    "ref": "item-Ground_object_4638", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1287"
+  }, 
+  {
+    "ref": "item-Fountain_object_4641", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 64, 
+        "type": "Fountain"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fountain", 
+    "in": "context-region_1287"
+  }, 
+  {
+    "ref": "item-Sky_object_4642", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1287"
+  }
+]

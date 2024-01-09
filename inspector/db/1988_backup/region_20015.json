@@ -1,0 +1,177 @@
+[
+  {
+    "ref": "context-region_20015", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20015", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bag_object_1012816", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 86, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20015"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1007545", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 68, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "item-Bag_object_1012816"
+  }, 
+  {
+    "ref": "item-Book_object_1012332", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 5, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 142, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1012816"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1012900", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 55, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20015"
+  }, 
+  {
+    "ref": "item-Shovel_object_1015466", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 36, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20015"
+  }, 
+  {
+    "ref": "item-Compass_object_1012907", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 147, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20015"
+  }, 
+  {
+    "ref": "item-Bag_object_1018199", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 116, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20015"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1016673", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 121, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1018199"
+  }, 
+  {
+    "ref": "item-Movie_camera_object_1016288", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 32, 
+        "type": "Movie_camera"
+      }
+    ], 
+    "type": "item", 
+    "name": "Movie_camera", 
+    "in": "item-Bag_object_1018199"
+  }
+]

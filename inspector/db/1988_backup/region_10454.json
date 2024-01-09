@@ -1,0 +1,57 @@
+[
+  {
+    "ref": "context-region_10454", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "The Avatar's Court", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_1552", 
+          "", 
+          "context-region_10455", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014660", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 45, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10454"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1017137", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 126, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_10454"
+  }
+]

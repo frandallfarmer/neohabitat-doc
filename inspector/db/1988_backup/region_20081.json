@@ -1,0 +1,174 @@
+[
+  {
+    "ref": "context-region_20081", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20081", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_1005278", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 41, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 56, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20081"
+  }, 
+  {
+    "ref": "item-Shovel_object_1013815", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 20, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20081"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005686", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 57, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 74, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20081"
+  }, 
+  {
+    "ref": "item-Bag_object_1005351", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 106, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20081"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005667", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 81, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1005351"
+  }, 
+  {
+    "ref": "item-Bottle_object_1005527", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Bag_object_1005351"
+  }, 
+  {
+    "ref": "item-Compass_object_1005304", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 67, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "item-Bag_object_1005351"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005305", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 96, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1005351"
+  }, 
+  {
+    "ref": "item-Paper_object_1016742", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20081"
+  }
+]

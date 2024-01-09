@@ -1,0 +1,253 @@
+[
+  {
+    "ref": "context-region_9151", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1980", 
+          "", 
+          "", 
+          "context-region_9140"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Short_sign_object_7195", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          52, 
+          50, 
+          110, 
+          100, 
+          32, 
+          83, 
+          116, 
+          32, 
+          32
+        ], 
+        "gr_state": 9, 
+        "y": 114, 
+        "x": 124, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9151"
+  }, 
+  {
+    "ref": "item-Door_object_7194", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "key_hi": 184, 
+        "key_lo": 11, 
+        "connection": "context-region_10479", 
+        "gr_state": 1, 
+        "y": 34, 
+        "x": 68, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9151"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_7197", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 196, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 40, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9151"
+  }, 
+  {
+    "ref": "item-Book_object_7199", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Vendo_inside_object_7197"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_7198", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 1, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 10
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_7197"
+  }, 
+  {
+    "ref": "item-Street_object_7196", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 8, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9151"
+  }, 
+  {
+    "ref": "item-Wall_object_7191", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9151"
+  }, 
+  {
+    "ref": "item-Sign_object_7193", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 252, 
+        "ascii": [
+          80, 
+          111, 
+          112, 
+          117, 
+          108, 
+          111, 
+          112, 
+          111, 
+          108, 
+          105, 
+          115, 
+          133, 
+          134, 
+          134, 
+          76, 
+          79, 
+          84, 
+          84, 
+          79, 
+          134, 
+          67, 
+          101, 
+          110, 
+          116, 
+          101, 
+          114, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 64, 
+        "x": 100, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9151"
+  }, 
+  {
+    "ref": "item-Ground_object_7192", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9151"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_7200", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 8, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9151"
+  }
+]

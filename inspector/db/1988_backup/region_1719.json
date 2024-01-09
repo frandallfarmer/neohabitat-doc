@@ -1,0 +1,244 @@
+[
+  {
+    "ref": "context-region_1719", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "628 Milky Wy", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1721", 
+          "", 
+          "context-region_1718", 
+          "context-region_1720"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_12058", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 6, 
+        "y": 16, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Ground_object_12048", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Wall_object_12049", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Plant_object_12055", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 136, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Mailbox_object_12054", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 124, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Bush_object_12053", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 58, 
+        "x": 24, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Plant_object_12052", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 76, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Building_object_12051", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 72, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Wall_object_12050", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Sign_object_12057", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          54, 
+          50, 
+          56, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 124, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1719"
+  }, 
+  {
+    "ref": "item-Plant_object_12056", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 17, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 72, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1719"
+  }
+]

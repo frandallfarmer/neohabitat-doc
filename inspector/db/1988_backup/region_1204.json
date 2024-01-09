@@ -1,0 +1,243 @@
+[
+  {
+    "ref": "context-region_1204", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "75 This Way", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1203", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_3887", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Ground_object_3886", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Chair_object_3894", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 41, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 96, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Chair_object_3895", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 44, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Window_object_3890", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 72, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Door_object_3891", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 12, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Window_object_3893", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 48, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Box_object_1011542", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 9, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 132, 
+        "x": 19, 
+        "type": "Box", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000696", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 141, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1011542"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1012026", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "charge": 6, 
+        "gr_state": 0, 
+        "y": 147, 
+        "x": 85, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Window_object_3889", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 96, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Table_object_3888", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 120, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1204"
+  }, 
+  {
+    "ref": "item-Aquarium_object_3892", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 84, 
+        "type": "Aquarium"
+      }
+    ], 
+    "type": "item", 
+    "name": "Aquarium", 
+    "in": "item-Table_object_3888"
+  }
+]

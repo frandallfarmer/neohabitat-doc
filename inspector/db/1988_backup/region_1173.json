@@ -1,0 +1,278 @@
+[
+  {
+    "ref": "context-region_1173", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "411 Spiff Ln", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1174", 
+          "context-region_1175", 
+          "", 
+          "context-region_1171"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Plant_object_3620", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 17, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 12, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Street_object_3621", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1000462", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 136, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Plant_object_3618", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 17, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 84, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Plant_object_3619", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 24, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Mailbox_object_3616", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 124, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Sign_object_3617", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          128, 
+          52, 
+          49, 
+          49, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 132, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Plant_object_3614", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 60, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Plant_object_3615", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 17, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 48, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Wall_object_3612", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Building_object_3613", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 72, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Ground_object_3610", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1173"
+  }, 
+  {
+    "ref": "item-Wall_object_3611", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1173"
+  }
+]

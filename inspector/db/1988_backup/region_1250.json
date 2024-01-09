@@ -1,0 +1,246 @@
+[
+  {
+    "ref": "context-region_1250", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "79 Wacka Rd", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1249", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chair_object_4323", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 72, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Chair_object_4322", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 36, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Tokens_object_1002143", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "denom_hi": 80, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 56, 
+        "denom_lo": 0, 
+        "type": "Tokens"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tokens", 
+    "in": "item-Chair_object_4322"
+  }, 
+  {
+    "ref": "item-Chair_object_4321", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 112, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Door_object_4320", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1002098", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 149, 
+        "x": 13, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Table_object_4318", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 64, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Window_object_4319", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 104, 
+        "x": 20, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Wall_object_4316", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Display_case_object_4317", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 112, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1250"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000563", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 72, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Display_case_object_4317"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1002245", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 20, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Display_case_object_4317"
+  }, 
+  {
+    "ref": "item-Ground_object_4315", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1250"
+  }
+]

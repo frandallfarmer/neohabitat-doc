@@ -1,0 +1,421 @@
+[
+  {
+    "ref": "context-region_9026", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9025", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1355", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 129, 
+        "x": 20, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1354", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 84, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Wall_object_1357", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 160, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1356", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 129, 
+        "x": 32, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1351", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 28, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1350", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 48, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1353", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 68, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1352", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 36, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Pawn_machine_object_1358", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 124, 
+        "type": "Pawn_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pawn_machine", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Wall_object_1337", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Display_case_object_1339", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 3, 
+        "y": 32, 
+        "x": 16, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Ground_object_1338", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1342", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 112, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Display_case_object_1343", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Display_case_object_1340", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 3, 
+        "y": 70, 
+        "x": 16, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1341", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 136, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1346", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1347", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 128, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Display_case_object_1344", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 3, 
+        "y": 70, 
+        "x": 60, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Display_case_object_1345", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 104, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1348", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 108, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1349", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 161, 
+        "x": 16, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9026"
+  }, 
+  {
+    "ref": "item-Tokens_object_1000360", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "denom_hi": 244, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 116, 
+        "denom_lo": 1, 
+        "type": "Tokens"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tokens", 
+    "in": "context-region_9026"
+  }
+]

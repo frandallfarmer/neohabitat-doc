@@ -1,0 +1,140 @@
+[
+  {
+    "ref": "context-region_5015", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_5010", 
+          "", 
+          "", 
+          "context-region_5009"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_8244", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 16, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_5015"
+  }, 
+  {
+    "ref": "item-Flat_object_8245", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5015"
+  }, 
+  {
+    "ref": "item-Bush_object_8246", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 35, 
+        "x": 128, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_5015"
+  }, 
+  {
+    "ref": "item-Sky_object_8240", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_5015"
+  }, 
+  {
+    "ref": "item-Flat_object_8241", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5015"
+  }, 
+  {
+    "ref": "item-Teleport_object_8242", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "Pop-Desert Heart", 
+        "take": 3270, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 92, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_5015"
+  }, 
+  {
+    "ref": "item-Tree_object_8243", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 29, 
+        "x": 64, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_5015"
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "ref": "context-region_1937", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Road St north", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1957", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Teleport_object_15280", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "address": "Pop-Road St North", 
+        "take": 310, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 100, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1937"
+  }, 
+  {
+    "ref": "item-Ground_object_15277", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1937"
+  }, 
+  {
+    "ref": "item-Bush_object_15283", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1937"
+  }, 
+  {
+    "ref": "item-Street_object_15282", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "gr_state": 3, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1937"
+  }, 
+  {
+    "ref": "item-Wall_object_15278", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1937"
+  }, 
+  {
+    "ref": "item-Wall_object_15279", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1937"
+  }, 
+  {
+    "ref": "item-Bush_object_15281", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 76, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1937"
+  }
+]

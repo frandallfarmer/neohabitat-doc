@@ -1,0 +1,262 @@
+[
+  {
+    "ref": "context-region_1650", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "616 Kerner", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1652", 
+          "", 
+          "context-region_1649", 
+          "context-region_1651"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Plant_object_11391", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 33, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 12, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Plant_object_11390", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 24, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Street_object_11392", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Sign_object_11388", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          54, 
+          49, 
+          54, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 124, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Plant_object_11389", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 33, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 84, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Plant_object_11386", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 49, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 48, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Mailbox_object_11387", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 124, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Building_object_11384", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 97, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 72, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Plant_object_11385", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 60, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Wall_object_11382", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Wall_object_11383", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1650"
+  }, 
+  {
+    "ref": "item-Ground_object_11381", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1650"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1604", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "617 I/O Ave", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "context-region_1603", 
+          "context-region_1605", 
+          "context-region_1606"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }
+]

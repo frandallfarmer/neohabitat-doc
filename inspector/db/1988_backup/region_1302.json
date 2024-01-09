@@ -1,0 +1,459 @@
+[
+  {
+    "ref": "context-region_1302", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Off Limits!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1301", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_4882", 
+    "mods": [
+      {
+        "style": 56, 
+        "orientation": 96, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 5, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_1302"
+  }, 
+  {
+    "ref": "item-Sign_object_4752", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 244, 
+        "ascii": [
+          32, 
+          72, 
+          101, 
+          97, 
+          100, 
+          115, 
+          134, 
+          32, 
+          32, 
+          102, 
+          111, 
+          114, 
+          134, 
+          32, 
+          128, 
+          86, 
+          111, 
+          117, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 71, 
+        "x": 20, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1302"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_4753", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 96, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_1302"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_4871", 
+    "mods": [
+      {
+        "display_item": 3, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 999
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_4753"
+  }, 
+  {
+    "ref": "item-Head_object_4872", 
+    "mods": [
+      {
+        "style": 80, 
+        "orientation": 32, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4871"
+  }, 
+  {
+    "ref": "item-Head_object_4884", 
+    "mods": [
+      {
+        "style": 80, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 7, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4871"
+  }, 
+  {
+    "ref": "item-Head_object_4883", 
+    "mods": [
+      {
+        "style": 48, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 6, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4871"
+  }, 
+  {
+    "ref": "item-Head_object_4879", 
+    "mods": [
+      {
+        "style": 48, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4871"
+  }, 
+  {
+    "ref": "item-Head_object_4881", 
+    "mods": [
+      {
+        "style": 65, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 4, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4871"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_4754", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 191, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_4753"
+  }, 
+  {
+    "ref": "item-Head_object_4880", 
+    "mods": [
+      {
+        "style": 56, 
+        "orientation": 80, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 3, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_inside_object_4753"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_4750", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 52, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_1302"
+  }, 
+  {
+    "ref": "item-Head_object_4877", 
+    "mods": [
+      {
+        "style": 73, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 5, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_inside_object_4750"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_4751", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 188, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_4750"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_4869", 
+    "mods": [
+      {
+        "display_item": 5, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 1000
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_4750"
+  }, 
+  {
+    "ref": "item-Head_object_4876", 
+    "mods": [
+      {
+        "style": 69, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4869"
+  }, 
+  {
+    "ref": "item-Head_object_4875", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4869"
+  }, 
+  {
+    "ref": "item-Head_object_4873", 
+    "mods": [
+      {
+        "style": 73, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 1, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4869"
+  }, 
+  {
+    "ref": "item-Head_object_4870", 
+    "mods": [
+      {
+        "style": 69, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_4869"
+  }, 
+  {
+    "ref": "item-Head_object_4874", 
+    "mods": [
+      {
+        "style": 74, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 2, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_1302"
+  }, 
+  {
+    "ref": "item-Ground_object_4749", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1302"
+  }, 
+  {
+    "ref": "item-Wall_object_4748", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1302"
+  }, 
+  {
+    "ref": "item-Head_object_4878", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 6, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_1302"
+  }
+]

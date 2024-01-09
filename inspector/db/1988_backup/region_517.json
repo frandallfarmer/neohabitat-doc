@@ -1,0 +1,246 @@
+[
+  {
+    "ref": "context-region_517", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_518", 
+          "", 
+          "context-region_516", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tokens_object_1002033", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "denom_hi": 1, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 88, 
+        "denom_lo": 0, 
+        "type": "Tokens"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tokens", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Coke_machine_object_636", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 29, 
+        "x": 100, 
+        "type": "Coke_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Coke_machine", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Couch_object_637", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 32, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Chair_object_634", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 4, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Chest_object_635", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 29, 
+        "x": 32, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Sign_object_632", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          87, 
+          104, 
+          105, 
+          116, 
+          101, 
+          32, 
+          83, 
+          97, 
+          110, 
+          100, 
+          115, 
+          58, 
+          32, 
+          67, 
+          108, 
+          97, 
+          115, 
+          115, 
+          32, 
+          80, 
+          114, 
+          111, 
+          118, 
+          105, 
+          110, 
+          103, 
+          32, 
+          71, 
+          114, 
+          111, 
+          117, 
+          110, 
+          100, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Bush_object_633", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Wall_object_630", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Ground_object_631", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Fence_object_638", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 29, 
+        "x": 100, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_517"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_639", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 130, 
+        "x": 132, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_517"
+  }
+]

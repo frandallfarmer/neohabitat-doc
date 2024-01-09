@@ -1,0 +1,72 @@
+[
+  {
+    "ref": "context-region_20113", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20113", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Compass_object_1003014", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 3, 
+        "x": 28, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20113"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004595", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 81, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 76, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20113"
+  }, 
+  {
+    "ref": "item-Shovel_object_1015045", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 20, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20113"
+  }
+]

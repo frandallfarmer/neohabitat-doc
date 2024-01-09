@@ -1,0 +1,142 @@
+[
+  {
+    "ref": "context-region_1291", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Off Limits!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1303", 
+          "context-region_1292", 
+          "context-region_1288", 
+          "context-region_1290"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Teleport_object_4657", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "address": "Pop-Plaza NE", 
+        "take": 210, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 120, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1291"
+  }, 
+  {
+    "ref": "item-Sky_object_4656", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1291"
+  }, 
+  {
+    "ref": "item-Ground_object_4655", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1291"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_4659", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 152, 
+        "x": 8, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_1291"
+  }, 
+  {
+    "ref": "item-Head_object_1000057", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 24, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Garbage_can_object_4659"
+  }, 
+  {
+    "ref": "item-Book_object_4685", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 112, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Garbage_can_object_4659"
+  }, 
+  {
+    "ref": "item-Sky_object_4658", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1291"
+  }
+]

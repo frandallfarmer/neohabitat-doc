@@ -1,0 +1,329 @@
+[
+  {
+    "ref": "context-region_1229", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "812 Wazoo St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_10361", 
+          "context-region_1228", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Picture_object_4124", 
+    "mods": [
+      {
+        "picture": 0, 
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 70, 
+        "x": 56, 
+        "type": "Picture"
+      }
+    ], 
+    "type": "item", 
+    "name": "Picture", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Window_object_4118", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 24, 
+        "gr_state": 1, 
+        "y": 59, 
+        "x": 132, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Couch_object_4119", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 44, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_4122", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 100, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Ground_object_4116", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 44, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Wall_object_4117", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 60, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Door_object_4121", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 132, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 100, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Chest_object_4120", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 24, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1229"
+  }, 
+  {
+    "ref": "item-Book_object_1010618", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 132, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1015959", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 30, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 28, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1012593", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 28, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1017794", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 29, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 63, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1011533", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 138, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1016663", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 29, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 28, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1015057", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 13, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1014347", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 68, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1014119", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 27, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 28, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }, 
+  {
+    "ref": "item-Book_object_1013128", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 25, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 28, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chest_object_4120"
+  }
+]

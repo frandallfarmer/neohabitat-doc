@@ -1,0 +1,75 @@
+[
+  {
+    "ref": "context-region_9682", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_9686", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_21682", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 168, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9682"
+  }, 
+  {
+    "ref": "item-Ground_object_21683", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9682"
+  }, 
+  {
+    "ref": "item-Door_object_21684", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9679", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 4, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9682"
+  }
+]

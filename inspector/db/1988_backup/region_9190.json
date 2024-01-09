@@ -1,0 +1,288 @@
+[
+  {
+    "ref": "context-region_9190", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9105", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sign_object_15830", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          128, 
+          131, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          86, 
+          101, 
+          110, 
+          100, 
+          114, 
+          111, 
+          105, 
+          100, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 108, 
+        "x": 12, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9190"
+  }, 
+  {
+    "ref": "item-Wall_object_15827", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9190"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_6656", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 100, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9190"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_6657", 
+    "mods": [
+      {
+        "display_item": 3, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 695
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_6656"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_6664", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 6, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_6657"
+  }, 
+  {
+    "ref": "item-Bag_object_6665", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Vendo_front_object_6657"
+  }, 
+  {
+    "ref": "item-Escape_device_object_6659", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 10, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "item-Vendo_front_object_6657"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_6662", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Vendo_front_object_6657"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_6663", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_6657"
+  }, 
+  {
+    "ref": "item-Flashlight_object_6660", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "item-Vendo_front_object_6657"
+  }, 
+  {
+    "ref": "item-Changomatic_object_1054", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 55, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "item-Vendo_inside_object_6656"
+  }, 
+  {
+    "ref": "item-Compass_object_6658", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 7, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_9190"
+  }, 
+  {
+    "ref": "item-Ground_object_15828", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9190"
+  }
+]

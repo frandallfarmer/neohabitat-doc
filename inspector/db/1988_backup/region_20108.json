@@ -1,0 +1,105 @@
+[
+  {
+    "ref": "context-region_20108", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20108", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Compass_object_1005018", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 6, 
+        "x": 27, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20108"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1008761", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 105, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20108"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1011743", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 10, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 108, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_20108"
+  }, 
+  {
+    "ref": "item-Shovel_object_1015821", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 88, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20108"
+  }, 
+  {
+    "ref": "item-Club_object_1015823", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 107, 
+        "type": "Club"
+      }
+    ], 
+    "type": "item", 
+    "name": "Club", 
+    "in": "context-region_20108"
+  }
+]

@@ -1,0 +1,1174 @@
+[
+  {
+    "ref": "context-region_20007", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20007", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Box_object_1005977", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 119, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20007"
+  }, 
+  {
+    "ref": "item-Amulet_object_1009606", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 30, 
+        "type": "Amulet"
+      }
+    ], 
+    "type": "item", 
+    "name": "Amulet", 
+    "in": "item-Box_object_1005977"
+  }, 
+  {
+    "ref": "item-Amulet_object_1017232", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 115, 
+        "type": "Amulet"
+      }
+    ], 
+    "type": "item", 
+    "name": "Amulet", 
+    "in": "item-Box_object_1005977"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1010130", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 100, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Box_object_1005977"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1010133", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 76, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Box_object_1005977"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1010134", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 120, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Box_object_1005977"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1010429", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 150, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1005977"
+  }, 
+  {
+    "ref": "item-Sensor_object_1010428", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 84, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "item-Box_object_1005977"
+  }, 
+  {
+    "ref": "item-Box_object_1004125", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 107, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20007"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1007831", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 57, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 58, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1004125"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003486", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 50, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1004125"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_1006701", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 6, 
+        "x": 27, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Box_object_1004125"
+  }, 
+  {
+    "ref": "item-Bag_object_1014141", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 115, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1004125"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1010107", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 68, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "item-Bag_object_1014141"
+  }, 
+  {
+    "ref": "item-Ball_object_1007406", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 25, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 8, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "item-Box_object_1004125"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_1014794", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 36, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Box_object_1004125"
+  }, 
+  {
+    "ref": "item-Box_object_1007467", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 41, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 126, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20007"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005768", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 57, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 111, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1007467"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005769", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 4, 
+        "x": 58, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1007467"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005771", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 1, 
+        "gr_state": 4, 
+        "y": 5, 
+        "x": 77, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1007467"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005781", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 56, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1007467"
+  }, 
+  {
+    "ref": "item-Box_object_1017624", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 113, 
+        "key_hi": 0, 
+        "key_lo": 112, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 122, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1007467"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014171", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014189", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 9, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014177", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 3, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014176", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 4, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014179", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 1, 
+        "gr_state": 4, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014178", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 2, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014190", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 8, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005773", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 6, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014187", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 7, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005772", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 1, 
+        "gr_state": 3, 
+        "y": 5, 
+        "x": 128, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1017624"
+  }, 
+  {
+    "ref": "item-Box_object_1014937", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 126, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1007467"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014181", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014182", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014183", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014184", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014185", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Bottle_object_1014205", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005937", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 33, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014192", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005939", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014201", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1014937"
+  }, 
+  {
+    "ref": "item-Bag_object_1009448", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 151, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1007467"
+  }, 
+  {
+    "ref": "item-Bottle_object_1017242", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Bag_object_1009448"
+  }, 
+  {
+    "ref": "item-Bottle_object_1017243", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Bag_object_1009448"
+  }, 
+  {
+    "ref": "item-Bottle_object_1017241", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Bag_object_1009448"
+  }, 
+  {
+    "ref": "item-Bottle_object_1017244", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Bag_object_1009448"
+  }, 
+  {
+    "ref": "item-Bottle_object_1017245", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 68, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Bag_object_1009448"
+  }, 
+  {
+    "ref": "item-Box_object_1006619", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 113, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20007"
+  }, 
+  {
+    "ref": "item-Head_object_1007833", 
+    "mods": [
+      {
+        "style": 112, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 107, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Head_object_1009216", 
+    "mods": [
+      {
+        "style": 19, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 40, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Box_object_1012848", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 64, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Head_object_1014944", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 57, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1012848"
+  }, 
+  {
+    "ref": "item-Head_object_1014945", 
+    "mods": [
+      {
+        "style": 45, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 74, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1012848"
+  }, 
+  {
+    "ref": "item-Head_object_1014946", 
+    "mods": [
+      {
+        "style": 41, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 55, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1012848"
+  }, 
+  {
+    "ref": "item-Head_object_1014938", 
+    "mods": [
+      {
+        "style": 49, 
+        "orientation": 80, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 78, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1012848"
+  }, 
+  {
+    "ref": "item-Head_object_1014933", 
+    "mods": [
+      {
+        "style": 102, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 133, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1012848"
+  }, 
+  {
+    "ref": "item-Head_object_1014935", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 89, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Head_object_1014934", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 104, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 72, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Head_object_1014902", 
+    "mods": [
+      {
+        "style": 72, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 89, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Head_object_1004067", 
+    "mods": [
+      {
+        "style": 83, 
+        "orientation": 80, 
+        "gr_state": 2, 
+        "y": 7, 
+        "x": 100, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Head_object_1008380", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 73, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006619"
+  }, 
+  {
+    "ref": "item-Box_object_1006940", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 105, 
+        "key_hi": 0, 
+        "key_lo": 104, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 117, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20007"
+  }, 
+  {
+    "ref": "item-Shovel_object_1005285", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 45, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "item-Box_object_1006940"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004337", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 55, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1006940"
+  }, 
+  {
+    "ref": "item-Knife_object_1008657", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 116, 
+        "type": "Knife"
+      }
+    ], 
+    "type": "item", 
+    "name": "Knife", 
+    "in": "item-Box_object_1006940"
+  }, 
+  {
+    "ref": "item-Shovel_object_1015180", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 99, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "item-Box_object_1006940"
+  }
+]

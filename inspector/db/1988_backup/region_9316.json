@@ -1,0 +1,178 @@
+[
+  {
+    "ref": "context-region_9316", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #102", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_18527", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Door_object_18529", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9317", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 100, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Window_object_18528", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 1, 
+        "y": 59, 
+        "x": 132, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Chair_object_18534", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 61, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 68, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Ground_object_18526", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Picture_object_18532", 
+    "mods": [
+      {
+        "picture": 0, 
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 70, 
+        "x": 60, 
+        "type": "Picture"
+      }
+    ], 
+    "type": "item", 
+    "name": "Picture", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Chest_object_18533", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 61, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_18530", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 56, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_9316"
+  }, 
+  {
+    "ref": "item-Table_object_18531", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 36, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9316"
+  }
+]

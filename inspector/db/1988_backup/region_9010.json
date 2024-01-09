@@ -1,0 +1,180 @@
+[
+  {
+    "ref": "context-region_9010", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9011", 
+          "context-region_9020", 
+          "context-region_9009", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Atm_object_1171", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 56, 
+        "x": 76, 
+        "type": "Atm"
+      }
+    ], 
+    "type": "item", 
+    "name": "Atm", 
+    "in": "context-region_9010"
+  }, 
+  {
+    "ref": "item-Ground_object_1170", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9010"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_1173", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 152, 
+        "x": 32, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_9010"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_1172", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 8, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9010"
+  }, 
+  {
+    "ref": "item-Sign_object_1175", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "ascii": [
+          137, 
+          139, 
+          131, 
+          32, 
+          66, 
+          111, 
+          98, 
+          39, 
+          115, 
+          134, 
+          128, 
+          85, 
+          45, 
+          66, 
+          97, 
+          110, 
+          107, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 66, 
+        "x": 104, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9010"
+  }, 
+  {
+    "ref": "item-Street_object_1174", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9010"
+  }, 
+  {
+    "ref": "item-Wall_object_1169", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9010"
+  }
+]

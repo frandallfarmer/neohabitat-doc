@@ -1,0 +1,250 @@
+[
+  {
+    "ref": "context-region_8132", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_8132", 
+          "context-region_8131", 
+          "context-region_8131", 
+          "context-region_8132"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_6593", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Rock_object_6596", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 32, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6597", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 35, 
+        "x": 104, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Sky_object_6594", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Rock_object_6595", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 96, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6598", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 64, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6599", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 32, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6606", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 48, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Rock_object_6604", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 146, 
+        "x": 100, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6605", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 104, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6602", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 31, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6603", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 173, 
+        "gr_state": 3, 
+        "y": 71, 
+        "x": 100, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6600", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 144, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }, 
+  {
+    "ref": "item-Tree_object_6601", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 3, 
+        "y": 75, 
+        "x": 108, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8132"
+  }
+]

@@ -1,0 +1,397 @@
+[
+  {
+    "ref": "context-region_1131", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "72 Mince St", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1133", 
+          "", 
+          "context-region_1129", 
+          "context-region_1132"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1132", 
+    "mods": [
+      {
+        "display_item": 1, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 181, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Magic_lamp_object_1134", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Magic_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_lamp", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1136", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Crystal_ball_object_1133", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Crystal_ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Crystal_ball", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Ground_object_3238", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Wall_object_3239", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Door_object_3241", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Table_object_3240", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 84, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Chair_object_3243", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 56, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Bed_object_3242", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 96, 
+        "type": "Bed"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bed", 
+    "in": "item-Vendo_front_object_1132"
+  }, 
+  {
+    "ref": "item-Wall_object_3229", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Ground_object_3228", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Mailbox_object_3234", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 8, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Bush_object_3235", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 88, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Sign_object_3236", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          55, 
+          50, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 44, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Street_object_3237", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 6, 
+        "y": 9, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Wall_object_3230", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Building_object_3231", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 12, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Tree_object_3232", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 124, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1131"
+  }, 
+  {
+    "ref": "item-Bush_object_3233", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 76, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1131"
+  }
+]

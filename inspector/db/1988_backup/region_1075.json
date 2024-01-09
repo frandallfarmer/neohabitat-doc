@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1075", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "37 Foon Ave", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1073", 
+          "context-region_1076", 
+          "context-region_1077", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

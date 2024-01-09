@@ -1,0 +1,92 @@
+[
+  {
+    "ref": "context-region_20110", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20110", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flashlight_object_1000358", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 44, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20110"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_4807", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 88, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20110"
+  }, 
+  {
+    "ref": "item-Bag_object_1000284", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 64, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20110"
+  }, 
+  {
+    "ref": "item-Paper_object_1000353", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 65, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20110"
+  }
+]

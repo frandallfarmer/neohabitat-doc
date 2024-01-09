@@ -1,0 +1,180 @@
+[
+  {
+    "ref": "context-region_1149", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "43 Randy Rd", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1148", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Window_object_3395", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 74, 
+        "x": 72, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Ground_object_3387", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Window_object_3393", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 74, 
+        "x": 104, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Door_object_3392", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Wall_object_3391", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Table_object_3390", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 20, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Display_case_object_3388", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 52, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Display_case_object_3389", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 100, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1149"
+  }, 
+  {
+    "ref": "item-Couch_object_3394", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 72, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1149"
+  }
+]

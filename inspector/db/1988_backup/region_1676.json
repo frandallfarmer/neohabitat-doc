@@ -1,0 +1,248 @@
+[
+  {
+    "ref": "context-region_1676", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "718 Kludge Ct", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1675", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_11644", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 72, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Door_object_11643", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 120, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Couch_object_11642", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 88, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Chest_object_11641", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 20, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Table_object_11640", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 48, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Ground_object_11638", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Paper_object_1017723", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 129, 
+        "x": 54, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Wall_object_11639", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Box_object_1017183", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 105, 
+        "key_hi": 0, 
+        "key_lo": 104, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 18, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_1676"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1016564", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 62, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1017183"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1016757", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 128, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "item-Box_object_1017183"
+  }, 
+  {
+    "ref": "item-Key_object_1017179", 
+    "mods": [
+      {
+        "key_number_lo": 127, 
+        "style": 1, 
+        "orientation": 64, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Box_object_1017183"
+  }, 
+  {
+    "ref": "item-Key_object_1017175", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Box_object_1017183"
+  }
+]

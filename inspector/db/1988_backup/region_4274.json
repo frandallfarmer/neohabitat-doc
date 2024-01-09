@@ -1,0 +1,288 @@
+[
+  {
+    "ref": "context-region_4274", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4275", 
+          "context-region_4278", 
+          "context-region_4273", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_14253", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Ground_object_14252", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Tree_object_14257", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 1, 
+        "y": 27, 
+        "x": 120, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Pond_object_14256", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 48, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Pond_object_14255", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 7, 
+        "x": 24, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Tree_object_14254", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 22, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Aquarium_object_14262", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 140, 
+        "x": 52, 
+        "type": "Aquarium"
+      }
+    ], 
+    "type": "item", 
+    "name": "Aquarium", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Ground_object_14259", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Tree_object_14258", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 92, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1005559", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 20, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14263", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 38, 
+        "orientation": 8, 
+        "upper_right_x": 38, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 2, 
+        "y": 138, 
+        "x": 44, 
+        "height": 22, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Pond_object_14260", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 15, 
+        "x": 40, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Tree_object_14261", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 3, 
+        "y": 77, 
+        "x": 120, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Movie_camera_object_1005555", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 44, 
+        "type": "Movie_camera"
+      }
+    ], 
+    "type": "item", 
+    "name": "Movie_camera", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Tokens_object_1002102", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "denom_hi": 48, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "denom_lo": 0, 
+        "type": "Tokens"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tokens", 
+    "in": "context-region_4274"
+  }, 
+  {
+    "ref": "item-Game_piece_object_7610", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 20, 
+        "x": 65, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_4274"
+  }
+]

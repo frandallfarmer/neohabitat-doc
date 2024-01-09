@@ -1,0 +1,122 @@
+[
+  {
+    "ref": "context-region_9033", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9034", 
+          "context-region_9045", 
+          "context-region_9032", 
+          "context-region_9022"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flat_object_1445", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 176, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9033"
+  }, 
+  {
+    "ref": "item-Flat_object_1447", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 84, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9033"
+  }, 
+  {
+    "ref": "item-Sky_object_1446", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9033"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000528", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 108, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9033"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_1449", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 40, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9033"
+  }, 
+  {
+    "ref": "item-Street_object_1448", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 5, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9033"
+  }
+]

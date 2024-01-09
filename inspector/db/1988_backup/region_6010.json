@@ -1,0 +1,231 @@
+[
+  {
+    "ref": "context-region_6010", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_6011", 
+          "context-region_6018", 
+          "context-region_6002", 
+          "context-region_6002"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_7816", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 149, 
+        "x": 36, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7810", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 64, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7811", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 84, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7812", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 104, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7813", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 120, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7807", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7806", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Sky_object_7805", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Ground_object_7804", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7814", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 100, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7809", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 72, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7808", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 48, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }, 
+  {
+    "ref": "item-Tree_object_7815", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 140, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6010"
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {
+    "ref": "context-region_1706", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Lori Ln west", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1685", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_11919", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 112, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1706"
+  }, 
+  {
+    "ref": "item-Street_object_11918", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 4, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1706"
+  }, 
+  {
+    "ref": "item-Sky_object_11917", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1706"
+  }, 
+  {
+    "ref": "item-Ground_object_11916", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1706"
+  }, 
+  {
+    "ref": "item-Bush_object_11920", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 147, 
+        "x": 48, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1706"
+  }
+]

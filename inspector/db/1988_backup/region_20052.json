@@ -1,0 +1,202 @@
+[
+  {
+    "ref": "context-region_20052", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20052", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Key_object_1002194", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 33, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 126, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002195", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 33, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 31, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002196", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 99, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002197", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 33, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 55, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002192", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002193", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002198", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 33, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 42, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1002235", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 29, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002199", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 80, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }, 
+  {
+    "ref": "item-Key_object_1002200", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 64, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20052"
+  }
+]

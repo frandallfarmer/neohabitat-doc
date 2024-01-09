@@ -1,0 +1,146 @@
+[
+  {
+    "ref": "context-region_9063", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9074", 
+          "context-region_9077", 
+          "context-region_9073", 
+          "context-region_9056"
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_1746", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9063"
+  }, 
+  {
+    "ref": "item-Sky_object_1747", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9063"
+  }, 
+  {
+    "ref": "item-Flag_object_1585", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "mass": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 124, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_9063"
+  }, 
+  {
+    "ref": "item-Sign_object_1748", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          67, 
+          72, 
+          69, 
+          83, 
+          83, 
+          32, 
+          133, 
+          124, 
+          134, 
+          134, 
+          136, 
+          126, 
+          133, 
+          67, 
+          72, 
+          69, 
+          67, 
+          75, 
+          69, 
+          82, 
+          83, 
+          134, 
+          134, 
+          136, 
+          136, 
+          66, 
+          65, 
+          67, 
+          75, 
+          71, 
+          65, 
+          77, 
+          77, 
+          79, 
+          78, 
+          128, 
+          133, 
+          127, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 108, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9063"
+  }, 
+  {
+    "ref": "item-Wall_object_1749", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9063"
+  }
+]

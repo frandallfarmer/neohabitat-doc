@@ -1,0 +1,162 @@
+[
+  {
+    "ref": "context-region_1517", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "821 Baker St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1516", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_1011514", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 51, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_1517"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10174", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 72, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1517"
+  }, 
+  {
+    "ref": "item-Couch_object_10172", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 88, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1517"
+  }, 
+  {
+    "ref": "item-Door_object_10173", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 120, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1517"
+  }, 
+  {
+    "ref": "item-Table_object_10170", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 132, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 48, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1517"
+  }, 
+  {
+    "ref": "item-Chest_object_10171", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 20, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1517"
+  }, 
+  {
+    "ref": "item-Wall_object_10169", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1517"
+  }, 
+  {
+    "ref": "item-Ground_object_10168", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1517"
+  }
+]

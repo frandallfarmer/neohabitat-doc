@@ -1,0 +1,239 @@
+[
+  {
+    "ref": "context-region_4212", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4213", 
+          "context-region_4221", 
+          "context-region_4211", 
+          "context-region_4206"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_13568", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 68, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Flat_object_13569", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 164, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Ground_object_13567", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 68, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Hole_object_13577", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 149, 
+        "x": 112, 
+        "type": "Hole", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Hole", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Rock_object_13582", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "item-Hole_object_13577"
+  }, 
+  {
+    "ref": "item-Rock_object_13581", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "item-Hole_object_13577"
+  }, 
+  {
+    "ref": "item-Rock_object_13576", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 132, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Sky_object_13575", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 164, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Ground_object_13574", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Tree_object_13573", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 92, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Tree_object_13572", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 128, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Tree_object_13571", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 28, 
+        "x": 48, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4212"
+  }, 
+  {
+    "ref": "item-Rock_object_13570", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 64, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4212"
+  }
+]

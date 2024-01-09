@@ -1,0 +1,218 @@
+[
+  {
+    "ref": "context-region_4278", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4279", 
+          "", 
+          "context-region_4277", 
+          "context-region_4274"
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_14286", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14299", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 2, 
+        "y": 93, 
+        "x": 44, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14298", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "gr_state": 3, 
+        "y": 115, 
+        "x": 88, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14297", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "gr_state": 2, 
+        "y": 97, 
+        "x": 104, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Ground_object_14295", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14294", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "gr_state": 4, 
+        "y": 27, 
+        "x": 92, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14293", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 88, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14292", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 28, 
+        "x": 48, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14291", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 4, 
+        "y": 23, 
+        "x": 40, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Tree_object_14300", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 173, 
+        "gr_state": 3, 
+        "y": 113, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Hole_object_14288", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 156, 
+        "x": 60, 
+        "type": "Hole", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Hole", 
+    "in": "context-region_4278"
+  }, 
+  {
+    "ref": "item-Wall_object_14287", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4278"
+  }
+]

@@ -1,0 +1,790 @@
+[
+  {
+    "ref": "context-region_1596", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "217 I/O Ave", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1595", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Game_piece_object_7627", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 5, 
+        "y": 14, 
+        "x": 130, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Ground_object_10897", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Table_object_10899", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 196, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 108, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Box_object_14289", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 110, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Table_object_10899"
+  }, 
+  {
+    "ref": "item-Box_object_14220", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 29, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_14289"
+  }, 
+  {
+    "ref": "item-Sign_object_14221", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          89, 
+          79, 
+          85, 
+          32, 
+          65, 
+          82, 
+          69, 
+          32, 
+          84, 
+          79, 
+          79, 
+          32, 
+          76, 
+          65, 
+          84, 
+          69, 
+          33, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "item-Box_object_14220"
+  }, 
+  {
+    "ref": "item-Box_object_13578", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 142, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_14289"
+  }, 
+  {
+    "ref": "item-Bottle_object_13584", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Bottle", 
+        "filled": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Bottle_object_13505", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 88, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Bottle_object_13854", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 6, 
+        "x": 84, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Bottle_object_13583", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 4, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Rock_object_13580", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Bottle_object_13465", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 9, 
+        "x": 88, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Bottle_object_14296", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 7, 
+        "x": 24, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Bottle_object_13466", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 8, 
+        "x": 104, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Bottle_object_13919", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 48, 
+        "type": "Bottle", 
+        "filled": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Rock_object_13579", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "item-Box_object_13578"
+  }, 
+  {
+    "ref": "item-Box_object_13654", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 141, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_14289"
+  }, 
+  {
+    "ref": "item-Bottle_object_13484", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 6, 
+        "x": 24, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_13654"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_14132", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 65, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13654"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_14131", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 2, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13654"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13634", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13654"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13635", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13654"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13632", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 2, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13654"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13633", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13654"
+  }, 
+  {
+    "ref": "item-Box_object_13984", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 143, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_14289"
+  }, 
+  {
+    "ref": "item-Paper_object_1003607", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Box_object_13984"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_14171", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 134, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13984"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13988", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13984"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_14247", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13984"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13987", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_13984"
+  }, 
+  {
+    "ref": "item-Sign_object_14290", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          78, 
+          79, 
+          84, 
+          32, 
+          72, 
+          69, 
+          82, 
+          69, 
+          32, 
+          69, 
+          73, 
+          84, 
+          72, 
+          69, 
+          82, 
+          33, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "item-Box_object_14289"
+  }, 
+  {
+    "ref": "item-Wall_object_10898", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Chair_object_10906", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 48, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10905", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 104, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Window_object_10904", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 67, 
+        "x": 80, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Chair_object_10903", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 80, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Door_object_10902", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Window_object_10901", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 67, 
+        "x": 68, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1596"
+  }, 
+  {
+    "ref": "item-Window_object_10900", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 60, 
+        "x": 52, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1596"
+  }
+]

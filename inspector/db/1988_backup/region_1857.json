@@ -1,0 +1,290 @@
+[
+  {
+    "ref": "context-region_1857", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "623 Warp Dr", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1859", 
+          "", 
+          "context-region_1856", 
+          "context-region_1858"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_13344", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Wall_object_13345", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Ground_object_13343", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Building_object_13346", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 32, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Fence_object_13353", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 161, 
+        "x": 108, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Plant_object_13352", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 72, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Fence_object_13351", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 33, 
+        "x": 92, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Fence_object_13350", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 64, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Bush_object_13356", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Street_object_13355", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Fence_object_13354", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 132, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Bush_object_13347", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 108, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Sign_object_13348", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          54, 
+          50, 
+          51, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 57, 
+        "x": 72, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1857"
+  }, 
+  {
+    "ref": "item-Mailbox_object_13349", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 24, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1857"
+  }
+]

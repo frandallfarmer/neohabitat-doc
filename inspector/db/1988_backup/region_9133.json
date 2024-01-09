@@ -1,0 +1,105 @@
+[
+  {
+    "ref": "context-region_9133", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_9134", 
+          "context-region_9145", 
+          "context-region_9132", 
+          "context-region_9122"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_6996", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9133"
+  }, 
+  {
+    "ref": "item-Flat_object_6997", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 84, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9133"
+  }, 
+  {
+    "ref": "item-Flat_object_6995", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 176, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9133"
+  }, 
+  {
+    "ref": "item-Street_object_6998", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 5, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9133"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_6999", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 40, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9133"
+  }
+]

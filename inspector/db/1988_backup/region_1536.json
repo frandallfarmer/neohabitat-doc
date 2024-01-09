@@ -1,0 +1,238 @@
+[
+  {
+    "ref": "context-region_1536", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "627 Disk Dr", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1535", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Window_object_10334", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 60, 
+        "x": 52, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Window_object_10335", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 67, 
+        "x": 68, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Door_object_10336", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Chair_object_10337", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 80, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Ground_object_10331", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Wall_object_10332", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Table_object_10333", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 108, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Window_object_10338", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 67, 
+        "x": 80, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10339", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 104, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1016478", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 119, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Chair_object_10340", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 48, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Head_object_1016872", 
+    "mods": [
+      {
+        "style": 45, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 134, 
+        "x": 138, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_1536"
+  }, 
+  {
+    "ref": "item-Head_object_1003783", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 17, 
+        "gr_state": 2, 
+        "y": 136, 
+        "x": 112, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_1536"
+  }
+]

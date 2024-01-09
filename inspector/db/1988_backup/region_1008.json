@@ -1,0 +1,240 @@
+[
+  {
+    "ref": "context-region_1008", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "44 Aric Ave", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1007", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_2079", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1002387", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "charge": 9, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 62, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Door_object_2084", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 180, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 120, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_2085", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 120, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 100, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Window_object_2086", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 88, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Chair_object_2087", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 97, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 112, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Wall_object_2080", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Window_object_2081", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 48, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Couch_object_2082", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 44, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Chest_object_2083", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1008"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1001638", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 69, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Chest_object_2083"
+  }, 
+  {
+    "ref": "item-Ball_object_1000183", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 36, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "item-Chest_object_2083"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1000410", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 24, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_1008"
+  }
+]

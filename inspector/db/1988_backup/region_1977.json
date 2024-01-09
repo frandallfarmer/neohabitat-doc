@@ -1,0 +1,353 @@
+[
+  {
+    "ref": "context-region_1977", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Editor:OSGOOD", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1123", 
+          "context-region_1978", 
+          "context-region_1091"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chest_object_17781", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 96, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17782", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 8, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 120, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17783", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 32, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 144, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17861", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 80, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 72, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17860", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 56, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 48, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17786", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 56, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 48, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17787", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 80, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 72, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17788", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 96, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17789", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 8, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 1, 
+        "y": 50, 
+        "x": 120, 
+        "type": "Chest", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Paper_object_1009714", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 20, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Chest_object_17789"
+  }, 
+  {
+    "ref": "item-Chest_object_17790", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 32, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 144, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17858", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 0, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17859", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 112, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 24, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17784", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 0, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Ground_object_17856", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Wall_object_17857", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Chest_object_17785", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 112, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 24, 
+        "type": "Chest", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1977"
+  }, 
+  {
+    "ref": "item-Paper_object_1017840", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Chest_object_17785"
+  }
+]

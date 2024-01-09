@@ -1,0 +1,220 @@
+[
+  {
+    "ref": "context-region_9132", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9133", 
+          "context-region_9144", 
+          "context-region_9131", 
+          "context-region_9121"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1018090", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 120, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1018096", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 8, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 152, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Tokens_object_1018332", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "denom_hi": 174, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 119, 
+        "denom_lo": 0, 
+        "type": "Tokens"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tokens", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Paper_object_1017878", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 106, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Sky_object_6994", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Paper_object_1015207", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 25, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Flag_object_6992", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 72, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 20, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Fountain_object_6993", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 66, 
+        "type": "Fountain"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fountain", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Ground_object_6990", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Sky_object_6991", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1000160", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 0, 
+        "orientation": 9, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 78, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_9132"
+  }, 
+  {
+    "ref": "item-Head_object_1000252", 
+    "mods": [
+      {
+        "style": 141, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 22, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_9132"
+  }
+]

@@ -1,0 +1,234 @@
+[
+  {
+    "ref": "context-region_5005", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_5011", 
+          "context-region_5004", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_8172", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 36, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Pond_object_8173", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 14, 
+        "x": 56, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Flat_object_8170", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Pond_object_8179", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 25, 
+        "x": 44, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Pond_object_8176", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 60, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Flat_object_8177", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Flat_object_8174", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Pond_object_8175", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 36, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Bush_object_8178", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 35, 
+        "x": 92, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Pond_object_8180", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 14, 
+        "x": 40, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Sky_object_8169", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Pond_object_8171", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 10, 
+        "x": 72, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_5005"
+  }, 
+  {
+    "ref": "item-Tree_object_8181", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 24, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_5005"
+  }
+]

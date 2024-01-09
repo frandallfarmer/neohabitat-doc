@@ -1,0 +1,323 @@
+[
+  {
+    "ref": "context-region_20072", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20072", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_1004037", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 50, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1004653", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 23, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1002855", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1002854", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Bag_object_1002424", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 91, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Head_object_1002431", 
+    "mods": [
+      {
+        "style": 19, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 110, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bag_object_1002424"
+  }, 
+  {
+    "ref": "item-Shovel_object_1000811", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 39, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "item-Bag_object_1002424"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1002605", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 62, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1002424"
+  }, 
+  {
+    "ref": "item-Head_object_1002897", 
+    "mods": [
+      {
+        "style": 113, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 18, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bag_object_1002424"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1002853", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Bag_object_1002582", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 1, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 17, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Book_object_1002965", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 21, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1002582"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1001726", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 108, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "item-Bag_object_1002582"
+  }, 
+  {
+    "ref": "item-Paper_object_1001783", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 133, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Bag_object_1002582"
+  }, 
+  {
+    "ref": "item-Compass_object_1002389", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 4, 
+        "x": 139, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "item-Bag_object_1002582"
+  }, 
+  {
+    "ref": "item-Book_object_1002959", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 7, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 27, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1002582"
+  }, 
+  {
+    "ref": "item-Compass_object_1000700", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 8, 
+        "x": 65, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20072"
+  }, 
+  {
+    "ref": "item-Book_object_1010733", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 78, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20072"
+  }
+]

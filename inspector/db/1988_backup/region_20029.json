@@ -1,0 +1,112 @@
+[
+  {
+    "ref": "context-region_20029", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20029", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Key_object_1004246", 
+    "mods": [
+      {
+        "key_number_lo": 3, 
+        "style": 0, 
+        "orientation": 8, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 34, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20029"
+  }, 
+  {
+    "ref": "item-Bag_object_1005403", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 41, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 23, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20029"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1011513", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 102, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "item-Bag_object_1005403"
+  }, 
+  {
+    "ref": "item-Book_object_1004701", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 17, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 33, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20029"
+  }, 
+  {
+    "ref": "item-Box_object_1018231", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 105, 
+        "key_hi": 0, 
+        "key_lo": 104, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 17, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20029"
+  }
+]

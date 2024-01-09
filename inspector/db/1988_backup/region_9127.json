@@ -1,0 +1,539 @@
+[
+  {
+    "ref": "context-region_9127", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9128", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Countertop_object_6934", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 151, 
+        "x": 12, 
+        "type": "Countertop", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Countertop", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Glue_object_6914", 
+    "mods": [
+      {
+        "y_offset_2": 255, 
+        "y_offset_3": 255, 
+        "style": 0, 
+        "y_offset_1": 255, 
+        "y_offset_6": 255, 
+        "orientation": 0, 
+        "y_offset_4": 255, 
+        "y_offset_5": 255, 
+        "x_offset_2": 13, 
+        "x_offset_5": 17, 
+        "x_offset_4": 2, 
+        "x_offset_6": 8, 
+        "x_offset_1": 28, 
+        "x_offset_3": 23, 
+        "gr_state": 1, 
+        "y": 103, 
+        "x": 0, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Plant_object_6920", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6914"
+  }, 
+  {
+    "ref": "item-Plant_object_6918", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6914"
+  }, 
+  {
+    "ref": "item-Plant_object_6919", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6914"
+  }, 
+  {
+    "ref": "item-Plant_object_6916", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6914"
+  }, 
+  {
+    "ref": "item-Plant_object_6917", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 244, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6914"
+  }, 
+  {
+    "ref": "item-Plant_object_6915", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6914"
+  }, 
+  {
+    "ref": "item-Wall_object_6913", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_6912", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 159, 
+        "orientation": 204, 
+        "upper_right_x": 159, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 3, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 0, 
+        "height": 144, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Chair_object_6935", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 96, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Chair_object_6936", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 68, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Chair_object_6937", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 89, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 128, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Ground_object_6910", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_6911", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 159, 
+        "orientation": 204, 
+        "upper_right_x": 159, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 3, 
+        "gr_state": 0, 
+        "y": 88, 
+        "x": 0, 
+        "height": 144, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Glue_object_6921", 
+    "mods": [
+      {
+        "y_offset_2": 3, 
+        "y_offset_3": 5, 
+        "style": 0, 
+        "y_offset_1": 3, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 5, 
+        "y_offset_5": 0, 
+        "x_offset_2": 20, 
+        "x_offset_5": 25, 
+        "x_offset_4": 32, 
+        "x_offset_6": 0, 
+        "x_offset_1": 5, 
+        "x_offset_3": 10, 
+        "gr_state": 1, 
+        "y": 103, 
+        "x": 0, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Plant_object_6923", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 72, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6921"
+  }, 
+  {
+    "ref": "item-Plant_object_6922", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6921"
+  }, 
+  {
+    "ref": "item-Plant_object_6926", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6921"
+  }, 
+  {
+    "ref": "item-Plant_object_6925", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 24, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6921"
+  }, 
+  {
+    "ref": "item-Plant_object_6924", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 48, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6921"
+  }, 
+  {
+    "ref": "item-Glue_object_6927", 
+    "mods": [
+      {
+        "y_offset_2": 0, 
+        "y_offset_3": 7, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 3, 
+        "y_offset_5": 1, 
+        "x_offset_2": 7, 
+        "x_offset_5": 1, 
+        "x_offset_4": 3, 
+        "x_offset_6": 10, 
+        "x_offset_1": 14, 
+        "x_offset_3": 11, 
+        "gr_state": 1, 
+        "y": 64, 
+        "x": 64, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9127"
+  }, 
+  {
+    "ref": "item-Plant_object_6929", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6927"
+  }, 
+  {
+    "ref": "item-Plant_object_6928", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6927"
+  }, 
+  {
+    "ref": "item-Plant_object_6930", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 236, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6927"
+  }, 
+  {
+    "ref": "item-Plant_object_6931", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6927"
+  }, 
+  {
+    "ref": "item-Plant_object_6932", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 24, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6927"
+  }, 
+  {
+    "ref": "item-Plant_object_6933", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_6927"
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "ref": "context-region_5004", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_5016", 
+          "context-region_5010", 
+          "context-region_5003", 
+          "context-region_5005"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flat_object_8165", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5004"
+  }, 
+  {
+    "ref": "item-Sky_object_8164", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_5004"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_8167", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 144, 
+        "x": 116, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_5004"
+  }, 
+  {
+    "ref": "item-Tree_object_8166", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 68, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_5004"
+  }, 
+  {
+    "ref": "item-Flat_object_8168", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5004"
+  }
+]

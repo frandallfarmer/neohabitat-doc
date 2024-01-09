@@ -1,0 +1,108 @@
+[
+  {
+    "ref": "context-region_20056", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20056", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1010699", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 124, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20056"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1014145", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 4, 
+        "x": 150, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20056"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003489", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 57, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20056"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004935", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 127, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20056"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003473", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 46, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20056"
+  }
+]

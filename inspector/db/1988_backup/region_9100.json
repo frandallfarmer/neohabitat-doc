@@ -1,0 +1,135 @@
+[
+  {
+    "ref": "context-region_9100", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9101", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_1951", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9100"
+  }, 
+  {
+    "ref": "item-Tree_object_6611", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9100"
+  }, 
+  {
+    "ref": "item-Wall_object_6610", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9100"
+  }, 
+  {
+    "ref": "item-Tree_object_6612", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 33, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 80, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9100"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_6607", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 16, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_9100"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_6608", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 136, 
+        "x": 16, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_9100"
+  }, 
+  {
+    "ref": "item-Street_object_6609", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 4, 
+        "y": 8, 
+        "x": 88, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9100"
+  }
+]

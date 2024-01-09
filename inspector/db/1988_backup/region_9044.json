@@ -1,0 +1,110 @@
+[
+  {
+    "ref": "context-region_9044", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9045", 
+          "context-region_9055", 
+          "context-region_9043", 
+          "context-region_9032"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flat_object_1568", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9044"
+  }, 
+  {
+    "ref": "item-Sky_object_1569", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9044"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_1571", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 72, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9044"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1570", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 155, 
+        "orientation": 104, 
+        "upper_right_x": 155, 
+        "lower_left_x": 248, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 4, 
+        "height": 21, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9044"
+  }, 
+  {
+    "ref": "item-Street_object_1572", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9044"
+  }
+]

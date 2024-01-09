@@ -1,0 +1,135 @@
+[
+  {
+    "ref": "context-region_3010", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_3011", 
+          "context-region_3017", 
+          "context-region_3009", 
+          "context-region_3004"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_8389", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 21, 
+        "x": 36, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_3010"
+  }, 
+  {
+    "ref": "item-Sky_object_8388", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 238, 
+        "x": 132, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_3010"
+  }, 
+  {
+    "ref": "item-Sky_object_8385", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_3010"
+  }, 
+  {
+    "ref": "item-Ground_object_8384", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_3010"
+  }, 
+  {
+    "ref": "item-Tree_object_8387", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 21, 
+        "x": 24, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_3010"
+  }, 
+  {
+    "ref": "item-Bush_object_8386", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 132, 
+        "x": 32, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_3010"
+  }, 
+  {
+    "ref": "item-Sky_object_8390", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_3010"
+  }
+]

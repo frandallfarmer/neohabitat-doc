@@ -1,0 +1,339 @@
+[
+  {
+    "ref": "context-region_8073", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_8072", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chair_object_5799", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 0, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Chair_object_5802", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 136, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Sign_object_5791", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 188, 
+        "ascii": [
+          83, 
+          101, 
+          97, 
+          116, 
+          128, 
+          121, 
+          111, 
+          117, 
+          114, 
+          115, 
+          101, 
+          108, 
+          102, 
+          134, 
+          139, 
+          128, 
+          87, 
+          97, 
+          105, 
+          116, 
+          101, 
+          114, 
+          32, 
+          119, 
+          105, 
+          108, 
+          108, 
+          134, 
+          32, 
+          128, 
+          115, 
+          101, 
+          114, 
+          118, 
+          101, 
+          32, 
+          121, 
+          111, 
+          117, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 80, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Wall_object_5790", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Glue_object_5792", 
+    "mods": [
+      {
+        "y_offset_2": 0, 
+        "y_offset_3": 0, 
+        "style": 0, 
+        "y_offset_1": 227, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 0, 
+        "y_offset_5": 0, 
+        "x_offset_2": 254, 
+        "x_offset_5": 0, 
+        "x_offset_4": 0, 
+        "x_offset_6": 0, 
+        "x_offset_1": 249, 
+        "x_offset_3": 0, 
+        "gr_state": 1, 
+        "y": 147, 
+        "x": 32, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Tree_object_5793", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "item-Glue_object_5792"
+  }, 
+  {
+    "ref": "item-Pond_object_5794", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "item-Glue_object_5792"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_5795", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 136, 
+        "orientation": 148, 
+        "pattern": [
+          101, 
+          101, 
+          101, 
+          101, 
+          149, 
+          90, 
+          149, 
+          90, 
+          101, 
+          101, 
+          101, 
+          101, 
+          90, 
+          149, 
+          90, 
+          149, 
+          101, 
+          101, 
+          101, 
+          101, 
+          149, 
+          90, 
+          149, 
+          90, 
+          101, 
+          101, 
+          101, 
+          101, 
+          90, 
+          149, 
+          90, 
+          149
+        ], 
+        "upper_right_x": 136, 
+        "lower_left_x": 232, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 24, 
+        "height": 31, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 232
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Glue_object_5796", 
+    "mods": [
+      {
+        "y_offset_2": 0, 
+        "y_offset_3": 0, 
+        "style": 0, 
+        "y_offset_1": 226, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 0, 
+        "y_offset_5": 0, 
+        "x_offset_2": 255, 
+        "x_offset_5": 0, 
+        "x_offset_4": 0, 
+        "x_offset_6": 0, 
+        "x_offset_1": 250, 
+        "x_offset_3": 0, 
+        "gr_state": 1, 
+        "y": 138, 
+        "x": 108, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Tree_object_5798", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "item-Glue_object_5796"
+  }, 
+  {
+    "ref": "item-Pond_object_5797", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "item-Glue_object_5796"
+  }, 
+  {
+    "ref": "item-Chair_object_5801", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 80, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_8073"
+  }, 
+  {
+    "ref": "item-Chair_object_5800", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 41, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 56, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_8073"
+  }
+]

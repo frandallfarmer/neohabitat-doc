@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1070", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Foon Ave north", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1071", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

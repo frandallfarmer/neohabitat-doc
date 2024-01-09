@@ -1,0 +1,319 @@
+[
+  {
+    "ref": "context-region_20023", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20023", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bag_object_1016963", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 91, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20023"
+  }, 
+  {
+    "ref": "item-Book_object_1013221", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 25, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 10, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1016963"
+  }, 
+  {
+    "ref": "item-Book_object_1012721", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 52, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1016963"
+  }, 
+  {
+    "ref": "item-Book_object_1014399", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 14, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1016963"
+  }, 
+  {
+    "ref": "item-Book_object_1010643", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 24, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1016963"
+  }, 
+  {
+    "ref": "item-Book_object_1014170", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 27, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 52, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1016963"
+  }, 
+  {
+    "ref": "item-Bag_object_1003673", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 59, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20023"
+  }, 
+  {
+    "ref": "item-Bag_object_1011125", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 93, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20023"
+  }, 
+  {
+    "ref": "item-Bag_object_1007561", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 118, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20023"
+  }, 
+  {
+    "ref": "item-Paper_object_1011726", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 28, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Bag_object_1007561"
+  }, 
+  {
+    "ref": "item-Paper_object_1013941", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 28, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Bag_object_1007561"
+  }, 
+  {
+    "ref": "item-Paper_object_1003567", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 9, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Bag_object_1007561"
+  }, 
+  {
+    "ref": "item-Paper_object_1014124", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Bag_object_1007561"
+  }, 
+  {
+    "ref": "item-Paper_object_1013858", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Bag_object_1007561"
+  }, 
+  {
+    "ref": "item-Bag_object_1005326", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 57, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 41, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20023"
+  }, 
+  {
+    "ref": "item-Bag_object_1004420", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 95, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20023"
+  }, 
+  {
+    "ref": "item-Book_object_1010874", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 77, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1004420"
+  }
+]

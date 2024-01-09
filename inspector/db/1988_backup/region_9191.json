@@ -1,0 +1,241 @@
+[
+  {
+    "ref": "context-region_9191", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9163", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Short_sign_object_15974", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          69, 
+          88, 
+          73, 
+          84, 
+          127, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 20, 
+        "x": 64, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Door_object_15842", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9215", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 100, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Sign_object_15844", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          133, 
+          35, 
+          49, 
+          32, 
+          32, 
+          35, 
+          50, 
+          32, 
+          32, 
+          35, 
+          51, 
+          32, 
+          32, 
+          35, 
+          52, 
+          32, 
+          32, 
+          35, 
+          53, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Door_object_15841", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9176", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 68, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Door_object_15840", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9175", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 36, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Door_object_15843", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9216", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 132, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Wall_object_15837", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Ground_object_15838", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9191"
+  }, 
+  {
+    "ref": "item-Door_object_15839", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 224, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9174", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 4, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9191"
+  }
+]

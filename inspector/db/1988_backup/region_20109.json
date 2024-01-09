@@ -1,0 +1,39 @@
+[
+  {
+    "ref": "context-region_20109", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20109", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_17695", 
+    "mods": [
+      {
+        "style": 133, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 9, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20109"
+  }
+]

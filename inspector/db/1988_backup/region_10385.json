@@ -1,0 +1,250 @@
+[
+  {
+    "ref": "context-region_10385", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Only 1 Employee/time", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_10386", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_7348", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 112, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_10385"
+  }, 
+  {
+    "ref": "item-Box_object_1015218", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 36, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_10385"
+  }, 
+  {
+    "ref": "item-Bag_object_1005225", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 41, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 70, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1015218"
+  }, 
+  {
+    "ref": "item-Book_object_1012003", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 146, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005225"
+  }, 
+  {
+    "ref": "item-Book_object_1006635", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 7, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 46, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005225"
+  }, 
+  {
+    "ref": "item-Book_object_1010680", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 27, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005225"
+  }, 
+  {
+    "ref": "item-Book_object_1013365", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 25, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 58, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005225"
+  }, 
+  {
+    "ref": "item-Book_object_1012702", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 12, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005225"
+  }, 
+  {
+    "ref": "item-Bag_object_1005111", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 57, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 61, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1015218"
+  }, 
+  {
+    "ref": "item-Book_object_1015931", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 30, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 18, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005111"
+  }, 
+  {
+    "ref": "item-Book_object_1016666", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 29, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 29, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005111"
+  }, 
+  {
+    "ref": "item-Book_object_1014335", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 10, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005111"
+  }, 
+  {
+    "ref": "item-Book_object_1015157", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 28, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1005111"
+  }
+]

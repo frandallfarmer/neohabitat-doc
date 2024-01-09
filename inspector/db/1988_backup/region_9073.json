@@ -1,0 +1,530 @@
+[
+  {
+    "ref": "context-region_9073", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9063", 
+          "", 
+          "context-region_9072", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flat_object_1908", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 4, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1904", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 0, 
+        "upper_right_x": 5, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 116, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 251
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1905", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 8, 
+        "upper_right_x": 5, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 128, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 251
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1906", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 0, 
+        "upper_right_x": 5, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 140, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 251
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1907", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 8, 
+        "upper_right_x": 5, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 152, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 251
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1900", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 4, 
+        "orientation": 0, 
+        "upper_right_x": 9, 
+        "lower_left_x": 4, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 44, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 255
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1901", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 4, 
+        "orientation": 8, 
+        "upper_right_x": 9, 
+        "lower_left_x": 4, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 56, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 255
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1902", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 4, 
+        "orientation": 0, 
+        "upper_right_x": 9, 
+        "lower_left_x": 4, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 68, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 255
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1903", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 8, 
+        "upper_right_x": 5, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 104, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 251
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1889", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 0, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 36, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1888", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 24, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1887", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 4, 
+        "orientation": 8, 
+        "upper_right_x": 9, 
+        "lower_left_x": 4, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 32, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 255
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1886", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 0, 
+        "upper_right_x": 5, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 24, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 251
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1898", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 10, 
+        "orientation": 204, 
+        "upper_right_x": 10, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 84, 
+        "height": 126, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Short_sign_object_1899", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          66, 
+          134, 
+          65, 
+          134, 
+          82, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 93, 
+        "x": 84, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1892", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 72, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1893", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 0, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 104, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1890", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 48, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1891", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 0, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 60, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1896", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 140, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1897", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 0, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 152, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1894", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 116, 
+        "height": 53, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1895", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 5, 
+        "orientation": 0, 
+        "upper_right_x": 0, 
+        "lower_left_x": 251, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 128, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9073"
+  }
+]

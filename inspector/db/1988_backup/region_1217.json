@@ -1,0 +1,399 @@
+[
+  {
+    "ref": "context-region_1217", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "312 Wazoo St", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1218", 
+          "context-region_1219", 
+          "", 
+          "context-region_1215"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_4019", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Sign_object_4018", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          128, 
+          51, 
+          49, 
+          50, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 31, 
+        "x": 104, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Ground_object_4011", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Wall_object_4013", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Wall_object_4012", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Tree_object_4015", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Building_object_4014", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Mailbox_object_4017", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 100, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Bush_object_4016", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 116, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1218", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 1, 
+        "orientation": 172, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 10
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "context-region_1217"
+  }, 
+  {
+    "ref": "item-Ground_object_4020", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Wall_object_4021", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Couch_object_4022", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 28, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Chest_object_4023", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 196, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 96, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Door_object_4024", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 128, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_4025", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 16, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Window_object_4026", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 112, 
+        "gr_state": 1, 
+        "y": 72, 
+        "x": 64, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Chair_object_4027", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 8, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Book_object_1220", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Vendo_front_object_1218"
+  }, 
+  {
+    "ref": "item-Book_object_1219", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_1217"
+  }
+]

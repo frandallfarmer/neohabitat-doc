@@ -1,0 +1,175 @@
+[
+  {
+    "ref": "context-region_8059", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_8060", 
+          "context-region_8082", 
+          "context-region_8058", 
+          "context-region_10431"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_5632", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_8059"
+  }, 
+  {
+    "ref": "item-Pond_object_5633", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 15, 
+        "x": 96, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_8059"
+  }, 
+  {
+    "ref": "item-Ground_object_5631", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8059"
+  }, 
+  {
+    "ref": "item-Glue_object_5637", 
+    "mods": [
+      {
+        "y_offset_2": 0, 
+        "y_offset_3": 0, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 0, 
+        "y_offset_5": 0, 
+        "x_offset_2": 0, 
+        "x_offset_5": 0, 
+        "x_offset_4": 0, 
+        "x_offset_6": 0, 
+        "x_offset_1": 255, 
+        "x_offset_3": 0, 
+        "gr_state": 1, 
+        "y": 147, 
+        "x": 112, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_8059"
+  }, 
+  {
+    "ref": "item-Head_object_5638", 
+    "mods": [
+      {
+        "style": 108, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Glue_object_5637"
+  }, 
+  {
+    "ref": "item-Pond_object_5634", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 15, 
+        "x": 12, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_8059"
+  }, 
+  {
+    "ref": "item-Glue_object_5635", 
+    "mods": [
+      {
+        "y_offset_2": 0, 
+        "y_offset_3": 0, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 0, 
+        "y_offset_5": 0, 
+        "x_offset_2": 0, 
+        "x_offset_5": 0, 
+        "x_offset_4": 0, 
+        "x_offset_6": 0, 
+        "x_offset_1": 255, 
+        "x_offset_3": 0, 
+        "gr_state": 1, 
+        "y": 147, 
+        "x": 28, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_8059"
+  }, 
+  {
+    "ref": "item-Head_object_5636", 
+    "mods": [
+      {
+        "style": 108, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Glue_object_5635"
+  }
+]

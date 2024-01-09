@@ -1,0 +1,196 @@
+[
+  {
+    "ref": "context-region_515", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_516", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bureaucrat_object_618", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 100, 
+        "type": "Bureaucrat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bureaucrat", 
+    "in": "context-region_515"
+  }, 
+  {
+    "ref": "item-Head_object_619", 
+    "mods": [
+      {
+        "style": 148, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bureaucrat_object_618"
+  }, 
+  {
+    "ref": "item-Sign_object_614", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          87, 
+          104, 
+          105, 
+          116, 
+          101, 
+          32, 
+          83, 
+          97, 
+          110, 
+          100, 
+          115, 
+          58, 
+          32, 
+          67, 
+          108, 
+          97, 
+          115, 
+          115, 
+          32, 
+          80, 
+          114, 
+          111, 
+          118, 
+          105, 
+          110, 
+          103, 
+          32, 
+          71, 
+          114, 
+          111, 
+          117, 
+          110, 
+          100, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_515"
+  }, 
+  {
+    "ref": "item-Table_object_615", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 12, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_515"
+  }, 
+  {
+    "ref": "item-Tree_object_616", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 60, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_515"
+  }, 
+  {
+    "ref": "item-Window_object_617", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 60, 
+        "x": 100, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_515"
+  }, 
+  {
+    "ref": "item-Wall_object_612", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_515"
+  }, 
+  {
+    "ref": "item-Ground_object_613", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_515"
+  }
+]

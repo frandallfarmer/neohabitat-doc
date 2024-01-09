@@ -1,0 +1,140 @@
+[
+  {
+    "ref": "context-region_1868", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Outamy Wy South", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1888", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_14626", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 3, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1868"
+  }, 
+  {
+    "ref": "item-Plant_object_14627", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 28, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1868"
+  }, 
+  {
+    "ref": "item-Plant_object_14624", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 88, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1868"
+  }, 
+  {
+    "ref": "item-Teleport_object_14625", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "address": "Pop-Outamy Wy North", 
+        "take": 180, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 112, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1868"
+  }, 
+  {
+    "ref": "item-Wall_object_14622", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1868"
+  }, 
+  {
+    "ref": "item-Wall_object_14623", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1868"
+  }, 
+  {
+    "ref": "item-Ground_object_14621", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1868"
+  }
+]

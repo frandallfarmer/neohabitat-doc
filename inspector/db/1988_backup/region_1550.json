@@ -1,0 +1,297 @@
+[
+  {
+    "ref": "context-region_1550", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "226 EZ St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1549", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_10473", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Ground_object_10472", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Door_object_10477", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 120, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Couch_object_10476", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 4, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 88, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Chest_object_10475", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 4, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 20, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Table_object_10474", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 196, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 48, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_1012631", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 135, 
+        "x": 15, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10478", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 72, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Box_object_1010040", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 9, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 14, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_1550"
+  }, 
+  {
+    "ref": "item-Changomatic_object_1006435", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 108, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "item-Box_object_1010040"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1015792", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 147, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1010040"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1010000", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 94, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Box_object_1010040"
+  }, 
+  {
+    "ref": "item-Bag_object_1006429", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 37, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1010040"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1012630", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 116, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1006429"
+  }, 
+  {
+    "ref": "item-Compass_object_1004238", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 64, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "item-Bag_object_1006429"
+  }, 
+  {
+    "ref": "item-Ball_object_1006444", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 25, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 9, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "item-Bag_object_1006429"
+  }
+]

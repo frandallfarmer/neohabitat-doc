@@ -1,0 +1,138 @@
+[
+  {
+    "ref": "context-region_4237", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4238", 
+          "context-region_4244", 
+          "context-region_4236", 
+          "context-region_4229"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_13850", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 35, 
+        "x": 128, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4237"
+  }, 
+  {
+    "ref": "item-Bush_object_13849", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 133, 
+        "x": 48, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4237"
+  }, 
+  {
+    "ref": "item-Flat_object_13848", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4237"
+  }, 
+  {
+    "ref": "item-Flat_object_13847", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4237"
+  }, 
+  {
+    "ref": "item-Bush_object_13846", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 39, 
+        "x": 128, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4237"
+  }, 
+  {
+    "ref": "item-Flat_object_13845", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4237"
+  }, 
+  {
+    "ref": "item-Sky_object_13844", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4237"
+  }
+]

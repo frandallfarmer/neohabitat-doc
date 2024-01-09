@@ -1,0 +1,161 @@
+[
+  {
+    "ref": "context-region_7102", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_7103", 
+          "", 
+          "context-region_9200", 
+          "context-region_7100"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Trapezoid_object_15649", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 164, 
+        "orientation": 8, 
+        "upper_right_x": 160, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 126, 
+        "x": 0, 
+        "height": 2, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_7102"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_15650", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 45, 
+        "orientation": 0, 
+        "pattern": [
+          85, 
+          170, 
+          149, 
+          85, 
+          86, 
+          85, 
+          101, 
+          85, 
+          89, 
+          85, 
+          89, 
+          85, 
+          101, 
+          85, 
+          86, 
+          85, 
+          149, 
+          85, 
+          85, 
+          170, 
+          101, 
+          85, 
+          86, 
+          85, 
+          89, 
+          85, 
+          89, 
+          85, 
+          86, 
+          85, 
+          101, 
+          85
+        ], 
+        "upper_right_x": 149, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 98, 
+        "x": 0, 
+        "height": 61, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 255
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_7102"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_15651", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 162, 
+        "orientation": 204, 
+        "pattern": [
+          85, 
+          170, 
+          149, 
+          85, 
+          86, 
+          85, 
+          101, 
+          85, 
+          89, 
+          85, 
+          89, 
+          85, 
+          101, 
+          85, 
+          86, 
+          85, 
+          149, 
+          85, 
+          85, 
+          170, 
+          101, 
+          85, 
+          86, 
+          85, 
+          89, 
+          85, 
+          89, 
+          85, 
+          86, 
+          85, 
+          101, 
+          85
+        ], 
+        "upper_right_x": 159, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "height": 127, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_7102"
+  }
+]

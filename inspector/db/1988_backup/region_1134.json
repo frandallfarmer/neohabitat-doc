@@ -1,0 +1,450 @@
+[
+  {
+    "ref": "context-region_1134", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "82 Mince St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1133", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chest_object_3256", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1002689", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 16, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Box_object_1001564", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 26, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Head_object_1002015", 
+    "mods": [
+      {
+        "style": 49, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 49, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Head_object_1001679", 
+    "mods": [
+      {
+        "style": 56, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 104, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Head_object_997", 
+    "mods": [
+      {
+        "style": 53, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 52, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Head_object_1001677", 
+    "mods": [
+      {
+        "style": 41, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 104, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Head_object_1001681", 
+    "mods": [
+      {
+        "style": 12, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Head_object_1001198", 
+    "mods": [
+      {
+        "style": 45, 
+        "orientation": 80, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 57, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Head_object_1001683", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Head_object_1001682", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 7, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1001564"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1001193", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 123, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1001179", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 57, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 113, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1000634", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 25, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 32, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1000420", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 13, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1001175", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 24, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1001008", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 36, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_3256"
+  }, 
+  {
+    "ref": "item-Door_object_3257", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 120, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Window_object_3254", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 84, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Couch_object_3255", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 44, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Ground_object_3252", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Wall_object_3253", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_3258", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 3, 
+        "y": 133, 
+        "x": 100, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Window_object_3259", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 48, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Escape_device_object_17722", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "charge": 958, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 32, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_1134"
+  }, 
+  {
+    "ref": "item-Changomatic_object_1014570", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 39, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "context-region_1134"
+  }
+]

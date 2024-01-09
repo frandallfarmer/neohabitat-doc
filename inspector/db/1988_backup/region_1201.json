@@ -1,0 +1,209 @@
+[
+  {
+    "ref": "context-region_1201", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "65 This Way", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1202", 
+          "context-region_1203", 
+          "", 
+          "context-region_1200"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_3859", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Wall_object_3861", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Wall_object_3860", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 132, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Tree_object_3863", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Building_object_3862", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Mailbox_object_3865", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 92, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Bush_object_3864", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 116, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Street_object_3867", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1201"
+  }, 
+  {
+    "ref": "item-Sign_object_3866", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          54, 
+          53, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 92, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1201"
+  }
+]

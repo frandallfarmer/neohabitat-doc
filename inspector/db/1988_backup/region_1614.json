@@ -1,0 +1,193 @@
+[
+  {
+    "ref": "context-region_1614", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "East I/O", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_1593"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_11067", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 4, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1614"
+  }, 
+  {
+    "ref": "item-Bush_object_11066", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 56, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1614"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_11065", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 130, 
+        "x": 4, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_1614"
+  }, 
+  {
+    "ref": "item-Wall_object_11064", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1614"
+  }, 
+  {
+    "ref": "item-Wall_object_11063", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1614"
+  }, 
+  {
+    "ref": "item-Ground_object_11062", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1614"
+  }, 
+  {
+    "ref": "item-Sign_object_11069", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 228, 
+        "ascii": [
+          77, 
+          101, 
+          109, 
+          98, 
+          101, 
+          114, 
+          115, 
+          134, 
+          32, 
+          128, 
+          79, 
+          110, 
+          108, 
+          121, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 124, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1614"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_11068", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 4, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_1614"
+  }
+]

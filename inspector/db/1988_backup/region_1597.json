@@ -1,0 +1,209 @@
+[
+  {
+    "ref": "context-region_1597", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "317 I/O Ave", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "", 
+          "context-region_1595", 
+          "context-region_1598", 
+          "context-region_1599"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Building_object_10910", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "gr_state": 3, 
+        "y": 32, 
+        "x": 32, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Bush_object_10911", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 48, 
+        "gr_state": 1, 
+        "y": 35, 
+        "x": 16, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Bush_object_10912", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 49, 
+        "gr_state": 1, 
+        "y": 34, 
+        "x": 60, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Mailbox_object_10913", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 104, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Sign_object_10914", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          51, 
+          49, 
+          55, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 80, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Street_object_10915", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Ground_object_10907", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Wall_object_10909", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1597"
+  }, 
+  {
+    "ref": "item-Wall_object_10908", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1597"
+  }
+]

@@ -1,0 +1,247 @@
+[
+  {
+    "ref": "context-region_9012", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9013", 
+          "context-region_9022", 
+          "context-region_9011", 
+          "context-region_9005"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_1187", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 153, 
+        "x": 104, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1733", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 75, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Book_object_1000444", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 8, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 8, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Street_object_1188", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Sign_object_1189", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          32, 
+          32, 
+          71, 
+          69, 
+          78, 
+          69, 
+          82, 
+          65, 
+          76, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 108, 
+        "x": 32, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Door_object_1184", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 64, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Window_object_1185", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 51, 
+        "x": 16, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_1186", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 153, 
+        "x": 44, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Ground_object_1183", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Wall_object_1182", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9012"
+  }, 
+  {
+    "ref": "item-Window_object_1190", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 51, 
+        "x": 124, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9012"
+  }
+]

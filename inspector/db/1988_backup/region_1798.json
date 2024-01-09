@@ -1,0 +1,135 @@
+[
+  {
+    "ref": "context-region_1798", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Rocky Rd west", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_1777"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_12804", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 31, 
+        "x": 72, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1798"
+  }, 
+  {
+    "ref": "item-Bush_object_12805", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 38, 
+        "x": 108, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1798"
+  }, 
+  {
+    "ref": "item-Tree_object_12806", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 35, 
+        "x": 32, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1798"
+  }, 
+  {
+    "ref": "item-Ground_object_12800", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1798"
+  }, 
+  {
+    "ref": "item-Sky_object_12801", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1798"
+  }, 
+  {
+    "ref": "item-Street_object_12802", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 4, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1798"
+  }, 
+  {
+    "ref": "item-Bush_object_12803", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 44, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1798"
+  }
+]

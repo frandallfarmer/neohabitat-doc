@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10443", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_10444", 
+          "context-region_10417", 
+          "context-region_10442", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }
+]

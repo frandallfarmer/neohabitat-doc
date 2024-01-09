@@ -1,0 +1,137 @@
+[
+  {
+    "ref": "context-region_3005", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_3006", 
+          "context-region_3011", 
+          "context-region_3004", 
+          "context-region_10370"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_8352", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_3005"
+  }, 
+  {
+    "ref": "item-Sky_object_8353", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_3005"
+  }, 
+  {
+    "ref": "item-Ground_object_8351", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_3005"
+  }, 
+  {
+    "ref": "item-Plant_object_8356", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 49, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 144, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_3005"
+  }, 
+  {
+    "ref": "item-Plant_object_8357", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 88, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 36, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_3005"
+  }, 
+  {
+    "ref": "item-Tree_object_8354", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 48, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_3005"
+  }, 
+  {
+    "ref": "item-Tree_object_8355", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 48, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_3005"
+  }
+]

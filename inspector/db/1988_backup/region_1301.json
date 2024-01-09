@@ -1,0 +1,186 @@
+[
+  {
+    "ref": "context-region_1301", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Off Limits!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1302", 
+          "context-region_1305", 
+          "context-region_1289", 
+          "context-region_1293"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sign_object_4745", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          128, 
+          76, 
+          97, 
+          134, 
+          32, 
+          128, 
+          86, 
+          111, 
+          117, 
+          115, 
+          134, 
+          32, 
+          32, 
+          78, 
+          101, 
+          119, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 70, 
+        "x": 20, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1301"
+  }, 
+  {
+    "ref": "item-Door_object_4744", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 56, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1301"
+  }, 
+  {
+    "ref": "item-Street_object_4747", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1301"
+  }, 
+  {
+    "ref": "item-Door_object_4746", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 1, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 96, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1301"
+  }, 
+  {
+    "ref": "item-Ground_object_4743", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1301"
+  }, 
+  {
+    "ref": "item-Wall_object_4742", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1301"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_4806", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 39, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1301"
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "ref": "context-region_1296", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Off Limits!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1295", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Window_object_4714", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 1, 
+        "y": 45, 
+        "x": 116, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_4710", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 4, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_4711", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 211, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_4710"
+  }, 
+  {
+    "ref": "item-Window_object_4708", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 1, 
+        "y": 45, 
+        "x": 96, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_4737", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 52, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_4738", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 181, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_4737"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_4887", 
+    "mods": [
+      {
+        "display_item": 5, 
+        "style": 0, 
+        "orientation": 120, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 1000
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_4737"
+  }, 
+  {
+    "ref": "item-Box_object_4899", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Vendo_front_object_4887"
+  }, 
+  {
+    "ref": "item-Bag_object_4897", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Vendo_front_object_4887"
+  }, 
+  {
+    "ref": "item-Paper_object_4902", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 6, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Vendo_front_object_4887"
+  }, 
+  {
+    "ref": "item-Bag_object_4888", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Vendo_front_object_4887"
+  }, 
+  {
+    "ref": "item-Flashlight_object_4900", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "item-Vendo_front_object_4887"
+  }, 
+  {
+    "ref": "item-Sensor_object_4901", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 5, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "item-Vendo_inside_object_4737"
+  }, 
+  {
+    "ref": "item-Window_object_4709", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 1, 
+        "y": 83, 
+        "x": 116, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Ball_object_4898", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 2, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Ground_object_4705", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Window_object_4707", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 1, 
+        "y": 83, 
+        "x": 96, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1296"
+  }, 
+  {
+    "ref": "item-Wall_object_4706", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1296"
+  }
+]

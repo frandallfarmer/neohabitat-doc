@@ -1,0 +1,478 @@
+[
+  {
+    "ref": "context-region_1261", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "16 Wrong Way", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1260", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chair_object_4420", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 8, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Couch_object_4415", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 28, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Wall_object_4414", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Door_object_4417", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 128, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Chest_object_4416", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 96, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Ground_object_4413", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1262", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 0, 
+        "orientation": 236, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Mailbox_object_4427", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 76, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Wall_object_4423", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Wall_object_4422", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Ground_object_4421", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Head_object_1269", 
+    "mods": [
+      {
+        "style": 80, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Head_object_1268", 
+    "mods": [
+      {
+        "style": 56, 
+        "orientation": 40, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Bush_object_4426", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 8, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Street_object_4428", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Sign_object_4429", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          50, 
+          54, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Building_object_4424", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 36, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Bush_object_4425", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 96, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Head_object_1263", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Head_object_1266", 
+    "mods": [
+      {
+        "style": 45, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Head_object_1264", 
+    "mods": [
+      {
+        "style": 65, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Head_object_1267", 
+    "mods": [
+      {
+        "style": 41, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Plant_object_4430", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 41, 
+        "x": 60, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Vendo_front_object_1262"
+  }, 
+  {
+    "ref": "item-Window_object_4419", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "gr_state": 1, 
+        "y": 72, 
+        "x": 64, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1261"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_4418", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 153, 
+        "x": 16, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1261"
+  }
+]

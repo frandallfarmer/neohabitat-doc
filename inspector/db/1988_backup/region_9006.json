@@ -1,0 +1,299 @@
+[
+  {
+    "ref": "context-region_9006", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_9014", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Gemstone_object_1129", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Gemstone"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gemstone", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Sign_object_1139", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          102, 
+          111, 
+          114, 
+          32, 
+          116, 
+          104, 
+          101, 
+          134, 
+          112, 
+          114, 
+          105, 
+          99, 
+          101, 
+          44, 
+          32, 
+          73, 
+          116, 
+          32, 
+          105, 
+          115, 
+          134, 
+          84, 
+          79, 
+          79, 
+          32, 
+          77, 
+          85, 
+          67, 
+          72, 
+          33, 
+          41, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 70, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Wall_object_1138", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Ground_object_1122", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_1123", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 8, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Sign_object_1137", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          131, 
+          133, 
+          78, 
+          79, 
+          133, 
+          32, 
+          72, 
+          97, 
+          103, 
+          103, 
+          108, 
+          105, 
+          110, 
+          103, 
+          33, 
+          134, 
+          132, 
+          132, 
+          40, 
+          73, 
+          102, 
+          32, 
+          121, 
+          111, 
+          117, 
+          32, 
+          104, 
+          97, 
+          118, 
+          101, 
+          134, 
+          116, 
+          111, 
+          32, 
+          65, 
+          83, 
+          75, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 101, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_1131", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 112, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Ring_object_1000588", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 84, 
+        "type": "Ring"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ring", 
+    "in": "context-region_9006"
+  }, 
+  {
+    "ref": "item-Sign_object_1140", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          84, 
+          114, 
+          105, 
+          110, 
+          107, 
+          101, 
+          116, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          77, 
+          101, 
+          103, 
+          97, 
+          80, 
+          111, 
+          119, 
+          101, 
+          114, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 107, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9006"
+  }
+]

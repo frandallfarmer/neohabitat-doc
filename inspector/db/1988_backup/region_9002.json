@@ -1,0 +1,151 @@
+[
+  {
+    "ref": "context-region_9002", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9001", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_1084", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 65, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 148, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9002"
+  }, 
+  {
+    "ref": "item-Ball_object_1000335", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 104, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "context-region_9002"
+  }, 
+  {
+    "ref": "item-Tree_object_1085", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 33, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 80, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9002"
+  }, 
+  {
+    "ref": "item-Ground_object_1079", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9002"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_1081", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 130, 
+        "x": 84, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_9002"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_1080", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 84, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_9002"
+  }, 
+  {
+    "ref": "item-Wall_object_1083", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9002"
+  }, 
+  {
+    "ref": "item-Street_object_1082", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 49, 
+        "gr_state": 4, 
+        "y": 8, 
+        "x": 120, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9002"
+  }
+]

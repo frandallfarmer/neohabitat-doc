@@ -1,0 +1,529 @@
+[
+  {
+    "ref": "context-region_1540", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "827 Disk Dr", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1539", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Garbage_can_object_10378", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 147, 
+        "x": 144, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Window_object_10379", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 63, 
+        "x": 68, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Chair_object_10381", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 44, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Chair_object_10380", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 41, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 96, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Ground_object_10371", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Wall_object_10372", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Display_case_object_10373", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 92, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10374", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 48, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Window_object_10375", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 104, 
+        "x": 20, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Door_object_10376", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Aquarium_object_10377", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 195, 
+        "x": 100, 
+        "type": "Aquarium"
+      }
+    ], 
+    "type": "item", 
+    "name": "Aquarium", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1541", 
+    "mods": [
+      {
+        "display_item": 4, 
+        "style": 0, 
+        "orientation": 88, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "context-region_1540"
+  }, 
+  {
+    "ref": "item-Building_object_10385", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 52, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Wall_object_10384", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Sign_object_10387", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          57, 
+          50, 
+          55, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 24, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Bush_object_10386", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 136, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1548", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Plant_object_10390", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 132, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Wall_object_10383", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Ground_object_10382", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1545", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Bush_object_10391", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 12, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Street_object_10389", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Mailbox_object_10388", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 108, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1542", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1543", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 6, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1549", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Vendo_front_object_1541"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1546", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 4, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_1540"
+  }
+]

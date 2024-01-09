@@ -1,0 +1,154 @@
+[
+  {
+    "ref": "context-region_1891", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Hyper Dr north", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1911", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Atm_object_14848", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 155, 
+        "x": 76, 
+        "type": "Atm"
+      }
+    ], 
+    "type": "item", 
+    "name": "Atm", 
+    "in": "context-region_1891"
+  }, 
+  {
+    "ref": "item-Street_object_14849", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 3, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1891"
+  }, 
+  {
+    "ref": "item-Bush_object_14846", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 212, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1891"
+  }, 
+  {
+    "ref": "item-Teleport_object_14847", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "Pop-Hyper Dr North", 
+        "take": 350, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 120, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1891"
+  }, 
+  {
+    "ref": "item-Wall_object_14844", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1891"
+  }, 
+  {
+    "ref": "item-Bush_object_14845", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 47, 
+        "x": 48, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1891"
+  }, 
+  {
+    "ref": "item-Ground_object_14842", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1891"
+  }, 
+  {
+    "ref": "item-Wall_object_14843", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1891"
+  }
+]

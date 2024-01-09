@@ -1,0 +1,136 @@
+[
+  {
+    "ref": "context-region_20082", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20082", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Spray_can_object_1000656", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 132, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20082"
+  }, 
+  {
+    "ref": "item-Ring_object_1000550", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 56, 
+        "type": "Ring"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ring", 
+    "in": "context-region_20082"
+  }, 
+  {
+    "ref": "item-Shovel_object_14397", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 64, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20082"
+  }, 
+  {
+    "ref": "item-Flashlight_object_80001", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 88, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20082"
+  }, 
+  {
+    "ref": "item-Head_object_1000702", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 28, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20082"
+  }, 
+  {
+    "ref": "item-Head_object_1000636", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 32, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 132, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20082"
+  }, 
+  {
+    "ref": "item-Compass_object_1000697", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 20, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20082"
+  }
+]

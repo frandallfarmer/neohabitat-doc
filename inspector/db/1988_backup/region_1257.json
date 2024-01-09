@@ -1,0 +1,138 @@
+[
+  {
+    "ref": "context-region_1257", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Wacka Rd west", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1255", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_4378", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "gr_state": 3, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1257"
+  }, 
+  {
+    "ref": "item-Bush_object_4379", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 56, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1257"
+  }, 
+  {
+    "ref": "item-Teleport_object_4381", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "address": "Pop-Wacka Rd West", 
+        "take": 300, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 108, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1257"
+  }, 
+  {
+    "ref": "item-Bush_object_4380", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 33, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 88, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1257"
+  }, 
+  {
+    "ref": "item-Bush_object_4382", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 37, 
+        "x": 16, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1257"
+  }, 
+  {
+    "ref": "item-Ground_object_4376", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1257"
+  }, 
+  {
+    "ref": "item-Sky_object_4377", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1257"
+  }
+]

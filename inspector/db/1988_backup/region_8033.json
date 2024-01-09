@@ -1,0 +1,171 @@
+[
+  {
+    "ref": "context-region_8033", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_8034", 
+          "context-region_8056", 
+          "context-region_8032", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_5314", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_8033"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_5311", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 95, 
+        "orientation": 188, 
+        "pattern": [
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          170, 
+          169, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          169, 
+          170, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185, 
+          185
+        ], 
+        "upper_right_x": 95, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 0, 
+        "height": 88, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 15, 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_8033"
+  }, 
+  {
+    "ref": "item-Ground_object_5310", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8033"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_5313", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 113, 
+        "orientation": 188, 
+        "pattern": [
+          149, 
+          149, 
+          149, 
+          149, 
+          149, 
+          149, 
+          106, 
+          106, 
+          89, 
+          89, 
+          89, 
+          89, 
+          89, 
+          89, 
+          166, 
+          166, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0
+        ], 
+        "upper_right_x": 99, 
+        "lower_left_x": 1, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 100, 
+        "x": 0, 
+        "height": 28, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_8033"
+  }
+]

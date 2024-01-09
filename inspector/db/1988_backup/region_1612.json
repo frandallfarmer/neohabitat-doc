@@ -1,0 +1,512 @@
+[
+  {
+    "ref": "context-region_1612", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "1017 I/O Ave", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "context-region_1610", 
+          "context-region_1613", 
+          "context-region_1592"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_11047", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Key_object_1619", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Sign_object_11052", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          49, 
+          48, 
+          49, 
+          55, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 32, 
+        "x": 20, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Mailbox_object_11053", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 76, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Building_object_11050", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 245, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 28, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Bush_object_11051", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 80, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Street_object_11054", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Wall_object_11049", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Wall_object_11048", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1613", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "context-region_1612"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005177", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 157, 
+        "x": 149, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Door_object_11060", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 28, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Key_object_1618", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1012367", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 151, 
+        "x": 140, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Wall_object_11056", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Table_object_11057", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 212, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 20, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1006019", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 138, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Table_object_11057"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_11061", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 8, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Ground_object_11055", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Chest_object_11058", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 116, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003912", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 67, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Chest_object_11058"
+  }, 
+  {
+    "ref": "item-Couch_object_11059", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 56, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Key_object_1614", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Key_object_1615", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Key_object_1616", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_1613"
+  }, 
+  {
+    "ref": "item-Key_object_1617", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_1613"
+  }
+]

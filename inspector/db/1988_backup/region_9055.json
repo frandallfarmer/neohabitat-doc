@@ -1,0 +1,115 @@
+[
+  {
+    "ref": "context-region_9055", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9056", 
+          "context-region_1258", 
+          "context-region_9054", 
+          "context-region_9044"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_1678", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9055"
+  }, 
+  {
+    "ref": "item-Short_sign_object_1680", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 236, 
+        "ascii": [
+          66, 
+          114, 
+          111, 
+          97, 
+          100, 
+          119, 
+          97, 
+          121, 
+          32, 
+          32
+        ], 
+        "gr_state": 7, 
+        "y": 129, 
+        "x": 136, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9055"
+  }, 
+  {
+    "ref": "item-Street_object_1676", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 13, 
+        "y": 11, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9055"
+  }, 
+  {
+    "ref": "item-Sky_object_1674", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9055"
+  }, 
+  {
+    "ref": "item-Ground_object_1675", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9055"
+  }
+]

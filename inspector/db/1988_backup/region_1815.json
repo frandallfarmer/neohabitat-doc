@@ -1,0 +1,341 @@
+[
+  {
+    "ref": "context-region_1815", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "819 Saint St", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "context-region_1813", 
+          "context-region_1816", 
+          "context-region_1817"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Mailbox_object_12959", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 32, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Wall_object_12954", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Wall_object_12955", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Bush_object_12957", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 108, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Book_object_1820", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Ground_object_12953", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Bush_object_12965", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Fence_object_12964", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 132, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Fence_object_12963", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 161, 
+        "x": 108, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Book_object_1817", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Fence_object_12961", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 33, 
+        "x": 92, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Fence_object_12960", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 64, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Building_object_12956", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 32, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Book_object_1818", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 8, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Book_object_1819", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Sign_object_12958", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          32, 
+          32, 
+          56, 
+          49, 
+          57, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 57, 
+        "x": 72, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1815"
+  }, 
+  {
+    "ref": "item-Street_object_12962", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1815"
+  }
+]

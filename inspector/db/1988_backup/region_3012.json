@@ -1,0 +1,171 @@
+[
+  {
+    "ref": "context-region_3012", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_3013", 
+          "context-region_3019", 
+          "context-region_3011", 
+          "context-region_3006"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Hole_object_17777", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 88, 
+        "type": "Hole", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Hole", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Ground_object_8398", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Sky_object_8399", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Sky_object_8404", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Tree_object_8405", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 197, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 84, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Plant_object_8402", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 36, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Tree_object_8403", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 112, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Tree_object_8400", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 189, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 36, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_3012"
+  }, 
+  {
+    "ref": "item-Pond_object_8401", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 5, 
+        "x": 24, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_3012"
+  }
+]

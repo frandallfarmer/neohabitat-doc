@@ -1,0 +1,104 @@
+[
+  {
+    "ref": "context-region_4207", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4208", 
+          "context-region_4216", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_13520", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4207"
+  }, 
+  {
+    "ref": "item-Flat_object_13519", 
+    "mods": [
+      {
+        "flat_type": 3, 
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4207"
+  }, 
+  {
+    "ref": "item-Ground_object_13521", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 192, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4207"
+  }, 
+  {
+    "ref": "item-Bush_object_13522", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 17, 
+        "gr_state": 2, 
+        "y": 145, 
+        "x": 24, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4207"
+  }, 
+  {
+    "ref": "item-Bush_object_13523", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 17, 
+        "x": 64, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4207"
+  }
+]

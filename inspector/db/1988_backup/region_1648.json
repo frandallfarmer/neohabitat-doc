@@ -1,0 +1,408 @@
+[
+  {
+    "ref": "context-region_1648", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "516 Kerner", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1647", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Paper_object_1012710", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 154, 
+        "x": 33, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Door_object_11373", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 196, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 8, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1649", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 1, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_11379", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 131, 
+        "x": 116, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "item-Vendo_front_object_1649"
+  }, 
+  {
+    "ref": "item-Sign_object_11378", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          75, 
+          101, 
+          114, 
+          110, 
+          101, 
+          114, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 33, 
+        "x": 92, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "item-Vendo_front_object_1649"
+  }, 
+  {
+    "ref": "item-Street_object_11377", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "item-Vendo_front_object_1649"
+  }, 
+  {
+    "ref": "item-Sky_object_11376", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "item-Vendo_front_object_1649"
+  }, 
+  {
+    "ref": "item-Ground_object_11375", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "item-Vendo_front_object_1649"
+  }, 
+  {
+    "ref": "item-Teleport_object_11380", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "address": "Pop-Kerner", 
+        "take": 1070, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 24, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "item-Vendo_front_object_1649"
+  }, 
+  {
+    "ref": "item-Ground_object_11368", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Wall_object_11369", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Bed_object_11374", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 12, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 84, 
+        "type": "Bed"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bed", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005340", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 49, 
+        "gr_state": 0, 
+        "y": 142, 
+        "x": 8, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_11372", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 140, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Chest_object_11371", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 112, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1005466", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Chest_object_11371"
+  }, 
+  {
+    "ref": "item-Table_object_11370", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 48, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1648"
+  }, 
+  {
+    "ref": "item-Paper_object_1005661", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 17, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Table_object_11370"
+  }, 
+  {
+    "ref": "item-Changomatic_object_1012990", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 108, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "item-Table_object_11370"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005683", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 71, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Table_object_11370"
+  }
+]

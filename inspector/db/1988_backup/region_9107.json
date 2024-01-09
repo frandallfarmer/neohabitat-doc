@@ -1,0 +1,192 @@
+[
+  {
+    "ref": "context-region_9107", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1972", 
+          "context-region_9117", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Short_sign_object_6691", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          52, 
+          50, 
+          110, 
+          100, 
+          32, 
+          83, 
+          116, 
+          32, 
+          32
+        ], 
+        "gr_state": 9, 
+        "y": 116, 
+        "x": 4, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9107"
+  }, 
+  {
+    "ref": "item-Teleport_object_6690", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "address": "Pop-Uptown", 
+        "take": 12720, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 120, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_9107"
+  }, 
+  {
+    "ref": "item-Street_object_6692", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 7, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9107"
+  }, 
+  {
+    "ref": "item-Sign_object_6688", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 8, 
+        "ascii": [
+          71, 
+          85, 
+          73, 
+          68, 
+          69, 
+          68, 
+          32, 
+          84, 
+          79, 
+          85, 
+          82, 
+          83, 
+          134, 
+          83, 
+          117, 
+          110, 
+          100, 
+          97, 
+          121, 
+          32, 
+          49, 
+          48, 
+          112, 
+          109, 
+          134, 
+          65, 
+          112, 
+          97, 
+          114, 
+          116, 
+          109, 
+          101, 
+          110, 
+          116, 
+          134, 
+          66, 
+          108, 
+          100, 
+          103, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 64, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9107"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_6689", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 81, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 100, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9107"
+  }, 
+  {
+    "ref": "item-Wall_object_6686", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9107"
+  }, 
+  {
+    "ref": "item-Ground_object_6687", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9107"
+  }
+]

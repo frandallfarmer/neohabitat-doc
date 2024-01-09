@@ -1,0 +1,221 @@
+[
+  {
+    "ref": "context-region_4245", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4246", 
+          "context-region_4258", 
+          "context-region_4244", 
+          "context-region_4238"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_13924", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Bush_object_13942", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 57, 
+        "gr_state": 2, 
+        "y": 44, 
+        "x": 44, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Flat_object_13925", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Bush_object_13940", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 42, 
+        "x": 80, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Bush_object_13941", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 57, 
+        "gr_state": 2, 
+        "y": 44, 
+        "x": 80, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Bush_object_13937", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 25, 
+        "gr_state": 2, 
+        "y": 143, 
+        "x": 52, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Flat_object_13936", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Flat_object_13935", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Bush_object_13926", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 158, 
+        "x": 80, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Hole_object_13927", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 156, 
+        "x": 56, 
+        "type": "Hole", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Hole", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Bush_object_13939", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 44, 
+        "x": 104, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4245"
+  }, 
+  {
+    "ref": "item-Bush_object_13938", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 42, 
+        "x": 128, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4245"
+  }
+]

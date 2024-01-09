@@ -1,0 +1,175 @@
+[
+  {
+    "ref": "context-region_20006", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20006", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bag_object_1000895", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 55, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20006"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000799", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 33, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1000895"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_1000869", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 111, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Bag_object_1000895"
+  }, 
+  {
+    "ref": "item-Compass_object_1000894", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 72, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "item-Bag_object_1000895"
+  }, 
+  {
+    "ref": "item-Bag_object_1000801", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 96, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Bag_object_1000895"
+  }, 
+  {
+    "ref": "item-Head_object_1000878", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 50, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bag_object_1000801"
+  }, 
+  {
+    "ref": "item-Compass_object_1000282", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 8, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20006"
+  }, 
+  {
+    "ref": "item-Book_object_1001034", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 45, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20006"
+  }, 
+  {
+    "ref": "item-Head_object_1000073", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 80, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 55, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20006"
+  }
+]

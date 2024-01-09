@@ -1,0 +1,196 @@
+[
+  {
+    "ref": "context-region_506", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_507", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_504", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 60, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_506"
+  }, 
+  {
+    "ref": "item-Window_object_505", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 60, 
+        "x": 100, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_506"
+  }, 
+  {
+    "ref": "item-Bureaucrat_object_506", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 100, 
+        "type": "Bureaucrat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bureaucrat", 
+    "in": "context-region_506"
+  }, 
+  {
+    "ref": "item-Head_object_507", 
+    "mods": [
+      {
+        "style": 148, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_506"
+  }, 
+  {
+    "ref": "item-Wall_object_500", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_506"
+  }, 
+  {
+    "ref": "item-Ground_object_501", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_506"
+  }, 
+  {
+    "ref": "item-Sign_object_502", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          0, 
+          0, 
+          4, 
+          249, 
+          240, 
+          9, 
+          0, 
+          24, 
+          42, 
+          0, 
+          96, 
+          0, 
+          0, 
+          0, 
+          3, 
+          0, 
+          0, 
+          0, 
+          2, 
+          249, 
+          16, 
+          0, 
+          0, 
+          24, 
+          42, 
+          0, 
+          28, 
+          0, 
+          0, 
+          0, 
+          1, 
+          0, 
+          1, 
+          249, 
+          44, 
+          0, 
+          0, 
+          192, 
+          120, 
+          255
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_506"
+  }, 
+  {
+    "ref": "item-Table_object_503", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 44, 
+        "key_lo": 120, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 12, 
+        "type": "Table", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_506"
+  }
+]

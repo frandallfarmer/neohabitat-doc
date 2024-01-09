@@ -1,0 +1,186 @@
+[
+  {
+    "ref": "context-region_501", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_502", 
+          "context-region_500", 
+          "context-region_500", 
+          "context-region_502"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Plant_object_1018", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 157, 
+        "x": 32, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Building_object_1019", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 59, 
+        "x": 60, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Ground_object_1012", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 200, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Tree_object_1013", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 168, 
+        "gr_state": 0, 
+        "y": 147, 
+        "x": 12, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Sky_object_1010", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Wall_object_1011", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 168, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Rock_object_1016", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 120, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Plant_object_1017", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 140, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Tree_object_1014", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 152, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 128, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_501"
+  }, 
+  {
+    "ref": "item-Mailbox_object_1015", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 108, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_501"
+  }
+]

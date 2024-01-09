@@ -1,0 +1,213 @@
+[
+  {
+    "ref": "context-region_9112", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9113", 
+          "context-region_9122", 
+          "context-region_9111", 
+          "context-region_10354"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_6732", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 153, 
+        "x": 104, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Street_object_6733", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Window_object_6730", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 51, 
+        "x": 16, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_6731", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 153, 
+        "x": 44, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Sign_object_6734", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          32, 
+          32, 
+          71, 
+          69, 
+          78, 
+          69, 
+          82, 
+          65, 
+          76, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 108, 
+        "x": 32, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Window_object_6735", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 51, 
+        "x": 124, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Door_object_6729", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9105", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 64, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Wall_object_6727", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9112"
+  }, 
+  {
+    "ref": "item-Ground_object_6728", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9112"
+  }
+]

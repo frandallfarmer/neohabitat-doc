@@ -1,0 +1,75 @@
+[
+  {
+    "ref": "context-region_20096", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20096", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Key_object_1010270", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 1, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 43, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20096"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003838", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 1, 
+        "x": 143, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20096"
+  }, 
+  {
+    "ref": "item-Book_object_1011057", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 95, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20096"
+  }
+]

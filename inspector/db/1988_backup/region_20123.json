@@ -1,0 +1,340 @@
+[
+  {
+    "ref": "context-region_20123", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20123", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_1003231", 
+    "mods": [
+      {
+        "style": 80, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 149, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Bag_object_1003229", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 41, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 115, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Key_object_1003448", 
+    "mods": [
+      {
+        "key_number_lo": 3, 
+        "style": 0, 
+        "orientation": 9, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 29, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Bag_object_1003229"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1007887", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 77, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1003229"
+  }, 
+  {
+    "ref": "item-Head_object_1005758", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 126, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bag_object_1003229"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1003243", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 41, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 20, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Bag_object_1003229"
+  }, 
+  {
+    "ref": "item-Head_object_1004482", 
+    "mods": [
+      {
+        "style": 113, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 9, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bag_object_1003229"
+  }, 
+  {
+    "ref": "item-Bag_object_1007199", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 132, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007924", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Bag_object_1007199"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007925", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Bag_object_1007199"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007195", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 47, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Bag_object_1007199"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007919", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Bag_object_1007199"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1007921", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 43, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_1007199"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1014062", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 45, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Book_object_1013874", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 27, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 116, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007155", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 64, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1008664", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 78, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Book_object_1013060", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 25, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 45, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20123"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1007870", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 110, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20123"
+  }
+]

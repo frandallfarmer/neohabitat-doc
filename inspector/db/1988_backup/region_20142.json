@@ -1,0 +1,74 @@
+[
+  {
+    "ref": "context-region_20142", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20142", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flashlight_object_1002403", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 108, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20142"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1002340", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 86, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20142"
+  }, 
+  {
+    "ref": "item-Book_object_1002373", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 17, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 53, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20142"
+  }
+]

@@ -1,0 +1,390 @@
+[
+  {
+    "ref": "context-region_9105", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9190", 
+          "context-region_9112", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_6640", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 12, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9105"
+  }, 
+  {
+    "ref": "item-Ball_object_6642", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 6, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "item-Vendo_inside_object_6640"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_6641", 
+    "mods": [
+      {
+        "display_item": 6, 
+        "style": 0, 
+        "orientation": 148, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 49
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_6640"
+  }, 
+  {
+    "ref": "item-Box_object_6643", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Vendo_front_object_6641"
+  }, 
+  {
+    "ref": "item-Bag_object_6648", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Vendo_front_object_6641"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_6647", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_6641"
+  }, 
+  {
+    "ref": "item-Box_object_6644", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Vendo_front_object_6641"
+  }, 
+  {
+    "ref": "item-Movie_camera_object_6645", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Movie_camera"
+      }
+    ], 
+    "type": "item", 
+    "name": "Movie_camera", 
+    "in": "item-Vendo_front_object_6641"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_6649", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 60, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9105"
+  }, 
+  {
+    "ref": "item-Bottle_object_6651", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 5, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Vendo_inside_object_6649"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_6650", 
+    "mods": [
+      {
+        "display_item": 5, 
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 9
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_6649"
+  }, 
+  {
+    "ref": "item-Bag_object_6655", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Vendo_front_object_6650"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_6652", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "item-Vendo_front_object_6650"
+  }, 
+  {
+    "ref": "item-Wall_object_6666", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9105"
+  }, 
+  {
+    "ref": "item-Sign_object_6667", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          128, 
+          131, 
+          86, 
+          101, 
+          110, 
+          100, 
+          114, 
+          111, 
+          105, 
+          100, 
+          32, 
+          32, 
+          32, 
+          32, 
+          86, 
+          101, 
+          110, 
+          100, 
+          114, 
+          111, 
+          105, 
+          100, 
+          32, 
+          32, 
+          32, 
+          32, 
+          133, 
+          77, 
+          79, 
+          82, 
+          69, 
+          127, 
+          32, 
+          32, 
+          32, 
+          32, 
+          53, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 108, 
+        "x": 12, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9105"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_15829", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 52, 
+        "orientation": 0, 
+        "upper_right_x": 52, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 91, 
+        "x": 104, 
+        "height": 149, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9105"
+  }, 
+  {
+    "ref": "item-Ground_object_6639", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9105"
+  }, 
+  {
+    "ref": "item-Book_object_1001930", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 20, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9105"
+  }
+]

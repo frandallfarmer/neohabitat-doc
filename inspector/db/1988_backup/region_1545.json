@@ -1,0 +1,173 @@
+[
+  {
+    "ref": "context-region_1545", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Disk Dr south", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1524", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_10428", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Teleport_object_10429", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "address": "Pop-Disk Dr South", 
+        "take": 1200, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 32, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Ground_object_10426", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Wall_object_10427", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Street_object_10434", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 4, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Plant_object_10433", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 17, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 72, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Plant_object_10432", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 49, 
+        "x": 136, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Bush_object_10431", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 58, 
+        "x": 76, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1545"
+  }, 
+  {
+    "ref": "item-Plant_object_10430", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 50, 
+        "x": 92, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1545"
+  }
+]

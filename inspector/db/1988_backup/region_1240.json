@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1240", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "39 Wacka Rd", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "", 
+          "context-region_1238", 
+          "context-region_1241", 
+          "context-region_1242"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

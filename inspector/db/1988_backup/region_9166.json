@@ -1,0 +1,193 @@
+[
+  {
+    "ref": "context-region_9166", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9162", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chair_object_7326", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 96, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9166"
+  }, 
+  {
+    "ref": "item-Chair_object_7327", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 72, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9166"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_7324", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 0, 
+        "lower_right_x": 0, 
+        "orientation": 204, 
+        "pattern": [
+          153, 
+          85, 
+          85, 
+          85, 
+          86, 
+          165, 
+          101, 
+          101, 
+          89, 
+          89, 
+          101, 
+          165, 
+          89, 
+          89, 
+          102, 
+          101, 
+          89, 
+          89, 
+          105, 
+          101, 
+          89, 
+          89, 
+          101, 
+          101, 
+          86, 
+          165, 
+          101, 
+          101, 
+          85, 
+          85, 
+          85, 
+          85
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 160, 
+        "height": 127, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 0, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_9166"
+  }, 
+  {
+    "ref": "item-Chair_object_7325", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 20, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9166"
+  }, 
+  {
+    "ref": "item-Ground_object_7323", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9166"
+  }, 
+  {
+    "ref": "item-Chair_object_7328", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 48, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9166"
+  }, 
+  {
+    "ref": "item-Chair_object_7329", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 120, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9166"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_7330", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 132, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_9166"
+  }
+]

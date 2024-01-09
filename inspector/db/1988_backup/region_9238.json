@@ -1,0 +1,1161 @@
+[
+  {
+    "ref": "context-region_9238", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Plaque_object_17589", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 148, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 64, 
+        "x": 4, 
+        "type": "Plaque"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plaque", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Glue_object_17590", 
+    "mods": [
+      {
+        "y_offset_2": 9, 
+        "y_offset_3": 23, 
+        "style": 0, 
+        "y_offset_1": 9, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 23, 
+        "y_offset_5": 0, 
+        "x_offset_2": 1, 
+        "x_offset_5": 0, 
+        "x_offset_4": 1, 
+        "x_offset_6": 0, 
+        "x_offset_1": 254, 
+        "x_offset_3": 254, 
+        "gr_state": 1, 
+        "y": 236, 
+        "x": 4, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Die_object_17591", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "state": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Die"
+      }
+    ], 
+    "type": "item", 
+    "name": "Die", 
+    "in": "item-Glue_object_17590"
+  }, 
+  {
+    "ref": "item-Die_object_17593", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "state": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Die"
+      }
+    ], 
+    "type": "item", 
+    "name": "Die", 
+    "in": "item-Glue_object_17590"
+  }, 
+  {
+    "ref": "item-Die_object_17592", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "state": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Die"
+      }
+    ], 
+    "type": "item", 
+    "name": "Die", 
+    "in": "item-Glue_object_17590"
+  }, 
+  {
+    "ref": "item-Die_object_17594", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "state": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Die"
+      }
+    ], 
+    "type": "item", 
+    "name": "Die", 
+    "in": "item-Glue_object_17590"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17579", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 123, 
+        "x": 116, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17578", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 75, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17573", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 21, 
+        "x": 32, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17572", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 9, 
+        "x": 32, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17571", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 57, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17570", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 45, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17577", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 87, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17576", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 99, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17575", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 111, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17574", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 123, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17555", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 0, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 152, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17554", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 8, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 140, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17557", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 123, 
+        "x": 32, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Flat_object_17556", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 4, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17551", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 0, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 104, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17550", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 8, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 80, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17539", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 0, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 84, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17538", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 8, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 72, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17537", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 0, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 60, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17536", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 8, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 32, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17535", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 8, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 48, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17534", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 0, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 36, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17559", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 123, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17558", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 111, 
+        "x": 32, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17553", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 0, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 128, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17552", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 8, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 116, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17586", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 57, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Magic_immobile_object_17587", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 48, 
+        "x": 4, 
+        "type": "Magic_immobile"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_immobile", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17582", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 9, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17583", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 21, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17580", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 111, 
+        "x": 116, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17581", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 99, 
+        "x": 116, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17568", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 21, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17569", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 33, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17584", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 33, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17585", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 8, 
+        "y": 45, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17564", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 9, 
+        "x": 116, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17565", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 21, 
+        "x": 116, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17566", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 33, 
+        "x": 116, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17567", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 9, 
+        "x": 80, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17560", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 111, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17561", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 99, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17562", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 87, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Game_piece_object_17563", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 8, 
+        "y": 203, 
+        "x": 152, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17546", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 10, 
+        "orientation": 148, 
+        "upper_right_x": 10, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 3, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 88, 
+        "height": 126, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Short_sign_object_17547", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          66, 
+          134, 
+          65, 
+          134, 
+          82, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 87, 
+        "x": 88, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17544", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 8, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 156, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17545", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 0, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 44, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17542", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 8, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 132, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17543", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 0, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 144, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17540", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 8, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 108, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17541", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 254, 
+        "orientation": 0, 
+        "upper_right_x": 3, 
+        "lower_left_x": 254, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 77, 
+        "x": 120, 
+        "height": 51, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17588", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 27, 
+        "orientation": 220, 
+        "upper_right_x": 27, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "height": 126, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17548", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 8, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 56, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17549", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 0, 
+        "upper_right_x": 2, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 68, 
+        "height": 52, 
+        "type": "Trapezoid", 
+        "upper_left_x": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9238"
+  }
+]

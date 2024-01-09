@@ -1,0 +1,165 @@
+[
+  {
+    "ref": "context-region_1081", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Foon Ave", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1079", 
+          "", 
+          "context-region_1082", 
+          "context-region_1034"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_2765", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1081"
+  }, 
+  {
+    "ref": "item-Ground_object_2764", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1081"
+  }, 
+  {
+    "ref": "item-Sign_object_2767", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          70, 
+          111, 
+          111, 
+          110, 
+          32, 
+          65, 
+          118, 
+          101, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 30, 
+        "x": 100, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1081"
+  }, 
+  {
+    "ref": "item-Street_object_2766", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 14, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1081"
+  }, 
+  {
+    "ref": "item-Teleport_object_2769", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "Pop-Foon Ave", 
+        "take": 1410, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 24, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1081"
+  }, 
+  {
+    "ref": "item-Plant_object_2768", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 49, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 92, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1081"
+  }
+]

@@ -1,0 +1,154 @@
+[
+  {
+    "ref": "context-region_1844", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Sunday Dr East", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_1823"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_13227", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1844"
+  }, 
+  {
+    "ref": "item-Wall_object_13229", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1844"
+  }, 
+  {
+    "ref": "item-Wall_object_13228", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1844"
+  }, 
+  {
+    "ref": "item-Bush_object_13230", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 65, 
+        "gr_state": 0, 
+        "y": 35, 
+        "x": 108, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1844"
+  }, 
+  {
+    "ref": "item-Bush_object_13231", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 64, 
+        "gr_state": 1, 
+        "y": 35, 
+        "x": 16, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1844"
+  }, 
+  {
+    "ref": "item-Teleport_object_13232", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "Pop-Sunday Dr East", 
+        "take": 180, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 32, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1844"
+  }, 
+  {
+    "ref": "item-Tree_object_13233", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 97, 
+        "x": 96, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1844"
+  }, 
+  {
+    "ref": "item-Street_object_13234", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 4, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1844"
+  }
+]

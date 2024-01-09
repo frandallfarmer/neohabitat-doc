@@ -1,0 +1,275 @@
+[
+  {
+    "ref": "context-region_9157", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_9158", 
+          "", 
+          "context-region_9156", 
+          "context-region_9146"
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_7251", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 13, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_7250", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "gr_state": 1, 
+        "y": 130, 
+        "x": 124, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Sign_object_7252", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          66, 
+          114, 
+          111, 
+          97, 
+          100, 
+          119, 
+          97, 
+          121, 
+          134, 
+          97, 
+          134, 
+          110, 
+          134, 
+          107, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 119, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Short_sign_object_7253", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          66, 
+          114, 
+          111, 
+          97, 
+          100, 
+          119, 
+          97, 
+          121
+        ], 
+        "gr_state": 9, 
+        "y": 247, 
+        "x": 8, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_7247", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 0, 
+        "orientation": 148, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          86, 
+          149, 
+          89, 
+          101, 
+          89, 
+          101, 
+          101, 
+          89, 
+          101, 
+          89, 
+          101, 
+          89, 
+          101, 
+          89, 
+          89, 
+          101, 
+          89, 
+          101, 
+          86, 
+          149, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 160, 
+        "height": 127, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 15, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Ground_object_7246", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Short_sign_object_7254", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          66, 
+          134, 
+          97, 
+          134, 
+          110, 
+          134, 
+          107, 
+          32
+        ], 
+        "gr_state": 14, 
+        "y": 247, 
+        "x": 8, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Atm_object_7249", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 54, 
+        "x": 36, 
+        "type": "Atm"
+      }
+    ], 
+    "type": "item", 
+    "name": "Atm", 
+    "in": "context-region_9157"
+  }, 
+  {
+    "ref": "item-Atm_object_7248", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 54, 
+        "x": 104, 
+        "type": "Atm"
+      }
+    ], 
+    "type": "item", 
+    "name": "Atm", 
+    "in": "context-region_9157"
+  }
+]

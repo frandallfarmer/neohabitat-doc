@@ -1,0 +1,365 @@
+[
+  {
+    "ref": "context-region_9028", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_9040", 
+          "context-region_9027", 
+          "context-region_9017"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flag_object_1442", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 72, 
+        "mass": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 96, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_9028"
+  }, 
+  {
+    "ref": "item-Door_object_1391", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 8, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9028"
+  }, 
+  {
+    "ref": "item-Street_object_1390", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9028"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1393", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 83, 
+        "orientation": 0, 
+        "upper_right_x": 83, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 80, 
+        "x": 52, 
+        "height": 152, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9028"
+  }, 
+  {
+    "ref": "item-Sign_object_1392", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "ascii": [
+          46, 
+          46, 
+          46, 
+          84, 
+          105, 
+          118, 
+          111, 
+          108, 
+          108, 
+          105, 
+          39, 
+          115, 
+          32, 
+          71, 
+          97, 
+          114, 
+          100, 
+          101, 
+          110, 
+          46, 
+          46, 
+          46, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 40, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9028"
+  }, 
+  {
+    "ref": "item-Glue_object_1394", 
+    "mods": [
+      {
+        "y_offset_2": 248, 
+        "y_offset_3": 249, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 243, 
+        "orientation": 0, 
+        "y_offset_4": 249, 
+        "y_offset_5": 247, 
+        "x_offset_2": 0, 
+        "x_offset_5": 12, 
+        "x_offset_4": 9, 
+        "x_offset_6": 5, 
+        "x_offset_1": 0, 
+        "x_offset_3": 16, 
+        "gr_state": 1, 
+        "y": 192, 
+        "x": 44, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9028"
+  }, 
+  {
+    "ref": "item-Plant_object_1400", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 237, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_1394"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1395", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 83, 
+        "orientation": 204, 
+        "upper_right_x": 83, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "height": 144, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "item-Glue_object_1394"
+  }, 
+  {
+    "ref": "item-Plant_object_1397", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 172, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_1394"
+  }, 
+  {
+    "ref": "item-Plant_object_1396", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 148, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_1394"
+  }, 
+  {
+    "ref": "item-Plant_object_1399", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 173, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_1394"
+  }, 
+  {
+    "ref": "item-Plant_object_1398", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 189, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Glue_object_1394"
+  }, 
+  {
+    "ref": "item-Ground_object_1388", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9028"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_1389", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 0, 
+        "orientation": 156, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          84, 
+          5, 
+          84, 
+          69, 
+          65, 
+          80, 
+          69, 
+          20, 
+          68, 
+          68, 
+          69, 
+          20, 
+          65, 
+          80, 
+          84, 
+          69, 
+          84, 
+          5, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          85
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 160, 
+        "height": 127, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 15, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_9028"
+  }
+]

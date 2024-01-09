@@ -1,0 +1,259 @@
+[
+  {
+    "ref": "context-region_1730", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Pam Pl east", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_10362", 
+          "", 
+          "", 
+          "context-region_1750"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_12170", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 3, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Fence_object_12171", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 92, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Fence_object_12172", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 30, 
+        "x": 120, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Fence_object_12173", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 30, 
+        "x": 136, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Fence_object_12174", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 30, 
+        "x": 56, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Short_sign_object_12175", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          75, 
+          69, 
+          69, 
+          80, 
+          134, 
+          32, 
+          79, 
+          85, 
+          84
+        ], 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 24, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Fence_object_12169", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 30, 
+        "x": 32, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Fence_object_12168", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 4, 
+        "type": "Fence"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fence", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Building_object_12167", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 91, 
+        "x": 68, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Building_object_12166", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "gr_state": 10, 
+        "y": 84, 
+        "x": 64, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Building_object_12165", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Wall_object_12164", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Wall_object_12163", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 132, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1730"
+  }, 
+  {
+    "ref": "item-Ground_object_12162", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1730"
+  }
+]

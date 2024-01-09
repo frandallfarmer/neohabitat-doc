@@ -1,0 +1,275 @@
+[
+  {
+    "ref": "context-region_519", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_520", 
+          "", 
+          "context-region_518", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_651", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Ground_object_652", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Sign_object_653", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          87, 
+          104, 
+          105, 
+          116, 
+          101, 
+          32, 
+          83, 
+          97, 
+          110, 
+          100, 
+          115, 
+          58, 
+          32, 
+          67, 
+          108, 
+          97, 
+          115, 
+          115, 
+          32, 
+          80, 
+          114, 
+          111, 
+          118, 
+          105, 
+          110, 
+          103, 
+          32, 
+          71, 
+          114, 
+          111, 
+          117, 
+          110, 
+          100, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Teleport_object_654", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "White Sands-32767", 
+        "take": 10, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 4, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Ticket_object_655", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 142, 
+        "type": "Ticket"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ticket", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_656", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 149, 
+        "x": 150, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Changomatic_object_657", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 128, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Hole_object_658", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 22, 
+        "x": 40, 
+        "type": "Hole", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Hole", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Short_sign_object_659", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          72, 
+          79, 
+          76, 
+          69, 
+          32, 
+          118, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 80, 
+        "x": 4, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Sex_changer_object_661", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 100, 
+        "type": "Sex_changer"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sex_changer", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Shovel_object_660", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 27, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_519"
+  }, 
+  {
+    "ref": "item-Stun_gun_object_662", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 61, 
+        "type": "Stun_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Stun_gun", 
+    "in": "context-region_519"
+  }
+]

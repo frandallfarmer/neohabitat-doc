@@ -1,0 +1,111 @@
+[
+  {
+    "ref": "context-region_7103", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_7102", 
+          "context-region_7101"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Trapezoid_object_15654", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 166, 
+        "orientation": 8, 
+        "upper_right_x": 165, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 126, 
+        "x": 0, 
+        "height": 2, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_7103"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_15655", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 75, 
+        "orientation": 204, 
+        "upper_right_x": 75, 
+        "lower_left_x": 30, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 84, 
+        "height": 45, 
+        "type": "Trapezoid", 
+        "upper_left_x": 74
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_7103"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_15652", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 160, 
+        "orientation": 172, 
+        "upper_right_x": 159, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "height": 127, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_7103"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_15653", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 1, 
+        "orientation": 204, 
+        "upper_right_x": 42, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 82, 
+        "x": 0, 
+        "height": 45, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_7103"
+  }
+]

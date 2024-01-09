@@ -1,0 +1,40 @@
+[
+  {
+    "ref": "context-region_10350", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "You are in Jail!", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "", 
+          "context-region_10351", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flag_object_3100", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 0, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 24, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_10350"
+  }
+]

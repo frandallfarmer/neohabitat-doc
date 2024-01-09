@@ -1,0 +1,165 @@
+[
+  {
+    "ref": "context-region_1925", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Street Rd", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1926", 
+          "context-region_1948", 
+          "context-region_1923", 
+          "context-region_1902"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_15169", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1925"
+  }, 
+  {
+    "ref": "item-Teleport_object_15174", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "address": "Pop-Street Rd", 
+        "take": 150, 
+        "gr_state": 1, 
+        "y": 132, 
+        "x": 24, 
+        "type": "Teleport", 
+        "activeState": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1925"
+  }, 
+  {
+    "ref": "item-Street_object_15171", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1925"
+  }, 
+  {
+    "ref": "item-Sky_object_15170", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1925"
+  }, 
+  {
+    "ref": "item-Plant_object_15173", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 49, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 92, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1925"
+  }, 
+  {
+    "ref": "item-Sign_object_15172", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          83, 
+          116, 
+          114, 
+          101, 
+          101, 
+          116, 
+          82, 
+          100, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 30, 
+        "x": 100, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1925"
+  }
+]

@@ -1,0 +1,157 @@
+[
+  {
+    "ref": "context-region_1890", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Outamy Wy North", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1869", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Plant_object_14837", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 236, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 88, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1890"
+  }, 
+  {
+    "ref": "item-Wall_object_14836", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1890"
+  }, 
+  {
+    "ref": "item-Wall_object_14835", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1890"
+  }, 
+  {
+    "ref": "item-Ground_object_14834", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1890"
+  }, 
+  {
+    "ref": "item-Plant_object_14839", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 236, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 39, 
+        "x": 108, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1890"
+  }, 
+  {
+    "ref": "item-Teleport_object_14838", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "address": "Pop-Outamy Wy South", 
+        "take": 270, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 36, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1890"
+  }, 
+  {
+    "ref": "item-Street_object_14840", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 4, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1890"
+  }, 
+  {
+    "ref": "item-Plant_object_14841", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 188, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 72, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1890"
+  }
+]

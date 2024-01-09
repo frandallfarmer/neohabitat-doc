@@ -1,0 +1,161 @@
+[
+  {
+    "ref": "context-region_4204", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4205", 
+          "context-region_4210", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_13494", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 92, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4204"
+  }, 
+  {
+    "ref": "item-Wall_object_13495", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 92, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4204"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13496", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 24, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_4204"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13497", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 12, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_4204"
+  }, 
+  {
+    "ref": "item-Flat_object_13498", 
+    "mods": [
+      {
+        "flat_type": 3, 
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 188, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4204"
+  }, 
+  {
+    "ref": "item-Flat_object_13499", 
+    "mods": [
+      {
+        "flat_type": 3, 
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 188, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4204"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13500", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 33, 
+        "orientation": 0, 
+        "upper_right_x": 33, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 3, 
+        "gr_state": 2, 
+        "y": 149, 
+        "x": 8, 
+        "height": 21, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4204"
+  }, 
+  {
+    "ref": "item-Ground_object_13501", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 92, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4204"
+  }
+]

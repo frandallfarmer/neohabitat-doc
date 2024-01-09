@@ -1,0 +1,312 @@
+[
+  {
+    "ref": "context-region_9124", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9123", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_6869", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9124"
+  }, 
+  {
+    "ref": "item-Glue_object_6875", 
+    "mods": [
+      {
+        "y_offset_2": 217, 
+        "y_offset_3": 0, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 0, 
+        "y_offset_5": 0, 
+        "x_offset_2": 0, 
+        "x_offset_5": 0, 
+        "x_offset_4": 0, 
+        "x_offset_6": 0, 
+        "x_offset_1": 254, 
+        "x_offset_3": 0, 
+        "gr_state": 1, 
+        "y": 144, 
+        "x": 88, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9124"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_6877", 
+    "mods": [
+      {
+        "style": 11, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Glue_object_6875"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_6876", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 19, 
+        "orientation": 204, 
+        "upper_right_x": 19, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "height": 173, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "item-Glue_object_6875"
+  }, 
+  {
+    "ref": "item-Coke_machine_object_6874", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 12, 
+        "type": "Coke_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Coke_machine", 
+    "in": "context-region_9124"
+  }, 
+  {
+    "ref": "item-Sign_object_6871", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "ascii": [
+          139, 
+          32, 
+          128, 
+          70, 
+          73, 
+          65, 
+          84, 
+          134, 
+          32, 
+          76, 
+          85, 
+          67, 
+          82, 
+          69, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 59, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9124"
+  }, 
+  {
+    "ref": "item-Wall_object_6870", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9124"
+  }, 
+  {
+    "ref": "item-Sign_object_6873", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "ascii": [
+          134, 
+          32, 
+          68, 
+          69, 
+          76, 
+          79, 
+          83, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 59, 
+        "x": 120, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9124"
+  }, 
+  {
+    "ref": "item-Sign_object_6872", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "ascii": [
+          128, 
+          133, 
+          32, 
+          81, 
+          134, 
+          133, 
+          128, 
+          133, 
+          32, 
+          38, 
+          134, 
+          133, 
+          128, 
+          133, 
+          32, 
+          90, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 74, 
+        "x": 84, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9124"
+  }
+]

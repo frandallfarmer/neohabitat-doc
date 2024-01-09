@@ -1,0 +1,236 @@
+[
+  {
+    "ref": "context-region_1305", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Off Limits!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1306", 
+          "context-region_1303", 
+          "context-region_1290", 
+          "context-region_1301"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_4781", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1305"
+  }, 
+  {
+    "ref": "item-Door_object_4783", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 20, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1305"
+  }, 
+  {
+    "ref": "item-Ground_object_4782", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1305"
+  }, 
+  {
+    "ref": "item-Sign_object_4784", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          80, 
+          138, 
+          136, 
+          65, 
+          138, 
+          136, 
+          87, 
+          138, 
+          136, 
+          78, 
+          32, 
+          32, 
+          32, 
+          32, 
+          80, 
+          136, 
+          137, 
+          79, 
+          137, 
+          136, 
+          72, 
+          137, 
+          136, 
+          83, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 54, 
+        "x": 64, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1305"
+  }, 
+  {
+    "ref": "item-Street_object_4787", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1305"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_4788", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 155, 
+        "x": 132, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_1305"
+  }, 
+  {
+    "ref": "item-Book_object_4683", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 68, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Garbage_can_object_4788"
+  }, 
+  {
+    "ref": "item-Book_object_4684", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 10, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Garbage_can_object_4788"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_4803", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 40, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1305"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_4800", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 128, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1305"
+  }
+]

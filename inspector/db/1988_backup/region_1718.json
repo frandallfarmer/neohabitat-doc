@@ -1,0 +1,164 @@
+[
+  {
+    "ref": "context-region_1718", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Milky Wy", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1719", 
+          "context-region_1856", 
+          "context-region_1716", 
+          "context-region_1046"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_12042", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1718"
+  }, 
+  {
+    "ref": "item-Sky_object_12043", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1718"
+  }, 
+  {
+    "ref": "item-Street_object_12044", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1718"
+  }, 
+  {
+    "ref": "item-Sign_object_12045", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          77, 
+          105, 
+          108, 
+          107, 
+          121, 
+          32, 
+          87, 
+          121, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 38, 
+        "x": 60, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1718"
+  }, 
+  {
+    "ref": "item-Teleport_object_12046", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "address": "Pop-Milky Wy", 
+        "take": 1210, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 12, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1718"
+  }, 
+  {
+    "ref": "item-Pond_object_12047", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 34, 
+        "x": 104, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_1718"
+  }
+]

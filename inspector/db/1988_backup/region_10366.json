@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10366", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Haunted Mansion", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_10367", 
+          "", 
+          "context-region_10362"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }
+]

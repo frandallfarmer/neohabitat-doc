@@ -1,0 +1,245 @@
+[
+  {
+    "ref": "context-region_4272", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_4271", 
+          "context-region_4261"
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flat_object_14236", 
+    "mods": [
+      {
+        "flat_type": 3, 
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 160, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Tree_object_14231", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 1, 
+        "gr_state": 4, 
+        "y": 21, 
+        "x": 128, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Pond_object_14230", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 40, 
+        "x": 28, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Tree_object_14233", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 17, 
+        "gr_state": 3, 
+        "y": 111, 
+        "x": 116, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Ground_object_14232", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 60, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Wall_object_14226", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 60, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Bush_object_14234", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 64, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14237", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 30, 
+        "orientation": 8, 
+        "upper_right_x": 30, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 3, 
+        "gr_state": 2, 
+        "y": 164, 
+        "x": 24, 
+        "height": 24, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Ground_object_14225", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 60, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Flat_object_14235", 
+    "mods": [
+      {
+        "flat_type": 3, 
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 160, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Hole_object_14228", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 159, 
+        "x": 96, 
+        "type": "Hole", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Hole", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Tree_object_14229", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 91, 
+        "x": 132, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4272"
+  }, 
+  {
+    "ref": "item-Hole_object_14227", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 143, 
+        "x": 124, 
+        "type": "Hole", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Hole", 
+    "in": "context-region_4272"
+  }
+]

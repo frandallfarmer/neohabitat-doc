@@ -1,0 +1,138 @@
+[
+  {
+    "ref": "context-region_1822", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Sunday Dr West", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1842", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_13029", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1822"
+  }, 
+  {
+    "ref": "item-Wall_object_13028", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1822"
+  }, 
+  {
+    "ref": "item-Ground_object_13027", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1822"
+  }, 
+  {
+    "ref": "item-Teleport_object_13032", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "Pop-Sunday Dr West", 
+        "take": 100, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 104, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1822"
+  }, 
+  {
+    "ref": "item-Street_object_13033", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1822"
+  }, 
+  {
+    "ref": "item-Bush_object_13030", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 65, 
+        "gr_state": 0, 
+        "y": 35, 
+        "x": 56, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1822"
+  }, 
+  {
+    "ref": "item-Bush_object_13031", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 64, 
+        "gr_state": 1, 
+        "y": 35, 
+        "x": 16, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1822"
+  }
+]

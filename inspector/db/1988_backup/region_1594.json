@@ -1,0 +1,177 @@
+[
+  {
+    "ref": "context-region_1594", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "117 I/O Ave", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1593", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Door_object_10886", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 8, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1594"
+  }, 
+  {
+    "ref": "item-Bed_object_10887", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 84, 
+        "type": "Bed"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bed", 
+    "in": "context-region_1594"
+  }, 
+  {
+    "ref": "item-Chest_object_10884", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 196, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 32, 
+        "x": 112, 
+        "type": "Chest", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1594"
+  }, 
+  {
+    "ref": "item-Aquarium_object_10940", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 105, 
+        "type": "Aquarium"
+      }
+    ], 
+    "type": "item", 
+    "name": "Aquarium", 
+    "in": "item-Chest_object_10884"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10885", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 140, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1594"
+  }, 
+  {
+    "ref": "item-Wall_object_10882", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1594"
+  }, 
+  {
+    "ref": "item-Table_object_10883", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 48, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1594"
+  }, 
+  {
+    "ref": "item-Ground_object_10881", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1594"
+  }, 
+  {
+    "ref": "item-Paper_object_1014955", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 154, 
+        "x": 37, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_1594"
+  }
+]

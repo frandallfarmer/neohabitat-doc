@@ -1,0 +1,57 @@
+[
+  {
+    "ref": "context-region_10474", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Ticket Booth", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_10479", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1012629", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 68, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10474"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1012626", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 68, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10474"
+  }
+]

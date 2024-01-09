@@ -1,0 +1,211 @@
+[
+  {
+    "ref": "context-region_9348", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #226", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ball_object_1004894", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 25, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 53, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Ground_object_18803", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Door_object_18806", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9349", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 100, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_18807", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 56, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Wall_object_18804", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Window_object_18805", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 59, 
+        "x": 132, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Chair_object_18811", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 229, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 68, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Chest_object_18810", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 245, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Table_object_18808", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 36, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9348"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005835", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 77, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Table_object_18808"
+  }, 
+  {
+    "ref": "item-Picture_object_18809", 
+    "mods": [
+      {
+        "picture": 0, 
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 70, 
+        "x": 60, 
+        "type": "Picture"
+      }
+    ], 
+    "type": "item", 
+    "name": "Picture", 
+    "in": "context-region_9348"
+  }
+]

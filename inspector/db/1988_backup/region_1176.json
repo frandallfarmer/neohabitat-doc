@@ -1,0 +1,363 @@
+[
+  {
+    "ref": "context-region_1176", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "511 Spiff Ln", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1175", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1002688", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 95, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Table_object_3646", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 20, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Couch_object_3649", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 116, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 72, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Door_object_3648", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 180, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Display_case_object_3645", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 100, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Box_object_1018094", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 126, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Display_case_object_3645"
+  }, 
+  {
+    "ref": "item-Paper_object_1016277", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Box_object_1018094"
+  }, 
+  {
+    "ref": "item-Paper_object_1016311", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Box_object_1018094"
+  }, 
+  {
+    "ref": "item-Bottle_object_1013806", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 7, 
+        "x": 127, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Box_object_1018094"
+  }, 
+  {
+    "ref": "item-Display_case_object_3644", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 52, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Wall_object_3647", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 180, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Box_object_1002683", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 112, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 66, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Head_object_1002635", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 27, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002683"
+  }, 
+  {
+    "ref": "item-Shovel_object_1003172", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 61, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "item-Box_object_1002683"
+  }, 
+  {
+    "ref": "item-Head_object_1002902", 
+    "mods": [
+      {
+        "style": 102, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 91, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002683"
+  }, 
+  {
+    "ref": "item-Paper_object_1005754", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 9, 
+        "x": 64, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Box_object_1002683"
+  }, 
+  {
+    "ref": "item-Head_object_1003113", 
+    "mods": [
+      {
+        "style": 39, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 60, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002683"
+  }, 
+  {
+    "ref": "item-Head_object_1001011", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 72, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 69, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002683"
+  }, 
+  {
+    "ref": "item-Ground_object_3643", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1176"
+  }, 
+  {
+    "ref": "item-Sensor_object_1011453", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 20, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "context-region_1176"
+  }
+]

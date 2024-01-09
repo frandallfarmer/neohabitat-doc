@@ -1,0 +1,318 @@
+[
+  {
+    "ref": "context-region_513", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_514", 
+          "", 
+          "context-region_512", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Display_case_object_587", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 16, 
+        "type": "Display_case", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Ground_object_583", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Wall_object_582", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Die_object_586", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "state": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 4, 
+        "type": "Die"
+      }
+    ], 
+    "type": "item", 
+    "name": "Die", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Dropbox_object_588", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 16, 
+        "type": "Dropbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Dropbox", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Drugs_object_589", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 32, 
+        "type": "Drugs"
+      }
+    ], 
+    "type": "item", 
+    "name": "Drugs", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Crystal_ball_object_585", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 4, 
+        "type": "Crystal_ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Crystal_ball", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Sign_object_584", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_596", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 98, 
+        "type": "Garbage_can", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Frisbee_object_595", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 150, 
+        "x": 80, 
+        "type": "Frisbee"
+      }
+    ], 
+    "type": "item", 
+    "name": "Frisbee", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Flashlight_object_594", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 68, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Flag_object_593", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 97, 
+        "mass": 0, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 70, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Elevator_object_592", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000", 
+        "take": 0, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 126, 
+        "type": "Elevator", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Elevator", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_591", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 142, 
+        "x": 32, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "context-region_513"
+  }, 
+  {
+    "ref": "item-Escape_device_object_590", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 40, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_513"
+  }
+]

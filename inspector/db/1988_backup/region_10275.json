@@ -1,0 +1,125 @@
+[
+  {
+    "ref": "context-region_10275", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #1145", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Box_object_1011420", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 9, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 26, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_10275"
+  }, 
+  {
+    "ref": "item-Key_object_17898", 
+    "mods": [
+      {
+        "key_number_lo": 116, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 12, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 71, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Box_object_1011420"
+  }, 
+  {
+    "ref": "item-Book_object_1011528", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 45, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Box_object_1011420"
+  }, 
+  {
+    "ref": "item-Head_object_1004768", 
+    "mods": [
+      {
+        "style": 102, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 97, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1011420"
+  }, 
+  {
+    "ref": "item-Head_object_1013491", 
+    "mods": [
+      {
+        "style": 39, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 151, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1011420"
+  }, 
+  {
+    "ref": "item-Head_object_1013769", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 28, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_10275"
+  }
+]

@@ -1,0 +1,311 @@
+[
+  {
+    "ref": "context-region_8047", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_8048", 
+          "context-region_8070", 
+          "context-region_8046", 
+          "context-region_8026"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_5499", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Sign_object_5510", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          89, 
+          101, 
+          128, 
+          79, 
+          108, 
+          100, 
+          101, 
+          134, 
+          128, 
+          66, 
+          111, 
+          116, 
+          116, 
+          108, 
+          101, 
+          134, 
+          128, 
+          83, 
+          104, 
+          111, 
+          112, 
+          112, 
+          101, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 15, 
+        "x": 156, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Bush_object_5508", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 151, 
+        "x": 120, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_5509", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 23, 
+        "orientation": 196, 
+        "upper_right_x": 23, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 68, 
+        "height": 192, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Window_object_5504", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 78, 
+        "x": 96, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Window_object_5505", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 53, 
+        "x": 28, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Bush_object_5506", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 151, 
+        "x": 24, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Bush_object_5507", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 48, 
+        "gr_state": 1, 
+        "y": 32, 
+        "x": 0, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Wall_object_5500", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_5501", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 103, 
+        "orientation": 252, 
+        "upper_right_x": 103, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 16, 
+        "height": 212, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_5502", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 114, 
+        "orientation": 220, 
+        "pattern": [
+          149, 
+          149, 
+          149, 
+          149, 
+          149, 
+          149, 
+          106, 
+          106, 
+          89, 
+          89, 
+          89, 
+          89, 
+          89, 
+          89, 
+          166, 
+          166, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0
+        ], 
+        "upper_right_x": 105, 
+        "lower_left_x": 243, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 104, 
+        "x": 16, 
+        "height": 24, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 254
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_8047"
+  }, 
+  {
+    "ref": "item-Window_object_5503", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 96, 
+        "x": 16, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_8047"
+  }
+]

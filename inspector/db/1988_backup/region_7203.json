@@ -1,0 +1,119 @@
+[
+  {
+    "ref": "context-region_7203", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "I-5", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_7202", 
+          "", 
+          "context-region_7204", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_15915", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 112, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_7203"
+  }, 
+  {
+    "ref": "item-Tree_object_15914", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 189, 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 60, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_7203"
+  }, 
+  {
+    "ref": "item-Tree_object_15913", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 24, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_7203"
+  }, 
+  {
+    "ref": "item-Street_object_15912", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 6, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_7203"
+  }, 
+  {
+    "ref": "item-Sky_object_15911", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_7203"
+  }, 
+  {
+    "ref": "item-Ground_object_15910", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_7203"
+  }
+]

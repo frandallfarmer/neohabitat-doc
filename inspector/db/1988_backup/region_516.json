@@ -1,0 +1,209 @@
+[
+  {
+    "ref": "context-region_516", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_517", 
+          "", 
+          "context-region_515", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Streetlamp_object_629", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 140, 
+        "x": 128, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-Safe_object_628", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 80, 
+        "x": 112, 
+        "type": "Safe"
+      }
+    ], 
+    "type": "item", 
+    "name": "Safe", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-Ground_object_621", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-Wall_object_620", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_623", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 4, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-Sign_object_622", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          87, 
+          104, 
+          105, 
+          116, 
+          101, 
+          32, 
+          83, 
+          97, 
+          110, 
+          100, 
+          115, 
+          58, 
+          32, 
+          67, 
+          108, 
+          97, 
+          115, 
+          115, 
+          32, 
+          80, 
+          114, 
+          111, 
+          118, 
+          105, 
+          110, 
+          103, 
+          32, 
+          71, 
+          114, 
+          111, 
+          117, 
+          110, 
+          100, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-House_cat_object_625", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 4, 
+        "type": "House_cat"
+      }
+    ], 
+    "type": "item", 
+    "name": "House_cat", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-Fountain_object_624", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 72, 
+        "type": "Fountain"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fountain", 
+    "in": "context-region_516"
+  }, 
+  {
+    "ref": "item-Pond_object_627", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 80, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_516"
+  }
+]

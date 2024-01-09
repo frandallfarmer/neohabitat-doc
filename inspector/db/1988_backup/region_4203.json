@@ -1,0 +1,162 @@
+[
+  {
+    "ref": "context-region_4203", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_4209", 
+          "context-region_4202", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sign_object_13490", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          68, 
+          110, 
+          97, 
+          108, 
+          115, 
+          105, 
+          134, 
+          134, 
+          32, 
+          80, 
+          111, 
+          105, 
+          110, 
+          116, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 18, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_4203"
+  }, 
+  {
+    "ref": "item-Rock_object_13491", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 44, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4203"
+  }, 
+  {
+    "ref": "item-Ground_object_13492", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 64, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4203"
+  }, 
+  {
+    "ref": "item-Ground_object_13493", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4203"
+  }, 
+  {
+    "ref": "item-Wall_object_13489", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4203"
+  }, 
+  {
+    "ref": "item-Ground_object_13488", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4203"
+  }
+]

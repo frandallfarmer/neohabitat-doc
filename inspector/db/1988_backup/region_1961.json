@@ -1,0 +1,402 @@
+[
+  {
+    "ref": "context-region_1961", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Vote Early!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_10454", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Magic_immobile_object_17753", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 70, 
+        "x": 94, 
+        "type": "Magic_immobile"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_immobile", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Short_sign_object_17752", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          85, 
+          110, 
+          100, 
+          101, 
+          99, 
+          105, 
+          100, 
+          101, 
+          100, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 55, 
+        "x": 108, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Short_sign_object_17751", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          71, 
+          117, 
+          105, 
+          108, 
+          116, 
+          121, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 79, 
+        "x": 108, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Wall_object_17747", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17757", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 51, 
+        "orientation": 236, 
+        "upper_right_x": 51, 
+        "lower_left_x": 240, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 64, 
+        "x": 104, 
+        "height": 152, 
+        "type": "Trapezoid", 
+        "upper_left_x": 240
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17756", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 51, 
+        "orientation": 252, 
+        "upper_right_x": 51, 
+        "lower_left_x": 240, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 88, 
+        "x": 104, 
+        "height": 152, 
+        "type": "Trapezoid", 
+        "upper_left_x": 240
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Sign_object_17755", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          84, 
+          104, 
+          101, 
+          32, 
+          74, 
+          117, 
+          114, 
+          121, 
+          32, 
+          82, 
+          111, 
+          111, 
+          109, 
+          46, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 122, 
+        "x": 0, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Ground_object_17745", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Street_object_17759", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Magic_immobile_object_17754", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 46, 
+        "x": 94, 
+        "type": "Magic_immobile"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_immobile", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Plaque_object_17748", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 68, 
+        "x": 64, 
+        "type": "Plaque"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plaque", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Sign_object_17746", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          32, 
+          82, 
+          69, 
+          65, 
+          68, 
+          134, 
+          139, 
+          32, 
+          84, 
+          72, 
+          73, 
+          83, 
+          127, 
+          134, 
+          139, 
+          70, 
+          73, 
+          82, 
+          83, 
+          84, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 91, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Magic_immobile_object_17749", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 93, 
+        "x": 94, 
+        "type": "Magic_immobile"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_immobile", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Short_sign_object_17750", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          78, 
+          111, 
+          116, 
+          32, 
+          71, 
+          117, 
+          105, 
+          108, 
+          116, 
+          121
+        ], 
+        "gr_state": 1, 
+        "y": 102, 
+        "x": 108, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1961"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17758", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 51, 
+        "orientation": 188, 
+        "upper_right_x": 51, 
+        "lower_left_x": 240, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 104, 
+        "height": 152, 
+        "type": "Trapezoid", 
+        "upper_left_x": 240
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_1961"
+  }
+]

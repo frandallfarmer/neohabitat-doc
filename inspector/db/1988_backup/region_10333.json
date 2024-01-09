@@ -1,0 +1,59 @@
+[
+  {
+    "ref": "context-region_10333", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "context-region_10337", 
+          "", 
+          "context-region_10297"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Box_object_1004690", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 146, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_10333"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003234", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 136, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1004690"
+  }
+]

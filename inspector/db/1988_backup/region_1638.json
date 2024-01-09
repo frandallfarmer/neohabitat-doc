@@ -1,0 +1,177 @@
+[
+  {
+    "ref": "context-region_1638", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Kerner north", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1658", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_11287", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 164, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1638"
+  }, 
+  {
+    "ref": "item-Ground_object_11286", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1638"
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_11289", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 135, 
+        "x": 32, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_1638"
+  }, 
+  {
+    "ref": "item-Wall_object_11288", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1638"
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_11290", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 135, 
+        "x": 104, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_1638"
+  }, 
+  {
+    "ref": "item-Sign_object_11291", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "ascii": [
+          32, 
+          128, 
+          78, 
+          79, 
+          134, 
+          32, 
+          69, 
+          87, 
+          69, 
+          134, 
+          84, 
+          85, 
+          82, 
+          78, 
+          83, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 29, 
+        "x": 76, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1638"
+  }, 
+  {
+    "ref": "item-Street_object_11292", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 3, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1638"
+  }
+]

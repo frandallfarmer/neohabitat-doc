@@ -1,0 +1,189 @@
+[
+  {
+    "ref": "context-region_1522", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Baker St west", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1501", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_10213", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Bush_object_10217", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 100, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Plant_object_10216", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 48, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 47, 
+        "x": 28, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Wall_object_10215", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Wall_object_10214", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Teleport_object_10219", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "address": "Pop-Baker St West", 
+        "take": 340, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 32, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Plant_object_10218", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 48, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 43, 
+        "x": 40, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Street_object_10222", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 4, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Bush_object_10220", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 57, 
+        "x": 68, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1522"
+  }, 
+  {
+    "ref": "item-Plant_object_10221", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 48, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 12, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1522"
+  }
+]

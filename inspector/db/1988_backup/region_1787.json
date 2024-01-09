@@ -1,0 +1,164 @@
+[
+  {
+    "ref": "context-region_1787", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Rocky Rd", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_1810", 
+          "context-region_1785", 
+          "context-region_1104", 
+          "context-region_1788"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_12707", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1787"
+  }, 
+  {
+    "ref": "item-Teleport_object_12711", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "address": "Pop-Rocky Rd", 
+        "take": 310, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 112, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1787"
+  }, 
+  {
+    "ref": "item-Tree_object_12712", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 35, 
+        "x": 32, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1787"
+  }, 
+  {
+    "ref": "item-Sign_object_12710", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          82, 
+          79, 
+          67, 
+          75, 
+          89, 
+          32, 
+          82, 
+          68, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 30, 
+        "x": 64, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1787"
+  }, 
+  {
+    "ref": "item-Street_object_12709", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1787"
+  }, 
+  {
+    "ref": "item-Sky_object_12708", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 156, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1787"
+  }
+]

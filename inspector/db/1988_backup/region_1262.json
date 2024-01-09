@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1262", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "26 Wrong Way", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1263", 
+          "context-region_1264", 
+          "", 
+          "context-region_1260"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

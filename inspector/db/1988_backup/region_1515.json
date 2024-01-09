@@ -1,0 +1,162 @@
+[
+  {
+    "ref": "context-region_1515", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "721 Baker St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1514", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_10149", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1515"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003361", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 147, 
+        "x": 147, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1515"
+  }, 
+  {
+    "ref": "item-Door_object_10154", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 156, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 28, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1515"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10155", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 159, 
+        "x": 8, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1515"
+  }, 
+  {
+    "ref": "item-Wall_object_10150", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1515"
+  }, 
+  {
+    "ref": "item-Table_object_10151", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 20, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1515"
+  }, 
+  {
+    "ref": "item-Chest_object_10152", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 212, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 116, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1515"
+  }, 
+  {
+    "ref": "item-Couch_object_10153", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 56, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1515"
+  }
+]

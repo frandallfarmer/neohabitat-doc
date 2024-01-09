@@ -1,0 +1,167 @@
+[
+  {
+    "ref": "context-region_9038", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9015", 
+          "", 
+          "", 
+          "context-region_9037"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Short_sign_object_1498", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          32, 
+          128, 
+          77, 
+          69, 
+          78, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 80, 
+        "x": 4, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9038"
+  }, 
+  {
+    "ref": "item-Short_sign_object_1499", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          128, 
+          87, 
+          79, 
+          77, 
+          69, 
+          78, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 80, 
+        "x": 100, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9038"
+  }, 
+  {
+    "ref": "item-Door_object_1496", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 34, 
+        "x": 32, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9038"
+  }, 
+  {
+    "ref": "item-Door_object_1497", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 34, 
+        "x": 88, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9038"
+  }, 
+  {
+    "ref": "item-Wall_object_1494", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9038"
+  }, 
+  {
+    "ref": "item-Ground_object_1495", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9038"
+  }, 
+  {
+    "ref": "item-Sex_changer_object_1500", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 124, 
+        "type": "Sex_changer"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sex_changer", 
+    "in": "context-region_9038"
+  }
+]

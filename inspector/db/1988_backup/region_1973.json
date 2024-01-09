@@ -1,0 +1,91 @@
+[
+  {
+    "ref": "context-region_1973", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "THIS could be YOURS!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_10369", 
+          "", 
+          "context-region_1974", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_17832", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1973"
+  }, 
+  {
+    "ref": "item-Countertop_object_17833", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 56, 
+        "type": "Countertop", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Countertop", 
+    "in": "context-region_1973"
+  }, 
+  {
+    "ref": "item-Wall_object_17834", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1973"
+  }, 
+  {
+    "ref": "item-Plaque_object_17835", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 70, 
+        "x": 16, 
+        "type": "Plaque"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plaque", 
+    "in": "context-region_1973"
+  }
+]

@@ -1,0 +1,126 @@
+[
+  {
+    "ref": "context-region_9492", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #322", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Door_object_20049", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9494", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9492"
+  }, 
+  {
+    "ref": "item-Table_object_20048", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 84, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9492"
+  }, 
+  {
+    "ref": "item-Bed_object_20050", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 4, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 96, 
+        "type": "Bed"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bed", 
+    "in": "context-region_9492"
+  }, 
+  {
+    "ref": "item-Chair_object_20051", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 56, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9492"
+  }, 
+  {
+    "ref": "item-Wall_object_20047", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 44, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9492"
+  }, 
+  {
+    "ref": "item-Ground_object_20046", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9492"
+  }
+]

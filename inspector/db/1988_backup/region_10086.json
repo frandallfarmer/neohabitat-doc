@@ -1,0 +1,106 @@
+[
+  {
+    "ref": "context-region_10086", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_10090", 
+          "", 
+          "context-region_10082", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1015312", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 43, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10086"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005505", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 150, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10086"
+  }, 
+  {
+    "ref": "item-Book_object_1012700", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 20, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_10086"
+  }, 
+  {
+    "ref": "item-Head_object_1012859", 
+    "mods": [
+      {
+        "style": 39, 
+        "orientation": 25, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 54, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_10086"
+  }, 
+  {
+    "ref": "item-Changomatic_object_1005523", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 132, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "context-region_10086"
+  }
+]

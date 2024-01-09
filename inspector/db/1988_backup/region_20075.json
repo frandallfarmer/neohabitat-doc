@@ -1,0 +1,88 @@
+[
+  {
+    "ref": "context-region_20075", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20075", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Spray_can_object_1015744", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20075"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1015747", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20075"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1015746", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20075"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1002380", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 9, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 20, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_20075"
+  }
+]

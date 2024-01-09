@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10363", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "93 Randy Rd", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1159", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }
+]

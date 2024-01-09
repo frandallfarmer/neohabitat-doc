@@ -1,0 +1,263 @@
+[
+  {
+    "ref": "context-region_20073", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20073", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_1011619", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 13, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20073"
+  }, 
+  {
+    "ref": "item-Box_object_1007635", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 9, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 15, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20073"
+  }, 
+  {
+    "ref": "item-Head_object_14091", 
+    "mods": [
+      {
+        "style": 18, 
+        "orientation": 17, 
+        "gr_state": 2, 
+        "y": 9, 
+        "x": 141, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1007635"
+  }, 
+  {
+    "ref": "item-Box_object_1007335", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 79, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1007635"
+  }, 
+  {
+    "ref": "item-Shovel_object_13636", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 4, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "item-Box_object_1007335"
+  }, 
+  {
+    "ref": "item-Knife_object_1011632", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 113, 
+        "type": "Knife"
+      }
+    ], 
+    "type": "item", 
+    "name": "Knife", 
+    "in": "item-Box_object_1007335"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1007979", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 30, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "item-Box_object_1007335"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1012419", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 6, 
+        "x": 72, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "item-Box_object_1007335"
+  }, 
+  {
+    "ref": "item-Sensor_object_1007832", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 20, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "item-Box_object_1007335"
+  }, 
+  {
+    "ref": "item-Bag_object_13655", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 49, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 19, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1007635"
+  }, 
+  {
+    "ref": "item-Plant_object_13990", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Bag_object_13655"
+  }, 
+  {
+    "ref": "item-Plant_object_13989", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 2, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "item-Bag_object_13655"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13986", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_13655"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_13985", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Bag_object_13655"
+  }
+]

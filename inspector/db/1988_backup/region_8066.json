@@ -1,0 +1,289 @@
+[
+  {
+    "ref": "context-region_8066", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_8067", 
+          "context-region_8088", 
+          "context-region_8065", 
+          "context-region_8043"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_5711", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 32, 
+        "gr_state": 1, 
+        "y": 131, 
+        "x": 104, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Bush_object_5710", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 153, 
+        "x": 4, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Bush_object_5713", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 37, 
+        "x": 36, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Tree_object_5712", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 124, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Sign_object_5715", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          32, 
+          66, 
+          117, 
+          116, 
+          134, 
+          75, 
+          101, 
+          101, 
+          112, 
+          105, 
+          110, 
+          103, 
+          134, 
+          32, 
+          116, 
+          104, 
+          101, 
+          105, 
+          114, 
+          134, 
+          32, 
+          104, 
+          101, 
+          97, 
+          100, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 107, 
+        "x": 44, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Tree_object_5714", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 104, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Tree_object_5708", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 42, 
+        "x": 132, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Tree_object_5709", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 20, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Tree_object_5706", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 88, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Tree_object_5707", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 197, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 56, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Street_object_5704", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 6, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Bush_object_5705", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 31, 
+        "x": 24, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Ground_object_5702", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_8066"
+  }, 
+  {
+    "ref": "item-Sky_object_5703", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_8066"
+  }
+]

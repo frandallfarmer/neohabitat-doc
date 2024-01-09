@@ -1,0 +1,40 @@
+[
+  {
+    "ref": "context-region_10044", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #871", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_10049", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 1, 
+        "gr_state": 3, 
+        "y": 1, 
+        "x": 24, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10044"
+  }
+]

@@ -1,0 +1,215 @@
+[
+  {
+    "ref": "context-region_4290", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_4295", 
+          "context-region_4289", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14430", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 8, 
+        "orientation": 8, 
+        "upper_right_x": 12, 
+        "lower_left_x": 247, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 88, 
+        "height": 70, 
+        "type": "Trapezoid", 
+        "upper_left_x": 6
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Rock_object_14431", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 8, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Wall_object_14424", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14425", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 10, 
+        "orientation": 8, 
+        "upper_right_x": 15, 
+        "lower_left_x": 6, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 86, 
+        "x": 88, 
+        "height": 170, 
+        "type": "Trapezoid", 
+        "upper_left_x": 244
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14426", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 7, 
+        "orientation": 228, 
+        "upper_right_x": 17, 
+        "lower_left_x": 5, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 90, 
+        "x": 48, 
+        "height": 166, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Rock_object_14427", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 20, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Ground_object_14422", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 192, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14423", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 248, 
+        "orientation": 228, 
+        "upper_right_x": 0, 
+        "lower_left_x": 248, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 63, 
+        "x": 36, 
+        "height": 193, 
+        "type": "Trapezoid", 
+        "upper_left_x": 240
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14428", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 228, 
+        "upper_right_x": 6, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 98, 
+        "x": 12, 
+        "height": 158, 
+        "type": "Trapezoid", 
+        "upper_left_x": 245
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4290"
+  }, 
+  {
+    "ref": "item-Wall_object_14429", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 96, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4290"
+  }
+]
