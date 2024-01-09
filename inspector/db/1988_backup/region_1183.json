@@ -1,0 +1,244 @@
+[
+  {
+    "ref": "context-region_1183", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "811 Spiff Ln", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1182", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004893", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 41, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Ground_object_3699", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Wall_object_3700", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Display_case_object_3701", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 92, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004880", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 121, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Display_case_object_3701"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_1002807", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 9, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 77, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Display_case_object_3701"
+  }, 
+  {
+    "ref": "item-Window_object_3702", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 104, 
+        "x": 20, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Door_object_3703", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_3704", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 147, 
+        "x": 144, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Window_object_3705", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 63, 
+        "x": 56, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Chair_object_3706", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 96, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Chair_object_3707", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 44, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1183"
+  }, 
+  {
+    "ref": "item-Book_object_1001002", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 1, 
+        "last_page": 1, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 8, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Chair_object_3707"
+  }
+]

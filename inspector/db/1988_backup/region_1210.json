@@ -1,0 +1,306 @@
+[
+  {
+    "ref": "context-region_1210", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "105 This Way", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1209", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Shovel_object_1005119", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 20, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Wall_object_3945", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Chair_object_3951", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 36, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Table_object_3947", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 72, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 64, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Windup_toy_object_1009894", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 90, 
+        "type": "Windup_toy"
+      }
+    ], 
+    "type": "item", 
+    "name": "Windup_toy", 
+    "in": "item-Table_object_3947"
+  }, 
+  {
+    "ref": "item-Head_object_1000570", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 113, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 21, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Table_object_3947"
+  }, 
+  {
+    "ref": "item-Ground_object_3944", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Chair_object_3952", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 72, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Display_case_object_3946", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 112, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Paper_object_1010721", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 13, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Display_case_object_3946"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1002342", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 140, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "item-Display_case_object_3946"
+  }, 
+  {
+    "ref": "item-Gun_object_1002209", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 145, 
+        "type": "Gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gun", 
+    "in": "item-Display_case_object_3946"
+  }, 
+  {
+    "ref": "item-Paper_object_1010476", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Display_case_object_3946"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004449", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 105, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Display_case_object_3946"
+  }, 
+  {
+    "ref": "item-Window_object_3948", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 104, 
+        "x": 20, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Door_object_3949", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1210"
+  }, 
+  {
+    "ref": "item-Chair_object_3950", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 57, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 112, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1210"
+  }
+]

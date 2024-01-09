@@ -1,0 +1,505 @@
+[
+  {
+    "ref": "context-region_9029", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9030", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_1409", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 60, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9029"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1410", 
+    "mods": [
+      {
+        "display_item": 5, 
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 181, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_1409"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1416", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1410"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1414", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1410"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1415", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1410"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1412", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1410"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1413", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1410"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1411", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_inside_object_1409"
+  }, 
+  {
+    "ref": "item-Ground_object_1401", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9029"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_1402", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 12, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9029"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1403", 
+    "mods": [
+      {
+        "display_item": 2, 
+        "style": 0, 
+        "orientation": 80, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 184, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_1402"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1408", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1403"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1405", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1403"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1404", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1403"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1407", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1403"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1406", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 2, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_inside_object_1402"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_1417", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 108, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9029"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1422", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 1, 
+        "x": 3, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_inside_object_1417"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_1418", 
+    "mods": [
+      {
+        "display_item": 3, 
+        "style": 0, 
+        "orientation": 88, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_1417"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1423", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 56, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1418"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1421", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1418"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1420", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1418"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1419", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_1418"
+  }, 
+  {
+    "ref": "item-Sign_object_1425", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          128, 
+          32, 
+          83, 
+          116, 
+          121, 
+          108, 
+          101, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          87, 
+          97, 
+          114, 
+          109, 
+          116, 
+          104, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          85, 
+          115, 
+          101, 
+          102, 
+          117, 
+          108, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 104, 
+        "x": 12, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9029"
+  }, 
+  {
+    "ref": "item-Wall_object_1424", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9029"
+  }
+]

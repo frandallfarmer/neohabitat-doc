@@ -1,0 +1,192 @@
+[
+  {
+    "ref": "context-region_1197", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "45 This Way", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1196", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chest_object_3832", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 180, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 24, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1197"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000561", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 55, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Chest_object_3832"
+  }, 
+  {
+    "ref": "item-Head_object_1001870", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 96, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 61, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Chest_object_3832"
+  }, 
+  {
+    "ref": "item-Door_object_3833", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 100, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1197"
+  }, 
+  {
+    "ref": "item-Window_object_3830", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 59, 
+        "x": 132, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1197"
+  }, 
+  {
+    "ref": "item-Couch_object_3831", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 44, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1197"
+  }, 
+  {
+    "ref": "item-Picture_object_3836", 
+    "mods": [
+      {
+        "picture": 0, 
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 70, 
+        "x": 56, 
+        "type": "Picture"
+      }
+    ], 
+    "type": "item", 
+    "name": "Picture", 
+    "in": "context-region_1197"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_3834", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 100, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1197"
+  }, 
+  {
+    "ref": "item-Wall_object_3829", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 140, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1197"
+  }, 
+  {
+    "ref": "item-Ground_object_3828", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1197"
+  }
+]

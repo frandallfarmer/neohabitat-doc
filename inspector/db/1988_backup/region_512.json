@@ -1,0 +1,279 @@
+[
+  {
+    "ref": "context-region_512", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_513", 
+          "", 
+          "context-region_511", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knife_object_579", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 143, 
+        "x": 48, 
+        "type": "Knife"
+      }
+    ], 
+    "type": "item", 
+    "name": "Knife", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_578", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 28, 
+        "type": "Knick_knack", 
+        "magic_type": 9
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Hand_of_god_object_575", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 158, 
+        "x": 16, 
+        "type": "Hand_of_god"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hand_of_god", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Hand_of_god_object_574", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 80, 
+        "x": 56, 
+        "type": "Hand_of_god"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hand_of_god", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Key_object_577", 
+    "mods": [
+      {
+        "key_number_lo": 92, 
+        "style": 1, 
+        "orientation": 0, 
+        "key_number_hi": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 42, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Gemstone_object_571", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 130, 
+        "x": 4, 
+        "type": "Gemstone"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gemstone", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Sign_object_570", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          0, 
+          85, 
+          1, 
+          80, 
+          4, 
+          0, 
+          0, 
+          0, 
+          196, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          2, 
+          36, 
+          1, 
+          0, 
+          0, 
+          164, 
+          120, 
+          255, 
+          216, 
+          0, 
+          0, 
+          86, 
+          2, 
+          36, 
+          1, 
+          0, 
+          4, 
+          0, 
+          56, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          204
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Gun_object_573", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 8, 
+        "type": "Gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gun", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Grenade_object_572", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 140, 
+        "x": 12, 
+        "type": "Grenade"
+      }
+    ], 
+    "type": "item", 
+    "name": "Grenade", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Wall_object_568", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Ground_object_569", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Magic_lamp_object_580", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 80, 
+        "type": "Magic_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_lamp", 
+    "in": "context-region_512"
+  }, 
+  {
+    "ref": "item-Box_object_581", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "key_hi": 86, 
+        "key_lo": 130, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 120, 
+        "type": "Box", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_512"
+  }
+]

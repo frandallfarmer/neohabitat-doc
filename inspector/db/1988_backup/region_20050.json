@@ -1,0 +1,152 @@
+[
+  {
+    "ref": "context-region_20050", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20050", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Gun_object_1001892", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 86, 
+        "type": "Gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gun", 
+    "in": "context-region_20050"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1001765", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 32, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20050"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1001821", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 104, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "context-region_20050"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1001818", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 120, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "context-region_20050"
+  }, 
+  {
+    "ref": "item-Book_object_1001891", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 17, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 107, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20050"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1001320", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 111, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20050"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1001399", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 57, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 36, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20050"
+  }, 
+  {
+    "ref": "item-Head_object_1000706", 
+    "mods": [
+      {
+        "style": 65, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 92, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20050"
+  }
+]

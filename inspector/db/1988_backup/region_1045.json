@@ -1,0 +1,291 @@
+[
+  {
+    "ref": "context-region_1045", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bleem St south", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1043", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sky_object_2428", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2436", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 1, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 35, 
+        "x": 60, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2438", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 24, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2431", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 49, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 124, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2430", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 24, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 38, 
+        "x": 76, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2433", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 84, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Bush_object_2432", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 146, 
+        "x": 144, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2440", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 33, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 8, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2441", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 72, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 68, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2442", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 96, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 104, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Street_object_2429", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2439", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 24, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 12, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Ground_object_2427", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2437", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 48, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2434", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 72, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 36, 
+        "x": 104, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }, 
+  {
+    "ref": "item-Plant_object_2435", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 36, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_1045"
+  }
+]

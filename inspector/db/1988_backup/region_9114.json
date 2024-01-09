@@ -1,0 +1,331 @@
+[
+  {
+    "ref": "context-region_9114", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9115", 
+          "context-region_10381", 
+          "context-region_9113", 
+          "context-region_9106"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Window_object_6750", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 64, 
+        "x": 120, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_6751", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 79, 
+        "orientation": 252, 
+        "upper_right_x": 79, 
+        "lower_left_x": 4, 
+        "trapezoid_type": 3, 
+        "gr_state": 0, 
+        "y": 104, 
+        "x": 36, 
+        "height": 153, 
+        "type": "Trapezoid", 
+        "upper_left_x": 4
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Sign_object_6752", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          131, 
+          77, 
+          97, 
+          99, 
+          104, 
+          117, 
+          116, 
+          97, 
+          39, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 8, 
+        "y": 254, 
+        "x": 40, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Street_object_6753", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 13, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Door_object_6747", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 57, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 80, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Window_object_6746", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 64, 
+        "x": 12, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_6745", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 164, 
+        "pattern": [
+          86, 
+          85, 
+          90, 
+          149, 
+          89, 
+          149, 
+          101, 
+          101, 
+          101, 
+          101, 
+          101, 
+          101, 
+          149, 
+          89, 
+          165, 
+          105, 
+          165, 
+          105, 
+          149, 
+          89, 
+          101, 
+          101, 
+          101, 
+          101, 
+          101, 
+          101, 
+          89, 
+          149, 
+          90, 
+          149, 
+          86, 
+          85
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 160, 
+        "height": 127, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Ground_object_6744", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Short_sign_object_6749", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          131, 
+          77, 
+          97, 
+          103, 
+          105, 
+          99, 
+          32, 
+          32
+        ], 
+        "gr_state": 6, 
+        "y": 254, 
+        "x": 56, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9114"
+  }, 
+  {
+    "ref": "item-Sign_object_6748", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          131, 
+          77, 
+          97, 
+          99, 
+          104, 
+          117, 
+          116, 
+          97, 
+          39, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 7, 
+        "y": 254, 
+        "x": 40, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9114"
+  }
+]

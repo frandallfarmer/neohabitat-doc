@@ -1,0 +1,57 @@
+[
+  {
+    "ref": "context-region_20041", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20041", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005564", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 116, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20041"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1004689", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 113, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20041"
+  }
+]

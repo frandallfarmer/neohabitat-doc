@@ -1,0 +1,409 @@
+[
+  {
+    "ref": "context-region_9149", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9148", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_7161", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9149"
+  }, 
+  {
+    "ref": "item-Sign_object_7171", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          76, 
+          111, 
+          99, 
+          107, 
+          66, 
+          111, 
+          120, 
+          134, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          75, 
+          101, 
+          121, 
+          115, 
+          134, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 103, 
+        "x": 16, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9149"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_7163", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 2, 
+        "y": 29, 
+        "x": 68, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9149"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_7164", 
+    "mods": [
+      {
+        "display_item": 6, 
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 500
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_7163"
+  }, 
+  {
+    "ref": "item-Key_object_7170", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 1, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_7164"
+  }, 
+  {
+    "ref": "item-Key_object_7165", 
+    "mods": [
+      {
+        "key_number_lo": 127, 
+        "style": 1, 
+        "orientation": 64, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_7164"
+  }, 
+  {
+    "ref": "item-Key_object_7166", 
+    "mods": [
+      {
+        "key_number_lo": 147, 
+        "style": 0, 
+        "orientation": 8, 
+        "key_number_hi": 88, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 3, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_7164"
+  }, 
+  {
+    "ref": "item-Key_object_7167", 
+    "mods": [
+      {
+        "key_number_lo": 147, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 78, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_7164"
+  }, 
+  {
+    "ref": "item-Key_object_7168", 
+    "mods": [
+      {
+        "key_number_lo": 147, 
+        "style": 0, 
+        "orientation": 8, 
+        "key_number_hi": 108, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_7164"
+  }, 
+  {
+    "ref": "item-Key_object_7169", 
+    "mods": [
+      {
+        "key_number_lo": 147, 
+        "style": 1, 
+        "orientation": 32, 
+        "key_number_hi": 98, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "item-Vendo_front_object_7164"
+  }, 
+  {
+    "ref": "item-Ground_object_7147", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9149"
+  }, 
+  {
+    "ref": "item-Window_object_7162", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 31, 
+        "x": 152, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9149"
+  }, 
+  {
+    "ref": "item-Countertop_object_7148", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 108, 
+        "type": "Countertop", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Countertop", 
+    "in": "context-region_9149"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_7149", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 12, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9149"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_7150", 
+    "mods": [
+      {
+        "display_item": 1, 
+        "style": 0, 
+        "orientation": 228, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 100
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_7149"
+  }, 
+  {
+    "ref": "item-Box_object_7151", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "key_hi": 108, 
+        "key_lo": 147, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Vendo_front_object_7150"
+  }, 
+  {
+    "ref": "item-Sensor_object_7158", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "item-Vendo_front_object_7150"
+  }, 
+  {
+    "ref": "item-Box_object_7155", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 88, 
+        "key_lo": 147, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Vendo_front_object_7150"
+  }, 
+  {
+    "ref": "item-Box_object_7153", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "key_hi": 78, 
+        "key_lo": 147, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Vendo_inside_object_7149"
+  }
+]

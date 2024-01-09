@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1647", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "516 Kerner", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1649", 
+          "", 
+          "context-region_1645", 
+          "context-region_1648"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

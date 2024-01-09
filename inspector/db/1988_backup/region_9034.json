@@ -1,0 +1,203 @@
+[
+  {
+    "ref": "context-region_9034", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9035", 
+          "context-region_9046", 
+          "context-region_9033", 
+          "context-region_9023"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Door_object_1452", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 8, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9034"
+  }, 
+  {
+    "ref": "item-Sign_object_1453", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          32, 
+          80, 
+          111, 
+          112, 
+          117, 
+          108, 
+          111, 
+          112, 
+          111, 
+          108, 
+          105, 
+          115, 
+          134, 
+          134, 
+          133, 
+          131, 
+          32, 
+          128, 
+          72, 
+          65, 
+          76, 
+          76, 
+          134, 
+          32, 
+          128, 
+          32, 
+          111, 
+          102, 
+          134, 
+          82, 
+          69, 
+          67, 
+          79, 
+          82, 
+          68, 
+          83, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 110, 
+        "x": 64, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9034"
+  }, 
+  {
+    "ref": "item-Wall_object_1450", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9034"
+  }, 
+  {
+    "ref": "item-Ground_object_1451", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9034"
+  }, 
+  {
+    "ref": "item-Street_object_1456", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9034"
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_1457", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 153, 
+        "x": 132, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_9034"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1454", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 59, 
+        "orientation": 236, 
+        "upper_right_x": 59, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 40, 
+        "x": 64, 
+        "height": 208, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9034"
+  }, 
+  {
+    "ref": "item-Fortune_machine_object_1455", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 153, 
+        "x": 40, 
+        "type": "Fortune_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fortune_machine", 
+    "in": "context-region_9034"
+  }
+]

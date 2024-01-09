@@ -1,0 +1,56 @@
+[
+  {
+    "ref": "context-region_20070", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20070", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1002116", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 27, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "context-region_20070"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1002135", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 131, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20070"
+  }
+]

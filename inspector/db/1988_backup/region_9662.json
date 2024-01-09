@@ -1,0 +1,183 @@
+[
+  {
+    "ref": "context-region_9662", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop:5", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_9762", 
+          "context-region_9696", 
+          "context-region_9562", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Short_sign_object_21514", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          129, 
+          131, 
+          131, 
+          131, 
+          53, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 122, 
+        "x": 48, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9662"
+  }, 
+  {
+    "ref": "item-Short_sign_object_21515", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          126, 
+          100, 
+          111, 
+          119, 
+          110, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 0, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9662"
+  }, 
+  {
+    "ref": "item-Short_sign_object_21516", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          32, 
+          32, 
+          117, 
+          112, 
+          127, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 116, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9662"
+  }, 
+  {
+    "ref": "item-Street_object_21517", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "gr_state": 13, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9662"
+  }, 
+  {
+    "ref": "item-Wall_object_21512", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 168, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9662"
+  }, 
+  {
+    "ref": "item-Ground_object_21513", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9662"
+  }, 
+  {
+    "ref": "item-Short_sign_object_21518", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          69, 
+          120, 
+          105, 
+          116, 
+          134, 
+          32, 
+          128, 
+          125, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 19, 
+        "x": 64, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9662"
+  }
+]

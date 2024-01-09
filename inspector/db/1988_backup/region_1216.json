@@ -1,0 +1,126 @@
+[
+  {
+    "ref": "context-region_1216", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "212 Wazoo St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_1215", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Chair_object_4010", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 156, 
+        "x": 56, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1216"
+  }, 
+  {
+    "ref": "item-Wall_object_4006", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1216"
+  }, 
+  {
+    "ref": "item-Table_object_4007", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 154, 
+        "x": 84, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_1216"
+  }, 
+  {
+    "ref": "item-Ground_object_4005", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1216"
+  }, 
+  {
+    "ref": "item-Door_object_4008", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 180, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1216"
+  }, 
+  {
+    "ref": "item-Bed_object_4009", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 96, 
+        "type": "Bed"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bed", 
+    "in": "context-region_1216"
+  }
+]

@@ -1,0 +1,149 @@
+[
+  {
+    "ref": "context-region_9155", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9156", 
+          "context-region_1258", 
+          "context-region_9154", 
+          "context-region_9144"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flag_object_7230", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 24, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_9155"
+  }, 
+  {
+    "ref": "item-Sky_object_7231", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9155"
+  }, 
+  {
+    "ref": "item-Flag_object_7232", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 132, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_9155"
+  }, 
+  {
+    "ref": "item-Short_sign_object_7233", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 236, 
+        "ascii": [
+          66, 
+          114, 
+          111, 
+          97, 
+          100, 
+          119, 
+          97, 
+          121, 
+          32, 
+          32
+        ], 
+        "gr_state": 7, 
+        "y": 129, 
+        "x": 136, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9155"
+  }, 
+  {
+    "ref": "item-Sky_object_7227", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9155"
+  }, 
+  {
+    "ref": "item-Street_object_7229", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 13, 
+        "y": 11, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9155"
+  }, 
+  {
+    "ref": "item-Ground_object_7228", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9155"
+  }
+]

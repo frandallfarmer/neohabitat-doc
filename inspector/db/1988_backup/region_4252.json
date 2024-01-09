@@ -1,0 +1,259 @@
+[
+  {
+    "ref": "context-region_4252", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4251", 
+          "context-region_4263", 
+          "context-region_4250", 
+          "context-region_10460"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_14020", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 33, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 8, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Sky_object_14018", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 205, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 44, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Plant_object_14019", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 32, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 44, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Plant_object_14021", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 49, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 142, 
+        "x": 112, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Flat_object_14022", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Bush_object_14023", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 24, 
+        "gr_state": 2, 
+        "y": 162, 
+        "x": 120, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14024", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 17, 
+        "orientation": 204, 
+        "upper_right_x": 0, 
+        "lower_left_x": 244, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 128, 
+        "height": 23, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14025", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 8, 
+        "orientation": 16, 
+        "upper_right_x": 0, 
+        "lower_left_x": 242, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 48, 
+        "height": 18, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14026", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 3, 
+        "orientation": 8, 
+        "upper_right_x": 2, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 189, 
+        "x": 64, 
+        "height": 6, 
+        "type": "Trapezoid", 
+        "upper_left_x": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Flat_object_14015", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Sky_object_14014", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14017", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 12, 
+        "orientation": 204, 
+        "upper_right_x": 250, 
+        "lower_left_x": 239, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 104, 
+        "height": 23, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4252"
+  }, 
+  {
+    "ref": "item-Sky_object_14016", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 44, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4252"
+  }
+]

@@ -1,0 +1,193 @@
+[
+  {
+    "ref": "context-region_20031", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20031", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_1013903", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 27, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 75, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1012766", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 8, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 90, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1012305", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 86, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1016584", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 29, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 65, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1015236", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 106, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1010562", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 76, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1014599", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 81, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1004350", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 8, 
+        "last_page": 7, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 42, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1013158", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 25, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 72, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }, 
+  {
+    "ref": "item-Book_object_1015883", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 30, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 84, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20031"
+  }
+]

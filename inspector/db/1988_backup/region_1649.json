@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1649", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Kerner", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1650", 
+          "context-region_1672", 
+          "context-region_1647", 
+          "context-region_1626"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }
+]

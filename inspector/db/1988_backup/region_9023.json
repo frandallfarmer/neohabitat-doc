@@ -1,0 +1,258 @@
+[
+  {
+    "ref": "context-region_9023", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9024", 
+          "context-region_9034", 
+          "context-region_9022", 
+          "context-region_9013"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flag_object_1679", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "mass": 0, 
+        "gr_state": 0, 
+        "y": 146, 
+        "x": 56, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Ground_object_1309", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Short_sign_object_1318", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 140, 
+        "ascii": [
+          65, 
+          100, 
+          109, 
+          105, 
+          110, 
+          32, 
+          65, 
+          118, 
+          32, 
+          32
+        ], 
+        "gr_state": 7, 
+        "y": 129, 
+        "x": 136, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Sign_object_1311", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 148, 
+        "ascii": [
+          133, 
+          77, 
+          101, 
+          101, 
+          116, 
+          105, 
+          110, 
+          103, 
+          133, 
+          128, 
+          133, 
+          72, 
+          97, 
+          108, 
+          108, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 104, 
+        "x": 48, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Wall_object_1310", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Window_object_1313", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 104, 
+        "x": 20, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Window_object_1312", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 59, 
+        "x": 88, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Coke_machine_object_1315", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 24, 
+        "x": 124, 
+        "type": "Coke_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Coke_machine", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Door_object_1314", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Window_object_1317", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 59, 
+        "x": 56, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9023"
+  }, 
+  {
+    "ref": "item-Street_object_1316", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9023"
+  }
+]

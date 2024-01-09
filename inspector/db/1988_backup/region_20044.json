@@ -1,0 +1,88 @@
+[
+  {
+    "ref": "context-region_20044", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20044", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Shovel_object_1015187", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 20, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20044"
+  }, 
+  {
+    "ref": "item-Gun_object_1010536", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 116, 
+        "type": "Gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gun", 
+    "in": "context-region_20044"
+  }, 
+  {
+    "ref": "item-Sensor_object_1004289", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 21, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "context-region_20044"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1003906", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 49, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20044"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10361", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "RUMORMILL office", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1229", 
+          "context-region_9249", 
+          "context-region_9246"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }
+]

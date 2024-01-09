@@ -1,0 +1,87 @@
+[
+  {
+    "ref": "context-region_20084", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20084", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Magic_staff_object_1135", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 146, 
+        "type": "Magic_staff"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_staff", 
+    "in": "context-region_20084"
+  }, 
+  {
+    "ref": "item-Amulet_object_1001075", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 47, 
+        "type": "Amulet"
+      }
+    ], 
+    "type": "item", 
+    "name": "Amulet", 
+    "in": "context-region_20084"
+  }, 
+  {
+    "ref": "item-Paper_object_1001619", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20084"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1000605", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 61, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20084"
+  }
+]

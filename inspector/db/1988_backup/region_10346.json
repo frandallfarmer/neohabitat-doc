@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10346", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Roof", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_10262", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }
+]

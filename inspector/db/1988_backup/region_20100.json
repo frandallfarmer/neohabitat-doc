@@ -1,0 +1,40 @@
+[
+  {
+    "ref": "context-region_20100", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20100", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004926", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 17, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 105, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20100"
+  }
+]

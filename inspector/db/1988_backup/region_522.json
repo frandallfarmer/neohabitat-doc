@@ -1,0 +1,302 @@
+[
+  {
+    "ref": "context-region_522", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_523", 
+          "", 
+          "context-region_521", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_694", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Ground_object_695", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Crystal_ball_object_697", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 11, 
+        "type": "Crystal_ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Crystal_ball", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Sign_object_696", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          87, 
+          104, 
+          105, 
+          116, 
+          101, 
+          32, 
+          83, 
+          97, 
+          110, 
+          100, 
+          115, 
+          58, 
+          32, 
+          67, 
+          108, 
+          97, 
+          115, 
+          115, 
+          32, 
+          80, 
+          114, 
+          111, 
+          118, 
+          105, 
+          110, 
+          103, 
+          32, 
+          71, 
+          114, 
+          111, 
+          117, 
+          110, 
+          100, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Flashlight_object_706", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 68, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Frisbee_object_707", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 135, 
+        "x": 38, 
+        "type": "Frisbee"
+      }
+    ], 
+    "type": "item", 
+    "name": "Frisbee", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Elevator_object_704", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "White Sands PRV", 
+        "take": 0, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 126, 
+        "type": "Elevator", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Elevator", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Flag_object_705", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 97, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 70, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Escape_device_object_702", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 10, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 40, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_703", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 134, 
+        "x": 105, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Dropbox_object_700", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 16, 
+        "type": "Dropbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Dropbox", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Die_object_698", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "state": 1, 
+        "gr_state": 4, 
+        "y": 148, 
+        "x": 80, 
+        "type": "Die"
+      }
+    ], 
+    "type": "item", 
+    "name": "Die", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Display_case_object_699", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 16, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_522"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_708", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 98, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_522"
+  }
+]

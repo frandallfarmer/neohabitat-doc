@@ -1,0 +1,40 @@
+[
+  {
+    "ref": "context-region_20003", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20003", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flashlight_object_1000334", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 36, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20003"
+  }
+]

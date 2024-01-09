@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1235", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Wacka Rd east", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_1236"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }
+]

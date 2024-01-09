@@ -1,0 +1,122 @@
+[
+  {
+    "ref": "context-region_505", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_500", 
+          "context-region_504", 
+          "context-region_504", 
+          "context-region_500"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_1043", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 248, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_505"
+  }, 
+  {
+    "ref": "item-Fountain_object_1045", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 64, 
+        "type": "Fountain"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fountain", 
+    "in": "context-region_505"
+  }, 
+  {
+    "ref": "item-Sky_object_1044", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 240, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_505"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_1047", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 0, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_505"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_1046", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 216, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 152, 
+        "x": 12, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_505"
+  }, 
+  {
+    "ref": "item-Dropbox_object_1048", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 132, 
+        "type": "Dropbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Dropbox", 
+    "in": "context-region_505"
+  }
+]

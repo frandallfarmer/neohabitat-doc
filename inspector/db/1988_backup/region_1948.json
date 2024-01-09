@@ -1,0 +1,212 @@
+[
+  {
+    "ref": "context-region_1948", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Road St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "context-region_1949", 
+          "", 
+          "context-region_1946", 
+          "context-region_1925"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_15382", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 8, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Tree_object_15383", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 37, 
+        "x": 12, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Street_object_15380", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 14, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Sign_object_15381", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          82, 
+          111, 
+          97, 
+          100, 
+          32, 
+          83, 
+          116, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 30, 
+        "x": 100, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Teleport_object_15386", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 172, 
+        "address": "Pop-Road St", 
+        "take": 510, 
+        "gr_state": 1, 
+        "y": 129, 
+        "x": 40, 
+        "type": "Teleport", 
+        "activeState": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Bush_object_15384", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 112, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Bush_object_15385", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 237, 
+        "gr_state": 1, 
+        "y": 37, 
+        "x": 124, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Sky_object_15379", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1948"
+  }, 
+  {
+    "ref": "item-Ground_object_15378", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1948"
+  }
+]

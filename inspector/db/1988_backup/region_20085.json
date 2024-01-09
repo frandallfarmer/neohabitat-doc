@@ -1,0 +1,108 @@
+[
+  {
+    "ref": "context-region_20085", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20085", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flashlight_object_1003475", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 115, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20085"
+  }, 
+  {
+    "ref": "item-Compass_object_1004003", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 52, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20085"
+  }, 
+  {
+    "ref": "item-Key_object_1003513", 
+    "mods": [
+      {
+        "key_number_lo": 127, 
+        "style": 1, 
+        "orientation": 64, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20085"
+  }, 
+  {
+    "ref": "item-Key_object_1003512", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 1, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 84, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20085"
+  }, 
+  {
+    "ref": "item-Shovel_object_1003372", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 20, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "context-region_20085"
+  }
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "ref": "context-region_20102", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20102", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007471", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 97, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 30, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20102"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007473", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 87, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20102"
+  }
+]

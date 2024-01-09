@@ -1,0 +1,288 @@
+[
+  {
+    "ref": "context-region_511", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_512", 
+          "", 
+          "context-region_510", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Plaque_object_559", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "last_page": 16384, 
+        "gr_state": 0, 
+        "y": 72, 
+        "x": 32, 
+        "type": "Plaque"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plaque", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Movie_camera_object_558", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 32, 
+        "type": "Movie_camera"
+      }
+    ], 
+    "type": "item", 
+    "name": "Movie_camera", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Sign_object_553", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Ground_object_552", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Wall_object_551", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Mailbox_object_556", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 16, 
+        "type": "Mailbox"
+      }
+    ], 
+    "type": "item", 
+    "name": "Mailbox", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_555", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 4, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Magic_staff_object_554", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 4, 
+        "type": "Magic_staff"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_staff", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Ring_object_562", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 157, 
+        "x": 52, 
+        "type": "Ring"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ring", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Rock_object_563", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 97, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 100, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Short_sign_object_560", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "ascii": [
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          104, 
+          120, 
+          255, 
+          220, 
+          249
+        ], 
+        "gr_state": 1, 
+        "y": 100, 
+        "x": 8, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Plant_object_561", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "mass": 6, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 32, 
+        "type": "Plant"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plant", 
+    "in": "context-region_511"
+  }, 
+  {
+    "ref": "item-Sensor_object_565", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 151, 
+        "x": 72, 
+        "type": "Sensor"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sensor", 
+    "in": "context-region_511"
+  }
+]

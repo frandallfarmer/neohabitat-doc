@@ -1,0 +1,55 @@
+[
+  {
+    "ref": "context-region_20027", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20027", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1002461", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 120, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "context-region_20027"
+  }, 
+  {
+    "ref": "item-Head_object_1002463", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20027"
+  }
+]

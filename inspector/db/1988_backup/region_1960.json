@@ -1,0 +1,273 @@
+[
+  {
+    "ref": "context-region_1960", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9110", 
+          "context-region_9119", 
+          "context-region_9108", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_17723", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17731", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 51, 
+        "orientation": 148, 
+        "upper_right_x": 51, 
+        "lower_left_x": 244, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 64, 
+        "x": 60, 
+        "height": 16, 
+        "type": "Trapezoid", 
+        "upper_left_x": 244
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Short_sign_object_17730", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          124, 
+          134, 
+          134, 
+          124, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 63, 
+        "x": 72, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Street_object_17732", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 13, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Short_sign_object_17726", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          125, 
+          134, 
+          134, 
+          125, 
+          134, 
+          32, 
+          126, 
+          32, 
+          126
+        ], 
+        "gr_state": 5, 
+        "y": 100, 
+        "x": 72, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Magic_immobile_object_17727", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 2, 
+        "y": 65, 
+        "x": 72, 
+        "type": "Magic_immobile"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_immobile", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Wall_object_17724", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Sign_object_17725", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 140, 
+        "ascii": [
+          133, 
+          68, 
+          111, 
+          110, 
+          39, 
+          116, 
+          32, 
+          80, 
+          114, 
+          101, 
+          115, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 112, 
+        "x": 32, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_17728", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 3, 
+        "orientation": 148, 
+        "upper_right_x": 3, 
+        "lower_left_x": 244, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 84, 
+        "height": 88, 
+        "type": "Trapezoid", 
+        "upper_left_x": 244
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_1960"
+  }, 
+  {
+    "ref": "item-Short_sign_object_17729", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          127, 
+          32, 
+          127, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 76, 
+        "x": 48, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1960"
+  }
+]

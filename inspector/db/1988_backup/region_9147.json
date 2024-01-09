@@ -1,0 +1,309 @@
+[
+  {
+    "ref": "context-region_9147", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_9146", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sign_object_7140", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          133, 
+          32, 
+          65, 
+          108, 
+          108, 
+          32, 
+          102, 
+          111, 
+          114, 
+          109, 
+          115, 
+          32, 
+          77, 
+          85, 
+          83, 
+          84, 
+          134, 
+          98, 
+          101, 
+          32, 
+          105, 
+          110, 
+          32, 
+          116, 
+          114, 
+          105, 
+          112, 
+          108, 
+          105, 
+          99, 
+          97, 
+          116, 
+          101, 
+          46, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 126, 
+        "x": 12, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9147"
+  }, 
+  {
+    "ref": "item-Sign_object_7141", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          80, 
+          114, 
+          111, 
+          112, 
+          101, 
+          114, 
+          116, 
+          121, 
+          32, 
+          32, 
+          32, 
+          32, 
+          76, 
+          105, 
+          99, 
+          101, 
+          110, 
+          115, 
+          101, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          67, 
+          111, 
+          109, 
+          112, 
+          108, 
+          97, 
+          105, 
+          110, 
+          116, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 8, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9147"
+  }, 
+  {
+    "ref": "item-Bureaucrat_object_15831", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 16, 
+        "type": "Bureaucrat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bureaucrat", 
+    "in": "context-region_9147"
+  }, 
+  {
+    "ref": "item-Head_object_15834", 
+    "mods": [
+      {
+        "style": 86, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bureaucrat_object_15831"
+  }, 
+  {
+    "ref": "item-Bureaucrat_object_15832", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 64, 
+        "type": "Bureaucrat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bureaucrat", 
+    "in": "context-region_9147"
+  }, 
+  {
+    "ref": "item-Head_object_15835", 
+    "mods": [
+      {
+        "style": 64, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bureaucrat_object_15832"
+  }, 
+  {
+    "ref": "item-Bureaucrat_object_15833", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 145, 
+        "x": 116, 
+        "type": "Bureaucrat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bureaucrat", 
+    "in": "context-region_9147"
+  }, 
+  {
+    "ref": "item-Head_object_15836", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bureaucrat_object_15833"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_7139", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 0, 
+        "orientation": 220, 
+        "pattern": [
+          170, 
+          170, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          170, 
+          170, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149, 
+          85, 
+          149
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 160, 
+        "height": 127, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 15, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_9147"
+  }, 
+  {
+    "ref": "item-Ground_object_7138", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9147"
+  }
+]

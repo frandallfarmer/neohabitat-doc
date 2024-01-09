@@ -1,0 +1,594 @@
+[
+  {
+    "ref": "context-region_1559", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "626 EZ St", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "context-region_1558", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Window_object_10550", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 48, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Couch_object_10551", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 44, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Chest_object_10552", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Box_object_1009792", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 32, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Chest_object_10552"
+  }, 
+  {
+    "ref": "item-Box_object_1004259", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 12, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Book_object_1013294", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 25, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 48, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003829", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 68, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Shovel_object_1004923", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 71, 
+        "type": "Shovel"
+      }
+    ], 
+    "type": "item", 
+    "name": "Shovel", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Head_object_1010808", 
+    "mods": [
+      {
+        "style": 89, 
+        "orientation": 80, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 33, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Head_object_1003816", 
+    "mods": [
+      {
+        "style": 113, 
+        "orientation": 112, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 62, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Book_object_1011501", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 28, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004964", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 142, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Book_object_1010627", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 17, 
+        "last_page": 16, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 102, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004738", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 10, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1004259"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006400", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 106, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Head_object_1004954", 
+    "mods": [
+      {
+        "style": 80, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 67, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Bag_object_1012815", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 142, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Book_object_1012335", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "last_page": 5, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 8, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1012815"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1012888", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 20, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "item-Bag_object_1012815"
+  }, 
+  {
+    "ref": "item-Book_object_1012879", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 17, 
+        "last_page": 1, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 23, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Bag_object_1012815"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1010454", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 94, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1010455", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Head_object_1014596", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 9, 
+        "x": 136, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1010238", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 50, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1009857", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 103, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "item-Box_object_1009792"
+  }, 
+  {
+    "ref": "item-Door_object_10553", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 120, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_10554", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 100, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Window_object_10555", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 88, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003843", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 1, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 17, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_10557", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 158, 
+        "x": 45, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Chair_object_10558", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 41, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 112, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Ground_object_10548", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-Wall_object_10549", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 116, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1559"
+  }, 
+  {
+    "ref": "item-House_cat_object_10556", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 12, 
+        "type": "House_cat"
+      }
+    ], 
+    "type": "item", 
+    "name": "House_cat", 
+    "in": "context-region_1559"
+  }
+]

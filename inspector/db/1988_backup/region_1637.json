@@ -1,0 +1,122 @@
+[
+  {
+    "ref": "context-region_1637", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Janice Ln south", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_1616", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_11285", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 4, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1637"
+  }, 
+  {
+    "ref": "item-Coke_machine_object_11284", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 31, 
+        "x": 84, 
+        "type": "Coke_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Coke_machine", 
+    "in": "context-region_1637"
+  }, 
+  {
+    "ref": "item-Teleport_object_11283", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "address": "Pop-Janice Ln South", 
+        "take": 1300, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 36, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1637"
+  }, 
+  {
+    "ref": "item-Wall_object_11282", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1637"
+  }, 
+  {
+    "ref": "item-Wall_object_11281", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1637"
+  }, 
+  {
+    "ref": "item-Ground_object_11280", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1637"
+  }
+]

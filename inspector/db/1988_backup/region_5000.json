@@ -1,0 +1,137 @@
+[
+  {
+    "ref": "context-region_5000", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_5001", 
+          "context-region_5006", 
+          "", 
+          "context-region_7209"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flat_object_8146", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5000"
+  }, 
+  {
+    "ref": "item-Tree_object_8145", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 16, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_5000"
+  }, 
+  {
+    "ref": "item-Tree_object_8144", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 29, 
+        "x": 32, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_5000"
+  }, 
+  {
+    "ref": "item-Pond_object_8143", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 43, 
+        "x": 112, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_5000"
+  }, 
+  {
+    "ref": "item-Tree_object_8142", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 84, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_5000"
+  }, 
+  {
+    "ref": "item-Flat_object_8141", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_5000"
+  }, 
+  {
+    "ref": "item-Sky_object_8140", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_5000"
+  }
+]

@@ -1,0 +1,262 @@
+[
+  {
+    "ref": "context-region_9108", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9195", 
+          "", 
+          "context-region_1972", 
+          "context-region_9241"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_6693", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Door_object_6695", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "key_hi": 152, 
+        "key_lo": 8, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 20, 
+        "type": "Door", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Wall_object_6694", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Window_object_6697", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 45, 
+        "x": 112, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Window_object_6696", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 83, 
+        "x": 112, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Window_object_6699", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 83, 
+        "x": 92, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Window_object_6698", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 83, 
+        "x": 132, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Plaque_object_17764", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 90, 
+        "x": 4, 
+        "type": "Plaque"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plaque", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Street_object_6703", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 10, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Sign_object_6702", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 244, 
+        "ascii": [
+          65, 
+          118, 
+          97, 
+          116, 
+          97, 
+          114, 
+          115, 
+          134, 
+          32, 
+          32, 
+          128, 
+          97, 
+          116, 
+          134, 
+          128, 
+          133, 
+          76, 
+          97, 
+          119, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 84, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Window_object_6701", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 45, 
+        "x": 132, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9108"
+  }, 
+  {
+    "ref": "item-Window_object_6700", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 45, 
+        "x": 92, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9108"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "ref": "context-region_20016", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20016", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Paper_object_1011221", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 108, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_20016"
+  }, 
+  {
+    "ref": "item-Flashlight_object_17659", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 71, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20016"
+  }, 
+  {
+    "ref": "item-Book_object_1005130", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 20, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_20016"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1012362", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 69, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_20016"
+  }, 
+  {
+    "ref": "item-Compass_object_1005134", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 0, 
+        "x": 20, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20016"
+  }
+]

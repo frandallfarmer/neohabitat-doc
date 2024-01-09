@@ -1,0 +1,220 @@
+[
+  {
+    "ref": "context-region_4243", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4244", 
+          "context-region_4256", 
+          "", 
+          "context-region_4236"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_13910", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 35, 
+        "x": 128, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13902", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 28, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 245, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 48, 
+        "height": 19, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Bush_object_13903", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 29, 
+        "x": 12, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Sky_object_13900", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Flat_object_13901", 
+    "mods": [
+      {
+        "flat_type": 0, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13906", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 38, 
+        "orientation": 204, 
+        "upper_right_x": 0, 
+        "lower_left_x": 231, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 136, 
+        "height": 21, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Tree_object_13907", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 90, 
+        "x": 24, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13904", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 27, 
+        "orientation": 16, 
+        "upper_right_x": 0, 
+        "lower_left_x": 232, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 92, 
+        "height": 28, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Flat_object_13905", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 12, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Flat_object_13908", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4243"
+  }, 
+  {
+    "ref": "item-Bush_object_13909", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 35, 
+        "x": 100, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4243"
+  }
+]

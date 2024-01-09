@@ -1,0 +1,230 @@
+[
+  {
+    "ref": "context-region_9025", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9026", 
+          "context-region_9036", 
+          "", 
+          "context-region_9015"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Glue_object_1333", 
+    "mods": [
+      {
+        "y_offset_2": 253, 
+        "y_offset_3": 0, 
+        "style": 0, 
+        "y_offset_1": 254, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 0, 
+        "y_offset_5": 0, 
+        "x_offset_2": 4, 
+        "x_offset_5": 0, 
+        "x_offset_4": 0, 
+        "x_offset_6": 0, 
+        "x_offset_1": 7, 
+        "x_offset_3": 0, 
+        "gr_state": 1, 
+        "y": 54, 
+        "x": 56, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9025"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1336", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Glue_object_1333"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1335", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Glue_object_1333"
+  }, 
+  {
+    "ref": "item-Sign_object_1334", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          80, 
+          138, 
+          136, 
+          65, 
+          138, 
+          136, 
+          87, 
+          138, 
+          136, 
+          78, 
+          32, 
+          32, 
+          32, 
+          32, 
+          80, 
+          136, 
+          137, 
+          79, 
+          137, 
+          136, 
+          72, 
+          137, 
+          136, 
+          83, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 2, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "item-Glue_object_1333"
+  }, 
+  {
+    "ref": "item-Garbage_can_object_1332", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 155, 
+        "x": 132, 
+        "type": "Garbage_can", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Garbage_can", 
+    "in": "context-region_9025"
+  }, 
+  {
+    "ref": "item-Street_object_1331", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9025"
+  }, 
+  {
+    "ref": "item-Door_object_1330", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 20, 
+        "type": "Door", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9025"
+  }, 
+  {
+    "ref": "item-Wall_object_1328", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9025"
+  }, 
+  {
+    "ref": "item-Ground_object_1329", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9025"
+  }
+]

@@ -1,0 +1,245 @@
+[
+  {
+    "ref": "context-region_521", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_522", 
+          "", 
+          "context-region_520", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_680", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Hand_of_god_object_687", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 158, 
+        "x": 16, 
+        "type": "Hand_of_god"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hand_of_god", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Hand_of_god_object_686", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 80, 
+        "x": 56, 
+        "type": "Hand_of_god"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hand_of_god", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Gun_object_685", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 9, 
+        "type": "Gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gun", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Grenade_object_684", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 136, 
+        "x": 16, 
+        "type": "Grenade"
+      }
+    ], 
+    "type": "item", 
+    "name": "Grenade", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_690", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 28, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Knife_object_691", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 139, 
+        "x": 59, 
+        "type": "Knife"
+      }
+    ], 
+    "type": "item", 
+    "name": "Knife", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Ground_object_681", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Box_object_693", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "key_hi": 1, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 78, 
+        "type": "Box", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Gemstone_object_683", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 1, 
+        "y": 132, 
+        "x": 9, 
+        "type": "Gemstone"
+      }
+    ], 
+    "type": "item", 
+    "name": "Gemstone", 
+    "in": "context-region_521"
+  }, 
+  {
+    "ref": "item-Sign_object_682", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          87, 
+          104, 
+          105, 
+          116, 
+          101, 
+          32, 
+          83, 
+          97, 
+          110, 
+          100, 
+          115, 
+          58, 
+          32, 
+          67, 
+          108, 
+          97, 
+          115, 
+          115, 
+          32, 
+          80, 
+          114, 
+          111, 
+          118, 
+          105, 
+          110, 
+          103, 
+          32, 
+          71, 
+          114, 
+          111, 
+          117, 
+          110, 
+          100, 
+          115, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_521"
+  }
+]

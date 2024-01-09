@@ -1,0 +1,87 @@
+[
+  {
+    "ref": "context-region_20122", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20122", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_1005570", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 61, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20122"
+  }, 
+  {
+    "ref": "item-Head_object_1003561", 
+    "mods": [
+      {
+        "style": 82, 
+        "orientation": 72, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 30, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20122"
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1005651", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 101, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "context-region_20122"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1013454", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 55, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_20122"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10374", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Mixo's Port", 
+    "mods": [
+      {
+        "town_dir": "}", 
+        "neighbors": [
+          "context-region_10375", 
+          "context-region_10375", 
+          "context-region_10375", 
+          "context-region_10375"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }
+]

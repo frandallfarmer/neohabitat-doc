@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10468", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Vote Early!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_10469", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }
+]

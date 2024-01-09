@@ -1,0 +1,165 @@
+[
+  {
+    "ref": "context-region_6042", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_6039"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_8136", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 173, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 128, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6042"
+  }, 
+  {
+    "ref": "item-Door_object_8137", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "key_hi": 100, 
+        "key_lo": 7, 
+        "connection": "context-region_0", 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 64, 
+        "type": "Door", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_6042"
+  }, 
+  {
+    "ref": "item-Wall_object_8134", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_6042"
+  }, 
+  {
+    "ref": "item-Tree_object_8135", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 24, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_6042"
+  }, 
+  {
+    "ref": "item-Ground_object_8133", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_6042"
+  }, 
+  {
+    "ref": "item-Sign_object_8138", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 188, 
+        "ascii": [
+          32, 
+          83, 
+          97, 
+          115, 
+          97, 
+          32, 
+          68, 
+          97, 
+          108, 
+          101, 
+          115, 
+          104, 
+          58, 
+          32, 
+          32, 
+          87, 
+          105, 
+          122, 
+          97, 
+          114, 
+          100, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 111, 
+        "x": 32, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_6042"
+  }
+]

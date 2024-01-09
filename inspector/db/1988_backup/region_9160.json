@@ -1,0 +1,435 @@
+[
+  {
+    "ref": "context-region_9160", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_9152"
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_1004740", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 7, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 67, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Book_object_1002482", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 66, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Paper_object_1013442", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 157, 
+        "x": 65, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Book_object_1003868", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 2, 
+        "gr_state": 1, 
+        "y": 160, 
+        "x": 68, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1005030", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 64, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_7278", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 19, 
+        "orientation": 244, 
+        "upper_right_x": 19, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 3, 
+        "y": 144, 
+        "x": 136, 
+        "height": 168, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_7279", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 19, 
+        "orientation": 80, 
+        "upper_right_x": 19, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 3, 
+        "y": 132, 
+        "x": 12, 
+        "height": 168, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_7275", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 19, 
+        "orientation": 236, 
+        "upper_right_x": 19, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 3, 
+        "y": 144, 
+        "x": 96, 
+        "height": 168, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Sign_object_7274", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 172, 
+        "ascii": [
+          81, 
+          117, 
+          105, 
+          122, 
+          83, 
+          104, 
+          111, 
+          119, 
+          115, 
+          128, 
+          73, 
+          110, 
+          99, 
+          134, 
+          32, 
+          32, 
+          80, 
+          114, 
+          101, 
+          115, 
+          101, 
+          110, 
+          116, 
+          115, 
+          58, 
+          134, 
+          131, 
+          84, 
+          114, 
+          105, 
+          118, 
+          105, 
+          97, 
+          128, 
+          52, 
+          128, 
+          89, 
+          111, 
+          117, 
+          33
+        ], 
+        "gr_state": 2, 
+        "y": 88, 
+        "x": 0, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1003552", 
+    "mods": [
+      {
+        "on": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 67, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Sign_object_7276", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          128, 
+          35, 
+          49, 
+          32, 
+          32, 
+          32, 
+          35, 
+          50, 
+          32, 
+          32, 
+          32, 
+          35, 
+          51, 
+          32, 
+          32, 
+          136, 
+          136, 
+          134, 
+          72, 
+          111, 
+          115, 
+          116, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 100, 
+        "x": 4, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_7277", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 19, 
+        "orientation": 188, 
+        "upper_right_x": 19, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 3, 
+        "y": 144, 
+        "x": 56, 
+        "height": 168, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Compass_object_1007540", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 160, 
+        "x": 60, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Book_object_1004052", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 61, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Ground_object_7272", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9160"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_7273", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 0, 
+        "lower_right_x": 0, 
+        "orientation": 148, 
+        "pattern": [
+          170, 
+          85, 
+          85, 
+          85, 
+          86, 
+          165, 
+          101, 
+          101, 
+          89, 
+          89, 
+          101, 
+          165, 
+          89, 
+          89, 
+          102, 
+          101, 
+          89, 
+          89, 
+          105, 
+          101, 
+          89, 
+          89, 
+          101, 
+          101, 
+          86, 
+          165, 
+          101, 
+          101, 
+          85, 
+          85, 
+          85, 
+          85
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 160, 
+        "height": 112, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 1, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_9160"
+  }
+]

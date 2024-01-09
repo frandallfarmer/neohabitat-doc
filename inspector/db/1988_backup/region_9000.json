@@ -1,0 +1,169 @@
+[
+  {
+    "ref": "context-region_9000", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9001", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000603", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 96, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Ground_object_1059", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1000526", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 105, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Wall_object_1063", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Street_object_1062", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 4, 
+        "y": 8, 
+        "x": 88, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_1061", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 136, 
+        "x": 16, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Hot_tub_object_1060", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 16, 
+        "type": "Hot_tub"
+      }
+    ], 
+    "type": "item", 
+    "name": "Hot_tub", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Tree_object_1065", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 33, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 80, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9000"
+  }, 
+  {
+    "ref": "item-Tree_object_1064", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 30, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9000"
+  }
+]

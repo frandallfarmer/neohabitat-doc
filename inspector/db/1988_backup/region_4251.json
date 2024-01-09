@@ -1,0 +1,167 @@
+[
+  {
+    "ref": "context-region_4251", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4253", 
+          "context-region_4264", 
+          "context-region_4252", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Tree_object_14008", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 72, 
+        "gr_state": 1, 
+        "y": 28, 
+        "x": 44, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Tree_object_14009", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 28, 
+        "x": 0, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Tree_object_14011", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 72, 
+        "gr_state": 3, 
+        "y": 64, 
+        "x": 28, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Tree_object_14010", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 135, 
+        "x": 112, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Sky_object_14013", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 84, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Ground_object_14012", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Wall_object_14006", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Ground_object_14007", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 84, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4251"
+  }, 
+  {
+    "ref": "item-Ground_object_14005", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4251"
+  }
+]

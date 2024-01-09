@@ -1,0 +1,209 @@
+[
+  {
+    "ref": "context-region_9015", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_9025", 
+          "context-region_9014", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Wall_object_1209", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9015"
+  }, 
+  {
+    "ref": "item-Street_object_1224", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 8, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9015"
+  }, 
+  {
+    "ref": "item-Tree_object_1223", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 29, 
+        "x": 76, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9015"
+  }, 
+  {
+    "ref": "item-Book_object_1000599", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 36, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9015"
+  }, 
+  {
+    "ref": "item-Sign_object_1215", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 0, 
+        "ascii": [
+          133, 
+          131, 
+          71, 
+          69, 
+          69, 
+          75, 
+          83, 
+          134, 
+          82, 
+          85, 
+          76, 
+          69, 
+          33, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 4, 
+        "y": 97, 
+        "x": 108, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9015"
+  }, 
+  {
+    "ref": "item-Short_sign_object_1216", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 16, 
+        "ascii": [
+          83, 
+          107, 
+          105, 
+          100, 
+          32, 
+          82, 
+          111, 
+          119, 
+          32, 
+          32
+        ], 
+        "gr_state": 9, 
+        "y": 111, 
+        "x": 120, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_9015"
+  }, 
+  {
+    "ref": "item-Ground_object_1210", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9015"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_1211", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 12, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9015"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1633", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "925 Janice Ln", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1635", 
+          "", 
+          "context-region_1631", 
+          "context-region_1634"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

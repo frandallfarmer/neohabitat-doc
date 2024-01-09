@@ -1,0 +1,229 @@
+[
+  {
+    "ref": "context-region_9136", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_9137", 
+          "context-region_9148", 
+          "", 
+          "context-region_9125"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Ground_object_7018", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Window_object_7020", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 51, 
+        "x": 20, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Street_object_7023", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Streetlamp_object_7025", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 81, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 152, 
+        "type": "Streetlamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Streetlamp", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Sign_object_7027", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "ascii": [
+          128, 
+          75, 
+          69, 
+          76, 
+          76, 
+          89, 
+          39, 
+          83, 
+          32, 
+          66, 
+          65, 
+          82, 
+          32, 
+          65, 
+          78, 
+          68, 
+          32, 
+          71, 
+          82, 
+          73, 
+          76, 
+          76, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 2, 
+        "y": 100, 
+        "x": 20, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Tree_object_7026", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 158, 
+        "x": 8, 
+        "type": "Tree"
+      }
+    ], 
+    "type": "item", 
+    "name": "Tree", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Window_object_7029", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 51, 
+        "x": 92, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Window_object_7028", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 51, 
+        "x": 56, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Door_object_7019", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 148, 
+        "key_hi": 48, 
+        "key_lo": 82, 
+        "connection": "context-region_9137", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 116, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9136"
+  }, 
+  {
+    "ref": "item-Wall_object_7017", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9136"
+  }
+]

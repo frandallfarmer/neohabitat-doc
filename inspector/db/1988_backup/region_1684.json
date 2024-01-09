@@ -1,0 +1,106 @@
+[
+  {
+    "ref": "context-region_1684", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Lori Ln east", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_1704"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bush_object_11710", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 147, 
+        "x": 92, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_1684"
+  }, 
+  {
+    "ref": "item-Street_object_11708", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 3, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1684"
+  }, 
+  {
+    "ref": "item-Teleport_object_11709", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "address": "Pop-Lori Ln East", 
+        "take": 270, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 44, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_1684"
+  }, 
+  {
+    "ref": "item-Ground_object_11706", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 48, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1684"
+  }, 
+  {
+    "ref": "item-Sky_object_11707", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_1684"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "ref": "context-region_10306", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #1154", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flashlight_object_1013035", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 20, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_10306"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1013034", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 20, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_10306"
+  }, 
+  {
+    "ref": "item-Flashlight_object_1013036", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 20, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_10306"
+  }
+]

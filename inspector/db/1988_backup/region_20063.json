@@ -1,0 +1,56 @@
+[
+  {
+    "ref": "context-region_20063", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20063", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flashlight_object_1015481", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 37, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20063"
+  }, 
+  {
+    "ref": "item-Compass_object_1014587", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 24, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_20063"
+  }
+]

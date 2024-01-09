@@ -1,0 +1,253 @@
+[
+  {
+    "ref": "context-region_509", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "OFF LIMITS!!", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_510", 
+          "", 
+          "context-region_508", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Spray_can_object_531", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 4, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Sign_object_530", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          88, 
+          120, 
+          255, 
+          136, 
+          0, 
+          0, 
+          41, 
+          3, 
+          57, 
+          0, 
+          8, 
+          120, 
+          0, 
+          0, 
+          1, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Magic_immobile_object_533", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 70, 
+        "x": 96, 
+        "type": "Magic_immobile"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_immobile", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Pawn_machine_object_532", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 151, 
+        "x": 28, 
+        "type": "Pawn_machine"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pawn_machine", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Aquarium_object_535", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 129, 
+        "x": 4, 
+        "type": "Aquarium"
+      }
+    ], 
+    "type": "item", 
+    "name": "Aquarium", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Glue_object_534", 
+    "mods": [
+      {
+        "y_offset_2": 30840, 
+        "y_offset_3": 65488, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 3, 
+        "orientation": 0, 
+        "y_offset_4": 0, 
+        "y_offset_5": 7, 
+        "x_offset_2": 352, 
+        "x_offset_5": 558, 
+        "x_offset_4": 0, 
+        "x_offset_6": 52, 
+        "x_offset_1": 0, 
+        "x_offset_3": 65535, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Bridge_object_537", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 140, 
+        "x": 56, 
+        "type": "Bridge"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bridge", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Bed_object_536", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 104, 
+        "type": "Bed"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bed", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Wall_object_528", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Building_object_538", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 6, 
+        "type": "Building"
+      }
+    ], 
+    "type": "item", 
+    "name": "Building", 
+    "in": "context-region_509"
+  }, 
+  {
+    "ref": "item-Ground_object_529", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_509"
+  }
+]

@@ -1,0 +1,480 @@
+[
+  {
+    "ref": "context-region_9137", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_9138", 
+          "context-region_9136", 
+          ""
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Table_object_15885", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 60, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Table_object_15884", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 20, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Glue_object_7038", 
+    "mods": [
+      {
+        "y_offset_2": 222, 
+        "y_offset_3": 1, 
+        "style": 0, 
+        "y_offset_1": 222, 
+        "y_offset_6": 255, 
+        "orientation": 0, 
+        "y_offset_4": 1, 
+        "y_offset_5": 0, 
+        "x_offset_2": 250, 
+        "x_offset_5": 254, 
+        "x_offset_4": 252, 
+        "x_offset_6": 0, 
+        "x_offset_1": 255, 
+        "x_offset_3": 250, 
+        "gr_state": 1, 
+        "y": 53, 
+        "x": 44, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Bottle_object_7044", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 5, 
+        "type": "Bottle", 
+        "filled": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Glue_object_7038"
+  }, 
+  {
+    "ref": "item-Bottle_object_7043", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 4, 
+        "x": 4, 
+        "type": "Bottle", 
+        "filled": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Glue_object_7038"
+  }, 
+  {
+    "ref": "item-Table_object_15886", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 43, 
+        "x": 24, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Display_case_object_7036", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 43, 
+        "x": 24, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Sign_object_7037", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "ascii": [
+          139, 
+          32, 
+          79, 
+          78, 
+          69, 
+          134, 
+          139, 
+          32, 
+          87, 
+          65, 
+          89, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 65, 
+        "x": 80, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_7034", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 1, 
+        "y": 32, 
+        "x": 116, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_7035", 
+    "mods": [
+      {
+        "display_item": 1, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 4
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_7034"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7669", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7670", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 4, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7671", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 56, 
+        "gr_state": 1, 
+        "y": 5, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7672", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7673", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 7, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7674", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 3, 
+        "y": 8, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7675", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 9, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7666", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Vendo_front_object_7035"
+  }, 
+  {
+    "ref": "item-Bottle_object_7667", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Bottle", 
+        "filled": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "item-Vendo_inside_object_7034"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1005770", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 57, 
+        "gr_state": 1, 
+        "y": 153, 
+        "x": 110, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Wall_object_7030", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 148, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Countertop_object_7033", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 60, 
+        "type": "Countertop", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Countertop", 
+    "in": "context-region_9137"
+  }, 
+  {
+    "ref": "item-Ground_object_7031", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9137"
+  }
+]

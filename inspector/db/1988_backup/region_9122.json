@@ -1,0 +1,144 @@
+[
+  {
+    "ref": "context-region_9122", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9123", 
+          "context-region_9133", 
+          "context-region_9121", 
+          "context-region_9112"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Street_object_6857", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 5, 
+        "y": 4, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9122"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_6856", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 160, 
+        "orientation": 220, 
+        "upper_right_x": 160, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "height": 53, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9122"
+  }, 
+  {
+    "ref": "item-Sky_object_6855", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9122"
+  }, 
+  {
+    "ref": "item-Teleport_object_6854", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "address": "Pop-Plaza NW", 
+        "take": 6550, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 104, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_9122"
+  }, 
+  {
+    "ref": "item-Sky_object_6853", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9122"
+  }, 
+  {
+    "ref": "item-Ground_object_6852", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 184, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9122"
+  }, 
+  {
+    "ref": "item-Street_object_6858", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 24, 
+        "x": 60, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9122"
+  }
+]

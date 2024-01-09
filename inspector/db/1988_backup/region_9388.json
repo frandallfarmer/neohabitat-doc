@@ -1,0 +1,330 @@
+[
+  {
+    "ref": "context-region_9388", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #219", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Book_object_7312", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 56, 
+        "last_page": 2, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 136, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Game_piece_object_7485", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 6, 
+        "y": 29, 
+        "x": 8, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Book_object_7310", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "last_page": 6, 
+        "gr_state": 0, 
+        "y": 147, 
+        "x": 67, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Wall_object_19159", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 236, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Game_piece_object_7481", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 6, 
+        "y": 19, 
+        "x": 9, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Game_piece_object_7480", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 6, 
+        "y": 8, 
+        "x": 141, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Game_piece_object_16127", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 5, 
+        "y": 11, 
+        "x": 134, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Display_case_object_19156", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 52, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Ground_object_19155", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Game_piece_object_7646", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "gr_state": 4, 
+        "y": 28, 
+        "x": 14, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Display_case_object_19157", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 100, 
+        "type": "Display_case", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Display_case", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Table_object_19158", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 20, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Book_object_7307", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "last_page": 18, 
+        "gr_state": 0, 
+        "y": 142, 
+        "x": 59, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Book_object_7364", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 48, 
+        "last_page": 3, 
+        "gr_state": 0, 
+        "y": 141, 
+        "x": 145, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Couch_object_19161", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 28, 
+        "gr_state": 0, 
+        "y": 134, 
+        "x": 72, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Door_object_19160", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 220, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9390", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 16, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Book_object_1011612", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 20, 
+        "gr_state": 0, 
+        "y": 149, 
+        "x": 135, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9388"
+  }, 
+  {
+    "ref": "item-Book_object_7350", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "last_page": 5, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 149, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_9388"
+  }
+]

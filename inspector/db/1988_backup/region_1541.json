@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1541", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "927 Disk Dr", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "context-region_1543", 
+          "", 
+          "context-region_1539", 
+          "context-region_1542"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

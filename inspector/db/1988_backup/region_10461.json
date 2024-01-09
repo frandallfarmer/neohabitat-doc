@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10461", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Back Room", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          "context-region_10378"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }
+]

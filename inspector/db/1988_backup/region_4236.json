@@ -1,0 +1,243 @@
+[
+  {
+    "ref": "context-region_4236", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4237", 
+          "context-region_4243", 
+          "", 
+          "context-region_4228"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13836", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 14, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 247, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 24, 
+        "height": 16, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13837", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 29, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 235, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 104, 
+        "height": 28, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Flat_object_13834", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13835", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 17, 
+        "orientation": 220, 
+        "upper_right_x": 0, 
+        "lower_left_x": 232, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 72, 
+        "height": 32, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Sky_object_13833", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Head_object_1000340", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 88, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 18, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Rock_object_13843", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 137, 
+        "x": 88, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Bush_object_13842", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 24, 
+        "gr_state": 2, 
+        "y": 136, 
+        "x": 108, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_13838", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 8, 
+        "orientation": 16, 
+        "upper_right_x": 0, 
+        "lower_left_x": 238, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 48, 
+        "x": 48, 
+        "height": 24, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Bush_object_13839", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 49, 
+        "gr_state": 0, 
+        "y": 129, 
+        "x": 16, 
+        "type": "Bush"
+      }
+    ], 
+    "type": "item", 
+    "name": "Bush", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Flat_object_13841", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 1, 
+        "orientation": 188, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_4236"
+  }, 
+  {
+    "ref": "item-Rock_object_13840", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 138, 
+        "x": 108, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4236"
+  }
+]

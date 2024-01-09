@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1096", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "210 Kings Rd", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "", 
+          "context-region_1094", 
+          "context-region_1097", 
+          "context-region_1098"
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

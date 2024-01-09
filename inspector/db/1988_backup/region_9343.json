@@ -1,0 +1,190 @@
+[
+  {
+    "ref": "context-region_9343", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Popustop #170", 
+    "mods": [
+      {
+        "town_dir": "|", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 3, 
+        "nitty_bits": 3, 
+        "port_dir": "|", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Window_object_18765", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 88, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_18764", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 100, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Door_object_18763", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 116, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "connection": "context-region_9345", 
+        "gr_state": 1, 
+        "y": 33, 
+        "x": 120, 
+        "type": "Door", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Chest_object_18762", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 8, 
+        "type": "Chest", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Chest", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Couch_object_18761", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 132, 
+        "x": 44, 
+        "type": "Couch"
+      }
+    ], 
+    "type": "item", 
+    "name": "Couch", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Window_object_18760", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 48, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Chair_object_18767", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 81, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 112, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-House_cat_object_18766", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 131, 
+        "x": 12, 
+        "type": "House_cat"
+      }
+    ], 
+    "type": "item", 
+    "name": "House_cat", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Ground_object_18758", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 4, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9343"
+  }, 
+  {
+    "ref": "item-Wall_object_18759", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 68, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9343"
+  }
+]

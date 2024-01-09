@@ -1,0 +1,452 @@
+[
+  {
+    "ref": "context-region_20091", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20091", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flashlight_object_1003325", 
+    "mods": [
+      {
+        "on": 1, 
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 8, 
+        "x": 88, 
+        "type": "Flashlight"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flashlight", 
+    "in": "context-region_20091"
+  }, 
+  {
+    "ref": "item-Box_object_1003893", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 55, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20091"
+  }, 
+  {
+    "ref": "item-Head_object_1017999", 
+    "mods": [
+      {
+        "style": 72, 
+        "orientation": 96, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 145, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Head_object_1009706", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 7, 
+        "x": 43, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Head_object_1010111", 
+    "mods": [
+      {
+        "style": 19, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 145, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Head_object_1010679", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 112, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 150, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Head_object_1014122", 
+    "mods": [
+      {
+        "style": 18, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 137, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Head_object_1003931", 
+    "mods": [
+      {
+        "style": 14, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 137, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Head_object_1011062", 
+    "mods": [
+      {
+        "style": 12, 
+        "orientation": 64, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 135, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Head_object_1008387", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 96, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 39, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1003893"
+  }, 
+  {
+    "ref": "item-Box_object_1010049", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "key_hi": 0, 
+        "key_lo": 104, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 58, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20091"
+  }, 
+  {
+    "ref": "item-Head_object_1015403", 
+    "mods": [
+      {
+        "style": 39, 
+        "orientation": 24, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 140, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1010049"
+  }, 
+  {
+    "ref": "item-Head_object_1015405", 
+    "mods": [
+      {
+        "style": 49, 
+        "orientation": 32, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 129, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1010049"
+  }, 
+  {
+    "ref": "item-Head_object_1003215", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 96, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 21, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1010049"
+  }, 
+  {
+    "ref": "item-Head_object_1016549", 
+    "mods": [
+      {
+        "style": 112, 
+        "orientation": 96, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 129, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1010049"
+  }, 
+  {
+    "ref": "item-Head_object_1009993", 
+    "mods": [
+      {
+        "style": 41, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 131, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1010049"
+  }, 
+  {
+    "ref": "item-Head_object_1007213", 
+    "mods": [
+      {
+        "style": 102, 
+        "orientation": 112, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 135, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1010049"
+  }, 
+  {
+    "ref": "item-Magic_wand_object_1009589", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 120, 
+        "type": "Magic_wand"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_wand", 
+    "in": "context-region_20091"
+  }, 
+  {
+    "ref": "item-Box_object_1006871", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 41, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 21, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20091"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006865", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 76, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006871"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007601", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 30, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006871"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007595", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 105, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 54, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006871"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007594", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 113, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 43, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006871"
+  }, 
+  {
+    "ref": "item-Bag_object_1003972", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 41, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 67, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20091"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006864", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 91, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Bag_object_1003972"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006869", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 73, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 66, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Bag_object_1003972"
+  }
+]

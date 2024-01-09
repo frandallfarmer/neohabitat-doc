@@ -1,0 +1,214 @@
+[
+  {
+    "ref": "context-region_4292", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_4293", 
+          "", 
+          "", 
+          "context-region_4287"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14451", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 8, 
+        "orientation": 228, 
+        "upper_right_x": 15, 
+        "lower_left_x": 7, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 214, 
+        "x": 144, 
+        "height": 170, 
+        "type": "Trapezoid", 
+        "upper_left_x": 244
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Wall_object_14450", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 228, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14453", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 228, 
+        "upper_right_x": 6, 
+        "lower_left_x": 253, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 98, 
+        "x": 92, 
+        "height": 158, 
+        "type": "Trapezoid", 
+        "upper_left_x": 245
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Pond_object_14452", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 72, 
+        "type": "Pond"
+      }
+    ], 
+    "type": "item", 
+    "name": "Pond", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14455", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 12, 
+        "orientation": 8, 
+        "upper_right_x": 0, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 0, 
+        "height": 66, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14454", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 0, 
+        "orientation": 8, 
+        "upper_right_x": 16, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 0, 
+        "gr_state": 0, 
+        "y": 88, 
+        "x": 0, 
+        "height": 40, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Sky_object_14457", 
+    "mods": [
+      {
+        "style": 9, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 60, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Rock_object_14456", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "mass": 1, 
+        "gr_state": 0, 
+        "y": 133, 
+        "x": 108, 
+        "type": "Rock"
+      }
+    ], 
+    "type": "item", 
+    "name": "Rock", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Ground_object_14448", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_4292"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14449", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 248, 
+        "orientation": 228, 
+        "upper_right_x": 0, 
+        "lower_left_x": 248, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 63, 
+        "x": 56, 
+        "height": 193, 
+        "type": "Trapezoid", 
+        "upper_left_x": 240
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_4292"
+  }
+]

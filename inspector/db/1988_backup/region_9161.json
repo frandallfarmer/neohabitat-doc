@@ -1,0 +1,216 @@
+[
+  {
+    "ref": "context-region_9161", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_10488", 
+          "", 
+          "context-region_10484", 
+          "context-region_9153"
+        ], 
+        "orientation": 2, 
+        "nitty_bits": 3, 
+        "port_dir": "}", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Table_object_17657", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 152, 
+        "x": 84, 
+        "type": "Table", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Table", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Ground_object_7280", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 60, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Wall_object_7283", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 4, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Window_object_7282", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 0, 
+        "gr_state": 1, 
+        "y": 112, 
+        "x": 0, 
+        "type": "Window"
+      }
+    ], 
+    "type": "item", 
+    "name": "Window", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Glue_object_7284", 
+    "mods": [
+      {
+        "y_offset_2": 0, 
+        "y_offset_3": 227, 
+        "style": 0, 
+        "y_offset_1": 0, 
+        "y_offset_6": 0, 
+        "orientation": 0, 
+        "y_offset_4": 239, 
+        "y_offset_5": 0, 
+        "x_offset_2": 20, 
+        "x_offset_5": 0, 
+        "x_offset_4": 4, 
+        "x_offset_6": 0, 
+        "x_offset_1": 248, 
+        "x_offset_3": 5, 
+        "gr_state": 1, 
+        "y": 70, 
+        "x": 44, 
+        "type": "Glue"
+      }
+    ], 
+    "type": "item", 
+    "name": "Glue", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7285", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 120, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Glue_object_7284"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_7286", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 120, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Glue_object_7284"
+  }, 
+  {
+    "ref": "item-Chair_object_7289", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 116, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Chair_object_7292", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 9, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 56, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Chair_object_7290", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 92, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9161"
+  }, 
+  {
+    "ref": "item-Chair_object_7291", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 32, 
+        "type": "Chair"
+      }
+    ], 
+    "type": "item", 
+    "name": "Chair", 
+    "in": "context-region_9161"
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "ref": "context-region_9043", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9044", 
+          "context-region_9054", 
+          "context-region_9042", 
+          "context-region_9031"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Flat_object_1563", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9043"
+  }, 
+  {
+    "ref": "item-Teleport_object_1566", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 204, 
+        "address": "Pop-Plaza SE", 
+        "take": 120, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 36, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_9043"
+  }, 
+  {
+    "ref": "item-Street_object_1567", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 10, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9043"
+  }, 
+  {
+    "ref": "item-Sky_object_1564", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9043"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1565", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 65, 
+        "orientation": 104, 
+        "upper_right_x": 64, 
+        "lower_left_x": 248, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 26, 
+        "x": 96, 
+        "height": 22, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9043"
+  }
+]

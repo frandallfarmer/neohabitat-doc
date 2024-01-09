@@ -1,0 +1,282 @@
+[
+  {
+    "ref": "context-region_20093", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20093", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_17674", 
+    "mods": [
+      {
+        "style": 106, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 70, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20093"
+  }, 
+  {
+    "ref": "item-Head_object_17675", 
+    "mods": [
+      {
+        "style": 107, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20093"
+  }, 
+  {
+    "ref": "item-Head_object_17670", 
+    "mods": [
+      {
+        "style": 102, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 39, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20093"
+  }, 
+  {
+    "ref": "item-Head_object_17680", 
+    "mods": [
+      {
+        "style": 112, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 133, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20093"
+  }, 
+  {
+    "ref": "item-Head_object_17691", 
+    "mods": [
+      {
+        "style": 129, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 23, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20093"
+  }, 
+  {
+    "ref": "item-Head_object_17694", 
+    "mods": [
+      {
+        "style": 132, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 37, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20093"
+  }, 
+  {
+    "ref": "item-Box_object_17686", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 62, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20093"
+  }, 
+  {
+    "ref": "item-Head_object_17689", 
+    "mods": [
+      {
+        "style": 127, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 20, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_17688", 
+    "mods": [
+      {
+        "style": 126, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 10, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_17673", 
+    "mods": [
+      {
+        "style": 105, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 33, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_17692", 
+    "mods": [
+      {
+        "style": 130, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 7, 
+        "x": 52, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_17693", 
+    "mods": [
+      {
+        "style": 131, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 9, 
+        "x": 64, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_17668", 
+    "mods": [
+      {
+        "style": 100, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 79, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_17678", 
+    "mods": [
+      {
+        "style": 110, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 108, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_17681", 
+    "mods": [
+      {
+        "style": 113, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 140, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_17686"
+  }, 
+  {
+    "ref": "item-Head_object_1001047", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 75, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20093"
+  }
+]

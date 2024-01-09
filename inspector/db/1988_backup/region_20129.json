@@ -1,0 +1,56 @@
+[
+  {
+    "ref": "context-region_20129", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20129", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Fake_gun_object_1014742", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 113, 
+        "type": "Fake_gun"
+      }
+    ], 
+    "type": "item", 
+    "name": "Fake_gun", 
+    "in": "context-region_20129"
+  }, 
+  {
+    "ref": "item-Escape_device_object_1013488", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "charge": 10, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 147, 
+        "type": "Escape_device"
+      }
+    ], 
+    "type": "item", 
+    "name": "Escape_device", 
+    "in": "context-region_20129"
+  }
+]

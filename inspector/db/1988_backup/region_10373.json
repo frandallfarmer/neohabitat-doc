@@ -1,0 +1,56 @@
+[
+  {
+    "ref": "context-region_10373", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_1003389", 
+    "mods": [
+      {
+        "style": 131, 
+        "orientation": 113, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 11, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_10373"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1004130", 
+    "mods": [
+      {
+        "style": 13, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 56, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "context-region_10373"
+  }
+]

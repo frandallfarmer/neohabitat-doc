@@ -1,0 +1,833 @@
+[
+  {
+    "ref": "context-region_6400", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sign_object_14608", 
+    "mods": [
+      {
+        "style": 6, 
+        "orientation": 180, 
+        "ascii": [
+          35, 
+          32, 
+          116, 
+          32, 
+          101, 
+          32, 
+          114, 
+          32, 
+          100, 
+          32, 
+          101, 
+          134, 
+          105, 
+          32, 
+          101, 
+          32, 
+          112, 
+          32, 
+          116, 
+          32, 
+          100, 
+          32, 
+          115, 
+          134, 
+          115, 
+          32, 
+          108, 
+          32, 
+          111, 
+          32, 
+          97, 
+          32, 
+          114, 
+          32, 
+          115, 
+          134, 
+          97, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 34, 
+        "x": 100, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Sign_object_14609", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          128, 
+          116, 
+          32, 
+          119, 
+          32, 
+          111, 
+          32, 
+          109, 
+          32, 
+          111, 
+          134, 
+          128, 
+          114, 
+          32, 
+          101, 
+          32, 
+          58, 
+          32, 
+          50, 
+          32, 
+          51, 
+          134, 
+          128, 
+          116, 
+          32, 
+          111, 
+          32, 
+          116, 
+          32, 
+          97, 
+          32, 
+          108, 
+          32, 
+          58, 
+          134, 
+          32, 
+          32, 
+          32, 
+          32, 
+          57
+        ], 
+        "gr_state": 3, 
+        "y": 92, 
+        "x": 100, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Floor_lamp_object_14607", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 4, 
+        "type": "Floor_lamp"
+      }
+    ], 
+    "type": "item", 
+    "name": "Floor_lamp", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_14600", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 24, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Book_object_14606", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 48, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Vendo_inside_object_14600"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_14588", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 24, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_14600"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_14601", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 32, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_14598", 
+    "mods": [
+      {
+        "display_item": 0, 
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 44, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_14601"
+  }, 
+  {
+    "ref": "item-Book_object_14605", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 40, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Vendo_inside_object_14601"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_14602", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 148, 
+        "x": 40, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Book_object_14604", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 32, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Vendo_inside_object_14602"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_14599", 
+    "mods": [
+      {
+        "display_item": 1, 
+        "style": 1, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 60, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 1
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_14602"
+  }, 
+  {
+    "ref": "item-Book_object_14603", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 1, 
+        "y": 0, 
+        "x": 24, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Vendo_front_object_14599"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14590", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 204, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          169, 
+          85, 
+          85, 
+          106, 
+          170, 
+          85, 
+          85, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          85, 
+          85, 
+          170, 
+          169, 
+          85, 
+          85, 
+          106
+        ], 
+        "upper_right_x": 0, 
+        "lower_left_x": 72, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 16, 
+        "x": 186, 
+        "height": 7, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 72
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Short_sign_object_14591", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          129, 
+          129, 
+          129, 
+          129, 
+          129, 
+          129, 
+          129, 
+          129, 
+          129, 
+          51
+        ], 
+        "gr_state": 1, 
+        "y": 30, 
+        "x": 0, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Short_sign_object_14592", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          131, 
+          131, 
+          131, 
+          131, 
+          131, 
+          131, 
+          131, 
+          131, 
+          52
+        ], 
+        "gr_state": 1, 
+        "y": 101, 
+        "x": 140, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14589", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 204, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          90, 
+          170, 
+          85, 
+          85, 
+          106, 
+          170, 
+          149, 
+          106, 
+          106, 
+          170, 
+          165, 
+          106, 
+          106, 
+          170, 
+          165, 
+          106, 
+          106, 
+          170, 
+          165, 
+          85, 
+          106, 
+          170, 
+          149, 
+          85, 
+          90, 
+          170, 
+          85
+        ], 
+        "upper_right_x": 0, 
+        "lower_left_x": 98, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 160, 
+        "height": 9, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14594", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 204, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          169, 
+          85, 
+          85, 
+          106, 
+          170, 
+          85, 
+          85, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          85, 
+          85, 
+          170, 
+          169, 
+          85, 
+          85, 
+          106
+        ], 
+        "upper_right_x": 0, 
+        "lower_left_x": 72, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 16, 
+        "x": 184, 
+        "height": 7, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 72
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14595", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 172, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          169, 
+          85, 
+          85, 
+          106, 
+          170, 
+          85, 
+          85, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          149, 
+          169, 
+          170, 
+          170, 
+          85, 
+          85, 
+          170, 
+          169, 
+          85, 
+          85, 
+          106
+        ], 
+        "upper_right_x": 0, 
+        "lower_left_x": 72, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 16, 
+        "x": 184, 
+        "height": 7, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 72
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14596", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 204, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          90, 
+          170, 
+          85, 
+          85, 
+          106, 
+          170, 
+          149, 
+          106, 
+          106, 
+          170, 
+          165, 
+          106, 
+          106, 
+          170, 
+          165, 
+          106, 
+          106, 
+          170, 
+          165, 
+          85, 
+          106, 
+          170, 
+          149, 
+          85, 
+          90, 
+          170, 
+          85
+        ], 
+        "upper_right_x": 0, 
+        "lower_left_x": 98, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 160, 
+        "height": 9, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14597", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 172, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          85, 
+          90, 
+          170, 
+          85, 
+          85, 
+          106, 
+          170, 
+          149, 
+          106, 
+          106, 
+          170, 
+          165, 
+          106, 
+          106, 
+          170, 
+          165, 
+          106, 
+          106, 
+          170, 
+          165, 
+          85, 
+          106, 
+          170, 
+          149, 
+          85, 
+          90, 
+          170, 
+          85
+        ], 
+        "upper_right_x": 0, 
+        "lower_left_x": 98, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 160, 
+        "height": 9, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Sign_object_14587", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          131, 
+          118, 
+          105, 
+          115, 
+          105, 
+          116, 
+          32, 
+          116, 
+          104, 
+          101, 
+          32, 
+          39, 
+          72, 
+          69, 
+          65, 
+          82, 
+          84, 
+          32, 
+          111, 
+          102, 
+          32, 
+          116, 
+          104, 
+          101, 
+          32, 
+          68, 
+          69, 
+          83, 
+          69, 
+          82, 
+          84, 
+          39, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 124, 
+        "x": 16, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_6400"
+  }, 
+  {
+    "ref": "item-Short_sign_object_14593", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          129, 
+          131, 
+          129, 
+          131, 
+          129, 
+          131, 
+          129, 
+          131, 
+          50
+        ], 
+        "gr_state": 1, 
+        "y": 40, 
+        "x": 120, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_6400"
+  }
+]

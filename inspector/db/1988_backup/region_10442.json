@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10442", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Apply: City Hall", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_10426", 
+          "context-region_10426", 
+          "context-region_10426", 
+          "context-region_10426"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }
+]

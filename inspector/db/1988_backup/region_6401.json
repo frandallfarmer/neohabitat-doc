@@ -1,0 +1,212 @@
+[
+  {
+    "ref": "context-region_6401", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9132", 
+          "context-region_9132", 
+          "context-region_9132", 
+          "context-region_9132"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sign_object_14613", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 188, 
+        "ascii": [
+          133, 
+          80, 
+          85, 
+          83, 
+          72, 
+          125, 
+          66, 
+          85, 
+          84, 
+          84, 
+          79, 
+          78, 
+          134, 
+          134, 
+          32, 
+          32, 
+          32, 
+          32, 
+          125, 
+          134, 
+          134, 
+          32, 
+          32, 
+          32, 
+          32, 
+          125, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 3, 
+        "y": 104, 
+        "x": 60, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_6401"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14612", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 1, 
+        "lower_right_x": 0, 
+        "orientation": 140, 
+        "pattern": [
+          85, 
+          170, 
+          85, 
+          170, 
+          85, 
+          170, 
+          85, 
+          170, 
+          170, 
+          85, 
+          170, 
+          85, 
+          170, 
+          85, 
+          170, 
+          85, 
+          89, 
+          150, 
+          85, 
+          149, 
+          86, 
+          89, 
+          150, 
+          101, 
+          85, 
+          89, 
+          149, 
+          149, 
+          80, 
+          86, 
+          85, 
+          85
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 160, 
+        "height": 112, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6401"
+  }, 
+  {
+    "ref": "item-Ground_object_14611", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_6401"
+  }, 
+  {
+    "ref": "item-Trapezoid_object_14616", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 3, 
+        "orientation": 156, 
+        "upper_right_x": 3, 
+        "lower_left_x": 244, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 56, 
+        "x": 104, 
+        "height": 177, 
+        "type": "Trapezoid", 
+        "upper_left_x": 244
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_6401"
+  }, 
+  {
+    "ref": "item-Magic_immobile_object_14615", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 120, 
+        "gr_state": 2, 
+        "y": 59, 
+        "x": 96, 
+        "type": "Magic_immobile"
+      }
+    ], 
+    "type": "item", 
+    "name": "Magic_immobile", 
+    "in": "context-region_6401"
+  }, 
+  {
+    "ref": "item-Teleport_object_14614", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 236, 
+        "address": "Pop-476549923", 
+        "take": 80, 
+        "gr_state": 0, 
+        "y": 128, 
+        "x": 4, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_6401"
+  }
+]

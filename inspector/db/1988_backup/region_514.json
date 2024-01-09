@@ -1,0 +1,316 @@
+[
+  {
+    "ref": "context-region_514", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Apartment Hallway 1", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_513", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Bag_object_603", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 40, 
+        "type": "Bag", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Club_object_609", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 94, 
+        "type": "Club"
+      }
+    ], 
+    "type": "item", 
+    "name": "Club", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Box_object_608", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 86, 
+        "type": "Box", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Bottle_object_607", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 74, 
+        "type": "Bottle", 
+        "filled": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Bottle", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Ball_object_606", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 140, 
+        "x": 74, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Book_object_605", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "last_page": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 62, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Ball_object_604", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 52, 
+        "type": "Ball"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ball", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Compass_object_610", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 110, 
+        "type": "Compass"
+      }
+    ], 
+    "type": "item", 
+    "name": "Compass", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Countertop_object_611", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 150, 
+        "x": 118, 
+        "type": "Countertop", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Countertop", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Atm_object_601", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 16, 
+        "type": "Atm"
+      }
+    ], 
+    "type": "item", 
+    "name": "Atm", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Game_piece_object_602", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 140, 
+        "x": 28, 
+        "type": "Game_piece"
+      }
+    ], 
+    "type": "item", 
+    "name": "Game_piece", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Sign_object_599", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          71, 
+          0, 
+          244, 
+          0, 
+          0, 
+          0, 
+          0, 
+          0, 
+          32, 
+          32, 
+          90, 
+          101, 
+          101, 
+          134, 
+          128, 
+          133, 
+          78, 
+          101, 
+          119, 
+          134, 
+          133, 
+          32, 
+          128, 
+          76, 
+          111, 
+          111, 
+          107, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 1, 
+        "y": 120, 
+        "x": 8, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Ground_object_598", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Wall_object_597", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 196, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_514"
+  }, 
+  {
+    "ref": "item-Amulet_object_600", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 130, 
+        "x": 4, 
+        "type": "Amulet"
+      }
+    ], 
+    "type": "item", 
+    "name": "Amulet", 
+    "in": "context-region_514"
+  }
+]

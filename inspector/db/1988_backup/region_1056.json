@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1056", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "51 Dice Ave", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1058", 
+          "", 
+          "context-region_1054", 
+          "context-region_1057"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]

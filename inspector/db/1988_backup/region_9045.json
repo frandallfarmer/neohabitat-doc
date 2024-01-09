@@ -1,0 +1,113 @@
+[
+  {
+    "ref": "context-region_9045", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9046", 
+          "context-region_9056", 
+          "context-region_9044", 
+          "context-region_9033"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1575", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 73, 
+        "orientation": 104, 
+        "upper_right_x": 73, 
+        "lower_left_x": 248, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 25, 
+        "x": 4, 
+        "height": 23, 
+        "type": "Trapezoid", 
+        "upper_left_x": 249
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9045"
+  }, 
+  {
+    "ref": "item-Sky_object_1574", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9045"
+  }, 
+  {
+    "ref": "item-Street_object_1577", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 9, 
+        "y": 12, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9045"
+  }, 
+  {
+    "ref": "item-Teleport_object_1576", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 188, 
+        "address": "Pop-Plaza NE", 
+        "take": 70, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 112, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_9045"
+  }, 
+  {
+    "ref": "item-Flat_object_1573", 
+    "mods": [
+      {
+        "flat_type": 2, 
+        "style": 0, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Flat"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flat", 
+    "in": "context-region_9045"
+  }
+]

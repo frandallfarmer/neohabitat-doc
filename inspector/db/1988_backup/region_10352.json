@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_10352", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Evidence Room", 
+    "mods": [
+      {
+        "town_dir": "~", 
+        "neighbors": [
+          "", 
+          "", 
+          "context-region_10351", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "~", 
+        "type": "Region"
+      }
+    ]
+  }
+]

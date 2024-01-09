@@ -1,0 +1,515 @@
+[
+  {
+    "ref": "context-region_20053", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20053", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Box_object_1007843", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "key_hi": 0, 
+        "key_lo": 112, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 147, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20053"
+  }, 
+  {
+    "ref": "item-Head_object_1007530", 
+    "mods": [
+      {
+        "style": 39, 
+        "orientation": 88, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 44, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Head_object_1003905", 
+    "mods": [
+      {
+        "style": 79, 
+        "orientation": 56, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 54, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Changomatic_object_1007430", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 57, 
+        "type": "Changomatic"
+      }
+    ], 
+    "type": "item", 
+    "name": "Changomatic", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Box_object_1006511", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 35, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007823", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 88, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007534", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 32, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007533", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007532", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 96, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006405", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 112, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 68, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006401", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 64, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 104, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006381", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 122, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006378", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 25, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1006382", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006511"
+  }, 
+  {
+    "ref": "item-Amulet_object_1016294", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 25, 
+        "type": "Amulet"
+      }
+    ], 
+    "type": "item", 
+    "name": "Amulet", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Head_object_1007848", 
+    "mods": [
+      {
+        "style": 19, 
+        "orientation": 96, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Head_object_1007845", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Head_object_1016299", 
+    "mods": [
+      {
+        "style": 8, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Box_object_1006920", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "key_hi": 0, 
+        "key_lo": 104, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 76, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1007843"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007535", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 72, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007536", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 24, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 120, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Head_object_1007504", 
+    "mods": [
+      {
+        "style": 32, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 87, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007835", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 80, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1007836", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 16, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Head_object_1007435", 
+    "mods": [
+      {
+        "style": 45, 
+        "orientation": 32, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 46, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Head_object_1007528", 
+    "mods": [
+      {
+        "style": 56, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 44, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Head_object_1007424", 
+    "mods": [
+      {
+        "style": 89, 
+        "orientation": 112, 
+        "gr_state": 2, 
+        "y": 7, 
+        "x": 110, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Head_object_1007849", 
+    "mods": [
+      {
+        "style": 72, 
+        "orientation": 16, 
+        "gr_state": 2, 
+        "y": 6, 
+        "x": 20, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Head_object_1016298", 
+    "mods": [
+      {
+        "style": 12, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 9, 
+        "x": 118, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1006920"
+  }, 
+  {
+    "ref": "item-Bag_object_1017604", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 37, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "context-region_20053"
+  }
+]

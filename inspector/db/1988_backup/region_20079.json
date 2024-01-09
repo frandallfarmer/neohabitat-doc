@@ -1,0 +1,73 @@
+[
+  {
+    "ref": "context-region_20079", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20079", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Head_object_1002329", 
+    "mods": [
+      {
+        "style": 89, 
+        "orientation": 9, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 99, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20079"
+  }, 
+  {
+    "ref": "item-Head_object_1005751", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "context-region_20079"
+  }, 
+  {
+    "ref": "item-Key_object_1002255", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 0, 
+        "orientation": 9, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20079"
+  }
+]

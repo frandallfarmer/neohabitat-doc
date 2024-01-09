@@ -1,0 +1,161 @@
+[
+  {
+    "ref": "context-region_9022", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9023", 
+          "context-region_9033", 
+          "context-region_9021", 
+          "context-region_9012"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Trapezoid_object_1306", 
+    "mods": [
+      {
+        "style": 0, 
+        "lower_right_x": 160, 
+        "orientation": 220, 
+        "upper_right_x": 160, 
+        "lower_left_x": 0, 
+        "trapezoid_type": 2, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 0, 
+        "height": 47, 
+        "type": "Trapezoid", 
+        "upper_left_x": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Trapezoid", 
+    "in": "context-region_9022"
+  }, 
+  {
+    "ref": "item-Street_object_1307", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 5, 
+        "y": 4, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9022"
+  }, 
+  {
+    "ref": "item-Teleport_object_1304", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 252, 
+        "address": "Pop-Plaza NW", 
+        "take": 220, 
+        "gr_state": 0, 
+        "y": 144, 
+        "x": 104, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_9022"
+  }, 
+  {
+    "ref": "item-Sky_object_1305", 
+    "mods": [
+      {
+        "style": 7, 
+        "orientation": 172, 
+        "gr_state": 0, 
+        "y": 2, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9022"
+  }, 
+  {
+    "ref": "item-Ground_object_1302", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 184, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_9022"
+  }, 
+  {
+    "ref": "item-Sky_object_1303", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 244, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Sky"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sky", 
+    "in": "context-region_9022"
+  }, 
+  {
+    "ref": "item-Flag_object_1584", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 57, 
+        "mass": 0, 
+        "gr_state": 0, 
+        "y": 160, 
+        "x": 96, 
+        "type": "Flag"
+      }
+    ], 
+    "type": "item", 
+    "name": "Flag", 
+    "in": "context-region_9022"
+  }, 
+  {
+    "ref": "item-Street_object_1308", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 3, 
+        "y": 24, 
+        "x": 60, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_9022"
+  }
+]

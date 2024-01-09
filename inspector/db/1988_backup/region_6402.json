@@ -1,0 +1,174 @@
+[
+  {
+    "ref": "context-region_6402", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "context-region_9132", 
+          "context-region_9132", 
+          "context-region_9132", 
+          "context-region_9132"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Sign_object_14619", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 0, 
+        "ascii": [
+          131, 
+          131, 
+          97, 
+          98, 
+          97, 
+          110, 
+          100, 
+          111, 
+          110, 
+          32, 
+          104, 
+          111, 
+          112, 
+          101, 
+          33, 
+          32, 
+          89, 
+          111, 
+          117, 
+          32, 
+          109, 
+          105, 
+          115, 
+          115, 
+          101, 
+          100, 
+          32, 
+          115, 
+          111, 
+          109, 
+          101, 
+          116, 
+          104, 
+          105, 
+          110, 
+          103, 
+          32, 
+          32, 
+          32, 
+          32
+        ], 
+        "gr_state": 5, 
+        "y": 28, 
+        "x": 0, 
+        "type": "Sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Sign", 
+    "in": "context-region_6402"
+  }, 
+  {
+    "ref": "item-Super_trapezoid_object_14618", 
+    "mods": [
+      {
+        "style": 0, 
+        "pattern_x_size": 3, 
+        "lower_right_x": 0, 
+        "orientation": 204, 
+        "pattern": [
+          85, 
+          85, 
+          85, 
+          85, 
+          101, 
+          101, 
+          169, 
+          85, 
+          105, 
+          102, 
+          86, 
+          85, 
+          102, 
+          102, 
+          86, 
+          85, 
+          101, 
+          166, 
+          86, 
+          85, 
+          101, 
+          102, 
+          86, 
+          85, 
+          101, 
+          101, 
+          169, 
+          101, 
+          85, 
+          85, 
+          85, 
+          85
+        ], 
+        "upper_right_x": 255, 
+        "lower_left_x": 96, 
+        "trapezoid_type": 1, 
+        "gr_state": 0, 
+        "y": 32, 
+        "x": 160, 
+        "height": 112, 
+        "type": "Super_trapezoid", 
+        "pattern_y_size": 7, 
+        "upper_left_x": 96
+      }
+    ], 
+    "type": "item", 
+    "name": "Super_trapezoid", 
+    "in": "context-region_6402"
+  }, 
+  {
+    "ref": "item-Ground_object_14617", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 56, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_6402"
+  }, 
+  {
+    "ref": "item-Teleport_object_14620", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "address": "Pop-4765499", 
+        "take": 70, 
+        "gr_state": 0, 
+        "y": 153, 
+        "x": 132, 
+        "type": "Teleport", 
+        "activeState": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Teleport", 
+    "in": "context-region_6402"
+  }
+]

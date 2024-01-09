@@ -1,0 +1,193 @@
+[
+  {
+    "ref": "context-region_1978", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Rant N Rave Inc.", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "context-region_1980", 
+          "", 
+          "context-region_1976"
+        ], 
+        "orientation": 1, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Short_sign_object_17865", 
+    "mods": [
+      {
+        "style": 4, 
+        "orientation": 140, 
+        "ascii": [
+          32, 
+          84, 
+          104, 
+          101, 
+          32, 
+          82, 
+          65, 
+          78, 
+          84, 
+          32
+        ], 
+        "gr_state": 0, 
+        "y": 232, 
+        "x": 64, 
+        "type": "Short_sign"
+      }
+    ], 
+    "type": "item", 
+    "name": "Short_sign", 
+    "in": "context-region_1978"
+  }, 
+  {
+    "ref": "item-Door_object_17864", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 244, 
+        "key_hi": 112, 
+        "key_lo": 23, 
+        "connection": "context-region_1977", 
+        "gr_state": 0, 
+        "y": 33, 
+        "x": 72, 
+        "type": "Door", 
+        "open_flags": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Door", 
+    "in": "context-region_1978"
+  }, 
+  {
+    "ref": "item-Vendo_inside_object_17867", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 8, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 27, 
+        "x": 20, 
+        "type": "Vendo_inside", 
+        "open_flags": 3
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_inside", 
+    "in": "context-region_1978"
+  }, 
+  {
+    "ref": "item-Vendo_front_object_17869", 
+    "mods": [
+      {
+        "display_item": 1, 
+        "style": 1, 
+        "orientation": 140, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Vendo_front", 
+        "open_flags": 3, 
+        "item_price": 5
+      }
+    ], 
+    "type": "item", 
+    "name": "Vendo_front", 
+    "in": "item-Vendo_inside_object_17867"
+  }, 
+  {
+    "ref": "item-Book_object_17870", 
+    "mods": [
+      {
+        "style": 3, 
+        "orientation": 16, 
+        "last_page": 65535, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 1, 
+        "type": "Book"
+      }
+    ], 
+    "type": "item", 
+    "name": "Book", 
+    "in": "item-Vendo_inside_object_17867"
+  }, 
+  {
+    "ref": "item-Plaque_object_17866", 
+    "mods": [
+      {
+        "style": 2, 
+        "orientation": 16, 
+        "last_page": 1, 
+        "gr_state": 0, 
+        "y": 60, 
+        "x": 120, 
+        "type": "Plaque"
+      }
+    ], 
+    "type": "item", 
+    "name": "Plaque", 
+    "in": "context-region_1978"
+  }, 
+  {
+    "ref": "item-Ground_object_17863", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 220, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 0, 
+        "type": "Ground"
+      }
+    ], 
+    "type": "item", 
+    "name": "Ground", 
+    "in": "context-region_1978"
+  }, 
+  {
+    "ref": "item-Wall_object_17862", 
+    "mods": [
+      {
+        "style": 5, 
+        "orientation": 204, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 0, 
+        "type": "Wall"
+      }
+    ], 
+    "type": "item", 
+    "name": "Wall", 
+    "in": "context-region_1978"
+  }, 
+  {
+    "ref": "item-Street_object_17868", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 8, 
+        "gr_state": 6, 
+        "y": 7, 
+        "x": 68, 
+        "type": "Street"
+      }
+    ], 
+    "type": "item", 
+    "name": "Street", 
+    "in": "context-region_1978"
+  }
+]

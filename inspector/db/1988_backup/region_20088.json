@@ -1,0 +1,468 @@
+[
+  {
+    "ref": "context-region_20088", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "Bare Bones #20088", 
+    "mods": [
+      {
+        "town_dir": "", 
+        "neighbors": [
+          "", 
+          "", 
+          "", 
+          ""
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "", 
+        "type": "Region"
+      }
+    ]
+  }, 
+  {
+    "ref": "item-Key_object_1005974", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 3, 
+        "x": 49, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Key_object_1005969", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Key_object_1005975", 
+    "mods": [
+      {
+        "key_number_lo": 0, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 1, 
+        "y": 2, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Key_object_1005967", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Key_object_1005973", 
+    "mods": [
+      {
+        "key_number_lo": 127, 
+        "style": 1, 
+        "orientation": 64, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Key_object_1005972", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Key_object_1005971", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Key_object_1006874", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 8, 
+        "x": 76, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Box_object_1001524", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 81, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 9, 
+        "x": 64, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "context-region_20088"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_1003636", 
+    "mods": [
+      {
+        "style": 10, 
+        "orientation": 40, 
+        "gr_state": 0, 
+        "y": 1, 
+        "x": 100, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1001524"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1003149", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 97, 
+        "gr_state": 0, 
+        "y": 6, 
+        "x": 78, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1001524"
+  }, 
+  {
+    "ref": "item-Knick_knack_object_4123", 
+    "mods": [
+      {
+        "style": 1, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 126, 
+        "type": "Knick_knack", 
+        "magic_type": 0
+      }
+    ], 
+    "type": "item", 
+    "name": "Knick_knack", 
+    "in": "item-Box_object_1001524"
+  }, 
+  {
+    "ref": "item-Bag_object_1006094", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 17, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 4, 
+        "x": 9, 
+        "type": "Bag", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Bag", 
+    "in": "item-Box_object_1001524"
+  }, 
+  {
+    "ref": "item-Paper_object_1007246", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 16, 
+        "gr_state": 1, 
+        "y": 1, 
+        "x": 0, 
+        "type": "Paper"
+      }
+    ], 
+    "type": "item", 
+    "name": "Paper", 
+    "in": "item-Bag_object_1006094"
+  }, 
+  {
+    "ref": "item-Head_object_1005756", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 0, 
+        "gr_state": 0, 
+        "y": 0, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Bag_object_1006094"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1003044", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 65, 
+        "gr_state": 0, 
+        "y": 3, 
+        "x": 105, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1001524"
+  }, 
+  {
+    "ref": "item-Spray_can_object_1003108", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 104, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 138, 
+        "type": "Spray_can"
+      }
+    ], 
+    "type": "item", 
+    "name": "Spray_can", 
+    "in": "item-Box_object_1001524"
+  }, 
+  {
+    "ref": "item-Box_object_1002242", 
+    "mods": [
+      {
+        "style": 0, 
+        "orientation": 1, 
+        "key_hi": 0, 
+        "key_lo": 0, 
+        "gr_state": 0, 
+        "y": 5, 
+        "x": 23, 
+        "type": "Box", 
+        "open_flags": 2
+      }
+    ], 
+    "type": "item", 
+    "name": "Box", 
+    "in": "item-Box_object_1001524"
+  }, 
+  {
+    "ref": "item-Head_object_1002796", 
+    "mods": [
+      {
+        "style": 12, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 4, 
+        "x": 73, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002242"
+  }, 
+  {
+    "ref": "item-Head_object_1002823", 
+    "mods": [
+      {
+        "style": 113, 
+        "orientation": 1, 
+        "gr_state": 2, 
+        "y": 2, 
+        "x": 60, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002242"
+  }, 
+  {
+    "ref": "item-Head_object_1002760", 
+    "mods": [
+      {
+        "style": 24, 
+        "orientation": 8, 
+        "gr_state": 2, 
+        "y": 0, 
+        "x": 80, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002242"
+  }, 
+  {
+    "ref": "item-Head_object_1002764", 
+    "mods": [
+      {
+        "style": 19, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 1, 
+        "x": 112, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002242"
+  }, 
+  {
+    "ref": "item-Head_object_1002150", 
+    "mods": [
+      {
+        "style": 21, 
+        "orientation": 96, 
+        "gr_state": 2, 
+        "y": 3, 
+        "x": 23, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002242"
+  }, 
+  {
+    "ref": "item-Head_object_1002710", 
+    "mods": [
+      {
+        "style": 21, 
+        "orientation": 57, 
+        "gr_state": 2, 
+        "y": 5, 
+        "x": 20, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002242"
+  }, 
+  {
+    "ref": "item-Head_object_17718", 
+    "mods": [
+      {
+        "style": 145, 
+        "orientation": 0, 
+        "gr_state": 2, 
+        "y": 8, 
+        "x": 116, 
+        "type": "Head"
+      }
+    ], 
+    "type": "item", 
+    "name": "Head", 
+    "in": "item-Box_object_1002242"
+  }, 
+  {
+    "ref": "item-Key_object_1006863", 
+    "mods": [
+      {
+        "key_number_lo": 255, 
+        "style": 0, 
+        "orientation": 0, 
+        "key_number_hi": 255, 
+        "gr_state": 0, 
+        "y": 7, 
+        "x": 75, 
+        "type": "Key"
+      }
+    ], 
+    "type": "item", 
+    "name": "Key", 
+    "in": "context-region_20088"
+  }
+]

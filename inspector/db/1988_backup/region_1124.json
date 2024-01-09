@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "context-region_1124", 
+    "capacity": 64, 
+    "type": "context", 
+    "name": "42 Mince St", 
+    "mods": [
+      {
+        "town_dir": "\u007f", 
+        "neighbors": [
+          "context-region_1126", 
+          "", 
+          "context-region_1122", 
+          "context-region_1125"
+        ], 
+        "orientation": 0, 
+        "nitty_bits": 3, 
+        "port_dir": "\u007f", 
+        "type": "Region"
+      }
+    ]
+  }
+]
