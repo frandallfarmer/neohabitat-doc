@@ -35,12 +35,14 @@ const remapImagePath = (imageFileMap, path) => {
 
 export const addContextNavLinks = (navContainer, mod, contextMap) => {
     const addDirection = (direction, ref) => {
-        if (ref) {
+        if (ref && ref != '') {
             let name = ref
             let href = null
             if (contextMap[ref]) {
                 const ctx = contextMap[ref]
-                name = ctx.name ?? ctx.filename
+                if (ctx.name && ctx.name.trim() != '') {
+                    name = ctx.name
+                }
                 href = `region.html?f=${ctx.filename}`
             }
             const link = href ? wrapLink(textNode(name), href) : textNode(name)
@@ -131,7 +133,7 @@ export const renderMod = (mod, prop) => {
 export const regionShower = async ({ errorContainer, regionContainer, objectContainer, navContainer, observer }) => {
     const doc = docBuilder({ errorContainer })
     const mud = parse(await (await fetch("beta.mud")).text())
-    const contextMap = await (await fetch("db/contextmap.json")).json()
+    const contextMap = await (await fetch("db/contextmap.json", { cache: "no-cache" })).json()
     const imageFileMap = await buildImageFileMap()
 
     const debug = (msg, href, element) => {
