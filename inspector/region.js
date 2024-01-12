@@ -1,7 +1,7 @@
 import { decodeProp } from "./codec.js"
-import { html, catcher, direction } from "./view.js"
+import { html, catcher, direction, searchBox } from "./view.js"
 import { useContext, useMemo } from "preact/hooks"
-import { signal } from "@preact/signals"
+import { signal, computed } from "@preact/signals"
 import { contextMap, betaMud, logError, promiseToSignal, useBinary, useHabitatJson } from './data.js'
 import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask, compositeSpaces, animation } from "./render.js"
 import { colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
@@ -134,7 +134,7 @@ export const propFromMod = (mod, ref) => {
     return fnAugment ? useTrap(ref, propFilename, fnAugment) : useBinary(propFilename, decodeProp, null)
 }
 
-export const itemView = ({ object }) => {
+export const itemView = ({ object, standalone }) => {
     const scale = useContext(Scale)
     const mod = object.mods[0]
     const prop = propFromMod(mod, object.ref)
@@ -154,10 +154,11 @@ export const itemView = ({ object }) => {
     }, [prop, grState, mod.orientation])
     const objectSpace = translateSpace(compositeSpaces(frames), mod.x / 4, mod.y % 128)
     const [x, y] = topLeftCanvasOffset(regionSpace, objectSpace)
+    const style = !standalone ? `position: absolute; left: ${x * scale}px; top: ${y * scale}px; 
+                                 z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}`
+                              : ""
     return html`
-        <div id=${object.ref}
-             style="position: absolute; left: ${x * scale}px; top: ${y * scale}px; 
-                    z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}">
+        <div id=${object.ref} style=${style}>
             <${animation} frames=${frames}/>
         </div>`
 }
@@ -231,7 +232,9 @@ export const objectDetails = ({ filename }) => {
             summary = `${summary}: ${mod.type} [${mod.x},${mod.y}]`
             const propFilename = propFilenameFromMod(mod)
             if (propFilename) {
-                details = html`<a href="detail.html?f=${propFilename}">${propFilename}</a>`
+                details = html`
+                    <a href="detail.html?f=${propFilename}">${propFilename}</a>
+                    <${itemView} object=${obj} standalone="true"/>`
             }
         }
         return html`
@@ -243,3 +246,11 @@ export const objectDetails = ({ filename }) => {
     })
     return html`<div>${children}</div>`
 }
+
+export const allContextItems = computed(() => 
+    Object
+        .entries(contextMap())
+        .map(([ref, val]) => ({ ref, label: `${val.name} (${val.filename})`, ...val })))
+
+export const regionSearch = ({ label, onSelected }) =>
+    html`<${searchBox} label=${label} items=${allContextItems.value} onSelected=${onSelected}/>`

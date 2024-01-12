@@ -47,7 +47,7 @@ export const searchBox = ({ label, onSelected, items }) => {
                         onBlur=${() => setFocussed(false)}
                         onInput=${e => { setQuery(e.target.value) }}
                         value="${query}" />
-                    <ul style="display: ${!focussed || results.length == 0 ? "none" : "block"}; z-index: 10; background: white; border: 1px solid black; position:absolute; width: 600px; height: 400px; overflow: scroll; top: 20px">
+                    <ul style="display: ${!focussed || results.length == 0 ? "none" : "block"}; z-index: 1000; background: white; border: 1px solid black; position:absolute; width: 600px; height: 400px; overflow: scroll; top: 20px">
                         ${visibleItems}
                     </ul>
                 </span>

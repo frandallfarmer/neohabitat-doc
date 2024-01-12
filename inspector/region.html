@@ -16,14 +16,26 @@
             }
         </script>
         <script type="module">
-            // import "https://esm.sh/preact/debug"
+            import "https://esm.sh/preact/debug"
             import { render } from "preact"
+            import { signal, effect } from "@preact/signals"
             import { html, errors } from "./view.js"
-            import { useHabitatJson } from "./data.js"
-            import { regionView, regionNav, objectDetails } from "./region.js"
+            import { useHabitatJson, errorBucket } from "./data.js"
+            import { regionView, regionNav, objectDetails, regionSearch } from "./region.js"
 
-            const q = new URLSearchParams(window.location.search)
-            const filename = q.get("f") ?? "db/new_Downtown/Downtown_4d.json"
+            const q = (k) => (new URLSearchParams(window.location.search)).get(k)
+            const filename = signal(q("f") ?? "db/new_Downtown/Downtown_4d.json")
+            effect(() => {
+                if (q("f") != filename.value) {
+                    window.history.pushState({ filename: filename.value }, "", `?f=${filename.value}`)
+                }
+            })
+            window.addEventListener("popstate", event => {
+                if (event.state && event.state.filename) {
+                    errorBucket.value = []
+                    filename.value = event.state.filename
+                }
+            })
 
             const regionName = ({ filename }) => {
                 const objects = useHabitatJson(filename, [])
@@ -31,19 +43,26 @@
                 return html`<span>${(region && region.name) ?? filename}</span>`
             }
 
-            render(html`
-                <h1>Region - <${regionName} filename=${filename}/></h1>
-                <${regionView} filename=${filename}/>
+            const regionPage = (_) => html`
+                <h1>Region - <${regionName} filename=${filename.value}/></h1>
+                <${regionView} filename=${filename.value}/>
                 <div>
                     <h2>Neighboring regions</h2>
-                    <${regionNav} filename=${filename}/>
+                    <${regionNav} filename=${filename.value}/>
+                </div>
+                <div>
+                    <${regionSearch} label="Region search" onSelected=${(item) => {
+                        errorBucket.value = []
+                        filename.value = item.filename
+                    }}/>
                 </div>
                 <div>
                     <h2>Objects</h2>
-                    <${objectDetails} filename=${filename}/>
+                    <${objectDetails} filename=${filename.value}/>
                 </div>
-                <${errors}/>
-            `, document.getElementById("regionview"))
+                <${errors}/>`
+
+            render(html`<${regionPage}/>`, document.getElementById("regionview"))
         </script>
     </head>
     <body>

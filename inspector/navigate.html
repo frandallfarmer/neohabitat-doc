@@ -17,29 +17,26 @@
         </script>
         <script type="module">
             // import "https://esm.sh/preact/debug"
-            import { html, searchBox } from "./view.js"
+            import { html } from "./view.js"
             import { h, render } from "preact"
             import { useState, useId, useCallback, useMemo } from "preact/hooks"
-            import { regionView } from "./region.js"
+            import { regionView, regionSearch } from "./region.js"
+            import { contextMap, useJson } from "./data.js"
             import { direction } from "./view.js"
             import { Scale } from "./render.js"
             import { navigate } from "./neohabitat.js"
 
-            const neighbormap = await (await fetch("db/neighbormap.json", { cache: "no-cache" })).json()
-            const contextmap = await (await fetch("db/contextmap.json", { cache: "no-cache" })).json()
-
-            const allContextItems = Object
-                    .entries(contextmap)
-                    .map(([ref, val]) => ({ ref, label: `${val.name} (${val.filename})`, ...val }))
-
-            const itemLink = ({ item }) => item ? html`<a href="region.html?f=${item.filename}">${item.name}</a>` : null
+            const itemLink = ({ item }) => item ? html`
+                <a href="region.html?f=${item.filename}">${item.name}</a><br/>
+                <${regionView} filename=${item.filename}/>` : null
             const directions = ({ start, end }) => {
                 if (!start || !end) {
                     return null
                 }
+                const neighbormap = useJson("db/neighbormap.json", {})
                 const path = useMemo(() => {
                     return navigate(start.ref, end.ref, neighbormap)
-                }, [start, end])
+                }, [start, end, neighbormap])
                 if (path.length < 2) {
                     return html`<i>Sorry, there's no way to get to ${end.name} from ${start.name}!</i>`
                 }
@@ -47,39 +44,37 @@
                 for (let ipath = 0; ipath < (path.length - 1); ipath ++) {
                     const fromref = path[ipath] 
                     const toref = path[ipath + 1]
-                    const to = contextmap[toref]
+                    const to = contextMap()[toref]
                     const [orientation, n, e, s, w] = neighbormap[fromref]
                     const dir = n == toref ? "north" :
                                 e == toref ? "east" :
                                 s == toref ? "south" :
                                 w == toref ? "west" : "???"
                     directions.push(html`
-                        <li>Go <${direction} compass=${dir} orientation=${orientation}/> towards <${itemLink} item=${to}/>
-                            <${regionView} filename=${to.filename}/></li>`)
+                        <li>Go <${direction} compass=${dir} orientation=${orientation}/> towards <${itemLink} item=${to}/></li>`)
                 }
                 return html`
-                    <${Scale.Provider} value="1">
                         <ul>
-                            <li>Starting from <${itemLink} item=${start}/>
-                                <${regionView} filename=${start.filename}/></li>
+                            <li>Starting from <${itemLink} item=${start}/></li>
                             ${directions}
-                        </ul>
-                    <//>`
+                        </ul>`
             }
             const nav = () => {
                 const [start, setStart] = useState(null)
                 const [end, setEnd] = useState(null)
 
                 return html`
-                    <p>
-                        <${searchBox} label="Start location:" items=${allContextItems} onSelected=${setStart}/>
-                        <${itemLink} item=${start}/>
-                    </p>
-                    <p>
-                        <${searchBox} label="End location:" items=${allContextItems} onSelected=${setEnd}/>
-                        <${itemLink} item=${end}/>
-                    </p>
-                    <p><${directions} start=${start} end=${end}/></p>
+                    <${Scale.Provider} value="1">
+                        <p>
+                            <${regionSearch} label="Start location:" onSelected=${setStart}/>
+                            <${itemLink} item=${start}/>
+                        </p>
+                        <p>
+                            <${regionSearch} label="End location:" onSelected=${setEnd}/>
+                            <${itemLink} item=${end}/>
+                        </p>
+                        <p><${directions} start=${start} end=${end}/></p>
+                    <//>
                 `
             }
             render(html`<${nav}/>`, document.getElementById('content'))
