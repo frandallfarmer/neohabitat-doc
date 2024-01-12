@@ -1,3 +1,6 @@
+import { html } from "./view.js"
+import { createContext } from "preact"
+import { useState, useEffect, useContext } from "preact/hooks"
 
 // C64 RGB values taken from https://www.c64-wiki.com/wiki/Color
 const c64Colors = [
@@ -38,7 +41,7 @@ const makeCanvas = (w, h) => {
 
 export const canvasForSpace = ({ minX, maxX, minY, maxY }) => makeCanvas((maxX - minX) * 8, maxY - minY)
 
-const defaultColors = {
+export const defaultColors = {
     wildcard: 6,
     skin: 10,
     pattern: 15
@@ -298,4 +301,32 @@ export const animate = (frames) => {
     nextFrame()
     setInterval(nextFrame, 250)
     return { ...space, element: canvas }
+}
+
+export const Scale = createContext(3)
+
+export const canvasImage = ({ canvas }) => {
+    const scale = useContext(Scale)
+
+    return html`
+        <img style="image-rendering: pixelated;"
+             width=${scale * canvas.width} height=${scale * canvas.height}
+             src=${canvas.toDataURL()} />
+    `
+}
+
+export const animation = (props) => {
+    const canvases = props.canvases ?? props.frames.map(f => f.canvas)
+    if (!canvases || canvases.length == 0) {
+        return null
+    } else if (canvases.length == 1) {
+        return html`<${canvasImage} canvas=${canvases[0]}/>`
+    }
+    const [frame, setFrame] = useState(0)
+    useEffect(() => {
+        const nextFrame = () => setFrame((frame + 1) % canvases.length)
+        const interval = setInterval(nextFrame, 250)
+        return () => clearInterval(interval)
+    })
+    return html`<${canvasImage} canvas=${canvases[frame]}/>`
 }

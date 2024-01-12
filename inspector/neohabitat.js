@@ -152,8 +152,8 @@ export const navigate = (start, dest, neighbormap) => {
             break
         }
         const neighbors = neighbormap[ref]
-        for (const neighbor of neighbors) {
-            if (neighbor !== "") {
+        for (const neighbor of neighbors ?? []) {
+            if (neighbor !== "" && typeof(neighbor) === "string") {
                 const newdist = dist[ref] + 1
                 const olddist = dist[neighbor]
                 if (olddist === undefined || newdist < olddist) {

@@ -32,7 +32,7 @@ const lowestCluster = (clusterid) => {
 }
 for await (const obj of allNeohabitatObjects()) {
     if (obj.type == "context" && obj.mods && obj.mods[0].neighbors) {
-        refToNeighbors[obj.ref] = obj.mods[0].neighbors
+        refToNeighbors[obj.ref] = [obj.mods[0].orientation, ...obj.mods[0].neighbors]
         const neighbors = obj.mods[0].neighbors.filter((r) => r && r != "")
         const knownClusters = new Set([refToCluster[obj.ref], ...neighbors.map((r) => refToCluster[r])].filter((r) => r !== undefined))
         let clusterid

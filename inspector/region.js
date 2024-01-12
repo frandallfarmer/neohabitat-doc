@@ -1,62 +1,77 @@
 import { decodeProp } from "./codec.js"
-import { parse } from "./mudparse.js"
-import { translateSpace, topLeftCanvasOffset } from "./render.js"
-import { docBuilder, decodeBinary, append, group, textNode, wrapLink, propAnimationShower, celmaskShower } from "./show.js"
-import { parseHabitatObject, colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
+import { html, catcher, direction } from "./view.js"
+import { useContext, useMemo } from "preact/hooks"
+import { signal } from "@preact/signals"
+import { contextMap, betaMud, logError, promiseToSignal, useBinary, useHabitatJson } from './data.js'
+import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask, compositeSpaces, animation } from "./render.js"
+import { colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
 
-const addToImageFileMap = async (indexFile, imageFileMap) => {
-    const response = await fetch(indexFile, { cache: "no-cache" })
-    const paths = await response.json()
-    for (const path of paths) {
-        const filename = path.replace(/.*\//, "")
-        if (!imageFileMap[filename]) {
-            imageFileMap[filename] = path
-        }
-    }
-}
+const imageFileMapSignal = signal({ 
+    "super_trap.bin": "super_trap.bin",
+    "trap0.bin": "trap0.bin",
+    "trap1.bin": "trap1.bin",
+    "loadState": "unloaded"
+})
 
-const buildImageFileMap = async () => {
-    const imageFileMap = { 
-        "super_trap.bin": "super_trap.bin",
-        "trap0.bin": "trap0.bin",
-        "trap1.bin": "trap1.bin"
-    }
-    await addToImageFileMap("heads.json", imageFileMap)
-    await addToImageFileMap("props.json", imageFileMap)
-    await addToImageFileMap("misc.json", imageFileMap)
-    await addToImageFileMap("beta.json", imageFileMap)
-    return imageFileMap
-}
-
-const remapImagePath = (imageFileMap, path) => {
-    const filename = path.replace(/.*\//, "")
-    return imageFileMap[filename] ?? path
-}
-
-export const addContextNavLinks = (navContainer, mod, contextMap) => {
-    const addDirection = (direction, ref) => {
-        if (ref && ref != '') {
-            let name = ref
-            let href = null
-            if (contextMap[ref]) {
-                const ctx = contextMap[ref]
-                if (ctx.name && ctx.name.trim() != '') {
-                    name = ctx.name
-                }
-                href = `region.html?f=${ctx.filename}`
+export const imageFileMap = () => {
+    if (imageFileMapSignal.value.loadState == "unloaded") {
+        const addToImageFileMap = async (indexFile) => {
+            const response = await fetch(indexFile, { cache: "no-cache" })
+            const paths = await response.json()
+            const newPaths = {}
+            for (const path of paths) {
+                const filename = path.replace(/.*\//, "")
+                newPaths[filename] = path
             }
-            const link = href ? wrapLink(textNode(name), href) : textNode(name)
-            append(navContainer, group("li", `${direction}: `, link))
+            imageFileMapSignal.value = { ...newPaths, ...imageFileMapSignal.value }
         }
+        
+        const buildImageFileMap = async () => {
+            imageFileMapSignal.value = { ...imageFileMapSignal.value, loadState: "loading" }
+            await Promise.all([
+                addToImageFileMap("heads.json"),
+                addToImageFileMap("props.json"),
+                addToImageFileMap("misc.json"),
+                addToImageFileMap("beta.json")
+            ])
+            imageFileMapSignal.value = { ...imageFileMapSignal.value, loadState: "loaded" }
+        }
+        buildImageFileMap()
     }
-    const [n, e, s, w] = mod.neighbors ?? []
-    addDirection("North", n)
-    addDirection("East", e)
-    addDirection("South", s)
-    addDirection("West", w)
+    return imageFileMapSignal.value
 }
 
-export const propFromMod = async (mod, mud, imageFileMap) => {
+const remapImagePath = (path) => {
+    const filename = path.replace(/.*\//, "")
+    const map = imageFileMap()
+    return map.loadState == "loaded" ? (map[filename] ?? filename) : map[filename]
+}
+
+const trapCache = {}
+const useTrap = (ref, url, fnAugment) => {
+    if (!trapCache[ref]) {
+        trapCache[ref] = promiseToSignal((async () => {
+            try {
+                const response = await fetch(url)
+                if (!response.ok) {
+                    console.error(response)
+                    throw new Error(`Failed to download ${url}: ${response.status}`)
+                }
+                return decodeProp(fnAugment(new DataView(await response.arrayBuffer())))
+            } catch (e) {
+                logError(e, ref)
+            }
+        })(), null)
+    }
+    return trapCache[ref].value
+}
+
+export const propFilenameFromMod = (mod) => {
+    const mud = betaMud()
+    if (mud == null) {
+        // we're not ready to parse this yet
+        return null
+    }
     const classname = javaTypeToMuddleClass(mod.type)
     const cls = mud.class[classname]
     if (!cls) {
@@ -73,9 +88,19 @@ export const propFromMod = async (mod, mud, imageFileMap) => {
     if (!image) {
         throw new Error(`${classname} refers to invalid image ${imageRef.id}`)
     }
-    const propFilename = remapImagePath(imageFileMap, image.filename)
-    const decoder = (data) => {
-        if (classname == "class_super_trapezoid" && mod.pattern) {
+    return remapImagePath(image.filename)
+}
+
+export const propFromMod = (mod, ref) => {
+    const propFilename = propFilenameFromMod(mod)
+    if (!propFilename) {
+        // not ready to parse yet
+        return null
+    }
+    const classname = javaTypeToMuddleClass(mod.type)
+    let fnAugment = null
+    if (classname == "class_super_trapezoid" && mod.pattern) {
+        fnAugment = (data) => {
             const superdata = new Uint8Array(data.byteLength + mod.pattern.length + 2)
             const celoff = data.byteLength - 11
             superdata.set(new Uint8Array(data.buffer))
@@ -88,8 +113,10 @@ export const propFromMod = async (mod, mud, imageFileMap) => {
             trapview.setUint8(celoff + 10, mod.lower_right_x)
             trapview.setUint8(celoff + 11, mod.pattern_x_size)
             trapview.setUint8(celoff + 12, mod.pattern_y_size)
-            return decodeProp(trapview)
-        } else if (classname == "class_trapezoid") {
+            return trapview
+        }
+    } else if (classname == "class_trapezoid") {
+        fnAugment = (data) => {
             const celCount = (data.getUint8(0) & 0x3f) + 1
             for (let icel = 0; icel < celCount; icel ++) {
                 const celoff = data.getUint16(7 + celCount + (icel * 2), true)
@@ -101,86 +128,118 @@ export const propFromMod = async (mod, mud, imageFileMap) => {
                     data.setUint8(celoff + 10, mod.lower_right_x)
                 }
             }
-            return decodeProp(data)
-        } else {
-            return decodeProp(data)
+            return data
         }
     }
-    const prop = await decodeBinary(propFilename, decoder)
-    if (prop.error) {
-        throw prop.error
-    }
-    return prop
+    return fnAugment ? useTrap(ref, propFilename, fnAugment) : useBinary(propFilename, decodeProp, null)
 }
 
-export const renderMod = (mod, prop) => {
-    const colors = colorsFromOrientation(mod.orientation)
+export const itemView = ({ object }) => {
+    const scale = useContext(Scale)
+    const mod = object.mods[0]
+    const prop = propFromMod(mod, object.ref)
+    if (!prop) {
+        return null
+    }
     const shouldFlip = ((mod.orientation ?? 0) & 0x01) != 0 // TODO
     const grState = mod.gr_state ?? 0
-    const render = prop.animations.length > 0 ? propAnimationShower(prop, colors)(prop.animations[grState])
-                                              : celmaskShower(prop, colors)(prop.celmasks[grState])
-    const element = render.element
     const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
-    const objectSpace = translateSpace(render, mod.x / 4, mod.y % 128)
+    const frames = useMemo(() => {
+        const colors = colorsFromOrientation(mod.orientation)
+        if (prop.animations.length > 0) {
+            return framesFromPropAnimation(prop.animations[grState], prop, colors)
+        } else {
+            return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), colors)]
+        }
+    }, [prop, grState, mod.orientation])
+    const objectSpace = translateSpace(compositeSpaces(frames), mod.x / 4, mod.y % 128)
     const [x, y] = topLeftCanvasOffset(regionSpace, objectSpace)
-    element.style.position = "absolute"
-    element.style.left = `${x * 3}px`
-    element.style.top = `${y * 3}px`
-    element.style.zIndex = mod.y > 127 ? (128 + (256 - mod.y)) : mod.y
-    return element
+    return html`
+        <div id=${object.ref}
+             style="position: absolute; left: ${x * scale}px; top: ${y * scale}px; 
+                    z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}">
+            <${animation} frames=${frames}/>
+        </div>`
 }
 
-export const regionShower = async ({ errorContainer, regionContainer, objectContainer, navContainer, observer }) => {
-    const doc = docBuilder({ errorContainer })
-    const mud = parse(await (await fetch("beta.mud")).text())
-    const contextMap = await (await fetch("db/contextmap.json", { cache: "no-cache" })).json()
-    const imageFileMap = await buildImageFileMap()
-
-    const debug = (msg, href, element) => {
-        const node = group("li", wrapLink(textNode(msg), href))
-        if (element) {
-            node.addEventListener("mouseenter", () => { element.style.border = "2px solid red"; element.style.margin = "-2px" })
-            node.addEventListener("mouseleave", () => { element.style.border = ""; element.style.margin = "" })
+export const regionView = ({ filename }) => {
+    const scale = useContext(Scale)
+    const objects = useHabitatJson(filename, [])
+    let regionRef = null
+    const items = objects.flatMap(obj => {
+        if (obj.type == "context") {
+            regionRef = obj.ref
+        } else if (obj.type != "item") {
+            logError(`Unknown object type ${obj.type}`, obj.ref)
+        } else if (regionRef && obj.in != regionRef) {
+            logError(`Object is inside container ${obj.in}; not yet supported`, obj.ref)
+        } else {
+            return [html`<${catcher} key=${obj.ref} filename=${obj.ref}>
+                            <${itemView} object=${obj}/>
+                         <//>`]
         }
-        objectContainer.appendChild(node)
+        return []
+    })
+    return html`
+        <div style="position: relative; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
+            ${items}
+        </div>`
+}
+
+export const regionNav = ({ filename }) => {
+    const objects = useHabitatJson(filename, [])
+    const context = objects.find(obj => obj.type == "context")
+    if (!context || !context.mods[0].neighbors) {
+        return null
     }
-    
-    const showRegion = async (filename) => {
-        regionContainer.innerHTML = ''
-        objectContainer.innerHTML = ''
-        navContainer.innerHTML = ''
+    const mod = context.mods[0]
+    const compasses = ["North", "East", "South", "West"]
+    const directions = compasses.flatMap((compass, ineighbor) => {
+        const ref = mod.neighbors[ineighbor]
+        if (ref && ref != '') {
+            let name = ref
+            let href = null
+            const ctx = contextMap()[ref]
+            if (ctx) {
+                if (ctx.name && ctx.name.trim() != '') {
+                    name = ctx.name
+                }
+                // todo: customizable?
+                href = `region.html?f=${ctx.filename}`
+            }
+            return [html`
+                <li>
+                    <div>
+                        <${direction} compass=${compass} orientation=${mod.orientation}/>:
+                        <a href=${href}>${name}</a>
+                    </div>
+                    ${ctx ? html`<${Scale.Provider} value="1"><${regionView} filename=${ctx.filename}/><//>` : null}
+                </li>`]
+        }
+        return []
+    })
+    return html`<ul>${directions}</ul>`
+}
 
-        const objects = parseHabitatObject(await (await fetch(filename, { cache: "no-cache" })).text())
-
-        if (observer) observer('filename', filename)
-
-        let regionRef = null
-        for (const obj of objects) {
-            try {
-                if (observer) observer("object", obj)
-                if (!obj.mods || obj.mods.length == 0) {
-                    continue
-                }
-                const mod = obj.mods[0]
-                if (obj.type == "context") {
-                    regionRef = obj.ref
-                    addContextNavLinks(navContainer, mod, contextMap)
-                    continue
-                }
-                if (obj.type != "item") {
-                    throw new Error(`Unknown object type ${obj.type}`)
-                }
-                if (regionRef && obj.in != regionRef) {
-                    throw new Error(`Object is inside container ${obj.in}; not yet supported`)
-                }
-                const prop = await propFromMod(mod, mud, imageFileMap)
-                const element = renderMod(mod, prop)
-                debug(`${mod.type} [${mod.x},${mod.y}]`, `detail.html?f=${prop.filename}`, element)
-                regionContainer.appendChild(element)
-            } catch (e) {
-                doc.showError(e, `${obj.name} (${obj.ref})`)
+export const objectDetails = ({ filename }) => {
+    const objects = useHabitatJson(filename, [])
+    const children = objects.flatMap(obj => {
+        let summary = `${obj.name} (${obj.ref})`
+        let details = null
+        const mod = obj.mods && obj.mods[0]
+        if (mod && obj.type == "item") {
+            summary = `${summary}: ${mod.type} [${mod.x},${mod.y}]`
+            const propFilename = propFilenameFromMod(mod)
+            if (propFilename) {
+                details = html`<a href="detail.html?f=${propFilename}">${propFilename}</a>`
             }
         }
-    }
-    return showRegion
+        return html`
+                <details>
+                    <summary>${summary}</summary>
+                    ${details}
+                    <pre>${JSON.stringify(obj, null, 2)}</pre>
+                </details>`
+    })
+    return html`<div>${children}</div>`
 }

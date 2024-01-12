@@ -1,4 +1,8 @@
-import { animate, celsFromMask, frameFromCels, framesFromAction, framesFromLimbAnimation, framesFromPropAnimation } from "./render.js"
+import { createContext } from "preact"
+import { animate, celsFromMask, frameFromCels, framesFromAction, 
+         framesFromLimbAnimation, framesFromPropAnimation, defaultColors ,
+         animation, canvasImage
+       } from "./render.js"
 
 const readBinary = async (url) => {
     const response = await fetch(url)
@@ -74,6 +78,8 @@ export const showAll = (doc, container, filename, values, f) => {
     }
 }
 
+export const Colors = createContext(defaultColors)
+
 export const propAnimationShower = (prop, colors = {}) =>
     (animation) => animate(framesFromPropAnimation(animation, prop, colors))
 
@@ -98,3 +104,18 @@ export const decodeBinary = async (filename, decode) => {
         return { filename: filename, error: e }
     }
 }
+
+export const propAnimation = ({ prop, animation, colors }) =>
+    html`<${animation} frames=${framesFromPropAnimation(animation, prop, colors)}/>`
+
+export const limbAnimation = ({ limb, animation, colors }) =>
+    html`<${animation} frames=${framesFromLimbAnimation(animation, limb, colors)}/>`
+
+export const actionAnimation = ({ body, action, colors }) =>
+    html`<${animation} frames=${framesFromAction(action, body, colors)}/>`
+
+export const celmaskImage = ({ prop, celmask, colors }) =>
+    html`<${canvasImage} canvas=${frameFromCels(celsFromMask(prop, celmask), colors).canvas}/>`
+
+export const celImage = ({ cel, colors }) =>
+    html`<${canvasImage} canvas=${frameFromCels([cel], colors).canvas}/>`

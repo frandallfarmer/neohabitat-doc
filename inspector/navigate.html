@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Habitat Inspector</title>
+        <title>Habitat Inspector</title>        
         <link rel="stylesheet" href="style.css">
         <script type="importmap">
             {
@@ -16,14 +16,17 @@
             }
         </script>
         <script type="module">
-            import "https://esm.sh/preact/debug"
+            // import "https://esm.sh/preact/debug"
             import { html, searchBox } from "./view.js"
             import { h, render } from "preact"
             import { useState, useId, useCallback, useMemo } from "preact/hooks"
+            import { regionView } from "./region.js"
+            import { direction } from "./view.js"
+            import { Scale } from "./render.js"
             import { navigate } from "./neohabitat.js"
 
-            const neighbormap = await (await fetch("db/neighbormap.json")).json()
-            const contextmap = await (await fetch("db/contextmap.json")).json()
+            const neighbormap = await (await fetch("db/neighbormap.json", { cache: "no-cache" })).json()
+            const contextmap = await (await fetch("db/contextmap.json", { cache: "no-cache" })).json()
 
             const allContextItems = Object
                     .entries(contextmap)
@@ -45,20 +48,23 @@
                     const fromref = path[ipath] 
                     const toref = path[ipath + 1]
                     const to = contextmap[toref]
-                    const [n, e, s, w] = neighbormap[fromref]
+                    const [orientation, n, e, s, w] = neighbormap[fromref]
                     const dir = n == toref ? "north" :
                                 e == toref ? "east" :
                                 s == toref ? "south" :
                                 w == toref ? "west" : "???"
                     directions.push(html`
-                        <li>Go ${dir} towards <${itemLink} item=${to}/></li>`)
+                        <li>Go <${direction} compass=${dir} orientation=${orientation}/> towards <${itemLink} item=${to}/>
+                            <${regionView} filename=${to.filename}/></li>`)
                 }
                 return html`
-                    <ul>
-                        <li>Starting from <${itemLink} item=${start}/></li>
-                        ${directions}
-                    </ul>
-                `
+                    <${Scale.Provider} value="1">
+                        <ul>
+                            <li>Starting from <${itemLink} item=${start}/>
+                                <${regionView} filename=${start.filename}/></li>
+                            ${directions}
+                        </ul>
+                    <//>`
             }
             const nav = () => {
                 const [start, setStart] = useState(null)

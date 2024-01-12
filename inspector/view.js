@@ -1,7 +1,8 @@
 // import "https://esm.sh/preact/debug"
 import htm from "htm"
 import { h } from "preact"
-import { useState, useId, useCallback, useMemo } from "preact/hooks"
+import { useState, useId, useMemo, useErrorBoundary } from "preact/hooks"
+import { errorBucket, logError } from "./data.js"
 
 export const html = htm.bind(h)
 
@@ -16,6 +17,7 @@ const search = (query, items) => {
                 return l.label.toLowerCase().localeCompare(r.label.toLowerCase())
             })
 }
+
 export const searchBox = ({ label, onSelected, items }) => {
     const id = useId()
     const [query, setQuery] = useState("")
@@ -50,6 +52,35 @@ export const searchBox = ({ label, onSelected, items }) => {
                     </ul>
                 </span>
             
-        </div>
-    `
+        </div>`
+}
+
+export const errors = (_) => {
+    if (errorBucket.value.length > 0) {
+        return html`
+            <h2>Errors</h2>
+            <details>
+                <summary>${errorBucket.value.length}</summary>
+                ${errorBucket.value.map((err) => html`
+                    <div key=${err}>
+                        <h5>${err.filename}</h5>
+                        <p>${err.msg}</p>
+                        <pre>${err.stacktrace}</pre>
+                    </div>`)}
+            </details>`
+    }
+    return null    
+}
+
+export const catcher = ({ filename, children }) => {
+    const [error, _] = useErrorBoundary(e => logError(e, filename))
+    return !error ? children : null
+}
+
+export const direction = ({ compass, orientation }) => {
+    const arrows = ["⇧", "⇨", "⇩", "⇦"]
+    const directions = {w: 4, n: 5, e: 6, s: 7}
+    const compassDirection = directions[compass[0].toLowerCase()]
+    const arrow = arrows[(compassDirection - (orientation & 0x03)) & 0x03]
+    return html`<span>${compass} (${arrow})</span>`
 }
