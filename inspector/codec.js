@@ -16,11 +16,16 @@ export const emptyBitmap = (w, h, color = 0) => {
     return bitmap
 }
 
-export const drawByte = (bitmap, x, y, byte) => {
-    bitmap[y][x]     = (byte & 0xc0) >> 6
-    bitmap[y][x + 1] = (byte & 0x30) >> 4
-    bitmap[y][x + 2] = (byte & 0x0c) >> 2
-    bitmap[y][x + 3] = (byte & 0x03)
+export const drawByte = (bitmap, x, y, byte, transparent = false) => {
+    const putpixel = (x, pixel) => {
+        if (pixel != 0 || !transparent) {
+            bitmap[y][x] = pixel
+        }
+    }
+    putpixel(x,     (byte & 0xc0) >> 6)
+    putpixel(x + 1, (byte & 0x30) >> 4)
+    putpixel(x + 2, (byte & 0x0c) >> 2)
+    putpixel(x + 3, (byte & 0x03))
 }
 
 const signedByte = (byte) => {
@@ -162,18 +167,23 @@ celDecoder.box = (data, cel) => {
     cel.bitmap = bitmap
 }
 
-const horizontalLine = (bitmap, xa, xb, y, patternByte) => {
+export const horizontalLine = (bitmap, xa, xb, y, patternByte) => {
     const xStart = xa - (xa % 4)
     const xEnd = (xb + (3 - (xb % 4))) - 3
     for (let x = xStart + 4; x < xEnd; x += 4) {
         drawByte(bitmap, x, y, patternByte)
     }
     const startBit = ((xa - xStart) * 2)
-    const startByte = (0xff >> startBit) & patternByte
-    drawByte(bitmap, xStart, y, startByte)
     const endBit = (((xEnd + 3) - xb) * 2)
-    const endByte = (0xff << endBit) & patternByte
-    drawByte(bitmap, xEnd, y, endByte)
+    if (xStart != xEnd) {
+        const startByte = (0xff >> startBit) & patternByte
+        const endByte = (0xff << endBit) & patternByte
+        drawByte(bitmap, xStart, y, startByte, true)
+        drawByte(bitmap, xEnd, y, endByte, true)
+    } else {
+        const byte = (0xff >> startBit) & (0xff << endBit) & patternByte
+        drawByte(bitmap, xStart, y, byte, true)
+    }
 }
 
 celDecoder.trap = (data, cel) => {
@@ -295,12 +305,16 @@ celDecoder.trap = (data, cel) => {
     }
 }
 
+celDecoder.text = (data, cel) => {
+    cel.pattern = data.getUint8(6)
+    cel.fineXOffset = data.getInt8(7)
+}
+
 const decodeCel = (data, changesColorRam) => {
     const cel = { 
         data: data,
         changesColorRam: changesColorRam,
         type: decodeCelType(data.getUint8(0)),
-        // wild: (data.getUint8(0) & 0x10) == 0 ? "color" : "pattern",
         width: data.getUint8(0) & 0x0f,
         height: data.getUint8(1),
         xOffset: data.getInt8(2),
@@ -494,4 +508,33 @@ export const decodeBody = (data) => {
         body.actions[action] = choreographyIndex
     }
     return body
+}
+
+export const decodeCharset = (source) => {
+    source = source.replaceAll(/;.*/g, "") // strip comments
+    const characters = []
+    let rows = []
+    let irow = 0
+    for (const match of source.match(/0[^,\s]*/g)) {
+        const byte = Number(match)
+        if (byte >= 0 && byte < 256) {
+            rows.push(byte)
+        } else {
+            throw new Error(`Couldn't parse ${match} as a byte`)
+        }
+        if (irow == 7) {
+            characters.push(rows)
+            rows = []
+            irow = 0
+        } else {
+            irow ++
+        }
+    }
+    if (irow != 0) {
+        throw new Error(`Partial character (${irow}/8)`)
+    }
+    if (characters.length < 128) {
+        throw new Error(`Unexpected number of character ${characters.length}`)
+    }
+    return characters
 }

@@ -1,6 +1,7 @@
 import { signal } from "@preact/signals"
 import { parse } from "./mudparse.js"
 import { parseHabitatObject } from "./neohabitat.js"
+import { decodeCharset } from "./codec.js"
 
 export const errorBucket = signal([])
 export const logError = (e, filename) => {
@@ -67,4 +68,8 @@ export const betaMud = lazySignal(null, async () =>
 
 export const contextMap = lazySignal({}, async () =>
     await (await fetch("db/contextmap.json", { cache: "no-cache" })).json()
+)
+
+export const charset = lazySignal(null, async () =>
+    decodeCharset(await (await fetch("charset.m")).text())
 )

@@ -1,6 +1,8 @@
 import { html } from "./view.js"
 import { createContext } from "preact"
 import { useState, useEffect, useContext } from "preact/hooks"
+import { emptyBitmap, horizontalLine } from "./codec.js"
+import { logError } from "./data.js"
 
 // C64 RGB values taken from https://www.c64-wiki.com/wiki/Color
 const c64Colors = [
@@ -130,6 +132,116 @@ export const drawInSpace = (ctx, canvas, ctxSpace, canvasSpace) => {
     ctx.drawImage(canvas, x, y)
 }
 
+export const compositeLayers = (layers, xCorrect = 0, yCorrect = 0) => {
+    const space = compositeSpaces(layers)
+
+    const canvas = canvasForSpace(space)
+    const ctx = canvas.getContext("2d")
+    for (const layer of layers) {
+        if (layer && layer.canvas) {
+            drawInSpace(ctx, layer.canvas, space, layer)
+        }
+    }
+    return {...translateSpace(space, -xCorrect, -yCorrect), canvas: canvas }
+}
+
+const TXTCMD = {
+    halfSpace: 128 + 0,
+    doubleSpace: 128 + 15,
+    incWidth: 128 + 1,
+    decWidth: 128 + 2,
+    incHeight: 128 + 3,
+    decHeight: 128 + 4,
+    halfSize: 128 + 5,
+    halfCharDown: 128 + 11,
+    inverse: 128 + 12,
+    cursorRight: 128 + 7,
+    cursorLeft: 128 + 8,
+    cursorUp: 128 + 9,
+    cursorDown: 128 + 10,
+    carriageReturn: 128 + 6,
+    space: 0x20,
+}
+
+export const bitmapFromChar = (charset, byte, colors) => {
+    const { pixelWidth, pixelHeight, halfSize, inverse, pattern } = { ...defaultColors, ...colors }
+    const charWidth = pixelWidth * (halfSize ? 4 : 8)
+    const charHeight = pixelHeight * 8
+    const masks = halfSize ? [0x80, 0x20, 0x08, 0x02] : [0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01]
+    if (halfSize && "BMWJwm".indexOf(String.fromCharCode(byte)) < 0) {
+        masks[3] = 0x04
+    }
+    const char = charset[byte]
+    const bitmap = emptyBitmap(charWidth / 4, charHeight)
+    let x = 0
+    let y = 0
+    for (const rawrow of char) {
+        const row = inverse ? rawrow ^ 0xff : rawrow
+        for (const mask of masks) {
+            if ((mask & row) != 0) {
+                horizontalLine(bitmap, x, x + pixelWidth - 1, y, pattern)
+            }
+            x += pixelWidth
+        }
+        x = 0
+        y ++
+    }
+    return bitmap
+}
+
+export const frameFromText = (x, y, bytes, charset, pattern, fineXOffset, colors = null) => {
+    const initialX = x
+    const layers = []
+    let pixelWidth = 1
+    let pixelHeight = 1
+    let halfSize = true
+    let inverse = true
+
+    // y -= 8
+    for (const byte of bytes) {
+        const charWidth = pixelWidth * (halfSize ? 1 : 2)
+        const charHeight = pixelHeight * 8
+        if (byte == TXTCMD.halfSize) {
+            halfSize = !halfSize
+        } else if (byte == TXTCMD.inverse) {
+            inverse = !inverse
+        } else if (byte == TXTCMD.incWidth) {
+            pixelWidth ++
+        } else if (byte == TXTCMD.decWidth) {
+            pixelWidth --
+        } else if (byte == TXTCMD.incHeight) {
+            pixelHeight ++
+        } else if (byte == TXTCMD.decHeight) {
+            pixelHeight --
+        } else if (byte == TXTCMD.carriageReturn) {
+            x = initialX
+            y -= charHeight
+        } else if (byte == TXTCMD.space) {
+            x += charWidth
+        } else if (byte == TXTCMD.doubleSpace) {
+            x += (charWidth * 2)
+        } else if (byte == TXTCMD.halfSpace) {
+            x += (charWidth / 2)
+        } else if (byte == TXTCMD.cursorUp) {
+            y += charHeight
+        } else if (byte == TXTCMD.cursorDown) {
+            y -= charHeight
+        } else if (byte == TXTCMD.halfCharDown) {
+            y -= (charHeight / 2)
+        } else if (byte == TXTCMD.cursorLeft) {
+            x -= charWidth
+        } else if (byte < 128) {
+            const bitmap = bitmapFromChar(charset, byte, {...(colors ?? {}), pattern, pixelWidth, pixelHeight, halfSize, inverse })
+            const canvas = canvasFromBitmap(bitmap, colors)
+            layers.push({ canvas, minX: x + (fineXOffset / 4), maxX: x + charWidth + (fineXOffset / 4), minY: y - charHeight, maxY: y })
+            x += charWidth
+        } else {
+            logError(`Unknown byte ${byte} encountered when rendering text`)
+        }
+    }
+    return compositeLayers(layers)
+}
+
 // Habitat's coordinate space consistently has y=0 for the bottom, and increasing y means going up
 export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCelOrigin = true) => {
     if (cels.length == 0) {
@@ -149,9 +261,11 @@ export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCe
             }
             const x = cel.xOffset + xRel
             const y = cel.yOffset + yRel
+            const colors = (Array.isArray(celColors) ? celColors[icel] : celColors) ?? {}
             if (cel.bitmap) {
-                const colors = (Array.isArray(celColors) ? celColors[icel] : celColors) ?? {}
                 layers.push({ canvas: canvasFromBitmap(cel.bitmap, colors), minX: x, minY: y - cel.height, maxX: x + cel.width, maxY: y })
+            } else if (cel.type == "text" && colors.bytes && colors.charset) {
+                layers.push(frameFromText(x, y - cel.height + 1, colors.bytes, colors.charset, cel.pattern, cel.fineXOffset, colors))
             } else {
                 layers.push(null)
             }
@@ -170,16 +284,7 @@ export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCe
         layers = reordered
     }
 
-    const space = compositeSpaces(layers)
-
-    const canvas = canvasForSpace(space)
-    const ctx = canvas.getContext("2d")
-    for (const layer of layers) {
-        if (layer && layer.canvas) {
-            drawInSpace(ctx, layer.canvas, space, layer)
-        }
-    }
-    return {...translateSpace(space, -xCorrect, -yCorrect), canvas: canvas }
+    return compositeLayers(layers, xCorrect, yCorrect)
 }
 
 const framesFromAnimation = (animation, frameFromState) => {

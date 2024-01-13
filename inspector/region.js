@@ -2,7 +2,7 @@ import { decodeProp } from "./codec.js"
 import { html, catcher, direction, searchBox } from "./view.js"
 import { useContext, useMemo } from "preact/hooks"
 import { signal, computed } from "@preact/signals"
-import { contextMap, betaMud, logError, promiseToSignal, useBinary, useHabitatJson } from './data.js'
+import { contextMap, betaMud, logError, promiseToSignal, useBinary, useHabitatJson, charset } from './data.js'
 import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask, compositeSpaces, animation } from "./render.js"
 import { colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
 
@@ -146,14 +146,17 @@ export const itemView = ({ object, standalone }) => {
     const shouldFlip = ((mod.orientation ?? 0) & 0x01) != 0 // TODO
     const grState = mod.gr_state ?? 0
     const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
+    const charsetVal = charset()
     const frames = useMemo(() => {
         const colors = colorsFromOrientation(mod.orientation)
+        colors.bytes = mod.ascii
+        colors.charset = charsetVal
         if (prop.animations.length > 0) {
             return framesFromPropAnimation(prop.animations[grState], prop, colors)
         } else {
             return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), colors)]
         }
-    }, [prop, grState, mod.orientation])
+    }, [prop, grState, mod.orientation, mod.ascii, mod.ascii ? charsetVal : null])
 
     const objectSpace = translateSpace(compositeSpaces(frames), prop.isTrap ? 0 : mod.x / 4, mod.y % 128)
     const [x, y] = topLeftCanvasOffset(regionSpace, objectSpace)
@@ -161,9 +164,11 @@ export const itemView = ({ object, standalone }) => {
                                  z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}`
                               : ""
     return html`
-        <div id=${object.ref} style=${style}>
-            <${animation} frames=${frames}/>
-        </div>`
+        <${catcher} key=${object.ref} filename=${object.ref}>
+            <div id=${object.ref} style=${style}>
+                <${animation} frames=${frames}/>
+            </div>
+        <//>`
 }
 
 export const regionView = ({ filename }) => {
@@ -178,9 +183,7 @@ export const regionView = ({ filename }) => {
         } else if (regionRef && obj.in != regionRef) {
             logError(`Object is inside container ${obj.in}; not yet supported`, obj.ref)
         } else {
-            return [html`<${catcher} key=${obj.ref} filename=${obj.ref}>
-                            <${itemView} object=${obj}/>
-                         <//>`]
+            return [html`<${itemView} object=${obj}/>`]
         }
         return []
     })
