@@ -57,7 +57,9 @@ const useTrap = (ref, url, fnAugment) => {
                     console.error(response)
                     throw new Error(`Failed to download ${url}: ${response.status}`)
                 }
-                return decodeProp(fnAugment(new DataView(await response.arrayBuffer())))
+                const prop = decodeProp(fnAugment(new DataView(await response.arrayBuffer())))
+                prop.isTrap = true
+                return prop
             } catch (e) {
                 logError(e, ref)
             }
@@ -107,10 +109,10 @@ export const propFromMod = (mod, ref) => {
             superdata.set(mod.pattern, data.byteLength + 2)
             const trapview = new DataView(superdata.buffer)
             trapview.setUint8(celoff + 1, mod.height)
-            trapview.setUint8(celoff + 7, mod.upper_left_x)
-            trapview.setUint8(celoff + 8, mod.upper_right_x)
-            trapview.setUint8(celoff + 9, mod.lower_left_x)
-            trapview.setUint8(celoff + 10, mod.lower_right_x)
+            trapview.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
+            trapview.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
+            trapview.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
+            trapview.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
             trapview.setUint8(celoff + 11, mod.pattern_x_size)
             trapview.setUint8(celoff + 12, mod.pattern_y_size)
             return trapview
@@ -122,10 +124,10 @@ export const propFromMod = (mod, ref) => {
                 const celoff = data.getUint16(7 + celCount + (icel * 2), true)
                 data.setUint8(celoff + 1, mod.height)
                 if (icel == 0) {            
-                    data.setUint8(celoff + 7, mod.upper_left_x)
-                    data.setUint8(celoff + 8, mod.upper_right_x)
-                    data.setUint8(celoff + 9, mod.lower_left_x)
-                    data.setUint8(celoff + 10, mod.lower_right_x)
+                    data.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
+                    data.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
+                    data.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
+                    data.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
                 }
             }
             return data
@@ -152,7 +154,8 @@ export const itemView = ({ object, standalone }) => {
             return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), colors)]
         }
     }, [prop, grState, mod.orientation])
-    const objectSpace = translateSpace(compositeSpaces(frames), mod.x / 4, mod.y % 128)
+
+    const objectSpace = translateSpace(compositeSpaces(frames), prop.isTrap ? 0 : mod.x / 4, mod.y % 128)
     const [x, y] = topLeftCanvasOffset(regionSpace, objectSpace)
     const style = !standalone ? `position: absolute; left: ${x * scale}px; top: ${y * scale}px; 
                                  z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}`
