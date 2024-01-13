@@ -197,7 +197,6 @@ export const frameFromText = (x, y, bytes, charset, pattern, fineXOffset, colors
     let halfSize = true
     let inverse = true
 
-    // y -= 8
     for (const byte of bytes) {
         const charWidth = pixelWidth * (halfSize ? 1 : 2)
         const charHeight = pixelHeight * 8
