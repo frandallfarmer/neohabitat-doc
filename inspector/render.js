@@ -177,14 +177,16 @@ export const bitmapFromChar = (charset, byte, colors) => {
     let y = 0
     for (const rawrow of char) {
         const row = inverse ? rawrow ^ 0xff : rawrow
-        for (const mask of masks) {
-            if ((mask & row) != 0) {
-                horizontalLine(bitmap, x, x + pixelWidth - 1, y, pattern)
+        for (let repeat = 0; repeat < pixelHeight; repeat ++) {
+            for (const mask of masks) {
+                if ((mask & row) != 0) {
+                    horizontalLine(bitmap, x, x + pixelWidth - 1, y, pattern)
+                }
+                x += pixelWidth
             }
-            x += pixelWidth
+            x = 0
+            y ++
         }
-        x = 0
-        y ++
     }
     return bitmap
 }
@@ -264,7 +266,17 @@ export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCe
             if (cel.bitmap) {
                 layers.push({ canvas: canvasFromBitmap(cel.bitmap, colors), minX: x, minY: y - cel.height, maxX: x + cel.width, maxY: y })
             } else if (cel.type == "text" && colors.bytes && colors.charset) {
-                layers.push(frameFromText(x, y - cel.height + 1, colors.bytes, colors.charset, cel.pattern, cel.fineXOffset, colors))
+                const textColors = {...colors}
+                let pattern = cel.pattern
+                if (pattern == 0) {
+                     // TODO: this is a bit of a hack; the C64 code would accept a pattern of 0q0101
+                     // which would mean blue / wild / blue / wild. but canvasFromBitmap is not currently written
+                     // in such a way that this would work. In practice, the pattern byte is always one of four values.
+                    textColors.pattern = 15
+                    textColors.wilds = 6
+                    pattern = 0x55
+                }
+                layers.push(frameFromText(x, y - cel.height + 1, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors))
             } else {
                 layers.push(null)
             }
