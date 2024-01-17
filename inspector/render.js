@@ -124,7 +124,11 @@ export const compositeSpaces = (spaces) => {
 }
 
 export const topLeftCanvasOffset = (outerSpace, innerSpace) => {
-    return [(innerSpace.minX - outerSpace.minX) * 8, outerSpace.maxY - innerSpace.maxY]
+    if (innerSpace) {
+        return [(innerSpace.minX - outerSpace.minX) * 8, outerSpace.maxY - innerSpace.maxY]
+    } else {
+        return [0, 0]
+    }
 }
 
 export const drawInSpace = (ctx, canvas, ctxSpace, canvasSpace) => {
@@ -189,6 +193,19 @@ export const bitmapFromChar = (charset, byte, colors) => {
         }
     }
     return bitmap
+}
+
+export const stringFromText = (bytes) => {
+    let string = ""
+    for (const byte of bytes) {
+        if (byte >= 128) {
+            const entry = Object.entries(TXTCMD).find(([k, v]) => v == byte)
+            string += `<${entry ? entry[0] : byte}>`
+        } else {
+            string += String.fromCharCode(byte)
+        }
+    }
+    return string
 }
 
 export const frameFromText = (x, y, bytes, charset, pattern, fineXOffset, colors = null) => {
@@ -276,7 +293,7 @@ export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCe
                     textColors.wilds = 6
                     pattern = 0x55
                 }
-                layers.push(frameFromText(x, y - cel.height + 1, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors))
+                layers.push(frameFromText(x, y, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors))
             } else {
                 layers.push(null)
             }
@@ -302,9 +319,7 @@ const framesFromAnimation = (animation, frameFromState) => {
     const frames = []
     for (let istate = animation.startState; istate <= animation.endState; istate ++) {
         const frame = frameFromState(istate)
-        if (frame != null) {
-            frames.push(frame)
-        }
+        frames.push(frame)
     }
     return frames
 }
@@ -411,7 +426,9 @@ export const animate = (frames) => {
     const nextFrame = () => {
         const frame = frames[iframe]
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        drawInSpace(ctx, frame.canvas, space, frame)
+        if (frame) {
+            drawInSpace(ctx, frame.canvas, space, frame)
+        }
         iframe = (iframe + 1) % frames.length
     }
     nextFrame()
@@ -422,27 +439,42 @@ export const animate = (frames) => {
 export const Scale = createContext(3)
 
 export const canvasImage = ({ canvas }) => {
-    const scale = useContext(Scale)
-
-    return html`
-        <img style="image-rendering: pixelated;"
-             width=${scale * canvas.width} height=${scale * canvas.height}
-             src=${canvas.toDataURL()} />
-    `
+    if (canvas) {
+        const scale = useContext(Scale)
+        return html`
+            <img style="image-rendering: pixelated;"
+                width="${scale * canvas.width}px" height="${scale * canvas.height}px"
+                src=${canvas.toDataURL()} />`
+    } else {
+        return null
+    }
 }
 
-export const animation = (props) => {
-    const canvases = props.canvases ?? props.frames.map(f => f.canvas)
-    if (!canvases || canvases.length == 0) {
+export const animatedDiv = ({ frames }) => {
+    if (!frames || frames.length == 0) {
         return null
-    } else if (canvases.length == 1) {
-        return html`<${canvasImage} canvas=${canvases[0]}/>`
+    } else if (frames.length == 1) {
+        return html`<${canvasImage} canvas=${frames[0]?.canvas}/>`
     }
-    const [frame, setFrame] = useState(0)
+    const scale = useContext(Scale)
+    const [iframe, setFrame] = useState(0)
+    const frame = frames[iframe]
+    const space = compositeSpaces(frames)
+    const w = (space.maxX - space.minX) * 8
+    const h = (space.maxY - space.minY)
+    const [x, y] = topLeftCanvasOffset(space, frame)
+    const r = w - x - (frame ? frame.canvas.width : 0)
+    const b = h - y - (frame ? frame.canvas.height : 0)
     useEffect(() => {
-        const nextFrame = () => setFrame((frame + 1) % canvases.length)
+        const nextFrame = () => setFrame((iframe + 1) % frames.length)
         const interval = setInterval(nextFrame, 250)
         return () => clearInterval(interval)
     })
-    return html`<${canvasImage} canvas=${canvases[frame]}/>`
+
+    return html`
+        <div style="line-height: 0px; width: ${w * scale}px; height: ${h * scale}px; display: inline-block; vertical-align: top;">
+            <div style="padding-left: ${x * scale}px; padding-top: ${y * scale}px; padding-right: ${r * scale}px; padding-bottom: ${b * scale}px;">
+                <${canvasImage} canvas=${frame?.canvas}/>
+            </div>
+        </div>`
 }

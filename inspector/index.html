@@ -16,21 +16,28 @@
             }
         </script>
         <script type="module">
-            import { displayBodies, displayProps } from "./index.js"
+            import "https://esm.sh/preact/debug"
+            import { render } from "preact"
+            import { propView, bodyView, fileList } from "./index.js"
+            import { html, errors } from "./view.js"
 
-            window.showErrors = () => {
-                document.getElementById('errors').style.display = 'block'
-            }
-
-            const displayEverything = () => {
-                displayBodies("bodies.json", "bodies")
-                displayProps("heads.json", "heads")
-                displayProps("props.json", "props")
-                displayProps("misc.json", "misc")
-                displayProps("beta.json", "beta")
-            }
-
-            displayEverything()
+            const indexView = (_) => html`
+                <h3>Avatars</h3>
+                <${fileList} indexFile="bodies.json" childView=${bodyView} href="body.html"/>
+                <h3>The Hall of Heads</h3>
+                <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Heads">aric/mic/Gr/Heads</a></p>
+                <${fileList} indexFile="heads.json" childView=${propView} href="detail.html"/>
+                <p>More heads from: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/sources/c64/Images">sources/c64/Images</a></p>
+                <${fileList} indexFile="misc.json" childView=${propView} href="detail.html"/>
+                <h3>Props</h3>
+                <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Props">aric/mic/Gr/Props</a></p>
+                <${fileList} indexFile="props.json" childView=${propView} href="detail.html"/>
+                <h3>Beta-only</h3>
+                <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/habitat/Beta/Images">habitat/Beta/Images</a></p>
+                <${fileList} indexFile="beta.json" childView=${propView} href="detail.html"/>
+                <${errors}/>`
+            
+            render(html`<${indexView}/>`, document.getElementById("content"))
         </script>
     </head>
     <body>
@@ -55,26 +62,6 @@
         <p>
             You may also <a href="region.html">browse all of the regions</a> in Neohabitat.
         </p>
-        <div id="bodies">
-            <h3>Avatars</h3>
-        </div>
-        <div id="heads">
-            <h3>The Hall Of Heads</h3>
-            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Heads">aric/mic/Gr/Heads</a></p>
-        </div>
-        <div id="misc">
-            <h3>More Heads</h3>
-            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/sources/c64/Images">sources/c64/Images</a></p>
-        </div>
-        <div id="props">
-            <h3>Props</h3>
-            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Props">aric/mic/Gr/Props</a></p>
-        </div>
-        <div id="beta">
-            <h3>Beta-only</h3>
-            <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/habitat/Beta/Images">habitat/Beta/Images</a></p>
-        </div>
-        <a href="javascript:showErrors();">Show errors</a>
-        <div id="errors" style="display: none"></div>
+        <div id="content"></div>
     </body>
 </html>

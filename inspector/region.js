@@ -3,7 +3,8 @@ import { html, catcher, direction, searchBox } from "./view.js"
 import { useContext, useMemo } from "preact/hooks"
 import { signal, computed } from "@preact/signals"
 import { contextMap, betaMud, logError, promiseToSignal, useBinary, useHabitatJson, charset } from './data.js'
-import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask, compositeSpaces, animation } from "./render.js"
+import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask,
+         compositeSpaces, animatedDiv, stringFromText } from "./render.js"
 import { colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
 
 const imageFileMapSignal = signal({ 
@@ -166,7 +167,7 @@ export const itemView = ({ object, standalone }) => {
     return html`
         <${catcher} key=${object.ref} filename=${object.ref}>
             <div id=${object.ref} style=${style}>
-                <${animation} frames=${frames}/>
+                <${animatedDiv} frames=${frames}/>
             </div>
         <//>`
 }
@@ -188,7 +189,7 @@ export const regionView = ({ filename }) => {
         return []
     })
     return html`
-        <div style="position: relative; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
+        <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
             ${items}
         </div>`
 }
@@ -236,8 +237,22 @@ export const objectDetails = ({ filename }) => {
         const mod = obj.mods && obj.mods[0]
         if (mod && obj.type == "item") {
             summary = `${summary}: ${mod.type} [${mod.x},${mod.y}]`
+            obj = { computedColors: colorsFromOrientation(mod.orientation), ...obj}
+            if (mod.ascii) {
+                obj.debugString = stringFromText(mod.ascii)
+            }
             const propFilename = propFilenameFromMod(mod)
             if (propFilename) {
+                const prop = propFromMod(mod, obj.ref)
+                if (prop && mod.gr_state) {
+                    if (prop.animations && prop.animations.length > mod.gr_state) {
+                        obj.gr_state_animation = prop.animations[mod.gr_state]
+                        obj.gr_state_animation_celmasks = prop.celmasks.slice(obj.gr_state_animation.startState, obj.gr_state_animation.endState + 1)
+                    }
+                    if (prop.celmasks && prop.celmasks.length > mod.gr_state) {
+                        obj.gr_state_celmask = prop.celmasks[mod.gr_state]
+                    }
+                }
                 details = html`
                     <a href="detail.html?f=${propFilename}">${propFilename}</a>
                     <${itemView} object=${obj} standalone="true"/>`
