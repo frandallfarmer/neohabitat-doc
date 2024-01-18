@@ -92,13 +92,9 @@ export const javaTypeToMuddleClass = (type) => {
     return javaTypeOverrides[type] ?? `class_${type.toLowerCase()}`
 }
 
-export const navigate = (start, dest, neighbormap) => {
-    // we don't have any way of estimating distance, so we can't use A*. Dijkstra's algorithm should be fine though.
-    const dist = {}
-    const prev = {}
-    dist[start] = 0
-    const prioqueue = [[0, [start]]]
-    const queued = new Set([start])
+export const newPriorityQueue = () => {
+    const prioqueue = []
+    const queued = new Set()
     const indexForPriority = (prio) => {
         let imin = 0
         let ilim = prioqueue.length
@@ -108,9 +104,9 @@ export const navigate = (start, dest, neighbormap) => {
             if (prioAtI == prio) {
                 return i
             } else if (prioAtI < prio) {
-                ilim = i
-            } else {
                 imin = i + 1
+            } else {
+                ilim = i
             }
         }
         return imin
@@ -146,8 +142,20 @@ export const navigate = (start, dest, neighbormap) => {
         queued.delete(ref)
         return ref
     }
-    while (prioqueue.length > 0) {
-        const ref = popFromQueue()
+    const isEmpty = () => prioqueue.length == 0
+
+    return { prioqueue, queued, indexForPriority, addToQueue, adjustPriority, popFromQueue, isEmpty }
+}
+
+export const navigate = (start, dest, neighbormap) => {
+    // we don't have any way of estimating distance, so we can't use A*. Dijkstra's algorithm should be fine though.
+    const dist = {}
+    const prev = {}
+    dist[start] = 0
+    const queue = newPriorityQueue()
+    queue.addToQueue(start, 0)
+    while (!queue.isEmpty()) {
+        const ref = queue.popFromQueue()
         if (ref == dest) {
             break
         }
@@ -159,7 +167,7 @@ export const navigate = (start, dest, neighbormap) => {
                 if (olddist === undefined || newdist < olddist) {
                     dist[neighbor] = newdist
                     prev[neighbor] = ref
-                    adjustPriority(neighbor, olddist, newdist)
+                    queue.adjustPriority(neighbor, olddist, newdist)
                 }
             }
         }
