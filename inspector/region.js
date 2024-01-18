@@ -164,10 +164,12 @@ export const itemView = ({ object, standalone }) => {
     const style = !standalone ? `position: absolute; left: ${x * scale}px; top: ${y * scale}px; 
                                  z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}`
                               : ""
+    const image = html`<${animatedDiv} frames=${frames}/>`
+    const connection = mod.connection && contextMap()[mod.connection]
     return html`
         <${catcher} key=${object.ref} filename=${object.ref}>
             <div id=${object.ref} style=${style}>
-                <${animatedDiv} frames=${frames}/>
+                ${connection ? html`<a href="region.html?f=${connection.filename}">${image}</a>` : image}
             </div>
         <//>`
 }

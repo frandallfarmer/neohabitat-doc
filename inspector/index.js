@@ -34,7 +34,6 @@ export const fileView = ({ filename, href, children }) => html`
         </div>
     <//>`
 
-
 export const fileList = ({ indexFile, childView, href }) =>
     html`
         <div style="display: flex; flex-wrap: wrap; justify-content: space-evenly; align-items: center; gap: 10px;">
