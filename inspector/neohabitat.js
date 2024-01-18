@@ -147,6 +147,14 @@ export const newPriorityQueue = () => {
     return { prioqueue, queued, indexForPriority, addToQueue, adjustPriority, popFromQueue, isEmpty }
 }
 
+export const connectionsFromRef = (neighbormap, ref) => {
+    if (!neighbormap[ref]) {
+        return {orientation: 0, connections: {}}
+    }
+    const [orientation, n, e, s, w, connections] = neighbormap[ref]
+    return { orientation, connections: {...connections, n, e, s, w} }
+}
+
 export const navigate = (start, dest, neighbormap) => {
     // we don't have any way of estimating distance, so we can't use A*. Dijkstra's algorithm should be fine though.
     const dist = {}
@@ -159,9 +167,8 @@ export const navigate = (start, dest, neighbormap) => {
         if (ref == dest) {
             break
         }
-        const neighbors = neighbormap[ref]
-        for (const neighbor of neighbors ?? []) {
-            if (neighbor !== "" && typeof(neighbor) === "string") {
+        for (const neighbor of Object.values(connectionsFromRef(neighbormap, ref).connections)) {
+            if (neighbor) {
                 const newdist = dist[ref] + 1
                 const olddist = dist[neighbor]
                 if (olddist === undefined || newdist < olddist) {

@@ -18,55 +18,21 @@ async function* allNeohabitatObjects(directory = ".") {
 }
 
 process.chdir(`${import.meta.dirname}/../db`)
-const clusters = []
-const refToCluster = {}
 const refToNeighbors = {}
-const lowestCluster = (clusterid) => {
-    while(clusters[clusterid] !== clusterid) {
-        if (clusters[clusterid] > clusterid) {
-            console.error(`${clusterid} < ${clusters[clusterid]}`)
-        }
-        clusterid = clusters[clusterid]
-    }
-    return clusterid
-}
 for await (const obj of allNeohabitatObjects()) {
     if (obj.type == "context" && obj.mods && obj.mods[0].neighbors) {
         refToNeighbors[obj.ref] = [obj.mods[0].orientation, ...obj.mods[0].neighbors]
-        const neighbors = obj.mods[0].neighbors.filter((r) => r && r != "")
-        const knownClusters = new Set([refToCluster[obj.ref], ...neighbors.map((r) => refToCluster[r])].filter((r) => r !== undefined))
-        let clusterid
-        if (knownClusters.size == 0) { // create new cluster
-            clusterid = clusters.length
-            clusters.push(clusterid)
-        } else {
-            // merge all clusters with lowest known cluster
-            clusterid = lowestCluster(Math.min(...knownClusters))
-            for (let id of knownClusters) {
-                while (clusters[id] != clusterid) {
-                    const nextId = clusters[id]
-                    clusters[id] = clusterid
-                    id = nextId
-                }
-            }
+    } else if (obj.type == "item" && obj.mods && obj.mods[0].connection) {
+        const neighborlist = refToNeighbors[obj.in]
+        if (!neighborlist) {
+            console.error(`Item ${obj.ref} has a connection ${obj.mods[0].connection} but is not in the room`)
+            continue
         }
-        refToCluster[obj.ref] = clusterid
-        for (const ref of neighbors) {
-            refToCluster[ref] = clusterid
+        if (neighborlist.length == 5) {
+            neighborlist.push({})
         }
+        neighborlist[5][obj.ref] = obj.mods[0].connection
     }
-}
-
-const clusterToRefs = {}
-for (const [ref, cluster] of Object.entries(refToCluster)) {
-    const clusterid = `${lowestCluster(cluster)}`
-    const refs = clusterToRefs[clusterid] ?? []
-    refs.push(ref)
-    clusterToRefs[clusterid] = refs
-}
-
-for (const [cluster, refs] of Object.entries(clusterToRefs)) {
-    console.log(`Cluster ${cluster}: ${refs.length} (entry point: ${refs[0]})`)
 }
 
 await fs.writeFile("neighbormap.json", JSON.stringify(refToNeighbors))

@@ -20,15 +20,30 @@
             import { html } from "./view.js"
             import { h, render } from "preact"
             import { useState, useId, useCallback, useMemo } from "preact/hooks"
-            import { regionView, regionSearch } from "./region.js"
-            import { contextMap, useJson } from "./data.js"
+            import { regionView, regionSearch, itemView } from "./region.js"
+            import { contextMap, useJson, useHabitatJson } from "./data.js"
             import { direction } from "./view.js"
             import { Scale } from "./render.js"
-            import { navigate } from "./neohabitat.js"
+            import { navigate, connectionsFromRef } from "./neohabitat.js"
 
             const itemLink = ({ item }) => item ? html`
                 <a href="region.html?f=${item.filename}">${item.name}</a><br/>
                 <${regionView} filename=${item.filename}/>` : null
+            
+            const moveNames = { n: "north", e: "east", w: "west", s: "south" }
+            const navMove = ({ fromref, dir, orientation }) => {
+                const compass = moveNames[dir]
+                if (compass) {
+                    return html`<${direction} compass=${compass} orientation=${orientation}/>`
+                }
+                const filename = contextMap()[fromref]?.filename
+                if (filename) {
+                    const obj = useHabitatJson(filename).find(o => o.ref == dir)
+                    if (obj) {
+                        return html`<span>through <div style="display: inline-block"><${Scale.provider} value="1"><${itemView} object=${obj} standalone="true"/><//></div></span>`
+                    }
+                }
+            }
             const directions = ({ start, end }) => {
                 if (!start || !end) {
                     return null
@@ -45,13 +60,10 @@
                     const fromref = path[ipath] 
                     const toref = path[ipath + 1]
                     const to = contextMap()[toref]
-                    const [orientation, n, e, s, w] = neighbormap[fromref]
-                    const dir = n == toref ? "north" :
-                                e == toref ? "east" :
-                                s == toref ? "south" :
-                                w == toref ? "west" : "???"
+                    const { orientation, connections } = connectionsFromRef(neighbormap, fromref)
+                    const dir = Object.entries(connections).find(([dir, ref]) => ref == toref)[0]
                     directions.push(html`
-                        <li>Go <${direction} compass=${dir} orientation=${orientation}/> towards <${itemLink} item=${to}/></li>`)
+                        <li>Go <${navMove} dir=${dir} orientation=${orientation} fromref=${fromref}/> towards <${itemLink} item=${to}/></li>`)
                 }
                 return html`
                         <ul>
