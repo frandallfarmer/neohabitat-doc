@@ -5,6 +5,7 @@ import { signal, computed } from "@preact/signals"
 import { contextMap, betaMud, logError, promiseToSignal, useBinary, useHabitatJson, charset } from './data.js'
 import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask,
          compositeSpaces, animatedDiv, stringFromText } from "./render.js"
+import { signedByte } from "./codec.js"
 import { colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
 
 const imageFileMapSignal = signal({ 
@@ -160,7 +161,8 @@ export const itemView = ({ object, standalone }) => {
         }
     }, [prop, grState, mod.orientation, mod.ascii, mod.ascii ? charsetVal : null])
 
-    const objectSpace = translateSpace(compositeSpaces(frames), prop.isTrap ? 0 : mod.x / 4, mod.y % 128)
+    const modX = (mod.x > 208 ? signedByte(mod.x) : mod.x) / 4
+    const objectSpace = translateSpace(compositeSpaces(frames), prop.isTrap ? 0 : modX, mod.y % 128)
     const [x, y] = topLeftCanvasOffset(regionSpace, objectSpace)
     const style = !standalone ? `position: absolute; left: ${x * scale}px; top: ${y * scale}px; 
                                  z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}`

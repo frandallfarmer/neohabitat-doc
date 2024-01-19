@@ -28,7 +28,7 @@ export const drawByte = (bitmap, x, y, byte, transparent = false) => {
     putpixel(x + 3, (byte & 0x03))
 }
 
-const signedByte = (byte) => {
+export const signedByte = (byte) => {
     if ((byte & 0x80) != 0) {
         const complement = (byte ^ 0xff) + 1
         return -complement
