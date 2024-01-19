@@ -81,19 +81,19 @@ export const showAll = (doc, container, filename, values, f) => {
 export const Colors = createContext(defaultColors)
 
 export const propAnimationShower = (prop, colors = {}) =>
-    (animation) => animate(framesFromPropAnimation(animation, prop, colors))
+    (animation) => animate(framesFromPropAnimation(animation, prop, { colors }))
 
 export const limbAnimationShower = (limb, colors = {}) =>
-    (animation) => animate(framesFromLimbAnimation(animation, limb, colors))
+    (animation) => animate(framesFromLimbAnimation(animation, limb, { colors }))
 
-export const actionShower = (body, limbColors = null) =>
-    (action) => animate(framesFromAction(action, body, limbColors))
+export const actionShower = (body, colors = null) =>
+    (action) => animate(framesFromAction(action, body, { colors }))
 
 export const celmaskShower = (prop, colors = null) =>
-    (celmask) => animate([frameFromCels(celsFromMask(prop, celmask), colors)])
+    (celmask) => animate([frameFromCels(celsFromMask(prop, celmask), { colors })])
 
 export const celShower = (colors = null) =>
-    (cel) => animate([frameFromCels([cel], colors)])
+    (cel) => animate([frameFromCels([cel], { colors })])
 
 export const decodeBinary = async (filename, decode) => {
     try {
@@ -105,17 +105,17 @@ export const decodeBinary = async (filename, decode) => {
     }
 }
 
-export const propAnimation = ({ prop, animation, colors }) =>
-    html`<${animatedDiv} frames=${framesFromPropAnimation(animation, prop, colors)}/>`
+export const propAnimation = ({ prop, animation, ...options }) =>
+    html`<${animatedDiv} frames=${framesFromPropAnimation(animation, prop, options)}/>`
 
-export const limbAnimation = ({ limb, animation, colors }) =>
-    html`<${animatedDiv} frames=${framesFromLimbAnimation(animation, limb, colors)}/>`
+export const limbAnimation = ({ limb, animation, ...options }) =>
+    html`<${animatedDiv} frames=${framesFromLimbAnimation(animation, limb, options)}/>`
 
-export const actionAnimation = ({ body, action, colors }) =>
-    html`<${animatedDiv} frames=${framesFromAction(action, body, colors)}/>`
+export const actionAnimation = ({ body, action, ...options }) =>
+    html`<${animatedDiv} frames=${framesFromAction(action, body, options)}/>`
 
-export const celmaskImage = ({ prop, celmask, colors }) =>
-    html`<${canvasImage} canvas=${frameFromCels(celsFromMask(prop, celmask), colors).canvas}/>`
+export const celmaskImage = ({ prop, celmask, ...options }) =>
+    html`<${canvasImage} canvas=${frameFromCels(celsFromMask(prop, celmask), options).canvas}/>`
 
-export const celImage = ({ cel, colors }) =>
-    html`<${canvasImage} canvas=${frameFromCels([cel], colors).canvas}/>`
+export const celImage = ({ cel, ...options }) =>
+    html`<${canvasImage} canvas=${frameFromCels([cel], options).canvas}/>`

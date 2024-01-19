@@ -69,7 +69,7 @@ const useTrap = (ref, url, fnAugment) => {
     return trapCache[ref].value
 }
 
-export const propFilenameFromMod = (mod) => {
+export const imageSchemaFromMod = (mod) => {
     const mud = betaMud()
     if (mud == null) {
         // we're not ready to parse this yet
@@ -91,12 +91,13 @@ export const propFilenameFromMod = (mod) => {
     if (!image) {
         throw new Error(`${classname} refers to invalid image ${imageRef.id}`)
     }
-    return remapImagePath(image.filename)
+    const args = image.arguments ?? [0, 0]
+    return { filename: remapImagePath(image.filename), width: args[0], flipOffset: args[1] }
 }
 
 export const propFromMod = (mod, ref) => {
-    const propFilename = propFilenameFromMod(mod)
-    if (!propFilename) {
+    const image = imageSchemaFromMod(mod)
+    if (!image) {
         // not ready to parse yet
         return null
     }
@@ -134,7 +135,7 @@ export const propFromMod = (mod, ref) => {
             return data
         }
     }
-    return fnAugment ? useTrap(ref, propFilename, fnAugment) : useBinary(propFilename, decodeProp, null)
+    return fnAugment ? useTrap(ref, image.filename, fnAugment) : useBinary(image.filename, decodeProp, null)
 }
 
 export const itemView = ({ object, standalone }) => {
@@ -144,7 +145,7 @@ export const itemView = ({ object, standalone }) => {
     if (!prop) {
         return null
     }
-    const shouldFlip = ((mod.orientation ?? 0) & 0x01) != 0 // TODO
+    const flipHorizontal = ((mod.orientation ?? 0) & 0x01) != 0
     const grState = mod.gr_state ?? 0
     const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
     const charsetVal = charset()
@@ -153,9 +154,9 @@ export const itemView = ({ object, standalone }) => {
         colors.bytes = mod.ascii
         colors.charset = charsetVal
         if (prop.animations.length > 0) {
-            return framesFromPropAnimation(prop.animations[grState], prop, colors)
+            return framesFromPropAnimation(prop.animations[grState], prop, { colors, flipHorizontal })
         } else {
-            return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), colors)]
+            return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), { colors, flipHorizontal })]
         }
     }, [prop, grState, mod.orientation, mod.ascii, mod.ascii ? charsetVal : null])
 
@@ -243,8 +244,9 @@ export const objectDetails = ({ filename }) => {
             if (mod.ascii) {
                 obj.debugString = stringFromText(mod.ascii)
             }
-            const propFilename = propFilenameFromMod(mod)
-            if (propFilename) {
+            const image = imageSchemaFromMod(mod)
+            if (image) {
+                obj = { imageSchema: image, ...obj }
                 const prop = propFromMod(mod, obj.ref)
                 if (prop && mod.gr_state) {
                     if (prop.animations && prop.animations.length > mod.gr_state) {
@@ -256,7 +258,7 @@ export const objectDetails = ({ filename }) => {
                     }
                 }
                 details = html`
-                    <a href="detail.html?f=${propFilename}">${propFilename}</a>
+                    <a href="detail.html?f=${image.filename}">${image.filename}</a>
                     <${itemView} object=${obj} standalone="true"/>`
             }
         }

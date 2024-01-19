@@ -1,4 +1,4 @@
-// import "https://esm.sh/preact/debug"
+// import "https://esm.sh/*preact/devtools"
 import htm from "htm"
 import { h } from "preact"
 import { useState, useId, useMemo, useErrorBoundary } from "preact/hooks"

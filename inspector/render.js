@@ -112,8 +112,8 @@ export const celsFromMask = (prop, celMask) => {
 // canvas coordinate spaces have the top-left corner at 0,0, x increasing to the right, y increasing down.
 // habitat coordinate spaces have the object origin at 0,0, x increasing to the right, y increasing _up_.
 // In addition, 1 unit horizontally in habitat coordinate space corresponds to 8 pixels horizontally in canvas space.
-export const translateSpace = ({ minX, maxX, minY, maxY }, dx, dy) => {
-    return { minX: minX + dx, maxX: maxX + dx, minY: minY + dy, maxY: maxY + dy }
+export const translateSpace = ({ minX, maxX, minY, maxY, ...extra }, dx, dy) => {
+    return { ...extra, minX: minX + dx, maxX: maxX + dx, minY: minY + dy, maxY: maxY + dy }
 }
 
 export const compositeSpaces = (spaces) => {
@@ -261,7 +261,7 @@ export const frameFromText = (x, y, bytes, charset, pattern, fineXOffset, colors
 }
 
 // Habitat's coordinate space consistently has y=0 for the bottom, and increasing y means going up
-export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCelOrigin = true) => {
+export const frameFromCels = (cels, { colors: celColors, paintOrder, firstCelOrigin = true, flipHorizontal }) => {
     if (cels.length == 0) {
         return null
     }
@@ -312,7 +312,14 @@ export const frameFromCels = (cels, celColors = null, paintOrder = null, firstCe
         layers = reordered
     }
 
-    return compositeLayers(layers, xCorrect, yCorrect)
+    const frame = compositeLayers(layers)
+    if (flipHorizontal) {
+        frame.canvas = flipCanvas(frame.canvas)
+        const { minX, maxX } = frame
+        frame.minX = -maxX + 1
+        frame.maxX = -minX + 1
+    }
+    return translateSpace(frame, -xCorrect, -yCorrect) 
 }
 
 const framesFromAnimation = (animation, frameFromState) => {
@@ -324,17 +331,17 @@ const framesFromAnimation = (animation, frameFromState) => {
     return frames
 }
 
-export const framesFromPropAnimation = (animation, prop, colors = null) => {
+export const framesFromPropAnimation = (animation, prop, options = {}) => {
     const frameFromState = (istate) =>
-        frameFromCels(celsFromMask(prop, prop.celmasks[istate]), colors)
+        frameFromCels(celsFromMask(prop, prop.celmasks[istate]), options)
     return framesFromAnimation(animation, frameFromState)
 }
 
-export const framesFromLimbAnimation = (animation, limb, colors = null) => {
+export const framesFromLimbAnimation = (animation, limb, options = {}) => {
     const frameFromState = (istate) => {
         const iframe = limb.frames[istate]
         if (iframe >= 0) {
-            return frameFromCels([limb.cels[iframe]], colors)
+            return frameFromCels([limb.cels[iframe]], options)
         } else {
             return null
         }
@@ -350,7 +357,7 @@ const actionOrientations = {
     "sit_front": "front"
 }
 
-export const framesFromAction = (action, body, limbColors = null) => {
+export const framesFromAction = (action, body, options = {}) => {
     const frames = []
     const chore = body.choreography[body.actions[action]]
     const animations = []
@@ -398,9 +405,18 @@ export const framesFromAction = (action, body, limbColors = null) => {
         if (restartedCount == animations.length) {
             break
         }
-        frames.push(frameFromCels(cels, null, limbOrder, false))
+        frames.push(frameFromCels(cels, {...options, paintOrder: limbOrder, firstCelOrigin: false }))
     }
     return frames
+}
+
+export const flipCanvas = (canvas) => {
+    const flipped = makeCanvas(canvas.width, canvas.height)
+    const ctx = flipped.getContext("2d")
+    ctx.translate(canvas.width, 0)
+    ctx.scale(-1, 1)
+    ctx.drawImage(canvas, 0, 0)
+    return flipped
 }
 
 export const imageFromCanvas = (canvas) => {
