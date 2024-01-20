@@ -152,7 +152,9 @@ const colorsFromMod = (mod) => {
     } else if (mod.text) {
         colors.bytes = mod.text.split("").map(c => c.charCodeAt(0))
     }
-    colors.charset = charset()
+    if (colors.bytes) {
+        colors.charset = charset()
+    }
     return colors
 }
 
