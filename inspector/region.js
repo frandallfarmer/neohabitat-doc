@@ -138,6 +138,23 @@ export const propFromMod = (mod, ref) => {
     }
     return fnAugment ? useTrap(ref, image.filename, fnAugment) : useBinary(image.filename, decodeProp, null)
 }
+const propLocationFromMod = (prop, mod) => {
+    const x = (mod.x > 208 ? signedByte(mod.x) : mod.x) / 4
+    const y = mod.y % 128
+    const zIndex = mod.y > 127 ? (128 + (256 - mod.y)) : mod.y
+    return [prop.isTrap ? 0 : x, y, zIndex]
+}
+
+const colorsFromMod = (mod) => {
+    const colors = colorsFromOrientation(mod.orientation)
+    if (mod.ascii && mod.ascii.length > 0) {
+        colors.bytes = mod.ascii
+    } else if (mod.text) {
+        colors.bytes = mod.text.split("").map(c => c.charCodeAt(0))
+    }
+    colors.charset = charset()
+    return colors
+}
 
 export const itemView = ({ object, standalone }) => {
     const scale = useContext(Scale)
@@ -149,24 +166,19 @@ export const itemView = ({ object, standalone }) => {
     const flipHorizontal = ((mod.orientation ?? 0) & 0x01) != 0
     const grState = mod.gr_state ?? 0
     const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
-    const charsetVal = charset()
+    const colors = colorsFromMod(mod)
     const frames = useMemo(() => {
-        const colors = colorsFromOrientation(mod.orientation)
-        colors.bytes = mod.ascii
-        colors.charset = charsetVal
         if (prop.animations.length > 0) {
             return framesFromPropAnimation(prop.animations[grState], prop, { colors, flipHorizontal })
         } else {
             return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), { colors, flipHorizontal })]
         }
-    }, [prop, grState, mod.orientation, mod.ascii, mod.ascii ? charsetVal : null])
+    }, [prop, mod, colors.charset])
 
-    const modX = (mod.x > 208 ? signedByte(mod.x) : mod.x) / 4
-    const objectSpace = translateSpace(compositeSpaces(frames), prop.isTrap ? 0 : modX, mod.y % 128)
+    const [propX, propY, propZ] = propLocationFromMod(prop, mod)
+    const objectSpace = translateSpace(compositeSpaces(frames), propX, propY)
     const [x, y] = topLeftCanvasOffset(regionSpace, objectSpace)
-    const style = !standalone ? `position: absolute; left: ${x * scale}px; top: ${y * scale}px; 
-                                 z-index: ${mod.y > 127 ? (128 + (256 - mod.y)) : mod.y}`
-                              : ""
+    const style = !standalone ? `position: absolute; left: ${x * scale}px; top: ${y * scale}px; z-index: ${propZ}` : ""
     const image = html`<${animatedDiv} frames=${frames}/>`
     const connection = mod.connection && contextMap()[mod.connection]
     return html`
