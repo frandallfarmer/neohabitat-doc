@@ -72,7 +72,7 @@ const useTrap = (ref, url, fnAugment) => {
 
 export const imageSchemaFromMod = (mod) => {
     const mud = betaMud()
-    if (mud == null) {
+    if (mud == null || imageFileMap().loadState !== "loaded") {
         // we're not ready to parse this yet
         return null
     }
@@ -158,7 +158,7 @@ const colorsFromMod = (mod) => {
     return colors
 }
 
-export const itemView = ({ object, standalone }) => {
+const unwrappedItemView = ({ object, standalone }) => {
     const scale = useContext(Scale)
     const mod = object.mods[0]
     const prop = propFromMod(mod, object.ref)
@@ -184,10 +184,15 @@ export const itemView = ({ object, standalone }) => {
     const image = html`<${animatedDiv} frames=${frames}/>`
     const connection = mod.connection && contextMap()[mod.connection]
     return html`
-        <${catcher} key=${object.ref} filename=${object.ref}>
             <div id=${object.ref} style=${style}>
                 ${connection ? html`<a href="region.html?f=${connection.filename}">${image}</a>` : image}
-            </div>
+            </div>`
+}
+
+export const itemView = (props) => {
+    return html`
+        <${catcher} filename=${props.object.ref}>
+            <${unwrappedItemView} ...${props}/>
         <//>`
 }
 
