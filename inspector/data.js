@@ -31,6 +31,9 @@ export const lazySignal = (defaultValue, promiseGetter) => {
 
 const fetchCache = {}
 export const fetchAndCache = (url, handler, defaultValue, onError = logError) => {
+    if (!url) {
+        throw new Error("Invalid empty URL")
+    }
     if (!fetchCache[url]) {
         const doFetch = async () => {
             const response = await fetch(url, { cache: "no-cache" })
