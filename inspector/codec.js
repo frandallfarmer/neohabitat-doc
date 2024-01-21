@@ -362,7 +362,7 @@ const encodeWalkto = ({ fromSide, offset }) => {
     return encodeSide(fromSide) | (offset & 0xfc)
 }
 
-const decodeAnimations = (data, startEndTableOff, firstCelOff, stateCount) => {
+const decodeAnimations = (data, startEndTableOff, nextBlockOff, stateCount) => {
     const animations = []
     // The prop structure also does not encode a count for how many frames there are, so we simply
     // stop parsing once we find one that doesn't make sense.
@@ -373,7 +373,7 @@ const decodeAnimations = (data, startEndTableOff, firstCelOff, stateCount) => {
     // heuristic rather than failing to parse any animation data.
     // It's possible for there to be no frames, which is represented by an offset of 0 (no_animation)
     if (startEndTableOff != 0) {
-        for (let frameOff = startEndTableOff; (startEndTableOff > firstCelOff) || (frameOff < firstCelOff); frameOff += 2) {
+        for (let frameOff = startEndTableOff; (startEndTableOff > nextBlockOff) || (frameOff < nextBlockOff); frameOff += 2) {
             // each animation is two bytes: the starting state, and the ending state
             // the first byte can have its high bit set to indicate that the animation should cycle
             const cycle = (data.getUint8(frameOff) & 0x80) != 0
@@ -388,12 +388,28 @@ const decodeAnimations = (data, startEndTableOff, firstCelOff, stateCount) => {
     return animations
 }
 
+const decodeContentsXY = (data, off, nextBlockOff) => {
+    const offsets = []
+    // The prop structure doesn't encode the capacity of an open container - the only way to know
+    // how big this block is without digging into other files is to use the offset of the first cel as 
+    // a boundary, as, in practice, this should be true of all existing props. (An object's capacity is 
+    // defined in beta.mud, but that's per-object, not per-image. Building that association would be more
+    // complex than is needed here.)
+    // Non-containers and closed containers will have 0 here (no_cont).
+    if (off != 0) {
+        for (let xyOff = off; xyOff < nextBlockOff; xyOff += 2) {
+            offsets.push({ x: data.getInt8(xyOff), y: data.getInt8(xyOff + 1) })
+        }
+    }
+    return offsets
+}
+
 export const decodeProp = (data) => {
     const prop = { 
         data: data,
         howHeld: decodeHowHeld(data.getUint8(0)),
         colorBitmask: data.getUint8(1),
-        containerXYOff: data.getUint8(3), // TODO: parse this when nonzero
+        contentsInFront: (data.getUint8(3) & 0x80) == 0,
         walkto: { left: decodeWalkto(data.getUint8(4)), right: decodeWalkto(data.getUint8(5)), yoff: data.getInt8(6) },
         celmasks: [],
         cels: []
@@ -426,7 +442,9 @@ export const decodeProp = (data) => {
         prop.cels.push(decodeCel(new DataView(data.buffer, celOff), (prop.colorBitmask & celbit) != 0))
         allCelsMask = (allCelsMask << 1) & 0xff
     }
-    prop.animations = decodeAnimations(data, graphicStateOff, firstCelOff, stateCount)
+    const contentsXYOff = data.getUint8(3) & 0x7f
+    prop.animations = decodeAnimations(data, graphicStateOff, contentsXYOff == 0 ? firstCelOff : contentsXYOff, stateCount)
+    prop.contentsXY = decodeContentsXY(data, contentsXYOff, firstCelOff)
     return prop
 }
 

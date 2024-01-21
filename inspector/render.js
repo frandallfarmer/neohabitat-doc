@@ -260,7 +260,9 @@ export const frameFromText = (x, y, bytes, charset, pattern, fineXOffset, colors
     return compositeLayers(layers)
 }
 
-// Habitat's coordinate space consistently has y=0 for the bottom, and increasing y means going up
+// We try to consistently model Habitat's coordinate space in our rendering code as y=0 for the bottom, with increasing y meaning going up.
+// However, the graphics code converts this internally to a coordinate space where increasing y means going down, and many internal
+// coordinates (cel offsets, etc.) assume this.
 export const frameFromCels = (cels, { colors: celColors, paintOrder, firstCelOrigin = true, flipHorizontal }) => {
     if (cels.length == 0) {
         return null
@@ -319,6 +321,8 @@ export const frameFromCels = (cels, { colors: celColors, paintOrder, firstCelOri
         frame.minX = -maxX + 1
         frame.maxX = -minX + 1
     }
+    frame.xOrigin = xCorrect
+    frame.yOrigin = yCorrect
     return translateSpace(frame, -xCorrect, -yCorrect) 
 }
 

@@ -20,7 +20,7 @@
             import { html } from "./view.js"
             import { h, render } from "preact"
             import { useState, useId, useCallback, useMemo } from "preact/hooks"
-            import { regionView, regionSearch, itemView } from "./region.js"
+            import { regionView, regionSearch, itemView, standaloneItemView } from "./region.js"
             import { contextMap, useJson, useHabitatJson } from "./data.js"
             import { direction } from "./view.js"
             import { Scale } from "./render.js"
@@ -40,7 +40,14 @@
                 if (filename) {
                     const obj = useHabitatJson(filename).find(o => o.ref == dir)
                     if (obj) {
-                        return html`<span>through <div style="display: inline-block"><${Scale.provider} value="1"><${itemView} object=${obj} standalone="true"/><//></div></span>`
+                        return html`
+                            <span>through 
+                                <div style="display: inline-block">
+                                    <${Scale.provider} value="1">
+                                        <${itemView} object=${obj} viewer=${standaloneItemView}/>
+                                    <//>
+                                </div>
+                            </span>`
                     }
                 }
             }
