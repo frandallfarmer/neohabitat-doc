@@ -211,9 +211,9 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
     const frames = propFramesFromMod(prop, mod)
     const frameSpace = compositeSpaces(frames)
     // if the contents are drawn in front, the container has its origin offset by the offset of its first cel.
-    const originX = containerProp.contentsInFront ? containerSpace.xOrigin + 2 : 0
+    const originX = containerProp.contentsInFront ? containerSpace.xOrigin : 0
     const originY = containerProp.contentsInFront ? containerSpace.yOrigin : 0
-    const x = containerX + (flipHorizontal ? -originX + offsetX : originX - offsetX)
+    const x = (containerX - originX) + offsetX
     const y = containerY - (offsetY + originY)
     const z = containerProp.contentsInFront ? containerZ + 1 : containerZ - 1
     const objectSpace = translateSpace(frameSpace, x, y)
