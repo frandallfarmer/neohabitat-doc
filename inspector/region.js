@@ -197,6 +197,15 @@ export const positionedInRegion = ({ space, z, children }) => {
     return html`<div style=${style}>${children}</div>`
 }
 
+const offsetsFromContainer = (containerProp, containerMod, mod) => {
+    if (containerMod.type === "Glue") {
+        return { x: signedByte(containerMod[`x_offset_${mod.y + 1}`]), 
+                 y: signedByte(containerMod[`y_offset_${mod.y + 1}`]) }
+    } else {
+        return containerProp.contentsXY[mod.y]
+    }
+}
+
 export const containedItemView = ({ object, containerProp, containerMod, containerSpace }) => {
     const mod = object.mods[0]
     const prop = propFromMod(mod, object.ref)
@@ -204,8 +213,7 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
         return null
     }
     const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerProp, containerMod.x, containerMod.y)
-    const { x: offsetX, y: offsetY } = containerProp.contentsXY[mod.y]
-    const flipHorizontal = ((mod.orientation ?? 0) & 0x01) != 0
+    const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod)
     // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
     // the y axis inverted (see render.m:115-121)
     const frames = propFramesFromMod(prop, mod)
