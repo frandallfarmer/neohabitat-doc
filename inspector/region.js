@@ -139,20 +139,16 @@ export const propFromMod = (mod, ref) => {
     return fnAugment ? useTrap(ref, image.filename, fnAugment) : useBinary(image.filename, decodeProp, null)
 }
 
-const fractionalZIndexFromObjectXY = (modX, modY) => {
-    const x = (modX > 208 ? signedByte(modX) : modX) / 4
-    const y = modY % 128
-    return (modY > 127 ? (128 + (256 - modY)) : modY) + (1 / x)
+const zIndexFromObjectY = (modY) => {
+    return (modY > 127 ? (128 + (256 - modY)) : modY)
 }
 
-const objectZComparitor = (obj1, obj2) => 
-    fractionalZIndexFromObjectXY(obj1.mods[0].x, obj1.mods[0].y) - 
-    fractionalZIndexFromObjectXY(obj2.mods[0].x, obj2.mods[0].y)
+const objectZComparitor = (obj1, obj2) => zIndexFromObjectY(obj1.mods[0].y) - zIndexFromObjectY(obj2.mods[0].y)
 
 const propLocationFromObjectXY = (prop, modX, modY) => {
     const x = (modX > 208 ? signedByte(modX) : modX) / 4
     const y = modY % 128
-    const zIndex = modY > 127 ? (128 + (256 - modY)) : modY
+    const zIndex = zIndexFromObjectY(modY)
     return [prop.isTrap ? 0 : x, y, zIndex]
 }
 
