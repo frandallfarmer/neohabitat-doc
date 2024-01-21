@@ -159,17 +159,17 @@ const colorsFromMod = (mod) => {
     return colors
 }
 
-const propFramesFromMod = (prop, mod) => {
+const propFramesFromMod = (prop, mod, flipOverride = null) => {
     const colors = colorsFromMod(mod)
     const frames = useMemo(() => {
-        const flipHorizontal = ((mod.orientation ?? 0) & 0x01) != 0
+        const flipHorizontal = flipOverride ?? ((mod.orientation ?? 0) & 0x01) != 0
         const grState = mod.gr_state ?? 0
         if (prop.animations.length > 0) {
             return framesFromPropAnimation(prop.animations[grState], prop, { colors, flipHorizontal })
         } else {
             return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), { colors, flipHorizontal })]
         }
-    }, [prop, mod, colors.charset])
+    }, [prop, mod, colors.charset, flipOverride])
     return frames
 }
 
@@ -208,7 +208,6 @@ const offsetsFromContainer = (containerProp, containerMod, mod) => {
 
 export const containedItemView = ({ object, containerProp, containerMod, containerSpace }) => {
     const mod = object.mods[0]
-    mod.orientation = mod.orientation & 0xfe // horizontal flip is ignored??
     const prop = propFromMod(mod, object.ref)
     if (!prop || containerProp.contentsXY.length < mod.y) {
         return null
@@ -217,12 +216,13 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
     const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod)
     // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
     // the y axis inverted (see render.m:115-121)
-    const frames = propFramesFromMod(prop, mod)
+    const flipHorizontal = (containerMod.orientation & 0x01) != 0
+    const frames = propFramesFromMod(prop, mod, flipHorizontal)
     const frameSpace = compositeSpaces(frames)
     // if the contents are drawn in front, the container has its origin offset by the offset of its first cel.
     const originX = containerProp.contentsInFront ? containerSpace.xOrigin : 0
     const originY = containerProp.contentsInFront ? containerSpace.yOrigin : 0
-    const x = (containerX - originX) + offsetX
+    const x = (containerX - originX) + (flipHorizontal ? -offsetX : offsetX)
     const y = containerY - (offsetY + originY)
     const z = containerZ
     const objectSpace = translateSpace(frameSpace, x, y)
