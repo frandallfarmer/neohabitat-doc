@@ -142,8 +142,8 @@ export const propFromMod = (mod, ref) => {
 const propLocationFromObjectXY = (prop, modX, modY) => {
     const x = (modX > 208 ? signedByte(modX) : modX) / 4
     const y = modY % 128
-    const zIndex = (modY > 127 ? (128 + (256 - modY)) : modY) * 2
-    return [prop.isTrap ? 0 : x, y, prop.contentsInFront ? zIndex : zIndex + 1]
+    const zIndex = modY > 127 ? (128 + (256 - modY)) : modY
+    return [prop.isTrap ? 0 : x, y, zIndex]
 }
 
 const colorsFromMod = (mod) => {
@@ -208,6 +208,7 @@ const offsetsFromContainer = (containerProp, containerMod, mod) => {
 
 export const containedItemView = ({ object, containerProp, containerMod, containerSpace }) => {
     const mod = object.mods[0]
+    mod.orientation = mod.orientation & 0xfe // horizontal flip is ignored??
     const prop = propFromMod(mod, object.ref)
     if (!prop || containerProp.contentsXY.length < mod.y) {
         return null
@@ -223,7 +224,7 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
     const originY = containerProp.contentsInFront ? containerSpace.yOrigin : 0
     const x = (containerX - originX) + offsetX
     const y = containerY - (offsetY + originY)
-    const z = containerProp.contentsInFront ? containerZ + 1 : containerZ - 1
+    const z = containerZ
     const objectSpace = translateSpace(frameSpace, x, y)
     return html`
         <${positionedInRegion} space=${objectSpace} z=${z}>
@@ -248,18 +249,27 @@ export const regionItemView = ({ object, contents = [] }) => {
     const [propX, propY, propZ] = propLocationFromObjectXY(prop, mod.x, mod.y)
     const frames = propFramesFromMod(prop, mod)
     const objectSpace = translateSpace(compositeSpaces(frames), propX, propY)
-    const result = [html`
+    const container = html`
             <${positionedInRegion} key=${object.ref} space=${objectSpace} z=${propZ}>
                 <${itemInteraction} mod=${mod}>
                     <${animatedDiv} frames=${frames}/>
                 <//>
-            </div>`]
+            </div>`
     if (prop.contentsXY.length > 0) {
+        const children = []
         for (const item of contents) {
-            result.push(html`<${containedItemView} key=${item.ref} object=${item} containerProp=${prop} containerMod=${mod} containerSpace=${frames[0]}/>`)
+            children.push(html`<${containedItemView} key=${item.ref} object=${item} containerProp=${prop} containerMod=${mod} containerSpace=${frames[0]}/>`)
         }
+        if (prop.contentsInFront) {
+            children.push(container)
+            children.reverse()
+        } else {
+            children.reverse()
+            children.push(container)
+        }
+        return children
     }
-    return result
+    return container
 }
 
 export const regionView = ({ filename }) => {
