@@ -4,11 +4,11 @@ import { useState, useEffect, useContext } from "preact/hooks"
 import { emptyBitmap, horizontalLine } from "./codec.js"
 import { logError } from "./data.js"
 
-// C64 RGB values taken from https://www.c64-wiki.com/wiki/Color
+// C64 RGB values generated from https://www.colodore.com/ with default settings
 const c64Colors = [
-    0x000000, 0xffffff, 0x880000, 0xaaffee, 0xcc44cc, 0x00cc55, 
-    0x0000aa, 0xeeee77, 0xdd8855, 0x664400, 0xff7777, 0x333333,
-    0x777777, 0xaaff66, 0x0088ff, 0xbbbbbb
+    0x000000, 0xffffff, 0x813338, 0x75cec8, 0x8e3c97, 0x56ac4d, 
+    0x2e2c9b, 0xedf171, 0x8e5029, 0x553800, 0xc46c71, 0x4a4a4a,
+    0x7b7b7b, 0xa9ff9f, 0x706deb, 0xb2b2b2
 ]
 
 // from paint.m:447
