@@ -139,6 +139,16 @@ export const propFromMod = (mod, ref) => {
     return fnAugment ? useTrap(ref, image.filename, fnAugment) : useBinary(image.filename, decodeProp, null)
 }
 
+const fractionalZIndexFromObjectXY = (modX, modY) => {
+    const x = (modX > 208 ? signedByte(modX) : modX) / 4
+    const y = modY % 128
+    return (modY > 127 ? (128 + (256 - modY)) : modY) + (1 / x)
+}
+
+const objectZComparitor = (obj1, obj2) => 
+    fractionalZIndexFromObjectXY(obj1.mods[0].x, obj1.mods[0].y) - 
+    fractionalZIndexFromObjectXY(obj2.mods[0].x, obj2.mods[0].y)
+
 const propLocationFromObjectXY = (prop, modX, modY) => {
     const x = (modX > 208 ? signedByte(modX) : modX) / 4
     const y = modY % 128
@@ -278,7 +288,12 @@ export const regionView = ({ filename }) => {
     const regionRef = objects.find(o => o.type === "context")?.ref
     const items = objects
         .filter(obj => obj.type === "item" && obj.in === regionRef)
-        .map(obj => html`<${itemView} viewer=${regionItemView} object=${obj} contents=${objects.filter(o => o.in === obj.ref)} key=${obj.ref}/>`)
+        .sort(objectZComparitor)
+        .map(obj => html`
+            <${itemView} key=${obj.ref}
+                         viewer=${regionItemView} 
+                         object=${obj} 
+                         contents=${objects.filter(o => o.in === obj.ref).sort((o1, o2) => o1.mods[0].y - o2.mods[0].y)}/>`)
 
     return html`
         <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
