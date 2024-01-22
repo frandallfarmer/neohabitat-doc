@@ -112,10 +112,10 @@ export const propFromMod = (mod, ref) => {
             superdata.set(mod.pattern, data.byteLength + 2)
             const trapview = new DataView(superdata.buffer)
             trapview.setUint8(celoff + 1, mod.height)
-            trapview.setUint8(celoff + 7, mod.upper_left_x)
-            trapview.setUint8(celoff + 8, mod.upper_right_x)
-            trapview.setUint8(celoff + 9, mod.lower_left_x)
-            trapview.setUint8(celoff + 10, mod.lower_right_x)
+            trapview.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
+            trapview.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
+            trapview.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
+            trapview.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
             trapview.setUint8(celoff + 11, mod.pattern_x_size)
             trapview.setUint8(celoff + 12, mod.pattern_y_size)
             return trapview
@@ -126,11 +126,11 @@ export const propFromMod = (mod, ref) => {
             for (let icel = 0; icel < celCount; icel ++) {
                 const celoff = data.getUint16(7 + celCount + (icel * 2), true)
                 data.setUint8(celoff + 1, mod.height)
-                if (icel == 0) {            
-                    data.setUint8(celoff + 7, mod.upper_left_x)
-                    data.setUint8(celoff + 8, mod.upper_right_x)
-                    data.setUint8(celoff + 9, mod.lower_left_x)
-                    data.setUint8(celoff + 10, mod.lower_right_x)
+                if (icel == 0) {
+                    data.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
+                    data.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
+                    data.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
+                    data.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
                 }
             }
             return data
@@ -143,8 +143,8 @@ const signedXCoordinate = (modX) => modX > 208 ? signedByte(modX) : modX
 const zIndexFromObjectY = (modY) => modY > 127 ? (128 + (256 - modY)) : modY
 const objectZComparitor = (obj1, obj2) => zIndexFromObjectY(obj1.mods[0].y) - zIndexFromObjectY(obj2.mods[0].y)
 
-const propLocationFromObjectXY = (modX, modY) => {
-    return [signedXCoordinate(modX) / 4, modY % 128, zIndexFromObjectY(modY)]
+const propLocationFromObjectXY = (prop, modX, modY) => {
+    return [prop.isTrap ? 0 : signedXCoordinate(modX) / 4, modY % 128, zIndexFromObjectY(modY)]
 }
 
 const colorsFromMod = (mod) => {
@@ -218,7 +218,7 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
     if (!prop || containerProp.contentsXY.length < mod.y) {
         return null
     }
-    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerMod.x, containerMod.y)
+    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerProp, containerMod.x, containerMod.y)
     const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod)
     // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
     // the y axis inverted (see render.m:115-121)
@@ -252,7 +252,7 @@ export const regionItemView = ({ object, contents = [] }) => {
     if (!prop) {
         return null
     }
-    const [propX, propY, propZ] = propLocationFromObjectXY(mod.x, mod.y)
+    const [propX, propY, propZ] = propLocationFromObjectXY(prop, mod.x, mod.y)
     const frames = propFramesFromMod(prop, mod)
     const objectSpace = translateSpace(compositeSpaces(frames), propX, propY)
     const container = html`
