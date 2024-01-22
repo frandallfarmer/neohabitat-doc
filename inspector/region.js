@@ -112,10 +112,10 @@ export const propFromMod = (mod, ref) => {
             superdata.set(mod.pattern, data.byteLength + 2)
             const trapview = new DataView(superdata.buffer)
             trapview.setUint8(celoff + 1, mod.height)
-            trapview.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
-            trapview.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
-            trapview.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
-            trapview.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
+            trapview.setUint8(celoff + 7, mod.upper_left_x)
+            trapview.setUint8(celoff + 8, mod.upper_right_x)
+            trapview.setUint8(celoff + 9, mod.lower_left_x)
+            trapview.setUint8(celoff + 10, mod.lower_right_x)
             trapview.setUint8(celoff + 11, mod.pattern_x_size)
             trapview.setUint8(celoff + 12, mod.pattern_y_size)
             return trapview
@@ -127,10 +127,10 @@ export const propFromMod = (mod, ref) => {
                 const celoff = data.getUint16(7 + celCount + (icel * 2), true)
                 data.setUint8(celoff + 1, mod.height)
                 if (icel == 0) {            
-                    data.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
-                    data.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
-                    data.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
-                    data.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
+                    data.setUint8(celoff + 7, mod.upper_left_x)
+                    data.setUint8(celoff + 8, mod.upper_right_x)
+                    data.setUint8(celoff + 9, mod.lower_left_x)
+                    data.setUint8(celoff + 10, mod.lower_right_x)
                 }
             }
             return data
@@ -139,17 +139,12 @@ export const propFromMod = (mod, ref) => {
     return fnAugment ? useTrap(ref, image.filename, fnAugment) : useBinary(image.filename, decodeProp, null)
 }
 
-const zIndexFromObjectY = (modY) => {
-    return (modY > 127 ? (128 + (256 - modY)) : modY)
-}
-
+const signedXCoordinate = (modX) => modX > 208 ? signedByte(modX) : modX
+const zIndexFromObjectY = (modY) => modY > 127 ? (128 + (256 - modY)) : modY
 const objectZComparitor = (obj1, obj2) => zIndexFromObjectY(obj1.mods[0].y) - zIndexFromObjectY(obj2.mods[0].y)
 
-const propLocationFromObjectXY = (prop, modX, modY) => {
-    const x = (modX > 208 ? signedByte(modX) : modX) / 4
-    const y = modY % 128
-    const zIndex = zIndexFromObjectY(modY)
-    return [prop.isTrap ? 0 : x, y, zIndex]
+const propLocationFromObjectXY = (modX, modY) => {
+    return [signedXCoordinate(modX) / 4, modY % 128, zIndexFromObjectY(modY)]
 }
 
 const colorsFromMod = (mod) => {
@@ -198,7 +193,12 @@ export const standaloneItemView = ({ object }) => {
 export const positionedInRegion = ({ space, z, children }) => {
     const scale = useContext(Scale)
     const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
-    const [x, y] = topLeftCanvasOffset(regionSpace, space)
+    space = { ...space }
+    if (space.minX >= regionSpace.maxX) {
+        space.minX -= 64
+        space.maxX -= 64
+    }
+    let [x, y] = topLeftCanvasOffset(regionSpace, space)
     const style =`position: absolute; left: ${x * scale}px; top: ${y * scale}px; z-index: ${z}`
     return html`<div style=${style}>${children}</div>`
 }
@@ -218,7 +218,7 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
     if (!prop || containerProp.contentsXY.length < mod.y) {
         return null
     }
-    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerProp, containerMod.x, containerMod.y)
+    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerMod.x, containerMod.y)
     const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod)
     // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
     // the y axis inverted (see render.m:115-121)
@@ -252,7 +252,7 @@ export const regionItemView = ({ object, contents = [] }) => {
     if (!prop) {
         return null
     }
-    const [propX, propY, propZ] = propLocationFromObjectXY(prop, mod.x, mod.y)
+    const [propX, propY, propZ] = propLocationFromObjectXY(mod.x, mod.y)
     const frames = propFramesFromMod(prop, mod)
     const objectSpace = translateSpace(compositeSpaces(frames), propX, propY)
     const container = html`
@@ -332,6 +332,14 @@ export const regionNav = ({ filename }) => {
     return html`<ul>${directions}</ul>`
 }
 
+const propFilter = (key, value) => {
+    if (key != "bitmap" && key != "data" && key != "canvas" && key != "texture" && 
+        !(key == "pattern" && typeof(value) === "object")) {
+        return value
+    }
+}
+export const debugDump = (value) => JSON.stringify(value, propFilter, 2)
+
 export const objectDetails = ({ filename }) => {
     const objects = useHabitatJson(filename, [])
     const children = objects.flatMap(obj => {
@@ -346,8 +354,8 @@ export const objectDetails = ({ filename }) => {
             }
             const image = imageSchemaFromMod(mod)
             if (image) {
-                obj = { imageSchema: image, ...obj }
                 const prop = propFromMod(mod, obj.ref)
+                obj = { imageSchema: image, ...obj }
                 if (prop && mod.gr_state) {
                     if (prop.animations && prop.animations.length > mod.gr_state) {
                         obj.gr_state_animation = prop.animations[mod.gr_state]
@@ -356,6 +364,9 @@ export const objectDetails = ({ filename }) => {
                     if (prop.celmasks && prop.celmasks.length > mod.gr_state) {
                         obj.gr_state_celmask = prop.celmasks[mod.gr_state]
                     }
+                }
+                if (prop && prop.isTrap) {
+                    obj.prop = prop
                 }
                 details = html`
                     <a href="detail.html?f=${image.filename}">
@@ -367,7 +378,7 @@ export const objectDetails = ({ filename }) => {
                 <details>
                     <summary>${summary}</summary>
                     ${details}
-                    <pre>${JSON.stringify(obj, null, 2)}</pre>
+                    <pre>${debugDump(obj)}</pre>
                 </details>`
     })
     return html`<div>${children}</div>`

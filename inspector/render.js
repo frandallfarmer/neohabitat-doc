@@ -279,7 +279,7 @@ export const frameFromCels = (cels, { colors: celColors, paintOrder, firstCelOri
                 yCorrect = cel.yOffset - cel.height
                 firstCelOrigin = false
             }
-            const x = cel.xOffset + xRel
+            const x = cel.xOffset + xRel + (cel.xCorrection ?? 0)
             const y = cel.yOffset + yRel
             const colors = (Array.isArray(celColors) ? celColors[icel] : celColors) ?? {}
             if (cel.bitmap) {

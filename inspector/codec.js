@@ -223,10 +223,24 @@ celDecoder.trap = (data, cel) => {
             }
         }
     }
-    cel.x1a = data.getUint8(7)
-    cel.x1b = data.getUint8(8)
-    cel.x2a = data.getUint8(9)
-    cel.x2b = data.getUint8(10)
+    cel.raw = {
+        width: cel.width,
+        x1a: data.getUint8(7),
+        x1b: data.getUint8(8),
+        x2a: data.getUint8(9),
+        x2b: data.getUint8(10)
+    }
+    cel.x1a = cel.raw.x1a
+    cel.x1b = cel.raw.x1b
+    cel.x2a = cel.raw.x2a
+    cel.x2b = cel.raw.x2b
+    if (cel.x1b < cel.x1a) { cel.x1b += 256 }
+    if (cel.x2b < cel.x2a) { cel.x2b += 256 }
+    cel.xCorrection = Math.floor(Math.min(cel.x1a, cel.x2a) / 4)
+    cel.x1a -= cel.xCorrection * 4
+    cel.x1b -= cel.xCorrection * 4
+    cel.x2a -= cel.xCorrection * 4
+    cel.x2b -= cel.xCorrection * 4
 
     // trapezoid-drawing algorithm:
     // draw_line: draws a line from x1a,y1 to x1b, y1
