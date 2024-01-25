@@ -38,7 +38,7 @@
             })
 
             const regionName = ({ filename }) => {
-                const objects = useHabitatJson(filename, [])
+                const objects = useHabitatJson(filename)
                 const region = objects.find(obj => obj.type == "context")
                 return html`<span>${(region && region.name) ?? filename}</span>`
             }

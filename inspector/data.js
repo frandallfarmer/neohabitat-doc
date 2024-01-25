@@ -1,4 +1,4 @@
-import { signal } from "@preact/signals"
+import { signal, effect } from "@preact/signals"
 import { parse } from "./mudparse.js"
 import { parseHabitatObject } from "./neohabitat.js"
 import { decodeCharset } from "./codec.js"
@@ -17,6 +17,36 @@ export const promiseToSignal = (promise, defaultValue) => {
     const sig = signal(defaultValue)
     promise.then((x) => { sig.value = x })
     return sig
+}
+
+export const effectToPromise = (callback) => {
+    const resolver = {}
+    const complete = (value) => {
+        if (!resolver.dispose) {
+            resolver.postponed = true
+            resolver.value = value
+        } else {
+            resolver.resolve(value)
+            resolver.dispose()
+        }
+    }
+    const promise = new Promise(resolve => {
+        resolver.resolve = resolve
+        resolver.dispose = effect(() => { callback(complete) })
+    })
+    if (resolver.postponed) {
+        complete(resolver.value)
+    }
+    return promise
+}
+
+export const until = (getValue, predicate = v => v) => {
+    return effectToPromise(complete => {
+        const value = getValue()
+        if (predicate(value)) {
+            complete(value)
+        }
+    })
 }
 
 export const lazySignal = (defaultValue, promiseGetter) => {

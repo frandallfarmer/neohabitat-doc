@@ -2,11 +2,11 @@ import { decodeProp } from "./codec.js"
 import { html, catcher, direction, searchBox } from "./view.js"
 import { useContext, useMemo } from "preact/hooks"
 import { signal, computed } from "@preact/signals"
-import { contextMap, betaMud, logError, promiseToSignal, useBinary, useHabitatJson, charset } from './data.js'
+import { contextMap, betaMud, logError, promiseToSignal, until, useBinary, useHabitatJson, charset } from './data.js'
 import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask,
-         compositeSpaces, animatedDiv, stringFromText } from "./render.js"
+         compositeSpaces, animatedDiv, stringFromText, canvasForSpace, drawInSpace, canvasImage } from "./render.js"
 import { signedByte } from "./codec.js"
-import { colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
+import { colorsFromOrientation, javaTypeToMuddleClass, parseHabitatObject } from "./neohabitat.js"
 
 const imageFileMapSignal = signal({ 
     "super_trap.bin": "super_trap.bin",
@@ -160,19 +160,19 @@ const colorsFromMod = (mod) => {
     return colors
 }
 
-const propFramesFromMod = (prop, mod, flipOverride = null) => {
+export const propFramesFromMod = (prop, mod, flipOverride = null) => {
     const colors = colorsFromMod(mod)
-    const frames = useMemo(() => {
-        const flipHorizontal = flipOverride ?? ((mod.orientation ?? 0) & 0x01) != 0
-        const grState = mod.gr_state ?? 0
-        if (prop.animations.length > 0) {
-            return framesFromPropAnimation(prop.animations[grState], prop, { colors, flipHorizontal })
-        } else {
-            return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), { colors, flipHorizontal })]
-        }
-    }, [prop, mod, colors.charset, flipOverride])
-    return frames
+    const flipHorizontal = flipOverride ?? ((mod.orientation ?? 0) & 0x01) != 0
+    const grState = mod.gr_state ?? 0
+    if (prop.animations.length > 0) {
+        return framesFromPropAnimation(prop.animations[grState], prop, { colors, flipHorizontal })
+    } else {
+        return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), { colors, flipHorizontal })]
+    }
 }
+
+export const propFramesDependencies = (prop, mod, flipOverride = null) =>
+    [prop, mod, colorsFromMod(mod).charset, flipOverride]
 
 export const itemView = (props) => {
     return html`
@@ -190,20 +190,24 @@ export const standaloneItemView = ({ object }) => {
     return html`<${animatedDiv} frames=${propFramesFromMod(prop, mod)}/>`
 }
 
-export const positionedInRegion = ({ space, z, children }) => {
-    const scale = useContext(Scale)
+export const positionInRegion = (space) => {
     const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
     space = { ...space }
     if (space.minX >= regionSpace.maxX) {
         space.minX -= 64
         space.maxX -= 64
     }
-    let [x, y] = topLeftCanvasOffset(regionSpace, space)
+    return topLeftCanvasOffset(regionSpace, space)
+}
+
+export const positionedInRegion = ({ space, z, children }) => {
+    const scale = useContext(Scale)
+    const [x, y] = positionInRegion(space)
     const style =`position: absolute; left: ${x * scale}px; top: ${y * scale}px; z-index: ${z}`
     return html`<div style=${style}>${children}</div>`
 }
 
-const offsetsFromContainer = (containerProp, containerMod, mod) => {
+export const offsetsFromContainer = (containerProp, containerMod, mod) => {
     if (containerMod.type === "Glue") {
         return { x: signedByte(containerMod[`x_offset_${mod.y + 1}`]), 
                  y: signedByte(containerMod[`y_offset_${mod.y + 1}`]) }
@@ -212,29 +216,38 @@ const offsetsFromContainer = (containerProp, containerMod, mod) => {
     }
 }
 
-export const containedItemView = ({ object, containerProp, containerMod, containerSpace }) => {
-    const mod = object.mods[0]
-    const prop = propFromMod(mod, object.ref)
-    if (!prop || containerProp.contentsXY.length < mod.y) {
-        return null
-    }
+export const objectSpaceFromLayout = ({ x, y, frames }) =>
+    translateSpace(compositeSpaces(frames), x, y)
+
+export const containedItemLayout = (prop, mod, containerProp, containerMod, containerSpace) => {
     const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerProp, containerMod.x, containerMod.y)
     const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod)
     // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
     // the y axis inverted (see render.m:115-121)
     const flipHorizontal = (containerMod.orientation & 0x01) != 0
     const frames = propFramesFromMod(prop, mod, flipHorizontal)
-    const frameSpace = compositeSpaces(frames)
     // if the contents are drawn in front, the container has its origin offset by the offset of its first cel.
     const originX = containerProp.contentsInFront ? containerSpace.xOrigin : 0
     const originY = containerProp.contentsInFront ? containerSpace.yOrigin : 0
     const x = (containerX - originX) + (flipHorizontal ? -offsetX : offsetX)
     const y = containerY - (offsetY + originY)
     const z = containerZ
-    const objectSpace = translateSpace(frameSpace, x, y)
+    return { x, y, z, frames }
+}
+
+export const containedItemView = ({ object, containerProp, containerMod, containerSpace }) => {
+    const mod = object.mods[0]
+    const prop = propFromMod(mod, object.ref)
+    if (!prop || containerProp.contentsXY.length < mod.y) {
+        return null
+    }
+    const layout = useMemo(
+        () => containedItemLayout(prop, mod, containerProp, containerMod, containerSpace),
+        propFramesDependencies(prop, mod, containerMod.orientation))
+
     return html`
-        <${positionedInRegion} space=${objectSpace} z=${z}>
-            <${animatedDiv} frames=${frames}/>
+        <${positionedInRegion} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
+            <${animatedDiv} frames=${layout.frames}/>
         <//>`
 }
 
@@ -246,59 +259,105 @@ export const itemInteraction = ({ mod, children }) => {
     return children
 }
 
+export const regionItemLayout = (prop, mod) => {
+    const [x, y, z] = propLocationFromObjectXY(prop, mod.x, mod.y)
+    const frames = propFramesFromMod(prop, mod)
+    return { x, y, z, frames }
+}
+
 export const regionItemView = ({ object, contents = [] }) => {
     const mod = object.mods[0]
     const prop = propFromMod(mod, object.ref)
     if (!prop) {
         return null
     }
-    const [propX, propY, propZ] = propLocationFromObjectXY(prop, mod.x, mod.y)
-    const frames = propFramesFromMod(prop, mod)
-    const objectSpace = translateSpace(compositeSpaces(frames), propX, propY)
+    const layout = useMemo(() => regionItemLayout(prop, mod),
+        propFramesDependencies(prop, mod))
+
     const container = html`
-            <${positionedInRegion} key=${object.ref} space=${objectSpace} z=${propZ}>
+            <${positionedInRegion} key=${object.ref} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
                 <${itemInteraction} mod=${mod}>
-                    <${animatedDiv} frames=${frames}/>
+                    <${animatedDiv} frames=${layout.frames}/>
                 <//>
             </div>`
     if (prop.contentsXY.length > 0) {
-        const children = []
-        for (const item of contents) {
-            children.push(html`<${containedItemView} key=${item.ref} object=${item} containerProp=${prop} containerMod=${mod} containerSpace=${frames[0]}/>`)
-        }
+        const children = contents.map(item => html`
+            <${containedItemView} key=${item.ref} 
+                                  object=${item} 
+                                  containerProp=${prop} 
+                                  containerMod=${mod}
+                                  containerSpace=${layout.frames[0]}/>`)
         if (prop.contentsInFront) {
-            children.push(container)
-            children.reverse()
+            return [container, ...children]
         } else {
-            children.reverse()
-            children.push(container)
+            return [...children, container]
         }
-        return children
     }
     return container
 }
 
-export const regionView = ({ filename }) => {
-    const scale = useContext(Scale)
-    const objects = useHabitatJson(filename, [])
+const sortObjects = (objects) => {
     const regionRef = objects.find(o => o.type === "context")?.ref
-    const items = objects
+    return objects
         .filter(obj => obj.type === "item" && obj.in === regionRef)
         .sort(objectZComparitor)
-        .map(obj => html`
-            <${itemView} key=${obj.ref}
-                         viewer=${regionItemView} 
-                         object=${obj} 
-                         contents=${objects.filter(o => o.in === obj.ref).sort((o1, o2) => o1.mods[0].y - o2.mods[0].y)}/>`)
+        .map(obj => [obj, objects.filter(o => o.in === obj.ref)
+                                 .sort((o1, o2) => o2.mods[0].y - o1.mods[0].y)])
+}
+
+export const regionView = ({ filename }) => {
+    const scale = useContext(Scale)
+    const objects = useHabitatJson(filename)
 
     return html`
         <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
-            ${items}
+            ${sortObjects(objects).map(([obj, contents]) => html`
+                <${itemView} key=${obj.ref}
+                             viewer=${regionItemView} 
+                             object=${obj} 
+                             contents=${contents}/>`)}
         </div>`
 }
 
+export const generateRegionCanvas = async (filename) => {
+    const objects = await until(() => useHabitatJson(filename), o => o.length > 0)
+    await until(charset)
+    const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
+    const canvas = canvasForSpace(regionSpace)
+    const ctx = canvas.getContext("2d")
+    const drawItem = async (obj, layoutFunc) => {
+        const mod = obj.mods[0]
+        const prop = await until(() => propFromMod(mod, obj.ref))
+        const { x, y, frames } = layoutFunc(prop, mod)
+        const frame = frames[0]
+        if (frame?.canvas) {
+            drawInSpace(ctx, frame.canvas, regionSpace, translateSpace(frame, x, y))
+        }
+        return [prop, mod, frame]
+    }
+    for (const [obj, contents] of sortObjects(objects)) {
+        const [prop, mod, frame] = await drawItem(obj, regionItemLayout)
+        for (const child of contents) {
+            if (prop.contentsXY.length > child.mods[0].y) {
+                await drawItem(child, (p, m) => containedItemLayout(p, m, prop, mod, frame))
+            }
+        }
+        if (prop.contentsXY.length > 0 && contents.length > 0 && !prop.contentsInFront) {
+            await drawItem(obj, regionItemLayout)
+        }
+    }
+    return canvas
+}
+
+export const regionImageView = ({ filename }) => {
+    const signal = useMemo(() => promiseToSignal(generateRegionCanvas(filename), null), [filename])
+    if (signal.value) {
+        return html`<${canvasImage} canvas=${signal.value}/>`
+    }
+}
+
 export const regionNav = ({ filename }) => {
-    const objects = useHabitatJson(filename, [])
+    const objects = useHabitatJson(filename)
     const context = objects.find(obj => obj.type == "context")
     if (!context || !context.mods[0].neighbors) {
         return null
@@ -341,7 +400,7 @@ const propFilter = (key, value) => {
 export const debugDump = (value) => JSON.stringify(value, propFilter, 2)
 
 export const objectDetails = ({ filename }) => {
-    const objects = useHabitatJson(filename, [])
+    const objects = useHabitatJson(filename)
     const children = objects.flatMap(obj => {
         let summary = `${obj.name} (${obj.ref})`
         let details = null
