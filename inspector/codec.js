@@ -547,13 +547,8 @@ export const decodeCharset = (source) => {
     const characters = []
     let rows = []
     let irow = 0
-    for (const match of source.match(/0[^,\s]*/g)) {
-        const byte = Number(match)
-        if (byte >= 0 && byte < 256) {
-            rows.push(byte)
-        } else {
-            throw new Error(`Couldn't parse ${match} as a byte`)
-        }
+    const addByte = (byte) => {
+        rows.push(byte)
         if (irow == 7) {
             characters.push(rows)
             rows = []
@@ -562,11 +557,64 @@ export const decodeCharset = (source) => {
             irow ++
         }
     }
+    for (const match of source.match(/0[^,\s]*/g)) {
+        const byte = Number(match)
+        if (byte >= 0 && byte < 256) {
+            addByte(byte)
+        } else {
+            throw new Error(`Couldn't parse ${match} as a byte`)
+        }
+    }
+    if (characters.length == 129) {
+         // charset.m has an extra blank character at the end for some reason
+         // AFAICT, it is truncated when written to disk.
+        characters.pop()
+    }
+    if (characters.length != 128) {
+        throw new Error(`Unexpected number of character ${characters.length}`)
+    }
+    // text.m has no logic to filter out bytes >128 that aren't control codes.
+    // As such, if it encounters one, it will draw whatever is stored in RAM
+    // after the charset. There are some regions (mostly test regions and bad 
+    // dumps) with signs containing these non-characters.
+    // The thing that is stored in RAM immediately after the charset is tables.m,
+    // containing four simple 256-byte lookup tables. For maximum accuracy,
+    // we recreate those tables here.
+
+    const pixelsFromByte = (i) => [
+        (i & 0xc0) >> 6,
+        (i & 0x30) >> 4,
+        (i & 0x0c) >> 2,
+        (i & 0x03)
+    ]
+    const byteFromPixels = (pix1, pix2, pix3, pix4) => (pix1 << 6) | (pix2 << 4) | (pix3 << 2) | pix4
+
+    // reverse_pixels
+    for (let i = 0; i < 256; i ++) {
+        const [pix1, pix2, pix3, pix4] = pixelsFromByte(i)
+        addByte(byteFromPixels(pix4, pix3, pix2, pix1))
+    }
+
+    // bluescreen
+    for (let i = 0; i < 256; i ++) {
+        const [pix1, pix2, pix3, pix4] = pixelsFromByte(i)
+        addByte(byteFromPixels(pix1 == 0 ? 3 : 0, pix2 == 0 ? 3 : 0, pix3 == 0 ? 3 : 0, pix4 == 0 ? 3 : 0))
+    }
+
+    // ora_table
+    for (let i = 0; i < 256; i ++) {
+        const [pix1, pix2, pix3, pix4] = pixelsFromByte(i)
+        addByte(byteFromPixels(pix1 == 1 ? 0 : pix1, pix2 == 1 ? 0 : pix2, pix3 == 1 ? 0 : pix3, pix4 == 1 ? 0 : pix4))
+    }
+
+    // mask_blue
+    for (let i = 0; i < 256; i ++) {
+        const [pix1, pix2, pix3, pix4] = pixelsFromByte(i)
+        addByte(byteFromPixels(pix1 == 1 ? 3 : 0, pix2 == 1 ? 3 : 0, pix3 == 1 ? 3 : 0, pix4 == 1 ? 3 : 0))
+    }
+
     if (irow != 0) {
         throw new Error(`Partial character (${irow}/8)`)
-    }
-    if (characters.length < 128) {
-        throw new Error(`Unexpected number of character ${characters.length}`)
     }
     return characters
 }

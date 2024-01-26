@@ -400,45 +400,52 @@ const propFilter = (key, value) => {
 }
 export const debugDump = (value) => JSON.stringify(value, propFilter, 2)
 
+export const singleObjectDetails = ({ obj }) => {
+    const mod = obj.mods && obj.mods[0]
+    if (mod && obj.type == "item") {
+        obj = { computedColors: colorsFromOrientation(mod.orientation), ...obj}
+        if (mod.ascii) {
+            obj.debugString = stringFromText(mod.ascii)
+        }
+        const image = imageSchemaFromMod(mod)
+        if (image) {
+            const prop = propFromMod(mod, obj.ref)
+            obj = { imageSchema: image, ...obj }
+            if (prop && mod.gr_state) {
+                if (prop.animations && prop.animations.length > mod.gr_state) {
+                    obj.gr_state_animation = prop.animations[mod.gr_state]
+                    obj.gr_state_animation_celmasks = prop.celmasks.slice(obj.gr_state_animation.startState, obj.gr_state_animation.endState + 1)
+                }
+                if (prop.celmasks && prop.celmasks.length > mod.gr_state) {
+                    obj.gr_state_celmask = prop.celmasks[mod.gr_state]
+                }
+            }
+            if (prop && prop.isTrap) {
+                obj.prop = prop
+            }
+            return html`
+                <a href="detail.html?f=${image.filename}">
+                    ${image.filename}<br/><${itemView} object=${obj} viewer=${standaloneItemView}/>
+                </a>
+                <pre>${debugDump(obj)}</pre>`
+        }
+    }
+}
+
 export const objectDetails = ({ filename }) => {
     const objects = useHabitatJson(filename)
     const children = objects.flatMap(obj => {
         let summary = `${obj.name} (${obj.ref})`
-        let details = null
         const mod = obj.mods && obj.mods[0]
         if (mod && obj.type == "item") {
             summary = `${summary}: ${mod.type} [${mod.x},${mod.y}]`
-            obj = { computedColors: colorsFromOrientation(mod.orientation), ...obj}
-            if (mod.ascii) {
-                obj.debugString = stringFromText(mod.ascii)
-            }
-            const image = imageSchemaFromMod(mod)
-            if (image) {
-                const prop = propFromMod(mod, obj.ref)
-                obj = { imageSchema: image, ...obj }
-                if (prop && mod.gr_state) {
-                    if (prop.animations && prop.animations.length > mod.gr_state) {
-                        obj.gr_state_animation = prop.animations[mod.gr_state]
-                        obj.gr_state_animation_celmasks = prop.celmasks.slice(obj.gr_state_animation.startState, obj.gr_state_animation.endState + 1)
-                    }
-                    if (prop.celmasks && prop.celmasks.length > mod.gr_state) {
-                        obj.gr_state_celmask = prop.celmasks[mod.gr_state]
-                    }
-                }
-                if (prop && prop.isTrap) {
-                    obj.prop = prop
-                }
-                details = html`
-                    <a href="detail.html?f=${image.filename}">
-                        ${image.filename}<br/><${itemView} object=${obj} viewer=${standaloneItemView}/>
-                    </a>`
-            }
         }
         return html`
                 <details>
                     <summary>${summary}</summary>
-                    ${details}
-                    <pre>${debugDump(obj)}</pre>
+                    <${catcher} filename=${obj.ref}>
+                        <${singleObjectDetails} obj=${obj}/>
+                    <//>
                 </details>`
     })
     return html`<div>${children}</div>`

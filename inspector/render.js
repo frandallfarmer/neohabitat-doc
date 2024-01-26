@@ -238,13 +238,11 @@ export const frameFromText = (x, y, bytes, charset, pattern, fineXOffset, colors
             y -= (charHeight / 2)
         } else if (byte == TXTCMD.cursorLeft) {
             x -= charWidth
-        } else if (byte < 128) {
+        } else {
             const bitmap = bitmapFromChar(charset, byte, {...(colors ?? {}), pattern, pixelWidth, pixelHeight, halfSize, inverse })
             const canvas = canvasFromBitmap(bitmap, colors)
             layers.push({ canvas, minX: x + (fineXOffset / 4), maxX: x + charWidth + (fineXOffset / 4), minY: y - charHeight, maxY: y })
             x += charWidth
-        } else {
-            logError(`Unknown byte ${byte} encountered when rendering text`)
         }
     }
     return compositeLayers(layers)
