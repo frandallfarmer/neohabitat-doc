@@ -1,6 +1,8 @@
-import { useBinary, useJson } from "./data.js"
+import { useMemo } from "preact/hooks"
+import { useBinary, useJson, charset } from "./data.js"
 import { decodeProp, decodeBody } from "./codec.js"
 import { html, catcher } from "./view.js"
+import { bitmapFromChar, canvasFromBitmap, canvasImage } from "./render.js"
 import { propAnimation, celmaskImage, actionAnimation } from "./show.js"
 
 export const propView = ({ filename }) => {
@@ -42,3 +44,37 @@ export const fileList = ({ indexFile, childView, href }) =>
                     <${childView} filename=${filename}/>
                 <//>`)}
         </div>`
+
+const uncaughtCharView = ({ charset, byte, colors }) => {
+    const canvas = useMemo(() => {
+        const bitmap = bitmapFromChar(charset, byte, colors)
+        return canvasFromBitmap(bitmap)
+    }, [charset, byte, colors.halfSize])
+    return html`<${canvasImage} canvas=${canvas}/>`
+}
+
+const charView = (props) => html`
+    <${catcher} filename=${`char:${props.byte}`}>
+        <${uncaughtCharView} ...${props}/>
+    <//>`
+
+export const charsetView = ({ colors }) => {
+    if (!charset()) { return null }
+    const rows = []
+    const headers = [html`<th/>`]
+    for (let x = 0; x < 16; x ++) {
+        headers.push(html`<th>_${x.toString(16)}</th>`)
+    }
+    rows.push(html`<tr>${headers}</tr>`)
+    for (let y = 0; y < 8; y ++) {
+        const columns = [html`<td>${y.toString(16)}_</td>`]
+        for (let x = 0; x < 16; x ++) {
+            columns.push(html`<td><${charView} charset=${charset()} byte=${x + (y * 16)} colors=${colors}/></td>`)
+        }
+        rows.push(html`<tr>${columns}</tr>`)
+    }
+    return html`
+        <table>
+            ${rows}
+        </table>`
+}

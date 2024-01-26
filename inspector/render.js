@@ -157,8 +157,8 @@ const TXTCMD = {
     space: 0x20,
 }
 
-export const bitmapFromChar = (charset, byte, colors) => {
-    const { pixelWidth, pixelHeight, halfSize, inverse, pattern } = { ...defaultColors, ...colors }
+export const bitmapFromChar = (charset, byte, colors = {}) => {
+    const { pixelWidth = 1, pixelHeight = 1, halfSize = false, inverse = true, pattern } = { ...defaultColors, ...colors }
     const charWidth = pixelWidth * (halfSize ? 4 : 8)
     const charHeight = pixelHeight * 8
     const masks = halfSize ? [0x80, 0x20, 0x08, 0x02] : [0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01]

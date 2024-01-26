@@ -18,7 +18,7 @@
         <script type="module">
             // import "https://esm.sh/*preact/devtools"
             import { render } from "preact"
-            import { propView, bodyView, fileList } from "./index.js"
+            import { propView, bodyView, fileList, charsetView } from "./index.js"
             import { html, errors } from "./view.js"
 
             const indexView = (_) => html`
@@ -35,6 +35,12 @@
                 <h3>Beta-only</h3>
                 <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/habitat/Beta/Images">habitat/Beta/Images</a></p>
                 <${fileList} indexFile="beta.json" childView=${propView} href="detail.html"/>
+                <h3>Character set</h3>
+                <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/blob/master/sources/c64/charset.m">sources/c64/charset.m</a></p>
+                <h4>Full size:</h4>
+                <${charsetView} colors=${{ pixelHeight: 2, pattern: 0xaa }}/>
+                <h4>Half size:</h4>
+                <${charsetView} colors=${{ halfSize: true, pattern: 0xaa }}/>
                 <${errors}/>`
             
             render(html`<${indexView}/>`, document.getElementById("content"))
