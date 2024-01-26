@@ -3,7 +3,7 @@ import { createContext } from "preact"
 import { useState, useEffect, useContext } from "preact/hooks"
 import { emptyBitmap, horizontalLine } from "./codec.js"
 import { logError } from "./data.js"
-
+import { makeCanvas } from "./shim.js"
 // C64 RGB values generated from https://www.colodore.com/ with default settings
 const c64Colors = [
     0x000000, 0xffffff, 0x813338, 0x75cec8, 0x8e3c97, 0x56ac4d, 
@@ -30,16 +30,6 @@ const celPatterns = [
     [0xaa, 0x00, 0xaa, 0x00],
     [0x55, 0x55, 0x55, 0x55]
 ]
-
-const makeCanvas = (w, h) => {
-    const canvas = document.createElement("canvas")
-    canvas.width = w
-    canvas.height = h
-    canvas.style.imageRendering = "pixelated"
-    canvas.style.width = `${w * 3}px`
-    canvas.style.height = `${h * 3}px`
-    return canvas    
-}
 
 export const canvasForSpace = ({ minX, maxX, minY, maxY }) => makeCanvas((maxX - minX) * 8, maxY - minY)
 

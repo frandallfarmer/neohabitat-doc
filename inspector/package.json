@@ -1,3 +1,9 @@
 {
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "@preact/signals": "^1.2.2",
+        "canvas": "^2.11.2",
+        "htm": "^3.1.1",
+        "preact": "^10.19.3"
+    }
 }

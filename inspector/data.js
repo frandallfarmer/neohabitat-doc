@@ -2,6 +2,7 @@ import { signal, effect } from "@preact/signals"
 import { parse } from "./mudparse.js"
 import { parseHabitatObject } from "./neohabitat.js"
 import { decodeCharset } from "./codec.js"
+import { getFile } from "./shim.js"
 
 export const errorBucket = signal([])
 export const logError = (e, filename) => {
@@ -66,7 +67,7 @@ export const fetchAndCache = (url, handler, defaultValue, onError = logError) =>
     }
     if (!fetchCache[url]) {
         const doFetch = async () => {
-            const response = await fetch(url, { cache: "no-cache" })
+            const response = await getFile(url, { cache: "no-cache" })
             if (!response.ok) {
                 console.error(response)
                 throw new Error(`Failed to download ${url}: ${response.status}`)
@@ -96,13 +97,13 @@ export const useHabitatJson = (url, onError = undefined) => {
 }
 
 export const betaMud = lazySignal(null, async () =>
-    parse(await (await fetch("beta.mud")).text())
+    parse(await (await getFile("beta.mud")).text())
 )
 
 export const contextMap = lazySignal({}, async () =>
-    await (await fetch("db/contextmap.json", { cache: "no-cache" })).json()
+    await (await getFile("db/contextmap.json", { cache: "no-cache" })).json()
 )
 
 export const charset = lazySignal(null, async () =>
-    decodeCharset(await (await fetch("charset.m")).text())
+    decodeCharset(await (await getFile("charset.m")).text())
 )

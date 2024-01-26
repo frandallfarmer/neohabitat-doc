@@ -7,6 +7,7 @@ import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, fr
          compositeSpaces, animatedDiv, stringFromText, canvasForSpace, drawInSpace, canvasImage } from "./render.js"
 import { signedByte } from "./codec.js"
 import { colorsFromOrientation, javaTypeToMuddleClass, parseHabitatObject } from "./neohabitat.js"
+import { getFile } from "./shim.js"
 
 const imageFileMapSignal = signal({ 
     "super_trap.bin": "super_trap.bin",
@@ -18,7 +19,7 @@ const imageFileMapSignal = signal({
 export const imageFileMap = () => {
     if (imageFileMapSignal.value.loadState == "unloaded") {
         const addToImageFileMap = async (indexFile) => {
-            const response = await fetch(indexFile, { cache: "no-cache" })
+            const response = await getFile(indexFile, { cache: "no-cache" })
             const paths = await response.json()
             const newPaths = {}
             for (const path of paths) {
@@ -54,7 +55,7 @@ const useTrap = (ref, url, fnAugment) => {
     if (!trapCache[ref]) {
         trapCache[ref] = promiseToSignal((async () => {
             try {
-                const response = await fetch(url)
+                const response = await getFile(url)
                 if (!response.ok) {
                     console.error(response)
                     throw new Error(`Failed to download ${url}: ${response.status}`)
