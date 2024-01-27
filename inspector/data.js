@@ -15,28 +15,40 @@ export const logError = (e, filename) => {
 }
 
 export const promiseToSignal = (promise, defaultValue) => {
-    const sig = signal(defaultValue)
-    promise.then((x) => { sig.value = x })
+    const sig = signal(() => defaultValue)
+    promise.catch(e => { sig.value = () => { throw e } })
+           .then((x) => { sig.value = () => x })
     return sig
 }
 
 export const effectToPromise = (callback) => {
-    const resolver = {}
-    const complete = (value) => {
-        if (!resolver.dispose) {
-            resolver.postponed = true
-            resolver.value = value
+    // Behaves like `new Promise()` but with the promise callback run inside an `effect()`.
+    // This means that `callback` will run every time a referenced signal changes, but the
+    // promise will only resolve when the callback decides to call its resolver function.
+    // Contortions are required here because effect() runs its callback immediately, but we don't
+    // get access to the effect disposal function until after it returns.
+    const disposer = {}
+    const complete = (callback) => {
+        if (disposer.complete) { return }
+        if (!disposer.dispose) {
+            disposer.deferredDisposal = callback
         } else {
-            resolver.resolve(value)
-            resolver.dispose()
+            disposer.complete = true
+            disposer.dispose()
+            callback()
         }
     }
-    const promise = new Promise(resolve => {
-        resolver.resolve = resolve
-        resolver.dispose = effect(() => { callback(complete) })
+    const promise = new Promise((resolve, reject) => {
+        disposer.dispose = effect(() => { 
+            try {
+                callback((v) => complete(() => resolve(v))) 
+            } catch (e) {
+                complete(() => reject(e))
+            }
+        })
     })
-    if (resolver.postponed) {
-        complete(resolver.value)
+    if (disposer.deferredDisposal) {
+        complete(disposer.deferredDisposal)
     }
     return promise
 }
@@ -56,12 +68,12 @@ export const lazySignal = (defaultValue, promiseGetter) => {
         if (!cache.value) {
             cache.value = promiseToSignal(promiseGetter(), defaultValue)
         }
-        return cache.value.value
+        return cache.value.value()
     }
 }
 
 const fetchCache = {}
-export const fetchAndCache = (url, handler, defaultValue, onError = logError) => {
+export const fetchAndCache = (url, handler, defaultValue) => {
     if (!url) {
         throw new Error("Invalid empty URL")
     }
@@ -74,26 +86,31 @@ export const fetchAndCache = (url, handler, defaultValue, onError = logError) =>
             }
             return await handler(response)
         }
-        const sig = promiseToSignal(doFetch().catch((e) => onError(e, url)), defaultValue)
+        const sig = promiseToSignal(doFetch(), defaultValue)
         fetchCache[url] = sig
     }
-    return fetchCache[url].value
+    return fetchCache[url].value()
 }
 
-export const useBinary = (url, decoder, defaultValue, onError = undefined) => {
+export const useBinary = (url, decoder, defaultValue) => {
     return fetchAndCache(
         url, 
         async (response) => decoder(new DataView(await response.arrayBuffer())), 
-        defaultValue, 
-        onError)
+        defaultValue)
 }
 
-export const useJson = (url, defaultValue, onError = undefined) => {
-    return fetchAndCache(url, (response) => response.json(), defaultValue, onError)
+export const useJson = (url, defaultValue) => {
+    return fetchAndCache(url, (response) => response.json(), defaultValue)
 }
 
-export const useHabitatJson = (url, onError = undefined) => {
-    return fetchAndCache(url, async (response) => parseHabitatObject(await response.text()), [], onError)
+export const useHabitatJson = (url) => {
+    return fetchAndCache(url, async (response) => {
+        const value = parseHabitatObject(await response.text())
+        if (!Array.isArray(value) || value.length == 0) {
+            throw new Error(`Not a valid Habitat JSON file: ${url}`)
+        }
+        return value
+    }, [])
 }
 
 export const betaMud = lazySignal(null, async () =>

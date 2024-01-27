@@ -68,7 +68,7 @@ const useTrap = (ref, url, fnAugment) => {
             }
         })(), null)
     }
-    return trapCache[ref].value
+    return trapCache[ref].value()
 }
 
 export const imageSchemaFromMod = (mod) => {
@@ -352,8 +352,8 @@ export const generateRegionCanvas = async (filename) => {
 
 export const regionImageView = ({ filename }) => {
     const signal = useMemo(() => promiseToSignal(generateRegionCanvas(filename), null), [filename])
-    if (signal.value) {
-        return html`<${canvasImage} canvas=${signal.value}/>`
+    if (signal.value()) {
+        return html`<${canvasImage} canvas=${signal.value()}/>`
     }
 }
 
