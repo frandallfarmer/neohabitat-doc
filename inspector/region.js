@@ -357,41 +357,63 @@ export const regionImageView = ({ filename }) => {
     }
 }
 
-export const regionNav = ({ filename }) => {
+const positionToCompassOffset = {
+    top: 0,
+    right: 1,
+    bottom: 2,
+    left: 3
+}
+
+export const locationLink = ({ refId, children }) => {
+    if (refId && refId != '') {
+        let name = refId
+        let href = null
+        const ctx = contextMap()[refId]
+        if (ctx) {
+            if (ctx.name && ctx.name.trim() != '') {
+                name = ctx.name
+            }
+            // todo: customizable?
+            href = `region.html?f=${ctx.filename}`
+        }
+        return html`
+            <${Scale.Provider} value="0.5">
+                <a href=${href} style="display: inline-block">
+                    ${children}: ${name}<br/>
+                    ${ctx ? html`<${regionImageView} filename=${ctx.filename}/>` : null}
+                </a>
+            <//>`
+    } else {
+        return null
+    }
+}
+
+export const directionNav = ({ filename, position }) => {
     const objects = useHabitatJson(filename)
     const context = objects.find(obj => obj.type == "context")
     if (!context || !context.mods[0].neighbors) {
         return null
     }
     const mod = context.mods[0]
+    
+    // orientation:
+    // 0 = top is west, 1 = top is north, 2 = top is east, 3 = top is south
+    // neighbour list: North, East, South, West
+    const ineighbor = (mod.orientation + positionToCompassOffset[position] + 3) & 0x03
     const compasses = ["North", "East", "South", "West"]
-    const directions = compasses.flatMap((compass, ineighbor) => {
-        const ref = mod.neighbors[ineighbor]
-        if (ref && ref != '') {
-            let name = ref
-            let href = null
-            const ctx = contextMap()[ref]
-            if (ctx) {
-                if (ctx.name && ctx.name.trim() != '') {
-                    name = ctx.name
-                }
-                // todo: customizable?
-                href = `region.html?f=${ctx.filename}`
-            }
-            return [html`
-                <li>
-                    <div>
-                        <${direction} compass=${compass} orientation=${mod.orientation}/>:
-                        <a href=${href}>${name}</a>
-                    </div>
-                    ${ctx ? html`<${Scale.Provider} value="1"><${regionView} filename=${ctx.filename}/><//>` : null}
-                </li>`]
-        }
-        return []
-    })
-    return html`<ul>${directions}</ul>`
+    const ref = mod.neighbors[ineighbor]
+    return html`<${locationLink} refId=${ref}><span>${compasses[ineighbor]}</span><//>`
 }
 
+export const objectNav = ({ filename }) =>
+    useHabitatJson(filename)
+        .filter(o => o.type == "item" && o.mods[0].connection)
+        .sort((o1, o2) => o1.mods[0].x - o2.mods[0].x)
+        .map(o => html`
+            <${locationLink} refId=${o.mods[0].connection}>
+                <${itemView} viewer=${standaloneItemView} object=${o}/>
+            <//>`)
+    
 const propFilter = (key, value) => {
     if (key != "bitmap" && key != "data" && key != "canvas" && key != "texture" && 
         !(key == "pattern" && typeof(value) === "object")) {

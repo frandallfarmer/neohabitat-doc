@@ -21,7 +21,7 @@
             import { signal, effect } from "@preact/signals"
             import { html, errors } from "./view.js"
             import { useHabitatJson, errorBucket } from "./data.js"
-            import { regionView, regionNav, objectDetails, regionSearch } from "./region.js"
+            import { regionView, directionNav, objectNav, objectDetails, regionSearch } from "./region.js"
 
             const q = (k) => (new URLSearchParams(window.location.search)).get(k)
             const filename = signal(q("f") ?? "db/new_Downtown/Downtown_4d.json")
@@ -45,11 +45,18 @@
 
             const regionPage = (_) => html`
                 <h1>Region - <${regionName} filename=${filename.value}/></h1>
-                <${regionView} filename=${filename.value}/>
-                <div>
-                    <h2>Neighboring regions</h2>
-                    <${regionNav} filename=${filename.value}/>
-                </div>
+                <center>
+                    <table style="text-align: center;">
+                        <tr><td/><td><${directionNav} filename=${filename.value} position="top"/></td><td/></tr>
+                        <tr>
+                            <td><${directionNav} filename=${filename.value} position="left"/></td>
+                            <td style="padding: 10px;"><${regionView} filename=${filename.value}/></td>
+                            <td><${directionNav} filename=${filename.value} position="right"/></td>
+                        </tr>
+                        <tr><td/><td><${directionNav} filename=${filename.value} position="bottom"/></td><td/></tr>
+                        <tr><td colspan="3"><${objectNav} filename=${filename.value}/></td></tr>
+                    </table>
+                </center>
                 <div>
                     <${regionSearch} label="Region search" onSelected=${(item) => {
                         errorBucket.value = []
