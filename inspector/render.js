@@ -450,7 +450,7 @@ export const canvasImage = ({ canvas }) => {
     if (canvas) {
         const scale = useContext(Scale)
         return html`
-            <img style="image-rendering: pixelated;"
+            <img style=${scale > 1 ? "image-rendering: pixelated;" : ""}
                 width="${scale * canvas.width}px" height="${scale * canvas.height}px"
                 src=${canvas.toDataURL()} />`
     } else {

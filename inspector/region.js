@@ -4,9 +4,9 @@ import { useContext, useMemo } from "preact/hooks"
 import { signal, computed } from "@preact/signals"
 import { contextMap, betaMud, logError, promiseToSignal, until, useBinary, useHabitatJson, charset } from './data.js'
 import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask,
-         compositeSpaces, animatedDiv, stringFromText, canvasForSpace, drawInSpace, canvasImage } from "./render.js"
+         compositeSpaces, animatedDiv, stringFromText, canvasForSpace, canvasImage } from "./render.js"
 import { signedByte } from "./codec.js"
-import { colorsFromOrientation, javaTypeToMuddleClass, parseHabitatObject } from "./neohabitat.js"
+import { colorsFromOrientation, javaTypeToMuddleClass } from "./neohabitat.js"
 import { getFile } from "./shim.js"
 
 const imageFileMapSignal = signal({ 
@@ -332,7 +332,8 @@ export const generateRegionCanvas = async (filename) => {
         const { x, y, frames } = layoutFunc(prop, mod)
         const frame = frames[0]
         if (frame?.canvas) {
-            drawInSpace(ctx, frame.canvas, regionSpace, translateSpace(frame, x, y))
+            const [iX, iY] = positionInRegion(translateSpace(frame, x, y))
+            ctx.drawImage(frame.canvas, iX, iY)
         }
         return [prop, mod, frame]
     }
