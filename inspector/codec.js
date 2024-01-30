@@ -222,6 +222,8 @@ celDecoder.trap = (data, cel) => {
                 i ++
             }
         }
+        // you can't have a trapezoid with a texture _and_ a pattern
+        cel.colorOverrides = { pattern: 15 }
     }
     cel.raw = {
         width: cel.width,

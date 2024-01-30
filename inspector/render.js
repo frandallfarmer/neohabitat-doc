@@ -271,7 +271,7 @@ export const frameFromCels = (cels, { colors: celColors, paintOrder, firstCelOri
             const y = cel.yOffset + yRel
             const colors = (Array.isArray(celColors) ? celColors[icel] : celColors) ?? {}
             if (cel.bitmap) {
-                layers.push({ canvas: canvasFromBitmap(cel.bitmap, colors), minX: x, minY: y - cel.height, maxX: x + cel.width, maxY: y })
+                layers.push({ canvas: canvasFromBitmap(cel.bitmap, { ...colors, ...(cel.colorOverrides ?? {}) }), minX: x, minY: y - cel.height, maxX: x + cel.width, maxY: y })
             } else if (cel.type == "text" && colors.bytes && colors.charset) {
                 const textColors = {...colors}
                 let pattern = cel.pattern
