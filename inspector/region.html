@@ -16,12 +16,13 @@
             }
         </script>
         <script type="module">
-            // import "https://esm.sh/*preact/devtools"
+            import "https://esm.sh/*preact/devtools"
             import { render } from "preact"
             import { signal, effect } from "@preact/signals"
             import { html, errors } from "./view.js"
             import { useHabitatJson, errorBucket } from "./data.js"
-            import { regionView, directionNav, objectNav, objectDetails, regionSearch } from "./region.js"
+            import { regionView, directionNav, objectNav, objectDetails } from "./region.js"
+            import { navigationView } from "./navigate.js"
 
             const q = (k) => (new URLSearchParams(window.location.search)).get(k)
             const filename = signal(q("f") ?? "db/new_Downtown/Downtown_4d.json")
@@ -58,10 +59,7 @@
                     </table>
                 </center>
                 <div>
-                    <${regionSearch} label="Region search" onSelected=${(item) => {
-                        errorBucket.value = []
-                        filename.value = item.filename
-                    }}/>
+                    <${navigationView} startFilename=${filename.value} />
                 </div>
                 <div>
                     <h2>Objects</h2>

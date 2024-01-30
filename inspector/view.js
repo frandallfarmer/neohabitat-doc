@@ -38,7 +38,7 @@ export const searchBox = ({ label, onSelected, items }) => {
             }
             e.preventDefault()
         }}>
-            <label for=${id} style="width: 150px; display: inline-block">${label}</label>
+            <label for=${id} style="width: 200px; display: inline-block">${label}</label>
                 <span style="position: relative; display: inline-block;">
                     <input type="search"
                         id=${id}

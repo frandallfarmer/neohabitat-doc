@@ -1,7 +1,7 @@
 import { decodeProp } from "./codec.js"
-import { html, catcher, direction, searchBox } from "./view.js"
+import { html, catcher } from "./view.js"
 import { useContext, useMemo } from "preact/hooks"
-import { signal, computed } from "@preact/signals"
+import { signal } from "@preact/signals"
 import { contextMap, betaMud, logError, promiseToSignal, until, useBinary, useHabitatJson, charset } from './data.js'
 import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask,
          compositeSpaces, animatedDiv, stringFromText, canvasForSpace, canvasImage } from "./render.js"
@@ -452,6 +452,8 @@ export const singleObjectDetails = ({ obj }) => {
                 </a>
                 <pre>${debugDump(obj)}</pre>`
         }
+    } else {
+        return html`<pre>${debugDump(obj)}</pre>`
     }
 }
 
@@ -473,11 +475,3 @@ export const objectDetails = ({ filename }) => {
     })
     return html`<div>${children}</div>`
 }
-
-export const allContextItems = computed(() => 
-    Object
-        .entries(contextMap())
-        .map(([ref, val]) => ({ ref, label: `${val.name} (${val.filename})`, ...val })))
-
-export const regionSearch = ({ label, onSelected }) =>
-    html`<${searchBox} label=${label} items=${allContextItems.value} onSelected=${onSelected}/>`
