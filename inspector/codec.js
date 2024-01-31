@@ -222,6 +222,7 @@ celDecoder.trap = (data, cel) => {
                 i ++
             }
         }
+        // dline.m:132: ; convert wild color to blue
         // you can't have a trapezoid with a texture _and_ a pattern
         cel.colorOverrides = { pattern: 15 }
     }

@@ -103,6 +103,22 @@ export const propFromMod = (mod, ref) => {
         // not ready to parse yet
         return null
     }
+    // Trapezoid positioning hack:
+    // Shape-drawing code on the C64 always works in a context where the coordinates have 
+    // been pre-transformed to the final position of the shape. There are numerous cases
+    // in the server data where the trapezoid shape data combined with the actual position
+    // of the object causes the byte holding the X coordinates to overflow and wrap back to
+    // zero.
+    // Our renderer was built with the asssumption that it is possible to render a cel in 
+    // isolation, and composite it into the scene afterwards. But this is not true for 
+    // trapezoids that leverage this overflow behaviour; the data doesn't really make sense
+    // unless you add the offset to it. So for server-defined shapes, we cheat, and pre-
+    // transform the shape data so that it's the same as what the C64 code would be using
+    // when rendering the scene, and then, when compositing, always position trapezoid 
+    // objects at X position 0 (see propLocationFromObjectXY).
+    // We clear the lower 2 bits of the mod's X position, as the C64 renderer always shifts
+    // it into "Habitat space" to line up the object on a byte boundary.
+    const offsetX = (xOffset) => ((mod.x & 0xfc) + xOffset) % 256
     const classname = javaTypeToMuddleClass(mod.type)
     let fnAugment = null
     if (classname == "class_super_trapezoid" && mod.pattern) {
@@ -113,10 +129,10 @@ export const propFromMod = (mod, ref) => {
             superdata.set(mod.pattern, data.byteLength + 2)
             const trapview = new DataView(superdata.buffer)
             trapview.setUint8(celoff + 1, mod.height)
-            trapview.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
-            trapview.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
-            trapview.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
-            trapview.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
+            trapview.setUint8(celoff + 7, offsetX(mod.upper_left_x))
+            trapview.setUint8(celoff + 8, offsetX(mod.upper_right_x))
+            trapview.setUint8(celoff + 9, offsetX(mod.lower_left_x))
+            trapview.setUint8(celoff + 10, offsetX(mod.lower_right_x))
             trapview.setUint8(celoff + 11, mod.pattern_x_size)
             trapview.setUint8(celoff + 12, mod.pattern_y_size)
             return trapview
@@ -128,10 +144,10 @@ export const propFromMod = (mod, ref) => {
                 const celoff = data.getUint16(7 + celCount + (icel * 2), true)
                 data.setUint8(celoff + 1, mod.height)
                 if (icel == 0) {
-                    data.setUint8(celoff + 7, (mod.upper_left_x + mod.x) % 256)
-                    data.setUint8(celoff + 8, (mod.upper_right_x + mod.x) % 256)
-                    data.setUint8(celoff + 9, (mod.lower_left_x + mod.x) % 256)
-                    data.setUint8(celoff + 10, (mod.lower_right_x + mod.x) % 256)
+                    data.setUint8(celoff + 7, offsetX(mod.upper_left_x))
+                    data.setUint8(celoff + 8, offsetX(mod.upper_right_x))
+                    data.setUint8(celoff + 9, offsetX(mod.lower_left_x))
+                    data.setUint8(celoff + 10, offsetX(mod.lower_right_x))
                 }
             }
             return data
@@ -145,7 +161,7 @@ const zIndexFromObjectY = (modY) => modY > 127 ? (128 + (256 - modY)) : modY
 const objectZComparitor = (obj1, obj2) => zIndexFromObjectY(obj1.mods[0].y) - zIndexFromObjectY(obj2.mods[0].y)
 
 const propLocationFromObjectXY = (prop, modX, modY) => {
-    return [prop.isTrap ? 0 : signedXCoordinate(modX) / 4, modY % 128, zIndexFromObjectY(modY)]
+    return [prop.isTrap ? 0 : Math.floor(signedXCoordinate(modX) / 4), modY % 128, zIndexFromObjectY(modY)]
 }
 
 const colorsFromMod = (mod) => {
