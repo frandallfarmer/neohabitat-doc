@@ -257,7 +257,7 @@ celDecoder.trap = (data, cel) => {
     // we need to move more than one pixel horizontally
     // cycle2: same thing, but for x2a (right edge)
     // at the end, increments y1 and jumps back to the top of draw_line
-    cel.width = Math.floor((Math.max(cel.x1a, cel.x1b, cel.x2a, cel.x2b) + 3) / 4)
+    cel.width = Math.floor(Math.max(cel.x1a, cel.x1b, cel.x2a, cel.x2b) / 4) + 1
     // trap.m:32 - delta_y and vcount are calculated by subtracting y2 - y1.
     // mix.m:253: y2 is calculated as cel_y + cel_height
     // mix.m:261: y1 is calculated as cel_y + 1
