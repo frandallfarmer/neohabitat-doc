@@ -280,7 +280,7 @@ export const frameFromCels = (cels, { colors: celColors, paintOrder, firstCelOri
                      // which would mean blue / wild / blue / wild. but canvasFromBitmap is not currently written
                      // in such a way that this would work. In practice, the pattern byte is always one of four values.
                     textColors.pattern = 15
-                    textColors.wilds = 6
+                    textColors.wildcard = 6
                     pattern = 0x55
                 }
                 layers.push(frameFromText(x, y, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors))
