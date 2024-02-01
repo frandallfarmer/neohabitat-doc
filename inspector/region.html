@@ -28,12 +28,12 @@
             const filename = signal(q("f") ?? "db/new_Downtown/Downtown_4d.json")
             effect(() => {
                 if (q("f") != filename.value) {
+                    errorBucket.value = []
                     window.history.pushState({ filename: filename.value }, "", `?f=${filename.value}`)
                 }
             })
             window.addEventListener("popstate", event => {
                 if (event.state && event.state.filename) {
-                    errorBucket.value = []
                     filename.value = event.state.filename
                 }
             })
@@ -45,15 +45,18 @@
 
                 let t = e.target
                 while (t) {
-                    const href = t.getAttribute('href')
-                    if (t.localName === 'a' && href && href.startsWith("region.html?f=")) {
-                        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-                        if (e.stopPropagation) e.stopPropagation();
-                        e.preventDefault();
-
-                        errorBucket.value = []
-                        filename.value = href.replace(/^region.html\?f=/, "")
-                        return false
+                    if (t.localName === "a") {
+                        const href = t.getAttribute('href')
+                        if (href && href.startsWith("region.html?f=")) {
+                            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+                            if (e.stopPropagation) e.stopPropagation();
+                            e.preventDefault();
+                            console.log("navigating")
+                            filename.value = href.replace(/^region.html\?f=/, "")
+                            return false
+                        } else {
+                            return
+                        }
                     }
                     t = t.parentNode
                 }

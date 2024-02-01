@@ -1,5 +1,5 @@
 import { computed } from "@preact/signals"
-import { html, direction, searchBox } from "./view.js"
+import { html, direction, searchBox, catcher } from "./view.js"
 import { regionImageView, itemView, standaloneItemView } from "./region.js"
 import { contextMap, useJson, useHabitatJson } from "./data.js"
 import { Scale } from "./render.js"
@@ -121,7 +121,7 @@ export const ctxItemFromRef = (ref) => {
 const ctxItemLink = ({ item }) => item ? html`
     <a href="region.html?f=${item.filename}">
         ${item.name}<br/>
-        <${regionImageView} filename=${item.filename}/>
+        <${catcher} filename=${item.filename}><${regionImageView} filename=${item.filename}/><//>
     </a>` : null
 
 const moveNames = { n: "north", e: "east", w: "west", s: "south" }

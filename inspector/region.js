@@ -397,7 +397,7 @@ export const locationLink = ({ refId, children }) => {
             <${Scale.Provider} value="0.5">
                 <a href=${href} style="display: inline-block">
                     ${children}: ${name}<br/>
-                    ${ctx ? html`<${regionImageView} filename=${ctx.filename}/>` : null}
+                    ${ctx ? html`<${catcher} filename=${ctx.filename}><${regionImageView} filename=${ctx.filename}/><//>` : null}
                 </a>
             <//>`
     } else {
