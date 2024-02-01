@@ -37,6 +37,27 @@
                     filename.value = event.state.filename
                 }
             })
+            window.addEventListener("click", e => {
+                // ignore events the browser takes care of already:
+                if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || e.button) {
+                    return
+                }
+
+                let t = e.target
+                while (t) {
+                    const href = t.getAttribute('href')
+                    if (t.localName === 'a' && href && href.startsWith("region.html?f=")) {
+                        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+                        if (e.stopPropagation) e.stopPropagation();
+                        e.preventDefault();
+
+                        errorBucket.value = []
+                        filename.value = href.replace(/^region.html\?f=/, "")
+                        return false
+                    }
+                    t = t.parentNode
+                }
+            })
 
             const regionName = ({ filename }) => {
                 const objects = useHabitatJson(filename)
