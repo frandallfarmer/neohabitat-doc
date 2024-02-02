@@ -248,6 +248,129 @@ export const frameFromText = (x, y, bytes, charset, pattern, fineXOffset, colors
     return compositeLayers(layers)
 }
 
+const celLayerRenderer = {}
+celLayerRenderer.default = (cel, colors, x, y) => {
+    if (cel.bitmap) {
+        return { canvas: canvasFromBitmap(cel.bitmap, colors), minX: x, minY: y - cel.height, maxX: x + cel.width, maxY: y }
+    } else {
+        return null
+    }
+}
+
+celLayerRenderer.text = (cel, colors, x, y) => {
+    const textColors = {...colors}
+    let pattern = cel.pattern
+    if (pattern == 0) {
+         // TODO: this is a bit of a hack; the C64 code would accept a pattern of 0q0101
+         // which would mean blue / wild / blue / wild. but canvasFromBitmap is not currently written
+         // in such a way that this would work. In practice, the pattern byte is always one of four values.
+        textColors.pattern = 15
+        textColors.wildcard = 6
+        pattern = 0x55
+    }
+    return frameFromText(x, y, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors)
+}
+
+celLayerRenderer.trap = (cel, colors, x, y) => {
+    const xOrigin = colors.xOrigin ?? 0
+
+    cel.x1a = (cel.raw.x1a + ((xOrigin + x) * 4)) % 256
+    cel.x1b = (cel.raw.x1b + ((xOrigin + x) * 4)) % 256
+    cel.x2a = (cel.raw.x2a + ((xOrigin + x) * 4)) % 256
+    cel.x2b = (cel.raw.x2b + ((xOrigin + x) * 4)) % 256
+    if (cel.x1b < cel.x1a) { cel.x1b += 256 }
+    if (cel.x2b < cel.x2a) { cel.x2b += 256 }
+    cel.xCorrection = Math.floor(Math.min(cel.x1a, cel.x2a) / 4)
+    cel.x1a -= cel.xCorrection * 4
+    cel.x1b -= cel.xCorrection * 4
+    cel.x2a -= cel.xCorrection * 4
+    cel.x2b -= cel.xCorrection * 4
+
+    // trapezoid-drawing algorithm:
+    // draw_line: draws a line from x1a,y1 to x1b, y1
+    // handles border drawing (last/first line, edges)
+    // decreases vcount, then jumps to cycle1 if there
+    // are more lines
+    // cycle1: run bresenham, determine if x1a (left edge) needs to be incremented
+    // or decremented (self-modifying code! the instruction in inc_dec1 is
+    // written at trap.m:52)
+    // has logic to jump back to cycle1 if we have a sharp enough angle that
+    // we need to move more than one pixel horizontally
+    // cycle2: same thing, but for x2a (right edge)
+    // at the end, increments y1 and jumps back to the top of draw_line
+    cel.width = Math.floor(Math.max(cel.x1a, cel.x1b, cel.x2a, cel.x2b) / 4) + 1
+    // trap.m:32 - delta_y and vcount are calculated by subtracting y2 - y1.
+    // mix.m:253: y2 is calculated as cel_y + cel_height
+    // mix.m:261: y1 is calculated as cel_y + 1
+    // So for a one-pixel tall trapezoid, deltay is 0, because y1 == y2.
+    // vcount is decremented until it reaches -1, compensating for the off-by-one.
+    const deltay = cel.height - 1
+    cel.bitmap = emptyBitmap(cel.width, cel.height)
+    const dxa = Math.abs(cel.x1a - cel.x2a)
+    const dxb = Math.abs(cel.x1b - cel.x2b)
+    const countMaxA = Math.max(dxa, deltay)
+    const countMaxB = Math.max(dxb, deltay)
+    const inca = cel.x1a < cel.x2a ? 1 : -1
+    const incb = cel.x1b < cel.x2b ? 1 : -1
+    let x1aLo = Math.floor(countMaxA / 2)
+    let y1aLo = x1aLo
+    let x1bLo = Math.floor(countMaxB / 2)
+    let y1bLo = x1bLo
+    let xa = cel.x1a
+    let xb = cel.x1b
+    for (let y = 0; y < cel.height; y ++) {
+        const line = cel.bitmap[y]
+        if (cel.border && (y == 0 || y == (cel.height - 1))) {
+            // top and bottom border line
+            horizontalLine(cel.bitmap, xa, xb, y, 0xaa, true)
+        } else {
+            if (cel.texture) {
+                const texLine = cel.texture[y % cel.texture.length]
+                for (let x = xa; x <= xb; x ++) {
+                    line[x] = texLine[x % texLine.length]
+                }
+            } else {
+                horizontalLine(cel.bitmap, xa, xb, y, cel.pattern, cel.border)
+            }
+        }
+        
+        if (cel.border) {
+            line[xa] = 2
+            line[xb] = 2
+        }
+
+        // cycle1: move xa
+        do {
+            x1aLo += dxa
+            if (x1aLo >= countMaxA) {
+                x1aLo -= countMaxA
+                xa += inca
+            }
+            y1aLo += deltay
+        } while (y1aLo < countMaxA)
+        y1aLo -= countMaxA
+
+        // cycle2: move xb
+        do {
+            x1bLo += dxb
+            if (x1bLo >= countMaxB) {
+                x1bLo -= countMaxB
+                xb += incb
+            }
+            y1bLo += deltay
+        } while (y1bLo < countMaxA)
+        y1bLo -= countMaxA
+    }
+    const celColors = { ...colors }
+    if (cel.texture) {
+        // dline.m:132: ; convert wild color to blue
+        // you can't have a trapezoid with a texture _and_ a pattern
+        celColors.pattern = 15
+    }
+    const canvas = canvasFromBitmap(cel.bitmap, celColors)
+    return { canvas, minX: cel.xCorrection - xOrigin, minY: y - cel.height, maxX: cel.xCorrection - xOrigin + cel.width, maxY: y }
+}
+
 // We try to consistently model Habitat's coordinate space in our rendering code as y=0 for the bottom, with increasing y meaning going up.
 // However, the graphics code converts this internally to a coordinate space where increasing y means going down, and many internal
 // coordinates (cel offsets, etc.) assume this.
@@ -267,26 +390,10 @@ export const frameFromCels = (cels, { colors: celColors, paintOrder, firstCelOri
                 yCorrect = cel.yOffset - cel.height
                 firstCelOrigin = false
             }
-            const x = cel.xOffset + xRel + (cel.xCorrection ?? 0)
+            const x = cel.xOffset + xRel
             const y = cel.yOffset + yRel
             const colors = (Array.isArray(celColors) ? celColors[icel] : celColors) ?? {}
-            if (cel.bitmap) {
-                layers.push({ canvas: canvasFromBitmap(cel.bitmap, { ...colors, ...(cel.colorOverrides ?? {}) }), minX: x, minY: y - cel.height, maxX: x + cel.width, maxY: y })
-            } else if (cel.type == "text" && colors.bytes && colors.charset) {
-                const textColors = {...colors}
-                let pattern = cel.pattern
-                if (pattern == 0) {
-                     // TODO: this is a bit of a hack; the C64 code would accept a pattern of 0q0101
-                     // which would mean blue / wild / blue / wild. but canvasFromBitmap is not currently written
-                     // in such a way that this would work. In practice, the pattern byte is always one of four values.
-                    textColors.pattern = 15
-                    textColors.wildcard = 6
-                    pattern = 0x55
-                }
-                layers.push(frameFromText(x, y, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors))
-            } else {
-                layers.push(null)
-            }
+            layers.push((celLayerRenderer[cel.type] ?? celLayerRenderer.default)(cel, colors, x, y))
             xRel += cel.xRel 
             yRel += cel.yRel
         } else {

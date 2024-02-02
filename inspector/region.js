@@ -103,22 +103,6 @@ export const propFromMod = (mod, ref) => {
         // not ready to parse yet
         return null
     }
-    // Trapezoid positioning hack:
-    // Shape-drawing code on the C64 always works in a context where the coordinates have 
-    // been pre-transformed to the final position of the shape. There are numerous cases
-    // in the server data where the trapezoid shape data combined with the actual position
-    // of the object causes the byte holding the X coordinates to overflow and wrap back to
-    // zero.
-    // Our renderer was built with the asssumption that it is possible to render a cel in 
-    // isolation, and composite it into the scene afterwards. But this is not true for 
-    // trapezoids that leverage this overflow behaviour; the data doesn't really make sense
-    // unless you add the offset to it. So for server-defined shapes, we cheat, and pre-
-    // transform the shape data so that it's the same as what the C64 code would be using
-    // when rendering the scene, and then, when compositing, always position trapezoid 
-    // objects at X position 0 (see propLocationFromObjectXY).
-    // We clear the lower 2 bits of the mod's X position, as the C64 renderer always shifts
-    // it into "Habitat space" to line up the object on a byte boundary.
-    const offsetX = (xOffset) => ((mod.x & 0xfc) + xOffset) % 256
     const classname = javaTypeToMuddleClass(mod.type)
     let fnAugment = null
     if (classname == "class_super_trapezoid" && mod.pattern) {
@@ -129,10 +113,10 @@ export const propFromMod = (mod, ref) => {
             superdata.set(mod.pattern, data.byteLength + 2)
             const trapview = new DataView(superdata.buffer)
             trapview.setUint8(celoff + 1, mod.height)
-            trapview.setUint8(celoff + 7, offsetX(mod.upper_left_x))
-            trapview.setUint8(celoff + 8, offsetX(mod.upper_right_x))
-            trapview.setUint8(celoff + 9, offsetX(mod.lower_left_x))
-            trapview.setUint8(celoff + 10, offsetX(mod.lower_right_x))
+            trapview.setUint8(celoff + 7, mod.upper_left_x)
+            trapview.setUint8(celoff + 8, mod.upper_right_x)
+            trapview.setUint8(celoff + 9, mod.lower_left_x)
+            trapview.setUint8(celoff + 10, mod.lower_right_x)
             trapview.setUint8(celoff + 11, mod.pattern_x_size)
             trapview.setUint8(celoff + 12, mod.pattern_y_size)
             return trapview
@@ -144,10 +128,10 @@ export const propFromMod = (mod, ref) => {
                 const celoff = data.getUint16(7 + celCount + (icel * 2), true)
                 data.setUint8(celoff + 1, mod.height)
                 if (icel == 0) {
-                    data.setUint8(celoff + 7, offsetX(mod.upper_left_x))
-                    data.setUint8(celoff + 8, offsetX(mod.upper_right_x))
-                    data.setUint8(celoff + 9, offsetX(mod.lower_left_x))
-                    data.setUint8(celoff + 10, offsetX(mod.lower_right_x))
+                    data.setUint8(celoff + 7, mod.upper_left_x)
+                    data.setUint8(celoff + 8, mod.upper_right_x)
+                    data.setUint8(celoff + 9, mod.lower_left_x)
+                    data.setUint8(celoff + 10, mod.lower_right_x)
                 }
             }
             return data
@@ -160,8 +144,8 @@ const signedXCoordinate = (modX) => modX > 208 ? signedByte(modX) : modX
 const zIndexFromObjectY = (modY) => modY > 127 ? (128 + (256 - modY)) : modY
 const objectZComparitor = (obj1, obj2) => zIndexFromObjectY(obj1.mods[0].y) - zIndexFromObjectY(obj2.mods[0].y)
 
-const propLocationFromObjectXY = (prop, modX, modY) => {
-    return [prop.isTrap ? 0 : Math.floor(signedXCoordinate(modX) / 4), modY % 128, zIndexFromObjectY(modY)]
+const propLocationFromObjectXY = (modX, modY) => {
+    return [Math.floor(signedXCoordinate(modX) / 4), modY % 128, zIndexFromObjectY(modY)]
 }
 
 const colorsFromMod = (mod) => {
@@ -177,8 +161,9 @@ const colorsFromMod = (mod) => {
     return colors
 }
 
-export const propFramesFromMod = (prop, mod, flipOverride = null) => {
+export const propFramesFromMod = (prop, mod, xOrigin = 0, flipOverride = null) => {
     const colors = colorsFromMod(mod)
+    colors.xOrigin = xOrigin
     const flipHorizontal = flipOverride ?? ((mod.orientation ?? 0) & 0x01) != 0
     const grState = mod.gr_state ?? 0
     if (prop.animations.length > 0) {
@@ -237,18 +222,18 @@ export const objectSpaceFromLayout = ({ x, y, frames }) =>
     translateSpace(compositeSpaces(frames), x, y)
 
 export const containedItemLayout = (prop, mod, containerProp, containerMod, containerSpace) => {
-    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerProp, containerMod.x, containerMod.y)
+    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerMod.x, containerMod.y)
     const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod)
-    // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
-    // the y axis inverted (see render.m:115-121)
     const flipHorizontal = (containerMod.orientation & 0x01) != 0
-    const frames = propFramesFromMod(prop, mod, flipHorizontal)
     // if the contents are drawn in front, the container has its origin offset by the offset of its first cel.
     const originX = containerProp.contentsInFront ? containerSpace.xOrigin : 0
     const originY = containerProp.contentsInFront ? containerSpace.yOrigin : 0
     const x = (containerX - originX) + (flipHorizontal ? -offsetX : offsetX)
     const y = containerY - (offsetY + originY)
     const z = containerZ
+    // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
+    // the y axis inverted (see render.m:115-121)
+    const frames = propFramesFromMod(prop, mod, x, flipHorizontal)
     return { x, y, z, frames }
 }
 
@@ -277,8 +262,8 @@ export const itemInteraction = ({ mod, children }) => {
 }
 
 export const regionItemLayout = (prop, mod) => {
-    const [x, y, z] = propLocationFromObjectXY(prop, mod.x, mod.y)
-    const frames = propFramesFromMod(prop, mod)
+    const [x, y, z] = propLocationFromObjectXY(mod.x, mod.y)
+    const frames = propFramesFromMod(prop, mod, x)
     return { x, y, z, frames }
 }
 

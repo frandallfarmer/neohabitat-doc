@@ -222,103 +222,14 @@ celDecoder.trap = (data, cel) => {
                 i ++
             }
         }
-        // dline.m:132: ; convert wild color to blue
-        // you can't have a trapezoid with a texture _and_ a pattern
-        cel.colorOverrides = { pattern: 15 }
     }
+
     cel.raw = {
         width: cel.width,
         x1a: data.getUint8(7),
         x1b: data.getUint8(8),
         x2a: data.getUint8(9),
         x2b: data.getUint8(10)
-    }
-    cel.x1a = cel.raw.x1a
-    cel.x1b = cel.raw.x1b
-    cel.x2a = cel.raw.x2a
-    cel.x2b = cel.raw.x2b
-    if (cel.x1b < cel.x1a) { cel.x1b += 256 }
-    if (cel.x2b < cel.x2a) { cel.x2b += 256 }
-    cel.xCorrection = Math.floor(Math.min(cel.x1a, cel.x2a) / 4)
-    cel.x1a -= cel.xCorrection * 4
-    cel.x1b -= cel.xCorrection * 4
-    cel.x2a -= cel.xCorrection * 4
-    cel.x2b -= cel.xCorrection * 4
-
-    // trapezoid-drawing algorithm:
-    // draw_line: draws a line from x1a,y1 to x1b, y1
-    // handles border drawing (last/first line, edges)
-    // decreases vcount, then jumps to cycle1 if there
-    // are more lines
-    // cycle1: run bresenham, determine if x1a (left edge) needs to be incremented
-    // or decremented (self-modifying code! the instruction in inc_dec1 is
-    // written at trap.m:52)
-    // has logic to jump back to cycle1 if we have a sharp enough angle that
-    // we need to move more than one pixel horizontally
-    // cycle2: same thing, but for x2a (right edge)
-    // at the end, increments y1 and jumps back to the top of draw_line
-    cel.width = Math.floor(Math.max(cel.x1a, cel.x1b, cel.x2a, cel.x2b) / 4) + 1
-    // trap.m:32 - delta_y and vcount are calculated by subtracting y2 - y1.
-    // mix.m:253: y2 is calculated as cel_y + cel_height
-    // mix.m:261: y1 is calculated as cel_y + 1
-    // So for a one-pixel tall trapezoid, deltay is 0, because y1 == y2.
-    // vcount is decremented until it reaches -1, compensating for the off-by-one.
-    const deltay = cel.height - 1
-    cel.bitmap = emptyBitmap(cel.width, cel.height)
-    const dxa = Math.abs(cel.x1a - cel.x2a)
-    const dxb = Math.abs(cel.x1b - cel.x2b)
-    const countMaxA = Math.max(dxa, deltay)
-    const countMaxB = Math.max(dxb, deltay)
-    const inca = cel.x1a < cel.x2a ? 1 : -1
-    const incb = cel.x1b < cel.x2b ? 1 : -1
-    let x1aLo = Math.floor(countMaxA / 2)
-    let y1aLo = x1aLo
-    let x1bLo = Math.floor(countMaxB / 2)
-    let y1bLo = x1bLo
-    let xa = cel.x1a
-    let xb = cel.x1b
-    for (let y = 0; y < cel.height; y ++) {
-        const line = cel.bitmap[y]
-        if (cel.border && (y == 0 || y == (cel.height - 1))) {
-            // top and bottom border line
-            horizontalLine(cel.bitmap, xa, xb, y, 0xaa, true)
-        } else {
-            if (cel.texture) {
-                const texLine = cel.texture[y % cel.texture.length]
-                for (let x = xa; x <= xb; x ++) {
-                    line[x] = texLine[x % texLine.length]
-                }
-            } else {
-                horizontalLine(cel.bitmap, xa, xb, y, cel.pattern, cel.border)
-            }
-        }
-        
-        if (cel.border) {
-            line[xa] = 2
-            line[xb] = 2
-        }
-
-        // cycle1: move xa
-        do {
-            x1aLo += dxa
-            if (x1aLo >= countMaxA) {
-                x1aLo -= countMaxA
-                xa += inca
-            }
-            y1aLo += deltay
-        } while (y1aLo < countMaxA)
-        y1aLo -= countMaxA
-
-        // cycle2: move xb
-        do {
-            x1bLo += dxb
-            if (x1bLo >= countMaxB) {
-                x1bLo -= countMaxB
-                xb += incb
-            }
-            y1bLo += deltay
-        } while (y1bLo < countMaxA)
-        y1bLo -= countMaxA
     }
 }
 
