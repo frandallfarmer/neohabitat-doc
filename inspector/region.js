@@ -401,7 +401,7 @@ export const directionNav = ({ filename, position }) => {
     // orientation:
     // 0 = top is west, 1 = top is north, 2 = top is east, 3 = top is south
     // neighbour list: North, East, South, West
-    const ineighbor = (mod.orientation + positionToCompassOffset[position] + 3) & 0x03
+    const ineighbor = ((mod.orientation ?? 0) + positionToCompassOffset[position] + 3) & 0x03
     const compasses = ["North", "East", "South", "West"]
     const ref = mod.neighbors[ineighbor]
     return html`<${locationLink} refId=${ref}><span>${compasses[ineighbor]}</span><//>`
