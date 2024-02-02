@@ -109,7 +109,17 @@ export const useHabitatJson = (url) => {
         if (!Array.isArray(value) || value.length == 0) {
             throw new Error(`Not a valid Habitat JSON file: ${url}`)
         }
-        return value
+        return value.map(obj => {
+            if (obj && obj.mods && obj.mods.length > 0) {
+                const mod = obj.mods[0]
+                mod.x = mod.x ?? 0
+                mod.y = mod.y ?? 0
+                mod.orientation = mod.orientation ?? 0
+                mod.style = mod.style ?? 0
+                mod.gr_state = mod.gr_state ?? 0
+            }
+            return obj
+        })
     }, [])
 }
 
