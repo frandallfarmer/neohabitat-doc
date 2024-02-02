@@ -15,56 +15,57 @@
                 }
             }
         </script>
-    </head>
-    <body>
-        <h1>Image detail - <span id="filename"></span></h1>
-        <div id="animations">
-            <h2>Animations</h2>
-        </div>
-        <div id="states">
-            <h2>States</h1>
-        </div>
-        <div id="cels">
-            <h2>Cels</h1>
-        </div>
-        <div id="data">
-            <h2>Data</h1>
-        </div>
-        <div id="errors"></div>
-        <a href="index.html">Home</a>
         <script type="module">
+            import { render } from "preact"
+            import { propAnimation, celmaskImage, celImage } from "./show.js"
+            import { html, catcher, errors } from "./view.js"
             import { decodeProp } from "./codec.js"
-            import { docBuilder, decodeBinary, showAll, textNode, propAnimationShower, celmaskShower, celShower } from "./show.js"
+            import { useBinary } from "./data.js"
 
             const propFilter = (key, value) => {
                 if (key != "bitmap" && key != "data" && key != "canvas") {
                     return value
                 }
             }
-            const dumpProp = (prop, container) => {
-                container.appendChild(textNode(JSON.stringify(prop, propFilter, 2), "pre"))
+            const viewList = ({ children }) => html`
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; line-height: 0px;">
+                    ${children.map(v => html`<div style="border: 1px solid black">${v}</div>`)}
+                </div>`
+            
+            const views = ({ prop }) => html`
+                <h2>Animations</h2>
+                <${viewList}>
+                    ${prop.animations.map(a => html`<${catcher}><${propAnimation} prop=${prop} animation=${a}/><//>`)}
+                <//>
+                <h2>States</h2>
+                <${viewList}>
+                    ${prop.celmasks.map(c => html`<${catcher}><${celmaskImage} prop=${prop} celmask=${c}/><//>`)}
+                <//>
+                <h2>Cels</h2>
+                <${viewList}>
+                    ${prop.cels.map(c => html`<${catcher}><${celImage} cel=${c}/><//>`)}
+                <//>
+                <h2>Data</h2>
+                <details>
+                    <summary>JSON</summary>
+                    <pre>${JSON.stringify(prop, propFilter, 2)}</pre>
+                </detail>
+                <${errors}/>`
+            
+            const detailView = ({ filename }) => {
+                const prop = useBinary(filename, decodeProp, null)
+                return html`
+                    <h1>Image detail - ${filename}</h1>
+                    ${prop !== null ? html`<${views} prop=${prop}/>` : null}`
             }
-
-            const onload = async () => {
-                const q = new URLSearchParams(window.location.search)
-                const filename = q.get("f")
-                document.getElementById("filename").innerText = filename
-                const doc = docBuilder({ errorContainer: document.getElementById("errors") })
-                try {
-                    const prop = await decodeBinary(filename, decodeProp)
-                    dumpProp(prop, document.getElementById("data"))
-                    if (prop.error) {
-                        doc.showError(prop.error, filename)
-                    } else {
-                        showAll(doc, document.getElementById("animations"), filename, prop.animations, propAnimationShower(prop))
-                        showAll(doc, document.getElementById("states"), filename, prop.celmasks, celmaskShower(prop))
-                        showAll(doc, document.getElementById("cels"), filename, prop.cels, celShower())
-                    }
-                } catch (e) {
-                    showError(e, filename)
-                }
-            }
-            onload()
+            
+            const q = new URLSearchParams(window.location.search)
+            const filename = q.get("f")
+            render(html`<${detailView} filename=${filename}/>`, document.getElementById("content"))
         </script>
+    </head>
+    <body>
+        <div id="content"></div>
+        <a href="index.html">Home</a>
     </body>
 </html>
