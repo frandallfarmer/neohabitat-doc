@@ -119,3 +119,20 @@ export const celmaskImage = ({ prop, celmask, ...options }) =>
 
 export const celImage = ({ cel, ...options }) =>
     html`<${canvasImage} canvas=${frameFromCels([cel], options).canvas}/>`
+
+const propFilter = (key, value) => {
+    if (key != "bitmap" && key != "data" && key != "canvas") {
+        return value
+    }
+}
+
+export const jsonDump = ({ heading, value }) =>
+    html`<details>
+            <summary>${heading}</summary>
+            <pre>${JSON.stringify(value, propFilter, 2)}</pre>
+         </details>`
+
+export const viewList = ({ children }) => 
+    html`<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
+            ${children.map(v => v ? html`<div style="border: 1px solid black; padding: 5px;">${v}</div>` : null)}
+         </div>`

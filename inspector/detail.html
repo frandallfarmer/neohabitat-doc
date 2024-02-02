@@ -17,21 +17,11 @@
         </script>
         <script type="module">
             import { render } from "preact"
-            import { propAnimation, celmaskImage, celImage } from "./show.js"
+            import { propAnimation, celmaskImage, celImage, jsonDump, viewList } from "./show.js"
             import { html, catcher, errors } from "./view.js"
             import { decodeProp } from "./codec.js"
             import { useBinary } from "./data.js"
 
-            const propFilter = (key, value) => {
-                if (key != "bitmap" && key != "data" && key != "canvas") {
-                    return value
-                }
-            }
-            const viewList = ({ children }) => html`
-                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; line-height: 0px;">
-                    ${children.map(v => html`<div style="border: 1px solid black">${v}</div>`)}
-                </div>`
-            
             const views = ({ prop }) => html`
                 <h2>Animations</h2>
                 <${viewList}>
@@ -46,10 +36,7 @@
                     ${prop.cels.map(c => html`<${catcher}><${celImage} cel=${c}/><//>`)}
                 <//>
                 <h2>Data</h2>
-                <details>
-                    <summary>JSON</summary>
-                    <pre>${JSON.stringify(prop, propFilter, 2)}</pre>
-                </detail>
+                <${jsonDump} heading="JSON" value=${prop}/>
                 <${errors}/>`
             
             const detailView = ({ filename }) => {
