@@ -33,8 +33,14 @@
                 }
             })
             window.addEventListener("popstate", event => {
-                if (event.state && event.state.filename) {
-                    filename.value = event.state.filename
+                if (event.state) {
+                    if (event.state.filename) {
+                        filename.value = event.state.filename
+                    } else {
+                        // if the state is messed up, make sure the page is loaded correctly anyway
+                        // fixes navigation with ClearURLs
+                        window.location = window.location
+                    }
                 }
             })
             window.addEventListener("click", e => {
