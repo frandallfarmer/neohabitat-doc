@@ -2,8 +2,8 @@ import { html } from "./view.js"
 import { createContext } from "preact"
 import { useState, useEffect, useContext } from "preact/hooks"
 import { emptyBitmap, horizontalLine } from "./codec.js"
-import { logError } from "./data.js"
 import { makeCanvas } from "./shim.js"
+
 // C64 RGB values generated from https://www.colodore.com/ with default settings
 const c64Colors = [
     0x000000, 0xffffff, 0x813338, 0x75cec8, 0x8e3c97, 0x56ac4d, 
@@ -516,39 +516,6 @@ export const flipCanvas = (canvas) => {
     ctx.scale(-1, 1)
     ctx.drawImage(canvas, 0, 0)
     return flipped
-}
-
-export const imageFromCanvas = (canvas) => {
-    const img = document.createElement("img")
-    img.src = canvas.toDataURL()
-    img.width = canvas.width * 3
-    img.height = canvas.height * 3
-    img.style.imageRendering = "pixelated"
-    return img
-}
-
-export const animate = (frames) => {
-    const space = compositeSpaces(frames)
-
-    if (frames.length == 0) {
-        return { ...space, element: textNode("") }
-    } else if (frames.length == 1) {
-        return { ...space, element: imageFromCanvas(frames[0].canvas) }
-    }
-    const canvas = canvasForSpace(space)
-    let iframe = 0
-    const ctx = canvas.getContext("2d")
-    const nextFrame = () => {
-        const frame = frames[iframe]
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        if (frame) {
-            drawInSpace(ctx, frame.canvas, space, frame)
-        }
-        iframe = (iframe + 1) % frames.length
-    }
-    nextFrame()
-    setInterval(nextFrame, 250)
-    return { ...space, element: canvas }
 }
 
 export const Scale = createContext(3)
