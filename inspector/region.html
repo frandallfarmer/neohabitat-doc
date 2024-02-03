@@ -29,19 +29,11 @@
             effect(() => {
                 if (q("f") != filename.value) {
                     errorBucket.value = []
-                    window.history.pushState({ filename: filename.value }, "", `?f=${filename.value}`)
+                    window.history.pushState({}, "", `?f=${filename.value}`)
                 }
             })
             window.addEventListener("popstate", event => {
-                if (event.state) {
-                    if (event.state.filename) {
-                        filename.value = event.state.filename
-                    } else {
-                        // if the state is messed up, make sure the page is loaded correctly anyway
-                        // fixes navigation with ClearURLs
-                        window.location = window.location
-                    }
-                }
+                filename.value = q("f") ?? "db/new_Downtown/Downtown_4d.json"
             })
             window.addEventListener("click", e => {
                 // ignore events the browser takes care of already:
