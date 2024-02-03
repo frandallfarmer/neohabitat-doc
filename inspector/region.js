@@ -165,11 +165,17 @@ export const propFramesFromMod = (prop, mod, xOrigin = 0, flipOverride = null) =
     const colors = colorsFromMod(mod)
     colors.xOrigin = xOrigin
     const flipHorizontal = flipOverride ?? ((mod.orientation ?? 0) & 0x01) != 0
-    const grState = mod.gr_state ?? 0
+    let grState = mod.gr_state
     if (prop.animations.length > 0) {
+        if (grState >= prop.animations.length) {
+            grState = 0
+            logError(new Error(`gr_state ${grState} is out of bounds, defaulting to 0`), prop.filename)
+        }
         return framesFromPropAnimation(prop.animations[grState], prop, { colors, flipHorizontal })
     } else {
-        return [frameFromCels(celsFromMask(prop, prop.celmasks[grState]), { colors, flipHorizontal })]
+        // animinit.m:110 - if image has no animation defined, gr_state is ignored and zero is used
+        // All images defined as no_animation only have one possible state.
+        return [frameFromCels(celsFromMask(prop, prop.celmasks[0]), { colors, flipHorizontal })]
     }
 }
 
