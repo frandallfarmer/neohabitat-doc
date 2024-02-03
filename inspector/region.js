@@ -168,8 +168,8 @@ export const propFramesFromMod = (prop, mod, xOrigin = 0, flipOverride = null) =
     let grState = mod.gr_state
     if (prop.animations.length > 0) {
         if (grState >= prop.animations.length) {
-            grState = 0
             logError(new Error(`gr_state ${grState} is out of bounds, defaulting to 0`), prop.filename)
+            grState = 0
         }
         return framesFromPropAnimation(prop.animations[grState], prop, { colors, flipHorizontal })
     } else {
