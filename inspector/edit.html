@@ -46,7 +46,13 @@
                         <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
                         <${propEditor} objects=${objectList.value}/>
                     </div>
-                    <${objectChooser} objects=${objectList.value}/>
+                    <div>
+                        <div style="padding: 5px;">
+                            <a href="javascript:;" onclick=${() => tracker.undo()}>Undo</a> |
+                            <a href="javascript:;" onclick=${() => tracker.redo()}>Redo</a>
+                        </div>
+                        <${objectChooser} objects=${objectList.value}/>
+                    </div>
                 </div>
                 <${jsonDump} heading=${html`Region JSON (<${jsonDownload} value=${objectList.value}>Download<//>)`} 
                              value=${objectList.value}/>

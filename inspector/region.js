@@ -95,7 +95,7 @@ export const imageSchemaFromMod = (mod) => {
         throw new Error(`${classname} refers to invalid image ${imageRef.id}`)
     }
     const args = image.arguments ?? [0, 0]
-    return { filename: remapImagePath(image.filename), width: args[0], flipOffset: args[1] }
+    return { filename: remapImagePath(image.filename), classname, cls, imageKey, width: args[0], flipOffset: args[1] }
 }
 
 export const propFromMod = (mod, ref) => {

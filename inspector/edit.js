@@ -1,11 +1,13 @@
 import { createContext } from "preact"
 import { useContext } from "preact/hooks"
-import { signal, effect } from "@preact/signals"
-import { html } from "./view.js"
-import { emptyBitmap } from "./codec.js"
-import { c64Colors, canvasFromBitmap, canvasImage } from "./render.js"
+import { signal } from "@preact/signals"
+import { html, catcher } from "./view.js"
+import { emptyBitmap, decodeProp } from "./codec.js"
+import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
 import { colorsFromOrientation } from "./neohabitat.js"
-import { jsonDump } from "./show.js"
+import { jsonDump, propAnimation, celmaskImage } from "./show.js"
+import { useBinary } from "./data.js"
+import { imageSchemaFromMod } from "./region.js"
 
 export const Selection = createContext(signal(null))
 export const selectionInteraction = ({ object, children }) => {
@@ -189,6 +191,60 @@ export const orientationEditor = ({ obj }) => {
         </fieldset>`
 }
 
+export const styleEditor = ({ obj }) => {
+    const mod = obj.mods[0]
+    const { cls, imageKey, filename } = imageSchemaFromMod(mod) ?? {}
+    if (!filename) {
+        return null
+    }
+    const prop = useBinary(filename, decodeProp, null)
+    if (!prop) {
+        return null
+    }
+    const grstateDropdown = prop.animations.length > 0 ? html`
+        <select onChange=${e => { mod.gr_state = parseInt(e.currentTarget.value) }}>
+            ${prop.animations.map((animation, i) => html`
+                <option key=${`anim${i}`} value=${i} selected=${i === mod.gr_state}>
+                    ${i} (${animation.cycle ? "cycling" : "non-cycling"}, ${animation.endState - animation.startState + 1} frames)
+                </option>
+            `)}
+        </select>
+    ` : html`<em>0 (non-animated)</em>`
+
+    return html`
+        <fieldset>
+            <legend>Style</legend>
+            <div style="display: flex;">
+                <table>
+                    <tr>
+                        <td>Style</td>
+                        <td>
+                            <select onChange=${e => { mod.style = parseInt(e.currentTarget.value) }}>
+                            ${cls[imageKey].map((imgref, i) => html`
+                                <option key=${`style${i}`} value=${i} selected=${i === mod.style}>
+                                    ${imgref.id}
+                                </option>`)}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><tt>gr_state</tt> (Animation ID)</td>
+                        <td>${grstateDropdown}</td>
+                    </tr>
+                </table>
+                <div style="padding: 10px;">
+                    <${catcher} filename=${obj.ref}>
+                        <${Scale.Provider} value="1">
+                            ${prop.animations.length > mod.gr_state
+                                ? html`<${propAnimation} prop=${prop} animation=${prop.animations[mod.gr_state]}/>`
+                                : html`<${celmaskImage} prop=${prop} celmask=${prop.celmasks[0]}/>`}
+                        <//>
+                    <//>
+                </div>
+            </div>
+        </fieldset>`
+}
+
 export const propEditor = ({ objects }) => {
     const selectionRef = useContext(Selection)
     if (selectionRef.value != null) {
@@ -197,7 +253,8 @@ export const propEditor = ({ objects }) => {
             return html`
                 <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
                 <${positionEditor} obj=${obj}/>
-                <${orientationEditor} obj=${obj}/>`
+                <${orientationEditor} obj=${obj}/>
+                <${styleEditor} obj=${obj}/>`
         }
     }
 }
