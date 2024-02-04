@@ -74,7 +74,10 @@ export const createEditTracker = () => {
     const wrapInnerValue = (sig, value, place, refreshParent = () => {}) => {
         if (typeof(value) === "object") {
             let innerTarget = value
-            const refresh = () => { innerTarget = valueAt(sig, place) }
+            const refresh = () => { 
+                innerTarget = valueAt(sig, place)
+                refreshParent()
+            }
             return dynamicProxy(() => innerTarget, {
                 get(target, property, receiver) {
                     return wrapInnerValue(sig, innerTarget[property], [...place, property], refresh)
@@ -82,6 +85,7 @@ export const createEditTracker = () => {
                 set(target, property, newValue, receiver) {
                     change(sig, place, property, newValue)
                     refresh()
+                    return true
                 }
             })
         } else {
@@ -101,6 +105,7 @@ export const createEditTracker = () => {
                 },
                 set(target, property, newValue, receiver) {
                     change(sig, [], property, newValue)
+                    return true
                 }
             })
         }
