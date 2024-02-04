@@ -5,6 +5,7 @@ import { html } from "./view.js"
 import { emptyBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage } from "./render.js"
 import { colorsFromOrientation } from "./neohabitat.js"
+import { jsonDump } from "./show.js"
 
 export const Selection = createContext(signal(null))
 export const selectionInteraction = ({ object, children }) => {
@@ -112,6 +113,46 @@ export const createEditTracker = () => {
     }
 }
 
+export const positionEditor = ({ obj }) => {
+    const mod = obj.mods[0]
+    const inc = (field, delta) => html`
+        <a href="javascript:;" onclick=${() => mod[field] = (mod[field] + 256 + delta) % 256}>
+            ${delta > 0 ? "+" : ""}${delta}
+        </a>`
+    const snap = (field, to) => html`
+        <a href="javascript:;" onclick=${() => mod[field] = mod[field] - (mod[field] % to)}>
+            Snap to cell
+        </a>`
+
+    return html`
+        <fieldset>
+            <legend>Position</legend>
+            <table>
+                <tr>
+                    <td style="width: 100px;">X: ${mod.x}</td>
+                    <td>
+                        [ ${inc("x", -16)} | ${inc("x", -4)} | ${inc("x", -1)} | ${snap("x", 4)} |
+                          ${inc("x", 1)} | ${inc("x", 4)} | ${inc("x", 16)} ]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Y: ${mod.y}</td>
+                    <td>
+                        [ ${inc("y", -16)} | ${inc("y", -8)} | ${inc("y", -1)} | ${snap("y", 8)} |
+                          ${inc("y", 1)} | ${inc("y", 8)} | ${inc("y", 16)} ]
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <label>
+                    <input type="checkbox" checked=${mod.y > 127}
+                           onclick=${() => { if (mod.y > 127) { mod.y -= 128 } else { mod.y += 128 } }}/>
+                    Foreground
+                </label>
+            </div>
+        </fieldset>`
+}
+
 export const orientationEditor = ({ obj }) => {
     const mod = obj.mods[0]
     // color, pattern, flip
@@ -152,8 +193,28 @@ export const propEditor = ({ objects }) => {
     const selectionRef = useContext(Selection)
     if (selectionRef.value != null) {
         const obj = objects.find(o => o.ref === selectionRef.value)
-        if (obj) {
-            return html`<${orientationEditor} obj=${obj}/>`
+        if (obj && obj.type === "item") {
+            return html`
+                <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
+                <${positionEditor} obj=${obj}/>
+                <${orientationEditor} obj=${obj}/>`
         }
     }
+}
+
+export const objectChooser = ({ objects }) => {
+    const selectionRef = useContext(Selection)
+    return html`
+        <fieldset>
+            <legend>Objects</legend>
+            ${objects.map(o => html`
+                <div>
+                    <label>
+                        <input type="radio" checked=${o.ref === selectionRef.value}
+                               onclick=${() => { selectionRef.value = o.ref }}/>
+                        ${o.name} (${o.ref})
+                    </label>
+                </div>
+            `)}
+        </fieldset>`
 }

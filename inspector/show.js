@@ -33,6 +33,9 @@ export const jsonDump = ({ heading, value }) =>
             <pre>${JSON.stringify(value, propFilter, 2)}</pre>
          </details>`
 
+export const jsonDownload = ({ value, children }) =>
+    html`<a href="data:application/json;base64,${btoa(JSON.stringify(value, null, 2))}">${children}</a>`
+
 export const viewList = ({ children }) => 
     html`<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
             ${children.map(v => v ? html`<div style="border: 1px solid black; padding: 5px;">${v}</div>` : null)}

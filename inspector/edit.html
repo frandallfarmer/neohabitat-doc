@@ -23,8 +23,8 @@
             import { useHabitatJson, errorBucket, until } from "./data.js"
             import { regionView } from "./region.js"
             import { navigationView } from "./navigate.js"
-            import { selectionInteraction, propEditor, createEditTracker } from "./edit.js"
-            import { jsonDump } from "./show.js"
+            import { selectionInteraction, propEditor, objectChooser, createEditTracker } from "./edit.js"
+            import { jsonDump, jsonDownload } from "./show.js"
 
             const q = (k) => (new URLSearchParams(window.location.search)).get(k)
             const filename = q("f") ?? "db/new_Downtown/Downtown_4d.json"
@@ -41,11 +41,15 @@
 
             const regionPage = (_) => html`
                 <h1>Region Editor - <${regionName} objects=${objectList.value}/></h1>
-                <div style="display: flex; flex-wrap: wrap">
-                    <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <div>
+                        <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
+                        <${propEditor} objects=${objectList.value}/>
+                    </div>
+                    <${objectChooser} objects=${objectList.value}/>
                 </div>
-                <${propEditor} objects=${objectList.value}/>
-                <${jsonDump} heading="JSON" value=${objectList.value}/>
+                <${jsonDump} heading=${html`Region JSON (<${jsonDownload} value=${objectList.value}>Download<//>)`} 
+                             value=${objectList.value}/>
                 <${errors}/>`
 
             render(html`<${regionPage}/>`, document.getElementById("regionview"))
