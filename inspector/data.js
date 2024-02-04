@@ -1,6 +1,6 @@
 import { signal, effect } from "@preact/signals"
 import { parse } from "./mudparse.js"
-import { parseHabitatObject } from "./neohabitat.js"
+import { parseHabitatRegion } from "./neohabitat.js"
 import { decodeCharset } from "./codec.js"
 import { getFile } from "./shim.js"
 
@@ -104,23 +104,7 @@ export const useJson = (url, defaultValue) => {
 }
 
 export const useHabitatJson = (url) => {
-    return fetchAndCache(url, async (response) => {
-        const value = parseHabitatObject(await response.text())
-        if (!Array.isArray(value) || value.length == 0) {
-            throw new Error(`Not a valid Habitat JSON file: ${url}`)
-        }
-        return value.map(obj => {
-            if (obj && obj.mods && obj.mods.length > 0) {
-                const mod = obj.mods[0]
-                mod.x = mod.x ?? 0
-                mod.y = mod.y ?? 0
-                mod.orientation = mod.orientation ?? 0
-                mod.style = mod.style ?? 0
-                mod.gr_state = mod.gr_state ?? 0
-            }
-            return obj
-        })
-    }, [])
+    return fetchAndCache(url, async (response) => parseHabitatRegion(await response.text()), [])
 }
 
 export const betaMud = lazySignal(null, async () =>

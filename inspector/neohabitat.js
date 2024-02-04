@@ -74,6 +74,24 @@ export function parseHabitatObject(data) {
     return JSON.parse(templateHabitatObject(data))
 }
 
+export function parseHabitatRegion(data) {
+    const region = parseHabitatObject(data)
+    if (!Array.isArray(region) || region.length == 0) {
+        throw new Error(`Not valid Habitat region JSON`)
+    }
+    return region.map(obj => {
+        if (obj && obj.mods && obj.mods.length > 0) {
+            const mod = obj.mods[0]
+            mod.x = mod.x ?? 0
+            mod.y = mod.y ?? 0
+            mod.orientation = mod.orientation ?? 0
+            mod.style = mod.style ?? 0
+            mod.gr_state = mod.gr_state ?? 0
+        }
+        return obj
+    })
+}
+
 export function colorsFromOrientation(orientation) {
     const colorVal = (orientation & 0x78) >> 3
     if (orientation & 0x80) {

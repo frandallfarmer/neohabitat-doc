@@ -26,17 +26,21 @@ export const createEditTracker = () => {
     const editHistory = []
     const redoHistory = []
     
-    const update = (obj, key, value) => {
+    const update = (obj, key, value, splicing = null) => {
         const result = Array.isArray(obj) ? [...obj] : {...obj}
-        result[key] = value
+        if (splicing === null) {
+            result[key] = value
+        } else {
+            result.splice(key, splicing, ...value)
+        }
         return result
     }
 
-    const updateIn = (obj, place, key, value) => {
+    const updateIn = (obj, place, key, value, splicing) => {
         if (place.length == 0) {
-            return update(obj, key, value)
+            return update(obj, key, value, splicing)
         } else {
-            return update(obj, place[0], updateIn(obj[place[0]], place.slice(1), key, value))
+            return update(obj, place[0], updateIn(obj[place[0]], place.slice(1), key, value, splicing))
         }
     }
 
@@ -48,25 +52,28 @@ export const createEditTracker = () => {
         return value
     }
     
-    const performEdit = (sig, place, key, value, history) => {
-        const previous = valueAt(sig, place)[key]
-        sig.value = updateIn(sig.value, place, key, value)
-        history.push({ sig, place, key, value, previous })
+    const performEdit = (sig, place, key, value, splicing, history) => {
+        const obj = valueAt(sig, place)
+        const previous = splicing === null ? obj[key] : obj.slice(key, key + splicing)
+        sig.value = updateIn(sig.value, place, key, value, splicing)
+        history.push({ sig, place, key, value, splicing, previous })
     }
 
-    const change = (sig, place, key, value) => {
-        performEdit(sig, place, key, value, editHistory)
+    const change = (sig, place, key, value, splicing = null) => {
+        performEdit(sig, place, key, value, splicing, editHistory)
         redoHistory.length = 0
     }
 
     const undo = (fromHistory = editHistory, toHistory = redoHistory) => {
         const edit = fromHistory.pop()
         if (edit) {
-            performEdit(edit.sig, edit.place, edit.key, edit.previous, toHistory)
+            const splicing = edit.splicing === null ? null : edit.value.length
+            performEdit(edit.sig, edit.place, edit.key, edit.previous, splicing, toHistory)
         }
     }
     
     const redo = () => undo(redoHistory, editHistory)
+
     const dynamicProxy = (targetGetter, handler) => {
         return new Proxy(targetGetter(), {
             ownKeys(target) { return Reflect.ownKeys(targetGetter(target)) },
@@ -99,6 +106,7 @@ export const createEditTracker = () => {
     return { 
         undo, 
         redo,
+        change,
         editHistory,
         redoHistory,
         trackSignal(sig) {
@@ -259,12 +267,28 @@ export const propEditor = ({ objects }) => {
     }
 }
 
-export const objectChooser = ({ objects }) => {
+const swapItemsAtIndex = (sig, tracker, index) => {
+    const newValue = [sig.value[index + 1], sig.value[index]]
+    tracker.change(sig, [], index, newValue, 2)
+}
+
+export const objectPanel = ({ objectList, tracker }) => {
     const selectionRef = useContext(Selection)
+    const iselection = objectList.value.findIndex(o => o.ref === selectionRef.value)
+    const deleteDisabled = iselection <= 0
+    const moveUpDisabled = iselection <= 1
+    const moveDownDisabled = iselection <= 0 || iselection >= objectList.value.length - 1
+    const buttonStyle = "border-radius: 8px; font-size: 16px;"
+    const disabledStyle = `background-color: #777; color: #ccc; ${buttonStyle}`
+    const dangerousStyle = `background-color: red; color: white; ${buttonStyle}`
+
     return html`
+        <div style="padding: 5px;">
+            <a href="javascript:;" onclick=${() => tracker.undo()}>Undo</a> | <a href="javascript:;" onclick=${() => tracker.redo()}>Redo</a>
+        </div>
         <fieldset>
             <legend>Objects</legend>
-            ${objects.map(o => html`
+            ${objectList.value.map(o => html`
                 <div>
                     <label>
                         <input type="radio" checked=${o.ref === selectionRef.value}
@@ -273,5 +297,17 @@ export const objectChooser = ({ objects }) => {
                     </label>
                 </div>
             `)}
+            <button style="${moveUpDisabled ? disabledStyle : buttonStyle}" disabled=${moveUpDisabled}
+                    onclick=${() => { swapItemsAtIndex(objectList, tracker, iselection - 1)}}>
+                ⇧
+            </button>
+            <button style="${moveDownDisabled ? disabledStyle : buttonStyle}" disabled=${moveDownDisabled}
+                    onclick=${() => { swapItemsAtIndex(objectList, tracker, iselection)}}>
+                ⇩
+            </button>
+            <button style="${deleteDisabled ? disabledStyle : dangerousStyle}" disabled=${deleteDisabled} 
+                    onclick=${() => { tracker.change(objectList, [], iselection, [], 1) }}>
+                Delete
+            </button>
         </fieldset>`
 }
