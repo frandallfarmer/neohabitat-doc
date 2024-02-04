@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Habitat Inspector</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="importmap">
+            {
+                "imports": {
+                    "htm": "./vendor/htm.mjs",
+                    "preact": "./vendor/preact.mjs",
+                    "preact/hooks": "./vendor/hooks.mjs",
+                    "@preact/signals-core": "./vendor/signals-core.mjs",
+                    "@preact/signals": "./vendor/signals.mjs"
+                }
+            }
+        </script>
+        <script type="module">
+            // import "https://esm.sh/*preact/devtools"
+            import { render } from "preact"
+            import { signal } from "@preact/signals"
+            import { html, errors } from "./view.js"
+            import { useHabitatJson, errorBucket, until } from "./data.js"
+            import { regionView } from "./region.js"
+            import { navigationView } from "./navigate.js"
+            import { selectionInteraction, propEditor, createEditTracker } from "./edit.js"
+            import { jsonDump } from "./show.js"
+
+            const q = (k) => (new URLSearchParams(window.location.search)).get(k)
+            const filename = q("f") ?? "db/new_Downtown/Downtown_4d.json"
+
+            const tracker = createEditTracker()
+            const objectList = signal(
+                (await until(() => useHabitatJson(filename), o => o.length > 0))
+                    .map(o => tracker.trackSignal(signal(o))))
+
+            const regionName = ({ objects }) => {
+                const region = objects.find(obj => obj.type == "context")
+                return html`<span>${(region && region.name) ?? filename}</span>`
+            }
+
+            const regionPage = (_) => html`
+                <h1>Region Editor - <${regionName} objects=${objectList.value}/></h1>
+                <div style="display: flex; flex-wrap: wrap">
+                    <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
+                </div>
+                <${propEditor} objects=${objectList.value}/>
+                <${jsonDump} heading="JSON" value=${objectList.value}/>
+                <${errors}/>`
+
+            render(html`<${regionPage}/>`, document.getElementById("regionview"))
+        </script>
+    </head>
+    <body>
+        <div id="regionview">
+        </div>
+        <a href="index.html">Home</a>
+    </body>
+</html>

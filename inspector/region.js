@@ -1,5 +1,6 @@
 import { decodeProp } from "./codec.js"
 import { html, catcher } from "./view.js"
+import { createContext } from "preact"
 import { useContext, useMemo } from "preact/hooks"
 import { signal } from "@preact/signals"
 import { contextMap, betaMud, logError, promiseToSignal, until, useBinary, useHabitatJson, charset } from './data.js'
@@ -255,11 +256,20 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
 
     return html`
         <${positionedInRegion} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
-            <${animatedDiv} frames=${layout.frames}/>
+            <${itemInteractionWrapper} object=${object} mod=${mod}>
+                <${animatedDiv} frames=${layout.frames}/>
+            <//>
         <//>`
 }
 
-export const itemInteraction = ({ mod, children }) => {
+export const itemInteraction = createContext(({ children }) => children)
+
+export const itemInteractionWrapper = (props) => {
+    const interactionView = useContext(itemInteraction)
+    return html`<${interactionView} ...${props}/>`
+}
+
+export const navInteraction = ({ mod, children }) => {
     const connection = mod.connection && contextMap()[mod.connection]
     if (connection) {
         return html`<a href="region.html?f=${connection.filename}">${children}</a>`
@@ -284,7 +294,7 @@ export const regionItemView = ({ object, contents = [] }) => {
 
     const container = html`
             <${positionedInRegion} key=${object.ref} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
-                <${itemInteraction} mod=${mod}>
+                <${itemInteractionWrapper} object=${object} mod=${mod}>
                     <${animatedDiv} frames=${layout.frames}/>
                 <//>
             </div>`
@@ -313,18 +323,20 @@ const sortObjects = (objects) => {
                                  .sort((o1, o2) => o2.mods[0].y - o1.mods[0].y)])
 }
 
-export const regionView = ({ filename }) => {
+export const regionView = ({ filename, objects, interaction = ({children}) => children }) => {
     const scale = useContext(Scale)
-    const objects = useHabitatJson(filename)
+    objects = objects ?? useHabitatJson(filename)
 
     return html`
-        <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
-            ${sortObjects(objects).map(([obj, contents]) => html`
-                <${itemView} key=${obj.ref}
-                             viewer=${regionItemView} 
-                             object=${obj} 
-                             contents=${contents}/>`)}
-        </div>`
+        <${itemInteraction.Provider} value=${interaction}>
+            <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
+                ${sortObjects(objects).map(([obj, contents]) => html`
+                    <${itemView} key=${obj.ref}
+                                viewer=${regionItemView} 
+                                object=${obj} 
+                                contents=${contents}/>`)}
+            </div>
+        <//>`
 }
 
 export const generateRegionCanvas = async (filename) => {

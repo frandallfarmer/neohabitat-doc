@@ -5,14 +5,14 @@ import { emptyBitmap, horizontalLine } from "./codec.js"
 import { makeCanvas } from "./shim.js"
 
 // C64 RGB values generated from https://www.colodore.com/ with default settings
-const c64Colors = [
+export const c64Colors = [
     0x000000, 0xffffff, 0x813338, 0x75cec8, 0x8e3c97, 0x56ac4d, 
     0x2e2c9b, 0xedf171, 0x8e5029, 0x553800, 0xc46c71, 0x4a4a4a,
     0x7b7b7b, 0xa9ff9f, 0x706deb, 0xb2b2b2
 ]
 
 // from paint.m:447
-const celPatterns = [
+export const celPatterns = [
     [0x00, 0x00, 0x00, 0x00],
     [0xaa, 0xaa, 0xaa, 0xaa],
     [0xff, 0xff, 0xff, 0xff],
@@ -268,7 +268,11 @@ celLayerRenderer.text = (cel, colors, x, y) => {
         textColors.wildcard = 6
         pattern = 0x55
     }
-    return frameFromText(x, y, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors)
+    if (colors.charset) {
+        return frameFromText(x, y, colors.bytes, colors.charset, pattern, cel.fineXOffset, textColors)
+    } else {
+        return null
+    }
 }
 
 celLayerRenderer.trap = (cel, colors, x, y) => {
