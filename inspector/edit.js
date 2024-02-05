@@ -13,7 +13,7 @@ export const Selection = createContext(signal(null))
 export const selectionInteraction = ({ object, children }) => {
     const selectionRef = useContext(Selection)
     return html`
-        <div onclick=${() => selectionRef.value = object.ref}>
+        <div onclick=${() => selectionRef.value = selectionRef.value === object.ref ? null : object.ref}>
             ${selectionRef.value === object.ref ? html`
                 <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; 
                             background-color: #ff000040; border: 1px solid red;"></div>
