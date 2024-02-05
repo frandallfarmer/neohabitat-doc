@@ -293,11 +293,11 @@ export const addNewObject = (type, objectList, tracker, selectionRef, defaultMod
         mods: [{
             ...(defaultModValues[type] ?? {}),
             type,
-            x: 0,
-            y: 0,
+            x: 80,
+            y: 32,
             style: 0,
             gr_state: 0,
-            orientation: 0,
+            orientation: 0
         }]
     }
     tracker.change(objectList, [], objectList.value.length, [tracker.trackSignal(signal(obj))], 0)
@@ -310,15 +310,15 @@ export const newObjectButton = ({ objectList, tracker }) => {
     const [iclass, setIClass] = useState(0)
     const selectionRef = useContext(Selection)
     return html`
+        <button style=${primaryButtonStyle}
+                onclick=${() => { addNewObject(javaClasses[iclass], objectList, tracker, selectionRef, defaultModValues) }}>
+            + Create
+        </button>
         <select onchange=${(e) => { setIClass(parseInt(e.target.value)) }}>
             ${javaClasses.map((cls, icls) => html`
                 <option key=${cls} value=${icls} selected=${iclass === icls}>${cls}</option>
             `)}
-        </select>
-        <button style=${primaryButtonStyle}
-                onclick=${() => { addNewObject(javaClasses[iclass], objectList, tracker, selectionRef, defaultModValues) }}>
-            + Create
-        </button>`
+        </select>`
 }
 
 export const objectPanel = ({ objectList, tracker }) => {
@@ -343,6 +343,7 @@ export const objectPanel = ({ objectList, tracker }) => {
                     </label>
                 </div>
             `)}
+            <${newObjectButton} objectList=${objectList} tracker=${tracker}/>
             <button style="${moveUpDisabled ? disabledStyle : buttonStyle}" disabled=${moveUpDisabled}
                     onclick=${() => { swapItemsAtIndex(objectList, tracker, iselection - 1)}}>
                 ⇧
@@ -355,7 +356,5 @@ export const objectPanel = ({ objectList, tracker }) => {
                     onclick=${() => { tracker.change(objectList, [], iselection, [], 1) }}>
                 Delete
             </button>
-            <br/>
-            <${newObjectButton} objectList=${objectList} tracker=${tracker}/>
         </fieldset>`
 }
