@@ -277,7 +277,7 @@ export const containerEditor = ({ objects, obj }) => {
             <legend>Container</legend>
             ${items.map(o => html`
                 <a href="javascript:;" onclick=${() => { selectionRef.value = o.ref }}>
-                    <${standaloneItemView} object=${o}/>
+                    <${standaloneItemView} object=${o} objects=${objects}/>
                 </a>`)}
         </fieldset>`
 }

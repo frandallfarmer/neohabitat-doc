@@ -190,13 +190,27 @@ export const itemView = (props) => {
         <//>`
 }
 
-export const standaloneItemView = ({ object }) => {
+export const standaloneItemView = ({ object, objects }) => {
     const mod = object.mods[0]
     const prop = propFromMod(mod, object.ref)
     if (!prop) {
         return null
     }
-    return html`<${animatedDiv} frames=${propFramesFromMod(prop, mod)}/>`
+    let container = null
+    if (objects) {
+        container = objects.find(o => o.ref === object.in)
+    }
+    let frames = null
+    if (container && container.type === "item") {
+        const containerMod = container.mods[0]
+        const containerProp = propFromMod(containerMod)
+        if (containerProp) {
+            const containerSpace = regionItemLayout(containerProp, containerMod).frames[0]
+            frames = containedItemLayout(prop, mod, containerProp, containerMod, containerSpace).frames
+        }
+    }
+    frames = frames ?? regionItemLayout(prop, mod).frames
+    return html`<${animatedDiv} frames=${frames}/>`
 }
 
 export const positionInRegion = (space) => {
