@@ -7,7 +7,7 @@ import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
 import { colorsFromOrientation } from "./neohabitat.js"
 import { jsonDump, propAnimation, celmaskImage } from "./show.js"
 import { useBinary, useJson } from "./data.js"
-import { imageSchemaFromMod } from "./region.js"
+import { imageSchemaFromMod, standaloneItemView } from "./region.js"
 
 export const Selection = createContext(signal(null))
 export const selectionInteraction = ({ object, children }) => {
@@ -163,6 +163,7 @@ export const positionEditor = ({ obj, regionRef }) => {
     const containedPosition = html`
         <div>
             Inside <a href="javascript:;" onclick=${() => { selectionRef.value = obj.in }}>${obj.in}</a>
+            , position ${mod.y}
         </div>
         <button style=${buttonStyle} onclick=${() => { obj.in = regionRef }}>
             Remove from container
@@ -265,6 +266,21 @@ export const styleEditor = ({ obj }) => {
         </fieldset>`
 }
 
+export const containerEditor = ({ objects, obj }) => {
+    const selectionRef = useContext(Selection)
+    const items = objects.filter(o => o.in === obj.ref).sort((o1, o2) => o1.y - o2.y)
+    if (items.length === 0) {
+        return null
+    }
+    return html`
+        <fieldset>
+            <legend>Container</legend>
+            ${items.map(o => html`
+                <a href="javascript:;" onclick=${() => { selectionRef.value = o.ref }}>
+                    <${standaloneItemView} object=${o}/>
+                </a>`)}
+        </fieldset>`
+}
 export const propEditor = ({ objects }) => {
     const selectionRef = useContext(Selection)
     if (selectionRef.value != null) {
@@ -274,6 +290,7 @@ export const propEditor = ({ objects }) => {
             return html`
                 <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
                 <${positionEditor} obj=${obj} regionRef=${regionRef} />
+                <${containerEditor} obj=${obj} objects=${objects}/>
                 <${orientationEditor} obj=${obj}/>
                 <${styleEditor} obj=${obj}/>`
         }
