@@ -1,12 +1,12 @@
 import { createContext } from "preact"
-import { useContext } from "preact/hooks"
+import { useContext, useState, useMemo } from "preact/hooks"
 import { signal } from "@preact/signals"
 import { html, catcher } from "./view.js"
 import { emptyBitmap, decodeProp } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
 import { colorsFromOrientation } from "./neohabitat.js"
 import { jsonDump, propAnimation, celmaskImage } from "./show.js"
-import { useBinary } from "./data.js"
+import { useBinary, useJson } from "./data.js"
 import { imageSchemaFromMod } from "./region.js"
 
 export const Selection = createContext(signal(null))
@@ -272,15 +272,61 @@ const swapItemsAtIndex = (sig, tracker, index) => {
     tracker.change(sig, [], index, newValue, 2)
 }
 
+const buttonStyle = "border-radius: 8px; font-size: 16px;"
+const disabledStyle = `background-color: #777; color: #ccc; ${buttonStyle}`
+const dangerousStyle = `background-color: red; color: white; ${buttonStyle}`
+const primaryButtonStyle = `background-color: blue; color: white; ${buttonStyle}`
+
+export const randomSlug = () => {
+    const validChars = "0123456789abcdefghijklmnopqrstuvwxyz"
+    const genChar = () => validChars[Math.floor(Math.random() * validChars.length)]
+    return `${genChar()}${genChar()}${genChar()}${genChar()}`
+}
+
+export const addNewObject = (type, objectList, tracker, selectionRef, defaultModValues) => {
+    const regionRef = objectList.value.find(o => o.type === "context").ref
+    const obj = {
+        type: "item",
+        ref: `${type}.${randomSlug()}.${regionRef}`,
+        name: type,
+        in: regionRef,
+        mods: [{
+            ...(defaultModValues[type] ?? {}),
+            type,
+            x: 0,
+            y: 0,
+            style: 0,
+            gr_state: 0,
+            orientation: 0,
+        }]
+    }
+    tracker.change(objectList, [], objectList.value.length, [tracker.trackSignal(signal(obj))], 0)
+    selectionRef.value = obj.ref
+}
+
+export const newObjectButton = ({ objectList, tracker }) => {
+    const defaultModValues = useJson("default_mod_values.json", {})
+    const javaClasses = useMemo(() => [...Object.keys(defaultModValues)].sort(), [defaultModValues])
+    const [iclass, setIClass] = useState(0)
+    const selectionRef = useContext(Selection)
+    return html`
+        <select onchange=${(e) => { setIClass(parseInt(e.target.value)) }}>
+            ${javaClasses.map((cls, icls) => html`
+                <option key=${cls} value=${icls} selected=${iclass === icls}>${cls}</option>
+            `)}
+        </select>
+        <button style=${primaryButtonStyle}
+                onclick=${() => { addNewObject(javaClasses[iclass], objectList, tracker, selectionRef, defaultModValues) }}>
+            + Create
+        </button>`
+}
+
 export const objectPanel = ({ objectList, tracker }) => {
     const selectionRef = useContext(Selection)
     const iselection = objectList.value.findIndex(o => o.ref === selectionRef.value)
     const deleteDisabled = iselection <= 0
     const moveUpDisabled = iselection <= 1
     const moveDownDisabled = iselection <= 0 || iselection >= objectList.value.length - 1
-    const buttonStyle = "border-radius: 8px; font-size: 16px;"
-    const disabledStyle = `background-color: #777; color: #ccc; ${buttonStyle}`
-    const dangerousStyle = `background-color: red; color: white; ${buttonStyle}`
 
     return html`
         <div style="padding: 5px;">
@@ -309,5 +355,7 @@ export const objectPanel = ({ objectList, tracker }) => {
                     onclick=${() => { tracker.change(objectList, [], iselection, [], 1) }}>
                 Delete
             </button>
+            <br/>
+            <${newObjectButton} objectList=${objectList} tracker=${tracker}/>
         </fieldset>`
 }
