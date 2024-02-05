@@ -70,7 +70,11 @@
                 <h1>Region - <${regionName} filename=${filename.value}/></h1>
                 <center>
                     <table style="text-align: center;">
-                        <tr><td/><td><${directionNav} filename=${filename.value} position="top"/></td><td/></tr>
+                        <tr>
+                            <td/><td>
+                            <${directionNav} filename=${filename.value} position="top"/></td>
+                            <td><a href="edit.html?f=${filename.value}">🖉 Edit</a></td>
+                        </tr>
                         <tr>
                             <td><${directionNav} filename=${filename.value} position="left"/></td>
                             <td style="padding: 10px;"><${regionView} filename=${filename.value} interaction=${navInteraction}/></td>
