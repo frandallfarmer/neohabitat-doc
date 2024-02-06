@@ -6,8 +6,8 @@ import { emptyBitmap, decodeProp } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
 import { colorsFromOrientation } from "./neohabitat.js"
 import { jsonDump, propAnimation, celmaskImage } from "./show.js"
-import { useBinary, useJson } from "./data.js"
-import { imageSchemaFromMod, standaloneItemView } from "./region.js"
+import { useJson } from "./data.js"
+import { propFromMod, imageSchemaFromMod, standaloneItemView } from "./region.js"
 
 export const Selection = createContext(signal(null))
 export const selectionInteraction = ({ object, children }) => {
@@ -212,13 +212,10 @@ export const orientationEditor = ({ obj }) => {
         </fieldset>`
 }
 
-export const styleEditor = ({ obj }) => {
+export const styleEditor = ({ obj, objects }) => {
     const mod = obj.mods[0]
-    const { cls, imageKey, filename } = imageSchemaFromMod(mod) ?? {}
-    if (!filename) {
-        return null
-    }
-    const prop = useBinary(filename, decodeProp, null)
+    const { cls, imageKey } = imageSchemaFromMod(mod) ?? {}
+    const prop = propFromMod(mod, obj.ref)
     if (!prop) {
         return null
     }
@@ -256,9 +253,7 @@ export const styleEditor = ({ obj }) => {
                 <div style="padding: 10px;">
                     <${catcher} filename=${obj.ref}>
                         <${Scale.Provider} value="1">
-                            ${prop.animations.length > mod.gr_state
-                                ? html`<${propAnimation} prop=${prop} animation=${prop.animations[mod.gr_state]}/>`
-                                : html`<${celmaskImage} prop=${prop} celmask=${prop.celmasks[0]}/>`}
+                            <${standaloneItemView} object=${obj} objects=${objects}/>
                         <//>
                     <//>
                 </div>
@@ -281,6 +276,39 @@ export const containerEditor = ({ objects, obj }) => {
                 </a>`)}
         </fieldset>`
 }
+
+export const fieldEditor = ({ field, mod }) => {
+    const val = mod[field]
+    if (typeof(val) === "number") {
+        return html`<input type="number" value=${val} 
+                            onInput=${e => { mod[field] = parseInt(e.currentTarget.value) }}/>`
+    } else if (typeof(val) === "string") {
+        return html`<input type="text" value=${val}
+                            onInput=${e => { mod[field] = e.currentTarget.value }}/>`
+    } else {
+        return html`<tt>${JSON.stringify(val, null, " ")}</tt>`
+    }
+}
+
+export const extraFieldsEditor = ({ obj }) => {
+    const handledFields = new Set(["x", "y", "orientation", "style", "gr_state", "type"])
+    const keys = [...Object.keys(obj.mods[0])]
+        .filter(k => !handledFields.has(k))
+        .sort()
+    if (keys.length > 0) {
+        return html`
+            <fieldset>
+                <legend>Fields</legend>
+                <table>
+                    ${keys.map(k => html`
+                        <tr>
+                            <td><tt>${k}</tt></td>
+                            <td><${fieldEditor} key=${k} field=${k} mod=${obj.mods[0]}/></td>
+                        </tr>`)}
+                </table>
+            </fieldset>`
+    }
+}
 export const propEditor = ({ objects }) => {
     const selectionRef = useContext(Selection)
     if (selectionRef.value != null) {
@@ -292,7 +320,8 @@ export const propEditor = ({ objects }) => {
                 <${positionEditor} obj=${obj} regionRef=${regionRef} />
                 <${containerEditor} obj=${obj} objects=${objects}/>
                 <${orientationEditor} obj=${obj}/>
-                <${styleEditor} obj=${obj}/>`
+                <${styleEditor} obj=${obj} objects=${objects}/>
+                <${extraFieldsEditor} obj=${obj}/>`
         }
     }
 }
@@ -410,6 +439,9 @@ export const registerKeyHandler = (document, tracker, selectionRef, objectList) 
                 if (e.key === "ArrowDown")  { dy -= 4 }
                 obj.mods[0].x += dx
                 obj.mods[0].y += dy
+                if (dx !== 0 || dy !== 0) {
+                    e.preventDefault()
+                }
             }
         }
     })
