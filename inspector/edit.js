@@ -388,3 +388,29 @@ export const objectPanel = ({ objectList, tracker }) => {
             </button>
         </fieldset>`
 }
+
+export const registerKeyHandler = (document, tracker, selectionRef, objectList) => {
+    document.addEventListener("keydown", (e) => {
+        if ((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z")) {
+            if (e.shiftKey) {
+                tracker.redo()
+            } else {
+                tracker.undo()
+            }
+        } else if (e.key === "Escape") {
+            selectionRef.value = null
+        } else if (e.key.startsWith("Arrow") && selectionRef.value !== null) {
+            const obj = objectList.value.find(o => o.ref === selectionRef.value)
+            if (obj && obj.type === "item") {
+                let dx = 0
+                let dy = 0
+                if (e.key === "ArrowLeft")  { dx -= 4 }
+                if (e.key === "ArrowRight") { dx += 4 }
+                if (e.key === "ArrowUp")    { dy += 4 }
+                if (e.key === "ArrowDown")  { dy -= 4 }
+                obj.mods[0].x += dx
+                obj.mods[0].y += dy
+            }
+        }
+    })
+}

@@ -24,7 +24,7 @@
             import { regionView } from "./region.js"
             import { navigationView } from "./navigate.js"
             import { parseHabitatRegion } from "./neohabitat.js"
-            import { selectionInteraction, propEditor, objectPanel, createEditTracker } from "./edit.js"
+            import { selectionInteraction, propEditor, objectPanel, createEditTracker, Selection, registerKeyHandler } from "./edit.js"
             import { jsonDump, jsonDownload } from "./show.js"
 
             const q = (k) => (new URLSearchParams(window.location.search)).get(k)
@@ -34,6 +34,9 @@
             const objectList = signal(
                 (await until(() => useHabitatJson(filename), o => o.length > 0))
                     .map(o => tracker.trackSignal(signal(o))))
+            
+            const selectionRef = signal(null)
+            registerKeyHandler(document, tracker, selectionRef, objectList)
 
             const regionName = ({ objects }) => {
                 const region = objects.find(obj => obj.type == "context")
@@ -42,34 +45,36 @@
 
             const regionPage = (_) => html`
                 <h1>Region Editor - <${regionName} objects=${objectList.value}/></h1>
-                <div style="display: flex; flex-wrap: wrap;">
-                    <div>
-                        <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
-                        <${propEditor} objects=${objectList.value}/>
-                    </div>
-                    <div>
-                        <div style="padding: 5px;">
-                            <label>
-                                Edit local file: <input type="file" accept=".json" onchange=${(e) => {
-                                    if (e.target.files.length > 0) {
-                                        (async (file) => {
-                                            try {
-                                                tracker.change(objectList, [], 0, parseHabitatRegion(await file.text()), objectList.value.length)
-                                            } catch (e) {
-                                                console.error(e)
-                                                alert(`Failed to parse JSON: ${e}`)
-                                            }
-                                        })(e.target.files[0])
-                                    }
-                                }}/>
-                            </label>
+                <${Selection.Provider} value=${selectionRef}>
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <div>
+                            <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
+                            <${propEditor} objects=${objectList.value}/>
                         </div>
-                        <${objectPanel} objectList=${objectList} tracker=${tracker}/>
+                        <div>
+                            <div style="padding: 5px;">
+                                <label>
+                                    Edit local file: <input type="file" accept=".json" onchange=${(e) => {
+                                        if (e.target.files.length > 0) {
+                                            (async (file) => {
+                                                try {
+                                                    tracker.change(objectList, [], 0, parseHabitatRegion(await file.text()), objectList.value.length)
+                                                } catch (e) {
+                                                    console.error(e)
+                                                    alert(`Failed to parse JSON: ${e}`)
+                                                }
+                                            })(e.target.files[0])
+                                        }
+                                    }}/>
+                                </label>
+                            </div>
+                            <${objectPanel} objectList=${objectList} tracker=${tracker}/>
+                        </div>
                     </div>
-                </div>
-                <${jsonDump} heading=${html`Region JSON (<${jsonDownload} value=${objectList.value}>Download<//>)`} 
-                             value=${objectList.value}/>
-                <${errors}/>`
+                    <${jsonDump} heading=${html`Region JSON (<${jsonDownload} value=${objectList.value}>Download<//>)`} 
+                                value=${objectList.value}/>
+                    <${errors}/>
+                <//>`
 
             render(html`<${regionPage}/>`, document.getElementById("regionview"))
         </script>
