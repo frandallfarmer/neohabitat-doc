@@ -24,13 +24,16 @@
             import { regionView } from "./region.js"
             import { navigationView } from "./navigate.js"
             import { parseHabitatRegion } from "./neohabitat.js"
-            import { selectionInteraction, propEditor, objectPanel, createEditTracker, Selection, registerKeyHandler } from "./edit.js"
+            import { selectionInteraction, propEditor, objectPanel, createEditTracker, Selection, 
+                     registerKeyHandler, trapezoidEditListener } from "./edit.js"
             import { jsonDump, jsonDownload } from "./show.js"
 
             const q = (k) => (new URLSearchParams(window.location.search)).get(k)
             const filename = q("f") ?? "db/Empty/context-empty.json"
 
             const tracker = createEditTracker()
+            tracker.registerListener(trapezoidEditListener)
+            
             const objectList = signal(
                 (await until(() => useHabitatJson(filename), o => o.length > 0))
                     .map(o => tracker.trackSignal(signal(o))))

@@ -51,8 +51,8 @@ const remapImagePath = (path) => {
     return map.loadState == "loaded" ? (map[filename] ?? filename) : map[filename]
 }
 
-const trapCache = {}
-const useTrap = (ref, url, fnAugment) => {
+export const trapCache = {}
+export const useTrap = (ref, url, fnAugment) => {
     if (!trapCache[ref]) {
         trapCache[ref] = promiseToSignal((async () => {
             try {

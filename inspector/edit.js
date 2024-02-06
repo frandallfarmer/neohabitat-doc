@@ -2,12 +2,12 @@ import { createContext } from "preact"
 import { useContext, useState, useMemo } from "preact/hooks"
 import { signal } from "@preact/signals"
 import { html, catcher } from "./view.js"
-import { emptyBitmap, decodeProp } from "./codec.js"
+import { emptyBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
 import { colorsFromOrientation } from "./neohabitat.js"
-import { jsonDump, propAnimation, celmaskImage } from "./show.js"
+import { jsonDump } from "./show.js"
 import { useJson } from "./data.js"
-import { propFromMod, imageSchemaFromMod, standaloneItemView } from "./region.js"
+import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache } from "./region.js"
 
 export const Selection = createContext(signal(null))
 export const selectionInteraction = ({ object, children }) => {
@@ -25,6 +25,7 @@ export const selectionInteraction = ({ object, children }) => {
 export const createEditTracker = () => {
     const editHistory = []
     const redoHistory = []
+    const editListeners = []
     
     const update = (obj, key, value, splicing = null) => {
         const result = Array.isArray(obj) ? [...obj] : {...obj}
@@ -56,7 +57,11 @@ export const createEditTracker = () => {
         const obj = valueAt(sig, place)
         const previous = splicing === null ? obj[key] : obj.slice(key, key + splicing)
         sig.value = updateIn(sig.value, place, key, value, splicing)
-        history.push({ sig, place, key, value, splicing, previous })
+        const edit = { sig, place, key, value, splicing, previous }
+        history.push(edit)
+        for (const listener of editListeners) {
+            listener(edit)
+        }
     }
 
     const change = (sig, place, key, value, splicing = null) => {
@@ -119,7 +124,20 @@ export const createEditTracker = () => {
                     return true
                 }
             })
+        },
+        registerListener(listener) {
+            editListeners.push(listener)
         }
+    }
+}
+
+export const trapezoidEditListener = ({ sig, place, key }) => {
+    const trapKeys = new Set(["upper_left_x", "upper_right_x", "lower_left_x", "lower_right_x", 
+                              "height", "pattern", "pattern_x_size", "pattern_y_size"])
+    const trapClasses = new Set(["Trapezoid", "Super_trapezoid"])
+    if (trapKeys.has(key) && place[0] === "mods" && place[1] === "0" && place.length === 2 && 
+        trapClasses.has(sig.value.mods[0].type)) {
+        trapCache[sig.value.ref] = null
     }
 }
 
