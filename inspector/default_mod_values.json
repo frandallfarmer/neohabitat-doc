@@ -9,7 +9,7 @@
   },
   "Fence": {},
   "Sign": {
-    "ascii": []
+    "text": ""
   },
   "Plant": {
     "mass": 1
@@ -165,7 +165,7 @@
   },
   "Crystal_ball": {},
   "Short_sign": {
-    "ascii": []
+    "text": ""
   },
   "Pond": {},
   "Club": {},

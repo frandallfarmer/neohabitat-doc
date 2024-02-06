@@ -309,6 +309,7 @@ export const extraFieldsEditor = ({ obj }) => {
             </fieldset>`
     }
 }
+
 export const propEditor = ({ objects }) => {
     const selectionRef = useContext(Selection)
     if (selectionRef.value != null) {
@@ -428,7 +429,8 @@ export const registerKeyHandler = (document, tracker, selectionRef, objectList) 
             }
         } else if (e.key === "Escape") {
             selectionRef.value = null
-        } else if (e.key.startsWith("Arrow") && selectionRef.value !== null) {
+        } else if (e.key.startsWith("Arrow") && selectionRef.value !== null
+                   && !(e.target instanceof HTMLInputElement)) {
             const obj = objectList.value.find(o => o.ref === selectionRef.value)
             if (obj && obj.type === "item") {
                 let dx = 0
