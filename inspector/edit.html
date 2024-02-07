@@ -68,7 +68,10 @@
                                         if (e.target.files.length > 0) {
                                             (async (file) => {
                                                 try {
-                                                    tracker.change(objectList, [], 0, parseHabitatRegion(await file.text()), objectList.value.length)
+                                                    tracker.change(objectList, [], 0, 
+                                                                   parseHabitatRegion(await file.text())
+                                                                       .map(o => tracker.trackSignal(signal(o))), 
+                                                                   objectList.value.length)
                                                 } catch (e) {
                                                     console.error(e)
                                                     alert(`Failed to parse JSON: ${e}`)
