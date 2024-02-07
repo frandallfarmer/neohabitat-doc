@@ -46,12 +46,19 @@
                 return html`<span>${(region && region.name) ?? filename}</span>`
             }
 
+            const overlayImageUrl = signal(null)
+            const overlayOpacity = signal(0.5)
+
             const regionPage = (_) => html`
                 <h1>Region Editor - <${regionName} objects=${objectList.value}/></h1>
                 <${Selection.Provider} value=${selectionRef}>
                     <div style="display: flex; flex-wrap: wrap;">
-                        <div style="width: 1000px;">
+                        <div style="width: 1000px; position: relative;">
                             <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
+                            ${overlayImageUrl.value ? html`
+                                <img style="width: 960px; height: 384px; position: absolute; top: 0; pointer-events: none; 
+                                            opacity: ${overlayOpacity.value}; z-index: 10000;"
+                                     src=${overlayImageUrl.value} />` : null}
                             <${propEditor} objects=${objectList.value}/>
                         </div>
                         <div>
@@ -69,7 +76,21 @@
                                             })(e.target.files[0])
                                         }
                                     }}/>
-                                </label>
+                                </label><br/>
+                                <label>
+                                    Image overlay: <input type="file" accept="image/*" onchange=${e => {
+                                        if (e.target.files.length > 0) {
+                                            if (overlayImageUrl.value) {
+                                                URL.revokeObjectURL(overlayImageUrl.value)
+                                            }
+                                            overlayImageUrl.value = URL.createObjectURL(e.target.files[0])
+                                        }
+                                    }}/>
+                                </label><br/>
+                                ${overlayImageUrl.value 
+                                    ? html`<input type="range" max="1" step="any" value=${overlayOpacity.value}
+                                                  oninput=${e => { overlayOpacity.value = parseFloat(e.target.value) }}/>`
+                                    : null}
                             </div>
                             <${objectPanel} objectList=${objectList} tracker=${tracker}/>
                         </div>
