@@ -299,7 +299,7 @@ export const fieldEditor = ({ field, mod }) => {
     const val = mod[field]
     if (typeof(val) === "number") {
         return html`<input type="number" value=${val} 
-                            onInput=${e => { mod[field] = parseInt(e.currentTarget.value) }}/>`
+                            onChange=${e => { mod[field] = parseInt(e.currentTarget.value) }}/>`
     } else if (typeof(val) === "string") {
         return html`<input type="text" value=${val}
                             onInput=${e => { mod[field] = e.currentTarget.value }}/>`
