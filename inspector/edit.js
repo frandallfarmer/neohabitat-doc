@@ -335,12 +335,14 @@ export const propEditor = ({ objects }) => {
         const obj = objects.find(o => o.ref === selectionRef.value)
         if (obj && obj.type === "item") {
             return html`
-                <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
-                <${positionEditor} obj=${obj} regionRef=${regionRef} />
-                <${containerEditor} obj=${obj} objects=${objects}/>
-                <${orientationEditor} obj=${obj}/>
-                <${styleEditor} obj=${obj} objects=${objects}/>
-                <${extraFieldsEditor} obj=${obj}/>`
+                <${catcher} filename="${obj.ref} - editor">
+                    <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
+                    <${positionEditor} obj=${obj} regionRef=${regionRef} />
+                    <${containerEditor} obj=${obj} objects=${objects}/>
+                    <${orientationEditor} obj=${obj}/>
+                    <${styleEditor} obj=${obj} objects=${objects}/>
+                    <${extraFieldsEditor} obj=${obj}/>
+                <//>`
         }
     }
 }
@@ -369,13 +371,13 @@ export const addNewObject = (type, objectList, tracker, selectionRef, defaultMod
         name: type,
         in: regionRef,
         mods: [{
-            ...(defaultModValues[type] ?? {}),
             type,
             x: 80,
             y: 32,
             style: 0,
             gr_state: 0,
-            orientation: 0
+            orientation: 0,
+            ...(defaultModValues[type] ?? {})
         }]
     }
     tracker.change(objectList, [], objectList.value.length, [tracker.trackSignal(signal(obj))], 0)

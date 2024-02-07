@@ -64,7 +64,9 @@
     "charges": 100,
     "pattern": 3
   },
-  "Head": {},
+  "Head": {
+    "style": 1
+  },
   "Escape_device": {
     "charge": 9
   },
