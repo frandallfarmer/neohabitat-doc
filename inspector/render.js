@@ -322,6 +322,11 @@ celLayerRenderer.trap = (cel, colors, x, y) => {
     let y1bLo = x1bLo
     let xa = cel.x1a
     let xb = cel.x1b
+
+    if (deltay === 0) {
+        throw new Error("Trapezoids with height 1 will cause an infinite loop in the C64 renderer")
+    }
+
     for (let y = 0; y < cel.height; y ++) {
         const line = cel.bitmap[y]
         if (cel.border && (y == 0 || y == (cel.height - 1))) {
