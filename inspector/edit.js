@@ -337,7 +337,8 @@ export const fieldEditor = ({ field, obj }) => {
 
 export const extraFieldsEditor = ({ obj }) => {
     const handledFields = new Set(
-        ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", "neighbors"]
+        ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
+         "neighbors", "nitty_bits"]
     )
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
@@ -435,12 +436,25 @@ const directionDropdown = ({ obj, k }) => html`
         `)}
     </select>`
 
+export const bitCheckbox = ({ obj, field, bitmask, children }) => {
+    return html`
+        <label>
+            <input type="checkbox" 
+                   checked=${(obj[field] & bitmask) != 0}
+                   onChange=${e => { 
+                       obj[field] = obj[field] & (~bitmask) | (e.target.checked ? bitmask : 0) 
+                   }}/>
+            ${children}
+        </label>
+    `
+}
+
 export const regionEditor = ({ obj }) => {
     const mod = obj.mods[0]
     
     return html`
         <fieldset>
-            <legend>Geography</legend>
+            <legend>Region</legend>
             <table>
                 ${["North", "East", "South", "West"].map((dir, idir) => html`
                     <tr>
@@ -468,6 +482,12 @@ export const regionEditor = ({ obj }) => {
                     <td>Teleporter direction</td>
                     <td><${directionDropdown} obj=${mod} k=${"port_dir"}/></td>
                 </tr>
+                <tr><td colspan="2">
+                    <${bitCheckbox} obj=${mod} field="nitty_bits" bitmask=${0x01}>Weapons-free<//>
+                </td></tr>
+                <tr><td colspan="2">
+                    <${bitCheckbox} obj=${mod} field="nitty_bits" bitmask=${0x02}>Steal-free<//>                
+                </td></tr>
             </table>
         </fieldset>`
 }
