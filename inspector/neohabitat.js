@@ -12,7 +12,7 @@ const replacements = [
     [/NORTH/g, '3']
 ];
 
-const joinReplacements = {
+export const joinReplacements = {
     UP: '|',
     DOWN: '}',
     LEFT: '~',

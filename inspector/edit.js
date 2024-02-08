@@ -4,7 +4,7 @@ import { signal } from "@preact/signals"
 import { html, catcher } from "./view.js"
 import { emptyBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
-import { colorsFromOrientation } from "./neohabitat.js"
+import { colorsFromOrientation, joinReplacements } from "./neohabitat.js"
 import { jsonDump } from "./show.js"
 import { useJson } from "./data.js"
 import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache } from "./region.js"
@@ -336,7 +336,9 @@ export const fieldEditor = ({ field, obj }) => {
 }
 
 export const extraFieldsEditor = ({ obj }) => {
-    const handledFields = new Set(["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir"])
+    const handledFields = new Set(
+        ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", "neighbors"]
+    )
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
         .sort()
@@ -421,6 +423,55 @@ export const refEditor = ({ obj, objects, tracker }) => {
         </fieldset>`
 }
 
+const directionDropdown = ({ obj, k }) => html`
+    <select onChange=${e => { obj[k] = joinReplacements[e.target.value] ?? "" }}>
+        <option value="" selected=${obj[k] === ""}>
+            [none]
+        </option>
+        ${["UP", "DOWN", "LEFT", "RIGHT"].map((dir) => html`
+            <option value=${dir} selected=${obj[k] === joinReplacements[dir]}>
+                ${dir}
+            </option>
+        `)}
+    </select>`
+
+export const regionEditor = ({ obj }) => {
+    const mod = obj.mods[0]
+    
+    return html`
+        <fieldset>
+            <legend>Geography</legend>
+            <table>
+                ${["North", "East", "South", "West"].map((dir, idir) => html`
+                    <tr>
+                        <td>${dir}</td>
+                        <td><input type="text" value=${mod.neighbors[idir]}
+                                   onchange=${e => { mod.neighbors[idir] = e.target.value.trim() }}/></td>
+                    </tr>
+                `)}
+                <tr>
+                    <td>Orientation</td>
+                    <td>
+                        <select onChange=${e => { mod.orientation = parseInt(e.target.value) }}>
+                            <option value="0" selected=${mod.orientation === 0}>Top is West</option>
+                            <option value="1" selected=${mod.orientation === 1}>Top is North</option>
+                            <option value="2" selected=${mod.orientation === 2}>Top is East</option>
+                            <option value="3" selected=${mod.orientation === 3}>Top is South</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Town direction</td>
+                    <td><${directionDropdown} obj=${mod} k=${"town_dir"}/></td>
+                </tr>
+                <tr>
+                    <td>Teleporter direction</td>
+                    <td><${directionDropdown} obj=${mod} k=${"port_dir"}/></td>
+                </tr>
+            </table>
+        </fieldset>`
+}
+
 export const propEditor = ({ objects, tracker }) => {
     const selectionRef = useContext(Selection)
     const regionRef = objects.find(o => o.type === "context").ref
@@ -433,8 +484,8 @@ export const propEditor = ({ objects, tracker }) => {
                 <${containerEditor} obj=${obj} objects=${objects}/>
                 <${orientationEditor} obj=${obj}/>
                 <${styleEditor} obj=${obj} objects=${objects}/>`
-        } else if (obj.type === "region") {
-            // TODO
+        } else if (obj.type === "context") {
+            itemEditors = html`<${regionEditor} obj=${obj}/>`
         }
         return html`
             <${catcher} filename="${obj.ref} - editor">
