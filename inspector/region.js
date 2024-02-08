@@ -244,7 +244,7 @@ export const objectSpaceFromLayout = ({ x, y, frames }) =>
 
 export const containedItemLayout = (prop, mod, containerProp, containerMod, containerSpace) => {
     const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerMod.x, containerMod.y)
-    const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod)
+    const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod) ?? { x: 0, y: 0 }
     const flipHorizontal = (containerMod.orientation & 0x01) != 0
     // if the contents are drawn in front, the container has its origin offset by the offset of its first cel.
     const originX = containerProp.contentsInFront ? containerSpace.xOrigin : 0
