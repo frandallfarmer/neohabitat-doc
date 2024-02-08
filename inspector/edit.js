@@ -26,7 +26,15 @@ export const createEditTracker = () => {
     const editHistory = []
     const redoHistory = []
     const editListeners = []
+    let currentEditGroup = 0
+    let groupLevel = 0
     
+    const commitGroup = () => {
+        if (groupLevel === 0) {
+            currentEditGroup ++
+        }
+    }
+
     const update = (obj, key, value, splicing = null) => {
         const result = Array.isArray(obj) ? [...obj] : {...obj}
         if (splicing === null) {
@@ -56,8 +64,11 @@ export const createEditTracker = () => {
     const performEdit = (sig, place, key, value, splicing, history) => {
         const obj = valueAt(sig, place)
         const previous = splicing === null ? obj[key] : obj.slice(key, key + splicing)
+        if (previous === value) {
+            return
+        }
         sig.value = updateIn(sig.value, place, key, value, splicing)
-        const edit = { sig, place, key, value, splicing, previous }
+        const edit = { sig, place, key, value, splicing, previous, group: currentEditGroup }
         history.push(edit)
         for (const listener of editListeners) {
             listener(edit)
@@ -67,11 +78,18 @@ export const createEditTracker = () => {
     const change = (sig, place, key, value, splicing = null) => {
         performEdit(sig, place, key, value, splicing, editHistory)
         redoHistory.length = 0
+        commitGroup()
     }
 
     const undo = (fromHistory = editHistory, toHistory = redoHistory) => {
-        const edit = fromHistory.pop()
-        if (edit) {
+        let group = null
+        while (fromHistory.length > 0) {
+            const edit = fromHistory[fromHistory.length - 1]
+            group = group ?? edit.group
+            if (group !== edit.group) {
+                break
+            }
+            fromHistory.pop()
             const splicing = edit.splicing === null ? null : edit.value.length
             performEdit(edit.sig, edit.place, edit.key, edit.previous, splicing, toHistory)
         }
@@ -127,6 +145,15 @@ export const createEditTracker = () => {
         },
         registerListener(listener) {
             editListeners.push(listener)
+        },
+        group(callback) {
+            groupLevel ++
+            try {
+                callback()
+            } finally {
+                groupLevel --
+                commitGroup()
+            }
         }
     }
 }
@@ -295,21 +322,21 @@ export const containerEditor = ({ objects, obj }) => {
         </fieldset>`
 }
 
-export const fieldEditor = ({ field, mod }) => {
-    const val = mod[field]
+export const fieldEditor = ({ field, obj }) => {
+    const val = obj[field]
     if (typeof(val) === "number") {
         return html`<input type="number" value=${val} 
-                            onChange=${e => { mod[field] = parseInt(e.currentTarget.value) }}/>`
+                            onChange=${e => { obj[field] = parseInt(e.currentTarget.value) }}/>`
     } else if (typeof(val) === "string") {
         return html`<input type="text" value=${val}
-                            onInput=${e => { mod[field] = e.currentTarget.value }}/>`
+                            onChange=${e => { obj[field] = e.currentTarget.value }}/>`
     } else {
         return html`<tt>${JSON.stringify(val, null, " ")}</tt>`
     }
 }
 
 export const extraFieldsEditor = ({ obj }) => {
-    const handledFields = new Set(["x", "y", "orientation", "style", "gr_state", "type"])
+    const handledFields = new Set(["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir"])
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
         .sort()
@@ -321,29 +348,101 @@ export const extraFieldsEditor = ({ obj }) => {
                     ${keys.map(k => html`
                         <tr>
                             <td><tt>${k}</tt></td>
-                            <td><${fieldEditor} key=${k} field=${k} mod=${obj.mods[0]}/></td>
+                            <td><${fieldEditor} key=${k} field=${k} obj=${obj.mods[0]}/></td>
                         </tr>`)}
                 </table>
             </fieldset>`
     }
 }
 
-export const propEditor = ({ objects }) => {
-    const selectionRef = useContext(Selection)
-    if (selectionRef.value != null) {
-        const regionRef = objects.find(o => o.type === "context").ref
-        const obj = objects.find(o => o.ref === selectionRef.value)
-        if (obj && obj.type === "item") {
-            return html`
-                <${catcher} filename="${obj.ref} - editor">
-                    <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
-                    <${positionEditor} obj=${obj} regionRef=${regionRef} />
-                    <${containerEditor} obj=${obj} objects=${objects}/>
-                    <${orientationEditor} obj=${obj}/>
-                    <${styleEditor} obj=${obj} objects=${objects}/>
-                    <${extraFieldsEditor} obj=${obj}/>
-                <//>`
+export const randomSlug = () => {
+    const validChars = "0123456789abcdefghijklmnopqrstuvwxyz"
+    const genChar = () => validChars[Math.floor(Math.random() * validChars.length)]
+    return `${genChar()}${genChar()}${genChar()}${genChar()}`
+}
+
+export const suffixFromRegionRef = (ref) => ref.replace(/^context-/, "")
+export const generateRef = (type, regionRef) => `${type}.${randomSlug()}.${suffixFromRegionRef(regionRef)}`
+
+export const renameRef = (objects, refOld, refNew) => {
+    const replace = (obj, field) => {
+        if (obj[field] === refOld) {
+            obj[field] = refNew
         }
+    }
+    let wasRegion = false
+    for (const obj of objects) {
+        if (obj.ref === refOld && obj.type === "context") {
+            wasRegion = true
+        }
+        replace(obj, "ref")
+        replace(obj, "in")
+        replace(obj.mods[0], "connection")
+    }
+
+    if (wasRegion) {
+        const oldSuffix = suffixFromRegionRef(refOld)
+        const newSuffix = suffixFromRegionRef(refNew)
+
+        for (const obj of objects) {
+            if (obj.ref !== refNew && obj.ref.includes(oldSuffix)) {
+                const objRefNew = obj.ref.includes(refOld) ? obj.ref.replace(refOld, newSuffix) 
+                                                        : obj.ref.replace(oldSuffix, newSuffix)
+                renameRef(objects, obj.ref, objRefNew)
+            }
+        }
+    }
+}
+
+
+export const refEditor = ({ obj, objects, tracker }) => {
+    const selectionRef = useContext(Selection)
+    return html`
+        <fieldset>
+            <legend>ID</legend>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><${fieldEditor} field="name" obj=${obj}/></td>
+                </tr>
+                <tr>
+                    <td>Ref</td>
+                    <td>
+                        <input type="text" value=${obj.ref}
+                               onChange=${e => { 
+                                    if (selectionRef.value === obj.ref) {
+                                        selectionRef.value = e.target.value
+                                    }
+                                    tracker.group(() => renameRef(objects, obj.ref, e.target.value))                                    
+                               }}/>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>`
+}
+
+export const propEditor = ({ objects, tracker }) => {
+    const selectionRef = useContext(Selection)
+    const regionRef = objects.find(o => o.type === "context").ref
+    const obj = objects.find(o => o.ref === (selectionRef.value ?? regionRef))
+    if (obj) {
+        let itemEditors
+        if (obj.type === "item") {
+            itemEditors = html`
+                <${positionEditor} obj=${obj} regionRef=${regionRef} />
+                <${containerEditor} obj=${obj} objects=${objects}/>
+                <${orientationEditor} obj=${obj}/>
+                <${styleEditor} obj=${obj} objects=${objects}/>`
+        } else if (obj.type === "region") {
+            // TODO
+        }
+        return html`
+            <${catcher} filename="${obj.ref} - editor">
+                <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
+                <${refEditor} objects=${objects} obj=${obj} tracker=${tracker}/>
+                ${itemEditors}
+                <${extraFieldsEditor} obj=${obj}/>
+            <//>`
     }
 }
 
@@ -356,12 +455,6 @@ const buttonStyle = "border-radius: 8px; font-size: 16px;"
 const disabledStyle = `background-color: #777; color: #ccc; ${buttonStyle}`
 const dangerousStyle = `background-color: red; color: white; ${buttonStyle}`
 const primaryButtonStyle = `background-color: blue; color: white; ${buttonStyle}`
-
-export const randomSlug = () => {
-    const validChars = "0123456789abcdefghijklmnopqrstuvwxyz"
-    const genChar = () => validChars[Math.floor(Math.random() * validChars.length)]
-    return `${genChar()}${genChar()}${genChar()}${genChar()}`
-}
 
 export const addNewObject = (type, objectList, tracker, selectionRef, defaultModValues) => {
     const regionRef = objectList.value.find(o => o.type === "context").ref
