@@ -264,45 +264,36 @@ export const styleEditor = ({ obj, objects }) => {
     if (!prop) {
         return null
     }
-    const grstateDropdown = prop.animations.length > 0 ? html`
-        <select onChange=${e => { mod.gr_state = parseInt(e.currentTarget.value) }}>
+    const grstateSelector = prop.animations.length > 0 ? html`
+        <div style="display: flex; flex-wrap: wrap; align-items: center;">
             ${prop.animations.map((animation, i) => html`
-                <option key=${`anim${i}`} value=${i} selected=${i === mod.gr_state}>
-                    ${i} (${animation.cycle ? "cycling" : "non-cycling"}, ${animation.endState - animation.startState + 1} frames)
-                </option>
-            `)}
-        </select>
-    ` : html`<em>0 (non-animated)</em>`
+                <${catcher} filename="${obj.ref} : Animation ${i}" key="${obj.ref}gr_state${i}">
+                    <div style="border: 4px dotted ${mod.gr_state === i ? " black" : "transparent"}"
+                         onclick=${() => { mod.gr_state = i }}>
+                        <${standaloneItemView} object=${({...obj, mods: [{...mod, gr_state: i}]})}
+                                               objects=${objects}/>
+                    </div>
+                <//>`)}
+        </div>` : html`<em>0 (non-animated)</em>`
 
     return html`
         <fieldset>
             <legend>Style</legend>
-            <div style="display: flex;">
-                <table>
-                    <tr>
-                        <td>Style</td>
-                        <td>
-                            <select onChange=${e => { mod.style = parseInt(e.currentTarget.value) }}>
-                            ${cls[imageKey].map((imgref, i) => html`
-                                <option key=${`style${i}`} value=${i} selected=${i === mod.style}>
-                                    ${imgref.id}
-                                </option>`)}
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><tt>gr_state</tt> (Animation ID)</td>
-                        <td>${grstateDropdown}</td>
-                    </tr>
-                </table>
-                <div style="padding: 10px;">
-                    <${catcher} filename=${obj.ref}>
-                        <${Scale.Provider} value="1">
-                            <${standaloneItemView} object=${obj} objects=${objects}/>
-                        <//>
-                    <//>
+            <${Scale.Provider} value="1">
+                <div>Style</div>
+                <div style="display: flex; flex-wrap: wrap; align-items: center;">
+                    ${cls[imageKey].map((_, istyle) => html`
+                        <${catcher} filename="${obj.ref} : Style ${istyle}" key="${obj.ref}style${istyle}">
+                            <div style="border: 4px dotted ${mod.style === istyle ? " black" : "transparent"}"
+                                 onclick=${() => { mod.style = istyle }}>
+                                <${standaloneItemView} object=${({...obj, mods: [{...mod, style: istyle, gr_state: 0}]})}
+                                                    objects=${objects}/>
+                            </div>
+                        <//>`)}
                 </div>
-            </div>
+                <div>Animation (<tt>gr_state</tt>)</div>
+                ${grstateSelector}
+            <//>
         </fieldset>`
 }
 
