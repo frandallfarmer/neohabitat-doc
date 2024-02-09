@@ -450,7 +450,8 @@ export const booleanCheckbox = ({ obj, field, children }) => html`
 
 export const regionEditor = ({ obj }) => {
     const mod = obj.mods[0]
-    
+    const orientations = ["West is (↑) Top / Top is West", "West is (←) Left / Top is North", 
+                          "West is (↓) Bottom / Top is East", "West is (→) Right / Top is South"]
     return html`
         <fieldset>
             <legend>Region</legend>
@@ -466,10 +467,9 @@ export const regionEditor = ({ obj }) => {
                     <td>Orientation</td>
                     <td>
                         <select onChange=${e => { mod.orientation = parseInt(e.target.value) }}>
-                            <option value="0" selected=${mod.orientation === 0}>Top is West</option>
-                            <option value="1" selected=${mod.orientation === 1}>Top is North</option>
-                            <option value="2" selected=${mod.orientation === 2}>Top is East</option>
-                            <option value="3" selected=${mod.orientation === 3}>Top is South</option>
+                            ${orientations.map((desc, i) => html`
+                                <option value=${i} selected=${mod.orientation === i}>${desc}</option>
+                            `)}
                         </select>
                     </td>
                 </tr>
