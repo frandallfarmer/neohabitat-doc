@@ -338,7 +338,7 @@ export const fieldEditor = ({ field, obj }) => {
 export const extraFieldsEditor = ({ obj }) => {
     const handledFields = new Set(
         ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
-         "neighbors", "nitty_bits"]
+         "neighbors", "nitty_bits", "is_turf"]
     )
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
@@ -449,6 +449,14 @@ export const bitCheckbox = ({ obj, field, bitmask, children }) => {
     `
 }
 
+export const booleanCheckbox = ({ obj, field, children }) => html`
+    <label>
+        <input type="checkbox"
+               checked=${obj[field] ?? false}
+               onChange=${e => { obj[field] = e.target.checked }}/>
+        ${children}
+    </label>`
+
 export const regionEditor = ({ obj }) => {
     const mod = obj.mods[0]
     
@@ -487,6 +495,9 @@ export const regionEditor = ({ obj }) => {
                 </td></tr>
                 <tr><td colspan="2">
                     <${bitCheckbox} obj=${mod} field="nitty_bits" bitmask=${0x02}>Steal-free<//>                
+                </td></tr>
+                <tr><td colspan="2">
+                    <${booleanCheckbox} obj=${mod} field="is_turf">Is turf<//>                
                 </td></tr>
             </table>
         </fieldset>`
