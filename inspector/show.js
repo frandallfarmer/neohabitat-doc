@@ -43,6 +43,9 @@ export const viewList = ({ children }) =>
          </div>`
 
 const uncaughtCharView = ({ charset, byte, colors }) => {
+    if (!charset) {
+        return null
+    }
     const canvas = useMemo(() => {
         const bitmap = bitmapFromChar(charset, byte, colors)
         return canvasFromBitmap(bitmap)

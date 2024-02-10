@@ -434,7 +434,7 @@ export const textEditor = ({ obj, tracker }) => {
         input.current.focus()
     }
 
-    const bytes = mod.text ? stringToBytes(mod.text) : mod.ascii
+    const bytes = (mod.text ? stringToBytes(mod.text) : mod.ascii) ?? []
     const text = bytesToUnicode(bytes)
     const colors = { pixelHeight: 2, pattern: 0xaa }
     return html`
@@ -462,14 +462,15 @@ export const textEditor = ({ obj, tracker }) => {
                         </a>
                     `)}
                 </div>
-                <textarea rows="6" cols="40" ref=${input} value=${text} maxLength=${maxLength} onInput=${e => {
-                    tracker.group(() => {
-                        if (mod.text) {
-                            delete mod.text
-                        }
-                        mod.ascii = stringToBytes(e.target.value)
-                    })
-                }}/>
+                <textarea style="font-size: 18px;" rows="6" cols="40" 
+                    ref=${input} value=${text} maxLength=${maxLength} onInput=${e => {
+                        tracker.group(() => {
+                            if (mod.text) {
+                                delete mod.text
+                            }
+                            mod.ascii = stringToBytes(e.target.value)
+                        })
+                    }}/>
             <//>
         </fieldset>`
 }
