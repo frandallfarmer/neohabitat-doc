@@ -24,8 +24,8 @@
             import { regionView } from "./region.js"
             import { navigationView } from "./navigate.js"
             import { parseHabitatRegion } from "./neohabitat.js"
-            import { selectionInteraction, propEditor, objectPanel, createEditTracker, Selection, 
-                     registerKeyHandler, trapezoidEditListener } from "./edit.js"
+            import { selectionInteraction, propEditor, depthEditor, objectPanel, createEditTracker, 
+                     Selection, registerKeyHandler, trapezoidEditListener } from "./edit.js"
             import { jsonDump, jsonDownload } from "./show.js"
 
             const q = (k) => (new URLSearchParams(window.location.search)).get(k)
@@ -59,6 +59,7 @@
                                 <img style="width: 960px; height: 384px; position: absolute; top: 0; pointer-events: none; 
                                             opacity: ${overlayOpacity.value}; z-index: 10000;"
                                      src=${overlayImageUrl.value} />` : null}
+                            <${depthEditor} objects=${objectList.value}/>
                             <${propEditor} objects=${objectList.value} tracker=${tracker}/>
                         </div>
                         <div>

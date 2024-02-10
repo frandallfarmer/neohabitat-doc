@@ -313,8 +313,8 @@ export const containerEditor = ({ objects, obj }) => {
         </fieldset>`
 }
 
-export const fieldEditor = ({ field, obj }) => {
-    const val = obj[field]
+export const fieldEditor = ({ field, obj, defaultValue }) => {
+    const val = obj[field] ?? defaultValue
     if (typeof(val) === "number") {
         return html`<input type="number" value=${val} 
                             onChange=${e => { obj[field] = parseInt(e.currentTarget.value) }}/>`
@@ -329,7 +329,7 @@ export const fieldEditor = ({ field, obj }) => {
 export const extraFieldsEditor = ({ obj }) => {
     const handledFields = new Set(
         ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
-         "neighbors", "nitty_bits", "is_turf"]
+         "neighbors", "nitty_bits", "is_turf", "depth"]
     )
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
@@ -480,6 +480,10 @@ export const regionEditor = ({ obj }) => {
                 <tr>
                     <td>Teleporter direction</td>
                     <td><${directionDropdown} obj=${mod} k=${"port_dir"}/></td>
+                </tr>
+                <tr>
+                    <td>Depth</td>
+                    <td><${fieldEditor} field="depth" obj=${mod} defaultValue=${32}/></td>
                 </tr>
                 <tr><td colspan="2">
                     <${bitCheckbox} obj=${mod} field="nitty_bits" bitmask=${0x01}>Weapons-free<//>
@@ -633,4 +637,17 @@ export const registerKeyHandler = (document, tracker, selectionRef, objectList) 
             }
         }
     })
+}
+
+export const depthEditor = ({ objects }) => {
+    const selectionRef = useContext(Selection)
+    const scale = useContext(Scale)
+    const region = objects.find(o => o.type === "context")
+    if (selectionRef.value !== null && selectionRef.value !== region.ref) {
+        return null
+    }
+    const yDepth = 127 - (region.mods[0].depth ?? 32)
+    return html`<div style="position: absolute; left: 0; top: ${yDepth * scale}px; width: 100%; 
+                            height: ${scale}px; background-color: red; opacity: 50%; z-index: 10001;
+                            pointer-events: none;"/>`
 }
