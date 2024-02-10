@@ -1,8 +1,9 @@
 import { createContext } from "preact"
+import { useMemo } from "preact/hooks"
 import { celsFromMask, frameFromCels, framesFromAction, 
          framesFromLimbAnimation, framesFromPropAnimation, defaultColors ,
-         animatedDiv, canvasImage } from "./render.js"
-import { html } from "./view.js"
+         animatedDiv, canvasImage, bitmapFromChar, canvasFromBitmap } from "./render.js"
+import { html, catcher } from "./view.js"
 
 export const Colors = createContext(defaultColors)
 
@@ -40,3 +41,16 @@ export const viewList = ({ children }) =>
     html`<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px;">
             ${children.map(v => v ? html`<div style="border: 1px solid black; padding: 5px;">${v}</div>` : null)}
          </div>`
+
+const uncaughtCharView = ({ charset, byte, colors }) => {
+    const canvas = useMemo(() => {
+        const bitmap = bitmapFromChar(charset, byte, colors)
+        return canvasFromBitmap(bitmap)
+    }, [charset, byte, colors?.halfSize])
+    return html`<${canvasImage} canvas=${canvas}/>`
+}
+
+export const charView = (props) => html`
+    <${catcher} filename=${`char:${props.byte}`}>
+        <${uncaughtCharView} ...${props}/>
+    <//>`

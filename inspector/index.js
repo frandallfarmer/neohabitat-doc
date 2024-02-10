@@ -3,7 +3,7 @@ import { useBinary, useJson, charset } from "./data.js"
 import { decodeProp, decodeBody } from "./codec.js"
 import { html, catcher } from "./view.js"
 import { bitmapFromChar, canvasFromBitmap, canvasImage } from "./render.js"
-import { propAnimation, celmaskImage, actionAnimation } from "./show.js"
+import { propAnimation, celmaskImage, actionAnimation, charView } from "./show.js"
 
 export const propView = ({ filename }) => {
     if (filename == 'heads/fhead.bin') {
@@ -44,19 +44,6 @@ export const fileList = ({ indexFile, childView, href }) =>
                     <${childView} filename=${filename}/>
                 <//>`)}
         </div>`
-
-const uncaughtCharView = ({ charset, byte, colors }) => {
-    const canvas = useMemo(() => {
-        const bitmap = bitmapFromChar(charset, byte, colors)
-        return canvasFromBitmap(bitmap)
-    }, [charset, byte, colors.halfSize])
-    return html`<${canvasImage} canvas=${canvas}/>`
-}
-
-const charView = (props) => html`
-    <${catcher} filename=${`char:${props.byte}`}>
-        <${uncaughtCharView} ...${props}/>
-    <//>`
 
 export const charsetView = ({ colors }) => {
     if (!charset()) { return null }

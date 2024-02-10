@@ -1,12 +1,12 @@
 import { createContext } from "preact"
-import { useContext, useState, useMemo } from "preact/hooks"
+import { useContext, useState, useMemo, useRef } from "preact/hooks"
 import { signal } from "@preact/signals"
 import { html, catcher } from "./view.js"
 import { emptyBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
 import { colorsFromOrientation, joinReplacements } from "./neohabitat.js"
-import { jsonDump } from "./show.js"
-import { useJson } from "./data.js"
+import { jsonDump, charView } from "./show.js"
+import { useJson, charset } from "./data.js"
 import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache } from "./region.js"
 
 export const Selection = createContext(signal(null))
@@ -38,7 +38,11 @@ export const createEditTracker = () => {
     const update = (obj, key, value, splicing = null) => {
         const result = Array.isArray(obj) ? [...obj] : {...obj}
         if (splicing === null) {
-            result[key] = value
+            if (value === undefined) {
+                delete result[key]
+            } else {
+                result[key] = value
+            }
         } else {
             result.splice(key, splicing, ...value)
         }
@@ -119,6 +123,11 @@ export const createEditTracker = () => {
                     change(sig, place, property, newValue)
                     refresh()
                     return true
+                },
+                deleteProperty(target, property) {
+                    change(sig, place, property, undefined)
+                    refresh()
+                    return true
                 }
             })
         } else {
@@ -139,6 +148,10 @@ export const createEditTracker = () => {
                 },
                 set(target, property, newValue, receiver) {
                     change(sig, [], property, newValue)
+                    return true
+                },
+                deleteProperty(target, property) {
+                    change(sig, [], property, undefined)
                     return true
                 }
             })
@@ -329,7 +342,7 @@ export const fieldEditor = ({ field, obj, defaultValue }) => {
 export const extraFieldsEditor = ({ obj }) => {
     const handledFields = new Set(
         ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
-         "neighbors", "nitty_bits", "is_turf", "depth"]
+         "neighbors", "nitty_bits", "is_turf", "depth", "text", "ascii"]
     )
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
@@ -347,6 +360,118 @@ export const extraFieldsEditor = ({ obj }) => {
                 </table>
             </fieldset>`
     }
+}
+
+// all of these characters are chosen to fit into one 16-bit "char"
+// so that I can be lazy about indexing into them
+const unicodeCharmap = "█◤▏◣◥▕◢⌜⌝⸝⸜⸍⸌┏┓┛┗◜◝◞◟┣┫┻┳╋┃━◇◆ʘ⸜"
+const nonAsciiCharmap = "$@\\^_{|}~\u007f"
+const unicodeCtrlmap = "␣↦↤↥↧⇄\n⇢⇠⇡⇣ꜜ◙☃⛇⧢"
+const ctrlCharDescriptions = [
+    "Half space",
+    "Increase pixel width",
+    "Decrease pixel width",
+    "Increase pixel height",
+    "Decrease pixel height",
+    "Toggle half-width",
+    null,
+    "Cursor right",
+    "Cursor left",
+    "Cursor up",
+    "Cursor down",
+    "Cursor half-down",
+    "Toggle inverse",
+    null,
+    null,
+    "Double space"
+]
+
+export const bytesToUnicode = (bytes) =>
+    bytes.map(b => {
+        if (b < 32) {
+            return unicodeCharmap[b]
+        }
+        if (b > 127 && b < (128 + ctrlCharDescriptions.length)) {
+            return unicodeCtrlmap[b - 128]
+        }
+        return String.fromCharCode(b)
+    }).join("")
+
+export const stringToBytes = (s) =>
+    s.split("")
+        .map(c => {
+            const byte = c.charCodeAt(0)
+            if (byte === 0x0a) {
+                return 128 + 6 // carriage return
+            } else if (byte > 255) {
+                for (let i = 0; i < unicodeCharmap.length; i ++) {
+                    if (byte === unicodeCharmap.charCodeAt(i)) {
+                        return i
+                    }
+                }
+                for (let i = 0; i < unicodeCtrlmap.length; i ++) {
+                    if (byte === unicodeCtrlmap.charCodeAt(i)) {
+                        return i + 128
+                    }
+                }
+                return 32
+            } else {
+                return byte
+            }
+        })
+
+export const textEditor = ({ obj, tracker }) => {
+    const mod = obj.mods[0]
+    const maxLength = mod.type === "Sign" ? 40 :
+                      mod.type === "Short_sign" ? 10 : 0
+    if (maxLength === 0) {
+        return null
+    }
+    const input = useRef(null)
+    const insert = c => {
+        input.current.setRangeText(c, input.current.selectionStart, input.current.selectionEnd, "end")
+        input.current.dispatchEvent(new InputEvent("input"))
+        input.current.focus()
+    }
+
+    const bytes = mod.text ? stringToBytes(mod.text) : mod.ascii
+    const text = bytesToUnicode(bytes)
+    const colors = { pixelHeight: 2, pattern: 0xaa }
+    return html`
+        <fieldset>
+            <legend>Text</legend>
+            <${Scale.Provider} value="1">
+                <div style="display: flex; gap: 2px; flex-wrap: wrap;">
+                    Control characters: 
+                    ${ctrlCharDescriptions.map((desc, i) => !desc ? null : html`
+                        <a href="javascript:;" title=${desc}
+                        onClick=${() => { insert(unicodeCtrlmap[i]) }}>
+                            ${unicodeCtrlmap[i]}
+                        </a>
+                    `)}
+                </div>
+                <div style="display: flex; gap: 2px; flex-wrap: wrap;">
+                    ${unicodeCharmap.split("").map((c, i) => html`
+                        <a href="javascript:;" onClick=${() => { insert(c) }}>
+                            <${charView} charset=${charset()} byte=${i} colors=${colors}/>
+                        </a>
+                    `)}
+                    ${nonAsciiCharmap.split("").map(c => html`
+                        <a href="javascript:;" onClick=${() => { insert(c) }}>
+                            <${charView} charset=${charset()} byte=${c.charCodeAt(0)} colors=${colors}/>
+                        </a>
+                    `)}
+                </div>
+                <textarea rows="6" cols="40" ref=${input} value=${text} maxLength=${maxLength} onInput=${e => {
+                    tracker.group(() => {
+                        if (mod.text) {
+                            delete mod.text
+                        }
+                        mod.ascii = stringToBytes(e.target.value)
+                    })
+                }}/>
+            <//>
+        </fieldset>`
 }
 
 export const randomSlug = () => {
@@ -509,6 +634,7 @@ export const propEditor = ({ objects, tracker }) => {
                 <${positionEditor} obj=${obj} regionRef=${regionRef} />
                 <${containerEditor} obj=${obj} objects=${objects}/>
                 <${orientationEditor} obj=${obj}/>
+                <${textEditor} obj=${obj} tracker=${tracker}/>
                 <${styleEditor} obj=${obj} objects=${objects}/>`
         } else if (obj.type === "context") {
             itemEditors = html`<${regionEditor} obj=${obj}/>`
@@ -620,7 +746,8 @@ export const registerKeyHandler = (document, tracker, selectionRef, objectList) 
         } else if (e.key === "Escape") {
             selectionRef.value = null
         } else if (e.key.startsWith("Arrow") && selectionRef.value !== null
-                   && !(e.target instanceof HTMLInputElement)) {
+                   && !(e.target instanceof HTMLInputElement)
+                   && !(e.target instanceof HTMLTextAreaElement)) {
             const obj = objectList.value.find(o => o.ref === selectionRef.value)
             if (obj && obj.type === "item") {
                 let dx = 0
