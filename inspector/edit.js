@@ -1,5 +1,5 @@
 import { createContext } from "preact"
-import { useContext, useState, useMemo, useRef } from "preact/hooks"
+import { useContext, useState, useMemo, useRef, useEffect } from "preact/hooks"
 import { signal } from "@preact/signals"
 import { html, catcher } from "./view.js"
 import { emptyBitmap } from "./codec.js"
@@ -364,41 +364,59 @@ export const extraFieldsEditor = ({ obj }) => {
 
 // all of these characters are chosen to fit into one 16-bit "char"
 // so that I can be lazy about indexing into them
-const unicodeCharmap = "█◤▏◣◥▕◢⌜⌝⸝⸜⸍⸌┏┓┛┗◜◝◞◟┣┫┻┳╋┃━◇◆ʘ⸜"
-const nonAsciiCharmap = "$@\\^_{|}~\u007f"
+const unicodeCharmap = "█◤▏◣◥▕◢◖◗⸝⸜⸍⸌┏┓┛┗◜◝◞◟┣┫┻┳╋┃━◇◆ʘ⸜"
 const unicodeCtrlmap = "␣↦↤↥↧⇄\n⇢⇠⇡⇣ꜜ◙☃⛇⧢"
 const ctrlCharDescriptions = [
-    "Half space",
-    "Increase pixel width",
-    "Decrease pixel width",
-    "Increase pixel height",
-    "Decrease pixel height",
-    "Toggle half-width",
+    ["Half space", "q"],
+    ["Increase pixel width", "."],
+    ["Decrease pixel width", ","],
+    ["Increase pixel height", "="],
+    ["Decrease pixel height", "-"],
+    ["Toggle half-width", "\\"],
     null,
-    "Cursor right",
-    "Cursor left",
-    "Cursor up",
-    "Cursor down",
-    "Cursor half-down",
-    "Toggle inverse",
+    ["Cursor right", "d"],
+    ["Cursor left", "a"],
+    ["Cursor up", "w"],
+    ["Cursor down", "s"],
+    ["Cursor half-down", "x"],
+    ["Toggle inverse", "/"],
     null,
     null,
-    "Double space"
+    ["Double space", "e"]
 ]
+// Because this is a real object, not indexed via charCodeAt(), we can use any
+// codepoint here
+const asciiReplacements = { 
+    "$": "$", "@": "@", "\\": "£", "^": "^", "_": "_", 
+    "{": "✓", "|": "🠝", "}": "🠟", "~": "🠜", "\u007f": "🠞"
+}
+
+const asciiToUnicode = (ascii) => 
+    Object.entries(asciiReplacements)
+        .reduce((s, [a, u]) => s.replaceAll(a, u), ascii)
+
+const unicodeToAscii = (unicode) =>
+    Object.entries(asciiReplacements)
+        .reduce((s, [a, u]) => s.replaceAll(u, a), unicode)
 
 export const bytesToUnicode = (bytes) =>
-    bytes.map(b => {
-        if (b < 32) {
-            return unicodeCharmap[b]
-        }
-        if (b > 127 && b < (128 + ctrlCharDescriptions.length)) {
-            return unicodeCtrlmap[b - 128]
-        }
-        return String.fromCharCode(b)
-    }).join("")
-
+    asciiToUnicode(
+        bytes
+            .map(b => {
+                if (b < 32) {
+                    return unicodeCharmap[b]
+                }
+                if (b > 127 && b < (128 + ctrlCharDescriptions.length)) {
+                    return unicodeCtrlmap[b - 128]
+                }
+                return String.fromCharCode(b)
+            })
+            .join("")
+    )
+    
 export const stringToBytes = (s) =>
-    s.split("")
+    unicodeToAscii(s)
+        .split("")
         .map(c => {
             const byte = c.charCodeAt(0)
             if (byte === 0x0a) {
@@ -436,6 +454,12 @@ export const textEditor = ({ obj, tracker }) => {
 
     const bytes = (mod.text ? stringToBytes(mod.text) : mod.ascii) ?? []
     const text = bytesToUnicode(bytes)
+
+    const [[selectionStart, selectionEnd], setCursor] = useState([0, 0])
+    useEffect(() => {
+        input.current?.setSelectionRange(selectionStart, selectionEnd)
+    }, [input, selectionStart, selectionEnd, text])
+
     const colors = { pixelHeight: 2, pattern: 0xaa }
     return html`
         <fieldset>
@@ -444,7 +468,7 @@ export const textEditor = ({ obj, tracker }) => {
                 <div style="display: flex; gap: 2px; flex-wrap: wrap;">
                     Control characters: 
                     ${ctrlCharDescriptions.map((desc, i) => !desc ? null : html`
-                        <a href="javascript:;" title=${desc}
+                        <a href="javascript:;" title="${desc[0]} (Alt-${desc[1]})"
                         onClick=${() => { insert(unicodeCtrlmap[i]) }}>
                             ${unicodeCtrlmap[i]}
                         </a>
@@ -456,7 +480,7 @@ export const textEditor = ({ obj, tracker }) => {
                             <${charView} charset=${charset()} byte=${i} colors=${colors}/>
                         </a>
                     `)}
-                    ${nonAsciiCharmap.split("").map(c => html`
+                    ${Object.keys(asciiReplacements).map(c => html`
                         <a href="javascript:;" onClick=${() => { insert(c) }}>
                             <${charView} charset=${charset()} byte=${c.charCodeAt(0)} colors=${colors}/>
                         </a>
@@ -464,12 +488,24 @@ export const textEditor = ({ obj, tracker }) => {
                 </div>
                 <textarea style="font-size: 18px;" rows="6" cols="40" 
                     ref=${input} value=${text} maxLength=${maxLength} onInput=${e => {
+                        const selectionDelta = e.data ? asciiToUnicode(e.data).length - e.data.length : 0
+                        setCursor([e.target.selectionStart + selectionDelta, e.target.selectionEnd + selectionDelta])
                         tracker.group(() => {
                             if (mod.text) {
                                 delete mod.text
                             }
                             mod.ascii = stringToBytes(e.target.value)
                         })
+                    }} onkeydown=${e => {
+                        if (e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                            for (const [i, desc] of ctrlCharDescriptions.entries()) {
+                                if (desc && desc[1] === e.key) {
+                                    insert(unicodeCtrlmap[i])
+                                    e.preventDefault()
+                                    return
+                                }
+                            }
+                        }
                     }}/>
             <//>
         </fieldset>`
