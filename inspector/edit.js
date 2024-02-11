@@ -491,7 +491,7 @@ export const textEditor = ({ obj, tracker }) => {
                         const selectionDelta = e.data ? asciiToUnicode(e.data).length - e.data.length : 0
                         setCursor([e.target.selectionStart + selectionDelta, e.target.selectionEnd + selectionDelta])
                         tracker.group(() => {
-                            if (mod.text) {
+                            if (mod.text !== undefined) {
                                 delete mod.text
                             }
                             mod.ascii = stringToBytes(e.target.value)
