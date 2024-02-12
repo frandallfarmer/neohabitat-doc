@@ -448,7 +448,7 @@ export const textEditor = ({ obj, tracker }) => {
     const input = useRef(null)
     const insert = c => {
         input.current.setRangeText(c, input.current.selectionStart, input.current.selectionEnd, "end")
-        input.current.dispatchEvent(new InputEvent("input"))
+        input.current.dispatchEvent(new InputEvent("input", { data: c }))
         input.current.focus()
     }
 
@@ -487,14 +487,18 @@ export const textEditor = ({ obj, tracker }) => {
                     `)}
                 </div>
                 <textarea style="font-size: 18px;" rows="6" cols="40" 
-                    ref=${input} value=${text} maxLength=${maxLength} onInput=${e => {
+                    ref=${input} value=${text} onInput=${e => {
                         const selectionDelta = e.data ? asciiToUnicode(e.data).length - e.data.length : 0
                         setCursor([e.target.selectionStart + selectionDelta, e.target.selectionEnd + selectionDelta])
                         tracker.group(() => {
                             if (mod.text !== undefined) {
                                 delete mod.text
                             }
-                            mod.ascii = stringToBytes(e.target.value)
+                            const bytes = stringToBytes(e.target.value)
+                            if (bytes.length > maxLength) {
+                                bytes.length = maxLength
+                            }
+                            mod.ascii = bytes
                         })
                     }} onkeydown=${e => {
                         if (e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
@@ -506,7 +510,7 @@ export const textEditor = ({ obj, tracker }) => {
                                 }
                             }
                         }
-                    }}/>
+                    }}/> ${bytes.length} / ${maxLength}
             <//>
         </fieldset>`
 }
