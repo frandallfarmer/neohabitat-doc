@@ -176,7 +176,7 @@ export const trapezoidEditListener = ({ sig, place, key }) => {
     const trapKeys = new Set(["upper_left_x", "upper_right_x", "lower_left_x", "lower_right_x", 
                               "height", "pattern_x_size", "pattern_y_size"])
     const trapClasses = new Set(["Trapezoid", "Super_trapezoid"])
-    const isEditingTrap = trapClasses.has(sig.value.mods[0].type) && (place.length >= 2 && place[0] === "mods" && place[1] === "0")
+    const isEditingTrap = place.length >= 2 && place[0] === "mods" && place[1] === "0" && trapClasses.has(sig.value.mods[0].type)
     const isEditingTexture = isEditingTrap && place.length === 3 && place[2] === "pattern"
     const isEditingTrapKey = isEditingTrap && place.length === 2 && trapKeys.has(key)
 
@@ -597,7 +597,7 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
 export const trapezoidEditor = ({ obj, tracker }) => {
     const mod = obj.mods[0]
     if (mod.type === "Super_trapezoid") {
-        const colors = useMemo(() => colorsFromOrientation(mod.orientation), [mod.orientation])
+        const colors = useMemo(() => ({ ...colorsFromOrientation(mod.orientation), pattern: 15 }), [mod.orientation])
         const w = mod.pattern_x_size + 1
         const h = mod.pattern_y_size + 1
         const bitmap = useMemo(() => trapTextureToBitmap(w, h, (i) => mod.pattern[i]), [mod.pattern])

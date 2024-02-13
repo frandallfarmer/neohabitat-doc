@@ -22,7 +22,7 @@
             import { html, errors } from "./view.js"
             import { useHabitatJson, errorBucket, until } from "./data.js"
             import { regionView } from "./region.js"
-            import { navigationView } from "./navigate.js"
+            import { navigationView, regionSearch } from "./navigate.js"
             import { parseHabitatRegion } from "./neohabitat.js"
             import { selectionInteraction, propEditor, depthEditor, objectPanel, createEditTracker, 
                      Selection, registerKeyHandler, trapezoidEditListener } from "./edit.js"
@@ -34,10 +34,20 @@
             const tracker = createEditTracker()
             tracker.registerListener(trapezoidEditListener)
             
-            const objectList = signal(
-                (await until(() => useHabitatJson(filename), o => o.length > 0))
-                    .map(o => tracker.trackSignal(signal(o))))
+            const objectList = signal([])
             
+            const replaceObjectList = (objects) => {
+                tracker.change(objectList, [], 0, 
+                               objects.map(o => tracker.trackSignal(signal(o))), 
+                               objectList.value.length)
+            }
+            const loadUrl = async (filename) => {
+                replaceObjectList(await until(() => useHabitatJson(filename), o => o.length > 0))
+            }
+
+            await loadUrl(filename)
+            tracker.editHistory.length = 0
+
             const selectionRef = signal(null)
             registerKeyHandler(document, tracker, selectionRef, objectList)
 
@@ -69,10 +79,7 @@
                                         if (e.target.files.length > 0) {
                                             (async (file) => {
                                                 try {
-                                                    tracker.change(objectList, [], 0, 
-                                                                   parseHabitatRegion(await file.text())
-                                                                       .map(o => tracker.trackSignal(signal(o))), 
-                                                                   objectList.value.length)
+                                                    replaceObjectList(parseHabitatRegion(await file.text()))
                                                 } catch (e) {
                                                     console.error(e)
                                                     alert(`Failed to parse JSON: ${e}`)
@@ -97,6 +104,9 @@
                                     : null}
                             </div>
                             <${objectPanel} objectList=${objectList} tracker=${tracker}/>
+                            <${regionSearch} label="Replace with region" 
+                                onSelected=${({ filename }) => { loadUrl(filename) }}
+                            />
                         </div>
                     </div>
                     <${jsonDump} heading=${html`Region JSON (<${jsonDownload} value=${objectList.value}>Download<//>)`} 
