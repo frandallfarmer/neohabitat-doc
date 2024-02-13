@@ -39,18 +39,39 @@ export const defaultColors = {
     pattern: 15
 }
 
-export const canvasFromBitmap = (bitmap, colors = {}) => {
+export const rgbaFromNibble = (nibble, x, y, colors) => {
+    const { wildcard, pattern, skin } = colors
+    const patternColors = [6, wildcard, 0, skin]
+    // TODO: What is pattern 255?
+    const patbyte = celPatterns[pattern < 0 || pattern > 15 ? 15 : pattern][y % 4]
+    let color
+    if (nibble == 0) { // transparent
+        return 0
+    } else if (nibble == 1) { // wild
+        const shift = (x % 4) * 2
+        color = patternColors[(patbyte & (0xc0 >> shift)) >> (6 - shift)]
+    } else {
+        color = patternColors[nibble]
+    }
+    return (c64Colors[color] << 8) | 0xff
+}
+
+export const canvasFromBitmap = (bitmap, colors = {}, canvas = null) => {
     if (bitmap.length == 0 || bitmap[0].length == 0) {
         return null
     }
-    const { wildcard, pattern, skin } = { ...defaultColors, ...colors }
-    const patternColors = [6, wildcard, 0, skin]
+    colors = { ...defaultColors, ...colors }
     const h = bitmap.length
     const w = bitmap[0].length * 2
-    const canvas = makeCanvas(w, h)
+    if (canvas) {
+        canvas.width = w
+        canvas.height = h
+    } else {
+        canvas = makeCanvas(w, h)
+    }
     const ctx = canvas.getContext("2d")
     const img = ctx.createImageData(w, h)
-
+    
     const putpixel = (x, y, r, g, b, a) => {
         const i = (x * 8) + (y * w * 4)
         img.data[i]     = r
@@ -65,23 +86,9 @@ export const canvasFromBitmap = (bitmap, colors = {}) => {
 
     for (let y = 0; y < bitmap.length; y ++) {
         const line = bitmap[y]
-        // TODO: What is pattern 255?
-        const patbyte = celPatterns[pattern < 0 || pattern > 15 ? 15 : pattern][y % 4]
         for (let x = 0; x < line.length; x ++) {
-            const pixel = line[x]
-            let color = null
-            if (pixel == 0) { // transparent
-                putpixel(x, y, 0, 0, 0, 0)
-            } else if (pixel == 1) { // wild
-                const shift = (x % 4) * 2
-                color = patternColors[(patbyte & (0xc0 >> shift)) >> (6 - shift)]
-            } else {
-                color = patternColors[pixel]
-            }
-            if (color != null) {
-                const rgb = c64Colors[color]
-                putpixel(x, y, (rgb & 0xff0000) >> 16, (rgb & 0xff00) >> 8, rgb & 0xff, 0xff)
-            }
+            const rgba = rgbaFromNibble(line[x], x, y, colors)
+            putpixel(x, y, ((rgba & 0xff000000) >> 24) & 0xff, (rgba & 0xff0000) >> 16, (rgba & 0xff00) >> 8, rgba & 0xff)
         }
     }
     ctx.putImageData(img, 0, 0)

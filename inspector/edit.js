@@ -1,9 +1,9 @@
 import { createContext } from "preact"
-import { useContext, useState, useMemo, useRef, useEffect } from "preact/hooks"
+import { useContext, useState, useMemo, useRef, useEffect, useLayoutEffect, useCallback } from "preact/hooks"
 import { signal } from "@preact/signals"
 import { html, catcher } from "./view.js"
-import { emptyBitmap } from "./codec.js"
-import { c64Colors, canvasFromBitmap, canvasImage, Scale } from "./render.js"
+import { emptyBitmap, trapTextureToBitmap } from "./codec.js"
+import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale } from "./render.js"
 import { colorsFromOrientation, joinReplacements } from "./neohabitat.js"
 import { jsonDump, charView } from "./show.js"
 import { useJson, charset } from "./data.js"
@@ -97,6 +97,7 @@ export const createEditTracker = () => {
             const splicing = edit.splicing === null ? null : edit.value.length
             performEdit(edit.sig, edit.place, edit.key, edit.previous, splicing, toHistory)
         }
+        commitGroup()
     }
     
     const redo = () => undo(redoHistory, editHistory)
@@ -173,10 +174,13 @@ export const createEditTracker = () => {
 
 export const trapezoidEditListener = ({ sig, place, key }) => {
     const trapKeys = new Set(["upper_left_x", "upper_right_x", "lower_left_x", "lower_right_x", 
-                              "height", "pattern", "pattern_x_size", "pattern_y_size"])
+                              "height", "pattern_x_size", "pattern_y_size"])
     const trapClasses = new Set(["Trapezoid", "Super_trapezoid"])
-    if (trapKeys.has(key) && place[0] === "mods" && place[1] === "0" && place.length === 2 && 
-        trapClasses.has(sig.value.mods[0].type)) {
+    const isEditingTrap = trapClasses.has(sig.value.mods[0].type) && (place.length >= 2 && place[0] === "mods" && place[1] === "0")
+    const isEditingTexture = isEditingTrap && place.length === 3 && place[2] === "pattern"
+    const isEditingTrapKey = isEditingTrap && place.length === 2 && trapKeys.has(key)
+
+    if (isEditingTexture || isEditingTrapKey) {
         trapCache[sig.value.ref] = null
     }
 }
@@ -342,7 +346,7 @@ export const fieldEditor = ({ field, obj, defaultValue }) => {
 export const extraFieldsEditor = ({ obj }) => {
     const handledFields = new Set(
         ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
-         "neighbors", "nitty_bits", "is_turf", "depth", "text", "ascii"]
+         "neighbors", "nitty_bits", "is_turf", "depth", "text", "ascii", "pattern"]
     )
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
@@ -515,6 +519,106 @@ export const textEditor = ({ obj, tracker }) => {
         </fieldset>`
 }
 
+export const bitmapEditor = ({ colors, bitmap, onChange }) => {
+    const scale = 8
+    colors = useMemo(() => ({ ...defaultColors, ...(colors ?? {}) }), [colors])
+    // const bitmap = useMemo(() => getInitialBitmap(), [getInitialBitmap])
+    const [selectedColor, setSelectedColor] = useState(0)
+
+    const changeCollector = useRef({ drawing: false, changes: [] }).current
+    const canvasRef = useRef(null)
+    const putpixel = useCallback((mouseEvent) => {
+        if (mouseEvent.type === "mousedown" && mouseEvent.button === 0) {
+            changeCollector.drawing = true
+        }
+        if (!changeCollector.drawing) {
+            return
+        }
+        let newPixel = true
+        const x = Math.floor(mouseEvent.offsetX / (scale * 2))
+        const y = Math.floor(mouseEvent.offsetY / scale)
+        if (changeCollector.changes.length > 0) {
+            const prevChange = changeCollector.changes[changeCollector.changes.length - 1]
+            if (prevChange.x === x && prevChange.y === y && prevChange.color === selectedColor) {
+                newPixel = false
+            }
+        }
+        if (newPixel) {
+            changeCollector.changes.push({x, y, color: selectedColor})
+            bitmap[y][x] = selectedColor
+            const rgba = rgbaFromNibble(selectedColor, x, y, colors)
+    
+            // plot the pixel on the canvas
+            const ctx = canvasRef.current.getContext("2d")
+            if ((rgba & 0xff) !== 0) {
+                ctx.fillStyle = `rgba(${((rgba & 0xff000000) >> 24) & 0xff} ` +
+                                     `${(rgba & 0xff0000) >> 16} ` +
+                                     `${(rgba & 0xff00) >> 8})`
+                ctx.fillRect(x * scale * 2, y * scale, scale * 2, scale)    
+            } else {
+                ctx.clearRect(x * scale * 2, y * scale, scale * 2, scale)
+            }
+        }
+        
+        if (mouseEvent.type === "mouseup") {
+            onChange(changeCollector.changes)
+            changeCollector.changes.length = 0
+            changeCollector.drawing = false
+        }
+    })
+    
+    useLayoutEffect(() => {
+        const canvas = canvasFromBitmap(bitmap, colors)
+        const ctx = canvasRef.current.getContext("2d")
+        ctx.imageSmoothingEnabled = false
+        ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 
+                              0, 0, canvasRef.current.width, canvasRef.current.height)
+    }, [bitmap, colors, scale])
+
+    return html`
+        <div style="display: flex; flex-wrap: wrap; align-items: center;">
+            <div style="display: flex;">
+                <${Scale.Provider} value="3">
+                    ${[0, 1, 2, 3].map(nibble => html`
+                        <div style="width: ${16 * 3}px; height: ${16 * 3}px; margin: 2px;
+                                    border: 4px dotted ${selectedColor === nibble ? " black" : "transparent"};"
+                            onclick=${() => { setSelectedColor(nibble) }}>
+                            <${canvasImage} canvas=${canvasFromBitmap(emptyBitmap(2, 16, nibble), colors)}/>
+                        </div>`)}
+                <//>
+            </div>
+            <canvas style=${scale > 1 ? "image-rendering: pixelated;" : ""}
+                    width="${scale * (bitmap[0].length * 2)}px" height="${scale * bitmap.length}px"
+                    ref=${canvasRef}
+                    onMouseDown=${putpixel} onMouseMove=${putpixel} onMouseUp=${putpixel}/>
+        </div>`
+}
+
+export const trapezoidEditor = ({ obj, tracker }) => {
+    const mod = obj.mods[0]
+    if (mod.type === "Super_trapezoid") {
+        const colors = useMemo(() => colorsFromOrientation(mod.orientation), [mod.orientation])
+        const w = mod.pattern_x_size + 1
+        const h = mod.pattern_y_size + 1
+        const bitmap = useMemo(() => trapTextureToBitmap(w, h, (i) => mod.pattern[i]), [mod.pattern])
+        const onChange = useCallback(changes => {
+            tracker.group(() => {
+                for (const change of changes) {
+                    const ibyte = Math.floor(change.x / 4) + (change.y * w)
+                    const shift = (3 - (change.x % 4)) * 2
+                    const byte = mod.pattern[ibyte] & ~(0x03 << shift) | (change.color << shift)
+                    mod.pattern[ibyte] = byte
+                }
+            })
+        })
+        return html`
+            <fieldset>
+                <legend>Trapezoid</legend>
+                <div>Texture</div>
+                <${bitmapEditor} bitmap=${bitmap} onChange=${onChange} colors=${colors}/>
+            </fieldset>`
+    }
+}
 export const randomSlug = () => {
     const validChars = "0123456789abcdefghijklmnopqrstuvwxyz"
     const genChar = () => validChars[Math.floor(Math.random() * validChars.length)]
@@ -675,6 +779,7 @@ export const propEditor = ({ objects, tracker }) => {
                 <${positionEditor} obj=${obj} regionRef=${regionRef} />
                 <${containerEditor} obj=${obj} objects=${objects}/>
                 <${orientationEditor} obj=${obj}/>
+                <${trapezoidEditor} obj=${obj} tracker=${tracker}/>
                 <${textEditor} obj=${obj} tracker=${tracker}/>
                 <${styleEditor} obj=${obj} objects=${objects}/>`
         } else if (obj.type === "context") {

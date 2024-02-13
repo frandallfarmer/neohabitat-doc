@@ -186,6 +186,21 @@ export const horizontalLine = (bitmap, xa, xb, y, patternByte) => {
     }
 }
 
+export const trapTextureToBitmap = (texW, texH, getByte) => {
+    const texture = emptyBitmap(texW, texH)
+    let i = 0
+    // dline.m:111 - the y position into the texture is calculated by
+    // ANDing y1 with the height mask; thus, unlike prop bitmaps, we decode
+    // from the top down
+    for (let y = 0; y < texH; y ++) {
+        for (let x = 0; x < texW; x ++) {
+            drawByte(texture, x * 4, y, getByte(i))
+            i ++
+        }
+    }
+    return texture
+}
+
 celDecoder.trap = (data, cel) => {
     cel.border = false
     // trap.m:21 - high-bit set means "draw a border"
@@ -211,17 +226,7 @@ celDecoder.trap = (data, cel) => {
         // two, and we can get the width and height simply by adding one to the mask.
         const texW = data.getUint8(11) + 1
         const texH = data.getUint8(12) + 1
-        cel.texture = emptyBitmap(texW, texH)
-        let i = 13
-        // dline.m:111 - the y position into the texture is calculated by
-        // ANDing y1 with the height mask; thus, unlike prop bitmaps, we decode
-        // from the top down
-        for (let y = 0; y < texH; y ++) {
-            for (let x = 0; x < texW; x ++) {
-                drawByte(cel.texture, x * 4, y, data.getUint8(i))
-                i ++
-            }
-        }
+        cel.texture = trapTextureToBitmap(texW, texH, i => data.getUint8(13 + i))
     }
 
     cel.raw = {
