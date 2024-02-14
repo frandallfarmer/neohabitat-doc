@@ -480,6 +480,7 @@ export const framesFromAction = (action, body, options = {}) => {
     const limbOrder = orientation == "front" ? body.frontFacingLimbOrder :
                       orientation == "back"  ? body.backFacingLimbOrder : 
                       null // side animations are always displayed in standard limb order
+    const limbPatterns = options.limbPatterns ?? []
     for (const limb of body.limbs) {
         if (limb.animations.length > 0) {
             animations.push({ ...limb.animations[0] })
@@ -495,7 +496,7 @@ export const framesFromAction = (action, body, options = {}) => {
     }
     while (true) {
         const cels = []
-        // const celColors = []
+        const celColors = []
         let restartedCount = 0
         for (const [ilimb, limb] of body.limbs.entries()) {
             const animation = animations[ilimb]
@@ -515,12 +516,12 @@ export const framesFromAction = (action, body, options = {}) => {
                 cels.push(null)
             }
             // limb.pattern is not a pattern index, it's a LIMB pattern index
-            // celColors.push({ pattern: limb.pattern })
+            celColors[ilimb] = {...(options.colors ?? {}), pattern: limbPatterns[limb.pattern] ?? 15 }
         }
         if (restartedCount == animations.length) {
             break
         }
-        frames.push(frameFromCels(cels, {...options, paintOrder: limbOrder, firstCelOrigin: false }))
+        frames.push(frameFromCels(cels, {...options, colors: celColors, paintOrder: limbOrder, firstCelOrigin: false }))
     }
     return frames
 }

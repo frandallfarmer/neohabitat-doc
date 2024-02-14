@@ -17,10 +17,15 @@
         </script>
         <script type="module">
             import { render } from "preact"
+            import { signal } from "@preact/signals"
             import { html, catcher, errors } from "./view.js"
             import { decodeBody, choreographyActions } from "./codec.js"
             import { useBinary } from "./data.js"
             import { actionAnimation, limbAnimation, celImage, jsonDump, viewList } from "./show.js"
+            import { patternSelector } from "./edit.js"
+
+            const limbPatterns = signal([0, 0, 0, 0])
+            const limbPatternNames = ["Leg", "Torso", "Arm", "Face"]
 
             const limbNames = ["legs", "legs2", "left arm", "torso", "face", "right arm"]
             const limbViews = ({ body, field, f }) => html`
@@ -36,13 +41,20 @@
                         if (action == "stand" || body.actions[action] != body.actions["stand"]) {
                             return html`
                                 <h5>${action}</h5>
-                                <${actionAnimation} body=${body} action=${action}/>`
+                                <${actionAnimation} body=${body} action=${action} limbPatterns=${limbPatterns.value}/>`
                         }
                     })}
                 <//>
+                <h2>Customize</h2>
+                ${limbPatternNames.map((limb, ilimb) => html`
+                    <div>${limb} pattern</div>
+                    <${patternSelector} selected=${limbPatterns.value[ilimb]}
+                        onSelected=${(pattern) => { limbPatterns.value = limbPatterns.value.with(ilimb, pattern) }}/>
+                `)}
                 <h2>Limbs</h2>
                 <${limbViews} body=${body} field="animations" 
-                    f=${(a, limb) => html`<${limbAnimation} limb=${limb} animation=${a}/>`}/>
+                    f=${(a, limb) => html`
+                        <${limbAnimation} limb=${limb} animation=${a} colors=${{ pattern: limbPatterns.value[limb.pattern] }}/>`}/>
                 <h2>Cels</h1>
                 <${limbViews} body=${body} field="cels" 
                     f=${cel => html`<${celImage} cel=${cel}/>`}/>

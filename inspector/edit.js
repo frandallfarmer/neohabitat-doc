@@ -238,6 +238,28 @@ export const positionEditor = ({ obj, regionRef }) => {
         </fieldset>`
 }
 
+export const patternSelector = ({ selected, onSelected }) => html`
+    <div style="display: flex">
+        ${[...Array(15).keys()].map((ipattern) => html`
+            <div key=${`pattern${ipattern}`}
+                style="width: 48px; height: 48px; margin: 2px;
+                        border: 4px dotted ${selected === ipattern ? " black" : "transparent"};"
+                onclick=${() => onSelected(ipattern)}>
+                <${canvasImage} canvas=${canvasFromBitmap(emptyBitmap(2, 16, 1), { pattern: ipattern })}/>
+            </div>`)}
+    </div>`
+
+export const colorSelector = ({ selected, onSelected }) => html`
+    <div style="display: flex">
+        ${c64Colors.map((color, icolor) => html`
+            <div key=${`color${icolor}`} 
+                style="width: 48px; height: 48px; margin: 2px;
+                        border: 4px dotted ${selected === icolor ? " black" : "transparent"};"
+                onclick=${() => onSelected(icolor)}>
+                <div style="background-color: #${color.toString(16).padStart(6, "0")}; width: 100%; height: 100%;"/>
+            </div>`)}
+    </div>`
+
 export const orientationEditor = ({ obj }) => {
     const mod = obj.mods[0]
     // color, pattern, flip
@@ -246,24 +268,12 @@ export const orientationEditor = ({ obj }) => {
     return html`
         <fieldset>
             <legend>Orientation</legend>
-            <div style="display: flex">
-                ${c64Colors.map((color, icolor) => html`
-                    <div key=${`color${icolor}`} 
-                        style="width: 48px; height: 48px; margin: 2px;
-                                border: 4px dotted ${colors.wildcard === icolor ? " black" : "transparent"};"
-                        onclick=${() => { mod.orientation = (mod.orientation & 0x07) | 0x80 | (icolor << 3) }}>
-                        <div style="background-color: #${color.toString(16).padStart(6, "0")}; width: 100%; height: 100%;"/>
-                    </div>`)}
-            </div>
-            <div style="display: flex">
-                ${[...Array(15).keys()].map((ipattern) => html`
-                    <div key=${`pattern${ipattern}`}
-                        style="width: 48px; height: 48px; margin: 2px;
-                                border: 4px dotted ${colors.pattern === ipattern ? " black" : "transparent"};"
-                        onclick=${() => { mod.orientation = (mod.orientation & 0x07) | (ipattern << 3) }}>
-                        <${canvasImage} canvas=${canvasFromBitmap(emptyBitmap(2, 16, 1), { pattern: ipattern })}/>
-                    </div>`)}
-            </div>
+            <${colorSelector}
+                selected=${colors.wildcard}
+                onSelected=${icolor => { mod.orientation = (mod.orientation & 0x07) | 0x80 | (icolor << 3) }}/>
+            <${patternSelector} 
+                selected=${colors.pattern}
+                onSelected=${ipattern => { mod.orientation = (mod.orientation & 0x07) | (ipattern << 3) }}/>
             <div>
                 <label>
                     <input type="checkbox" checked=${flipped}
