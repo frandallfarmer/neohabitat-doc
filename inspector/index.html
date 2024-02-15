@@ -23,6 +23,7 @@
             import { html, errors } from "./view.js"
 
             const indexView = (_) => html`
+                <a name="regions"></a>
                 <h3>Region Gallery</h3>
                 <p>
                 A small, arbitrary selection of interesting areas to explore in Neohabitat. Click any one of these to 
@@ -34,19 +35,24 @@
                     <${regionSearch} label="Region search" 
                             onSelected=${({ filename }) => { window.location = `region.html?f=${filename}` }}/>
                 </p>
+                <a name="avatars"></a>
                 <h3>Avatars</h3>
                 <${fileList} indexFile="bodies.json" childView=${bodyView} href="body.html"/>
+                <a name="heads"></a>
                 <h3>The Hall of Heads</h3>
                 <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Heads">aric/mic/Gr/Heads</a></p>
                 <${fileList} indexFile="heads.json" childView=${propView} href="detail.html"/>
                 <p>More heads from: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/sources/c64/Images">sources/c64/Images</a></p>
                 <${fileList} indexFile="misc.json" childView=${propView} href="detail.html"/>
+                <a name="props"></a>
                 <h3>Props</h3>
                 <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/aric/mic/Gr/Props">aric/mic/Gr/Props</a></p>
                 <${fileList} indexFile="props.json" childView=${propView} href="detail.html"/>
+                <a name="beta"></a>
                 <h3>Beta-only</h3>
                 <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/tree/master/habitat/Beta/Images">habitat/Beta/Images</a></p>
                 <${fileList} indexFile="beta.json" childView=${propView} href="detail.html"/>
+                <a name="charset"></a>
                 <h3>Character set</h3>
                 <p>From: <a href="https://github.com/Museum-of-Art-and-Digital-Entertainment/habitat/blob/master/sources/c64/charset.m">sources/c64/charset.m</a></p>
                 <h4>Full size:</h4>
@@ -59,7 +65,19 @@
         </script>
     </head>
     <body>
-        <h1>Habitat Inspector - Art Catalogue</h1>
+        <h1>Habitat Inspector - Art Catalogue</h1>        
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#regions">Region Gallery</a></li>
+            <li><a href="#avatars">Avatars</a></li>
+            <li><a href="#heads">Heads</a></li>
+            <li><a href="#props">Props</a></li>
+            <li><a href="#beta">Beta-only items</a></li>
+            <li><a href="#charset">Character set</a></li>
+        </ul>
+        <a name="intro"></a>
+        <h3>Introduction</h3>
         <p>
             You are looking at a collection of object graphics from
             <a href="https://frandallfarmer.github.io/neohabitat-doc/docs/">Lucasfilm Games' Habitat</a>. These images are
