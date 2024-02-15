@@ -18,10 +18,14 @@
         <script type="module">
             // import "https://esm.sh/*preact/devtools"
             import { render } from "preact"
-            import { propView, bodyView, fileList, charsetView } from "./index.js"
+            import { propView, bodyView, fileList, charsetView, regionGallery } from "./index.js"
             import { html, errors } from "./view.js"
 
             const indexView = (_) => html`
+                <h3>Region Gallery</h3>
+                A small, arbitrary selection of interesting areas to explore in Neohabitat. Click any one of these to 
+                see more details about how the regions are constructed, and to easily navigate to other nearby regions.
+                <${regionGallery}/>
                 <h3>Avatars</h3>
                 <${fileList} indexFile="bodies.json" childView=${bodyView} href="body.html"/>
                 <h3>The Hall of Heads</h3>

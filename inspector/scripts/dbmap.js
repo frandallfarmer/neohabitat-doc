@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises'
 import process from 'process'
-import { parse } from '../mudparse.js'
 import { parseHabitatObject, javaTypeToMuddleClass } from "../neohabitat.js"
 
 async function* allNeohabitatObjects(directory = ".") {
@@ -19,6 +18,8 @@ async function* allNeohabitatObjects(directory = ".") {
 
 process.chdir(`${import.meta.dirname}/../db`)
 const refToNeighbors = {}
+const galleryRefs = []
+
 for await (const obj of allNeohabitatObjects()) {
     if (obj.type == "context" && obj.mods && obj.mods[0].neighbors) {
         refToNeighbors[obj.ref] = [obj.mods[0].orientation, ...obj.mods[0].neighbors]
@@ -32,7 +33,10 @@ for await (const obj of allNeohabitatObjects()) {
             neighborlist.push({})
         }
         neighborlist[5][obj.ref] = obj.mods[0].connection
+    } else if (obj.type === "item" && obj.mods && obj.mods[0].type === "Teleport" && !obj.in.match(/_\d+$|_cross$|_end$/)) {
+        galleryRefs.push(obj.in)
     }
 }
 
 await fs.writeFile("neighbormap.json", JSON.stringify(refToNeighbors))
+await fs.writeFile("../region_gallery.json", JSON.stringify(galleryRefs))

@@ -1,9 +1,9 @@
-import { useMemo } from "preact/hooks"
-import { useBinary, useJson, charset } from "./data.js"
+import { useBinary, useJson, charset, contextMap } from "./data.js"
 import { decodeProp, decodeBody } from "./codec.js"
 import { html, catcher } from "./view.js"
-import { bitmapFromChar, canvasFromBitmap, canvasImage } from "./render.js"
+import { Scale } from "./render.js"
 import { propAnimation, celmaskImage, actionAnimation, charView } from "./show.js"
+import { regionImageView } from "./region.js"
 
 export const propView = ({ filename }) => {
     if (filename == 'heads/fhead.bin') {
@@ -64,4 +64,25 @@ export const charsetView = ({ colors }) => {
         <table>
             ${rows}
         </table>`
+}
+
+const regionPreview = ({ id }) => {
+    const ctx = contextMap()[id]
+    if (ctx) {
+        return html`
+            <a href="region.html?f=${ctx.filename}">
+                <${regionImageView} filename=${ctx.filename}/>
+                <div>${ctx.name}</div>
+            </a>`
+    }
+}
+
+export const regionGallery = () => {
+    const regionRefs = useJson("region_gallery.json", [])
+    return html`
+        <${Scale.Provider} value="1">
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                ${regionRefs.map(ref => html`<${regionPreview} id=${ref}/>`)}
+            </div>
+        <//>`
 }
