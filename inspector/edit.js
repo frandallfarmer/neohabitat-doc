@@ -537,17 +537,18 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
 
     const changeCollector = useRef({ drawing: false, changes: [] }).current
     const canvasRef = useRef(null)
-    const putpixel = useCallback((mouseEvent) => {
-        if (mouseEvent.type === "mousedown" && mouseEvent.button === 0) {
+    const putpixel = useCallback((e) => {
+        if (e.type === "pointerdown" && e.isPrimary) {
             changeCollector.drawing = true
+            e.target.setPointerCapture(e.pointerId)
         }
         if (!changeCollector.drawing) {
             return
         }
-        let newPixel = true
-        const x = Math.floor(mouseEvent.offsetX / (scale * 2))
-        const y = Math.floor(mouseEvent.offsetY / scale)
-        if (changeCollector.changes.length > 0) {
+        const x = Math.floor(e.offsetX / (scale * 2))
+        const y = Math.floor(e.offsetY / scale)
+        let newPixel = x >= 0 && x < bitmap[0].length && y >= 0 && y < bitmap.length
+        if (newPixel && changeCollector.changes.length > 0) {
             const prevChange = changeCollector.changes[changeCollector.changes.length - 1]
             if (prevChange.x === x && prevChange.y === y && prevChange.color === selectedColor) {
                 newPixel = false
@@ -570,7 +571,7 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
             }
         }
         
-        if (mouseEvent.type === "mouseup") {
+        if (e.type === "pointerup") {
             onChange(changeCollector.changes)
             changeCollector.changes.length = 0
             changeCollector.drawing = false
@@ -600,7 +601,7 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
             <canvas style=${scale > 1 ? "image-rendering: pixelated;" : ""}
                     width="${scale * (bitmap[0].length * 2)}px" height="${scale * bitmap.length}px"
                     ref=${canvasRef}
-                    onMouseDown=${putpixel} onMouseMove=${putpixel} onMouseUp=${putpixel}/>
+                    onPointerDown=${putpixel} onPointerMove=${putpixel} onPointerUp=${putpixel}/>
         </div>`
 }
 
