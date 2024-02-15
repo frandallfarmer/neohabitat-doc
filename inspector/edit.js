@@ -324,19 +324,52 @@ export const styleEditor = ({ obj, objects }) => {
         </fieldset>`
 }
 
-export const containerEditor = ({ objects, obj }) => {
+export const containerEditor = ({ objects, obj, tracker }) => {
     const selectionRef = useContext(Selection)
-    const items = objects.filter(o => o.in === obj.ref).sort((o1, o2) => o1.y - o2.y)
+    const regionRef = objects.find(o => o.type === "context").ref
+    const items = objects
+        .filter(o => o.in === obj.ref)
+        .sort((o1, o2) => o1.mods[0].y - o2.mods[0].y)
     if (items.length === 0) {
         return null
+    }
+    const swapItems = (i, iNew) => {
+        tracker.group(() => {
+            const o = items[i]
+            const oPrev = items[iNew]
+            o.mods[0].x = iNew
+            o.mods[0].y = iNew
+            oPrev.mods[0].x = i
+            oPrev.mods[0].y = i
+        })
     }
     return html`
         <fieldset>
             <legend>Container</legend>
-            ${items.map(o => html`
-                <a href="javascript:;" onclick=${() => { selectionRef.value = o.ref }}>
-                    <${standaloneItemView} object=${o} objects=${objects}/>
-                </a>`)}
+            <div style="display: flex; flex-wrap: wrap">
+                ${items.map((o, i) => html`
+                    <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                        <a href="javascript:;" onclick=${() => { selectionRef.value = o.ref }}>
+                            <${standaloneItemView} object=${o} objects=${objects}/>
+                        </a>
+                        <div>
+                        ${i === 0 ? null : html`
+                            <button style=${primaryButtonStyle}
+                                onclick=${() => { swapItems(i, i - 1) }}>
+                                ⮜
+                            </button>`}
+                            <button style=${dangerousStyle}
+                                onclick=${() => { o.in = regionRef }}>
+                                ⏏
+                            </button>
+                        ${i === (items.length - 1) ? null : html`
+                            <button style=${primaryButtonStyle}
+                                onclick=${() => { swapItems(i, i + 1) }}>
+                                ⮞
+                            </button>`}
+                        </div>
+                    </div>`)}
+            </div>
         </fieldset>`
 }
 
@@ -788,7 +821,7 @@ export const propEditor = ({ objects, tracker }) => {
         if (obj.type === "item") {
             itemEditors = html`
                 <${positionEditor} obj=${obj} regionRef=${regionRef} />
-                <${containerEditor} obj=${obj} objects=${objects}/>
+                <${containerEditor} obj=${obj} objects=${objects} tracker=${tracker}/>
                 <${orientationEditor} obj=${obj}/>
                 <${trapezoidEditor} obj=${obj} tracker=${tracker}/>
                 <${textEditor} obj=${obj} tracker=${tracker}/>
