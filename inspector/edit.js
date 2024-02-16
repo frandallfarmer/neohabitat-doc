@@ -356,7 +356,7 @@ export const containerEditor = ({ objects, obj, tracker }) => {
                         ${i === 0 ? null : html`
                             <button style=${primaryButtonStyle}
                                 onclick=${() => { swapItems(i, i - 1) }}>
-                                ⮜
+                                ◄ 
                             </button>`}
                             <button style=${dangerousStyle}
                                 onclick=${() => { o.in = regionRef }}>
@@ -365,7 +365,7 @@ export const containerEditor = ({ objects, obj, tracker }) => {
                         ${i === (items.length - 1) ? null : html`
                             <button style=${primaryButtonStyle}
                                 onclick=${() => { swapItems(i, i + 1) }}>
-                                ⮞
+                                ►
                             </button>`}
                         </div>
                     </div>`)}
