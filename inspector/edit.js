@@ -104,13 +104,69 @@ export const createEditTracker = () => {
 
     const dynamicProxy = (targetGetter, handler) => {
         return new Proxy(targetGetter(), {
+            apply(target, thisArg, argumentList) { return Reflect.apply(targetGetter(target), thisArg, argumentList) },
+            construct(target, args) { return Reflect.construct(targetGetter(target), args) },
+            defineProperty(target, key, descriptor) { return Reflect.defineProperty(targetGetter(target), key, descriptor) },
+            getPrototypeOf(target) { return Reflect.getPrototypeOf(targetGetter(target)) },
+            setPrototypeOf(target) { return Reflect.setPrototypeOf(targetGetter(target)) },
+            has(target, key) { return Reflect.has(targetGetter(target), key) },
+            isExtensible(target) { return Reflect.isExtensible(targetGetter(target)) },
+            preventExtensions(target) { return Reflect.preventExtensions(targetGetter(target)) },
             ownKeys(target) { return Reflect.ownKeys(targetGetter(target)) },
             getOwnPropertyDescriptor(target, prop) { return Reflect.getOwnPropertyDescriptor(targetGetter(target), prop) },
             ...handler
         })
     }
+
+    // define all mutating array ops in terms of splices
+    function push(...vals) {
+        this.splice(this.length, 0, ...vals)
+        return this.length
+    }
+    function pop() {
+        if (this.length > 0) {
+            const retval = this[this.length - 1]
+            this.splice(this.length - 1, 1)
+            return retval
+        }
+    }
+    function shift() {
+        if (this.length > 0) {
+            const retval = this[0]
+            this.splice(this, 0, 1)
+            return retval
+        }
+    }
+    function unshift(...vals) {
+        this.splice(0, 0, ...vals)
+        return this.length
+    }
+    function sort(compareFn) {
+        this.splice(0, this.length, ...this.toSorted(compareFn))
+        return this
+    }
+
     const wrapInnerValue = (sig, value, place, refreshParent = () => {}) => {
-        if (typeof(value) === "object") {
+        function splice(start, deleteCount, ...items) {
+            const parentPlace = [...place]
+            parentPlace.pop()
+            change(sig, parentPlace, start, items, deleteCount)
+            refreshParent()
+            return this
+        }
+        if (value === Array.prototype.push) {
+            return push
+        } else if (value === Array.prototype.pop) {
+            return pop
+        } else if (value === Array.prototype.shift) {
+            return shift
+        } else if (value === Array.prototype.unshift) {
+            return unshift
+        } else if (value === Array.prototype.sort) {
+            return sort
+        } else if (value === Array.prototype.splice) {
+            return splice
+        } else if (typeof(value) === "object") {
             let innerTarget = value
             const refresh = () => { 
                 innerTarget = valueAt(sig, place)
@@ -839,9 +895,8 @@ export const propEditor = ({ objects, tracker }) => {
     }
 }
 
-const swapItemsAtIndex = (sig, tracker, index) => {
-    const newValue = [sig.value[index + 1], sig.value[index]]
-    tracker.change(sig, [], index, newValue, 2)
+const swapItemsAtIndex = (objects, index) => {
+    objects.splice(index, 2, objects[index + 1], objects[index])
 }
 
 const buttonStyle = "border-radius: 8px; font-size: 16px;"
@@ -849,8 +904,8 @@ const disabledStyle = `background-color: #777; color: #ccc; ${buttonStyle}`
 const dangerousStyle = `background-color: red; color: white; ${buttonStyle}`
 const primaryButtonStyle = `background-color: blue; color: white; ${buttonStyle}`
 
-export const addNewObject = (type, objectList, tracker, selectionRef, defaultModValues) => {
-    const regionRef = objectList.value.find(o => o.type === "context").ref
+export const addNewObject = (type, objects, tracker, selectionRef, defaultModValues) => {
+    const regionRef = objects.find(o => o.type === "context").ref
     const obj = {
         type: "item",
         ref: `${type}.${randomSlug()}.${regionRef}`,
@@ -866,18 +921,18 @@ export const addNewObject = (type, objectList, tracker, selectionRef, defaultMod
             ...(defaultModValues[type] ?? {})
         }]
     }
-    tracker.change(objectList, [], objectList.value.length, [tracker.trackSignal(signal(obj))], 0)
+    objects.push(tracker.trackSignal(signal(obj)))
     selectionRef.value = obj.ref
 }
 
-export const newObjectButton = ({ objectList, tracker }) => {
+export const newObjectButton = ({ objects, tracker }) => {
     const defaultModValues = useJson("default_mod_values.json", {})
     const javaClasses = useMemo(() => [...Object.keys(defaultModValues)].sort(), [defaultModValues])
     const [iclass, setIClass] = useState(0)
     const selectionRef = useContext(Selection)
     return html`
         <button style=${primaryButtonStyle}
-                onclick=${() => { addNewObject(javaClasses[iclass], objectList, tracker, selectionRef, defaultModValues) }}>
+                onclick=${() => { addNewObject(javaClasses[iclass], objects, tracker, selectionRef, defaultModValues) }}>
             + Create
         </button>
         <select onchange=${(e) => { setIClass(parseInt(e.target.value)) }}>
@@ -887,20 +942,20 @@ export const newObjectButton = ({ objectList, tracker }) => {
         </select>`
 }
 
-export const objectPanel = ({ objectList, tracker }) => {
+export const objectPanel = ({ objects, tracker }) => {
     const selectionRef = useContext(Selection)
-    const iselection = objectList.value.findIndex(o => o.ref === selectionRef.value)
+    const iselection = objects.findIndex(o => o.ref === selectionRef.value)
     const deleteDisabled = iselection <= 0
     const moveUpDisabled = iselection <= 1
-    const moveDownDisabled = iselection <= 0 || iselection >= objectList.value.length - 1
-
+    const moveDownDisabled = iselection <= 0 || iselection >= objects.length - 1
+    
     return html`
         <div style="padding: 5px;">
             <a href="javascript:;" onclick=${() => tracker.undo()}>Undo</a> | <a href="javascript:;" onclick=${() => tracker.redo()}>Redo</a>
         </div>
         <fieldset>
             <legend>Objects</legend>
-            ${objectList.value.map(o => html`
+            ${objects.map(o => html`
                 <div>
                     <label>
                         <input type="radio" checked=${o.ref === selectionRef.value}
@@ -909,23 +964,23 @@ export const objectPanel = ({ objectList, tracker }) => {
                     </label>
                 </div>
             `)}
-            <${newObjectButton} objectList=${objectList} tracker=${tracker}/>
+            <${newObjectButton} objects=${objects} tracker=${tracker}/>
             <button style="${moveUpDisabled ? disabledStyle : buttonStyle}" disabled=${moveUpDisabled}
-                    onclick=${() => { swapItemsAtIndex(objectList, tracker, iselection - 1)}}>
+                    onclick=${() => { swapItemsAtIndex(objects, iselection - 1)}}>
                 ⇧
             </button>
             <button style="${moveDownDisabled ? disabledStyle : buttonStyle}" disabled=${moveDownDisabled}
-                    onclick=${() => { swapItemsAtIndex(objectList, tracker, iselection)}}>
+                    onclick=${() => { swapItemsAtIndex(objects, iselection)}}>
                 ⇩
             </button>
             <button style="${deleteDisabled ? disabledStyle : dangerousStyle}" disabled=${deleteDisabled} 
-                    onclick=${() => { tracker.change(objectList, [], iselection, [], 1) }}>
+                    onclick=${() => { objects.splice(iselection, 1) }}>
                 Delete
             </button>
         </fieldset>`
 }
 
-export const registerKeyHandler = (document, tracker, selectionRef, objectList) => {
+export const registerKeyHandler = (document, tracker, selectionRef, objects) => {
     document.addEventListener("keydown", (e) => {
         if ((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z")) {
             if (e.shiftKey) {
@@ -938,7 +993,7 @@ export const registerKeyHandler = (document, tracker, selectionRef, objectList) 
         } else if (e.key.startsWith("Arrow") && selectionRef.value !== null
                    && !(e.target instanceof HTMLInputElement)
                    && !(e.target instanceof HTMLTextAreaElement)) {
-            const obj = objectList.value.find(o => o.ref === selectionRef.value)
+            const obj = objects.find(o => o.ref === selectionRef.value)
             if (obj && obj.type === "item") {
                 let dx = 0
                 let dy = 0

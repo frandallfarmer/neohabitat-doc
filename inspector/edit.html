@@ -34,12 +34,10 @@
             const tracker = createEditTracker()
             tracker.registerListener(trapezoidEditListener)
             
-            const objectList = signal([])
+            const objects = tracker.trackSignal(signal([]))
             
-            const replaceObjectList = (objects) => {
-                tracker.change(objectList, [], 0, 
-                               objects.map(o => tracker.trackSignal(signal(o))), 
-                               objectList.value.length)
+            const replaceObjectList = (newObjects) => {
+                objects.splice(0, objects.length, ...(newObjects.map(o => tracker.trackSignal(signal(o)))))
             }
             const loadUrl = async (filename) => {
                 replaceObjectList(await until(() => useHabitatJson(filename), o => o.length > 0))
@@ -49,7 +47,7 @@
             tracker.editHistory.length = 0
 
             const selectionRef = signal(null)
-            registerKeyHandler(document, tracker, selectionRef, objectList)
+            registerKeyHandler(document, tracker, selectionRef, objects)
 
             const regionName = ({ objects }) => {
                 const region = objects.find(obj => obj.type == "context")
@@ -60,17 +58,17 @@
             const overlayOpacity = signal(0.5)
 
             const regionPage = (_) => html`
-                <h1>Region Editor - <${regionName} objects=${objectList.value}/></h1>
+                <h1>Region Editor - <${regionName} objects=${objects}/></h1>
                 <${Selection.Provider} value=${selectionRef}>
                     <div style="display: flex; flex-wrap: wrap;">
                         <div style="width: 1000px; position: relative;">
-                            <${regionView} objects=${objectList.value} interaction=${selectionInteraction}/>
+                            <${regionView} objects=${objects} interaction=${selectionInteraction}/>
                             ${overlayImageUrl.value ? html`
                                 <img style="width: 960px; height: 384px; position: absolute; top: 0; pointer-events: none; 
                                             opacity: ${overlayOpacity.value}; z-index: 10000;"
                                      src=${overlayImageUrl.value} />` : null}
-                            <${depthEditor} objects=${objectList.value}/>
-                            <${propEditor} objects=${objectList.value} tracker=${tracker}/>
+                            <${depthEditor} objects=${objects}/>
+                            <${propEditor} objects=${objects} tracker=${tracker}/>
                         </div>
                         <div>
                             <div style="padding: 5px;">
@@ -103,14 +101,14 @@
                                                   oninput=${e => { overlayOpacity.value = parseFloat(e.target.value) }}/>`
                                     : null}
                             </div>
-                            <${objectPanel} objectList=${objectList} tracker=${tracker}/>
+                            <${objectPanel} objects=${objects} tracker=${tracker}/>
                             <${regionSearch} label="Replace with region" 
                                 onSelected=${({ filename }) => { loadUrl(filename) }}
                             />
                         </div>
                     </div>
-                    <${jsonDump} heading=${html`Region JSON (<${jsonDownload} value=${objectList.value}>Download<//>)`} 
-                                value=${objectList.value}/>
+                    <${jsonDump} heading=${html`Region JSON (<${jsonDownload} value=${objects}>Download<//>)`} 
+                                value=${objects}/>
                     <${errors}/>
                 <//>`
 
