@@ -4,9 +4,9 @@ import { signal } from "@preact/signals"
 import { html, catcher } from "./view.js"
 import { emptyBitmap, trapTextureToBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale } from "./render.js"
-import { colorsFromOrientation, joinReplacements } from "./neohabitat.js"
+import { colorsFromOrientation, javaTypeToMuddleClass, joinReplacements } from "./neohabitat.js"
 import { jsonDump, charView } from "./show.js"
-import { useJson, charset } from "./data.js"
+import { useJson, charset, betaMud } from "./data.js"
 import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache } from "./region.js"
 
 export const Selection = createContext(signal(null))
@@ -386,7 +386,8 @@ export const containerEditor = ({ objects, obj, tracker }) => {
     const items = objects
         .filter(o => o.in === obj.ref)
         .sort((o1, o2) => o1.mods[0].y - o2.mods[0].y)
-    if (items.length === 0) {
+    const capacity = betaMud().class?.[javaTypeToMuddleClass(obj.mods[0].type)]?.byte?.[2] ?? 0
+    if (capacity === 0 && items.length === 0) {
         return null
     }
     const swapItems = (i, iNew) => {
@@ -399,9 +400,12 @@ export const containerEditor = ({ objects, obj, tracker }) => {
             oPrev.mods[0].y = i
         })
     }
+    const [refToInsert, setRefToInsert] = useState(null)
+    const insertableObjects = objects.filter(o => o.type === "item" && o.in === regionRef && o.ref !== obj.ref)
     return html`
         <fieldset>
             <legend>Container</legend>
+            <div>Capacity: ${items.length} / ${capacity}</div>
             <div style="display: flex; flex-wrap: wrap">
                 ${items.map((o, i) => html`
                     <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
@@ -426,6 +430,25 @@ export const containerEditor = ({ objects, obj, tracker }) => {
                         </div>
                     </div>`)}
             </div>
+            ${items.length >= capacity || insertableObjects.length === 0 ? null : html`
+                <select onChange=${e => setRefToInsert(e.target.value)}>
+                    ${insertableObjects.map(o => html`
+                        <option key=${o.ref} value=${o.ref} selected=${o.ref === refToInsert}>
+                            ${o.name} (${o.ref})
+                        </option>
+                    `)}
+                </select>
+                <button style=${primaryButtonStyle}
+                        onclick=${() => {
+                            tracker.group(() => {
+                                const o = refToInsert ? objects.find(o => o.ref === refToInsert) : insertableObjects[0]
+                                o.mods[0].x = items.length
+                                o.mods[0].y = items.length
+                                o.in = obj.ref
+                            })
+                        }}>
+                    Move into this
+                </button>`}
         </fieldset>`
 }
 
@@ -516,7 +539,7 @@ export const bytesToUnicode = (bytes) =>
             })
             .join("")
     )
-    
+
 export const stringToBytes = (s) =>
     unicodeToAscii(s)
         .split("")
