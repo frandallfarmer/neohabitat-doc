@@ -8,6 +8,18 @@ import { colorsFromOrientation, javaTypeToMuddleClass, joinReplacements } from "
 import { jsonDump, charView } from "./show.js"
 import { useJson, charset, betaMud } from "./data.js"
 import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache } from "./region.js"
+import { makeCanvas } from "./shim.js"
+
+const transparencyGridStyle = (() => {
+    const canvas = makeCanvas(16, 16)
+    const ctx = canvas.getContext("2d")
+    ctx.fillStyle = "#f4f4f4"
+    ctx.fillRect(0, 0, 16, 16)
+    ctx.fillStyle = "#ddd"
+    ctx.fillRect(0, 0, 8, 8)
+    ctx.fillRect(8, 8, 8, 8)
+    return `background-image: url("${canvas.toDataURL()}");`
+})()
 
 export const Selection = createContext(signal(null))
 export const selectionInteraction = ({ object, children }) => {
@@ -145,7 +157,7 @@ export const createEditTracker = () => {
         this.splice(0, this.length, ...this.toSorted(compareFn))
         return this
     }
-
+    const signalSymbol = Symbol("signal")
     const wrapInnerValue = (sig, value, place, refreshParent = () => {}) => {
         function splice(start, deleteCount, ...items) {
             const parentPlace = [...place]
@@ -167,6 +179,9 @@ export const createEditTracker = () => {
         } else if (value === Array.prototype.splice) {
             return splice
         } else if (typeof(value) === "object") {
+            if (value[signalSymbol]) {
+                return value
+            }
             let innerTarget = value
             const refresh = () => { 
                 innerTarget = valueAt(sig, place)
@@ -201,6 +216,9 @@ export const createEditTracker = () => {
         trackSignal(sig) {
             return dynamicProxy(() => sig.value, {
                 get(target, property, receiver) {
+                    if (property === signalSymbol) {
+                        return sig
+                    }
                     return wrapInnerValue(sig, sig.value[property], [property])
                 },
                 set(target, property, newValue, receiver) {
@@ -706,11 +724,13 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
                         <div style="width: ${16 * 3}px; height: ${16 * 3}px; margin: 2px;
                                     border: 4px dotted ${selectedColor === nibble ? " black" : "transparent"};"
                             onclick=${() => { setSelectedColor(nibble) }}>
-                            <${canvasImage} canvas=${canvasFromBitmap(emptyBitmap(2, 16, nibble), colors)}/>
+                            <div style="${transparencyGridStyle} line-height: 0px;">
+                                <${canvasImage} canvas=${canvasFromBitmap(emptyBitmap(2, 16, nibble), colors)}/>
+                            </div>
                         </div>`)}
                 <//>
             </div>
-            <canvas style=${scale > 1 ? "image-rendering: pixelated;" : ""}
+            <canvas style=${`${transparencyGridStyle} ${scale > 1 ? "image-rendering: pixelated;" : ""}`}
                     width="${scale * (bitmap[0].length * 2)}px" height="${scale * bitmap.length}px"
                     ref=${canvasRef}
                     onPointerDown=${putpixel} onPointerMove=${putpixel} onPointerUp=${putpixel}/>
