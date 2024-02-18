@@ -415,8 +415,8 @@ export const containerEditor = ({ objects, obj, tracker }) => {
                                 ◄ 
                             </button>`}
                             <button style=${dangerousStyle}
-                                onclick=${() => { o.in = regionRef }}>
-                                ⏏
+                                onclick=${() => { objects.splice(objects.findIndex(item => item.ref === o.ref), 1) }}>
+                                🗑
                             </button>
                         ${i === (items.length - 1) ? null : html`
                             <button style=${primaryButtonStyle}
@@ -994,7 +994,8 @@ export const registerKeyHandler = (document, tracker, selectionRef, objects) => 
                    && !(e.target instanceof HTMLInputElement)
                    && !(e.target instanceof HTMLTextAreaElement)) {
             const obj = objects.find(o => o.ref === selectionRef.value)
-            if (obj && obj.type === "item") {
+            const region = objects.find(o => o.type === "context")
+            if (obj && obj.type === "item" && obj.in === region.ref) {
                 let dx = 0
                 let dy = 0
                 if (e.key === "ArrowLeft")  { dx -= 4 }
