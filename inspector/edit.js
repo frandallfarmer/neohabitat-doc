@@ -714,7 +714,7 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
         ctx.imageSmoothingEnabled = false
         ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 
                               0, 0, canvasRef.current.width, canvasRef.current.height)
-        ctx.strokeStyle = "rgb(0 0 0 / 20%)"
+        ctx.strokeStyle = "#333"
         for (let x = 1; x < bitmap[0].length; x ++) {
             ctx.moveTo(x * scale * 2, 0)
             ctx.lineTo(x * scale * 2, scale * bitmap.length)
