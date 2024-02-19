@@ -484,7 +484,7 @@ export const containerEditor = ({ objects, obj, tracker }) => {
             <div>Capacity: ${items.length} / ${capacity}</div>
             <div style="display: flex; flex-wrap: wrap">
                 ${[...Array(capacity).keys()].map(i => html`
-                    <div>
+                    <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
                         <div>Slot ${i + 1}</div>
                         <${itemSlotEditor} objects=${objects} 
                                            tracker=${tracker} 
