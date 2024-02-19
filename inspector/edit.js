@@ -662,7 +662,6 @@ export const textEditor = ({ obj, tracker }) => {
 export const bitmapEditor = ({ colors, bitmap, onChange }) => {
     const scale = 8
     colors = useMemo(() => ({ ...defaultColors, ...(colors ?? {}) }), [colors])
-    // const bitmap = useMemo(() => getInitialBitmap(), [getInitialBitmap])
     const [selectedColor, setSelectedColor] = useState(0)
 
     const changeCollector = useRef({ drawing: false, changes: [] }).current
@@ -711,9 +710,20 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
     useLayoutEffect(() => {
         const canvas = canvasFromBitmap(bitmap, colors)
         const ctx = canvasRef.current.getContext("2d")
+        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height)
         ctx.imageSmoothingEnabled = false
         ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, 
                               0, 0, canvasRef.current.width, canvasRef.current.height)
+        ctx.strokeStyle = "rgb(0 0 0 / 20%)"
+        for (let x = 1; x < bitmap[0].length; x ++) {
+            ctx.moveTo(x * scale * 2, 0)
+            ctx.lineTo(x * scale * 2, scale * bitmap.length)
+        }
+        for (let y = 1; y < bitmap.length; y ++) {
+            ctx.moveTo(0, y * scale)
+            ctx.lineTo(bitmap[0].length * scale * 2, y * scale)
+        }
+        ctx.stroke()
     }, [bitmap, colors, scale])
 
     return html`
