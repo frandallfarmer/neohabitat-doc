@@ -38,12 +38,14 @@ export const createEditTracker = () => {
     const editHistory = []
     const redoHistory = []
     const editListeners = []
+    let editGroupSequence = 0
     let currentEditGroup = 0
     let groupLevel = 0
     
     const commitGroup = () => {
         if (groupLevel === 0) {
-            currentEditGroup ++
+            editGroupSequence ++
+            currentEditGroup = editGroupSequence
         }
     }
 
@@ -234,7 +236,10 @@ export const createEditTracker = () => {
         registerListener(listener) {
             editListeners.push(listener)
         },
-        group(callback) {
+        group(callback, groupID) {
+            if (groupLevel === 0 && groupID) {
+                currentEditGroup = groupID
+            }
             groupLevel ++
             try {
                 callback()
@@ -259,11 +264,13 @@ export const trapezoidEditListener = ({ sig, place, key }) => {
     }
 }
 
-export const positionEditor = ({ obj, regionRef }) => {
+export const positionEditor = ({ obj, regionRef, tracker }) => {
     const selectionRef = useContext(Selection)
     const mod = obj.mods[0]
     const inc = (field, delta) => html`
-        <a href="javascript:;" onclick=${() => mod[field] = (mod[field] + 256 + delta) % 256}>
+        <a href="javascript:;" onclick=${() => {
+            tracker.group(() => { mod[field] = (mod[field] + 256 + delta) % 256 }, `objmove-${obj.ref}`)
+        }}>
             ${delta > 0 ? "+" : ""}${delta}
         </a>`
     const snap = (field, to) => html`
@@ -929,7 +936,7 @@ export const propEditor = ({ objects, tracker }) => {
         let itemEditors
         if (obj.type === "item") {
             itemEditors = html`
-                <${positionEditor} obj=${obj} regionRef=${regionRef} />
+                <${positionEditor} obj=${obj} regionRef=${regionRef} tracker=${tracker} />
                 <${containerEditor} obj=${obj} objects=${objects} tracker=${tracker}/>
                 <${orientationEditor} obj=${obj}/>
                 <${trapezoidEditor} obj=${obj} tracker=${tracker}/>
@@ -1055,8 +1062,10 @@ export const registerKeyHandler = (document, tracker, selectionRef, objects) => 
                 if (e.key === "ArrowRight") { dx += 4 }
                 if (e.key === "ArrowUp")    { dy += 4 }
                 if (e.key === "ArrowDown")  { dy -= 4 }
-                obj.mods[0].x += dx
-                obj.mods[0].y += dy
+                tracker.group(() => {
+                    obj.mods[0].x += dx
+                    obj.mods[0].y += dy
+                }, `objmove-${obj.ref}`)
                 if (dx !== 0 || dy !== 0) {
                     e.preventDefault()
                 }
