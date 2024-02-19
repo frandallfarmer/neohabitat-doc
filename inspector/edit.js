@@ -405,6 +405,63 @@ export const styleEditor = ({ obj, objects }) => {
         </fieldset>`
 }
 
+export const itemSlotEditor = ({ objects, tracker, slot, capacity, containerRef, selectionRef, refToInsert }) => {
+    const items = objects.filter(o => o.in === containerRef && o.mods[0].y === slot)
+    const moveItem = (item, slot) => {
+        tracker.group(() => {
+            item.mods[0].x = slot
+            item.mods[0].y = slot
+        })
+    }
+    const swapWithSlot = (item, slotNew) => {
+        tracker.group(() => {
+            const prevItems = objects.filter(o => o.in === containerRef && o.mods[0].y === slotNew)
+            moveItem(item, slotNew)
+            prevItems.forEach(i => moveItem(i, slot))
+        })
+    }
+    if (items.length === 0) {
+        return html`
+            <button style="${refToInsert !== null ? primaryButtonStyle : disabledStyle} text-align: center;"
+                    disabled=${refToInsert === null}
+                    onclick=${() => {
+                        tracker.group(() => {
+                            const o = objects.find(o => o.ref === refToInsert)
+                            moveItem(o, slot)
+                            o.in = containerRef
+                        })
+                    }}>
+                +<br/>Insert into<br/>this slot
+            </button>`
+    }
+    return html`
+        <div style="display: flex; flex-wrap: wrap; ${items.length > 1 ? "background-color: #fcc;" : ""}">
+            ${items.map(o => html`
+                <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
+                    <a href="javascript:;" onclick=${() => { selectionRef.value = o.ref }}>
+                        <${standaloneItemView} object=${o} objects=${objects}/>
+                    </a>
+                    <div>
+                    ${slot === 0 ? null : html`
+                        <button style=${primaryButtonStyle}
+                            onclick=${() => { swapWithSlot(o, slot - 1) }}>
+                            ◄ 
+                        </button>`}
+                    <button style=${dangerousStyle}
+                        onclick=${() => { objects.splice(objects.findIndex(item => item.ref === o.ref), 1) }}>
+                        🗑
+                    </button>
+                    ${slot === (capacity - 1) ? null : html`
+                        <button style=${primaryButtonStyle}
+                            onclick=${() => { swapWithSlot(o, slot + 1) }}>
+                            ►
+                        </button>`}
+                    </div>
+                </div>
+            `)}
+        </div>`
+}
+
 export const containerEditor = ({ objects, obj, tracker }) => {
     const selectionRef = useContext(Selection)
     const regionRef = objects.find(o => o.type === "context").ref
@@ -415,44 +472,26 @@ export const containerEditor = ({ objects, obj, tracker }) => {
     if (capacity === 0 && items.length === 0) {
         return null
     }
-    const swapItems = (i, iNew) => {
-        tracker.group(() => {
-            const o = items[i]
-            const oPrev = items[iNew]
-            o.mods[0].x = iNew
-            o.mods[0].y = iNew
-            oPrev.mods[0].x = i
-            oPrev.mods[0].y = i
-        })
-    }
-    const [refToInsert, setRefToInsert] = useState(null)
-    const insertableObjects = objects.filter(o => o.type === "item" && o.in === regionRef && o.ref !== obj.ref)
+    const insertableObjects = objects.filter(o => o.type === "item" && 
+                                                  o.in === regionRef && 
+                                                  o.ref !== obj.ref &&
+                                                  o.ref !== obj.in)
+    let [refToInsert, setRefToInsert] = useState(null)
+    refToInsert = refToInsert ?? (insertableObjects.length > 0 ? insertableObjects[0].ref : null)
     return html`
         <fieldset>
             <legend>Container</legend>
             <div>Capacity: ${items.length} / ${capacity}</div>
             <div style="display: flex; flex-wrap: wrap">
-                ${items.map((o, i) => html`
-                    <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
-                        <a href="javascript:;" onclick=${() => { selectionRef.value = o.ref }}>
-                            <${standaloneItemView} object=${o} objects=${objects}/>
-                        </a>
-                        <div>
-                        ${i === 0 ? null : html`
-                            <button style=${primaryButtonStyle}
-                                onclick=${() => { swapItems(i, i - 1) }}>
-                                ◄ 
-                            </button>`}
-                            <button style=${dangerousStyle}
-                                onclick=${() => { objects.splice(objects.findIndex(item => item.ref === o.ref), 1) }}>
-                                🗑
-                            </button>
-                        ${i === (items.length - 1) ? null : html`
-                            <button style=${primaryButtonStyle}
-                                onclick=${() => { swapItems(i, i + 1) }}>
-                                ►
-                            </button>`}
-                        </div>
+                ${[...Array(capacity).keys()].map(i => html`
+                    <div>
+                        <div>Slot ${i + 1}</div>
+                        <${itemSlotEditor} objects=${objects} 
+                                           tracker=${tracker} 
+                                           slot=${i} 
+                                           containerRef=${obj.ref} 
+                                           selectionRef=${selectionRef}
+                                           refToInsert=${refToInsert}/>
                     </div>`)}
             </div>
             ${items.length >= capacity || insertableObjects.length === 0 ? null : html`
@@ -462,18 +501,7 @@ export const containerEditor = ({ objects, obj, tracker }) => {
                             ${o.name} (${o.ref})
                         </option>
                     `)}
-                </select>
-                <button style=${primaryButtonStyle}
-                        onclick=${() => {
-                            tracker.group(() => {
-                                const o = refToInsert ? objects.find(o => o.ref === refToInsert) : insertableObjects[0]
-                                o.mods[0].x = items.length
-                                o.mods[0].y = items.length
-                                o.in = obj.ref
-                            })
-                        }}>
-                    Move into this
-                </button>`}
+                </select>`}
         </fieldset>`
 }
 
