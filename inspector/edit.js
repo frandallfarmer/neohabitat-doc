@@ -1,7 +1,7 @@
 import { createContext } from "preact"
 import { useContext, useState, useMemo, useRef, useEffect, useLayoutEffect, useCallback } from "preact/hooks"
 import { signal } from "@preact/signals"
-import { html, catcher } from "./view.js"
+import { html, catcher, collapsable } from "./view.js"
 import { emptyBitmap, trapTextureToBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale } from "./render.js"
 import { colorsFromOrientation, javaTypeToMuddleClass, joinReplacements } from "./neohabitat.js"
@@ -313,10 +313,9 @@ export const positionEditor = ({ obj, regionRef, tracker }) => {
         </button>`
 
     return html`
-        <fieldset>
-            <legend>Position</legend>
+        <${collapsable} summary="Position">
             ${obj.in === regionRef ? regionPosition : containedPosition }
-        </fieldset>`
+        <//>`
 }
 
 export const patternSelector = ({ selected, onSelected }) => html`
@@ -347,8 +346,7 @@ export const orientationEditor = ({ obj }) => {
     const colors = colorsFromOrientation(mod.orientation)
     const flipped = (mod.orientation & 0x01) != 0
     return html`
-        <fieldset>
-            <legend>Orientation</legend>
+        <${collapsable} summary="Orientation">
             <${colorSelector}
                 selected=${colors.wildcard}
                 onSelected=${icolor => { mod.orientation = (mod.orientation & 0x07) | 0x80 | (icolor << 3) }}/>
@@ -362,7 +360,7 @@ export const orientationEditor = ({ obj }) => {
                     Flip horizontally
                 </label>
             </div>
-        </fieldset>`
+        <//>`
 }
 
 export const styleEditor = ({ obj, objects }) => {
@@ -385,8 +383,7 @@ export const styleEditor = ({ obj, objects }) => {
         </div>` : html`<em>0 (non-animated)</em>`
 
     return html`
-        <fieldset>
-            <legend>Style</legend>
+        <${collapsable} summary="Style">
             <${Scale.Provider} value="1">
                 <div>Style</div>
                 <div style="display: flex; flex-wrap: wrap; align-items: center;">
@@ -402,7 +399,7 @@ export const styleEditor = ({ obj, objects }) => {
                 <div>Animation (<tt>gr_state</tt>)</div>
                 ${grstateSelector}
             <//>
-        </fieldset>`
+        <//>`
 }
 
 export const itemSlotEditor = ({ objects, tracker, slot, capacity, containerRef, selectionRef, refToInsert }) => {
@@ -479,9 +476,7 @@ export const containerEditor = ({ objects, obj, tracker }) => {
     let [refToInsert, setRefToInsert] = useState(null)
     refToInsert = refToInsert ?? (insertableObjects.length > 0 ? insertableObjects[0].ref : null)
     return html`
-        <fieldset>
-            <legend>Container</legend>
-            <div>Capacity: ${items.length} / ${capacity}</div>
+        <${collapsable} summary="Container">
             <div style="display: flex; flex-wrap: wrap">
                 ${[...Array(capacity).keys()].map(i => html`
                     <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
@@ -502,7 +497,7 @@ export const containerEditor = ({ objects, obj, tracker }) => {
                         </option>
                     `)}
                 </select>`}
-        </fieldset>`
+        <//>`
 }
 
 export const fieldEditor = ({ field, obj, defaultValue }) => {
@@ -528,8 +523,7 @@ export const extraFieldsEditor = ({ obj }) => {
         .sort()
     if (keys.length > 0) {
         return html`
-            <fieldset>
-                <legend>Fields</legend>
+            <${collapsable} summary="Fields">
                 <table>
                     ${keys.map(k => html`
                         <tr>
@@ -537,7 +531,7 @@ export const extraFieldsEditor = ({ obj }) => {
                             <td><${fieldEditor} key=${k} field=${k} obj=${obj.mods[0]}/></td>
                         </tr>`)}
                 </table>
-            </fieldset>`
+            <//>`
     }
 }
 
@@ -641,8 +635,7 @@ export const textEditor = ({ obj, tracker }) => {
 
     const colors = { pixelHeight: 2, pattern: 0xaa }
     return html`
-        <fieldset>
-            <legend>Text</legend>
+        <${collapsable} summary="Text">
             <${Scale.Provider} value="1">
                 <div style="display: flex; gap: 2px; flex-wrap: wrap;">
                     Control characters: 
@@ -691,7 +684,7 @@ export const textEditor = ({ obj, tracker }) => {
                         }
                     }}/> ${bytes.length} / ${maxLength}
             <//>
-        </fieldset>`
+        <//>`
 }
 
 export const bitmapEditor = ({ colors, bitmap, onChange }) => {
@@ -800,11 +793,10 @@ export const trapezoidEditor = ({ obj, tracker }) => {
             })
         })
         return html`
-            <fieldset>
-                <legend>Trapezoid</legend>
+            <${collapsable} summary="Trapezoid">
                 <div>Texture</div>
                 <${bitmapEditor} bitmap=${bitmap} onChange=${onChange} colors=${colors}/>
-            </fieldset>`
+            <//>`
     }
 }
 export const randomSlug = () => {
@@ -850,8 +842,7 @@ export const renameRef = (objects, refOld, refNew) => {
 export const refEditor = ({ obj, objects, tracker }) => {
     const selectionRef = useContext(Selection)
     return html`
-        <fieldset>
-            <legend>ID</legend>
+        <${collapsable} summary="ID">
             <table>
                 <tr>
                     <td>Name</td>
@@ -870,7 +861,7 @@ export const refEditor = ({ obj, objects, tracker }) => {
                     </td>
                 </tr>
             </table>
-        </fieldset>`
+        <//>`
 }
 
 const directionDropdown = ({ obj, k }) => html`
@@ -911,8 +902,7 @@ export const regionEditor = ({ obj }) => {
     const orientations = ["West is (↑) Top / Top is West", "West is (←) Left / Top is North", 
                           "West is (↓) Bottom / Top is East", "West is (→) Right / Top is South"]
     return html`
-        <fieldset>
-            <legend>Region</legend>
+        <${collapsable} summary="Region">
             <table>
                 ${["North", "East", "South", "West"].map((dir, idir) => html`
                     <tr>
@@ -953,7 +943,7 @@ export const regionEditor = ({ obj }) => {
                     <${booleanCheckbox} obj=${mod} field="is_turf">Is turf<//>                
                 </td></tr>
             </table>
-        </fieldset>`
+        <//>`
 }
 
 export const propEditor = ({ objects, tracker }) => {

@@ -84,3 +84,16 @@ export const direction = ({ compass, orientation }) => {
     const arrow = arrows[(compassDirection - (orientation & 0x03)) & 0x03]
     return html`<span>${compass} (${arrow})</span>`
 }
+
+export const collapsable = ({ summary, children }) => {
+    const [open, setOpen] = useState(true)
+    const label = html`
+        <a href="javascript:;" style="padding: 5px;" onclick=${() => { setOpen(!open) } }>
+            ${open ? "▾" : "▸"} ${summary}
+        </a>`
+    return open ? html`
+        <fieldset>
+            <legend>${label}</legend>
+            ${children}
+        </fieldset>` : html`<span>${label}</span>`
+}
