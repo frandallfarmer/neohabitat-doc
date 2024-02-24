@@ -264,44 +264,70 @@ export const trapezoidEditListener = ({ sig, place, key }) => {
     }
 }
 
-export const positionEditor = ({ obj, regionRef, tracker }) => {
+export const moveBy = (ref, dx, dy, objects, tracker) => {
+    const obj = objects.find(o => o.ref === ref)
+    const mod = obj.mods[0]
+    const container = objects.find(o => o.ref === obj.in)
+    const containerMod = container?.mods?.[0]
+    const inc = (o, fd, delta) => o[fd] = (o[fd] + 256 + delta) % 256
+    tracker.group(() => {
+        if (containerMod?.type === "Glue") {
+            inc(containerMod, `x_offset_${mod.y + 1}`, dx)
+            inc(containerMod, `y_offset_${mod.y + 1}`, -dy)
+        } else if (container?.type === "context") {
+            inc(mod, "x", dx)
+            inc(mod, "y", dy)
+        }
+    }, `objmove-${ref}`)
+}
+
+export const positionEditor = ({ obj, objects, tracker }) => {
+    const regionRef = objects.find(o => o.type === "context").ref
     const selectionRef = useContext(Selection)
     const mod = obj.mods[0]
+    const container = objects.find(o => o.ref === obj.in)
+    const containerMod = container?.mods?.[0]
+
     const inc = (field, delta) => html`
         <a href="javascript:;" onclick=${() => {
-            tracker.group(() => { mod[field] = (mod[field] + 256 + delta) % 256 }, `objmove-${obj.ref}`)
+            moveBy(obj.ref, field === "x" ? delta : 0, field === "y" ? delta : 0, objects, tracker)
         }}>
             ${delta > 0 ? "+" : ""}${delta}
         </a>`
-    const snap = (field, to) => html`
+    
+    const isGlued = containerMod?.type === "Glue"
+    const snap = (field, to) => isGlued ? null : html`
         <a href="javascript:;" onclick=${() => mod[field] = mod[field] - (mod[field] % to)}>
             Snap to cell
         </a>`
-
+    
+    const x = isGlued ? containerMod[`x_offset_${mod.y + 1}`] : mod.x
+    const y = isGlued ? containerMod[`y_offset_${mod.y + 1}`] : mod.y
     const regionPosition = html`
         <table>
             <tr>
-                <td style="width: 100px;">X: ${mod.x}</td>
+                <td style="width: 100px;">X: ${x}</td>
                 <td>
-                    [ ${inc("x", -16)} | ${inc("x", -4)} | ${inc("x", -1)} | ${snap("x", 4)} |
-                    ${inc("x", 1)} | ${inc("x", 4)} | ${inc("x", 16)} ]
+                    [ ${inc("x", -16)} | ${inc("x", -4)} | ${inc("x", -1)} | ${snap("x", 4)} | \
+                      ${inc("x", 1)} | ${inc("x", 4)} | ${inc("x", 16)} ]
                 </td>
             </tr>
             <tr>
-                <td>Y: ${mod.y}</td>
+                <td>Y: ${y}</td>
                 <td>
-                    [ ${inc("y", -16)} | ${inc("y", -8)} | ${inc("y", -1)} | ${snap("y", 8)} |
-                    ${inc("y", 1)} | ${inc("y", 8)} | ${inc("y", 16)} ]
+                    [ ${inc("y", -16)} | ${inc("y", -8)} | ${inc("y", -1)} | ${snap("y", 8)} | \
+                      ${inc("y", 1)} | ${inc("y", 8)} | ${inc("y", 16)} ]
                 </td>
             </tr>
         </table>
-        <div>
-            <label>
-                <input type="checkbox" checked=${mod.y > 127}
-                    onclick=${() => { if (mod.y > 127) { mod.y -= 128 } else { mod.y += 128 } }}/>
-                Foreground
-            </label>
-        </div>`
+        ${isGlued ? null : html`
+            <div>
+                <label>
+                    <input type="checkbox" checked=${mod.y > 127}
+                        onclick=${() => { if (mod.y > 127) { mod.y -= 128 } else { mod.y += 128 } }}/>
+                    Foreground
+                </label>
+            </div>`}`
     
     const containedPosition = html`
         <div>
@@ -315,6 +341,7 @@ export const positionEditor = ({ obj, regionRef, tracker }) => {
     return html`
         <${collapsable} summary="Position">
             ${obj.in === regionRef ? regionPosition : containedPosition }
+            ${isGlued ? regionPosition : null}
         <//>`
 }
 
@@ -518,6 +545,10 @@ export const extraFieldsEditor = ({ obj }) => {
         ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
          "neighbors", "nitty_bits", "is_turf", "depth", "text", "ascii", "pattern"]
     )
+    for (let i = 1; i <= 6; i ++) {
+        handledFields.add(`x_offset_${i}`)
+        handledFields.add(`y_offset_${i}`)
+    }
     const keys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
         .sort()
@@ -954,7 +985,7 @@ export const propEditor = ({ objects, tracker }) => {
         let itemEditors
         if (obj.type === "item") {
             itemEditors = html`
-                <${positionEditor} obj=${obj} regionRef=${regionRef} tracker=${tracker} />
+                <${positionEditor} obj=${obj} objects=${objects} tracker=${tracker} />
                 <${containerEditor} obj=${obj} objects=${objects} tracker=${tracker}/>
                 <${orientationEditor} obj=${obj}/>
                 <${trapezoidEditor} obj=${obj} tracker=${tracker}/>
@@ -1072,18 +1103,14 @@ export const registerKeyHandler = (document, tracker, selectionRef, objects) => 
                    && !(e.target instanceof HTMLInputElement)
                    && !(e.target instanceof HTMLTextAreaElement)) {
             const obj = objects.find(o => o.ref === selectionRef.value)
-            const region = objects.find(o => o.type === "context")
-            if (obj && obj.type === "item" && obj.in === region.ref) {
+            if (obj && obj.type === "item") {
                 let dx = 0
                 let dy = 0
                 if (e.key === "ArrowLeft")  { dx -= 4 }
                 if (e.key === "ArrowRight") { dx += 4 }
                 if (e.key === "ArrowUp")    { dy += 4 }
                 if (e.key === "ArrowDown")  { dy -= 4 }
-                tracker.group(() => {
-                    obj.mods[0].x += dx
-                    obj.mods[0].y += dy
-                }, `objmove-${obj.ref}`)
+                moveBy(obj.ref, dx, dy, objects, tracker)
                 if (dx !== 0 || dy !== 0) {
                     e.preventDefault()
                 }
