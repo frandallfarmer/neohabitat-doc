@@ -79,6 +79,27 @@ export const createEditTracker = () => {
         return value
     }
     
+    const mergeEdit = (edit, history) => {
+        if (edit.splicing === null) {
+            const group = edit.group
+            for (let i = history.length - 1; i >= 0; i --) {
+                const prevEdit = history[i]
+                if (prevEdit.group !== group) {
+                    break
+                }
+                if (prevEdit.sig === edit.sig && 
+                    prevEdit.key === edit.key && 
+                    prevEdit.place.length === edit.place.length &&
+                    prevEdit.place.every((e, i) => edit.place[i] === e)) {
+                    history.splice(i, 1)
+                    edit.previous = prevEdit.previous
+                    break
+                }
+            }
+        }
+        history.push(edit)
+    }
+    
     const performEdit = (sig, place, key, value, splicing, history) => {
         const obj = valueAt(sig, place)
         const previous = splicing === null ? obj[key] : obj.slice(key, key + splicing)
@@ -87,7 +108,7 @@ export const createEditTracker = () => {
         }
         sig.value = updateIn(sig.value, place, key, value, splicing)
         const edit = { sig, place, key, value, splicing, previous, group: currentEditGroup }
-        history.push(edit)
+        mergeEdit(edit, history)
         for (const listener of editListeners) {
             listener(edit)
         }
