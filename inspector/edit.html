@@ -18,13 +18,14 @@
         <script type="module">
             // import "https://esm.sh/*preact/devtools"
             import { render } from "preact"
+            import { useCallback } from "preact/hooks"
             import { signal } from "@preact/signals"
             import { html, errors } from "./view.js"
             import { useHabitatJson, errorBucket, until } from "./data.js"
             import { regionView } from "./region.js"
             import { navigationView, regionSearch } from "./navigate.js"
             import { parseHabitatRegion } from "./neohabitat.js"
-            import { selectionInteraction, propEditor, depthEditor, objectPanel, createEditTracker, 
+            import { makePointerInteraction, propEditor, depthEditor, objectPanel, createEditTracker, 
                      Selection, registerKeyHandler, trapezoidEditListener } from "./edit.js"
             import { jsonDump, jsonDownload } from "./show.js"
 
@@ -57,12 +58,14 @@
             const overlayImageUrl = signal(null)
             const overlayOpacity = signal(0.5)
 
-            const regionPage = (_) => html`
+            const regionPage = ({ objects, tracker }) => {
+                const interaction = useCallback(makePointerInteraction(objects, tracker), [objects, tracker])
+                return html`
                 <h1>Region Editor - <${regionName} objects=${objects}/></h1>
                 <${Selection.Provider} value=${selectionRef}>
                     <div style="display: flex; flex-wrap: wrap;">
                         <div style="width: 1000px; position: relative;">
-                            <${regionView} objects=${objects} interaction=${selectionInteraction}/>
+                            <${regionView} objects=${objects} interaction=${interaction}/>
                             ${overlayImageUrl.value ? html`
                                 <img style="width: 960px; height: 384px; position: absolute; top: 0; pointer-events: none; 
                                             opacity: ${overlayOpacity.value}; z-index: 10000;"
@@ -111,8 +114,9 @@
                                 value=${objects}/>
                     <${errors}/>
                 <//>`
+            }
 
-            render(html`<${regionPage}/>`, document.getElementById("regionview"))
+            render(html`<${regionPage} objects=${objects} tracker=${tracker}/>`, document.getElementById("regionview"))
         </script>
     </head>
     <body>

@@ -270,7 +270,7 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
 
     return html`
         <${positionedInRegion} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
-            <${itemInteractionWrapper} object=${object} mod=${mod}>
+            <${itemInteractionWrapper} object=${object}>
                 <${animatedDiv} frames=${layout.frames}/>
             <//>
         <//>`
@@ -283,7 +283,8 @@ export const itemInteractionWrapper = (props) => {
     return html`<${interactionView} ...${props}/>`
 }
 
-export const navInteraction = ({ mod, children }) => {
+export const navInteraction = ({ object, children }) => {
+    const mod = object.mods[0]
     const connection = mod.connection && contextMap()[mod.connection]
     if (connection) {
         return html`<a href="region.html?f=${connection.filename}">${children}</a>`
@@ -308,7 +309,7 @@ export const regionItemView = ({ object, contents = [] }) => {
 
     const container = html`
             <${positionedInRegion} key=${object.ref} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
-                <${itemInteractionWrapper} object=${object} mod=${mod}>
+                <${itemInteractionWrapper} key="interaction.${object.ref}" object=${object} mod=${mod}>
                     <${animatedDiv} frames=${layout.frames}/>
                 <//>
             </div>`
@@ -447,7 +448,7 @@ export const objectNav = ({ filename }) =>
             <${locationLink} refId=${o.mods[0].connection}>
                 <${itemView} viewer=${standaloneItemView} object=${o}/>
             <//>`)
-    
+
 const propFilter = (key, value) => {
     if (key != "bitmap" && key != "data" && key != "canvas" && key != "texture" && 
         !(key == "pattern" && typeof(value) === "object")) {

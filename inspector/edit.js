@@ -22,18 +22,6 @@ const transparencyGridStyle = (() => {
 })()
 
 export const Selection = createContext(signal(null))
-export const selectionInteraction = ({ object, children }) => {
-    const selectionRef = useContext(Selection)
-    return html`
-        <div onclick=${() => selectionRef.value = selectionRef.value === object.ref ? null : object.ref}>
-            ${selectionRef.value === object.ref ? html`
-                <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; 
-                            background-color: #ff000040; border: 1px solid red;"></div>
-                ` : null}
-            ${children}
-        </a>`
-}
-
 export const createEditTracker = () => {
     const editHistory = []
     const redoHistory = []
@@ -293,7 +281,7 @@ export const moveBy = (ref, dx, dy, objects, tracker) => {
     const inc = (o, fd, delta) => o[fd] = (o[fd] + 256 + delta) % 256
     tracker.group(() => {
         if (containerMod?.type === "Glue") {
-            inc(containerMod, `x_offset_${mod.y + 1}`, dx)
+            inc(containerMod, `x_offset_${mod.y + 1}`, Math.floor(dx / 4))
             inc(containerMod, `y_offset_${mod.y + 1}`, -dy)
         } else if (container?.type === "context") {
             inc(mod, "x", dx)
@@ -364,6 +352,74 @@ export const positionEditor = ({ obj, objects, tracker }) => {
             ${obj.in === regionRef ? regionPosition : containedPosition }
             ${isGlued ? regionPosition : null}
         <//>`
+}
+export const startDrag = (e, callback, state = {}) => {
+    const pointerId = e.pointerId
+    document.body.onpointermove = e => { 
+        if (e.pointerId === pointerId) { 
+            callback(e, state) 
+        } 
+    }
+    document.body.onpointerup = e => {
+        if (e.pointerId === pointerId) {
+            document.body.onpointermove = null
+            document.body.onpointerup = null
+            callback(e, state)
+            document.body.releasePointerCapture(pointerId)
+        }
+    }
+    document.body.setPointerCapture(e, pointerId)
+    callback(e, state)
+}
+
+export const makePointerInteraction = (objects, tracker) => ({ object, children }) => {
+    const selectionRef = useContext(Selection)
+    const container = objects.find(o => o.ref === object.in)
+    const scale = useContext(Scale)
+    const moveObj = useCallback((e, state) => {
+        const mod = object.mods[0]
+        const containerMod = container?.mods?.[0]
+        const isGlued = containerMod?.type === "Glue"
+        const x = isGlued ? (containerMod[`x_offset_${mod.y + 1}`] * 4) : mod.x
+        const y = isGlued ? containerMod[`y_offset_${mod.y + 1}`] : (mod.y & 0x7f)
+        if (e.type === "pointerdown") {
+            state.startX = x
+            state.startY = y
+            state.pointerX = e.pageX
+            state.pointerY = e.pageY
+        }
+        const dxAbs = Math.floor((e.pageX - state.pointerX) / (scale * 2))
+        const dyAbs = Math.floor((e.pageY - state.pointerY) / scale)
+        const xNew = state.startX + dxAbs
+        const yNew = isGlued ? state.startY + dyAbs : Math.max(0, Math.min(127, state.startY - dyAbs))
+        moveBy(object.ref, xNew - x, isGlued ? y - yNew : yNew - y, objects, tracker)
+        if (dxAbs !== 0 || dyAbs !== 0) {
+            state.moved = true
+        }
+        e.preventDefault()
+        if (e.type === "pointerup" && !state.moved) {
+            selectionRef.value = null
+        }
+    }, [object, container, scale])
+
+    const drag = useCallback(e => {
+        if (e.isPrimary) {
+            if (selectionRef.value === object.ref) {
+                startDrag(e, moveObj)
+            } else {
+                selectionRef.value = object.ref
+            }
+        }
+    }, [moveObj])
+
+    return html`
+        <div onpointerdown=${drag}>
+            ${selectionRef.value === object.ref ? html`
+                <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; 
+                            background-color: #ff000040; border: 1px solid red;"></div>
+                ` : null}
+            ${children}
+        </a>`
 }
 
 export const patternSelector = ({ selected, onSelected }) => html`
@@ -781,6 +837,7 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
         }
         
         if (e.type === "pointerup") {
+            e.target.releasePointerCapture(e.pointerId)
             onChange(changeCollector.changes)
             changeCollector.changes.length = 0
             changeCollector.drawing = false
