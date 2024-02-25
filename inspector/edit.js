@@ -99,7 +99,7 @@ export const createEditTracker = () => {
         }
         history.push(edit)
     }
-    
+
     const performEdit = (sig, place, key, value, splicing, history) => {
         const obj = valueAt(sig, place)
         const previous = splicing === null ? obj[key] : obj.slice(key, key + splicing)
@@ -564,7 +564,7 @@ export const fieldEditor = ({ field, obj, defaultValue }) => {
 export const extraFieldsEditor = ({ obj }) => {
     const handledFields = new Set(
         ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
-         "neighbors", "nitty_bits", "is_turf", "depth", "text", "ascii", "pattern"]
+         "neighbors", "nitty_bits", "is_turf", "depth", "text", "ascii", "pattern", "realm"]
     )
     for (let i = 1; i <= 6; i ++) {
         handledFields.add(`x_offset_${i}`)
@@ -972,6 +972,10 @@ export const regionEditor = ({ obj }) => {
                             `)}
                         </select>
                     </td>
+                </tr>
+                <tr>
+                    <td>Realm</td>
+                    <td><${fieldEditor} field="realm" obj=${mod} defaultValue=""/></td>
                 </tr>
                 <tr>
                     <td>Town direction</td>
