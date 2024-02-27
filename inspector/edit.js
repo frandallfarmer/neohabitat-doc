@@ -289,9 +289,9 @@ export const moveBy = (ref, dx, dy, objects, tracker) => {
         }
     }, `objmove-${ref}`)
 }
-
+export const findRegionRef = (objects) => objects.find(o => o.type === "context").ref
 export const positionEditor = ({ obj, objects, tracker }) => {
-    const regionRef = objects.find(o => o.type === "context").ref
+    const regionRef = findRegionRef(objects)
     const selectionRef = useContext(Selection)
     const mod = obj.mods[0]
     const container = objects.find(o => o.ref === obj.in)
@@ -600,7 +600,7 @@ export const itemSlotEditor = ({ objects, tracker, slot, capacity, containerRef,
 
 export const containerEditor = ({ objects, obj, tracker }) => {
     const selectionRef = useContext(Selection)
-    const regionRef = objects.find(o => o.type === "context").ref
+    const regionRef = findRegionRef(objects)
     const items = objects
         .filter(o => o.in === obj.ref)
         .sort((o1, o2) => o1.mods[0].y - o2.mods[0].y)
@@ -1096,7 +1096,7 @@ export const regionEditor = ({ obj }) => {
 
 export const propEditor = ({ objects, tracker }) => {
     const selectionRef = useContext(Selection)
-    const regionRef = objects.find(o => o.type === "context").ref
+    const regionRef = findRegionRef(objects)
     const obj = objects.find(o => o.ref === (selectionRef.value ?? regionRef))
     if (obj) {
         let itemEditors
@@ -1131,7 +1131,7 @@ const dangerousStyle = `background-color: red; color: white; ${buttonStyle}`
 const primaryButtonStyle = `background-color: blue; color: white; ${buttonStyle}`
 
 export const addNewObject = (type, objects, tracker, selectionRef, defaultModValues) => {
-    const regionRef = objects.find(o => o.type === "context").ref
+    const regionRef = findRegionRef(objects)
     const obj = {
         type: "item",
         ref: `${type}.${randomSlug()}.${regionRef}`,
@@ -1149,6 +1149,7 @@ export const addNewObject = (type, objects, tracker, selectionRef, defaultModVal
     }
     objects.push(tracker.trackSignal(signal(obj)))
     selectionRef.value = obj.ref
+    return obj
 }
 
 export const newObjectButton = ({ objects, tracker }) => {
@@ -1168,13 +1169,20 @@ export const newObjectButton = ({ objects, tracker }) => {
         </select>`
 }
 
+export const cloneItem = (object, objects, tracker, selectionRef) => {
+    const type = object.mods[0].type
+    const defaults = { [type]: JSON.parse(JSON.stringify(object.mods[0])) }
+    addNewObject(type, objects, tracker, selectionRef, defaults)
+}
+
 export const objectPanel = ({ objects, tracker }) => {
     const selectionRef = useContext(Selection)
     const iselection = objects.findIndex(o => o.ref === selectionRef.value)
     const deleteDisabled = iselection <= 0
     const moveUpDisabled = iselection <= 1
     const moveDownDisabled = iselection <= 0 || iselection >= objects.length - 1
-    
+    const dupDisabled = iselection < 0 || objects[iselection].type !== "item"
+
     return html`
         <div style="padding: 5px;">
             <a href="javascript:;" onclick=${() => tracker.undo()}>Undo</a> | <a href="javascript:;" onclick=${() => tracker.redo()}>Redo</a>
@@ -1190,7 +1198,10 @@ export const objectPanel = ({ objects, tracker }) => {
                     </label>
                 </div>
             `)}
-            <${newObjectButton} objects=${objects} tracker=${tracker}/>
+            <button style="${dupDisabled ? disabledStyle : buttonStyle}" disabled=${dupDisabled}
+                    onclick=${() => { cloneItem(objects[iselection], objects, tracker, selectionRef) }}>
+                Clone
+            </button>
             <button style="${moveUpDisabled ? disabledStyle : buttonStyle}" disabled=${moveUpDisabled}
                     onclick=${() => { swapItemsAtIndex(objects, iselection - 1)}}>
                 ⇧
@@ -1202,7 +1213,8 @@ export const objectPanel = ({ objects, tracker }) => {
             <button style="${deleteDisabled ? disabledStyle : dangerousStyle}" disabled=${deleteDisabled} 
                     onclick=${() => { objects.splice(iselection, 1) }}>
                 Delete
-            </button>
+            </button><br/>
+            <${newObjectButton} objects=${objects} tracker=${tracker}/>
         </fieldset>`
 }
 
