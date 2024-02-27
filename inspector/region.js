@@ -338,13 +338,13 @@ const sortObjects = (objects) => {
                                  .sort((o1, o2) => o2.mods[0].y - o1.mods[0].y)])
 }
 
-export const regionView = ({ filename, objects, interaction = ({children}) => children }) => {
+export const regionView = ({ filename, objects, style = "", interaction = ({children}) => children }) => {
     const scale = useContext(Scale)
     objects = objects ?? useHabitatJson(filename)
 
     return html`
         <${itemInteraction.Provider} value=${interaction}>
-            <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden">
+            <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden; ${style}">
                 ${sortObjects(objects).map(([obj, contents]) => html`
                     <${itemView} key=${obj.ref}
                                 viewer=${regionItemView} 

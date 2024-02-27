@@ -354,6 +354,8 @@ export const positionEditor = ({ obj, objects, tracker }) => {
         <//>`
 }
 export const startDrag = (e, callback, state = {}) => {
+    state.downPageX = e.pageX
+    state.downPageY = e.pageY
     const pointerId = e.pointerId
     document.body.onpointermove = e => { 
         if (e.pointerId === pointerId) { 
@@ -372,6 +374,40 @@ export const startDrag = (e, callback, state = {}) => {
     callback(e, state)
 }
 
+export const dragDelta = (e, state, scale) =>
+    [Math.floor((e.pageX - state.downPageX) / (scale * 2)),
+     Math.floor((e.pageY - state.downPageY) / scale)]
+
+export const trapezoidCornerInteraction = ({ object, tracker }) => {
+    const scale = useContext(Scale)
+    const mod = object.mods[0]
+    if (mod.type !== "Trapezoid" && mod.type !== "Super_trapezoid") {
+        return null
+    }
+    const makeCorner = (field) => {
+        const bottom = field.startsWith("lower")
+        const moveCorner = useCallback((e, state) => {
+            const [dx, dy] = dragDelta(e, state, scale)
+            tracker.group(() => {
+                mod[field] = ((state.x + dx) + 256) % 256
+            }, `trapcorner-${field}`)
+            e.preventDefault()
+        }, [object, field, scale])
+        const dragCorner = useCallback(e => {
+            if (e.isPrimary) {
+                startDrag(e, moveCorner, { height: mod.height, x: mod[field] })
+            }
+        }, [moveCorner])
+        return html`
+            <div onpointerdown=${dragCorner} 
+                 style="position: absolute; ${bottom ? "bottom" : "top"}: -3px; left: ${mod[field] * 2 * scale}px;
+                        background-color: black; border: 1px white solid; cursor: col-resize;
+                        width: 6px; height: 6px; margin-left: -3px;"/>`
+    }
+    return [makeCorner("lower_left_x"), makeCorner("lower_right_x"), 
+            makeCorner("upper_left_x"), makeCorner("upper_right_x")]
+}
+
 export const makePointerInteraction = (objects, tracker) => ({ object, children }) => {
     const selectionRef = useContext(Selection)
     const container = objects.find(o => o.ref === object.in)
@@ -385,11 +421,8 @@ export const makePointerInteraction = (objects, tracker) => ({ object, children 
         if (e.type === "pointerdown") {
             state.startX = x
             state.startY = y
-            state.pointerX = e.pageX
-            state.pointerY = e.pageY
         }
-        const dxAbs = Math.floor((e.pageX - state.pointerX) / (scale * 2))
-        const dyAbs = Math.floor((e.pageY - state.pointerY) / scale)
+        const [dxAbs, dyAbs] = dragDelta(e, state, scale)
         const xNew = state.startX + dxAbs
         const yNew = isGlued ? state.startY + dyAbs : Math.max(0, Math.min(127, state.startY - dyAbs))
         moveBy(object.ref, xNew - x, isGlued ? y - yNew : yNew - y, objects, tracker)
@@ -411,15 +444,17 @@ export const makePointerInteraction = (objects, tracker) => ({ object, children 
             }
         }
     }, [moveObj])
-
+    const trap = selectionRef.value !== object.ref ? null 
+               : html`<${trapezoidCornerInteraction} object=${object} tracker=${tracker}/>`
     return html`
         <div onpointerdown=${drag}>
             ${selectionRef.value === object.ref ? html`
                 <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; 
-                            background-color: #ff000040; border: 1px solid red;"></div>
+                            background-color: #ff000040; border: 1px solid red; cursor: move;"></div>
                 ` : null}
             ${children}
-        </a>`
+        </div>
+        ${trap}`
 }
 
 export const patternSelector = ({ selected, onSelected }) => html`

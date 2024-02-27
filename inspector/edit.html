@@ -65,7 +65,7 @@
                 <${Selection.Provider} value=${selectionRef}>
                     <div style="display: flex; flex-wrap: wrap;">
                         <div style="width: 1000px; position: relative;">
-                            <${regionView} objects=${objects} interaction=${interaction}/>
+                            <${regionView} objects=${objects} interaction=${interaction} style="touch-action: pinch-zoom;"/>
                             ${overlayImageUrl.value ? html`
                                 <img style="width: 960px; height: 384px; position: absolute; top: 0; pointer-events: none; 
                                             opacity: ${overlayOpacity.value}; z-index: 10000;"
