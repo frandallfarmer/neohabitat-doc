@@ -387,27 +387,44 @@ export const trapezoidCornerInteraction = ({ object, layout, tracker }) => {
     const space = compositeSpaces(layout.frames)
     const xOffset = (layout.x + space.minX) * 4
     const calcLeft = (field) => (((mod[field] + (layout.x * 4)) % 256) - (xOffset)) * 2 * scale
+    const makeHandle = (drag, position, cursor) => html`
+        <div onpointerdown=${drag}
+             style="position: absolute; ${position}
+                    background-color: black; border: 1px white solid; cursor: ${cursor};
+                    width: 6px; height: 6px; margin-left: -3px;"/>`
     const makeCorner = (field) => {
         const bottom = field.startsWith("lower")
         const moveCorner = useCallback((e, state) => {
             const [dx, dy] = dragDelta(e, state, scale)
             tracker.group(() => {
                 mod[field] = ((state.x + dx) + 256) % 256
-            }, `trapcorner-${field}`)
+            }, `trapezoid.${object.ref}.${field}`)
             e.preventDefault()
         }, [object, field, scale])
         const dragCorner = useCallback(e => {
             if (e.isPrimary) {
-                startDrag(e, moveCorner, { height: mod.height, x: mod[field] })
+                startDrag(e, moveCorner, { x: mod[field] })
             }
         }, [moveCorner])
-        return html`
-            <div onpointerdown=${dragCorner} 
-                 style="position: absolute; ${bottom ? "bottom" : "top"}: -3px; left: ${calcLeft(field)}px;
-                        background-color: black; border: 1px white solid; cursor: col-resize;
-                        width: 6px; height: 6px; margin-left: -3px;"/>`
+        return makeHandle(dragCorner, `${bottom ? "bottom" : "top"}: -3px; left: ${calcLeft(field)}px;`, "col-resize")
     }
-    return [makeCorner("lower_left_x"), makeCorner("lower_right_x"), 
+    const moveHeight = useCallback((e, state) => {
+        const [dx, dy] = dragDelta(e, state, scale)
+        tracker.group(() => {
+            // high bit means "draw border"; preserve it
+            mod.height = Math.min(Math.max(2, (state.height & 0x7f) - dy), 127) | (state.height & 0x80)
+        }, `trapezoid.${object.ref}.height`)
+        e.preventDefault()
+    }, [object, scale])
+    
+    const dragHeight = useCallback(e => {
+        if (e.isPrimary) {
+            startDrag(e, moveHeight, { height: mod.height })
+        }
+    }, [moveHeight])
+
+    return [makeCorner("lower_left_x"), makeCorner("lower_right_x"),
+            makeHandle(dragHeight, `top: -3px; left: ${(calcLeft("upper_left_x") + calcLeft("upper_right_x")) / 2}px;`, "row-resize"),
             makeCorner("upper_left_x"), makeCorner("upper_right_x")]
 }
 
@@ -924,6 +941,8 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
 
 export const trapezoidEditor = ({ obj, tracker }) => {
     const mod = obj.mods[0]
+    const fields = [html`<div><${bitCheckbox} obj=${mod} field="height" bitmask=${0x80}>Border<//></div>`]
+    
     if (mod.type === "Super_trapezoid") {
         const colors = useMemo(() => ({ ...colorsFromOrientation(mod.orientation), pattern: 15 }), [mod.orientation])
         const w = mod.pattern_x_size + 1
@@ -939,12 +958,16 @@ export const trapezoidEditor = ({ obj, tracker }) => {
                 }
             })
         })
-        return html`
-            <${collapsable} summary="Trapezoid">
-                <div>Texture</div>
-                <${bitmapEditor} bitmap=${bitmap} onChange=${onChange} colors=${colors}/>
-            <//>`
+        fields.push(html`
+            <div>Texture</div>
+            <${bitmapEditor} bitmap=${bitmap} onChange=${onChange} colors=${colors}/>
+        `)
     }
+    return html`
+        <${collapsable} summary="Trapezoid">
+            ${fields}   
+        <//>`
+
 }
 export const randomSlug = () => {
     const validChars = "0123456789abcdefghijklmnopqrstuvwxyz"
