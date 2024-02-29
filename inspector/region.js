@@ -270,7 +270,7 @@ export const containedItemView = ({ object, containerProp, containerMod, contain
 
     return html`
         <${positionedInRegion} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
-            <${itemInteractionWrapper} object=${object}>
+            <${itemInteractionWrapper} object=${object} layout=${layout}>
                 <${animatedDiv} frames=${layout.frames}/>
             <//>
         <//>`
@@ -309,7 +309,7 @@ export const regionItemView = ({ object, contents = [] }) => {
 
     const container = html`
             <${positionedInRegion} key=${object.ref} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
-                <${itemInteractionWrapper} key="interaction.${object.ref}" object=${object} mod=${mod}>
+                <${itemInteractionWrapper} key="interaction.${object.ref}" object=${object} layout=${layout}>
                     <${animatedDiv} frames=${layout.frames}/>
                 <//>
             </div>`

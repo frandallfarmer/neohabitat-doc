@@ -3,7 +3,7 @@ import { useContext, useState, useMemo, useRef, useEffect, useLayoutEffect, useC
 import { signal } from "@preact/signals"
 import { html, catcher, collapsable } from "./view.js"
 import { emptyBitmap, trapTextureToBitmap } from "./codec.js"
-import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale } from "./render.js"
+import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale, compositeSpaces } from "./render.js"
 import { colorsFromOrientation, javaTypeToMuddleClass, joinReplacements } from "./neohabitat.js"
 import { jsonDump, charView } from "./show.js"
 import { useJson, charset, betaMud } from "./data.js"
@@ -378,12 +378,15 @@ export const dragDelta = (e, state, scale) =>
     [Math.floor((e.pageX - state.downPageX) / (scale * 2)),
      Math.floor((e.pageY - state.downPageY) / scale)]
 
-export const trapezoidCornerInteraction = ({ object, tracker }) => {
+export const trapezoidCornerInteraction = ({ object, layout, tracker }) => {
     const scale = useContext(Scale)
     const mod = object.mods[0]
     if (mod.type !== "Trapezoid" && mod.type !== "Super_trapezoid") {
         return null
     }
+    const space = compositeSpaces(layout.frames)
+    const xOffset = (layout.x + space.minX) * 4
+    const calcLeft = (field) => (((mod[field] + (layout.x * 4)) % 256) - (xOffset)) * 2 * scale
     const makeCorner = (field) => {
         const bottom = field.startsWith("lower")
         const moveCorner = useCallback((e, state) => {
@@ -400,7 +403,7 @@ export const trapezoidCornerInteraction = ({ object, tracker }) => {
         }, [moveCorner])
         return html`
             <div onpointerdown=${dragCorner} 
-                 style="position: absolute; ${bottom ? "bottom" : "top"}: -3px; left: ${mod[field] * 2 * scale}px;
+                 style="position: absolute; ${bottom ? "bottom" : "top"}: -3px; left: ${calcLeft(field)}px;
                         background-color: black; border: 1px white solid; cursor: col-resize;
                         width: 6px; height: 6px; margin-left: -3px;"/>`
     }
@@ -408,7 +411,7 @@ export const trapezoidCornerInteraction = ({ object, tracker }) => {
             makeCorner("upper_left_x"), makeCorner("upper_right_x")]
 }
 
-export const makePointerInteraction = (objects, tracker) => ({ object, children }) => {
+export const makePointerInteraction = (objects, tracker) => ({ object, layout, children }) => {
     const selectionRef = useContext(Selection)
     const container = objects.find(o => o.ref === object.in)
     const scale = useContext(Scale)
@@ -445,7 +448,7 @@ export const makePointerInteraction = (objects, tracker) => ({ object, children 
         }
     }, [moveObj])
     const trap = selectionRef.value !== object.ref ? null 
-               : html`<${trapezoidCornerInteraction} object=${object} tracker=${tracker}/>`
+               : html`<${trapezoidCornerInteraction} object=${object} tracker=${tracker} layout=${layout}/>`
     return html`
         <div onpointerdown=${drag}>
             ${selectionRef.value === object.ref ? html`
