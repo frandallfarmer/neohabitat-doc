@@ -374,8 +374,8 @@ celLayerRenderer.trap = (cel, colors, x, y) => {
                 xb += incb
             }
             y1bLo += deltay
-        } while (y1bLo < countMaxA)
-        y1bLo -= countMaxA
+        } while (y1bLo < countMaxB)
+        y1bLo -= countMaxB
     }
     const celColors = { ...colors }
     if (cel.texture) {
