@@ -26,7 +26,8 @@
             import { navigationView, regionSearch } from "./navigate.js"
             import { parseHabitatRegion } from "./neohabitat.js"
             import { makePointerInteraction, propEditor, depthEditor, objectPanel, createEditTracker, 
-                     Selection, registerKeyHandler, trapezoidEditListener } from "./edit.js"
+                     EditState, registerKeyHandler, trapezoidEditListener, editStateCheckbox,
+                     overlayImageView, overlayImageEditor } from "./edit.js"
             import { jsonDump, jsonDownload } from "./show.js"
 
             const q = (k) => (new URLSearchParams(window.location.search)).get(k)
@@ -47,29 +48,23 @@
             await loadUrl(filename)
             tracker.editHistory.length = 0
 
-            const selectionRef = signal(null)
-            registerKeyHandler(document, tracker, selectionRef, objects)
+            const editStateSig = signal({})
+            registerKeyHandler(document, tracker, editStateSig, objects)
 
             const regionName = ({ objects }) => {
                 const region = objects.find(obj => obj.type == "context")
                 return html`<span>${(region && region.name) ?? filename}</span>`
             }
 
-            const overlayImageUrl = signal(null)
-            const overlayOpacity = signal(0.5)
-
             const regionPage = ({ objects, tracker }) => {
                 const interaction = useCallback(makePointerInteraction(objects, tracker), [objects, tracker])
                 return html`
                 <h1>Region Editor - <${regionName} objects=${objects}/></h1>
-                <${Selection.Provider} value=${selectionRef}>
+                <${EditState.Provider} value=${editStateSig}>
                     <div style="display: flex; flex-wrap: wrap;">
                         <div style="width: 1000px; position: relative;">
                             <${regionView} objects=${objects} interaction=${interaction} style="touch-action: pinch-zoom;"/>
-                            ${overlayImageUrl.value ? html`
-                                <img style="width: 960px; height: 384px; position: absolute; top: 0; pointer-events: none; 
-                                            opacity: ${overlayOpacity.value}; z-index: 10000;"
-                                     src=${overlayImageUrl.value} />` : null}
+                            <${overlayImageView}/>
                             <${depthEditor} objects=${objects}/>
                             <${propEditor} objects=${objects} tracker=${tracker}/>
                         </div>
@@ -89,22 +84,13 @@
                                         }
                                     }}/>
                                 </label><br/>
-                                <label>
-                                    Image overlay: <input type="file" accept="image/*" onchange=${e => {
-                                        if (e.target.files.length > 0) {
-                                            if (overlayImageUrl.value) {
-                                                URL.revokeObjectURL(overlayImageUrl.value)
-                                            }
-                                            overlayImageUrl.value = URL.createObjectURL(e.target.files[0])
-                                        }
-                                    }}/>
-                                </label><br/>
-                                ${overlayImageUrl.value 
-                                    ? html`<input type="range" max="1" step="any" value=${overlayOpacity.value}
-                                                  oninput=${e => { overlayOpacity.value = parseFloat(e.target.value) }}/>`
-                                    : null}
+                                <${overlayImageEditor} />
                             </div>
                             <${objectPanel} objects=${objects} tracker=${tracker}/>
+                            <${editStateCheckbox} field="showZFighting">
+                                <span style="border: 3px dotted red;">Show Z-fighting warning</span>
+                            <//><br/>
+                            <${editStateCheckbox} field="showDepthMarker">Show depth marker<//><br/>
                             <${regionSearch} label="Replace with region" 
                                 onSelected=${({ filename }) => { loadUrl(filename) }}
                             />

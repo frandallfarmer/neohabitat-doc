@@ -3,11 +3,11 @@ import { useContext, useState, useMemo, useRef, useEffect, useLayoutEffect, useC
 import { signal, batch } from "@preact/signals"
 import { html, catcher, collapsable } from "./view.js"
 import { emptyBitmap, trapTextureToBitmap } from "./codec.js"
-import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale, compositeSpaces } from "./render.js"
+import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale, compositeSpaces, translateSpace } from "./render.js"
 import { colorsFromOrientation, javaTypeToMuddleClass, joinReplacements } from "./neohabitat.js"
 import { jsonDump, charView } from "./show.js"
 import { useJson, charset, betaMud } from "./data.js"
-import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache } from "./region.js"
+import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache, useLayout } from "./region.js"
 import { makeCanvas } from "./shim.js"
 
 const transparencyGridStyle = (() => {
@@ -21,7 +21,25 @@ const transparencyGridStyle = (() => {
     return `background-image: url("${canvas.toDataURL()}");`
 })()
 
-export const Selection = createContext(signal(null))
+export const EditState = createContext(signal({}))
+export const editStateDefaults = {
+    selection: null,
+    showZFighting: true,
+    showDepthMarker: true,
+    overlayOpacity: 0.5
+}
+export const useEditState = (explicitStateSig = null) => {
+    const stateSig = explicitStateSig ?? useContext(EditState)
+    return { 
+        ...editStateDefaults,
+        ...stateSig.value,
+        set(key, value) {
+            stateSig.value = { ...stateSig.value, [key]: value }
+        },
+        setSelection(selection) { this.set("selection", selection) },
+    }
+}
+
 export const createEditTracker = () => {
     const editHistory = []
     const redoHistory = []
@@ -295,7 +313,7 @@ export const moveBy = (ref, dx, dy, objects, tracker) => {
 export const findRegionRef = (objects) => objects.find(o => o.type === "context").ref
 export const positionEditor = ({ obj, objects, tracker }) => {
     const regionRef = findRegionRef(objects)
-    const selectionRef = useContext(Selection)
+    const editState = useEditState()
     const mod = obj.mods[0]
     const container = objects.find(o => o.ref === obj.in)
     const containerMod = container?.mods?.[0]
@@ -343,7 +361,7 @@ export const positionEditor = ({ obj, objects, tracker }) => {
     
     const containedPosition = html`
         <div>
-            Inside <a href="javascript:;" onclick=${() => { selectionRef.value = obj.in }}>${obj.in}</a>
+            Inside <a href="javascript:;" onclick=${() => { editState.setSelection(obj.in) }}>${obj.in}</a>
             , position ${mod.y}
         </div>
         <button style=${buttonStyle} onclick=${() => { obj.in = regionRef }}>
@@ -431,8 +449,35 @@ export const trapezoidCornerInteraction = ({ object, layout, tracker }) => {
             makeCorner("upper_left_x"), makeCorner("upper_right_x")]
 }
 
+export const highlightZFighting = ({ object, objects, layout }) => {
+    const editState = useEditState()
+    const regionRef = findRegionRef(objects)
+    if (object.in === regionRef && editState.showZFighting) {
+        const isFighting = objects
+            .filter(o => (!editState.selection || o.ref === editState.selection) && 
+                         o.in === regionRef && o.ref !== object.ref && 
+                         o.mods[0].y === object.mods[0].y)
+            .some(o => {
+                const space = translateSpace(compositeSpaces(layout.frames), layout.x, layout.y)
+                const otherLayout = useLayout(o.ref)
+                if (otherLayout) {
+                    const otherSpace = translateSpace(compositeSpaces(otherLayout.frames), otherLayout.x, otherLayout.y)
+                    const left = space.minX < otherSpace.minX ? space : otherSpace
+                    const right = left === space ? otherSpace : space
+                    return left.maxX > right.minX
+                }
+                return false
+            })
+        if (isFighting) {
+            return html`
+                <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; 
+                            background-color: #ff000040; border: 3px dotted red; pointer-events: none;"></div>`
+        }
+    }
+}
+
 export const makePointerInteraction = (objects, tracker) => ({ object, layout, children }) => {
-    const selectionRef = useContext(Selection)
+    const editState = useEditState()
     const container = objects.find(o => o.ref === object.in)
     const scale = useContext(Scale)
     const moveObj = useCallback((e, state) => {
@@ -454,30 +499,31 @@ export const makePointerInteraction = (objects, tracker) => ({ object, layout, c
         }
         e.preventDefault()
         if (e.type === "pointerup" && !state.moved) {
-            selectionRef.value = null
+            editState.setSelection(null)
         }
     }, [object, container, scale])
 
     const drag = useCallback(e => {
         if (e.isPrimary) {
-            if (selectionRef.value === object.ref) {
+            if (editState.selection === object.ref) {
                 startDrag(e, moveObj)
             } else {
-                selectionRef.value = object.ref
+                editState.setSelection(object.ref)
             }
         }
     }, [moveObj])
-    const trap = selectionRef.value !== object.ref ? null 
+    const trap = editState.selection !== object.ref ? null 
                : html`<${trapezoidCornerInteraction} object=${object} tracker=${tracker} layout=${layout}/>`
     return html`
         <div onpointerdown=${drag}>
-            ${selectionRef.value === object.ref ? html`
+            ${editState.selection === object.ref ? html`
                 <div style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; 
-                            background-color: #ff000040; border: 1px solid red; cursor: move;"></div>
+                            background-color: #00ff0040; border: 1px solid green; cursor: move;"></div>
                 ` : null}
             ${children}
         </div>
-        ${trap}`
+        ${trap}
+        <${highlightZFighting} object=${object} objects=${objects} layout=${layout}/>`
 }
 
 export const patternSelector = ({ selected, onSelected }) => html`
@@ -564,7 +610,8 @@ export const styleEditor = ({ obj, objects }) => {
         <//>`
 }
 
-export const itemSlotEditor = ({ objects, tracker, slot, capacity, containerRef, selectionRef, refToInsert }) => {
+export const itemSlotEditor = ({ objects, tracker, slot, capacity, containerRef, refToInsert }) => {
+    const editState = useEditState()
     const items = objects.filter(o => o.in === containerRef && o.mods[0].y === slot)
     const moveItem = (item, slot) => {
         tracker.group(() => {
@@ -597,7 +644,7 @@ export const itemSlotEditor = ({ objects, tracker, slot, capacity, containerRef,
         <div style="display: flex; flex-wrap: wrap; ${items.length > 1 ? "background-color: #fcc;" : ""}">
             ${items.map(o => html`
                 <div style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;">
-                    <a href="javascript:;" onclick=${() => { selectionRef.value = o.ref }}>
+                    <a href="javascript:;" onclick=${() => { editState.setSelection(o.ref) }}>
                         <${standaloneItemView} object=${o} objects=${objects}/>
                     </a>
                     <div>
@@ -622,7 +669,6 @@ export const itemSlotEditor = ({ objects, tracker, slot, capacity, containerRef,
 }
 
 export const containerEditor = ({ objects, obj, tracker }) => {
-    const selectionRef = useContext(Selection)
     const regionRef = findRegionRef(objects)
     const items = objects
         .filter(o => o.in === obj.ref)
@@ -647,7 +693,6 @@ export const containerEditor = ({ objects, obj, tracker }) => {
                                            tracker=${tracker} 
                                            slot=${i} 
                                            containerRef=${obj.ref} 
-                                           selectionRef=${selectionRef}
                                            refToInsert=${refToInsert}/>
                     </div>`)}
             </div>
@@ -1013,7 +1058,7 @@ export const renameRef = (objects, refOld, refNew) => {
 
 
 export const refEditor = ({ obj, objects, tracker }) => {
-    const selectionRef = useContext(Selection)
+    const editState = useContext(EditState)
     return html`
         <${collapsable} summary="ID">
             <table>
@@ -1026,8 +1071,8 @@ export const refEditor = ({ obj, objects, tracker }) => {
                     <td>
                         <input type="text" value=${obj.ref}
                                onChange=${e => { 
-                                    if (selectionRef.value === obj.ref) {
-                                        selectionRef.value = e.target.value
+                                    if (editState.selection === obj.ref) {
+                                        editState.setSelection(e.target.value)
                                     }
                                     tracker.group(() => renameRef(objects, obj.ref, e.target.value))                                    
                                }}/>
@@ -1069,6 +1114,17 @@ export const booleanCheckbox = ({ obj, field, children }) => html`
                onChange=${e => { obj[field] = e.target.checked }}/>
         ${children}
     </label>`
+
+export const editStateCheckbox = ({ field, children }) => {
+    const editState = useEditState()
+    return html`
+        <label>
+            <input type="checkbox"
+                checked=${editState[field] ?? false}
+                onChange=${e => { editState.set(field, e.target.checked) }}/>
+            ${children}
+        </label>`
+}
 
 export const regionEditor = ({ obj }) => {
     const mod = obj.mods[0]
@@ -1124,9 +1180,9 @@ export const regionEditor = ({ obj }) => {
 }
 
 export const propEditor = ({ objects, tracker }) => {
-    const selectionRef = useContext(Selection)
+    const editState = useEditState()
     const regionRef = findRegionRef(objects)
-    const obj = objects.find(o => o.ref === (selectionRef.value ?? regionRef))
+    const obj = objects.find(o => o.ref === (editState.selection ?? regionRef))
     if (obj) {
         let itemEditors
         if (obj.type === "item") {
@@ -1159,7 +1215,7 @@ const disabledStyle = `background-color: #777; color: #ccc; ${buttonStyle}`
 const dangerousStyle = `background-color: red; color: white; ${buttonStyle}`
 const primaryButtonStyle = `background-color: blue; color: white; ${buttonStyle}`
 
-export const addNewObject = (type, objects, tracker, selectionRef, defaultModValues) => {
+export const addNewObject = (type, objects, tracker, editState, defaultModValues) => {
     const regionRef = findRegionRef(objects)
     const obj = {
         type: "item",
@@ -1177,7 +1233,7 @@ export const addNewObject = (type, objects, tracker, selectionRef, defaultModVal
         }]
     }
     objects.push(tracker.trackSignal(signal(obj)))
-    selectionRef.value = obj.ref
+    editState.setSelection(obj.ref)
     return obj
 }
 
@@ -1185,10 +1241,10 @@ export const newObjectButton = ({ objects, tracker }) => {
     const defaultModValues = useJson("default_mod_values.json", {})
     const javaClasses = useMemo(() => [...Object.keys(defaultModValues)].sort(), [defaultModValues])
     const [iclass, setIClass] = useState(0)
-    const selectionRef = useContext(Selection)
+    const editState = useEditState()
     return html`
         <button style=${primaryButtonStyle}
-                onclick=${() => { addNewObject(javaClasses[iclass], objects, tracker, selectionRef, defaultModValues) }}>
+                onclick=${() => { addNewObject(javaClasses[iclass], objects, tracker, editState, defaultModValues) }}>
             + Create
         </button>
         <select onchange=${(e) => { setIClass(parseInt(e.target.value)) }}>
@@ -1198,15 +1254,15 @@ export const newObjectButton = ({ objects, tracker }) => {
         </select>`
 }
 
-export const cloneItem = (object, objects, tracker, selectionRef) => {
+export const cloneItem = (object, objects, tracker, editState) => {
     const type = object.mods[0].type
     const defaults = { [type]: JSON.parse(JSON.stringify(object.mods[0])) }
-    addNewObject(type, objects, tracker, selectionRef, defaults)
+    addNewObject(type, objects, tracker, editState, defaults)
 }
 
 export const objectPanel = ({ objects, tracker }) => {
-    const selectionRef = useContext(Selection)
-    const iselection = objects.findIndex(o => o.ref === selectionRef.value)
+    const editState = useEditState()
+    const iselection = objects.findIndex(o => o.ref === editState.selection)
     const deleteDisabled = iselection <= 0
     const moveUpDisabled = iselection <= 1
     const moveDownDisabled = iselection <= 0 || iselection >= objects.length - 1
@@ -1221,14 +1277,14 @@ export const objectPanel = ({ objects, tracker }) => {
             ${objects.map(o => html`
                 <div>
                     <label>
-                        <input type="radio" checked=${o.ref === selectionRef.value}
-                               onclick=${() => { selectionRef.value = o.ref }}/>
+                        <input type="radio" checked=${o.ref === editState.selection}
+                               onclick=${() => { editState.setSelection(o.ref) }}/>
                         ${o.name} (${o.ref})
                     </label>
                 </div>
             `)}
             <button style="${dupDisabled ? disabledStyle : buttonStyle}" disabled=${dupDisabled}
-                    onclick=${() => { cloneItem(objects[iselection], objects, tracker, selectionRef) }}>
+                    onclick=${() => { cloneItem(objects[iselection], objects, tracker, editState) }}>
                 Clone
             </button>
             <button style="${moveUpDisabled ? disabledStyle : buttonStyle}" disabled=${moveUpDisabled}
@@ -1247,8 +1303,9 @@ export const objectPanel = ({ objects, tracker }) => {
         </fieldset>`
 }
 
-export const registerKeyHandler = (document, tracker, selectionRef, objects) => {
+export const registerKeyHandler = (document, tracker, editStateSig, objects) => {
     document.addEventListener("keydown", (e) => {
+        const editState = useEditState(editStateSig)
         if ((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z")) {
             if (e.shiftKey) {
                 tracker.redo()
@@ -1256,11 +1313,11 @@ export const registerKeyHandler = (document, tracker, selectionRef, objects) => 
                 tracker.undo()
             }
         } else if (e.key === "Escape") {
-            selectionRef.value = null
-        } else if (e.key.startsWith("Arrow") && selectionRef.value !== null
+            editState.setSelection(null)
+        } else if (e.key.startsWith("Arrow") && editState.selection
                    && !(e.target instanceof HTMLInputElement)
                    && !(e.target instanceof HTMLTextAreaElement)) {
-            const obj = objects.find(o => o.ref === selectionRef.value)
+            const obj = objects.find(o => o.ref === editState.selection)
             if (obj && obj.type === "item") {
                 let dx = 0
                 let dy = 0
@@ -1278,14 +1335,43 @@ export const registerKeyHandler = (document, tracker, selectionRef, objects) => 
 }
 
 export const depthEditor = ({ objects }) => {
-    const selectionRef = useContext(Selection)
+    const editState = useEditState()
     const scale = useContext(Scale)
     const region = objects.find(o => o.type === "context")
-    if (selectionRef.value !== null && selectionRef.value !== region.ref) {
+    if (!editState.showDepthMarker) {
         return null
     }
     const yDepth = 127 - (region.mods[0].depth ?? 32)
     return html`<div style="position: absolute; left: 0; top: ${yDepth * scale}px; width: 100%; 
                             height: ${scale}px; background-color: red; opacity: 50%; z-index: 10001;
                             pointer-events: none;"/>`
+}
+
+export const overlayImageView = (_) => {
+    const editState = useEditState()
+    const scale = useContext(Scale)
+    if (editState.overlayImageUrl) {
+        return html`<img style="width: ${320 * scale}px; height: ${128 * scale}px; position: absolute; top: 0; pointer-events: none; 
+                                opacity: ${editState.overlayOpacity ?? 0.5}; z-index: 10000;"
+                         src=${editState.overlayImageUrl} />`
+    }
+}
+
+export const overlayImageEditor = (_) => {
+    const editState = useEditState()
+    return html`
+        <label>
+        Image overlay: <input type="file" accept="image/*" onchange=${e => {
+            if (e.target.files.length > 0) {
+                if (editState.overlayImageUrl) {
+                    URL.revokeObjectURL(editState.overlayImageUrl)
+                }
+                editState.set("overlayImageUrl", URL.createObjectURL(e.target.files[0]))
+            }
+        }}/>
+        </label><br/>
+        ${editState.overlayImageUrl
+            ? html`<input type="range" max="1" step="any" value=${editState.overlayOpacity ?? 0.5}
+                        oninput=${e => { editState.set("overlayOpacity", parseFloat(e.target.value)) }}/>`
+            : null}`
 }
