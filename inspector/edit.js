@@ -454,9 +454,9 @@ export const highlightZFighting = ({ object, objects, layout }) => {
     const regionRef = findRegionRef(objects)
     if (object.in === regionRef && editState.showZFighting) {
         const isFighting = objects
-            .filter(o => (!editState.selection || o.ref === editState.selection) && 
-                         o.in === regionRef && o.ref !== object.ref && 
-                         o.mods[0].y === object.mods[0].y)
+            .filter(o => (!editState.selection || editState.selection === regionRef || o.ref === editState.selection)
+                         && o.in === regionRef && o.ref !== object.ref 
+                         && o.mods[0].y === object.mods[0].y)
             .some(o => {
                 const space = translateSpace(compositeSpaces(layout.frames), layout.x, layout.y)
                 const otherLayout = useLayout(o.ref)
@@ -501,7 +501,7 @@ export const makePointerInteraction = (objects, tracker) => ({ object, layout, c
         if (e.type === "pointerup" && !state.moved) {
             editState.setSelection(null)
         }
-    }, [object, container, scale])
+    }, [object, container, scale, editState])
 
     const drag = useCallback(e => {
         if (e.isPrimary) {
@@ -511,7 +511,7 @@ export const makePointerInteraction = (objects, tracker) => ({ object, layout, c
                 editState.setSelection(object.ref)
             }
         }
-    }, [moveObj])
+    }, [moveObj, editState])
     const trap = editState.selection !== object.ref ? null 
                : html`<${trapezoidCornerInteraction} object=${object} tracker=${tracker} layout=${layout}/>`
     return html`
