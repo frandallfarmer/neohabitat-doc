@@ -137,7 +137,7 @@ const navMove = ({ fromref, dir, orientation }) => {
             return html`
                 <span>through 
                     <div style="display: inline-block">
-                        <${Scale.provider} value="1">
+                        <${Scale.Provider} value="1">
                             <${itemView} object=${obj} viewer=${standaloneItemView}/>
                         <//>
                     </div>

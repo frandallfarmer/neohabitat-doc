@@ -1,6 +1,6 @@
 import { createContext } from "preact"
 import { useContext, useState, useMemo, useRef, useEffect, useLayoutEffect, useCallback } from "preact/hooks"
-import { signal } from "@preact/signals"
+import { signal, batch } from "@preact/signals"
 import { html, catcher, collapsable } from "./view.js"
 import { emptyBitmap, trapTextureToBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale, compositeSpaces } from "./render.js"
@@ -110,16 +110,18 @@ export const createEditTracker = () => {
 
     const undo = (fromHistory = editHistory, toHistory = redoHistory) => {
         let group = null
-        while (fromHistory.length > 0) {
-            const edit = fromHistory[fromHistory.length - 1]
-            group = group ?? edit.group
-            if (group !== edit.group) {
-                break
-            }
-            fromHistory.pop()
-            const splicing = edit.splicing === null ? null : edit.value.length
-            performEdit(edit.sig, edit.place, edit.key, edit.previous, splicing, toHistory)
-        }
+        batch(() => {
+            while (fromHistory.length > 0) {
+                const edit = fromHistory[fromHistory.length - 1]
+                group = group ?? edit.group
+                if (group !== edit.group) {
+                    break
+                }
+                fromHistory.pop()
+                const splicing = edit.splicing === null ? null : edit.value.length
+                performEdit(edit.sig, edit.place, edit.key, edit.previous, splicing, toHistory)
+            }    
+        })
         commitGroup()
     }
     
@@ -200,6 +202,7 @@ export const createEditTracker = () => {
             }
             return dynamicProxy(() => innerTarget, {
                 get(target, property, receiver) {
+                    sig.value // subscribe if needed
                     return wrapInnerValue(sig, innerTarget[property], [...place, property], refresh)
                 },
                 set(target, property, newValue, receiver) {

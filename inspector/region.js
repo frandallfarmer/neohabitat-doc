@@ -2,7 +2,7 @@ import { decodeProp } from "./codec.js"
 import { html, catcher } from "./view.js"
 import { createContext } from "preact"
 import { useContext, useMemo } from "preact/hooks"
-import { signal } from "@preact/signals"
+import { signal, computed, effect, useSignal, useSignalEffect } from "@preact/signals"
 import { contextMap, betaMud, logError, promiseToSignal, until, useBinary, useHabitatJson, charset } from './data.js'
 import { translateSpace, topLeftCanvasOffset, Scale, framesFromPropAnimation, frameFromCels, celsFromMask,
          compositeSpaces, animatedDiv, stringFromText, canvasForSpace, canvasImage } from "./render.js"
@@ -162,6 +162,7 @@ const colorsFromMod = (mod) => {
     return colors
 }
 
+// layout / prop rendering as computed signal
 export const propFramesFromMod = (prop, mod, xOrigin = 0, flipOverride = null) => {
     const colors = colorsFromMod(mod)
     colors.xOrigin = xOrigin
@@ -180,8 +181,87 @@ export const propFramesFromMod = (prop, mod, xOrigin = 0, flipOverride = null) =
     }
 }
 
-export const propFramesDependencies = (prop, mod, flipOverride = null) =>
-    [prop, mod, colorsFromMod(mod).charset, flipOverride]
+export const objectSpaceFromLayout = ({ x, y, frames }) =>
+    translateSpace(compositeSpaces(frames), x, y)
+
+export const containedItemLayout = (prop, mod, containerProp, containerMod, containerSpace) => {
+    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerMod.x, containerMod.y)
+    const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod) ?? { x: 0, y: 0 }
+    const flipHorizontal = (containerMod.orientation & 0x01) != 0
+    // if the contents are drawn in front, the container has its origin offset by the offset of its first cel.
+    const originX = containerProp.contentsInFront ? containerSpace.xOrigin : 0
+    const originY = containerProp.contentsInFront ? containerSpace.yOrigin : 0
+    const x = (containerX - originX) + (flipHorizontal ? -offsetX : offsetX)
+    const y = containerY - (offsetY + originY)
+    const z = containerZ
+    // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
+    // the y axis inverted (see render.m:115-121)
+    const frames = propFramesFromMod(prop, mod, x, flipHorizontal)
+    return { x, y, z, frames }
+}
+
+export const regionItemLayout = (prop, mod) => {
+    const [x, y, z] = propLocationFromObjectXY(mod.x, mod.y)
+    const frames = propFramesFromMod(prop, mod, x)
+    return { x, y, z, frames }
+}
+
+export const computeLayoutMap = (objects, sig = signal({})) => {
+    const layoutMap = {}
+    for (const obj of objects) {
+        if (obj.type !== "item") continue
+        const ref = obj.ref
+        const layoutItem = sig.peek()[obj.ref] ?? { obj: signal(obj) }
+        layoutMap[ref] = layoutItem
+        layoutItem.obj.value = obj
+        if (!layoutItem.layout) {
+            layoutItem.prop = signal(null)
+            effect(() => {
+                layoutItem.prop.value = propFromMod(layoutItem.obj.value.mods[0], ref)
+            })
+            layoutItem.container = computed(() => sig.value[layoutItem.obj.value.in])
+            layoutItem.layout = signal(null)
+            effect(() => {
+                const { obj, prop, container, layout } = layoutItem
+                var newLayout = null
+                if (prop.value) {
+                    if (container.value?.layout?.value) {
+                        newLayout = containedItemLayout(
+                            prop.value, 
+                            obj.value.mods[0], 
+                            container.value.prop.value, 
+                            container.value.obj.value.mods[0], 
+                            container.value.layout.value.frames[0]
+                        )
+                    } else if (!container.value) {
+                        newLayout = regionItemLayout(prop.value, obj.value.mods[0])
+                    }
+                }
+                layout.value = newLayout
+            })
+        }
+    }
+    sig.value = layoutMap
+    return layoutMap
+}
+
+export const LayoutMap = createContext(null)
+export const regionLayout = ({ objects, children }) => {
+    const currentLayoutMap = useContext(LayoutMap)
+    if (currentLayoutMap?.objects === objects) {
+        // don't bother recalculating layout if we've already done the work
+        return children
+    }
+    const layoutMap = useSignal({})
+    const sigObjects = useSignal(objects)
+    sigObjects.value = objects
+    useSignalEffect(() => { computeLayoutMap(sigObjects.value, layoutMap) })
+    return html`<${LayoutMap.Provider} value=${({ objects, map: layoutMap })}>${children}<//>`
+}
+
+export const useLayout = (ref) => useContext(LayoutMap).map.value[ref]?.layout?.value
+export const useLayoutProp = (ref) => useContext(LayoutMap).map.value[ref]?.prop?.value
+export const useLayoutObjects = (ref) => useContext(LayoutMap).objects
 
 export const itemView = (props) => {
     return html`
@@ -191,26 +271,18 @@ export const itemView = (props) => {
 }
 
 export const standaloneItemView = ({ object, objects }) => {
-    const mod = object.mods[0]
-    const prop = propFromMod(mod, object.ref)
-    if (!prop) {
-        return null
+    const container = objects?.find?.(o => o.ref === object.in)
+    const layoutObjects = container ? [object, container] : [object]
+    const layoutMap = useSignal({})
+    const sigObjects = useSignal(layoutObjects)
+    if (layoutObjects.length !== sigObjects.value.length || !layoutObjects.every((o, i) => o === sigObjects.value[i])) {
+        sigObjects.value = layoutObjects
     }
-    let container = null
-    if (objects) {
-        container = objects.find(o => o.ref === object.in)
+    useSignalEffect(() => { computeLayoutMap(sigObjects.value, layoutMap) })
+    const layout = layoutMap.value[object.ref]?.layout?.value
+    if (layout) {
+        return html`<${animatedDiv} frames=${layout.frames}/>`
     }
-    let frames = null
-    if (container && container.type === "item") {
-        const containerMod = container.mods[0]
-        const containerProp = propFromMod(containerMod)
-        if (containerProp) {
-            const containerSpace = regionItemLayout(containerProp, containerMod).frames[0]
-            frames = containedItemLayout(prop, mod, containerProp, containerMod, containerSpace).frames
-        }
-    }
-    frames = frames ?? regionItemLayout(prop, mod).frames
-    return html`<${animatedDiv} frames=${frames}/>`
 }
 
 export const positionInRegion = (space) => {
@@ -239,43 +311,6 @@ export const offsetsFromContainer = (containerProp, containerMod, mod) => {
     }
 }
 
-export const objectSpaceFromLayout = ({ x, y, frames }) =>
-    translateSpace(compositeSpaces(frames), x, y)
-
-export const containedItemLayout = (prop, mod, containerProp, containerMod, containerSpace) => {
-    const [containerX, containerY, containerZ] = propLocationFromObjectXY(containerMod.x, containerMod.y)
-    const { x: offsetX, y: offsetY } = offsetsFromContainer(containerProp, containerMod, mod) ?? { x: 0, y: 0 }
-    const flipHorizontal = (containerMod.orientation & 0x01) != 0
-    // if the contents are drawn in front, the container has its origin offset by the offset of its first cel.
-    const originX = containerProp.contentsInFront ? containerSpace.xOrigin : 0
-    const originY = containerProp.contentsInFront ? containerSpace.yOrigin : 0
-    const x = (containerX - originX) + (flipHorizontal ? -offsetX : offsetX)
-    const y = containerY - (offsetY + originY)
-    const z = containerZ
-    // offsets are relative to `cel_x_origin` / `cel_y_origin`, which is in "habitat space" but with
-    // the y axis inverted (see render.m:115-121)
-    const frames = propFramesFromMod(prop, mod, x, flipHorizontal)
-    return { x, y, z, frames }
-}
-
-export const containedItemView = ({ object, containerProp, containerMod, containerSpace }) => {
-    const mod = object.mods[0]
-    const prop = propFromMod(mod, object.ref)
-    if (!prop || containerProp.contentsXY.length < mod.y) {
-        return null
-    }
-    const layout = useMemo(
-        () => containedItemLayout(prop, mod, containerProp, containerMod, containerSpace),
-        propFramesDependencies(prop, mod, containerMod.orientation))
-
-    return html`
-        <${positionedInRegion} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
-            <${itemInteractionWrapper} object=${object} layout=${layout}>
-                <${animatedDiv} frames=${layout.frames}/>
-            <//>
-        <//>`
-}
-
 export const itemInteraction = createContext(({ children }) => children)
 
 export const itemInteractionWrapper = (props) => {
@@ -292,20 +327,12 @@ export const navInteraction = ({ object, children }) => {
     return children
 }
 
-export const regionItemLayout = (prop, mod) => {
-    const [x, y, z] = propLocationFromObjectXY(mod.x, mod.y)
-    const frames = propFramesFromMod(prop, mod, x)
-    return { x, y, z, frames }
-}
-
 export const regionItemView = ({ object, contents = [] }) => {
-    const mod = object.mods[0]
-    const prop = propFromMod(mod, object.ref)
-    if (!prop) {
+    const layout = useLayout(object.ref)
+    const prop = useLayoutProp(object.ref)
+    if (!layout || !prop) {
         return null
     }
-    const layout = useMemo(() => regionItemLayout(prop, mod),
-        propFramesDependencies(prop, mod))
 
     const container = html`
             <${positionedInRegion} key=${object.ref} space=${objectSpaceFromLayout(layout)} z=${layout.z}>
@@ -315,11 +342,7 @@ export const regionItemView = ({ object, contents = [] }) => {
             </div>`
     if (prop.contentsXY.length > 0) {
         const children = contents.map(item => html`
-            <${containedItemView} key=${item.ref} 
-                                  object=${item} 
-                                  containerProp=${prop} 
-                                  containerMod=${mod}
-                                  containerSpace=${layout.frames[0]}/>`)
+            <${regionItemView} key=${item.ref} object=${item} />`)
         if (prop.contentsInFront) {
             return [container, ...children]
         } else {
@@ -343,43 +366,45 @@ export const regionView = ({ filename, objects, style = "", interaction = ({chil
     objects = objects ?? useHabitatJson(filename)
 
     return html`
-        <${itemInteraction.Provider} value=${interaction}>
-            <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden; ${style}">
-                ${sortObjects(objects).map(([obj, contents]) => html`
-                    <${itemView} key=${obj.ref}
-                                viewer=${regionItemView} 
-                                object=${obj} 
-                                contents=${contents}/>`)}
-            </div>
+        <${regionLayout} objects=${objects}>
+            <${itemInteraction.Provider} value=${interaction}>
+                <div style="position: relative; line-height: 0px; width: ${320 * scale}px; height: ${128 * scale}px; overflow: hidden; ${style}">
+                    ${sortObjects(objects).map(([obj, contents]) => html`
+                        <${itemView} key=${obj.ref}
+                                    viewer=${regionItemView} 
+                                    object=${obj} 
+                                    contents=${contents}/>`)}
+                </div>
+            <//>
         <//>`
 }
 
 export const generateRegionCanvas = async (filename) => {
     const objects = await until(() => useHabitatJson(filename), o => o.length > 0)
     await until(charset)
+    const layoutMap = computeLayoutMap(objects)
+    await until(() => Object.values(layoutMap).every(({ layout }) => layout.value))
     const regionSpace = { minX: 0, minY: 0, maxX: 160 / 4, maxY: 127 }
     const canvas = canvasForSpace(regionSpace)
     const ctx = canvas.getContext("2d")
-    const drawItem = async (obj, layoutFunc) => {
-        const mod = obj.mods[0]
-        const prop = await until(() => propFromMod(mod, obj.ref))
-        const { x, y, frames } = layoutFunc(prop, mod)
+    const drawItem = (obj) => {
+        const { x, y, frames } = layoutMap[obj.ref].layout.value
         const frame = frames[0]
         if (frame?.canvas) {
             const [iX, iY] = positionInRegion(translateSpace(frame, x, y))
             ctx.drawImage(frame.canvas, iX, iY)
         }
-        return [prop, mod, frame]
     }
     for (const [obj, contents] of sortObjects(objects)) {
-        const [prop, mod, frame] = await drawItem(obj, regionItemLayout)
+        const prop = layoutMap[obj.ref].prop.value
+        drawItem(obj)
         for (const child of contents) {
             if (prop.contentsXY.length > child.mods[0].y) {
-                await drawItem(child, (p, m) => containedItemLayout(p, m, prop, mod, frame))
+                drawItem(child)
             }
         }
         if (prop.contentsXY.length > 0 && contents.length > 0 && !prop.contentsInFront) {
-            await drawItem(obj, regionItemLayout)
+            drawItem(obj)
         }
     }
     return canvas
