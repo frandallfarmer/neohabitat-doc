@@ -391,7 +391,7 @@ export const startDrag = (e, callback, state = {}) => {
             document.body.releasePointerCapture(pointerId)
         }
     }
-    document.body.setPointerCapture(e, pointerId)
+    document.body.setPointerCapture(pointerId)
     callback(e, state)
 }
 
