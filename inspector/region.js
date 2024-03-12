@@ -217,7 +217,11 @@ export const computeLayoutMap = (objects, sig = signal({})) => {
         if (!layoutItem.layout) {
             layoutItem.prop = signal(null)
             effect(() => {
-                layoutItem.prop.value = propFromMod(layoutItem.obj.value.mods[0], ref)
+                try {
+                    layoutItem.prop.value = propFromMod(layoutItem.obj.value.mods[0], ref)
+                } catch(e) {
+                    console.error(e)
+                }
             })
             layoutItem.container = computed(() => sig.value[layoutItem.obj.value.in])
             layoutItem.layout = signal(null)

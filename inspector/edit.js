@@ -526,12 +526,15 @@ export const makePointerInteraction = (objects, tracker) => ({ object, layout, c
         <${highlightZFighting} object=${object} objects=${objects} layout=${layout}/>`
 }
 
+export const borderStyle = (selected) => 
+    `border: ${selected ? "4px solid green" : "1px dotted grey"}; 
+     padding: ${selected ? "1px" : "4px"}; margin: 2px;`
+
 export const patternSelector = ({ selected, onSelected }) => html`
     <div style="display: flex">
         ${[...Array(15).keys()].map((ipattern) => html`
             <div key=${`pattern${ipattern}`}
-                style="width: 48px; height: 48px; margin: 2px;
-                        border: 4px dotted ${selected === ipattern ? " black" : "transparent"};"
+                style="width: 48px; height: 48px; ${borderStyle(selected === ipattern)}"
                 onclick=${() => onSelected(ipattern)}>
                 <${canvasImage} canvas=${canvasFromBitmap(emptyBitmap(2, 16, 1), { pattern: ipattern })}/>
             </div>`)}
@@ -541,8 +544,7 @@ export const colorSelector = ({ selected, onSelected }) => html`
     <div style="display: flex">
         ${c64Colors.map((color, icolor) => html`
             <div key=${`color${icolor}`} 
-                style="width: 48px; height: 48px; margin: 2px;
-                        border: 4px dotted ${selected === icolor ? " black" : "transparent"};"
+                style="width: 48px; height: 48px; ${borderStyle(selected === icolor)}"
                 onclick=${() => onSelected(icolor)}>
                 <div style="background-color: #${color.toString(16).padStart(6, "0")}; width: 100%; height: 100%;"/>
             </div>`)}
@@ -582,7 +584,7 @@ export const styleEditor = ({ obj, objects }) => {
         <div style="display: flex; flex-wrap: wrap; align-items: center;">
             ${prop.animations.map((animation, i) => html`
                 <${catcher} filename="${obj.ref} : Animation ${i}" key="${obj.ref}gr_state${i}">
-                    <div style="border: 4px dotted ${mod.gr_state === i ? " black" : "transparent"}"
+                    <div style="${borderStyle(mod.gr_state === i)}"
                          onclick=${() => { mod.gr_state = i }}>
                         <${standaloneItemView} object=${({...obj, mods: [{...mod, gr_state: i}]})}
                                                objects=${objects}/>
@@ -597,7 +599,7 @@ export const styleEditor = ({ obj, objects }) => {
                 <div style="display: flex; flex-wrap: wrap; align-items: center;">
                     ${cls[imageKey].map((_, istyle) => html`
                         <${catcher} filename="${obj.ref} : Style ${istyle}" key="${obj.ref}style${istyle}">
-                            <div style="border: 4px dotted ${mod.style === istyle ? " black" : "transparent"}"
+                            <div style="${borderStyle(mod.style === istyle)}"
                                  onclick=${() => { mod.style = istyle }}>
                                 <${standaloneItemView} object=${({...obj, mods: [{...mod, style: istyle, gr_state: 0}]})}
                                                     objects=${objects}/>
@@ -971,8 +973,7 @@ export const bitmapEditor = ({ colors, bitmap, onChange }) => {
             <div style="display: flex;">
                 <${Scale.Provider} value="3">
                     ${[0, 1, 2, 3].map(nibble => html`
-                        <div style="width: ${16 * 3}px; height: ${16 * 3}px; margin: 2px;
-                                    border: 4px dotted ${selectedColor === nibble ? " black" : "transparent"};"
+                        <div style="width: ${16 * 3}px; height: ${16 * 3}px; ${borderStyle(selectedColor === nibble)}"
                             onclick=${() => { setSelectedColor(nibble) }}>
                             <div style="${transparencyGridStyle} line-height: 0px;">
                                 <${canvasImage} canvas=${canvasFromBitmap(emptyBitmap(2, 16, nibble), colors)}/>
