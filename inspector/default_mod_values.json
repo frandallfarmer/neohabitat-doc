@@ -192,12 +192,12 @@
   "Fortune_machine": {},
   "Coke_machine": {},
   "Trapezoid": {
-    "lower_right_x": 7,
-    "upper_right_x": 5,
-    "lower_left_x": 0,
-    "trapezoid_type": 0,
-    "height": 3,
-    "upper_left_x": 2
+    "height": 15,
+    "upper_left_x": 0,
+    "upper_right_x": 16,
+    "lower_left_x": 2,
+    "lower_right_x":14,
+    "trapezoid_type": 0
   },
   "Safe": {
     "open_flags": 2,
@@ -217,21 +217,22 @@
     "path": "text-bookofrecords"
   },
   "Glue": {
+    "x_offset_1": 0,
+    "x_offset_2": 0,
+    "x_offset_3": 0,
+    "x_offset_4": 0,
+    "x_offset_5": 0,
+    "x_offset_6": 0,
+    "y_offset_1": 0,
     "y_offset_2": 0,
     "y_offset_3": 0,
-    "y_offset_1": 0,
-    "y_offset_6": 0,
     "y_offset_4": 0,
     "y_offset_5": 0,
-    "x_offset_2": 0,
-    "x_offset_5": 0,
-    "x_offset_4": 0,
-    "x_offset_6": 0,
-    "x_offset_1": 0,
-    "x_offset_3": 0,
+    "y_offset_6": 0,
     "open_flags": 3,
     "key_hi": 0,
-    "key_lo": 0
+    "key_lo": 0,
+    "gr_state": 1
   },
   "Region": {},
   "Magic_staff": {
@@ -273,8 +274,6 @@
     "activeState": 0
   },
   "Super_trapezoid": {
-    "pattern_x_size": 3,
-    "lower_right_x": 0,
     "pattern": [
       85,
       85,
@@ -309,12 +308,14 @@
       85,
       106
     ],
-    "upper_right_x": 0,
-    "lower_left_x": 72,
-    "trapezoid_type": 2,
-    "height": 7,
+    "pattern_x_size": 3,
     "pattern_y_size": 7,
-    "upper_left_x": 72
+    "height": 15,
+    "upper_left_x": 0,
+    "upper_right_x": 16,
+    "lower_left_x": 2,
+    "lower_right_x":14,
+    "trapezoid_type": 0
   },
   "Matchbook": {}
 }
