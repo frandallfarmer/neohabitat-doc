@@ -728,7 +728,19 @@ export const fieldEditor = ({ field, obj, defaultValue }) => {
     }
 }
 
-export const extraFieldsEditor = ({ obj }) => {
+export const wordFieldEditor = ({ prefix, obj, tracker }) => {
+    const val = (obj[`${prefix}_lo`] ?? 0) | ((obj[`${prefix}_hi`] ?? 0) << 8)
+    const onChange = e => {
+        const newVal = parseInt(e.currentTarget.value)
+        tracker.group(() => {
+            obj[`${prefix}_lo`] = newVal & 0xff
+            obj[`${prefix}_hi`] = (newVal >> 8) & 0xff
+        })
+    }
+    return html`<input type="number" value=${val} onChange=${onChange}/>`
+}
+
+export const extraFieldsEditor = ({ obj, tracker }) => {
     const handledFields = new Set(
         ["x", "y", "orientation", "style", "gr_state", "type", "port_dir", "town_dir", 
          "neighbors", "nitty_bits", "is_turf", "depth", "text", "ascii", "pattern", "realm"]
@@ -737,13 +749,24 @@ export const extraFieldsEditor = ({ obj }) => {
         handledFields.add(`x_offset_${i}`)
         handledFields.add(`y_offset_${i}`)
     }
-    const keys = [...Object.keys(obj.mods[0])]
+    const allKeys = [...Object.keys(obj.mods[0])]
         .filter(k => !handledFields.has(k))
         .sort()
+    const keys = allKeys.filter(k => !k.endsWith("_lo") && !k.endsWith("_hi"))
+    const prefixes = allKeys
+        .filter(k => k.endsWith("_lo"))
+        .map(k => k.slice(0, -3))
+        
     if (keys.length > 0) {
         return html`
             <${collapsable} summary="Fields">
                 <table>
+                    ${prefixes.map(p => html`
+                        <tr>
+                            <td><tt>${p}</tt></td>
+                            <td><${wordFieldEditor} key=${p} prefix=${p} obj=${obj.mods[0]} tracker=${tracker}/></td>
+                        </tr>
+                    `)}
                     ${keys.map(k => html`
                         <tr>
                             <td><tt>${k}</tt></td>
@@ -1208,7 +1231,7 @@ export const propEditor = ({ objects, tracker }) => {
                 <${jsonDump} heading=${html`<h3 style="display: inline-block">${obj.name} (${obj.ref})</h3>`} value=${obj}/>
                 <${refEditor} objects=${objects} obj=${obj} tracker=${tracker}/>
                 ${itemEditors}
-                <${extraFieldsEditor} obj=${obj}/>
+                <${extraFieldsEditor} obj=${obj} tracker=${tracker}/>
             <//>`
     }
 }
