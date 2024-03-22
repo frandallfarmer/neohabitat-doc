@@ -540,13 +540,17 @@ export const patternSelector = ({ selected, onSelected }) => html`
             </div>`)}
     </div>`
 
+export const isClashingColor = (icolor) => icolor === 0 || icolor === 6 || icolor === 10
 export const colorSelector = ({ selected, onSelected }) => html`
     <div style="display: flex">
         ${c64Colors.map((color, icolor) => html`
             <div key=${`color${icolor}`} 
                 style="width: 48px; height: 48px; ${borderStyle(selected === icolor)}"
                 onclick=${() => onSelected(icolor)}>
-                <div style="background-color: #${color.toString(16).padStart(6, "0")}; width: 100%; height: 100%;"/>
+                <div style="background-color: #${color.toString(16).padStart(6, "0")}; width: 100%; height: 100%;
+                            text-align: center; color: #f00;">
+                    <b>${isClashingColor(icolor) ? "!" : ""}</b>
+                </div>
             </div>`)}
     </div>`
 
@@ -563,6 +567,8 @@ export const orientationEditor = ({ obj }) => {
             <${patternSelector} 
                 selected=${colors.pattern}
                 onSelected=${ipattern => { mod.orientation = (mod.orientation & 0x07) | (ipattern << 3) }}/>
+            ${!isClashingColor(colors.wildcard) ? "" :
+              "If you don't want this colour to clash with the background, choose the matching colour from the bottom row."}
             <div>
                 <label>
                     <input type="checkbox" checked=${flipped}
