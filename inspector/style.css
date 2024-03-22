@@ -8,3 +8,14 @@ body {
 h1,h2,h3 {
     line-height:1.2
 }
+.regionEditor {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1280px) {
+    .regionEditor {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
