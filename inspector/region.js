@@ -63,10 +63,18 @@ export const dataEqual = (data1, data2) => {
     return true
 }
 export const trapCache = {}
+const decodeTrap = (rawData, fnAugment) => {
+    const augmentedData = fnAugment(structuredClone(rawData))
+    const prop = decodeProp(augmentedData)
+    prop.isTrap = true
+    return { prop, rawData, augmentedData }
+}
+
 export const useTrap = (ref, url, fnAugment) => {
     const cachedVal = trapCache[ref]?.value?.()
     if (cachedVal && !dataEqual(cachedVal.augmentedData, fnAugment(structuredClone(cachedVal.rawData)))) {
-        delete trapCache[ref]
+        const newVal = decodeTrap(cachedVal.rawData, fnAugment)
+        trapCache[ref] = signal(() => newVal)
     }
     if (!trapCache[ref]) {
         trapCache[ref] = promiseToSignal((async () => {
@@ -76,11 +84,7 @@ export const useTrap = (ref, url, fnAugment) => {
                     console.error(response)
                     throw new Error(`Failed to download ${url}: ${response.status}`)
                 }
-                const rawData = new DataView(await response.arrayBuffer())
-                const augmentedData = fnAugment(structuredClone(rawData))
-                const prop = decodeProp(augmentedData)
-                prop.isTrap = true
-                return { prop, rawData, augmentedData }
+                return decodeTrap(new DataView(await response.arrayBuffer()), fnAugment)
             } catch (e) {
                 logError(e, ref)
             }
