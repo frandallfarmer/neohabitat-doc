@@ -36,6 +36,12 @@ export const useEditState = (explicitStateSig = null) => {
         set(key, value) {
             stateSig.value = { ...stateSig.value, [key]: value }
         },
+        hidden(ref) {
+            return this[`hideObj-${ref}`]
+        },
+        toggleHidden(ref) {
+            this.set(`hideObj-${ref}`, !this.hidden(ref))
+        },
         setSelection(selection) { this.set("selection", selection) },
     }
 }
@@ -458,6 +464,9 @@ export const highlightZFighting = ({ object, objects, layout }) => {
 
 export const makePointerInteraction = (objects, tracker) => ({ object, layout, children }) => {
     const editState = useEditState()
+    if (editState.hidden(object.ref)) {
+        return null
+    }
     const container = objects.find(o => o.ref === object.in)
     const scale = useContext(Scale)
     const moveObj = useCallback((e, state) => {
@@ -1270,6 +1279,16 @@ export const cloneItem = (object, objects, tracker, editState) => {
     addNewObject(type, objects, tracker, editState, defaults)
 }
 
+export const hideObjectButton = ({ obj }) => {
+    if (obj.type !== "item") {
+        return null
+    }
+    const editState = useEditState()
+    return html`<a href="javascript:;" onclick=${() => { editState.toggleHidden(obj.ref) }}>
+        ${editState.hidden(obj.ref) ? "🙈" : "👁"}
+    </a>`
+}
+
 export const objectPanel = ({ objects, tracker }) => {
     const editState = useEditState()
     const iselection = objects.findIndex(o => o.ref === editState.selection)
@@ -1284,15 +1303,16 @@ export const objectPanel = ({ objects, tracker }) => {
         </div>
         <fieldset>
             <legend>Objects</legend>
-            ${objects.map(o => html`
-                <div>
-                    <label>
+            <div style="display: grid; grid-template-columns: auto 3ch">
+                ${objects.map(o => html`
+                    <label key=${o.ref}>
                         <input type="radio" checked=${o.ref === editState.selection}
-                               onclick=${() => { editState.setSelection(o.ref) }}/>
+                                onclick=${() => { editState.setSelection(o.ref) }}/>
                         ${o.name} (${o.ref})
                     </label>
-                </div>
-            `)}
+                    <div key=${`hide-${o.ref}`} style="justify-self: end"><${hideObjectButton} obj=${o}/></div>
+                `)}
+            </div>
             <button style="${dupDisabled ? disabledStyle : buttonStyle}" disabled=${dupDisabled}
                     onclick=${() => { cloneItem(objects[iselection], objects, tracker, editState) }}>
                 Clone
