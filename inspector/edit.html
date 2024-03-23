@@ -26,7 +26,7 @@
             import { navigationView, regionSearch } from "./navigate.js"
             import { parseHabitatRegion } from "./neohabitat.js"
             import { makePointerInteraction, propEditor, depthEditor, objectPanel, createEditTracker, 
-                     EditState, registerKeyHandler, trapezoidEditListener, editStateCheckbox,
+                     EditState, registerKeyHandler, editStateCheckbox,
                      overlayImageView, overlayImageEditor } from "./edit.js"
             import { jsonDump, jsonDownload } from "./show.js"
 
@@ -34,7 +34,6 @@
             const filename = q("f") ?? "db/Empty/context-empty.json"
 
             const tracker = createEditTracker()
-            tracker.registerListener(trapezoidEditListener)
             
             const objects = tracker.trackSignal(signal([]))
             

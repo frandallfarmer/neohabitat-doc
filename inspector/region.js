@@ -51,8 +51,23 @@ const remapImagePath = (path) => {
     return map.loadState == "loaded" ? (map[filename] ?? filename) : map[filename]
 }
 
+export const dataEqual = (data1, data2) => {
+    if (data1.byteLength !== data2.byteLength) {
+        return false
+    }
+    for (let i = 0; i < data1.byteLength; i ++) {
+        if (data1.getUint8(i) !== data2.getUint8(i)) {
+            return false
+        }
+    }
+    return true
+}
 export const trapCache = {}
 export const useTrap = (ref, url, fnAugment) => {
+    const cachedVal = trapCache[ref]?.value?.()
+    if (cachedVal && !dataEqual(cachedVal.augmentedData, fnAugment(structuredClone(cachedVal.rawData)))) {
+        delete trapCache[ref]
+    }
     if (!trapCache[ref]) {
         trapCache[ref] = promiseToSignal((async () => {
             try {
@@ -61,15 +76,17 @@ export const useTrap = (ref, url, fnAugment) => {
                     console.error(response)
                     throw new Error(`Failed to download ${url}: ${response.status}`)
                 }
-                const prop = decodeProp(fnAugment(new DataView(await response.arrayBuffer())))
+                const rawData = new DataView(await response.arrayBuffer())
+                const augmentedData = fnAugment(structuredClone(rawData))
+                const prop = decodeProp(augmentedData)
                 prop.isTrap = true
-                return prop
+                return { prop, rawData, augmentedData }
             } catch (e) {
                 logError(e, ref)
             }
         })(), null)
     }
-    return trapCache[ref].value()
+    return trapCache[ref].value()?.prop
 }
 
 export const imageSchemaFromMod = (mod) => {

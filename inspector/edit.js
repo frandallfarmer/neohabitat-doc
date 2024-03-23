@@ -43,7 +43,6 @@ export const useEditState = (explicitStateSig = null) => {
 export const createEditTracker = () => {
     const editHistory = []
     const redoHistory = []
-    const editListeners = []
     let editGroupSequence = 0
     let currentEditGroup = 0
     let groupLevel = 0
@@ -115,9 +114,6 @@ export const createEditTracker = () => {
         sig.value = updateIn(sig.value, place, key, value, splicing)
         const edit = { sig, place, key, value, splicing, previous, group: currentEditGroup }
         mergeEdit(edit, history)
-        for (const listener of editListeners) {
-            listener(edit)
-        }
     }
 
     const change = (sig, place, key, value, splicing = null) => {
@@ -263,9 +259,6 @@ export const createEditTracker = () => {
                 }
             })
         },
-        registerListener(listener) {
-            editListeners.push(listener)
-        },
         group(callback, groupID) {
             if (groupLevel === 0 && groupID) {
                 currentEditGroup = groupID
@@ -278,19 +271,6 @@ export const createEditTracker = () => {
                 commitGroup()
             }
         }
-    }
-}
-
-export const trapezoidEditListener = ({ sig, place, key }) => {
-    const trapKeys = new Set(["upper_left_x", "upper_right_x", "lower_left_x", "lower_right_x", 
-                              "height", "pattern_x_size", "pattern_y_size"])
-    const trapClasses = new Set(["Trapezoid", "Super_trapezoid"])
-    const isEditingTrap = place.length >= 2 && place[0] === "mods" && place[1] === "0" && trapClasses.has(sig.value.mods[0].type)
-    const isEditingTexture = isEditingTrap && place.length === 3 && place[2] === "pattern"
-    const isEditingTrapKey = isEditingTrap && place.length === 2 && trapKeys.has(key)
-
-    if (isEditingTexture || isEditingTrapKey) {
-        trapCache[sig.value.ref] = null
     }
 }
 
