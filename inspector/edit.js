@@ -1381,9 +1381,12 @@ export const overlayImageView = (_) => {
     const editState = useEditState()
     const scale = useContext(Scale)
     if (editState.overlayImageUrl) {
-        return html`<img style="width: ${320 * scale}px; height: ${128 * scale}px; position: absolute; top: 0; pointer-events: none; 
-                                opacity: ${editState.overlayOpacity ?? 0.5}; z-index: 10000;"
-                         src=${editState.overlayImageUrl} />`
+        return html`
+            <div style="width: ${320 * scale}px; height: ${128 * scale}px; position: absolute; top: 0; pointer-events: none; 
+                        opacity: ${editState.overlayOpacity ?? 0.5}; z-index: 10000; overflow: clip;">
+                <img style="width: 100%; ${editState.overlayCrop ? "aspect-ratio: 320/200; position: absolute; bottom: 0px;": "height: 100%"}"
+                      src=${editState.overlayImageUrl} />
+            </div>`
     }
 }
 
@@ -1402,6 +1405,7 @@ export const overlayImageEditor = (_) => {
         </label><br/>
         ${editState.overlayImageUrl
             ? html`<input type="range" max="1" step="any" value=${editState.overlayOpacity ?? 0.5}
-                        oninput=${e => { editState.set("overlayOpacity", parseFloat(e.target.value)) }}/>`
+                        oninput=${e => { editState.set("overlayOpacity", parseFloat(e.target.value)) }}/><br/>
+                   <${editStateCheckbox} field="overlayCrop">Hide top area<//>`
             : null}`
 }
