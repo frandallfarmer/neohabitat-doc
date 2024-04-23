@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Habitat Inspector</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="importmap">
+            {
+                "imports": {
+                    "htm": "./vendor/htm.mjs",
+                    "preact": "./vendor/preact.mjs",
+                    "preact/hooks": "./vendor/hooks.mjs",
+                    "@preact/signals-core": "./vendor/signals-core.mjs",
+                    "@preact/signals": "./vendor/signals.mjs"
+                }
+            }
+        </script>
+        <script type="module">
+            import { render } from "preact"
+            import { signal, effect } from "@preact/signals"
+            import { useHabitatJson } from "./data.js"
+            import { html, catcher, errors } from "./view.js"
+            import { textView } from "./text.js"
+
+            const defaultFilename = "text-popmap.json"
+            
+            const pageView = ({ filename }) => html`
+                <h1>Habitat Inspector - Text</h1>
+                <${textView} filename=${filename} page=${0}/>`
+                        
+            render(html`<${pageView} filename=${defaultFilename}/>`, document.getElementById("content"))
+        </script>
+    </head>
+    <body>
+        <div id="content"></div>
+    </body>
+</html>
