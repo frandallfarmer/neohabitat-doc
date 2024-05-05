@@ -19,3 +19,7 @@ h1,h2,h3 {
         flex-wrap: nowrap;
     }
 }
+
+.text-cursor {
+    outline: 2px dotted blue;
+}

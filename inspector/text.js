@@ -1,8 +1,119 @@
+import { createContext } from "preact"
+import { signal, useSignal, useSignalEffect } from "@preact/signals"
 import { useRef, useLayoutEffect, useContext, useMemo } from "preact/hooks"
 import { html } from "./view.js"
 import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
+
+
+export const TEXT_W = 40
+export const TEXT_H = 16
+
+export const EditState = createContext(signal({}))
+export const editStateDefaults = {
+    x: 0,
+    y: 0
+}
+const editStateMethods = {
+    moveCursor(dx = 1, dy = 0) {
+        if (dx != 0) {
+            let x = this.x + dx
+            if (x < 0) {
+                x = TEXT_W - 1
+                dy -= 1
+            }
+            if (x >= TEXT_W) {
+                x = 0
+                dy += 1
+            }
+            this.x = x
+        }
+        if (dy != 0) {
+            let y = this.y + dy
+            if (y < 0) {
+                y = TEXT_H - 1
+            }
+            if (y >= TEXT_H) {
+                y = 0
+            }
+            this.y = y
+        }
+    }
+}
+
+export const useEditState = (explicitStateSig = null) => {
+    const stateSig = explicitStateSig ?? useContext(EditState)
+    return new Proxy(stateSig, {
+        get(target, prop, receiver) {
+            if (prop in editStateMethods) {
+                return editStateMethods[prop].bind(receiver)
+            } else if (prop in target.value) {
+                return target.value[prop]
+            } else {
+                return editStateDefaults[prop]
+            }
+        },
+        set(target, prop, value, receiver) {
+            target.value = {...target.value, [prop]: value}
+            return true
+        },
+        has(target, prop) {
+            return prop in editStateMethods || prop in target.value || prop in editStateDefaults
+        }
+    }) 
+}
+
+export const setChar = (char, textmap, editState) => {
+    textmap[editState.y][editState.x] = char
+}
+
+export const insertChar = (char, textmap, editState) => {
+    setChar(char, textmap, editState)
+    editState.moveCursor()
+}
+
+export const registerKeyHandler = (document, tracker, editStateSig, textmap) => {
+    document.addEventListener("keydown", (e) => {
+        const editState = useEditState(editStateSig)
+        if ((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z")) {
+            if (e.shiftKey) {
+                tracker.redo()
+            } else {
+                tracker.undo()
+            }
+        } else if (!(e.target instanceof HTMLInputElement) && !(e.target instanceof HTMLTextAreaElement) && !e.ctrlKey && !e.metaKey) {
+            if (e.key.startsWith("Arrow")) {
+                let dx = 0
+                let dy = 0
+                if (e.key === "ArrowLeft")  { dx -= 1 }
+                if (e.key === "ArrowRight") { dx += 1 }
+                if (e.key === "ArrowUp")    { dy -= 1 }
+                if (e.key === "ArrowDown")  { dy += 1 }
+                editState.moveCursor(dx, dy)
+            } else if (e.key === "Home") {
+                editState.x = 0
+            } else if (e.key === "End") {
+                editState.x = TEXT_W - 1
+            } else if (e.key === "PageUp") {
+                editState.y = 0
+            } else if (e.key === "PageDown") {
+                editState.y = TEXT_H - 1
+            } else if (e.key === "Delete") {
+                setChar(32, textmap, editState)
+            } else if (e.key === "Backspace") {
+                editState.moveCursor(-1)
+                setChar(32, textmap, editState)
+            } else if (e.key === "Enter") {
+                editState.x = 0
+                editState.moveCursor(0, 1)
+            } else if (e.key.length === 1 && e.key.codePointAt(0) < 128) {
+                insertChar(e.key.codePointAt(0), textmap, editState)
+                e.preventDefault()
+            }
+        }
+    })
+}
 
 const charsetCanvases = () => {
     if (!charset()) {
@@ -28,14 +139,14 @@ const charsetCanvases = () => {
     }), [charset()])
 }
 
-const textMapView = ({ textmap }) => {
+export const textMapView = ({ textmap }) => {
     const chars = charsetCanvases()
     if (!textmap || !chars) {
         return null
     }
     const scale = useContext(Scale)
     const canvasRef = useRef(null)
-    useLayoutEffect(() => {
+    useSignalEffect(() => {
         const canvas = canvasRef.current
         const ctx = canvas.getContext("2d")
         ctx.imageSmoothingEnabled = false
@@ -50,7 +161,7 @@ const textMapView = ({ textmap }) => {
             x = 0
             y ++
         }
-    }, [textmap])
+    })
     const w = textmap[0].length * 8
     const h = textmap.length * 8
     return html`
@@ -59,12 +170,10 @@ const textMapView = ({ textmap }) => {
 }
 
 export const emptyTextmap = () => {
-    const w = 40
-    const h = 16
     const textmap = []
-    for (let y = 0; y < h; y ++) {
+    for (let y = 0; y < TEXT_H; y ++) {
         const row = []
-        for (let x = 0; x < w; x ++) {
+        for (let x = 0; x < TEXT_W; x ++) {
             row.push(32)
         }
         textmap.push(row)
@@ -118,4 +227,18 @@ export const textView = ({ filename, page = 0 }) => {
     }
     const textmap = byteArrayToTextMap(byteArray)
     return html`<${textMapView} textmap=${textmap}/>`
+}
+
+export const textEditView = ({ textmap }) => {
+    const editState = useEditState()
+    const scale = useContext(Scale)
+    return html`
+        <div style="position: relative;">
+            <div style="position: absolute; top: 0px; left: 0px">
+                <${textMapView} textmap=${textmap}/>
+            </div>
+            <div style="position: absolute; top: ${8 * editState.y * scale}px; left: ${8 * editState.x * scale}px;
+                        width: ${8 * scale}px; height: ${8 * scale}px;"
+                 class="text-cursor"/>
+        </div>`
 }
