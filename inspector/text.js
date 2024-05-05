@@ -1,19 +1,21 @@
 import { createContext } from "preact"
-import { signal, useSignal, useSignalEffect } from "@preact/signals"
-import { useRef, useLayoutEffect, useContext, useMemo } from "preact/hooks"
+import { useSignalEffect } from "@preact/signals"
+import { useRef, useCallback, useContext, useMemo } from "preact/hooks"
 import { html } from "./view.js"
 import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
-
+import { startDrag } from "./edit.js"
 
 export const TEXT_W = 40
 export const TEXT_H = 16
 
 export const EditState = createContext(null)
-export const editStateDefaults = {
+const editStateDefaults = {
     x: 0,
-    y: 0
+    y: 0,
+    mouseChar: 0,
+    gestureCount: 0
 }
 const editStateMethods = {
     moveCursor(dx = 1, dy = 0) {
@@ -243,16 +245,71 @@ export const textView = ({ filename, page = 0 }) => {
     return html`<${textMapView} textmap=${textmap}/>`
 }
 
-export const textEditView = ({ textmap }) => {
+export const mouseCharSelector = ({ tracker }) => {
+    const chars = charsetCanvases()
+    if (!chars) { return null }
+    const editState = useEditState()
+    const scale = useContext(Scale)
+
+    const rows = []
+    for (let y = 0; y < 8; y ++) {
+        const columns = []
+        for (let x = 0; x < 16; x ++) {
+            const char = x + (y * 16)
+            const cls = char === editState.mouseChar ? "text-cursor" : ""
+            columns.push(html`<td onMouseDown=${() => { editState.mouseChar = char }}>
+                <img style="image-rendering: pixelated;" class=${cls} width=${8 * scale} height=${8 * scale} src=${chars[char].toDataURL()}/>
+            </td>`)
+        }
+        rows.push(html`<tr>${columns}</tr>`)
+    }
+    return html`<table>${rows}</table>`
+}
+
+export const mouseCanvas = ({ textmap, tracker }) => {
+    const editState = useEditState()
+    const scale = useContext(Scale)
+    const scribble = useCallback((e, state) => {
+        if (e.type === "pointerdown") {
+            state.gesture = `draw-${editState.gestureCount}`
+            state.offsetX = e.pageX - e.offsetX
+            state.offsetY = e.pageY - e.offsetY
+            editState.gestureCount += 1
+        }
+        const x = Math.floor((e.pageX - state.offsetX) / (8 * scale))
+        const y = Math.floor((e.pageY - state.offsetY) / (8 * scale))
+        if (x >= 0 && x < TEXT_W && y >= 0 && y < TEXT_H) {
+            tracker.group(() => {
+                editState.x = x
+                editState.y = y
+                setChar(editState.mouseChar, textmap, editState)
+            }, state.gesture)
+        }
+    }, [scale])
+
+    const drag = useCallback(e => {
+        if (e.isPrimary) {
+            startDrag(e, scribble)
+        }
+    }, [scale])
+    return html`
+        <div style="width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px;"
+             onpointerdown=${drag}/>`
+}
+export const textEditView = ({ textmap, tracker }) => {
     const editState = useEditState()
     const scale = useContext(Scale)
     return html`
-        <div style="position: relative;">
+        <div style="position: relative; width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px;">
             <div style="position: absolute; top: 0px; left: 0px">
                 <${textMapView} textmap=${textmap}/>
             </div>
             <div style="position: absolute; top: ${8 * editState.y * scale}px; left: ${8 * editState.x * scale}px;
                         width: ${8 * scale}px; height: ${8 * scale}px;"
                  class="text-cursor"/>
-        </div>`
+            <div style="position: absolute; top: 0px; left: 0px">
+                <${mouseCanvas} textmap=${textmap} tracker=${tracker}/>
+            </div>
+        </div>
+        <${mouseCharSelector} tracker=${tracker}/>`
 }

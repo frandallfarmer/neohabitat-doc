@@ -36,7 +36,7 @@
             const pageView = ({ filename }) => html`
                 <h1>Habitat Inspector - Text</h1>
                 <${EditState.Provider} value=${trackedEditState}>
-                    <${textEditView} textmap=${textMap}/>
+                    <${textEditView} textmap=${textMap} tracker=${tracker}/>
                 <//>`
                         
             render(html`<${pageView} filename=${defaultFilename}/>`, document.getElementById("content"))
