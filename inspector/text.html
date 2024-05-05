@@ -30,12 +30,12 @@
             const textMap = tracker.trackSignal(signal(emptyTextmap()))
             tracker.editHistory.length = 0
 
-            const editStateSig = signal({})
-            registerKeyHandler(document, tracker, editStateSig, textMap)
+            const trackedEditState = tracker.trackSignal(signal({}))
+            registerKeyHandler(document, tracker, trackedEditState, textMap)
 
             const pageView = ({ filename }) => html`
                 <h1>Habitat Inspector - Text</h1>
-                <${EditState.Provider} value=${editStateSig}>
+                <${EditState.Provider} value=${trackedEditState}>
                     <${textEditView} textmap=${textMap}/>
                 <//>`
                         

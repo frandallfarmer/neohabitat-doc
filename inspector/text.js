@@ -10,7 +10,7 @@ import { makeCanvas } from "./shim.js"
 export const TEXT_W = 40
 export const TEXT_H = 16
 
-export const EditState = createContext(signal({}))
+export const EditState = createContext(null)
 export const editStateDefaults = {
     x: 0,
     y: 0
@@ -42,24 +42,24 @@ const editStateMethods = {
     }
 }
 
-export const useEditState = (explicitStateSig = null) => {
-    const stateSig = explicitStateSig ?? useContext(EditState)
-    return new Proxy(stateSig, {
+export const useEditState = (explicitState = null) => {
+    const state = explicitState ?? useContext(EditState)
+    return new Proxy(state, {
         get(target, prop, receiver) {
             if (prop in editStateMethods) {
                 return editStateMethods[prop].bind(receiver)
-            } else if (prop in target.value) {
-                return target.value[prop]
+            } else if (prop in target) {
+                return target[prop]
             } else {
                 return editStateDefaults[prop]
             }
         },
         set(target, prop, value, receiver) {
-            target.value = {...target.value, [prop]: value}
+            target[prop] = value
             return true
         },
         has(target, prop) {
-            return prop in editStateMethods || prop in target.value || prop in editStateDefaults
+            return prop in editStateMethods || prop in target || prop in editStateDefaults
         }
     }) 
 }
@@ -69,13 +69,18 @@ export const setChar = (char, textmap, editState) => {
 }
 
 export const insertChar = (char, textmap, editState) => {
-    setChar(char, textmap, editState)
+    if (editState.insertMode) {
+        textmap[editState.y].splice(editState.x, 0, char)
+        textmap[editState.y].splice(TEXT_W - 1, 1)
+    } else {
+        setChar(char, textmap, editState)
+    }
     editState.moveCursor()
 }
 
-export const registerKeyHandler = (document, tracker, editStateSig, textmap) => {
+export const registerKeyHandler = (document, tracker, trackedEditState, textmap) => {
     document.addEventListener("keydown", (e) => {
-        const editState = useEditState(editStateSig)
+        const editState = useEditState(trackedEditState)
         if ((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z")) {
             if (e.shiftKey) {
                 tracker.redo()
@@ -83,34 +88,43 @@ export const registerKeyHandler = (document, tracker, editStateSig, textmap) => 
                 tracker.undo()
             }
         } else if (!(e.target instanceof HTMLInputElement) && !(e.target instanceof HTMLTextAreaElement) && !e.ctrlKey && !e.metaKey) {
-            if (e.key.startsWith("Arrow")) {
-                let dx = 0
-                let dy = 0
-                if (e.key === "ArrowLeft")  { dx -= 1 }
-                if (e.key === "ArrowRight") { dx += 1 }
-                if (e.key === "ArrowUp")    { dy -= 1 }
-                if (e.key === "ArrowDown")  { dy += 1 }
-                editState.moveCursor(dx, dy)
-            } else if (e.key === "Home") {
-                editState.x = 0
-            } else if (e.key === "End") {
-                editState.x = TEXT_W - 1
-            } else if (e.key === "PageUp") {
-                editState.y = 0
-            } else if (e.key === "PageDown") {
-                editState.y = TEXT_H - 1
-            } else if (e.key === "Delete") {
-                setChar(32, textmap, editState)
-            } else if (e.key === "Backspace") {
-                editState.moveCursor(-1)
-                setChar(32, textmap, editState)
-            } else if (e.key === "Enter") {
-                editState.x = 0
-                editState.moveCursor(0, 1)
-            } else if (e.key.length === 1 && e.key.codePointAt(0) < 128) {
-                insertChar(e.key.codePointAt(0), textmap, editState)
-                e.preventDefault()
-            }
+            tracker.group(() => {
+                if (e.key.startsWith("Arrow")) {
+                    let dx = 0
+                    let dy = 0
+                    if (e.key === "ArrowLeft")  { dx -= 1 }
+                    if (e.key === "ArrowRight") { dx += 1 }
+                    if (e.key === "ArrowUp")    { dy -= 1 }
+                    if (e.key === "ArrowDown")  { dy += 1 }
+                    editState.moveCursor(dx, dy)
+                } else if (e.key === "Home") {
+                    editState.x = 0
+                } else if (e.key === "End") {
+                    editState.x = TEXT_W - 1
+                } else if (e.key === "PageUp") {
+                    editState.y = 0
+                } else if (e.key === "PageDown") {
+                    editState.y = TEXT_H - 1
+                } else if (e.key === "Enter") {
+                    editState.x = 0
+                    editState.moveCursor(0, 1)
+                }
+            }, "navigation")
+            tracker.group(() => {
+                if (e.key === "Delete") {
+                    textmap[editState.y].splice(editState.x, 1)
+                    textmap[editState.y][TEXT_W - 1] = 32
+                } else if (e.key === "Backspace") {
+                    editState.moveCursor(-1)
+                    setChar(32, textmap, editState)
+                }
+            }, "text-correction")
+            tracker.group(() => {
+                if (e.key.length === 1 && e.key.codePointAt(0) < 128) {
+                    insertChar(e.key.codePointAt(0), textmap, editState)
+                    e.preventDefault()
+                }    
+            }, "text-entry")
         }
     })
 }
