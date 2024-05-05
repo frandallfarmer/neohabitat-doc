@@ -204,7 +204,7 @@ const TextCodes = {
     PAGE_LINE_DELIMITER: 0x0a
 }
 
-const byteArrayToTextMap = (bytes) => {
+export const byteArrayToTextMap = (bytes) => {
     const textmap = emptyTextmap()
     let x = 0, y = 0
     const printByte = (byte) => {
@@ -234,6 +234,9 @@ const byteArrayToTextMap = (bytes) => {
     }
     return textmap
 }
+
+export const textmapToString = (textmap) =>
+    textmap.reduce((s, row) => s + String.fromCodePoint(...row), "")
 
 export const textView = ({ filename, page = 0 }) => {
     const obj = useHabitatText(`db/Text/${filename}`)
@@ -296,6 +299,7 @@ export const mouseCanvas = ({ textmap, tracker }) => {
         <div style="width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px;"
              onpointerdown=${drag}/>`
 }
+
 export const textEditView = ({ textmap, tracker }) => {
     const editState = useEditState()
     const scale = useContext(Scale)
@@ -311,5 +315,10 @@ export const textEditView = ({ textmap, tracker }) => {
                 <${mouseCanvas} textmap=${textmap} tracker=${tracker}/>
             </div>
         </div>
-        <${mouseCharSelector} tracker=${tracker}/>`
+        <${mouseCharSelector} tracker=${tracker}/>
+        <div>
+            <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(textmapToString(textmap)))}>
+                Copy <tt>"pages"</tt> JSON string to clipboard
+            </a>
+        </div>`
 }
