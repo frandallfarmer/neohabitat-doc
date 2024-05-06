@@ -5,7 +5,7 @@ import { html } from "./view.js"
 import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
-import { startDrag } from "./edit.js"
+import { startDrag, overlayImageView, overlayImageEditor } from "./edit.js"
 
 export const TEXT_W = 40
 export const TEXT_H = 16
@@ -314,7 +314,9 @@ export const textEditView = ({ textmap, tracker }) => {
             <div style="position: absolute; top: 0px; left: 0px">
                 <${mouseCanvas} textmap=${textmap} tracker=${tracker}/>
             </div>
+            <${overlayImageView}/>
         </div>
+        <${overlayImageEditor} cropstyle="document"/>
         <${mouseCharSelector} tracker=${tracker}/>
         <div>
             <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(textmapToString(textmap)))}>

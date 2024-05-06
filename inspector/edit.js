@@ -1390,7 +1390,7 @@ export const overlayImageView = (_) => {
     }
 }
 
-export const overlayImageEditor = (_) => {
+export const overlayImageEditor = ({ cropstyle = "region" }) => {
     const editState = useEditState()
     return html`
         <label>
@@ -1406,6 +1406,6 @@ export const overlayImageEditor = (_) => {
         ${editState.overlayImageUrl
             ? html`<input type="range" max="1" step="any" value=${editState.overlayOpacity ?? 0.5}
                         oninput=${e => { editState.set("overlayOpacity", parseFloat(e.target.value)) }}/><br/>
-                   <${editStateCheckbox} field="overlayCrop">Hide top area<//>`
+                   ${cropstyle === "region" ? html`<${editStateCheckbox} field="overlayCrop">Hide top area<//>` : ""}`
             : null}`
 }
