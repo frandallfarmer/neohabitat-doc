@@ -258,7 +258,13 @@ export const mouseCharSelector = ({ tracker }) => {
     for (let y = 0; y < 8; y ++) {
         const columns = []
         for (let x = 0; x < 16; x ++) {
-            const char = x + (y * 16)
+            let char = x + (y * 16)
+            if (char === TextCodes.PAGE_LINE_DELIMITER) {
+                char = 0x1f // equivalent character
+            } else if (char === 0x1f) {
+                columns.push(html`<td title="No character here"></td>`)
+                continue
+            }
             const cls = char === editState.mouseChar ? "text-cursor" : ""
             columns.push(html`<td onMouseDown=${() => { editState.mouseChar = char }}>
                 <img style="image-rendering: pixelated;" class=${cls} width=${8 * scale} height=${8 * scale} src=${chars[char].toDataURL()}/>
