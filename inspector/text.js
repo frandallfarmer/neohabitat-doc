@@ -14,7 +14,7 @@ export const EditState = createContext(null)
 const editStateDefaults = {
     x: 0,
     y: 0,
-    mouseChar: 0,
+    mouseChar: 32,
     gestureCount: 0
 }
 const editStateMethods = {
