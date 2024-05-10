@@ -5,7 +5,7 @@ import { html } from "./view.js"
 import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
-import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle } from "./edit.js"
+import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle, booleanCheckbox } from "./edit.js"
 
 export const TEXT_W = 40
 export const TEXT_H = 16
@@ -118,17 +118,25 @@ export const registerKeyHandler = (document, tracker, trackedEditState, textmap)
                 }
             }, "navigation")
             tracker.group(() => {
-                if (e.key === "Delete") {
-                    textmap[editState.y].splice(editState.x, 1)
-                    textmap[editState.y][TEXT_W - 1] = 32
-                } else if (e.key === "Backspace") {
+                if (e.key === "Backspace") {
                     editState.moveCursor(-1)
-                    setChar(32, textmap, editState)
+                }
+                if (e.key === "Backspace" || e.key === "Delete") {
+                    if (editState.insertMode) {
+                        textmap[editState.y].splice(editState.x, 1)
+                        textmap[editState.y][TEXT_W - 1] = 32    
+                    } else {
+                        setChar(32, textmap, editState)
+                    }
                 }
             }, "text-correction")
             tracker.group(() => {
                 if (e.key.length === 1 && e.key.codePointAt(0) < 128) {
-                    insertChar(e.key.codePointAt(0), textmap, editState)
+                    let char = e.key.codePointAt(0)
+                    if (editState.spaceMouse && e.key === " ") {
+                        char = editState.mouseChar
+                    }
+                    insertChar(char, textmap, editState)
                     e.preventDefault()
                 }    
             }, "text-entry")
@@ -329,8 +337,13 @@ export const textEditView = ({ textmap, tracker }) => {
             </div>
             <${overlayImageView}/>
         </div>
+        <p>Click on the document above to move the cursor and draw the currently-selected character.</p>
+        <p>If the document does not have focus, you can enable keyboard input without moving the cursor by clicking
+           on any blank space on the page.</p>
         <${overlayImageEditor} cropstyle="document"/>
         <${mouseCharSelector} tracker=${tracker}/>
+        <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
+        <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
         <div>
             <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(textmapToString(textmap)))}>
                 Copy <tt>"pages"</tt> JSON string to clipboard
