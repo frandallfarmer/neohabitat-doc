@@ -5,7 +5,7 @@ import { html } from "./view.js"
 import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
-import { startDrag, overlayImageView, overlayImageEditor } from "./edit.js"
+import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle } from "./edit.js"
 
 export const TEXT_W = 40
 export const TEXT_H = 16
@@ -14,7 +14,7 @@ export const EditState = createContext(null)
 const editStateDefaults = {
     x: 0,
     y: 0,
-    mouseChar: 32,
+    mouseChar: 0,
     gestureCount: 0
 }
 const editStateMethods = {
@@ -67,11 +67,16 @@ export const useEditState = (explicitState = null) => {
 }
 
 export const setChar = (char, textmap, editState) => {
-    textmap[editState.y][editState.x] = char
+    if (char !== 0) {
+        textmap[editState.y][editState.x] = char
+    }
 }
 
 export const insertChar = (char, textmap, editState) => {
     if (editState.insertMode) {
+        if (char === 0) {
+            char = 32
+        }
         textmap[editState.y].splice(editState.x, 0, char)
         textmap[editState.y].splice(TEXT_W - 1, 1)
     } else {
@@ -262,13 +267,15 @@ export const mouseCharSelector = ({ tracker }) => {
             if (char === TextCodes.PAGE_LINE_DELIMITER) {
                 char = 0x1f // equivalent character
             } else if (char === 0x1f) {
-                columns.push(html`<td title="No character here"></td>`)
+                columns.push(html`<td style="cursor: not-allowed;" title="No character here"></td>`)
                 continue
             }
             const cls = char === editState.mouseChar ? "text-cursor" : ""
-            columns.push(html`<td onMouseDown=${() => { editState.mouseChar = char }}>
-                <img style="image-rendering: pixelated;" class=${cls} width=${8 * scale} height=${8 * scale} src=${chars[char].toDataURL()}/>
-            </td>`)
+            let img = html`<img style="image-rendering: pixelated;" class=${cls} width=${8 * scale} height=${8 * scale} src=${chars[char].toDataURL()}/>`
+            if (char === 0) {
+                img = html`<div style="${transparencyGridStyle} width: ${8 * scale}px; height: ${8 * scale}px;" class=${cls}/>`
+            }
+            columns.push(html`<td style="cursor: pointer;" onMouseDown=${() => { editState.mouseChar = char }}>${img}</td>`)
         }
         rows.push(html`<tr>${columns}</tr>`)
     }
@@ -302,7 +309,7 @@ export const mouseCanvas = ({ textmap, tracker }) => {
         }
     }, [scale])
     return html`
-        <div style="width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px;"
+        <div style="width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px; cursor: cell;"
              onpointerdown=${drag}/>`
 }
 

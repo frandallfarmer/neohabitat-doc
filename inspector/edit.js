@@ -10,7 +10,7 @@ import { useJson, charset, betaMud } from "./data.js"
 import { propFromMod, imageSchemaFromMod, standaloneItemView, trapCache, useLayout } from "./region.js"
 import { makeCanvas } from "./shim.js"
 
-const transparencyGridStyle = (() => {
+export const transparencyGridStyle = (() => {
     const canvas = makeCanvas(16, 16)
     const ctx = canvas.getContext("2d")
     ctx.fillStyle = "#f4f4f4"
