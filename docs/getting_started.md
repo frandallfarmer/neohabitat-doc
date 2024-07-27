@@ -222,7 +222,7 @@ Step 3 - Download and Configure Vice
 - Download [Neohabitat.zip](https://github.com/frandallfarmer/neohabitat-doc/blob/master/installers/Neohabitat.zip?raw=true)
 
 - Unzip onto the desktop
-	- (This is not yet an installer. Want to help build one? Join us at http://slack.neohabitat.org)
+	- (This is not yet an installer. Want to help build one? Join us at https://discord.gg/nk7HwAGF)
 	
 - Open the Neohabitat folder
 
@@ -328,6 +328,6 @@ Conclusion
 We hope that this guide helped you to get acquainted with Neohabitat and its
 services and we're looking forward to working with you! If you have any
 questions or concerns, feel free to ask them in the [Neohabitat
-Slack](https://neohabitat.slack.com/).
+Discord](https://discord.gg/nk7HwAGF).
 
 Have fun and happy hacking!
