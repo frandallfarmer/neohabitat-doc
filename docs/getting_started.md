@@ -34,27 +34,24 @@ services and provide for swift iteration.
 
 If you are using the launcher from [Neohabitat.zip](https://github.com/frandallfarmer/neohabitat-doc/blob/master/installers/Neohabitat.zip?raw=true) then your port should always be set to 1986. You should only use 5190 if you want to connect to Habitat through the outdated Q-Link method.
 
-Step 1 - Install Docker or Vagrant
-----------------------------------
+Step 1 - Install Docker ~~or Vagrant~~
+----------------------------------    
+
+NOTE: The Vagrant installation path is obsolete and currently unsupported. Please look at the documentation from commit 148fae48ff215bc18de9b45f3f4ac1576d4e42a4 or earlier if you want to work to restore this method)
 
 To take advantage of the Neohabitat automation, you'll need to install either
-**Docker and Docker Compose** or **Vagrant**. You can do so by following one of
+**Docker and Docker Compose**. You can do so by following one of
 the following guides:
 
 **Windows**
 
-If you're running **Windows**, we recommend using the the **Vagrant setup procedure**, as
-we've had limited success using Docker on this platform.
+The windows server has been tested with Docker-Desktop running under WSL2 (Ubuntu)
 
-First, install the **latest versions** of the following programs:
+Follow the instructions here:
 
--   [curl](https://curl.haxx.se/download.html)
-
--   [Vagrant](https://www.vagrantup.com/downloads.html)
-
--   [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-
-Next, follow the **Vagrant variant** of Step 2.
+-   [Install WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) Choose the default unix distro (Ubuntu)
+-   [Install Docker Desktop for Windows](https://docs.docker.com/desktop/wsl/)
+-   [Install curl](https://curl.haxx.se/download.html)
 
 **OS X**
 
@@ -82,8 +79,24 @@ Next, follow the **Docker variant** of Step 2.
 Step 2 - Build and Start Neohabitat Services (with Docker)
 ----------------------------------------------------------
 
-Now that you've installed Docker, you can trigger the Neohabitat launch process
+Now that you've installed Docker, you can configure the neohabitat environment
 with a single command:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
+./boostrap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This will clean out any existing Docker instances and make sure the environment
+is configured to compile and run the Habitat processes.
+
+The first time you start up, use the following command:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
+./recreate -b
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+from then on, if you make any changes and want to recompile/restart the services, use
+this command in stead:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
 docker-compose up
@@ -133,86 +146,7 @@ restart Neohabitat with the following command:
 docker-compose restart neohabitat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 2 - Build and Start Neohabitat Services (with Vagrant)
------------------------------------------------------------
 
-Open a **standard Windows command line (cmd.exe, not Bash or PowerShell)** and
-navigate via `cd` to the location of your Neohabitat checkout. Run the following
-command:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
-vagrant up --provider=virtualbox
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Vagrant will proceed to download the Ubuntu image, launch it, install all
-supporting services, then build Neohabitat and QuantumLink Reloaded.
-
-After the build procedure has concluded, you can develop and build new artifacts
-on your local machine and they will be synced through to Vagrant. Furthermore,
-the following service ports will be forwarded to your local environment:
-
--   **1337**: Habitat protocol bridge
-
--   **3307**: MariaDB (open source MySQL) server
-
--   **5190**: QuantumLink Reloaded server
-
--   **9000**: Neoclassical Habitat Elko server
-
--   **27017**: MongoDB server
-
-You can reach a console via the following command:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
-vagrant ssh
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you wish to restart the Neohabitat server after making a code change, be
-certain that you've built a new JAR locally via the `./build` command then
-restart Neohabitat with the following command:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
-vagrant reload
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This method **will not use Docker whatsoever**.
-
-**Troubleshooting**
-
-If all does not go well during the Vagrant provisioning step, it's likely that
-either Vagrant can't find VirtualBox or one of the upstream Linux package
-repositories is having issues.
-
-If Vagrant returns an error like so:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-No usable default provider could be found for your system.
-
-Vagrant relies on interactions with 3rd party systems, known as
-"providers", to provide Vagrant with resources to run development
-environments. Examples are VirtualBox, VMware, Hyper-V.
-
-If so, you may need to retry the Vagrant build process:
-
-The easiest solution to this message is to install VirtualBox, which
-is available for free on all major platforms.
-
-If you believe you already have a provider available, make sure it
-is properly installed and configured. You can see more details about
-why a particular provider isn't working by forcing usage with
-`vagrant up --provider=PROVIDER`, which should give you a more specific
-error message for that particular provider.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You may need to change the value of the `ENV["VBOX_INSTALL_PATH"]` setting in
-your Vagrantfile to point to your custom VirtualBox installation.
-
-If an error occurs during the provisioning process, simply retry the launch
-procedure after waiting a few minutes:
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
-vagrant up --provider=virtualbox
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Step 3 - Download and Configure Vice
 ------------------------------------
