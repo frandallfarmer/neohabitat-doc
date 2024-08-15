@@ -1,10 +1,11 @@
 import { createContext } from "preact"
-import { useSignalEffect } from "@preact/signals"
+import { useSignalEffect, useSignal, signal } from "@preact/signals"
 import { useRef, useCallback, useContext, useMemo } from "preact/hooks"
 import { html } from "./view.js"
 import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
+import { parseHabitatObject } from "./neohabitat.js"
 import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle, booleanCheckbox } from "./edit.js"
 
 export const TEXT_W = 40
@@ -15,7 +16,9 @@ const editStateDefaults = {
     x: 0,
     y: 0,
     mouseChar: 0,
-    gestureCount: 0
+    gestureCount: 0,
+    ref: "text-new",
+    page: 0
 }
 const editStateMethods = {
     moveCursor(dx = 1, dy = 0) {
@@ -85,9 +88,10 @@ export const insertChar = (char, textmap, editState) => {
     editState.moveCursor()
 }
 
-export const registerKeyHandler = (document, tracker, trackedEditState, textmap) => {
+export const registerKeyHandler = (document, tracker, trackedEditState, pages) => {
     document.addEventListener("keydown", (e) => {
         const editState = useEditState(trackedEditState)
+        const textmap = pages[editState.page]
         if ((e.ctrlKey || e.metaKey) && (e.key === "z" || e.key === "Z")) {
             if (e.shiftKey) {
                 tracker.redo()
@@ -175,6 +179,10 @@ export const textMapView = ({ textmap }) => {
     }
     const scale = useContext(Scale)
     const canvasRef = useRef(null)
+    const textmapSignal = useSignal(textmap)
+    if (textmapSignal.value !== textmap) {
+        textmapSignal.value = textmap
+    }
     useSignalEffect(() => {
         const canvas = canvasRef.current
         const ctx = canvas.getContext("2d")
@@ -182,7 +190,7 @@ export const textMapView = ({ textmap }) => {
         ctx.fillStyle = "#c46c71"
         ctx.fillRect(0, 0, canvas.width, canvas.height)
         let x = 0, y = 0
-        for (const row of textmap) {
+        for (const row of textmapSignal.value) {
             for (const char of row) {
                 ctx.drawImage(chars[char], x * 8, y * 8)
                 x ++
@@ -217,6 +225,16 @@ const TextCodes = {
     PAGE_LINE_DELIMITER: 0x0a
 }
 
+export const stringToByteArray = (s) => {
+    const byteArray = []
+    for (const ch of s) {
+        byteArray.push(ch.codePointAt(0))
+    }
+    return byteArray
+} 
+
+export const pageByteArraysFromTextObj = (o) => o.ascii ?? o.pages.map(stringToByteArray)
+
 export const byteArrayToTextMap = (bytes) => {
     const textmap = emptyTextmap()
     let x = 0, y = 0
@@ -233,7 +251,7 @@ export const byteArrayToTextMap = (bytes) => {
             x --
             textmap[y][x] = 32
         } else {
-            console.log(x, y, byte)
+            // console.log(x, y, byte)
             textmap[y][x] = byte
             x ++
             if (x >= textmap[0].length) {
@@ -261,7 +279,7 @@ export const textView = ({ filename, page = 0 }) => {
     return html`<${textMapView} textmap=${textmap}/>`
 }
 
-export const mouseCharSelector = ({ tracker }) => {
+export const mouseCharSelector = (_) => {
     const chars = charsetCanvases()
     if (!chars) { return null }
     const editState = useEditState()
@@ -309,22 +327,58 @@ export const mouseCanvas = ({ textmap, tracker }) => {
                 setChar(editState.mouseChar, textmap, editState)
             }, state.gesture)
         }
-    }, [scale])
+    }, [scale, textmap])
 
     const drag = useCallback(e => {
         if (e.isPrimary) {
             startDrag(e, scribble)
         }
-    }, [scale])
+    }, [scale, scribble])
     return html`
         <div style="width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px; cursor: cell;"
              onpointerdown=${drag}/>`
 }
 
-export const textEditView = ({ textmap, tracker }) => {
+
+export const replacePages = (tracker, pages, newPages) => {
+    pages.splice(0, pages.length, ...(newPages.map(o => tracker.trackSignal(signal(byteArrayToTextMap(o))))))
+}
+
+export const generateTextJson = (editState, pages) => ({
+    ref: editState.ref,
+    pages: pages.map(textmapToString)
+})
+
+export const fileLoadView = ({ pages, tracker }) => {
+    const editState = useEditState()
+    return html`
+        <label>
+            Edit local file: <input type="file" accept=".json" onchange=${(e) => {
+                if (e.target.files.length > 0) {
+                    (async (file) => {
+                        try {      
+                            const text = parseHabitatObject(await file.text())
+                            const byteArrays = pageByteArraysFromTextObj(text)
+                            tracker.group(() => {
+                                replacePages(tracker, pages, byteArrays)
+                                editState.page = Math.min(byteArrays.length, editState.page)
+                                editState.ref = text.ref
+                            })
+                        } catch (e) {
+                            console.error(e)
+                            alert(`Failed to parse JSON: ${e}`)
+                        }
+                    })(e.target.files[0])
+                }
+            }}/>
+        </label>`
+}
+export const textEditView = ({ pages, tracker }) => {
     const editState = useEditState()
     const scale = useContext(Scale)
+    const textmap = pages[editState.page]
     return html`
+        <${fileLoadView} pages=${pages} tracker=${tracker}/><br/>
         <div style="position: relative; width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px;">
             <div style="position: absolute; top: 0px; left: 0px">
                 <${textMapView} textmap=${textmap}/>
@@ -341,12 +395,12 @@ export const textEditView = ({ textmap, tracker }) => {
         <p>If the document does not have focus, you can enable keyboard input without moving the cursor by clicking
            on any blank space on the page.</p>
         <${overlayImageEditor} cropstyle="document"/>
-        <${mouseCharSelector} tracker=${tracker}/>
+        <${mouseCharSelector}/>
         <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
         <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
         <div>
-            <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(textmapToString(textmap)))}>
-                Copy <tt>"pages"</tt> JSON string to clipboard
+            <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(generateTextJson(editState, pages), null, 2))}>
+                Copy JSON string to clipboard
             </a>
         </div>`
 }

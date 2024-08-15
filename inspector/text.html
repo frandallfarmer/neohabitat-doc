@@ -19,24 +19,27 @@
             import { render } from "preact"
             import { signal, effect } from "@preact/signals"
             import { useHabitatJson } from "./data.js"
+            import { parseHabitatObject } from "./neohabitat.js"
             import { html, catcher, errors } from "./view.js"
             import { createEditTracker } from "./edit.js"
-            import { textView, textEditView, EditState, emptyTextmap, registerKeyHandler } from "./text.js"
+            import { textView, textEditView, EditState, emptyTextmap, byteArrayToTextMap, 
+                pageByteArraysFromTextObj, registerKeyHandler } from "./text.js"
 
             const defaultFilename = "text-popmap.json"
             
             const tracker = createEditTracker()
             
             const textMap = tracker.trackSignal(signal(emptyTextmap()))
+            const pages = tracker.trackSignal(signal([textMap]))
             tracker.editHistory.length = 0
 
             const trackedEditState = tracker.trackSignal(signal({}))
-            registerKeyHandler(document, tracker, trackedEditState, textMap)
+            registerKeyHandler(document, tracker, trackedEditState, pages)
 
             const pageView = ({ filename }) => html`
                 <h1>Habitat Inspector - Text</h1>
                 <${EditState.Provider} value=${trackedEditState}>
-                    <${textEditView} textmap=${textMap} tracker=${tracker}/>
+                    <${textEditView} pages=${pages} tracker=${tracker}/>
                 <//>`
                         
             render(html`<${pageView} filename=${defaultFilename}/>`, document.getElementById("content"))
