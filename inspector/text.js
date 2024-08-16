@@ -6,7 +6,7 @@ import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
 import { parseHabitatObject } from "./neohabitat.js"
-import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle, booleanCheckbox } from "./edit.js"
+import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle, booleanCheckbox, borderStyle } from "./edit.js"
 
 export const TEXT_W = 40
 export const TEXT_H = 16
@@ -203,7 +203,7 @@ export const textMapView = ({ textmap }) => {
     const h = textmap.length * 8
     return html`
         <canvas ref=${canvasRef} width="${w}px" height="${h}px"
-                style="image-rendering: pixelated; width: ${w*scale}px; height: ${h*scale}px"/>`
+                style="${scale > 1 ? "image-rendering: pixelated;" : ""} width: ${w*scale}px; height: ${h*scale}px"/>`
 }
 
 export const emptyTextmap = () => {
@@ -339,9 +339,10 @@ export const mouseCanvas = ({ textmap, tracker }) => {
              onpointerdown=${drag}/>`
 }
 
+export const makePage = (tracker, textmap) => tracker.trackSignal(signal(textmap))
 
 export const replacePages = (tracker, pages, newPages) => {
-    pages.splice(0, pages.length, ...(newPages.map(o => tracker.trackSignal(signal(byteArrayToTextMap(o))))))
+    pages.splice(0, pages.length, ...(newPages.map(o => makePage(tracker, byteArrayToTextMap(o)))))
 }
 
 export const generateTextJson = (editState, pages) => ({
@@ -373,6 +374,46 @@ export const fileLoadView = ({ pages, tracker }) => {
             }}/>
         </label>`
 }
+
+export const pageNav = ({ pages, tracker }) => {
+    const editState = useEditState()
+    return html`
+        <div style="display: flex; flex-wrap: wrap;">
+            <${Scale.Provider} value=${0.5}>
+                ${pages.map((textmap, page) => html`
+                    <div style="${borderStyle(page === editState.page)}">
+                        <a href="javascript:;" onclick=${() => { editState.page = page }}>
+                            <${textMapView} textmap=${textmap}/>
+                        </a><br/>
+                        <center>
+                        ${page > 0 ? html`
+                            <a href="javascript:;" onclick=${() => { 
+                                pages.splice(page - 1, 2, pages[page], pages[page - 1])
+                                editState.page = page - 1
+                            }}>${'<'}</a>${' '}
+                            <a href="javascript:;" onclick=${() => { 
+                                pages.splice(page, 1) 
+                                editState.page = page - 1
+                            }}>X</a>${' '}
+                        ` : null}
+                        ${page < (pages.length - 1) ? html`
+                            <a href="javascript:;" onclick=${() => { 
+                                pages.splice(page, 2, pages[page + 1], pages[page]) 
+                                editState.page = page + 1
+                            }}>${'>'}</a>
+                        ` : null}
+                        </center>
+                    </div>`)}
+                <div style="align-self: center;">
+                    <a href="javascript:;" onclick=${() => { 
+                        pages.push(makePage(tracker, emptyTextmap()))
+                        editState.page = pages.length - 1
+                    }}>+Page</a>
+                </div>
+            <//>
+        </div>`
+}
+
 export const textEditView = ({ pages, tracker }) => {
     const editState = useEditState()
     const scale = useContext(Scale)
@@ -391,6 +432,7 @@ export const textEditView = ({ pages, tracker }) => {
             </div>
             <${overlayImageView}/>
         </div>
+        <${pageNav} pages=${pages} tracker=${tracker}/>
         <p>Click on the document above to move the cursor and draw the currently-selected character.</p>
         <p>If the document does not have focus, you can enable keyboard input without moving the cursor by clicking
            on any blank space on the page.</p>
