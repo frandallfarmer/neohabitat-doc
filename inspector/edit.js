@@ -1,6 +1,6 @@
 import { createContext } from "preact"
 import { useContext, useState, useMemo, useRef, useEffect, useLayoutEffect, useCallback } from "preact/hooks"
-import { signal, batch } from "@preact/signals"
+import { signal, batch, useSignal } from "@preact/signals"
 import { html, catcher, collapsable } from "./view.js"
 import { emptyBitmap, trapTextureToBitmap } from "./codec.js"
 import { c64Colors, canvasFromBitmap, canvasImage, defaultColors, rgbaFromNibble, Scale, compositeSpaces, translateSpace } from "./render.js"
@@ -1380,7 +1380,16 @@ export const depthEditor = ({ objects }) => {
 export const overlayImageView = (_) => {
     const editState = useEditState()
     const scale = useContext(Scale)
-    if (editState.overlayImageUrl) {
+    const blinkSignal = useSignal(false)
+    useEffect(() => {
+        const timer = window.setInterval(() => {
+            if (editState.overlayBlink) {
+                blinkSignal.value = !blinkSignal.value
+            }
+        }, 500)
+        return () => { window.clearInterval(timer) }
+    })
+    if (editState.overlayImageUrl && (!editState.overlayBlink || blinkSignal.value)) {
         return html`
             <div style="width: ${320 * scale}px; height: ${128 * scale}px; position: absolute; top: 0; pointer-events: none; 
                         opacity: ${editState.overlayOpacity ?? 0.5}; z-index: 10000; overflow: clip;">
@@ -1407,6 +1416,7 @@ export const overlayImageEditor = ({ cropstyle = "region" }) => {
             ? html`<input type="range" max="1" step="any" value=${editState.overlayOpacity ?? 0.5}
                         oninput=${e => { editState.set("overlayOpacity", parseFloat(e.target.value)) }}/>
                    <button onClick=${() => editState.set("overlayOpacity", 0.5)}>Reset to 50%</button><br/>
-                   ${cropstyle === "region" ? html`<${editStateCheckbox} field="overlayCrop">Hide top area<//>` : ""}`
+                   ${cropstyle === "region" ? html`<${editStateCheckbox} field="overlayCrop">Hide top area<//><br/>` : ""}
+                   <${editStateCheckbox} field="overlayBlink">Blink<//>`
             : null}`
 }
