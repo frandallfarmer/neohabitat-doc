@@ -361,9 +361,9 @@ export const fileLoadView = ({ pages, tracker }) => {
                             const text = parseHabitatObject(await file.text())
                             const byteArrays = pageByteArraysFromTextObj(text)
                             tracker.group(() => {
-                                replacePages(tracker, pages, byteArrays)
-                                editState.page = Math.min(byteArrays.length, editState.page)
+                                editState.page = 0
                                 editState.ref = text.ref
+                                replacePages(tracker, pages, byteArrays)
                             })
                         } catch (e) {
                             console.error(e)
