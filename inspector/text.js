@@ -218,6 +218,8 @@ export const emptyTextmap = () => {
     return textmap
 }
 
+export const cloneTextmap = (textmap) => [...textmap.map(r => [...r])]
+
 const TextCodes = {
     DELETE_KEY: 0xfe,
     CLR_KEY: 0xfd,
@@ -396,21 +398,27 @@ export const pageNav = ({ pages, tracker }) => {
                         </a><br/>
                         <center>
                         ${page > 0 ? html`
-                            <a href="javascript:;" onclick=${() => { 
+                            <a href="javascript:;" title="Move before" onclick=${() => { 
                                 tracker.group(() => {
                                     pages.splice(page - 1, 2, pages[page], pages[page - 1])
                                     editState.page = page - 1
                                 })
                             }}>${'<'}</a>${' '}
-                            <a href="javascript:;" onclick=${() => { 
+                            <a href="javascript:;" title="Delete" onclick=${() => { 
                                 tracker.group(() => {
                                     pages.splice(page, 1) 
                                     editState.page = page - 1
                                 })
                             }}>X</a>${' '}
                         ` : null}
+                        <a href="javascript:;" title="Clone" onclick=${() => {
+                            tracker.group(() => {
+                                pages.splice(page, 0, makePage(tracker, cloneTextmap(textmap)))
+                                editState.page = page + 1
+                            })
+                        }}>⎘</a>${' '}
                         ${page < (pages.length - 1) ? html`
-                            <a href="javascript:;" onclick=${() => { 
+                            <a href="javascript:;" title="Move after" onclick=${() => { 
                                 tracker.group(() => {
                                     pages.splice(page, 2, pages[page + 1], pages[page]) 
                                     editState.page = page + 1
@@ -420,12 +428,12 @@ export const pageNav = ({ pages, tracker }) => {
                         </center>
                     </div>`)}
                 <div style="align-self: center;">
-                    <a href="javascript:;" onclick=${() => { 
+                    <button onclick=${() => { 
                         tracker.group(() => {
                             pages.push(makePage(tracker, emptyTextmap()))
                             editState.page = pages.length - 1    
                         })
-                    }}>+Page</a>
+                    }}>+Page</button><br/>
                 </div>
             <//>
         </div>`
@@ -456,8 +464,10 @@ export const textEditView = ({ pages, tracker }) => {
                 <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
                 <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
                 <${booleanCheckbox} obj=${editState} field="onlyDrawingChars">Hide text characters<//><br/>
+                <button onclick=${() => tracker.undo()}>Undo</button>
+                <button onclick=${() => tracker.redo()}>Redo</button>
                 <div>
-                    <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(generateTextJson(editState, pages), null, 2))}>
+                    <button onclick=${() => navigator.clipboard.writeText(JSON.stringify(generateTextJson(editState, pages), null, 2))}>
                         Copy JSON string to clipboard
                     </a>
                 </div>
