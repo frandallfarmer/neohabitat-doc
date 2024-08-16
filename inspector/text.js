@@ -388,26 +388,34 @@ export const pageNav = ({ pages, tracker }) => {
                         <center>
                         ${page > 0 ? html`
                             <a href="javascript:;" onclick=${() => { 
-                                pages.splice(page - 1, 2, pages[page], pages[page - 1])
-                                editState.page = page - 1
+                                tracker.group(() => {
+                                    pages.splice(page - 1, 2, pages[page], pages[page - 1])
+                                    editState.page = page - 1
+                                })
                             }}>${'<'}</a>${' '}
                             <a href="javascript:;" onclick=${() => { 
-                                pages.splice(page, 1) 
-                                editState.page = page - 1
+                                tracker.group(() => {
+                                    pages.splice(page, 1) 
+                                    editState.page = page - 1
+                                })
                             }}>X</a>${' '}
                         ` : null}
                         ${page < (pages.length - 1) ? html`
                             <a href="javascript:;" onclick=${() => { 
-                                pages.splice(page, 2, pages[page + 1], pages[page]) 
-                                editState.page = page + 1
+                                tracker.group(() => {
+                                    pages.splice(page, 2, pages[page + 1], pages[page]) 
+                                    editState.page = page + 1
+                                })
                             }}>${'>'}</a>
                         ` : null}
                         </center>
                     </div>`)}
                 <div style="align-self: center;">
                     <a href="javascript:;" onclick=${() => { 
-                        pages.push(makePage(tracker, emptyTextmap()))
-                        editState.page = pages.length - 1
+                        tracker.group(() => {
+                            pages.push(makePage(tracker, emptyTextmap()))
+                            editState.page = pages.length - 1    
+                        })
                     }}>+Page</a>
                 </div>
             <//>
@@ -419,30 +427,36 @@ export const textEditView = ({ pages, tracker }) => {
     const scale = useContext(Scale)
     const textmap = pages[editState.page]
     return html`
-        <${fileLoadView} pages=${pages} tracker=${tracker}/><br/>
-        <div style="position: relative; width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px;">
-            <div style="position: absolute; top: 0px; left: 0px">
-                <${textMapView} textmap=${textmap}/>
+        <div style="display: flex; flex-wrap: wrap;">
+            <div style="width: ${TEXT_W * scale * 8}px;">
+                <div style="position: relative; width: ${TEXT_W * scale * 8}px; height: ${TEXT_H * scale * 8}px;">
+                    <div style="position: absolute; top: 0px; left: 0px">
+                        <${textMapView} textmap=${textmap}/>
+                    </div>
+                    <div style="position: absolute; top: ${8 * editState.y * scale}px; left: ${8 * editState.x * scale}px;
+                                width: ${8 * scale}px; height: ${8 * scale}px;"
+                        class="text-cursor"/>
+                    <div style="position: absolute; top: 0px; left: 0px">
+                        <${mouseCanvas} textmap=${textmap} tracker=${tracker}/>
+                    </div>
+                    <${overlayImageView}/>
+                </div>
             </div>
-            <div style="position: absolute; top: ${8 * editState.y * scale}px; left: ${8 * editState.x * scale}px;
-                        width: ${8 * scale}px; height: ${8 * scale}px;"
-                 class="text-cursor"/>
-            <div style="position: absolute; top: 0px; left: 0px">
-                <${mouseCanvas} textmap=${textmap} tracker=${tracker}/>
+            <div>
+                <${mouseCharSelector}/>
+                <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
+                <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
+                <div>
+                    <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(generateTextJson(editState, pages), null, 2))}>
+                        Copy JSON string to clipboard
+                    </a>
+                </div>
             </div>
-            <${overlayImageView}/>
         </div>
         <${pageNav} pages=${pages} tracker=${tracker}/>
         <p>Click on the document above to move the cursor and draw the currently-selected character.</p>
         <p>If the document does not have focus, you can enable keyboard input without moving the cursor by clicking
            on any blank space on the page.</p>
-        <${overlayImageEditor} cropstyle="document"/>
-        <${mouseCharSelector}/>
-        <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
-        <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
-        <div>
-            <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(generateTextJson(editState, pages), null, 2))}>
-                Copy JSON string to clipboard
-            </a>
-        </div>`
+        <${fileLoadView} pages=${pages} tracker=${tracker}/><br/>
+        <${overlayImageEditor} cropstyle="document"/>`
 }
