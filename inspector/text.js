@@ -279,20 +279,29 @@ export const textView = ({ filename, page = 0 }) => {
     return html`<${textMapView} textmap=${textmap}/>`
 }
 
+const allChars = [...Array(0x80).keys()]
+allChars[TextCodes.PAGE_LINE_DELIMITER] = 0x1f
+allChars[0x1f] = null
+
+const drawingChars = [...allChars.slice(0, 0x1f), 0x24,
+    0x20, 0x25, 0x26, 0x2a, 0x2d, 0x3d, 0x40, 0x5c, 0x5e, 0x5f, 0x60, 0x7b, 0x7c, 0x7d, 0x7e, 0x7f
+]
+
 export const mouseCharSelector = (_) => {
     const chars = charsetCanvases()
     if (!chars) { return null }
     const editState = useEditState()
     const scale = useContext(Scale)
+    const charBytes = editState.onlyDrawingChars ? drawingChars : allChars
 
+    let i = 0
     const rows = []
-    for (let y = 0; y < 8; y ++) {
+    while (i < charBytes.length) {
         const columns = []
         for (let x = 0; x < 16; x ++) {
-            let char = x + (y * 16)
-            if (char === TextCodes.PAGE_LINE_DELIMITER) {
-                char = 0x1f // equivalent character
-            } else if (char === 0x1f) {
+            let char = charBytes[i]
+            i ++
+            if (char == null) {
                 columns.push(html`<td style="cursor: not-allowed;" title="No character here"></td>`)
                 continue
             }
@@ -446,6 +455,7 @@ export const textEditView = ({ pages, tracker }) => {
                 <${mouseCharSelector}/>
                 <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
                 <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
+                <${booleanCheckbox} obj=${editState} field="onlyDrawingChars">Hide text characters<//><br/>
                 <div>
                     <a href="javascript:;" onclick=${() => navigator.clipboard.writeText(JSON.stringify(generateTextJson(editState, pages), null, 2))}>
                         Copy JSON string to clipboard
