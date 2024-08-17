@@ -19,7 +19,8 @@ const editStateDefaults = {
     mouseChar: 0,
     gestureCount: 0,
     ref: "text-new",
-    page: 0
+    page: 0,
+    onlyDrawingChars: true
 }
 const editStateMethods = {
     moveCursor(dx = 1, dy = 0) {
@@ -460,15 +461,18 @@ export const textEditView = ({ pages, tracker }) => {
                     <${overlayImageView}/>
                 </div>
             </div>
-            <div>
-                <${mouseCharSelector}/>
-                <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
-                <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
-                <${booleanCheckbox} obj=${editState} field="onlyDrawingChars">Hide text characters<//><br/>
+            <div style="padding-left: 10px;">
                 <${fileLoadView} pages=${pages} tracker=${tracker}/><br/>
                 <${overlayImageEditor} cropstyle="document"/>
                 <button onclick=${() => tracker.undo()}>Undo</button>
                 <button onclick=${() => tracker.redo()}>Redo</button>
+                <fieldset>
+                    <legend>Characters</legend>
+                    <${mouseCharSelector}/>
+                    <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
+                    <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
+                    <${booleanCheckbox} obj=${editState} field="onlyDrawingChars">Hide text characters<//><br/>
+                </fieldset>
                 <div>
                     <button onclick=${() => navigator.clipboard.writeText(JSON.stringify(generateTextJson(editState, pages), null, 2))}>
                         Copy JSON string to clipboard
