@@ -6,7 +6,8 @@ import { charset, useHabitatText } from "./data.js"
 import { Scale } from "./render.js"
 import { makeCanvas } from "./shim.js"
 import { parseHabitatObject } from "./neohabitat.js"
-import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle, booleanCheckbox, borderStyle } from "./edit.js"
+import { startDrag, overlayImageView, overlayImageEditor, transparencyGridStyle, booleanCheckbox, 
+    borderStyle, fieldEditor } from "./edit.js"
 
 export const TEXT_W = 40
 export const TEXT_H = 16
@@ -464,6 +465,8 @@ export const textEditView = ({ pages, tracker }) => {
                 <${booleanCheckbox} obj=${editState} field="insertMode">Insert mode<//><br/>
                 <${booleanCheckbox} obj=${editState} field="spaceMouse">Spacebar draws selected char<//><br/>
                 <${booleanCheckbox} obj=${editState} field="onlyDrawingChars">Hide text characters<//><br/>
+                <${fileLoadView} pages=${pages} tracker=${tracker}/><br/>
+                <${overlayImageEditor} cropstyle="document"/>
                 <button onclick=${() => tracker.undo()}>Undo</button>
                 <button onclick=${() => tracker.redo()}>Redo</button>
                 <div>
@@ -474,9 +477,8 @@ export const textEditView = ({ pages, tracker }) => {
             </div>
         </div>
         <${pageNav} pages=${pages} tracker=${tracker}/>
+        <label>Ref: <${fieldEditor} obj=${editState} field="ref"/></label><br/>
         <p>Click on the document above to move the cursor and draw the currently-selected character.</p>
         <p>If the document does not have focus, you can enable keyboard input without moving the cursor by clicking
-           on any blank space on the page.</p>
-        <${fileLoadView} pages=${pages} tracker=${tracker}/><br/>
-        <${overlayImageEditor} cropstyle="document"/>`
+           on any blank space on the page.</p>`
 }
