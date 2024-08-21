@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'charset';
+    src: url('fonts/charset.eot');
+    src: url('fonts/charset.eot?#iefix') format('embedded-opentype'),
+         url('fonts/charset.woff2') format('woff2'),
+         url('fonts/charset.woff') format('woff'),
+         url('fonts/charset.ttf')  format('truetype'),
+         url('fonts/charset.svg#charset') format('svg');
+}
