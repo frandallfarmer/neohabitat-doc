@@ -9,18 +9,18 @@
 }
 
 body {
-  font-family:charset;
-  font-size:24px;
+    font-family: 'charset';
+    font-size: 24px;
 }
 
 pre {
-  font-family:charset;
-  font-size:24px;
-  word-wrap:break-word;
-  width:40ch;
-  line-height:71%;
-  color:black;
-  background-color:coral;
-  border-style:solid;
-  padding:10px;
+    font-family: 'charset';
+    font-size: 24px;
+    word-wrap: break-word;
+    width: 40ch;
+    line-height: 71%;
+    color: black;
+    background-color: coral;
+    border-style: solid;
+    padding: 10px;
 }
