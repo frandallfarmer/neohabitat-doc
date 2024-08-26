@@ -19,6 +19,7 @@ const editStateDefaults = {
     mouseChar: 0,
     gestureCount: 0,
     ref: "text-new",
+    title: '',
     page: 0,
     onlyDrawingChars: true
 }
@@ -358,10 +359,16 @@ export const replacePages = (tracker, pages, newPages) => {
     pages.splice(0, pages.length, ...(newPages.map(o => makePage(tracker, byteArrayToTextMap(o)))))
 }
 
-export const generateTextJson = (editState, pages) => ({
-    ref: editState.ref,
-    pages: pages.map(textmapToString)
-})
+export const generateTextJson = (editState, pages) => {
+    let json = {
+        ref: editState.ref,
+        pages: pages.map(textmapToString)
+    }
+    if ((editState.title ?? '') !== '') {
+        json.title = editState.title
+    }
+    return json
+}
 
 export const fileLoadView = ({ pages, tracker }) => {
     const editState = useEditState()
@@ -376,6 +383,7 @@ export const fileLoadView = ({ pages, tracker }) => {
                             tracker.group(() => {
                                 editState.page = 0
                                 editState.ref = text.ref
+                                editState.title = text.title ?? ''
                                 replacePages(tracker, pages, byteArrays)
                             })
                         } catch (e) {
@@ -482,6 +490,7 @@ export const textEditView = ({ pages, tracker }) => {
         </div>
         <${pageNav} pages=${pages} tracker=${tracker}/>
         <label>Ref: <${fieldEditor} obj=${editState} field="ref"/></label><br/>
+        <label>Title: <${fieldEditor} obj=${editState} field="title"/></label><br/>
         <p>Click on the document above to move the cursor and draw the currently-selected character.</p>
         <p>If the document does not have focus, you can enable keyboard input without moving the cursor by clicking
            on any blank space on the page.</p>`
