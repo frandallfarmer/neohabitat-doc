@@ -17,7 +17,9 @@ pre {
     font-family: 'charset Normal';
     font-size: 24px;
     word-wrap: break-word;
-    width: 40ch;
+    width: fit-content;
+    transform: scale(0.666, 1);
+    transform-origin: left;
     line-height: 71%;
     color: black;
     background-color: coral;
