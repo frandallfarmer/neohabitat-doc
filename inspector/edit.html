@@ -34,6 +34,11 @@
             const filename = q("f") ?? "db/Empty/context-empty.json"
 
             const tracker = createEditTracker()
+            const oldUndo = tracker.undo;
+            tracker.undo = (...args) => {
+                errorBucket.value = [];
+                return oldUndo(...args);
+            }
             
             const objects = tracker.trackSignal(signal([]))
             

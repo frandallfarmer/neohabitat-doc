@@ -2,6 +2,7 @@
 import htm from "htm"
 import { h } from "preact"
 import { useState, useId, useMemo, useErrorBoundary } from "preact/hooks"
+import { useSignalEffect } from "@preact/signals"
 import { errorBucket, logError } from "./data.js"
 
 export const html = htm.bind(h)
@@ -61,6 +62,7 @@ export const errors = (_) => {
             <h2>Errors</h2>
             <details>
                 <summary>${errorBucket.value.length}</summary>
+                <button onClick=${() => errorBucket.value = []}>Clear errors and retry</button>
                 ${errorBucket.value.map((err) => html`
                     <div key=${err}>
                         <h5>${err.filename}</h5>
@@ -73,8 +75,9 @@ export const errors = (_) => {
 }
 
 export const catcher = ({ filename, children }) => {
-    const [error, _] = useErrorBoundary(e => logError(e, filename))
-    return !error ? children : null
+    const [error, reset] = useErrorBoundary(e => logError(e, filename))
+    useSignalEffect(() => { if (errorBucket.value.length === 0) { reset(); } })
+    return error ? null : children;
 }
 
 export const direction = ({ compass, orientation }) => {
