@@ -1,6 +1,14 @@
 # Installers
 Throughout the life of the project, all of the installation material we collated ended up in this folder. Here is an explanation of what everything is.
 
+> **Which of these are current?** The public server is **habitat.themade.org**.
+> `NeoHabitatInstaller.exe` (Windows) points there and is current. `Neohabitat.zip`
+> and `Neohabitat.dmg` point at the retired `app.neohabitat.org` host — usable, but
+> you must change the server address. Everything else here is historical. For the
+> up-to-date client guide (VICE, Ultimate 64, real C64, web clients) see
+> [docs/c64-clients.md](https://github.com/frandallfarmer/neohabitat/blob/master/docs/c64-clients.md)
+> and [docs/play.md](https://github.com/frandallfarmer/neohabitat/blob/master/docs/play.md).
+
 ### File list
 
 * Habitat_C64.zip - I am unsure what this is, but it was likely an attempt in getting the Terminal enabled client to work on a real C64. Leaving this in for historical purposes or incase we need it in the future.

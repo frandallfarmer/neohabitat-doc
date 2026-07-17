@@ -1,6 +1,14 @@
 Getting Started
 ===============
 
+> ⚠️ **This guide is historical.** The modern setup — Docker Compose with the Go
+> `bridge_v2` protocol bridge, the web clients, and the bots — is documented in
+> the main repo:
+> **[docs/run-your-own-server.md](https://github.com/frandallfarmer/neohabitat/blob/master/docs/run-your-own-server.md)**.
+> The QuantumLink Reloaded + MySQL path below is no longer used (clients bypass
+> Q-Link entirely), and the Vagrant path is unsupported. The text is preserved
+> for the record.
+
 We're rebuilding the world's first MMO, brick by brick, and we're over the moon
 to have you on board. We wanted to make it fast and easy to get started, and in
 our experience you can go from nothing to a fully-functional development
