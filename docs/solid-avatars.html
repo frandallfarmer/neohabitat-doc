@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solid Avatars — NeoHabitat</title>
+<meta name="description" content="Habitat's avatars were drawn three times in 1986 — side, front and back. Three silhouettes ninety degrees apart are enough to reconstruct a solid, so a genuinely 3D Habitat avatar can be recovered from the original art rather than modelled by hand.">
+<link rel="icon" href="images/Sheriff%20Head.gif">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c64-blue:   #40318d;
+    --c64-lblue:  #7869c4;
+    --c64-cyan:   #67b6bd;
+    --c64-yellow: #bfce72;
+    --ink:        #e8e6f5;
+    --ink-dim:    #b9b3dd;
+    --panel:      #322670;
+    --panel-deep: #241b52;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--c64-blue);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .frame { border: 14px solid var(--c64-lblue); min-height: 100vh; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  .px, h1, h2, h3 { font-family: 'Press Start 2P', monospace; }
+
+  .back { display: inline-block; margin-top: 22px; font-size: 11px; color: var(--c64-lblue); text-decoration: none; }
+  .back:hover { color: var(--c64-cyan); }
+
+  header { text-align: center; padding: 18px 0 10px; }
+  h1 { font-size: clamp(17px, 3.6vw, 28px); color: var(--c64-lblue); letter-spacing: 1px; line-height: 1.5; }
+  h1 .neo { color: var(--c64-cyan); }
+  .tagline { color: var(--c64-yellow); font-size: 11px; margin-top: 16px; font-family: 'Press Start 2P', monospace; }
+  .intro { max-width: 780px; margin: 22px auto 0; }
+  .intro a { color: var(--c64-cyan); }
+  .intro + .intro { margin-top: 14px; }
+
+  h2 {
+    font-size: clamp(13px, 2.4vw, 18px);
+    color: var(--c64-yellow);
+    margin: 54px 0 22px;
+    text-align: center;
+  }
+  h2::before, h2::after { content: " ── "; color: var(--c64-lblue); }
+
+  p { margin-bottom: 14px; }
+  .body { max-width: 780px; margin: 0 auto; }
+  .body a { color: var(--c64-cyan); }
+  .body strong { color: var(--ink); }
+  .body em { color: var(--ink); }
+
+  /* ── the turning figures ──────────────────────────────── */
+  .hero { text-align: center; margin: 30px auto 0; }
+  .hero img {
+    width: 380px; max-width: 100%; height: auto;
+    image-rendering: pixelated;
+    border: 3px solid var(--c64-lblue);
+  }
+  .hero figcaption { font-size: 14px; color: var(--ink-dim); margin-top: 10px; }
+  .gifrow {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px; margin-top: 26px;
+  }
+  .gifrow figure { text-align: center; }
+  .gifrow img {
+    width: 100%; max-width: 260px; height: auto;
+    image-rendering: pixelated;
+    border: 3px solid var(--c64-lblue);
+  }
+  .gifrow figcaption { font-size: 13.5px; color: var(--ink-dim); margin-top: 8px; }
+
+  /* ── try-it card ──────────────────────────────────────── */
+  .playgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .playcard {
+    display: block; text-decoration: none;
+    background: var(--panel);
+    border: 3px solid var(--c64-lblue);
+    box-shadow: 6px 6px 0 var(--panel-deep);
+    padding: 22px 20px 18px;
+    color: var(--ink);
+    transition: transform .08s ease, box-shadow .08s ease;
+  }
+  .playcard:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0 var(--panel-deep); border-color: var(--c64-cyan); }
+  .playcard .px { font-size: 13px; color: var(--c64-yellow); display: block; margin-bottom: 12px; }
+  .playcard p { font-size: 15.5px; color: var(--ink-dim); margin: 0; }
+  .playcard .tag { display:inline-block; margin-top: 12px; font-size: 10px; color: var(--c64-yellow); border:1px solid var(--c64-yellow); padding: 4px 7px; }
+
+  /* ── feature / link rows ──────────────────────────────── */
+  .rows { display: grid; gap: 14px; }
+  .row, .item {
+    display: block; text-decoration: none; color: var(--ink);
+    background: var(--panel-deep);
+    border-left: 6px solid var(--c64-lblue);
+    padding: 16px 18px;
+  }
+  a.row:hover { border-left-color: var(--c64-cyan); background: var(--panel); }
+  .row .px, .item .px { font-size: 11px; color: var(--c64-cyan); display: block; margin-bottom: 8px; }
+  .row p, .item p { font-size: 15.5px; color: var(--ink-dim); margin: 0; }
+
+  .note {
+    max-width: 780px; margin: 22px auto 0;
+    border-left: 6px solid var(--c64-yellow);
+    background: var(--panel-deep);
+    padding: 14px 18px; font-size: 15.5px; color: var(--ink-dim);
+  }
+  .note strong { color: var(--c64-yellow); }
+  .note a { color: var(--c64-cyan); }
+
+  .links { text-align: center; font-size: 15px; color: var(--ink-dim); margin-top: 26px; }
+  .links a { color: var(--c64-cyan); }
+  footer { text-align: center; padding: 60px 0 40px; color: var(--ink-dim); font-size: 14px; }
+  footer a { color: var(--c64-cyan); }
+  footer .px { font-size: 10px; color: var(--c64-lblue); margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="frame">
+<div class="wrap">
+
+  <a class="back" href="./">&lt;&lt; BACK TO NEOHABITAT</a>
+
+  <header>
+    <h1><span class="neo">SOLID</span> AVATARS</h1>
+    <div class="tagline">3D FIGURES RECOVERED FROM THE 1986 ART</div>
+    <p class="intro">
+      Habitat's avatars have always been flat. Even the
+      <a href="https://github.com/frandallfarmer/neohabitat/blob/master/docs/webclient3d.md">3D diorama client</a>
+      draws them as <strong>billboards</strong> — cardboard cutouts standing on real floor geometry.
+    </p>
+    <p class="intro">
+      They don't have to be. In 1986 the artists drew every avatar and every head
+      <strong>three times</strong>: from the side, from the front, and from behind. Three
+      silhouettes, ninety degrees apart, are exactly what you need to reconstruct a
+      <strong>solid</strong> — so a genuinely three-dimensional Habitat avatar can be
+      <em>recovered from the original art</em> rather than modelled by hand. All 160-plus
+      heads come along for free.
+    </p>
+  </header>
+
+  <figure class="hero">
+    <img src="images/solid-avatar-turn.gif" width="520" height="520"
+         alt="A Habitat avatar rotating a full turn as a solid three-dimensional figure">
+    <figcaption>One avatar, one full turn. No new art — every pixel comes from the 1986 cels.</figcaption>
+  </figure>
+
+  <h2>TRY IT</h2>
+  <div class="playgrid">
+    <a class="playcard" href="http://habitat.themade.org/webclient/avatar3d.html">
+      <span class="px">🔄 THE SOLID AVATAR LAB</span>
+      <p>Pick a body, pick a head, spray on some patterns, and watch it turn. Nothing to log
+         into — this is a workbench, not a client. Export any rotation as an animated GIF.</p>
+      <span class="tag">EXPERIMENTAL</span>
+    </a>
+  </div>
+
+  <h2>WHAT THE LAB DOES</h2>
+  <div class="rows">
+    <div class="item">
+      <span class="px">TURNTABLE</span>
+      <p>Any angle, or let it spin. Snap buttons for front, side and back.</p>
+    </div>
+    <div class="item">
+      <span class="px">EVERY FIGURE</span>
+      <p>All seven body styles — the human plus the six creature bodies — all 160-plus heads,
+         height and sex, and the three poses that can rotate.</p>
+    </div>
+    <div class="item">
+      <span class="px">THE SPRAY CAN</span>
+      <p>Four pickers — legs, torso, arms, hair — showing the sixteen real C64 dither patterns
+         as swatches instead of as numbers. The same four slots the in-world spray can paints.</p>
+    </div>
+    <div class="item">
+      <span class="px">EXPORT A ROTATION</span>
+      <p>One full seamless turn as an animated GIF, named for what is in it —
+         <code>habitat-human-wizard0-6968.gif</code> is the body, the head, and the four paint
+         values in hex. Every animation on this page came out of that button.</p>
+    </div>
+    <div class="item">
+      <span class="px">A FIDELITY PANEL</span>
+      <p>Each straight-on view rendered from the solid, side by side with the same frame drawn
+         by the ordinary 2D client, and a pixel diff between them.</p>
+    </div>
+  </div>
+
+  <div class="gifrow">
+    <figure>
+      <img src="images/solid-avatar-wizard.gif" width="520" height="520"
+           alt="A wizard-headed Habitat avatar rotating as a solid figure">
+      <figcaption>A pointed hat survives the round trip.</figcaption>
+    </figure>
+    <figure>
+      <img src="images/solid-avatar-tiger.gif" width="520" height="520"
+           alt="A tiger-headed Habitat avatar rotating as a solid figure">
+      <figcaption>Every one of the 160+ heads reconstructs the same way.</figcaption>
+    </figure>
+  </div>
+
+  <h2>HOW IT WORKS</h2>
+  <div class="body">
+    <p>
+      Seen from the front and from the side, an object casts two shadows. Anything solid must fit
+      inside both — intersect them and you get the <strong>visual hull</strong>, the largest shape
+      consistent with every view you have. That is the whole idea, and it suits Habitat for two
+      reasons.
+    </p>
+    <p>
+      First, <strong>the art is already per-limb</strong>. Reconstructing a whole body at once
+      smears it: the arm's depth gets applied at the torso's width and the figure inflates into a
+      slab. Habitat avoids that for free, because the 1986 figure compositor already draws six
+      independent limb cels — so each limb is reconstructed on its own and assembled afterwards.
+    </p>
+    <p>
+      Second, <strong>the third coordinate is already in the data</strong>. The client's existing
+      limb chain — the ported 1986 <code>animate.m</code> — is run once per view, and a limb's
+      horizontal position in the <em>side</em> drawing simply <em>is</em> how far forward or back
+      it sits. Nothing is estimated, hand-tuned, or eyeballed.
+    </p>
+    <p>
+      Colours come straight from the cels, with no lighting at all: each face of the solid wears
+      the view that looks at it. The artists already painted the difference between a front and a
+      profile, and a modern light on top of that only muddies it. The blocks are deliberately not
+      cubes — a C64 multicolor pixel is twice as wide as it is tall, and the reconstruction keeps
+      that, which is what makes a straight-on view land exactly on the original pixel grid.
+    </p>
+  </div>
+
+  <h2>HOW CLOSE IS IT, REALLY?</h2>
+  <div class="body">
+    <p>
+      Close enough to check by machine, which is the point of the fidelity panel.
+      <strong>Viewed from the front, the solid is pixel-for-pixel identical to what the 2D client
+      draws</strong> — same silhouette, same colours — for every body, every head and every pose.
+      That is verified automatically rather than admired by eye.
+    </p>
+    <p>The other views cannot be perfect, and the reasons are the interesting part:</p>
+  </div>
+  <div class="rows" style="margin-top:18px">
+    <div class="item">
+      <span class="px">A SOLID CASTS THE SAME SHADOW FRONT AND BACK</span>
+      <p>The front and back cels were drawn separately and don't match, so no single object can
+         reproduce both. The back art paints the far side of the figure; it doesn't reshape it.</p>
+    </div>
+    <div class="item">
+      <span class="px">THE SIDE FIGURE IS SIMPLY TALLER</span>
+      <p>Measured on the standing human, the side cels run two to eight rows taller than the front
+         cels — legs, torso and arms all disagree. A solid has one height per limb, so the front
+         wins, and the side view comes out about 8% different at rest.</p>
+    </div>
+    <div class="item">
+      <span class="px">THE FAR ARM WAS NEVER DRAWN</span>
+      <p>Seen from the side it is hidden behind the body, so 1986 simply left it out. The
+         reconstruction borrows the profile of the near arm — the one drawing Habitat
+         <em>does</em> have of "an arm, from the side".</p>
+    </div>
+  </div>
+  <div class="body" style="margin-top:18px">
+    <p>
+      None of these are bugs to be fixed. They are what happens when you ask hand-drawn art from
+      three separate afternoons to describe one object.
+    </p>
+  </div>
+
+  <h2>WHAT CAN ROTATE, AND WHAT CAN'T</h2>
+  <div class="body">
+    <p>
+      Only <strong>standing, walking and sitting</strong> were drawn from all three directions.
+      Gestures — waving, pointing, bending over, throwing, punching — exist only in profile.
+      There is no front-facing wave in Habitat, and inventing one would be authorship rather than
+      restoration, so the lab doesn't offer it.
+    </p>
+  </div>
+
+  <h2>STATUS</h2>
+  <div class="body">
+    <p>
+      This is an <strong>experiment</strong>, and a young one. It is a standalone workbench: the
+      2D client and the 3D diorama client are untouched and still billboard their avatars. Putting
+      solid figures into the world itself is the obvious next step, and hasn't been taken yet.
+    </p>
+    <p>
+      The most visible rough edge: a head reconstructs to something close to a cube, so at a
+      three-quarter angle it can read as two flat portraits meeting at an edge. Rounding the head
+      hard mostly resolves it — there's a slider — but blending the faces by viewing angle is the
+      real fix.
+    </p>
+  </div>
+  <div class="note">
+    <strong>Under the hood.</strong> Measurements, the reconstruction algorithm, and the full list
+    of what the art can and cannot support live in the
+    <a href="https://github.com/frandallfarmer/neohabitat/blob/master/webclient/render3d/README.md#solid-avatars">render3d
+    README</a>. Findings and bug reports to
+    <a href="https://discord.gg/rspcX27Vt4">Discord</a> or
+    <a href="https://github.com/frandallfarmer/neohabitat/issues">GitHub issues</a>.
+  </div>
+
+  <h2>SEE ALSO</h2>
+  <div class="rows">
+    <a class="row" href="https://juliendorra.com/habitat/">
+      <span class="px">HABITAT AVATAR SIMULATOR</span>
+      <p>Julien Dorra's dress-up lab, which shows the three views the artists drew. This
+         experiment reconstructs what lies <em>between</em> them.</p>
+    </a>
+    <a class="row" href="../inspector/">
+      <span class="px">THE INSPECTOR</span>
+      <p>Browse — and edit — the original Habitat art and regions these figures are decoded from.</p>
+    </a>
+    <a class="row" href="https://github.com/frandallfarmer/neohabitat/blob/master/docs/experiments.md">
+      <span class="px">ALL THE EXPERIMENTS</span>
+      <p>Sagebot, the 3D diorama client, the text-mode client, habisound, and the rest of the family.</p>
+    </a>
+  </div>
+
+  <p class="links">
+    Questions? Join the
+    <a href="https://discord.gg/rspcX27Vt4">NeoHabitat Discord</a>.
+  </p>
+
+  <footer>
+    <p>A project of volunteers worldwide, hosted by
+       <a href="https://themade.org/">The Museum of Art and Digital Entertainment</a>.</p>
+    <p class="px">PRESS PLAY ON TAPE</p>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>
